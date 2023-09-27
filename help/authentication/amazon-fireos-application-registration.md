@@ -2,9 +2,9 @@
 title: Registrazione applicazione Amazon FireOS
 description: Registrazione applicazione Amazon FireOS
 exl-id: 650fd4a2-dfc3-4c74-9b5b-6bea832a28ca
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+source-git-commit: 1b8371a314488335c68c82882c930b7c19aa64ad
 workflow-type: tm+mt
-source-wordcount: '524'
+source-wordcount: '513'
 ht-degree: 0%
 
 ---
@@ -33,25 +33,37 @@ Un rendiconto software è un token JWT che contiene informazioni sull’applicaz
 
 ### Se hai accesso al dashboard TVE di Adobe:
 
-- Apri il browser e passa a <https://console.auth.adobe.com>
-- Accedi a `Channels` e selezionare il canale.
-- Accedi a `Registered Applications` Tab.
-- Fai clic su `Add new application`.
-- Specifica un nome e una versione per l’applicazione e seleziona le piattaforme su cui sarà disponibile (ad esempio, Android nel nostro caso).
-- Specifica un nome dominio scegliendo un dominio da un elenco già configurato per il programmatore.
-- Invia le modifiche al server e quindi torna alla scheda Applicazioni registrate del canale.
-- Dovresti visualizzare un elenco con tutte le applicazioni registrate. Fai clic su `Download` sull&#39;applicazione appena creata. Nota: potrebbe essere necessario attendere alcuni minuti prima che l&#39;informativa software sia pronta per il download.
-- Verrà scaricato un file di testo. Utilizza il contenuto come informativa sul software.
+1. Apri il browser e passa a `https://console.auth.adobe.com`.
+
+1. Accedi a **[!UICONTROL Channels]** , quindi seleziona il tuo canale.
+
+1. Accedi a **[!UICONTROL Registered Applications]** scheda.
+
+1. Clic **[!UICONTROL Add new application]**.
+
+1. Specifica un nome e una versione per l’applicazione e seleziona le piattaforme su cui sarà disponibile (ad esempio Android).
+
+1. Fornisci un **[!UICONTROL Domain Name]** scegliendo da un elenco di domini già configurati per il programmatore.
+
+1. Invia le modifiche al server, quindi torna a **[!UICONTROL Registered Applications]** scheda.
+
+   Dovresti visualizzare un elenco con tutte le applicazioni registrate.
+
+1. Clic **[!UICONTROL Download]** sull&#39;applicazione appena creata.
+
+   Potrebbe essere necessario attendere alcuni minuti prima che l&#39;informativa software sia pronta per il download.
+
+   Viene scaricato un file di testo. Utilizzarne il contenuto come informativa software.
 
 Per ulteriori informazioni, consulta [Dynamic Client Registration Management](/help/authentication/dynamic-client-registration-management.md)
 
 ### Se non hai accesso al dashboard TVE di Adobe:
 
-Invia un ticket a <tve-support@adobe.com>. Includere tutte le informazioni necessarie, inclusi il canale, il nome dell&#39;applicazione, la versione e le piattaforme. Verrà creata una dichiarazione software per l&#39;utente da parte del team di supporto.
+Invia un ticket a [tve-support@adobe.com](mailto:tve-support@adobe.com). Includere tutte le informazioni necessarie, inclusi il canale, il nome dell&#39;applicazione, la versione e le piattaforme. Verrà creata una dichiarazione software per l&#39;utente da parte del team di supporto.
 
-## Come utilizzare la dichiarazione software? {#use}
+## Come utilizzare l&#39;Informativa sul software {#use}
 
-Dopo aver ottenuto l&#39;Informativa sul software, è necessario trasmetterla come parametro nel costruttore di Access Enabler. Si consiglia di ospitare l&#39;Informativa sul software in una posizione remota. In questo modo, è possibile revocare e modificare facilmente l&#39;Informativa software senza rilasciare una nuova versione dell&#39;applicazione.
+Dopo aver ottenuto l&#39;Informativa software, è necessario trasmetterla come parametro nel costruttore di Access Enabler. L&#39;Adobe consiglia di ospitare l&#39;Informativa sul software in una posizione remota. In questo modo, è possibile revocare e modificare facilmente l&#39;Informativa software senza rilasciare una nuova versione dell&#39;applicazione.
 
 ## Come utilizzare l&#39;Informativa sul software {#use-both}
 

@@ -2,9 +2,9 @@
 title: Manuale dell’integrazione di Amazon FireOS
 description: Manuale dell’integrazione di Amazon FireOS
 exl-id: 1982c485-f0ed-4df3-9a20-9c6a928500c2
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: 1b8371a314488335c68c82882c930b7c19aa64ad
 workflow-type: tm+mt
-source-wordcount: '1432'
+source-wordcount: '1416'
 ht-degree: 0%
 
 ---
@@ -20,27 +20,27 @@ ht-degree: 0%
 
 ## Introduzione {#intro}
 
-Questo documento descrive i flussi di lavoro di adesione che l’applicazione di livello superiore di un programmatore può implementare tramite le API esposte dalla libreria AccessEnabler di Amazon FireOS.
+Questo documento descrive i flussi di lavoro di adesione che l’applicazione di livello superiore di un programmatore può implementare tramite le API esposte da Amazon FireOS `AccessEnabler` libreria.
 
 La soluzione di autenticazione Adobe Pass per Amazon FireOS è infine suddivisa in due domini:
 
-- Dominio dell’interfaccia utente: livello applicativo superiore che implementa l’interfaccia utente e utilizza i servizi forniti dalla libreria AccessEnabler per fornire accesso a contenuti con restrizioni.
-- Dominio AccessEnabler: qui vengono implementati i flussi di lavoro per l’adesione sotto forma di:
+- Dominio dell’interfaccia utente: livello applicativo superiore che implementa l’interfaccia utente e utilizza i servizi forniti da `AccessEnabler` per consentire l&#39;accesso a contenuti con restrizioni.
+- Il `AccessEnabler` dominio: è dove i flussi di lavoro per l’adesione vengono implementati sotto forma di:
    - Chiamate di rete effettuate ai server back-end di Adobe
    - Regole della logica di business relative ai flussi di lavoro di autenticazione e autorizzazione
    - Gestione di varie risorse ed elaborazione dello stato del flusso di lavoro (ad esempio la cache dei token)
 
-L&#39;obiettivo del dominio AccessEnabler è nascondere tutte le complessità dei flussi di lavoro di adesione e fornire all&#39;applicazione di livello superiore (tramite la libreria AccessEnabler) un set di semplici primitive di adesione con cui implementare i flussi di lavoro di adesione:
+L&#39;obiettivo della `AccessEnabler` è quello di nascondere tutte le complessità dei flussi di lavoro di adesione e di fornire all’applicazione di livello superiore (tramite il `AccessEnabler` library) una serie di semplici primitive di adesione. Questo processo consente di implementare i flussi di lavoro per l’adesione:
 
-1. Imposta l&#39;identità del richiedente
-1. Verifica e ottieni l’autenticazione per un determinato provider di identità
-1. Controllare e ottenere l’autorizzazione per una particolare risorsa
-1. Disconnetti
+1. Imposta l&#39;identità del richiedente.
+1. Verifica e ottieni l’autenticazione per un determinato provider di identità.
+1. Controlla e ottieni l’autorizzazione per una particolare risorsa.
+1. Disconnetti.
 
-L&#39;attività di rete di AccessEnabler si svolge in un thread diverso, pertanto il thread dell&#39;interfaccia utente non viene mai bloccato. Di conseguenza, il canale di comunicazione bidirezionale tra i due domini dell’applicazione deve seguire un modello completamente asincrono:
+Il `AccessEnabler`L’attività di rete di si svolge in un thread diverso, pertanto il thread dell’interfaccia utente non viene mai bloccato. Di conseguenza, il canale di comunicazione bidirezionale tra i due domini dell’applicazione deve seguire un modello completamente asincrono:
 
-- Il livello applicazione dell’interfaccia utente invia messaggi al dominio AccessEnabler tramite le chiamate API esposte dalla libreria AccessEnabler.
-- AccessEnabler risponde al livello dell&#39;interfaccia utente tramite i metodi di callback inclusi nel protocollo AccessEnabler che il livello dell&#39;interfaccia utente registra con la libreria AccessEnabler.
+- Il livello applicazione interfaccia utente invia messaggi al `AccessEnabler` tramite le chiamate API esposte da `AccessEnabler` libreria.
+- Il `AccessEnabler` risponde al livello dell&#39;interfaccia utente tramite i metodi di callback inclusi nel `AccessEnabler` il protocollo registrato dal livello dell’interfaccia utente con il `AccessEnabler` libreria.
 
 ## Flussi di diritti {#entitlement}
 
@@ -50,8 +50,6 @@ L&#39;attività di rete di AccessEnabler si svolge in un thread diverso, pertant
 1. [Flusso di autorizzazione](#authz_flow)
 1. [Visualizza flusso multimediale](#media_flow)
 1. [Flusso di disconnessione](#logout_flow)
-
-
 
 ### A. Prerequisiti {#prereqs}
 
@@ -113,9 +111,9 @@ Il `event` il parametro indica quale evento di adesione si è verificato;il `dat
 1. Avvia l&#39;applicazione di livello superiore.
 1. Avvia l&#39;autenticazione Adobe Pass.
 
-   1. Chiamata [`getInstance`](#$getInstance) per creare una singola istanza di Adobe Pass Authentication AccessEnabler.
+   1. Chiamata [`getInstance`](#$getInstance) per creare una singola istanza dell’autenticazione Adobe Pass `AccessEnabler`.
 
-      - **Dipendenza:** Libreria Amazon FireOS nativa per l’autenticazione di Adobe Pass (AccessEnabler)
+      - **Dipendenza:** Libreria Amazon FireOS nativa per l&#39;autenticazione di Adobe Pass (`AccessEnabler`)
 
    1. Chiamata` setRequestor()` per stabilire l&#39;identificazione del programmatore; passare nel programma `requestorID` e (facoltativamente) un array di endpoint di autenticazione Adobe Pass.
 
@@ -127,8 +125,8 @@ Il `event` il parametro indica quale evento di adesione si è verificato;il `dat
 
    Sono disponibili due opzioni di implementazione: una volta inviate le informazioni di identificazione del richiedente al server backend, il livello applicazione dell’interfaccia utente può scegliere uno dei due approcci seguenti:</p>
 
-   1. Attendi l&#39;attivazione di `setRequestorComplete()` callback (parte del delegato AccessEnabler).  Questa opzione offre la massima certezza che `setRequestor()` è stato completato, quindi è consigliato per la maggior parte delle implementazioni.
-   1. Continua senza attendere l&#39;attivazione di `setRequestorComplete()` richiamata e inizia a emettere richieste di adesione. Queste chiamate (checkAuthentication, checkAuthorization, getAuthentication, getAuthorization, checkPreauthorizedResource, getMetadata, logout) sono in coda dalla libreria AccessEnabler, che effettua le chiamate di rete effettive dopo `setRequestor()`. Questa opzione può talvolta essere interrotta se, ad esempio, la connessione di rete è instabile.
+   1. Attendi l&#39;attivazione di `setRequestorComplete()` callback (parte di `AccessEnabler` delegato).  Questa opzione offre la massima certezza che `setRequestor()` è stato completato, quindi è consigliato per la maggior parte delle implementazioni.
+   1. Continua senza attendere l&#39;attivazione di `setRequestorComplete()` richiamata e inizia a emettere richieste di adesione. Queste chiamate (checkAuthentication, checkAuthorization, getAuthentication, getAuthorization, checkPreauthorizedResource, getMetadata, logout) sono in coda da `AccessEnabler` , che effettua le chiamate di rete effettive dopo il `setRequestor()`. Questa opzione può talvolta essere interrotta se, ad esempio, la connessione di rete è instabile.
 
 1. Chiamata [checkAuthentication()](#$checkAuthN) per verificare la presenza di un&#39;autenticazione esistente senza avviare il flusso di autenticazione completo.  Se la chiamata ha esito positivo, puoi passare direttamente al flusso di autorizzazione.  In caso contrario, passare al flusso di autenticazione.
 
@@ -150,10 +148,10 @@ Il `event` il parametro indica quale evento di adesione si è verificato;il `dat
 
    >[!NOTE]
    >
-   >A questo punto, l’utente ha la possibilità di annullare il flusso di autenticazione. In questo caso, AccessEnabler rimuoverà il proprio stato interno e reimposterà il flusso di autenticazione.
+   >A questo punto, l’utente ha la possibilità di annullare il flusso di autenticazione. In questo caso, il `AccessEnabler` ripulirà il suo stato interno e reimposterà il flusso di autenticazione.
 
-1. Dopo che l&#39;utente avrà effettuato l&#39;accesso, WebView verrà chiuso.
-1. chiamare `getAuthenticationToken(),` che indica ad AccessEnabler di recuperare il token di autenticazione dal server back-end.
+1. Dopo che l&#39;utente avrà eseguito correttamente l&#39;accesso, WebView verrà chiuso.
+1. chiamare `getAuthenticationToken(),` che indica al `AccessEnabler` per recuperare il token di autenticazione dal server back-end.
 1. [Facoltativo] Chiamata [`checkPreauthorizedResources(resources)`](#$checkPreauth) per verificare quali risorse l’utente è autorizzato a visualizzare. Il `resources` Il parametro è un array di risorse protette associate al token di autenticazione dell’utente.
 
    **Trigger:** `preAuthorizedResources()` callback\
@@ -196,6 +194,6 @@ Il `event` il parametro indica quale evento di adesione si è verificato;il `dat
 
 ### F. Flusso di disconnessione {#logout_flow}
 
-1. Chiamata [`logout()`](#$logout) per disconnettere l&#39;utente. AccessEnabler cancella tutti i valori e i token memorizzati nella cache ottenuti dall&#39;utente per l&#39;MVPD corrente su tutti i richiedenti che condividono l&#39;accesso tramite Single Sign-On. Dopo aver cancellato la cache, AccessEnabler effettua una chiamata al server per pulire le sessioni lato server.  Poiché la chiamata al server potrebbe causare un reindirizzamento SAML all’IdP (consentendo la pulizia della sessione sul lato IdP), questa chiamata deve seguire tutti i reindirizzamenti. Per questo motivo, questa chiamata verrà gestita all&#39;interno di un controllo WebView, invisibile per l&#39;utente.
+1. Chiamata [`logout()`](#$logout) per disconnettere l&#39;utente. Il `AccessEnabler` cancella tutti i valori e i token memorizzati in cache ottenuti dall&#39;utente per l&#39;MVPD corrente su tutti i richiedenti che condividono l&#39;accesso tramite Single Sign On. Dopo aver cancellato la cache, il `AccessEnabler` effettua una chiamata al server per pulire le sessioni lato server.  Poiché la chiamata al server potrebbe causare un reindirizzamento SAML all’IdP (consentendo la pulizia della sessione sul lato IdP), questa chiamata deve seguire tutti i reindirizzamenti. Per questo motivo, questa chiamata verrà gestita all&#39;interno di un controllo WebView, invisibile per l&#39;utente.
 
    **Nota:** Il flusso di disconnessione è diverso dal flusso di autenticazione in quanto l&#39;utente non è tenuto a interagire in alcun modo con WebView. È quindi possibile (e consigliato) rendere il controllo WebView invisibile (ovvero nascosto) durante il processo di logout.

@@ -2,7 +2,7 @@
 title: Panoramica dell’SDK per Android
 description: Panoramica dell’SDK per Android
 exl-id: a1d98325-32a1-4881-8635-9a3c38169422
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: 1b8371a314488335c68c82882c930b7c19aa64ad
 workflow-type: tm+mt
 source-wordcount: '2720'
 ht-degree: 0%
@@ -14,9 +14,6 @@ ht-degree: 0%
 >[!NOTE]
 >
 >Il contenuto di questa pagina viene fornito solo a scopo informativo. L’utilizzo di questa API richiede una licenza corrente di Adobe. Non è consentito alcun uso non autorizzato.
-
-</br>
-
 
 ## Introduzione {#intro}
 
@@ -34,8 +31,6 @@ I flussi di lavoro dei client nativi sono in genere identici o molto simili a qu
 - [Flusso di lavoro di autenticazione iniziale generico](#generic)
 - [Flusso di lavoro disconnessione](#logout)
 
-
-
 ### Flusso di lavoro di post-inizializzazione {#post-init}
 
 Tutti i flussi di lavoro relativi ai diritti supportati da AccessEnabler presuppongono che sia stato precedentemente chiamato [`setRequestor()`](#setRequestor) per stabilire la tua identità. Effettua questa chiamata per fornire l&#39;ID richiedente una sola volta, in genere durante la fase di inizializzazione/configurazione dell&#39;applicazione.
@@ -50,8 +45,6 @@ Con i client nativi (ad esempio, Android), dopo la chiamata iniziale a [`setRequ
 - Oppure, fate entrambe le cose.
 
 Sta a te decidere se attendere la notifica del completamento di [`setRequestor()`](#setRequestor) o per utilizzare il meccanismo di coda delle chiamate di AccessEnabler. Poiché tutte le successive richieste di autorizzazione e autenticazione richiedono l’ID richiedente e le informazioni di configurazione associate, [`setRequestor()`](#setRequestor) Il metodo blocca efficacemente tutte le chiamate API di autenticazione e autorizzazione fino al completamento dell’inizializzazione.
-
-
 
 ### Flusso di lavoro di autenticazione iniziale generico {#generic}
 

@@ -2,9 +2,9 @@
 title: Registrazione applicazione Android
 description: Registrazione applicazione Android
 exl-id: 6238bd87-ac97-4a5c-9d92-3631f7b2d46a
-source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
+source-git-commit: 1b8371a314488335c68c82882c930b7c19aa64ad
 workflow-type: tm+mt
-source-wordcount: '598'
+source-wordcount: '585'
 ht-degree: 0%
 
 ---
@@ -17,41 +17,55 @@ ht-degree: 0%
 
 ## Introduzione {#intro}
 
-A partire dalla versione 3.0 dell’SDK per Android AccessEnabler, stiamo modificando il meccanismo di autenticazione con i server di Adobe. Invece di utilizzare una chiave pubblica e un sistema segreto per firmare l’ID richiedente, introduciamo il concetto di una stringa di istruzione Software che può essere utilizzata per ottenere un token di accesso che viene successivamente utilizzato per tutte le chiamate dell’SDK ai nostri server. Oltre a un&#39;informativa sul software, è necessario creare un collegamento profondo per l&#39;applicazione.
+A partire dalla versione 3.0 dell’SDK per Android AccessEnabler, stiamo modificando il meccanismo di autenticazione con i server di Adobe. Invece di utilizzare una chiave pubblica e un sistema segreto per firmare l’ID richiedente, introduciamo il concetto di stringa di informativa software che può essere utilizzata per ottenere un token di accesso che viene successivamente utilizzato per tutte le chiamate dell’SDK ai nostri server. Oltre a una dichiarazione software, è necessario creare un collegamento profondo per l&#39;applicazione.
 
 Per ulteriori informazioni, consulta [Registrazione client dinamici](/help/authentication/dynamic-client-registration.md)
 
 ## Che cos&#39;è una dichiarazione software? {#what}
 
-Un rendiconto software è un token JWT che contiene informazioni sull’applicazione. Ogni applicazione deve disporre di una dichiarazione software univoca utilizzata dai nostri server per identificare l&#39;applicazione nel sistema Adobe. L&#39;istruzione software deve essere passata quando si inizializza l&#39;SDK di AccessEnabler e verrà utilizzata per registrare l&#39;applicazione con Adobe. Al momento della registrazione, l’SDK riceverà un ID client e un segreto client che verranno utilizzati per ottenere un token di accesso. Qualsiasi chiamata effettuata dall&#39;SDK ai nostri server richiederà un token di accesso valido. L’SDK è responsabile della registrazione dell’applicazione, del recupero e dell’aggiornamento del token di accesso.
+Un rendiconto software è un token JWT che contiene informazioni sull’applicazione. Ogni applicazione deve disporre di una dichiarazione software univoca utilizzata dai nostri server per identificare l&#39;applicazione nel sistema Adobe.
+
+L&#39;istruzione software deve essere passata quando si inizializza `AccessEnabler` SDK Viene utilizzato per registrare l’applicazione con Adobe. Al momento della registrazione, l’SDK riceve un ID client e un segreto client, utilizzati per ottenere un token di accesso. Qualsiasi chiamata effettuata dall&#39;SDK ai server Adobe richiede un token di accesso valido. L’SDK è responsabile della registrazione dell’applicazione, del recupero e dell’aggiornamento del token di accesso.
 
 >[!NOTE]
 >
 >Le istruzioni software sono specifiche dell&#39;app e non possono essere utilizzate per più di un&#39;applicazione. Si noti che le istruzioni software a livello di programmatore hanno lo stesso vincolo e possono essere utilizzate solo per una singola applicazione, sia a canale singolo che a più canali.
 
-## Come si ottiene una dichiarazione software? {#how-to-get-ss}
+## Come ottenere una dichiarazione software {#how-to-get-ss}
 
-### Se hai accesso al dashboard TVE di Adobe:
+Di seguito sono riportati alcuni modi per ottenere una dichiarazione software.
 
-* Apri il browser e passa a [Dashboard TVE di Adobe Pass](https://console.auth.adobe.com).
-* Accedi a `Channels` e selezionare il canale.
-* Accedi a `Registered Applications` Tab.
-* Fai clic su `Add new application`.
-* Specifica un nome e una versione per l’applicazione e seleziona le piattaforme su cui sarà disponibile. Android nel nostro caso.
-* Specifica un nome dominio scegliendo un dominio da un elenco già configurato per il programmatore.
-* Invia le modifiche al server e quindi torna alla scheda Applicazioni registrate del canale.
-* Dovresti visualizzare un elenco con tutte le applicazioni registrate. Seleziona la **Scarica** sull&#39;applicazione appena creata. Potrebbe essere necessario attendere alcuni minuti prima che il Software Statement sia pronto per il download.
-* Verrà scaricato un file di testo. Utilizzarne il contenuto come informativa software.
+### Se hai accesso al dashboard TVE di Adobe
+
+1. Apri il browser e passa a [Dashboard TVE di Adobe Pass](https://console.auth.adobe.com).
+
+1. Accedi a **[!UICONTROL Channels]** , quindi seleziona il tuo canale.
+
+1. Accedi a **[!UICONTROL Registered Applications]** scheda.
+
+1. Clic **[!UICONTROL Add new application]**.
+
+1. Assegna un nome all’applicazione e specifica una versione.
+
+1. Seleziona le piattaforme su cui sarà disponibile l’applicazione (Android in questo caso).
+
+1. Fornisci un **[!UICONTROL Domain Name]** scegliendo da un elenco di domini già configurati per il programmatore.
+
+1. Invia le modifiche al server, quindi torna a **[!UICONTROL Registered Applications]** scheda.
+
+   Dovresti visualizzare un elenco con tutte le applicazioni registrate. Seleziona **[!UICONTROL Download]** sull&#39;applicazione creata. Potrebbe essere necessario attendere alcuni minuti prima che il Software Statement sia pronto per il download.
+
+   Viene scaricato un file di testo. Utilizzarne il contenuto come informativa software.
 
 Per ulteriori informazioni, consulta [Gestione registrazione client dinamici](/help/authentication/dynamic-client-registration-management.md)
 
-### Se non hai accesso al dashboard TVE di Adobe:
+### Se non hai accesso alla dashboard TVE di Adobe
 
-Invia un ticket a `tve-support@adobe.com`. Includi tutte le informazioni necessarie come il canale, il nome dell’applicazione, la versione e le piattaforme e qualcuno del nostro team di supporto creerà un rendiconto software per te.
+Invia un ticket a `tve-support@adobe.com`. Includi le informazioni necessarie come canale, nome dell’applicazione, versione e piattaforme. Qualcuno del nostro team di supporto creerà un rendiconto software per te.
 
-## Come utilizzare la dichiarazione software? {#how-to-use-ss}
+## Come utilizzare l&#39;Informativa sul software {#how-to-use-ss}
 
-Dopo aver ottenuto l&#39;Informativa sul software, è necessario trasmetterla come parametro nel costruttore di Access Enabler. Si consiglia di ospitare l&#39;Informativa sul software in una posizione remota. In questo modo, è possibile revocare e modificare facilmente l&#39;informativa sul software senza rilasciare una nuova versione dell&#39;applicazione.
+Dopo aver ottenuto l&#39;Informativa software, è necessario trasmetterla come parametro nel costruttore di Access Enabler. Si consiglia di ospitare l&#39;Informativa sul software in una posizione remota. In questo modo, è possibile revocare e modificare facilmente l&#39;Informativa software senza rilasciare una nuova versione dell&#39;applicazione.
 
 ## Creare e utilizzare un collegamento profondo per l&#39;applicazione {#create}
 
