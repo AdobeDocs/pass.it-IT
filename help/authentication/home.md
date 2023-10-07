@@ -2,9 +2,9 @@
 title: Benvenuto in Adobe&reg; Pass Authentication.
 description: Benvenuto in Adobe&reg; Panoramica su Pass Authentication
 exl-id: a8b01469-3d5f-4a44-9ae8-06a68c29d56d
-source-git-commit: 4eb5fc1eb1eea4c5e27bbee298db4b9b4ba2daef
+source-git-commit: 6699f37915551a19252dc84b6a37cc4565011fd5
 workflow-type: tm+mt
-source-wordcount: '343'
+source-wordcount: '338'
 ht-degree: 0%
 
 ---
@@ -27,13 +27,13 @@ Il tuo feedback è sempre apprezzato!
 
 | **Elementi in primo piano** |
 |-|
-| <ul><li>Single Sign-On per iOS</li><li>[Passaggio temporaneo promozionale](/help/authentication/promotional-temp-pass.md)</li><li>[Autenticazione basata sulla home page (HBA)](/help/authentication/home-based-authn-tve.md)</li><li>[Infografica HBA](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/AdobeNewsletterHBA.pdf)</li><li>[Guida utente di Adobe Pass TVE Dashboard](/help/authentication/tve-dashboard-user-guide.md)</li></ul> |
+| <ul><li>[Single Sign-On per iOS](/help/authentication/apple-sso-overview.md)</li><li>[Passaggio temporaneo promozionale](/help/authentication/promotional-temp-pass.md)</li><li>[Autenticazione basata sulla home page (HBA)](/help/authentication/home-based-authn-tve.md)</li><li>[Infografica HBA](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/AdobeNewsletterHBA.pdf)</li><li>[Guida utente di Adobe Pass TVE Dashboard](/help/authentication/tve-dashboard-user-guide.md)</li></ul> |
 
 | **Per programmatori** | **Per MVPD** |
 |------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
-| <ul><li>[Guida di Kick-Start per programmatori](/help/authentication/programmer-kickstart-guide.md)</li><li>**Selettore MVPD (&quot;selettore&quot;)**</li><li>[Metadati utente](/help/authentication/user-metadata.md)</li></ul> | <ul><li>[Guida introduttiva di MVPD](/help/authentication/mvpd-kickstart-guide.md)</li><li>[Autenticazione](/help/authentication/authn-usecase.md)</li><li>[Autorizzazione](/help/authentication/authz-usecase.md)</li><li>[Disconnetti](/help/authentication/usecase-mvpd-logout.md)</li></ul> |
+| <ul><li>[Guida di Kick-Start per programmatori](/help/authentication/programmer-kickstart-guide.md)</li><li>[Metadati utente](/help/authentication/user-metadata.md)</li></ul> | <ul><li>[Guida introduttiva di MVPD](/help/authentication/mvpd-kickstart-guide.md)</li><li>[Autenticazione](/help/authentication/authn-usecase.md)</li><li>[Autorizzazione](/help/authentication/authz-usecase.md)</li><li>[Disconnetti](/help/authentication/usecase-mvpd-logout.md)</li></ul> |
 | **Per client app nativi** | **Per tutti** |
-| <ul><li>[Panoramica tecnica di iOS](/help/authentication/iostvos-sdk-overview.md)</li><li>[Panoramica tecnica Android](/help/authentication/android-sdk-overview.md)</li></ul> | <ul><li>[Documento tecnico](/help/authentication/technical-paper.md)</li><li>[Procedure di riassegnazione](/help/authentication/escalation-procedures.md)</li><li>**Sistemi supportati**</li><li>[Glossario](/help/authentication/glossary.md)</li></ul> |
+| <ul><li>[Panoramica tecnica di iOS](/help/authentication/iostvos-sdk-overview.md)</li><li>[Panoramica tecnica Android](/help/authentication/android-sdk-overview.md)</li></ul> | <ul><li>[Documento tecnico](/help/authentication/technical-paper.md)</li><li>[Procedure di riassegnazione](/help/authentication/escalation-procedures.md)</li><li>[Glossario](/help/authentication/glossary.md)</li></ul> |
 | **Per Smart Device** | |
 | <ul><li>[Panoramica tecnica senza client](/help/authentication/rest-api-overview.md)</li><li>[API senza client](/help/authentication/rest-api-reference.md)</li></ul> | |
 
