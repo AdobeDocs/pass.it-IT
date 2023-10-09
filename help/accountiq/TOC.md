@@ -2,11 +2,11 @@
 product: adobe primetime
 audience: end-user
 feature: Account IQ
-user-guide-description: La guida di Adobe Pass Account IQ fornisce informazioni sui componenti Account IQ e illustra i percorsi di utenti per l’utilizzo dei vari componenti.
+user-guide-description: La guida della funzione Account IQ di Adobe Pass fornisce informazioni sui componenti Account IQ e illustra i percorsi che gli utenti possono seguire per utilizzare i vari componenti.
 source-git-commit: 2ced89dc1f77d2c090b599c40e778f3054f1a8dd
 workflow-type: tm+mt
 source-wordcount: '142'
-ht-degree: 0%
+ht-degree: 16%
 
 ---
 
