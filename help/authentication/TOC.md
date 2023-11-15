@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Autenticazione Adobe Pass
 user-guide-description: L’autenticazione Adobe Pass è una soluzione di gestione dei diritti per TV Everywhere, che fornisce un framework modulare per determinare se chi richiede l’accesso a una risorsa ne abbia diritto.
-source-git-commit: 05184defb3d912050240be7763ced4ccce6a35ad
+source-git-commit: 68e572797a39327682ea7f491ef2109374fadc2e
 workflow-type: tm+mt
-source-wordcount: '785'
+source-wordcount: '790'
 ht-degree: 4%
 
 ---
@@ -153,6 +153,7 @@ ht-degree: 4%
    + [Monitoraggio di Adobe Pass Adobe PayTV Pass](monitoring-adobe-pay-tv-pass.md)
    + [Requisiti minimi di sistema](minimum-system-requirements.md)
 + Note sulla versione {#release-notes}
+   + [Note sulla versione di Adobe Pass Authentication 2.68](auth-rn-268.md)
    + [Note sulla versione di Adobe Pass Authentication 2.67](auth-rn-267.md)
    + [Note sulla versione di Adobe Pass Authentication 2.66](auth-rn-266.md)
    + [Note sulla versione di Adobe Pass Authentication 2.65.1](auth-rn-2651.md)
