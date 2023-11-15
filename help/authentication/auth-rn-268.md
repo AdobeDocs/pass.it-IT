@@ -1,9 +1,9 @@
 ---
 title: Note sulla versione di Adobe Pass Authentication 2.68
 description: Note sulla versione di Adobe Pass Authentication 2.68
-source-git-commit: 47e663b9bc2044a182abede390aa15c5bf7d2e87
+source-git-commit: 3271a0c31670ba086d1b0d464f4f255d1d311808
 workflow-type: tm+mt
-source-wordcount: '137'
+source-wordcount: '135'
 ht-degree: 0%
 
 ---
@@ -20,7 +20,6 @@ Questa pagina descrive nuove funzioni, modifiche e problemi noti relativi a ques
 
 * [Numero build](#build-number-268)
 * [Nuove funzioni](#new-features-268)
-* [Aggiornamenti MVPD](#mvpd-updates-268)
 * [Correzioni di bug](#bug-fixes-268)
 
 ### Numero build {#build-number-268}
