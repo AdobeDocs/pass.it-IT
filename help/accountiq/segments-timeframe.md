@@ -1,83 +1,72 @@
 ---
-title: Segmenti di Abbonato e intervallo di tempo
+title: Segmenti di Abbonamento e intervallo di tempo
 description: Definisci le coorti o seleziona i segmenti di abbonati per misurare le possibilità e i pattern di condivisione dell’account da parte dei tuoi visualizzatori di canale, per utilizzare strumenti grafici e rapporti in Account IQ.
 exl-id: c38cde37-70d9-486d-b8d0-7c1cbd2baf2e
-source-git-commit: d543bbe972944ad83f4cb28c8a17ea6e10f66975
+source-git-commit: 6b790728f3d6a8eed5dfc0f8b3d0dad283af6418
 workflow-type: tm+mt
-source-wordcount: '289'
+source-wordcount: '346'
 ht-degree: 0%
 
 ---
 
 
-# Segmenti di Abbonato e intervallo di tempo {#cohorts-segments}
+# Segmenti di Abbonamento e intervallo di tempo {#cohorts-segments}
 
-Quando accedi a Account IQ, nella parte superiore è presente un pannello che consente di definire l’abbonato [segmento](/help/accountiq/product-concepts.md#segment-segmet-def) per filtrare i risultati per visualizzare i rapporti relativi al comportamento e ai modelli di condivisione degli abbonati.
 
-<!--![](assets/segment-timeframe-panel.png)-->
+Quando accedi a Account IQ, il pannello di avvio del segmento nella parte superiore ti consente di specificare l’abbonato [segmento](/help/accountiq/product-concepts.md#segment-segmet-def). Questo aiuta a filtrare i risultati quando si visualizzano i rapporti sul comportamento e i modelli di condivisione degli abbonati. Un segmento predefinito denominato - Tutti gli account nelle proprietà è già selezionato e nel modulo di avvio dei segmenti sono visualizzate le seguenti opzioni:
 
-+++Pannello di selezione dei segmenti per programmatore
+![](assets/new-segment-selector-collapsed.png){width="800" align="left"}
 
-![](assets/segment-panel-programmer.png)
+*Figura: Modulo di avvio segmenti con riepilogo dei segmenti compresso*
 
-<!--![](assets/filter-panel.png)-->
+**A** Nome del segmento attualmente selezionato<br/>
+**B** Intervallo di tempo e selettore di granularità<br/>
+**C** Riepilogo segmenti compresso<br/>
+**D** Opzione per espandere il riepilogo dei segmenti<br/>
+**E** Dati del segmento (in termini di numero di account abbonato nel segmento per una durata)<br/>
+**F** Opzione Apri elenco segmenti<br/>
+**G** Opzione Modifica segmento<br/>
+**H** Opzione Crea nuovo segmento<br/>
 
-Per definire i segmenti vengono utilizzate le seguenti opzioni a discesa:
+## Selezione del segmento {#segment-selection}
 
-**[!UICONTROL MVPDs in segment]**
+Per gli utenti programmatori o MVPD, passare alla **Apri segmento** opzione. Scegli un segmento dall’elenco e seleziona **Apri segmento** per visualizzare i rapporti sulla condivisione dell’account.
 
-Il **[!UICONTROL MVPDs in segment]** selettore consente di scegliere [MVPD](/help/accountiq/product-concepts.md#mvpd-def) (singoli utenti o gruppo) per il cui sottoscrittore si desidera visualizzare i rapporti di condivisione dell&#39;account.
+Utilizza il **Occhio** per visualizzare il riepilogo dettagliato dei segmenti, presentando le informazioni sul numero di account abbonato e le richieste di riproduzione da parte loro entro l’intervallo di tempo scelto.
 
-In questo selettore, oltre a selezionare i singoli MVPD, puoi anche selezionare i seguenti gruppi:
++++Pannello di selezione dei segmenti per programmatori/MVPD
 
-* [Primi 10 MVPD condividendo il punteggio](/help/accountiq/product-concepts.md#top-mvpds-def)
+![](assets/segment-panel-programmers-mvpds.png) {width="800" align="left"}
 
-* [Primi 10 MVPD per utilizzo](/help/accountiq/product-concepts.md#top-mvpds-def)
-
-* [Primi 10 MVPD per account](/help/accountiq/product-concepts.md#top-mvpds-def)
-
-* [Modalità isolamento](/help/accountiq/isolation-mode.md)
-
-**[!UICONTROL Channels in segment]**
-
-Dopo aver effettuato l’accesso come utente programmatore, puoi selezionare i canali per visualizzare le analisi di condivisione dell’account. Utilizza il **[!UICONTROL Channels in segment]** per selezionare uno o più canali nell’organizzazione.
+*Figura: Pannello dei segmenti per programmatori/MVPD*
 
 +++
 
-+++Pannello di selezione dei segmenti per MVPD
+Il riepilogo dei segmenti viene utilizzato per definire i seguenti parametri:
 
-![](assets/segment-panel-mvpd.png)
-
-Per definire i segmenti vengono utilizzate le seguenti opzioni a discesa:
+**[!UICONTROL Programmers in segment]**
 
 **[!UICONTROL Channels in segment]**
 
-Il **[!UICONTROL Channels in segment]** selettore consente di restringere ulteriormente il filtro per selezionare i canali corrispondenti agli MVPD selezionati.
+**[!UICONTROL MVPD in segment]**
 
-* [Primi 10 programmatori condividendo il punteggio](/help/accountiq/product-concepts.md#top-mvpds-def)
+**[!UICONTROL Metrics in segment]**
 
-* [Primi 10 programmatori per utilizzo](/help/accountiq/product-concepts.md#top-mvpds-def)
+<!-- The definitions of these parameters will be defined in the glossary article-->
 
-* [Primi 10 programmatori per account](/help/accountiq/product-concepts.md#top-mvpds-def)
+## [!UICONTROL Granularity and time interval] {#granularity-timeinterval}
 
-**MVPD nel segmento**
+Il **[!UICONTROL Granularity and time interval]** Il selettore ti consente di specificare le date e la durata aggregate settimanalmente/mensilmente per osservare il comportamento di condivisione dell’account degli abbonati. La selezione predefinita dell&#39;intervallo di tempo è la settimana corrente, ma è possibile modificare la durata utilizzando le opzioni visualizzate nell&#39;immagine.
 
-Quando si effettua l&#39;accesso come utente MVPD, il proprio nome viene visualizzato nel campo per **[!UICONTROL MVPDs in segment]**.
+![[!UICONTROL Granularity and timeinterval]](assets/granularity-timeinterval-weekwise.png){width="350" align="left"}
 
-+++
+*Figura: finestra di dialogo Granularità e intervallo di tempo*
 
+**A** Scegli una data dal selettore data<br/>
+**B** Selezionare la freccia sinistra per spostarsi all&#39;indietro<br/>
+**C** Selezionare la freccia destra per spostarsi in avanti<br/>
+**D** Seleziona la granularità per settimana/mese<br/>
+**E** Intervallo di tempo selezionato<br/>
 
-
-
-<!--For example, you can define your segment as the "subscribers of the MVPD A that watched the channels X, Y, and Z".-->
-
-
-
-## [!UICONTROL Granularity and time frame] {#granularity-timeframe}
-
-Il **[!UICONTROL Granularity and time frame]** selettore consente di specificare le date, la durata o la dimensione temporale per cui visualizzare il comportamento di condivisione del sottoscrittore.
-
-![[!UICONTROL Granularity and timeframe]](assets/granularity-timeframe-weekwise.png)
-
-Così, con questi controlli è possibile definire la vostra dichiarazione di problema come &quot;abbonati del MVPD A che ha guardato i canali X, Y, e Z nel mese di maggio&quot;.
+Applicando questi controlli puoi definire la tua problematica come &quot;abbonati del MVPD A che hanno guardato i canali X, Y e Z nel mese di ottobre&quot;.
 
