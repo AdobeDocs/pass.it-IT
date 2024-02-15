@@ -1,9 +1,9 @@
 ---
 title: Meccanismo di limitazione
 description: Meccanismo di limitazione
-source-git-commit: 1390c09d3de6b4608cdcc97b3f053cce71e84639
+source-git-commit: cbb45cae576332e2b63027992c597b834210988d
 workflow-type: tm+mt
-source-wordcount: '589'
+source-wordcount: '624'
 ht-degree: 1%
 
 ---
@@ -13,14 +13,14 @@ ht-degree: 1%
 
 ## Introduzione {#introduction}
 
-Ad Adobe, in qualità di responsabile del trattamento dei dati, deve adottare misure adeguate per garantire che gli utenti dei nostri clienti utilizzino equamente le risorse e che il servizio non sia inondato da richieste API non necessarie. Per questo abbiamo messo in atto un meccanismo di limitazione.\
-Un&#39;applicazione di monitoraggio della concorrenza può essere utilizzata da più utenti e un utente può avere più sessioni. Pertanto, il servizio avrà limiti configurati per il numero di chiamate accettate per utente/sessione entro un intervallo di tempo specifico.\
-Una volta raggiunto il limite, le richieste verranno contrassegnate con uno stato di risposta specifico (HTTP 429 - Troppe richieste). Qualsiasi chiamata successiva effettuata dopo aver ricevuto una risposta &quot;429 Troppe richieste&quot; deve essere effettuata con un periodo di arresto di almeno 1 minuto per garantire che venga ricevuta una risposta aziendale valida.
+Ad Adobe, in qualità di responsabile del trattamento dei dati, deve adottare misure adeguate per garantire che gli utenti dei nostri clienti utilizzino equamente le risorse e che il servizio non sia inondato da richieste API non necessarie. Per questo abbiamo messo in atto un meccanismo di limitazione.
+Un&#39;applicazione di monitoraggio della concorrenza può essere utilizzata da più utenti e un utente può avere più sessioni. Pertanto, il servizio avrà limiti configurati per il numero di chiamate accettate per utente/sessione entro un intervallo di tempo specifico.
+Una volta raggiunto il limite, le richieste verranno contrassegnate con uno stato di risposta specifico (HTTP 429 - Troppe richieste). Qualsiasi chiamata successiva effettuata dopo aver ricevuto una risposta &quot;429 Troppe richieste&quot; deve essere effettuata con un periodo di raffreddamento di almeno un minuto per garantire che venga ricevuta una risposta aziendale valida.
 
 ## Panoramica sul meccanismo {#mechanism-overview}
 
 Il meccanismo determina il numero massimo di chiamate accettate per ogni endpoint di monitoraggio della concorrenza entro un intervallo di tempo specifico.
-Una volta raggiunto il numero massimo di chiamate, il nostro servizio risponderà con &quot;429 Troppe richieste&quot;. Il servizio richiede altri 60 secondi per inizializzare di nuovo il limite al suo valore massimo.
+Una volta raggiunto il numero massimo di chiamate, il nostro servizio risponderà con &quot;429 Troppe richieste&quot;. L’intestazione &quot;Scade&quot; della risposta 429 include il timestamp del momento in cui la chiamata successiva verrà considerata valida o il momento in cui scade la limitazione. Al momento, la limitazione scade dopo un minuto dalla prima risposta 429.
 
 Gli endpoint configurati con limitazione sono:
 1. Crea una nuova sessione: POST /session/{idp}/{subject}
@@ -35,7 +35,7 @@ Il limite per la limitazione a livello di sessione è impostato su 200 richieste
 Il limite per la limitazione a livello utente è impostato su 200 richieste in un minuto.\
 Entrambi questi limiti (limitazione a livello di sessione e limitazione a livello di utente) sono configurabili e verranno aggiornati nel caso in cui vengano raggiunti tramite scenari di integrazione validi. Per questo consigliamo di contattare il team di supporto.
 
-Questo è uno scenario per la limitazione a livello di sessione:
+**Scenario per la limitazione a livello di sessione:**
 
 | Ora | Invio richiesta a CM | Numero di richieste | Risposta ricevuta da CM | Spiegazione |
 |-----------|-----------------------------------------|--------------------|------------------------------------------------------------------------------|---------------------------------------------------------------------------------|
@@ -44,7 +44,7 @@ Questo è uno scenario per la limitazione a livello di sessione:
 | Secondo 61 | DELETE/session/idp1/subject1/session1 | 1 | 1 chiamata riceve ‘429 Troppe richieste’ | Nessuna chiamata nel limite ancora disponibile |
 | Secondo 70 | DELETE/session/idp1/subject1/session1 | 1 | 1 chiamata riceve &quot;202 Accepted&quot; (Accettato) | Limite impostato su 200 chiamate disponibili perché sono trascorsi 60 secondi dal secondo 10 |
 
-e uno scenario per la limitazione a livello di utente:
+**Scenario per la limitazione a livello di utente:**
 
 | Ora | Invio richiesta a CM | Numero di richieste | Risposta ricevuta da CM | Spiegazione |
 |-----------|------------------------------|--------------------|------------------------------------------------------------------------------|---------------------------------------------------------------------------------|
@@ -53,8 +53,24 @@ e uno scenario per la limitazione a livello di utente:
 | Secondo 61 | POST/session/idp1/subject1 | 1 | 1 chiamata riceve ‘429 Troppe richieste’ | Nessuna chiamata nel limite ancora disponibile |
 | Secondo 70 | POST/session/idp1/subject1 | 1 | 1 chiamata riceve &quot;202 Accepted&quot; (Accettato) | Limite impostato su 200 chiamate disponibili perché sono trascorsi 60 secondi dal secondo 10 |
 
+**429 Esempio di risposta:**
+
+```
+HTTP/2 429
+date: Thu, 15 Feb 2024 07:54:20 GMT
+content-length: 0
+vary: Origin
+vary: Access-Control-Request-Method
+vary: Access-Control-Request-Headers
+cache-control: no-store
+expires: Thu, 15 Feb 2024 07:54:41 GMT
+strict-transport-security: max-age=31536000 ; includeSubDomains
+x-xss-protection: 1; mode=block
+x-frame-options: DENY
+x-content-type-options: nosniff
+```
 
 ## Consigli per l’integrazione dei clienti {#customer-integration-recommendations}
 
-Se l’implementazione è corretta, i clienti non riceveranno la risposta &quot;429 Troppe richieste&quot;.\
-Tuttavia, Adobe consiglia a ogni cliente di gestire in modo appropriato la risposta &quot;429 Troppe richieste&quot; utilizzando i dettagli tecnici presentati in precedenza.
+Se l’implementazione è corretta, i clienti non riceveranno la risposta &quot;429 Troppe richieste&quot;.
+Tuttavia, Adobe consiglia a ogni cliente di gestire in modo appropriato la risposta &quot;429 Troppe richieste&quot; utilizzando i dettagli tecnici presentati in precedenza. Quando si gestisce la risposta, deve essere utilizzata l’intestazione &quot;Scade&quot; per determinare quando inviare la successiva richiesta valida.
