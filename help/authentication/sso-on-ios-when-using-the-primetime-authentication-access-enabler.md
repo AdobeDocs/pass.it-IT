@@ -2,9 +2,9 @@
 title: SSO su iOS quando si utilizza Adobe Pass Authentication Access Enabler
 description: SSO su iOS quando si utilizza Adobe Pass Authentication Access Enabler
 exl-id: 882f0abb-2e6e-461d-a375-3ab410991935
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: 929d1cc2e0466155b29d1f905f2979c942c9ab8c
 workflow-type: tm+mt
-source-wordcount: '1164'
+source-wordcount: '1121'
 ht-degree: 0%
 
 ---
@@ -38,7 +38,7 @@ Il comportamento SSO è il seguente:
    - **Importante:** Tieni presente che la versione 1.9.4 dell’SDK iOS ha [è stato aumentato il target minimo di implementazione di iOS ad iOS 7.](https://tve.zendesk.com/hc/en-us/articles/204963209-iOS-Native-AccessEnabler-Library)
 - **iOS 7 e versioni successive**: l’SSO funziona nelle seguenti condizioni:
 
-1. Le app vengono pubblicate utilizzando lo stesso profilo di distribuzione Apple o profili che appartengono allo stesso team. Questo è l&#39;unico modo in cui le app possono condividere bacheche personalizzate su iOS 7 e versioni successive. In tutti gli altri scenari, il tavolo di montaggio è in modalità sandbox per applicazione. Da [*https://developer.apple.com/library/IOs/releasenotes/General/RN-iOSSDK-7.0/index.html*](https://developer.apple.com/library/ios/releasenotes/General/RN-iOSSDK-7.0/index.html): \+\[UIPasteboardPasteboardWithName:create:\] e +\[UIPasteboard pasteboardWithUniqueName\] ora assegnano un nome univoco a tutte le app dello stesso gruppo di applicazioni che possono accedere al tavolo di montaggio. Se lo sviluppatore tenta di creare un tavolo di montaggio con un nome che esiste già e non fa parte della stessa suite di app, otterrà il proprio tavolo di montaggio univoco e privato. Tieni presente che questo non influisce sul sistema di pastboard fornito, generale e trova.
+1. Le app vengono pubblicate utilizzando lo stesso profilo di distribuzione Apple o profili che appartengono allo stesso team. Questo è l&#39;unico modo in cui le app possono condividere bacheche personalizzate su iOS 7 e versioni successive. In tutti gli altri scenari, il tavolo di montaggio è in modalità sandbox per applicazione. Da [*https://developer.apple.com/library/IOs/releasenotes/General/RN-iOSSDK-7.0/index.html*](https://developer.apple.com/library/ios/releasenotes/General/RN-iOSSDK-7.0/index.html): \+\[`UIPasteboard pasteboardWithName:create:\`] e +\[`UIPasteboard pasteboardWithUniqueName`\] ora assegna un nome univoco al nome specificato, in modo da consentire solo alle app dello stesso gruppo di applicazioni di accedere al tavolo di montaggio. Se lo sviluppatore tenta di creare un tavolo di montaggio con un nome che esiste già e non fa parte della stessa suite di app, otterrà il proprio tavolo di montaggio univoco e privato. Tieni presente che questo non influisce sul sistema di pastboard fornito, generale e trova.
 
 1. Le app hanno lo stesso prefisso dell’ID bundle (tutti i componenti tranne l’ultimo). Solo le applicazioni che condividono lo stesso prefisso Bundle ID calcoleranno lo stesso valore IDFV. Da [*https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDevice\_Class/index.html\#//apple\_ref/occ/instp/UIDevice/identifierForVendor*](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDevice_Class/index.html#//apple_ref/occ/instp/UIDevice/identifierForVendor): in IOS 7, tutti i componenti del bundle a eccezione dell’ultimo componente vengono utilizzati per generare l’ID fornitore. Se l’ID bundle ha un solo componente, viene utilizzato l’intero ID bundle.
 
