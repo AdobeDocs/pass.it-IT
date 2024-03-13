@@ -2,9 +2,9 @@
 title: Manuale dell’API REST (da client a server)
 description: Client-to-server del manuale API REST.
 exl-id: f54a1eda-47d5-4f02-b343-8cdbc99a73c0
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: ea064031c3a1fee3298d85cf442c40bd4bb56281
 workflow-type: tm+mt
-source-wordcount: '855'
+source-wordcount: '870'
 ht-degree: 0%
 
 ---
@@ -22,6 +22,10 @@ Questo documento fornisce istruzioni dettagliate per il team tecnico di un progr
 
 
 Questo approccio richiede due componenti (streaming app e AuthN app) per completare i flussi richiesti: avvio, registrazione, autorizzazione e flussi view-media nell’app di streaming e il flusso di autenticazione nell’app AuthN.
+
+### Meccanismo di limitazione
+
+L’API REST di autenticazione di Adobe Pass è governata da un [Meccanismo di limitazione](/help/authentication/throttling-mechanism.md).
 
 ## Componenti {#components}
 

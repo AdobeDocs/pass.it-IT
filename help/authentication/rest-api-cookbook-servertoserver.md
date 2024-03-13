@@ -2,9 +2,9 @@
 title: Manuale dell’API REST (server-to-server)
 description: Rest API cookbook server to server.
 exl-id: 36ad4a64-dde8-4a5f-b0fe-64b6c0ddcbee
-source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
+source-git-commit: ea064031c3a1fee3298d85cf442c40bd4bb56281
 workflow-type: tm+mt
-source-wordcount: '1825'
+source-wordcount: '1847'
 ht-degree: 0%
 
 ---
@@ -20,6 +20,9 @@ ht-degree: 0%
 
 Lo scopo di questo documento di manuale è quello di descrivere nel dettaglio le best practice per l’implementazione dell’autenticazione Adobe Pass utilizzando le architetture server-to-server.  Fornisce requisiti di base, implementazione di flusso dettagliata e considerazioni generali sugli ambienti di produzione e sul funzionamento.
 
+### Meccanismo di limitazione
+
+L’API REST di autenticazione di Adobe Pass è governata da un [Meccanismo di limitazione](/help/authentication/throttling-mechanism.md).
 
 
 ## Componenti {#components}

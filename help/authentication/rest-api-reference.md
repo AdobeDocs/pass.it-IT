@@ -2,10 +2,10 @@
 title: Riferimento API REST
 description: Riferimento API REST
 exl-id: 67e4639e-db0b-4400-bb81-e214263e8395
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: ea064031c3a1fee3298d85cf442c40bd4bb56281
 workflow-type: tm+mt
-source-wordcount: '649'
-ht-degree: 4%
+source-wordcount: '641'
+ht-degree: 2%
 
 ---
 
@@ -14,6 +14,10 @@ ht-degree: 4%
 >[!NOTE]
 >
 >Il contenuto di questa pagina viene fornito solo a scopo informativo. L’utilizzo di questa API richiede una licenza corrente di Adobe. Non è consentito alcun uso non autorizzato.
+
+## Meccanismo di limitazione
+
+L’API REST di autenticazione di Adobe Pass è governata da un [Meccanismo di limitazione](/help/authentication/throttling-mechanism.md).
 
 ## Formati di risposta {#response-formats}
 
@@ -60,14 +64,14 @@ La tabella seguente elenca i servizi web disponibili per l’approccio senza cli
 | 8. | [&lt;reggie_fqdn>/reggie/v1/  </br>  {requestorId}/regcode/  </br>  {registrationCode}](/help/authentication/delete-registration-record.md) | Elimina il record del codice reg e rilascia il codice reg per il riutilizzo | 16 | Adobe  </br>Reg Code Service | Autenticazione Adobe Pass |
 | 9. | [&lt;sp_fqdn>/api/v1/authorize](/help/authentication/initiate-authorization.md) | Ottiene la risposta di autorizzazione. | 17 | Adobe Pass  </br>autenticazione  </br>Servizio | Smart Device |
 | 10. | [&lt;sp_fqdn>/api/v1/checkauthn](/help/authentication/check-authentication-token.md) | Indica se il dispositivo ha un token AuthN non scaduto. |     | Adobe Pass  </br>autenticazione  </br>Servizio | Smart Device |
-| 11. | [&lt;sp_fqdn>/api/v1/tokens/authn](/help/authentication/retrieve-authentication-token.md) | Se trovato, restituisce il token AuthN. |     | Adobe Pass  </br>autenticazione  </br>Servizio | Smart Device |
-| 12. | [&lt;sp_fqdn>/api/v1/token/authz](/help/authentication/retrieve-authorization-token.md) | Se trovato, restituisce il token AuthZ. |     | Adobe Pass  </br>autenticazione  </br>Servizio | Smart Device |
-| 13. | [&lt;sp_fqdn>/api/v1/tokens/media](/help/authentication/obtain-short-media-token.md) | Se trovato, restituisce il token multimediale breve: come /api/v1/mediatoken |     | Adobe Pass  </br>autenticazione  </br>Servizio | Smart Device |
-| 14. | [&lt;sp_fqdn>/api/v1/mediatoken](/help/authentication/obtain-short-media-token.md) | Ottiene un token multimediale breve |     | Adobe Pass  </br>autenticazione  </br>Servizio | Smart Device |
-| 15. | [&lt;sp_fqdn>/api/v1/preauthorize](/help/authentication/retrieve-list-of-preauthorized-resources.md) | Recupera l’elenco delle risorse preautorizzate |     | Adobe Pass  </br>autenticazione  </br>Servizio | Smart Device |
-| 16. | [&lt;sp_fqdn>/api/v1/preauthorize/{code}](/help/authentication/retrieve-list-of-preauthorized-resources-by-second-screen-web-app.md) | Recupera l’elenco delle risorse preautorizzate |     | Adobe Pass  </br>autenticazione  </br>Servizio | Accedi all’app web |
-| 17. | [&lt;sp_fqdn>/api/v1/logout](/help/authentication/initiate-logout.md) | Rimuovere i token AuthN e AuthZ dall&#39;archiviazione |     | Adobe Pass  </br>autenticazione   </br>Servizio | Smart Device |
-| 18. | [&lt;sp_fqdn>/api/v1/tokens/usermetadata](/help/authentication/user-metadata.md) | Ottiene i metadati utente al termine del flusso di autenticazione | N/D | N/D | Smart Device |
+| 11 | [&lt;sp_fqdn>/api/v1/tokens/authn](/help/authentication/retrieve-authentication-token.md) | Se trovato, restituisce il token AuthN. |     | Adobe Pass  </br>autenticazione  </br>Servizio | Smart Device |
+| 12 | [&lt;sp_fqdn>/api/v1/token/authz](/help/authentication/retrieve-authorization-token.md) | Se trovato, restituisce il token AuthZ. |     | Adobe Pass  </br>autenticazione  </br>Servizio | Smart Device |
+| 13 | [&lt;sp_fqdn>/api/v1/tokens/media](/help/authentication/obtain-short-media-token.md) | Se trovato, restituisce il token multimediale breve: come /api/v1/mediatoken |     | Adobe Pass  </br>autenticazione  </br>Servizio | Smart Device |
+| 14 | [&lt;sp_fqdn>/api/v1/mediatoken](/help/authentication/obtain-short-media-token.md) | Ottiene un token multimediale breve |     | Adobe Pass  </br>autenticazione  </br>Servizio | Smart Device |
+| 15 | [&lt;sp_fqdn>/api/v1/preauthorize](/help/authentication/retrieve-list-of-preauthorized-resources.md) | Recupera l’elenco delle risorse preautorizzate |     | Adobe Pass  </br>autenticazione  </br>Servizio | Smart Device |
+| 16 | [&lt;sp_fqdn>/api/v1/preauthorize/{code}](/help/authentication/retrieve-list-of-preauthorized-resources-by-second-screen-web-app.md) | Recupera l’elenco delle risorse preautorizzate |     | Adobe Pass  </br>autenticazione  </br>Servizio | Accedi all’app web |
+| 17 | [&lt;sp_fqdn>/api/v1/logout](/help/authentication/initiate-logout.md) | Rimuovere i token AuthN e AuthZ dall&#39;archiviazione |     | Adobe Pass  </br>autenticazione   </br>Servizio | Smart Device |
+| 18 | [&lt;sp_fqdn>/api/v1/tokens/usermetadata](/help/authentication/user-metadata.md) | Ottiene i metadati utente al termine del flusso di autenticazione | N/D | N/D | Smart Device |
 | 19. | [&lt;sp_fqdn>/api/v1/authenticate/freepreview](/help/authentication/free-preview-for-temp-pass-and-promotional-temp-pass.md) | Creare un token di autenticazione per Passaggio temporaneo o Passaggio temporaneo promozionale | N/D | Adobe Pass  </br>autenticazione  </br>Servizio | Smart Device |
 
 

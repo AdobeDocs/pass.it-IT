@@ -2,9 +2,9 @@
 title: Panoramica API REST
 description: Panoramica delle API REST
 exl-id: 5533d852-f644-417e-bf80-6f7aa1edd6b2
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: ea064031c3a1fee3298d85cf442c40bd4bb56281
 workflow-type: tm+mt
-source-wordcount: '1599'
+source-wordcount: '1612'
 ht-degree: 0%
 
 ---
@@ -20,6 +20,9 @@ ht-degree: 0%
 
 L’API REST per l’autenticazione di Adobe Pass fornisce accesso diretto ai servizi di autenticazione e autorizzazione di TV Everywhere (TVE). Questa API supporta due architetture primarie: server-to-server o dispositivi collegati (ad esempio console di giochi, Smart TV, set-top box e così via) applicazioni che non dispongono di funzionalità di esplorazione Web.
 
+### Meccanismo di limitazione
+
+L’API REST di autenticazione di Adobe Pass è governata da un [Meccanismo di limitazione](/help/authentication/throttling-mechanism.md).
 
 
 ### Server-to-Server

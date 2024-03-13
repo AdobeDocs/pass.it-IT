@@ -2,10 +2,10 @@
 title: Elimina record di registrazione
 description: Elimina record di registrazione
 exl-id: 42707070-2e1f-4847-93fd-30025aef56c1
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+source-git-commit: ea064031c3a1fee3298d85cf442c40bd4bb56281
 workflow-type: tm+mt
-source-wordcount: '152'
-ht-degree: 0%
+source-wordcount: '153'
+ht-degree: 1%
 
 ---
 
@@ -14,6 +14,10 @@ ht-degree: 0%
 >[!NOTE]
 >
 >Il contenuto di questa pagina viene fornito solo a scopo informativo. L’utilizzo di questa API richiede una licenza corrente di Adobe. Non è consentito alcun uso non autorizzato.
+
+>[!NOTE]
+>
+> L’implementazione REST API è limitata da [Meccanismo di limitazione](/help/authentication/throttling-mechanism.md)
 
 ## Endpoint REST API {#clientless-endpoints}
 

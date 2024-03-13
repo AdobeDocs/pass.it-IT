@@ -2,9 +2,9 @@
 title: Recupera elenco risorse autorizzate
 description: Recupera elenco risorse autorizzate
 exl-id: 3821378c-bab5-4dc9-abd7-328df4b60cc3
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: ea064031c3a1fee3298d85cf442c40bd4bb56281
 workflow-type: tm+mt
-source-wordcount: '349'
+source-wordcount: '359'
 ht-degree: 0%
 
 ---
@@ -14,6 +14,10 @@ ht-degree: 0%
 >[!NOTE]
 >
 >Il contenuto di questa pagina viene fornito solo a scopo informativo. L’utilizzo di questa API richiede una licenza corrente di Adobe. Non è consentito alcun uso non autorizzato.
+
+>[!NOTE]
+>
+> L’implementazione REST API è limitata da [Meccanismo di limitazione](/help/authentication/throttling-mechanism.md)
 
 ## Endpoint REST API {#clientless-endpoints}
 
