@@ -1,7 +1,7 @@
 ---
 title: Meccanismo di limitazione
 description: Scopri il meccanismo di limitazione utilizzato nell’autenticazione di Adobe Pass. Per una panoramica di questo meccanismo, consulta questa pagina.
-source-git-commit: 036fe2be0981e21e5b82022348cba03dca0b33d3
+source-git-commit: 4f81f39427d87e4274c27d8f1b4bd1eb366d9abb
 workflow-type: tm+mt
 source-wordcount: '987'
 ht-degree: 0%
@@ -34,8 +34,7 @@ L’autenticazione pass si basa sull’identificazione dell’utente e su un alg
 
 ### Meccanismo di identificazione del dispositivo
 
-Il meccanismo di limitazione proposto utilizza i dispositivi identificati singolarmente, con l’aiuto dell’intestazione &quot;X-Forwarded-For&quot;.
-I limiti vengono applicati nello stesso modo per ogni dispositivo.
+Il meccanismo di limitazione proposto utilizza i dispositivi identificati singolarmente, con l’aiuto dell’intestazione &quot;X-Forwarded-For&quot;. I limiti vengono applicati nello stesso modo per ogni dispositivo.
 
 ### Aggiornamenti richiesti
 
@@ -45,8 +44,7 @@ Puoi trovare ulteriori dettagli su come trasmettere l’intestazione X-Forwarded
 
 ### Limiti ed endpoint effettivi
 
-Attualmente, il limite predefinito consente un massimo di 1 richiesta al secondo., con un burst iniziale di 3 richieste (una tantum per la prima interazione del client identificato, che dovrebbe consentire il completamento dell’inizializzazione).
-Questo non dovrebbe influenzare nessun caso di business regolare tra tutti i nostri clienti.
+Attualmente, il limite predefinito consente un massimo di 1 richiesta al secondo., con un burst iniziale di 3 richieste (una tantum per la prima interazione del client identificato, che dovrebbe consentire il completamento dell’inizializzazione). Questo non dovrebbe influenzare nessun caso di business regolare tra tutti i nostri clienti.
 
 Il meccanismo di limitazione verrà attivato sui seguenti endpoint:
 
