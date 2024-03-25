@@ -1,7 +1,7 @@
 ---
 title: Accesso API CMU
 description: Accesso API CMU
-source-git-commit: 30631ac006b7944cb2eb8996c2c165343b6be5fe
+source-git-commit: 598eb878168f6e352a8eae369cbc8cb833033328
 workflow-type: tm+mt
 source-wordcount: '407'
 ht-degree: 0%
@@ -16,8 +16,7 @@ ht-degree: 0%
 
 ## Panoramica sulla procedura di accesso {#api-access-procedure-overview}
 
-Abbiamo aggiornato l’accesso ai rapporti CMU per renderli compatibili con il protocollo di registrazione client dinamico OAuth 2.0.
-Un server di autorizzazione OAuth 2.0 personalizzato viene distribuito per soddisfare le esigenze dell&#39;applicazione di monitoraggio della concorrenza. \
+Abbiamo aggiornato l’accesso ai rapporti CMU per renderli compatibili con il protocollo di registrazione client dinamico OAuth 2.0. Un server di autorizzazione OAuth 2.0 personalizzato viene distribuito per soddisfare le esigenze dell&#39;applicazione di monitoraggio della concorrenza. \
 Affinché le applicazioni client possano utilizzare l&#39;autorizzazione OAuth 2.0, il server deve registrarsi in modo dinamico per ottenere informazioni specifiche (credenziali client) per poter interagire con essa. Come parte del processo di registrazione, il client deve presentare un set di metadati incorporati all’endpoint di registrazione del client.
 Questi metadati vengono comunicati come un&#39;istruzione software, che contiene un &quot;software_id&quot; per consentire al nostro server di autorizzazione di correlare diverse istanze di un&#39;applicazione utilizzando la stessa istruzione software.
 Un’istruzione software è un JSON Web Token (JWT) che asserisce i valori dei metadati del software client come bundle. Quando viene presentata al server di autorizzazione come parte di una richiesta di registrazione client, l&#39;istruzione software deve essere firmata digitalmente o MACed utilizzando la firma Web JSON (JWS). \
@@ -28,7 +27,7 @@ Per ottenere l’accesso, segui i passaggi descritti nelle sezioni seguenti.
 
 1. Avere un&#39;applicazione registrata nel server Adobe Pass DCR. Per questo passaggio, contatta il [Team di supporto](mailto:tve-support@adobe.com).
 2. Ottieni il rendiconto del software
-   1. Passa a dashboard TVE <a href="https://console-preprod.auth.adobe.com/#!/" target="_blank"> Pre-produzione </a> o <a href="https://console.auth.adobe.com/" target="_blank">PROD</a>
+   1. Passa a dashboard TVE <a href="https://console-preprod.auth.adobe.com/#!/" target="_blank"> Pre-produzione </a>  o <a href="https://console.auth.adobe.com/" target="_blank">PROD</a>
    2. Seleziona programmatore
    3. Vai alla scheda Applicazioni
    4. Seleziona applicazione
