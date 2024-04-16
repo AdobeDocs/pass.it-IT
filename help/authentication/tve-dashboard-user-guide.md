@@ -2,9 +2,9 @@
 title: Guida utente di Primetime TVE Dashboard
 description: Guida utente di Primetime TVE Dashboard
 exl-id: 6f7f7901-db3a-4c68-ac6a-27082db9240a
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: c6afb9b080ffe36344d7a3d658450e9be767be61
 workflow-type: tm+mt
-source-wordcount: '4386'
+source-wordcount: '4377'
 ht-degree: 0%
 
 ---
@@ -60,6 +60,7 @@ Per passare da un ambiente all’altro, l’utente può fare clic sull’ambient
 *Figura 2: menu a discesa degli ambienti della dashboard di Adobe Pass TVE*
 
 >[!IMPORTANT]
+>
 >È molto importante notare che quando si apportano modifiche amministrative alla configurazione di autenticazione di Adobe Pass tramite la dashboard TVE, si consiglia vivamente di seguire la sequenza seguente per garantire la funzionalità corretta.
 
 Per apportare modifiche amministrative alla configurazione dell’autenticazione Adobe Pass tramite il dashboard TVE:
@@ -69,6 +70,7 @@ Per apportare modifiche amministrative alla configurazione dell’autenticazione
 * Eseguire le modifiche in [Rilasciare la produzione e convalidarla](http://sp.auth-staging.adobe.com/apitest/api.html).
 
 >[!IMPORTANT]
+>
 >Affinché le modifiche amministrative diventino effettive, gli utenti devono passare alla sezione &quot;Revisione e push delle modifiche&quot; selezionando il pulsante, che verrà visualizzato nella parte inferiore sinistra della barra laterale, per rivedere le modifiche, aggiungere una descrizione per le modifiche appena create e confermare l’aggiornamento della configurazione selezionando &quot;Configurazione push&quot;.
 
 ![Revisione di una notifica push tramite Tve Dashboard](assets/tve-review-push-notifications.png)

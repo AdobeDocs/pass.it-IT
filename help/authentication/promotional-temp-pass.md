@@ -2,9 +2,9 @@
 title: Passaggio temporaneo promozionale
 description: Passaggio temporaneo promozionale
 exl-id: 705c1ba9-0430-4e3b-add1-d9e4da3f82d1
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: c88fba76b1805dd88fccb68b13bde11b1b8ea181
 workflow-type: tm+mt
-source-wordcount: '1529'
+source-wordcount: '1510'
 ht-degree: 0%
 
 ---
@@ -74,7 +74,7 @@ Per facilitare l&#39;attuazione dell&#39;applicazione del programmatore, è nece
 
 ### Come viene calcolato il tempo di visualizzazione? {#compute-viewing-time}
 
-Il tempo di validità di un passaggio temporaneo non è correlato al tempo di visualizzazione del contenuto nell&#39;applicazione del programmatore. Al momento della richiesta iniziale di autorizzazione da parte dell’utente tramite Passaggio temporaneo promozionale, viene calcolato un tempo di scadenza aggiungendo il tempo della richiesta corrente iniziale al TTL (intervallo di tempo della durata) specificato dal programmatore.
+Il tempo di validità di un passaggio temporaneo non è correlato al tempo di visualizzazione del contenuto nell&#39;applicazione del programmatore. Alla richiesta iniziale di autorizzazione da parte dell&#39;utente tramite Passaggio temporaneo promozionale, viene calcolato un tempo di scadenza aggiungendo il tempo della richiesta corrente iniziale al TTL (intervallo di tempo durata) specificato dal programmatore.
 
 ### Autenticazione e autorizzazione {#authn-authz}
 

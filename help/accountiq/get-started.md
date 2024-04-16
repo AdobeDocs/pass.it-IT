@@ -2,9 +2,9 @@
 title: Introduzione a [!UICONTROL Account IQ]
 description: Scopri l’onboarding, i prerequisiti e come iniziare a utilizzare [!UICONTROL Account IQ].
 exl-id: 840ab081-0073-492f-86b2-ba174ae93256
-source-git-commit: 3e5bcee38151c88d3538cdbdbf2d07010be929cd
+source-git-commit: a7a37ffea0169a302890ee50b2e2202ddf58d021
 workflow-type: tm+mt
-source-wordcount: '214'
+source-wordcount: '209'
 ht-degree: 0%
 
 ---
@@ -27,7 +27,7 @@ ht-degree: 0%
 
 1. Assegna utenti organizzazione a **[!UICONTROL TVE Dashboard Read-Write]** o **[!UICONTROL TVE Dashboard Read Only]** profili in [Adobe Admin Console](https://adminconsole.adobe.com/).
 
-   Gli utenti amministratore della tua organizzazione possono creare utenti e concedere loro l’accesso a [!UICONTROL Account IQ Dashboard and Reports]. Per concedere agli utenti dell&#39;organizzazione l&#39;accesso a [!UICONTROL Account I]D, gli amministratori dell’organizzazione devono:
+   Gli utenti amministratore della tua organizzazione possono creare utenti e concedere loro l’accesso a [!UICONTROL Account IQ Dashboard and Reports]. Per concedere agli utenti dell&#39;organizzazione l&#39;accesso a [!UICONTROL Account IQ], gli amministratori dell’organizzazione devono:
 
    1. Accedi a [Adobe Admin Console](https://adminconsole.adobe.com/).
 
