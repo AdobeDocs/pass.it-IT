@@ -1,7 +1,8 @@
 ---
 title: Utilizzare i segmenti
 description: Informazioni e utilizzo dei segmenti. Scopri come creare e gestire un segmento.
-source-git-commit: cfcaa00ab05c99a64bcb0edfe5af60845a6769a9
+exl-id: 01431437-55f5-464d-8ee4-7a79ec553e4f
+source-git-commit: 38402b411dd4fad3490115cff1854faa7f3cb293
 workflow-type: tm+mt
 source-wordcount: '1970'
 ht-degree: 0%
@@ -40,7 +41,7 @@ Servizi +++D2C
 
 Per creare un segmento e analizzare il comportamento di condivisione del sottoscrittore, seleziona **[!UICONTROL Create new segment]** in alto a destra.
 
-![Seleziona Crea nuovo segmento](assets/d2c-create-new-segment.png)
+![Seleziona Crea nuovo segmento](assets/create-new-segment-d2c.png)
 
 *Seleziona Crea nuovo segmento*
 
@@ -220,7 +221,7 @@ Puoi selezionare un segmento dallâ€™elenco dei segmenti ed eseguire le azioni se
 
 *Seleziona un segmento da modificare, duplicare o eliminare*
 
-**R.** [Categorie video](product-concepts.md#video-category-def) **B.** [Segmento predefinito](#work-with-segments)
+**R.** [Segmento predefinito](#work-with-segments) **B.** [Categorie video](product-concepts.md#video-category-def)
 
 >[!NOTE]
 >
@@ -278,5 +279,3 @@ Una copia del segmento selezionato viene generata e posizionata alla fine dellâ€
    >[!NOTE]
    >
    >Il segmento viene eliminato definitivamente dal sistema e non puoi annullare questa azione.
-
-
