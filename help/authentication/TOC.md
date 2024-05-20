@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Autenticazione Adobe Pass
 user-guide-description: L’autenticazione Adobe Pass è una soluzione di gestione dei diritti per TV Everywhere, che fornisce un framework modulare per determinare se chi richiede l’accesso a una risorsa ne abbia diritto.
-source-git-commit: 30e2507c0622b882744cf8291525c388575df32f
+source-git-commit: 26236fbd4b2d5703bcf99fc0cc5e0460e75ed185
 workflow-type: tm+mt
-source-wordcount: '936'
+source-wordcount: '957'
 ht-degree: 3%
 
 ---
@@ -221,4 +221,16 @@ ht-degree: 3%
    + Concetti {#concepts}
       + [Informazioni sugli ID utente](understanding-user-ids.md)
 + [Guida utente di TVE Dashboard](tve-dashboard-user-guide.md)
++ Nuova guida utente di TVE Dashboard {#user-guide}
+   + [Panoramica del dashboard di TVE](/help/authentication/tve-dashboard-overview.md)
+   + [Ambienti](/help/authentication/tve-dashboard-environments.md)
+   + [Revisione e invio di modifiche](/help/authentication/tve-dashboard-review-push-changes.md)
+   + [Dashboard](/help/authentication/tve-dashboard-home.md)
+   + [Canali](/help/authentication/tve-dashboard-channels.md)
+   + [Programmatori](/help/authentication/tve-dashboard-programmers.md)
+   + [MVPD](/help/authentication/tve-dashboard-mvpds.md)
+   + [Integrazioni](/help/authentication/tve-dashboard-integrations.md)
+   + [Rapporti](/help/authentication/tve-dashboard-reports.md)
+   + [Registro delle modifiche](/help/authentication/tve-dashboard-changes-log.md)
 + [Glossario](glossary.md)
+
