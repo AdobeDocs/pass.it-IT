@@ -1,13 +1,13 @@
 ---
 title: Panoramica API
 description: Panoramica API del monitoraggio della concorrenza
-source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
+exl-id: eb232926-9c68-4874-b76d-4c458d059f0d
+source-git-commit: dd370b231acc08ea0544c0dedaa1bdb0683e378f
 workflow-type: tm+mt
-source-wordcount: '1425'
+source-wordcount: '1556'
 ht-degree: 0%
 
 ---
-
 
 # Panoramica API {#api-overview}
 
@@ -101,6 +101,24 @@ Utilizza per la chiamata gli stessi parametri utilizzati per l’heartbeat di se
 * 202 ACCETTATO per una risposta corretta
 * 410 GONE se la sessione era già stata interrotta.
 
+#### Ottieni tutti i flussi in esecuzione {#get-all-running-streams}
+
+Questo endpoint offre tutte le sessioni attualmente in esecuzione per un tenant specifico in tutte le relative applicazioni. Utilizzare **oggetto** e **idp** parametri per la chiamata:
+
+![](assets/get-all-running-streams-parameters.png)
+
+Quando effettui la chiamata riceverai la seguente risposta:
+
+![](assets/get-all-running-streams-success.png)
+
+Tieni presente la **Scade** intestazione. Questo è il momento in cui la prima sessione deve scadere a meno che non venga inviato un heartbeat. OtherStreams ha il valore 0 perché non ci sono altri flussi in esecuzione per questo utente sulle applicazioni di altri tenant.
+Nel campo metadati verranno inseriti tutti i metadati inviati all’avvio della sessione. Non lo filtriamo, riceverai tutto quello che hai inviato.
+Se non sono presenti sessioni in esecuzione per un utente specifico quando effettui la chiamata, riceverai questa risposta:
+
+![](assets/get-all-running-streams-empty.png)
+
+Si noti inoltre che in questo caso **Scade** l’intestazione non è presente.
+
 #### Interruzione del criterio {#breaking-policy-app-first}
 
 
@@ -157,4 +175,3 @@ Per interrompere la regola presente nel criterio assegnato a questa applicazione
 Se utilizziamo valori diversi per i metadati del canale ogni volta che creiamo una nuova sessione, tutte le chiamate avranno esito positivo perché la soglia di 2 ha come ambito ogni singolo valore.
 
 Come nel primo esempio, possiamo utilizzare il codice di terminazione per interrompere in remoto i flussi in conflitto o possiamo aspettare che uno dei flussi scada, supponendo che non verrà operato alcun heartbeat su di essi.
-
