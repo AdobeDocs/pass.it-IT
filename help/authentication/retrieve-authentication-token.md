@@ -2,9 +2,9 @@
 title: Recupera token di autenticazione
 description: Recupera token di autenticazione
 exl-id: 7fb03854-edad-41e7-b218-1858fc071876
-source-git-commit: ea064031c3a1fee3298d85cf442c40bd4bb56281
+source-git-commit: 1ad2a4e75cd64755ccbde8f3b208148b7d990d82
 workflow-type: tm+mt
-source-wordcount: '264'
+source-wordcount: '274'
 ht-degree: 0%
 
 ---
@@ -17,16 +17,16 @@ ht-degree: 0%
 
 >[!NOTE]
 >
-> L’implementazione REST API è limitata da [Meccanismo di limitazione](/help/authentication/throttling-mechanism.md)
+> L&#39;implementazione REST API è limitata dal [meccanismo di limitazione](/help/authentication/throttling-mechanism.md)
 
 ## Endpoint REST API {#clientless-endpoints}
 
-&lt;reggie_fqdn>:
+&lt;FQDN_REGGIE>:
 
 * Produzione - [api.auth.adobe.com](http://api.auth.adobe.com/)
 * Staging - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
-&lt;sp_fqdn>:
+&lt;SP_FQDN>:
 
 * Produzione - [api.auth.adobe.com](http://api.auth.adobe.com/)
 * Staging - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
@@ -37,9 +37,9 @@ ht-degree: 0%
 
 Recupera il token di autenticazione (AuthN).
 
-| Endpoint | Chiamato  </br>Da | Input   </br>Parametri | HTTP  </br>Metodo | Risposta | HTTP  </br>Risposta |
+| Endpoint | Chiamato </br> da | Input   </br>Parametri | Metodo HTTP </br> | Risposta | HTTP </br>Risposta |
 | --- | --- | --- | --- | --- | --- |
-| &lt;sp_fqdn>/api/v1/tokens/authn</br></br>Ad esempio:</br></br>&lt;sp_fqdn>/api/v1/tokens/authn | App di streaming</br></br>o</br></br>Servizio programmatore | 1. richiedente (obbligatorio)</br>2.  deviceId (obbligatorio)</br>3.  device_info/X-Device-Info (Obbligatorio)</br>4.  _deviceType_ (obsoleto)</br>5.  _deviceUser_ (Obsoleto)</br>6.  _appId_ (Obsoleto) | GET | XML o JSON contenente informazioni di autenticazione o dettagli sull’errore in caso di esito negativo. | 200 - Operazione completata.  </br>404 - Token non trovato  </br>410 - Token scaduto |
+| &lt;SP_FQDN>/api/v1/tokens/authn</br></br>Esempio:</br></br>&lt;SP_FQDN>/api/v1/tokens/authn | Servizio programmatore </br></br>o</br></br>app in streaming | 1. richiedente (obbligatorio)</br>2.  deviceId (obbligatorio)</br>3.  device_info/X-Device-Info (obbligatorio)</br>4.  _deviceType_ (obsoleto)</br>5.  _deviceUser_ (obsoleto)</br>6.  _appId_ (obsoleto) | GET | XML o JSON contenente informazioni di autenticazione o dettagli sull’errore in caso di esito negativo. | 200 - Operazione completata.  </br>404 - Token non trovato </br>410 - Token scaduto |
 
 {style="table-layout:auto"}
 
@@ -48,10 +48,10 @@ Recupera il token di autenticazione (AuthN).
 | --- | --- |
 | richiedente | ID richiedente del programmatore per il quale è valida questa operazione. |
 | deviceId | Byte ID dispositivo. |
-| device_info/</br></br>X-Device-Info | Informazioni sul dispositivo di streaming.</br></br>**Nota**: questo PUÒ essere trasmesso device_info come parametro URL, ma a causa delle dimensioni potenziali del parametro e delle limitazioni alla lunghezza di un URL GET, DEVE essere trasmesso come X-Device-Info nell’intestazione http. </br></br><!--See the full details in [Passing Device and Connection Information](http://tve.helpdocsonline.com/passing-device-information)-->. |
-| _deviceType_ | Il tipo di dispositivo (ad esempio, Roku, PC).</br></br>**Nota**: device_info sostituisce questo parametro. |
-| _deviceUser_ | L’identificatore utente del dispositivo.</br></br>**Nota**: se utilizzato, deviceUser deve avere gli stessi valori di [Crea codice di registrazione](/help/authentication/registration-code-request.md) richiesta. |
-| _appId_ | ID/nome dell’applicazione. </br></br>**Nota**: device_info sostituisce questo parametro. Se utilizzato, `appId` deve avere gli stessi valori di [Crea codice di registrazione](/help/authentication/registration-code-request.md) richiesta. |
+| device_info/</br></br>X-Device-Info | Informazioni sul dispositivo di streaming.</br></br>**Nota**: questo parametro POTREBBE essere trasmesso come parametro URL_device, ma a causa delle dimensioni potenziali del parametro e delle limitazioni alla lunghezza di un URL di GET, DOVREBBE essere trasmesso come X-Device-Info nell&#39;intestazione http. </br></br>Visualizza tutti i dettagli in [Trasmissione delle informazioni sul dispositivo e sulla connessione](/help/authentication/passing-client-information-device-connection-and-application.md). |
+| _tipoDispositivo_ | Il tipo di dispositivo (ad esempio, Roku, PC).</br></br>**Nota**: device_info sostituisce questo parametro. |
+| _utenteDispositivo_ | L’identificatore utente del dispositivo.</br></br>**Nota**: se utilizzato, deviceUser deve avere gli stessi valori della richiesta [Crea codice di registrazione](/help/authentication/registration-code-request.md). |
+| _appId_ | ID/nome dell’applicazione. </br></br>**Nota**: device_info sostituisce questo parametro. Se utilizzato, `appId` deve avere gli stessi valori della richiesta [Crea codice di registrazione](/help/authentication/registration-code-request.md). |
 
 {style="table-layout:auto"}
 
