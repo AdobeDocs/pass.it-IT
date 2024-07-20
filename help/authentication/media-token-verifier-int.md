@@ -4,7 +4,7 @@ description: Integrazione di Media Token Verifier
 exl-id: 1688889a-2e30-4d66-96ff-1ddf4b287f68
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '918'
+source-wordcount: '887'
 ht-degree: 0%
 
 ---
@@ -17,16 +17,16 @@ ht-degree: 0%
 
 ## Informazioni su Media Token Verifier {#about-media-token-verifier}
 
-Quando l’autorizzazione ha esito positivo, Adobe Pass Authentication crea un token di autorizzazione a lunga durata (AuthZ).  Il token AuthZ viene passato al lato client o memorizzato sul lato server, a seconda della piattaforma del client.  (vedere [Informazioni sui token](/help/authentication/programmer-overview.md#understanding-tokens) per informazioni su come i token vengono memorizzati su sistemi client diversi, insieme ad altri dettagli.)
+Quando l’autorizzazione ha esito positivo, Adobe Pass Authentication crea un token di autorizzazione a lunga durata (AuthZ).  Il token AuthZ viene passato al lato client o memorizzato sul lato server, a seconda della piattaforma del client.  (Vedi [Informazioni sui token](/help/authentication/programmer-overview.md#understanding-tokens) per informazioni su come i token vengono memorizzati in sistemi client diversi, oltre ad altri dettagli.)
 
 
-Un token AuthZ autorizza l’utente del sito a visualizzare una determinata risorsa.  Ha un TTL (time-to-live) tipico di 6-24 ore, dopo la scadenza del token. **Per l’accesso effettivo alla visualizzazione, l’autenticazione Adobe Pass utilizza il token AuthZ per generare un token multimediale di breve durata che ottieni e trasmetti al server multimediale**. Questi token multimediali di breve durata hanno un TTL molto breve (in genere, pochi minuti).
+Un token AuthZ autorizza l’utente del sito a visualizzare una determinata risorsa.  Ha un TTL (time-to-live) tipico di 6-24 ore, dopo la scadenza del token. **Per l&#39;accesso effettivo alla visualizzazione, l&#39;autenticazione Adobe Pass utilizza il token AuthZ per generare un token multimediale di breve durata che si ottiene e si passa al server multimediale**. Questi token multimediali di breve durata hanno un TTL molto breve (in genere, pochi minuti).
 
 
-Nelle integrazioni AccessEnabler, puoi ottenere il token multimediale di breve durata tramite `setToken()` callback. Per le integrazioni API senza client, ottieni il token Media di breve durata con `<SP_FQDN>/api/v1/tokens/media` Chiamata API. Il token è una stringa inviata in testo non crittografato, firmata da un Adobe, che utilizza la protezione del token basata su PKI (Public Key Infrastructure). Con questa protezione basata su PKI, il token viene firmato utilizzando una chiave asimmetrica, rilasciata all&#39;Adobe da un&#39;autorità di certificazione.
+Nelle integrazioni AccessEnabler, si ottiene il token multimediale di breve durata tramite il callback `setToken()`. Per le integrazioni API senza client, si ottiene il token Media di breve durata con la chiamata API `<SP_FQDN>/api/v1/tokens/media`. Il token è una stringa inviata in testo non crittografato, firmata da un Adobe, che utilizza la protezione del token basata su PKI (Public Key Infrastructure). Con questa protezione basata su PKI, il token viene firmato utilizzando una chiave asimmetrica, rilasciata all&#39;Adobe da un&#39;autorità di certificazione.
 
 
-Poiché non esiste alcuna convalida sul lato client per il token, un utente malintenzionato potrebbe utilizzare gli strumenti per inserire false `setToken()` chiamate. Quindi tu **non può** si basa semplicemente sul fatto che `setToken()` è stato attivato quando si valuta se un utente è autorizzato o meno. Devi verificare che il token di breve durata sia legittimo. Lo strumento per eseguire la convalida è la libreria Media Token Verifier.
+Poiché non è presente alcuna convalida sul lato client per il token, un utente malintenzionato potrebbe utilizzare gli strumenti per inserire chiamate `setToken()` false. Pertanto, **impossibile** basarsi semplicemente sul fatto che `setToken()` è stato attivato, quando si considera se un utente è autorizzato o meno. Devi verificare che il token di breve durata sia legittimo. Lo strumento per eseguire la convalida è la libreria Media Token Verifier.
 
 
 >[!TIP]
@@ -39,15 +39,15 @@ Poiché non esiste alcuna convalida sul lato client per il token, un utente mali
 
 
 
-Il [Libreria di verificatori token multimediali](https://adobeprimetime.zendesk.com/auth/v2/login/signin?return_to=https%3A%2F%2Ftve.zendesk.com%2Fhc%2Fen-us%2Farticles%2F204963159-Media-Token-Verifier-library&amp;theme=hc&amp;locale=en-us&amp;brand_id=343429&amp;auth_origin=343429%2Cfalse%2Ctrue){target=_blank} è disponibile per i partner di autenticazione di Adobe Pass.
+La [Libreria di verifica dei token multimediali](https://adobeprimetime.zendesk.com/auth/v2/login/signin?return_to=https%3A%2F%2Ftve.zendesk.com%2Fhc%2Fen-us%2Farticles%2F204963159-Media-Token-Verifier-library&amp;theme=hc&amp;locale=en-us&amp;brand_id=343429&amp;auth_origin=343429%2Cfalse%2Ctrue){target=_blank} è disponibile per i partner di autenticazione Adobe Pass.
 
 
 
-La libreria Media Token Verifier è contenuta nell’archivio Java `mediatoken-verifier-VERSION.jar`. La libreria definisce:
+La libreria Media Token Verifier è contenuta nell&#39;archivio Java `mediatoken-verifier-VERSION.jar`. La libreria definisce:
 
-* Un&#39;API per la verifica del token (`ITokenVerifier` ), con documentazione JavaDoc
+* Un&#39;API per la verifica dei token (interfaccia `ITokenVerifier`), con documentazione JavaDoc
 * Chiave pubblica di Adobe utilizzata per verificare che il token provenga effettivamente da Adobe
-* Un&#39;implementazione di riferimento (`com.adobe.entitlement.test.EntitlementVerifierTest.java`) che mostra come utilizzare l’API del verificatore e come utilizzare la chiave pubblica di Adobe contenuta nella libreria per verificarne l’origine
+* Un&#39;implementazione di riferimento (`com.adobe.entitlement.test.EntitlementVerifierTest.java`) che mostra come utilizzare l&#39;API del verificatore e come utilizzare la chiave pubblica di Adobe contenuta nella libreria per verificarne l&#39;origine
 
 
 L’archivio contiene tutte le dipendenze e i keystore di certificati. La password predefinita per il registro chiavi del certificato incluso è &quot;123456&quot;.
@@ -56,24 +56,24 @@ L’archivio contiene tutte le dipendenze e i keystore di certificati. La passwo
 * Utilizza il provider JCE preferito per l’algoritmo di firma &quot;SHA256WithRSA&quot;.
 
 
-**La libreria del verificatore deve essere l’unico mezzo utilizzato per analizzare il contenuto del token. I programmatori non devono analizzare il token ed estrarre i dati stessi, perché il formato del token non è garantito ed è soggetto a modifiche future.** Solo l’API del verificatore funziona correttamente. L’analisi diretta della stringa potrebbe funzionare temporaneamente, ma causare problemi in futuro, quando il formato potrebbe cambiare. L’API del verificatore recupera informazioni dal token, ad esempio:
+**La libreria del verificatore deve essere l&#39;unico mezzo utilizzato per analizzare il contenuto del token. I programmatori non devono analizzare il token ed estrarre i dati stessi, perché il formato del token non è garantito ed è soggetto a modifiche future.** Solo l&#39;API del verificatore può funzionare correttamente. L’analisi diretta della stringa potrebbe funzionare temporaneamente, ma causare problemi in futuro, quando il formato potrebbe cambiare. L’API del verificatore recupera informazioni dal token, ad esempio:
 
-* Il token è valido (il `isValid()` metodo)?
-* L’ID risorsa associato al token (il `getResourceID()` , che può essere confrontato con (e deve corrispondere) l&#39;altro parametro del `setToken()` callback di funzione. Se non corrisponde, potrebbe indicare un comportamento fraudolento.
-* Ora di emissione del token (`getTimeIssued()` metodo).
-* TTL (`getTimeToLive()` metodo).
-* GUID di autenticazione anonima ricevuto da MVPD (`getUserSessionGUID()` metodo).
+* Il token è valido (metodo `isValid()`)?
+* ID risorsa associato al token (metodo `getResourceID()`). È possibile confrontare questo ID con (e deve corrispondere) l&#39;altro parametro del callback della funzione `setToken()`. Se non corrisponde, potrebbe indicare un comportamento fraudolento.
+* Ora di emissione del token (metodo `getTimeIssued()`).
+* Il metodo TTL (`getTimeToLive()`).
+* GUID di autenticazione anonima ricevuto da MVPD (metodo `getUserSessionGUID()`).
 * ID del distributore che ha autenticato l’utente e, se è il caso, proxy-MVPD che ha fornito l’autenticazione per il distributore.
 
 ## Utilizzo dell’API di verifica {#using-verifier-api}
 
-Il `ITokenVerifier` la classe definisce i metodi utilizzati per convalidare l’autenticità del token per una determinata risorsa. Utilizza il `ITokenVerifier` metodi per analizzare un token ricevuto in risposta a un `setToken()` richiesta.
+La classe `ITokenVerifier` definisce i metodi utilizzati per convalidare l&#39;autenticità del token per una determinata risorsa. Utilizzare i metodi `ITokenVerifier` per analizzare un token ricevuto in risposta a una richiesta `setToken()`.
 
 
-Il `isValid()` Il metodo è il metodo principale per convalidare un token. Richiede un argomento, un ID risorsa. Se trasmetti un ID risorsa nullo, il metodo convalida solo l’autenticità del token e il periodo di validità.
+Il metodo `isValid()` è il mezzo principale per convalidare un token. Richiede un argomento, un ID risorsa. Se trasmetti un ID risorsa nullo, il metodo convalida solo l’autenticità del token e il periodo di validità.
 
 
-Il `isValid()` il metodo restituisce uno dei seguenti valori di stato:
+Il metodo `isValid()` restituisce uno dei seguenti valori di stato:
 
 
 
@@ -87,16 +87,16 @@ Il `isValid()` il metodo restituisce uno dei seguenti valori di stato:
 
 I metodi aggiuntivi forniscono un accesso specifico all’ID risorsa, al tempo di emissione e al time-to-live di un determinato token.
 
-* Utilizzare `getResourceID()` per recuperare l’ID risorsa associato al token e confrontarlo con l’ID restituito dalla richiesta setToken().
-* Utilizzare `getTimeIssued()` per recuperare l’ora di emissione del token.
-* Utilizzare `getTimeToLive()` per recuperare il TTL.
+* Utilizza `getResourceID()` per recuperare l’ID risorsa associato al token e confrontarlo con l’ID restituito dalla richiesta setToken().
+* Utilizzare `getTimeIssued()` per recuperare l&#39;ora di emissione del token.
+* Utilizza `getTimeToLive()` per recuperare il TTL.
 * Utilizzare `getUserSessionGUID()` per recuperare un GUID anonimo impostato da MVPD.
 * Utilizzare `getMvpdId()` per recuperare l&#39;ID del MVPD che ha autenticato l&#39;utente.
 * Utilizzare `getProxyMvpdId()` per recuperare l&#39;ID del Proxy MVPD che ha autenticato l&#39;utente.
 
 ## Codice di esempio {#sample-code}
 
-L’archivio Media Token Verifier contiene un’implementazione di riferimento (`com.adobe.entitlement.test.EntitlementVerifierTest.java`) e un esempio di chiamata dell’API con la classe di test. Questo esempio (`com.adobe.entitlement.text.EntitlementVerifierTest.java`) illustra l’integrazione della libreria di verifica dei token in un server multimediale.
+L&#39;archivio Media Token Verifier contiene un&#39;implementazione di riferimento (`com.adobe.entitlement.test.EntitlementVerifierTest.java`) e un esempio di chiamata dell&#39;API con la classe di test. In questo esempio (`com.adobe.entitlement.text.EntitlementVerifierTest.java`) viene illustrata l&#39;integrazione della libreria di verifica dei token in un server multimediale.
 
 
 ```Java

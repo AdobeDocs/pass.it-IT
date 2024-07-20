@@ -1,9 +1,10 @@
 ---
 title: Ripristina passaggio temporaneo
 description: Ripristina passaggio temporaneo
-source-git-commit: 4ae0b17eff2dfcf0aaa5d11129dfd60743f6b467
+exl-id: ab39e444-eab2-4338-8d09-352a1d5135b6
+source-git-commit: 28d432891b7d7855e83830f775164973e81241fc
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '439'
 ht-degree: 0%
 
 ---
@@ -16,21 +17,21 @@ ht-degree: 0%
 >
 >Per utilizzare l’API Reset Temp Pass, è necessario:
 >- chiedere al team di supporto un rendiconto software per l&#39;applicazione registrata
->- ottenere un token di accesso basato su [Registrazione client dinamici](dynamic-client-registration.md)
+>- ottenere un token di accesso basato su [Registrazione client dinamica](dynamic-client-registration.md)
 > 
 
-Per **reimpostare un valore Temp Pass specifico**, l’autenticazione Adobe Pass fornisce ai programmatori un *pubblico* API web:
+Per **reimpostare un passaggio temporaneo specifico**, l&#39;autenticazione Adobe Pass fornisce ai programmatori un&#39;API Web *public*:
 
-- **Ambiente:** specifica l&#39;endpoint Adobe del server di pass Pay-TV che riceverà la chiamata di rete Reset Temp Pass. Valori possibili: **Prequal** (*mgmt-prequal.auth.adobe.com*), **Versione** (*mgmt.auth.adobe.com*) o **Personalizzato** (riservato ad Adobe ai test interni).
-- **Token di accesso OAuth2:** il token OAuth2 è necessario per autorizzare il programmatore, ad Adobe per l’autenticazione a pagamento. Tale token può essere ottenuto da [Registrazione client dinamici](dynamic-client-registration.md).
-- **ID passaggio temporaneo:** l’ID univoco dell’MVPD di passaggio temporaneo da reimpostare.(un programmatore può utilizzare più MVPD Temp Pass e vuole reimpostare uno specifico)
-- **Chiave generica:** alcuni MVPD di Temp Pass (ad es. [Passaggio temporaneo promozionale](promotional-temp-pass.md)).
+- **Ambiente:** specifica l&#39;endpoint Adobe del server di passaggio PayTV che riceverà la chiamata di rete per reimpostare il passaggio Temp. Valori possibili: **Prequal** (*mgmt-prequal.auth.adobe.com*), **Release** (*mgmt.auth.adobe.com*) o **Custom** (riservati, ad Adobe, ai test interni).
+- **Token di accesso OAuth2:** il token OAuth2 è necessario per autorizzare il programmatore, ad Adobe per l&#39;autenticazione a pagamento. Tale token può essere ottenuto da [Registrazione client dinamica](dynamic-client-registration.md).
+- **ID passaggio temporaneo:** l&#39;ID univoco per l&#39;MVPD del passaggio temporaneo da reimpostare.(un programmatore può utilizzare più MVPD Temp Pass e vuole reimpostare uno specifico)
+- **Chiave generica:** alcuni MVPD di passaggio temporaneo (ovvero [Passaggio temporaneo promozionale](promotional-temp-pass.md)).
 
-Tutti i parametri di cui sopra (ad eccezione di *Chiave generica*) sono obbligatori. Ecco un esempio di parametri e la chiamata di rete associata (l&#39;esempio è sotto forma di un comando *curl *):
+Tutti i parametri di cui sopra (ad eccezione della *chiave generica*) sono obbligatori. Ecco un esempio di parametri e la chiamata di rete associata (l&#39;esempio è sotto forma di un comando *curl *):
 
 - **Ambiente:** Versione (*mgmt.auth.adobe.com*)
-- **Token di accesso OAuth2:** &lt;access_token> da [Registrazione client dinamici](dynamic-client-registration.md)
-- **ID programmatore:** RIF
+- **Token di accesso OAuth2:** &lt;token di accesso> da [Registrazione client dinamica](dynamic-client-registration.md)
+- **ID programmatore:** REF
 - **ID passaggio temporaneo:** TempPassREF
 - **Chiave generica:** null (nessun valore specificato)
 
@@ -38,11 +39,14 @@ Tutti i parametri di cui sopra (ad eccezione di *Chiave generica*) sono obbligat
 curl -X DELETE -H "Authorization:Bearer <access_token_here>" "https://mgmt.auth.adobe.com/reset-tempass/v3/reset?device_id=f23804a37802993fdc8e28a7f244dfe088b6a9ea21457670728e6731fa639991&requestor_id=REF&mvpd_id=TempPassREF"
 ```
 
-verrà effettuata una richiesta HTTP di DELETE al **/reset** endpoint, passaggio di *Token di accesso OAuth2* nell’intestazione Autorizzazione e nella sezione *ID dispositivo*, *ID richiedente* e *ID passaggio temporaneo (ID MVPD)* come parametri.
+verrà effettuata una richiesta HTTP DELETE all&#39;endpoint **/reset**, passando il *Token di accesso OAuth2* nell&#39;intestazione Autorizzazione e il *ID dispositivo*, *ID richiedente* e *ID passaggio temporaneo (ID MVPD)* come parametri.
 
-Se il programmatore fornisce un valore per *Chiave generica*, verrà eseguita un&#39;altra chiamata HTTP (questa volta al **/reset/generic** endpoint), passando il *Chiave generica* all&#39;interno del *chiave* parametro di richiesta.
+Se il programmatore fornisce un valore per la *chiave generica*, verrà eseguita un&#39;altra chiamata HTTP (questa volta all&#39;endpoint **/reset/generic**), passando la *chiave generica* nel parametro della richiesta *chiave*.
 
-Ad esempio, impostando *Chiave generica* a un hash di indirizzo e-mail (per gli MVPD che supportano questo tipo di funzionalità) genererà la seguente chiamata HTTP (l’e-mail è `user@domain.com` il relativo hash SHA-256 è `f7ee5ec7312165148b69fcca1d29075b14b8aef0b5048a332b18b88d09069fb7`):
+Ad esempio, impostando la *chiave generica* su un hash di indirizzo di posta elettronica (per
+I file MVPD con passaggio temporaneo che supportano questo tipo di funzionalità) produrranno
+seguente chiamata HTTP (l&#39;e-mail è `user@domain.com` il relativo SHA-256
+hash `f7ee5ec7312165148b69fcca1d29075b14b8aef0b5048a332b18b88d09069fb7`):
 
 ```curl
 curl -X DELETE -H "Authorization:Bearer <access_token_here>"
@@ -50,7 +54,7 @@ curl -X DELETE -H "Authorization:Bearer <access_token_here>"
 ```
 
 
-Per **reimpostare un passaggio temporaneo specifico per tutti i dispositivi**, l’autenticazione Adobe Pass fornisce ai programmatori un *pubblico* API web:
+Per **reimpostare un passaggio temporaneo specifico per tutti i dispositivi**, l&#39;autenticazione Adobe Pass fornisce ai programmatori un&#39;API Web *pubblica*:
 
 ```url
 DELETE https://mgmt.auth.adobe.com/reset-tempass/v3/reset

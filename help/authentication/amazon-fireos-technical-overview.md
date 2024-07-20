@@ -4,7 +4,7 @@ description: Panoramica tecnica di Amazon FireOS
 exl-id: 939683ee-0dd9-42ab-9fde-8686d2dc0cd0
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '2154'
+source-wordcount: '2166'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 0%
 
 ## Introduzione {#intro}
 
-Amazon FireOS AccessEnabler è rappresentato da due componenti: una libreria stub AccessEnabler utilizzata dall’applicazione e una libreria Java Android a livello di sistema che consente alle app mobili di utilizzare l’autenticazione Adobe Pass per i servizi di adesione di TV Everywhere. Un’implementazione Android per Amazon FireOS è costituita dall’interfaccia AccessEnabler che definisce l’API di adesione e da un protocollo EntitlementDelegate che descrive i callback attivati dalla libreria. La libreria Android AccessEnabler a livello di sistema consente l’accesso ai servizi Amazon per abilitare Single Sing On a livello di piattaforma.
+Amazon FireOS AccessEnabler è rappresentato da due componenti: una libreria stub AccessEnabler utilizzata dall’applicazione e una libreria Java Android a livello di sistema che consente alle app mobili di utilizzare l’autenticazione Adobe Pass per i servizi di adesione di TV Everywhere. Un’implementazione di Android per Amazon FireOS è costituita dall’interfaccia AccessEnabler che definisce l’API di adesione e da un protocollo EntitlementDelegate che descrive i callback attivati dalla libreria. La libreria Android AccessEnabler a livello di sistema consente l’accesso ai servizi Amazon per abilitare Single Sing On a livello di piattaforma.
 
 ## Flussi di lavoro dei client nativi {#native_client_workflows}
 
@@ -28,15 +28,15 @@ I flussi di lavoro dei client nativi sono in genere identici o molto simili a qu
 
 ### Flusso di lavoro di post-inizializzazione {#post-init}
 
-Tutti i flussi di lavoro relativi ai diritti supportati da AccessEnabler presuppongono che sia stato precedentemente chiamato [`setRequestor()`](#setRequestor) per stabilire la tua identità. Effettua questa chiamata per fornire l&#39;ID richiedente una sola volta, in genere durante la fase di inizializzazione/configurazione dell&#39;applicazione.
+Tutti i flussi di lavoro relativi ai diritti supportati da AccessEnabler presuppongono che in precedenza sia stato chiamato [`setRequestor()`](#setRequestor) per stabilire l&#39;identità. Effettua questa chiamata per fornire l&#39;ID richiedente una sola volta, in genere durante la fase di inizializzazione/configurazione dell&#39;applicazione.
 
 Con i client nativi (ad esempio, AmazonFireOS), dopo la chiamata iniziale a [`setRequestor()`](#setRequestor), puoi scegliere come procedere:
 
 - Puoi iniziare a effettuare immediatamente le chiamate di adesione e, se necessario, metterle in coda in modo invisibile all’utente.
-- In alternativa, puoi ricevere una conferma del successo/fallimento di [`setRequestor()`](#setRequestor) implementando il callback setRequestorComplete().
+- In alternativa, è possibile ricevere una conferma dell&#39;esito positivo/negativo di [`setRequestor()`](#setRequestor) implementando il callback setRequestorComplete().
 - Oppure, fate entrambe le cose.
 
-Sta a te decidere se attendere la notifica del completamento di [`setRequestor()`](#setRequestor) o per utilizzare il meccanismo di coda delle chiamate di AccessEnabler. Poiché tutte le successive richieste di autorizzazione e autenticazione richiedono l’ID richiedente e le informazioni di configurazione associate, [`setRequestor()`](#setRequestor) Il metodo blocca efficacemente tutte le chiamate API di autenticazione e autorizzazione fino al completamento dell’inizializzazione.
+Sta a te decidere se attendere la notifica del completamento di [`setRequestor()`](#setRequestor) o affidarti al meccanismo di coda delle chiamate di AccessEnabler. Poiché tutte le richieste di autorizzazione e autenticazione successive richiedono l&#39;ID richiedente e le informazioni di configurazione associate, il metodo [`setRequestor()`](#setRequestor) blocca in modo efficace tutte le chiamate API di autenticazione e autorizzazione fino al completamento dell&#39;inizializzazione.
 
 ### Flusso di lavoro di autenticazione iniziale generico {#generic}
 
@@ -44,20 +44,20 @@ Lo scopo di questo flusso di lavoro è quello di accedere a un utente con il pro
 
 Sebbene il seguente flusso di lavoro client nativo sia diverso dal flusso di lavoro di autenticazione tipico basato su browser, i passaggi da 1 a 5 sono gli stessi sia per i client nativi che per i client basati su browser:
 
-1. La pagina o il lettore avvia il flusso di lavoro di autenticazione con una chiamata a [getAuthentication()](#getAuthN), che verifica la presenza di un token di autenticazione nella cache valido. Questo metodo ha un `redirectURL` parametro; se non si specifica un valore per `redirectURL`, dopo una corretta autenticazione, l&#39;utente viene riportato all&#39;URL da cui è stata inizializzata l&#39;autenticazione.
-1. AccessEnabler determina lo stato di autenticazione corrente. Se l&#39;utente è attualmente autenticato, AccessEnabler chiama il `setAuthenticationStatus()` funzione di callback, il passaggio di uno stato di autenticazione che indica il successo (passaggio 7 di seguito).
-1. Se l&#39;utente non è autenticato, AccessEnabler continua il flusso di autenticazione determinando se l&#39;ultimo tentativo di autenticazione dell&#39;utente è stato eseguito correttamente con un determinato MVPD. Se un ID MVPD è memorizzato nella cache E il `canAuthenticate` il flag è true OPPURE è stato selezionato un MVPD utilizzando [`setSelectedProvider()`](#setSelectedProvider), all’utente non viene richiesta la finestra di dialogo per selezione MVPD. Il flusso di autenticazione continua a utilizzare il valore memorizzato nella cache di MVPD (ovvero lo stesso MVPD utilizzato durante l’ultima autenticazione riuscita). Viene effettuata una chiamata di rete al server backend e l’utente viene reindirizzato alla pagina di accesso MVPD (passaggio 6 di seguito).
-1. Se non è stato selezionato alcun ID MVPD nella cache E non è stato selezionato alcun MVPD utilizzando [`setSelectedProvider()`](#setSelectedProvider) OPPURE `canAuthenticate` è impostato su false, il [`displayProviderDialog()`](#displayProviderDialog) chiamata di callback. Questo callback indirizza la pagina o il lettore a creare l’interfaccia utente che presenta all’utente un elenco di MVPD tra cui scegliere. Viene fornito un array di oggetti MVPD, contenente le informazioni necessarie per creare il selettore MVPD. Ogni oggetto MVPD descrive un&#39;entità MVPD e contiene informazioni quali l&#39;ID MVPD (ad esempio, XFINITY, AT\&amp;T, ecc.) e l’URL in cui è possibile trovare il logo MVPD.
-1. Una volta selezionato un MVPD specifico, la pagina o il lettore devono informare AccessEnabler della scelta dell&#39;utente. Per i client non di Flash, una volta che l&#39;utente seleziona il MVPD desiderato, si informa AccessEnabler della selezione dell&#39;utente tramite una chiamata al [`setSelectedProvider()`](#setSelectedProvider) metodo. i client di Flash invece inviano un `MVPDEvent` di tipo &quot;`mvpdSelection`&quot;, passando il provider selezionato.
-1. Per le applicazioni Amazon, il [`navigateToUrl()`](#navigagteToUrl) il callback verrà ignorato. La libreria Access Enabler facilita l&#39;accesso a un controllo WebView comune per l&#39;autenticazione degli utenti.
-1. Attraverso il `WebView`, l’utente arriva alla pagina di accesso di MVPD e inserisce le proprie credenziali. Durante questo trasferimento si verificano diverse operazioni di reindirizzamento.
-1. Una volta completata l&#39;autenticazione, WebView si chiude e comunica all&#39;AccessEnabler che l&#39;accesso è stato eseguito correttamente, AccessEnabler recupera il token di autenticazione effettivo dal server back-end. AccessEnabler chiama [`setAuthenticationStatus()`](#setAuthNStatus) callback con codice di stato 1, che indica l&#39;esito positivo. Se si verifica un errore durante l&#39;esecuzione di questi passaggi, il [`setAuthenticationStatus()`](#setAuthNStatus) il callback viene attivato con un codice di stato pari a 0, insieme a un codice di errore corrispondente, che indica che l’utente non è autenticato.
+1. La pagina o il lettore avvia il flusso di lavoro di autenticazione con una chiamata a [getAuthentication()](#getAuthN), che verifica la presenza di un token di autenticazione nella cache valido. Questo metodo ha un parametro facoltativo `redirectURL`; se non si specifica un valore per `redirectURL`, dopo una corretta autenticazione l&#39;utente viene restituito all&#39;URL da cui è stata inizializzata l&#39;autenticazione.
+1. AccessEnabler determina lo stato di autenticazione corrente. Se l&#39;utente è attualmente autenticato, AccessEnabler chiama la funzione di callback `setAuthenticationStatus()`, passando uno stato di autenticazione che indica il completamento (passaggio 7 di seguito).
+1. Se l&#39;utente non è autenticato, AccessEnabler continua il flusso di autenticazione determinando se l&#39;ultimo tentativo di autenticazione dell&#39;utente è stato eseguito correttamente con un determinato MVPD. Se un ID MVPD è memorizzato nella cache E il flag `canAuthenticate` è true OPPURE è stato selezionato un MVPD utilizzando [`setSelectedProvider()`](#setSelectedProvider), all&#39;utente non viene visualizzata la finestra di dialogo di selezione MVPD. Il flusso di autenticazione continua a utilizzare il valore memorizzato nella cache di MVPD (ovvero lo stesso MVPD utilizzato durante l’ultima autenticazione riuscita). Viene effettuata una chiamata di rete al server backend e l’utente viene reindirizzato alla pagina di accesso MVPD (passaggio 6 di seguito).
+1. Se non è stato selezionato alcun ID MVPD nella cache E non è stato selezionato alcun MVPD utilizzando [`setSelectedProvider()`](#setSelectedProvider) OPPURE il flag `canAuthenticate` è impostato su false, viene chiamato il callback [`displayProviderDialog()`](#displayProviderDialog). Questo callback indirizza la pagina o il lettore a creare l’interfaccia utente che presenta all’utente un elenco di MVPD tra cui scegliere. Viene fornito un array di oggetti MVPD, contenente le informazioni necessarie per creare il selettore MVPD. Ogni oggetto MVPD descrive un&#39;entità MVPD e contiene informazioni quali l&#39;ID MVPD (ad esempio, XFINITY, AT\&amp;T, ecc.) e l’URL in cui è possibile trovare il logo MVPD.
+1. Una volta selezionato un MVPD specifico, la pagina o il lettore devono informare AccessEnabler della scelta dell&#39;utente. Per i client non di Flash, una volta selezionato il MVPD desiderato, si informa AccessEnabler della selezione utente tramite una chiamata al metodo [`setSelectedProvider()`](#setSelectedProvider). I client di Flash inviano invece un `MVPDEvent` condiviso di tipo &quot;`mvpdSelection`&quot;, passando il provider selezionato.
+1. Per le applicazioni Amazon, il callback [`navigateToUrl()`](#navigagteToUrl) verrà ignorato. La libreria Access Enabler facilita l&#39;accesso a un controllo WebView comune per l&#39;autenticazione degli utenti.
+1. Tramite `WebView`, l&#39;utente arriva alla pagina di accesso di MVPD e immette le proprie credenziali. Durante questo trasferimento si verificano diverse operazioni di reindirizzamento.
+1. Una volta completata l&#39;autenticazione, WebView si chiude e comunica all&#39;AccessEnabler che l&#39;accesso è stato eseguito correttamente, AccessEnabler recupera il token di autenticazione effettivo dal server back-end. AccessEnabler chiama il callback [`setAuthenticationStatus()`](#setAuthNStatus) con il codice di stato 1, che indica l&#39;esito positivo. Se si verifica un errore durante l&#39;esecuzione di questi passaggi, il callback [`setAuthenticationStatus()`](#setAuthNStatus) viene attivato con il codice di stato 0, insieme al codice di errore corrispondente, a indicare che l&#39;utente non è autenticato.
 
 ### Flusso di lavoro disconnessione {#logout}
 
-Per i client nativi, i loghi vengono gestiti in modo simile al processo di autenticazione descritto in precedenza. In base a questo modello, AccessEnabler creerà un `WebView` e caricherà il controllo con l’URL dell’endpoint di disconnessione sul server backend. Una volta completato il processo di logout, i token vengono cancellati.
+Per i client nativi, i loghi vengono gestiti in modo simile al processo di autenticazione descritto in precedenza. Seguendo questo modello, AccessEnabler creerà un controllo `WebView` e lo caricherà con l&#39;URL dell&#39;endpoint di disconnessione sul server back-end. Una volta completato il processo di logout, i token vengono cancellati.
 
-Si noti che il flusso di disconnessione differisce dal flusso di autenticazione in quanto l&#39;utente non è tenuto a interagire con `WebView` in qualsiasi modo. Al termine della disconnessione, AccessEnabler chiama `setAuthenticationStatus()` callback con codice di stato 0, che indica che l’utente non è autenticato.
+Si noti che il flusso di disconnessione differisce dal flusso di autenticazione in quanto l&#39;utente non è tenuto a interagire in alcun modo con `WebView`. Al termine della disconnessione, AccessEnabler chiama il callback `setAuthenticationStatus()` con il codice di stato 0, a indicare che l&#39;utente non è autenticato.
 
 ## Token {#tokens}
 
@@ -70,8 +70,8 @@ I token hanno una durata limitata; alla scadenza, è necessario riemettere i tok
 Esistono tre tipi di token rilasciati durante i flussi di lavoro di adesione:
 
 - **Token di autenticazione** - Il risultato finale del flusso di lavoro di autenticazione utente sarà un GUID di autenticazione che AccessEnabler può utilizzare per eseguire query di autorizzazione per conto dell&#39;utente. A questo GUID di autenticazione verrà associato un valore TTL (time-to-live) che potrebbe essere diverso dalla sessione di autenticazione dell&#39;utente. L’autenticazione di Adobe Pass genera un token di autenticazione associando il GUID di autenticazione alla periferica che avvia le richieste di autenticazione.
-- **Token di autorizzazione** - Consente l&#39;accesso a una risorsa protetta specifica identificata da un `resourceID`. Si tratta di una concessione di autorizzazione rilasciata dalla parte autorizzatrice insieme all&#39;originale `resourceID`. Queste informazioni sono associate al dispositivo che avvia la richiesta.
-- **Token multimediale di breve durata** : AccessEnabler concede l’accesso all’applicazione di hosting per una determinata risorsa restituendo un Media Token di breve durata. Questo token viene generato in base al token di autorizzazione ottenuto in precedenza per quella specifica risorsa. Inoltre, questo token non è associato al dispositivo e la durata associata è significativamente più breve (impostazione predefinita: 5 minuti).
+- **Token di autorizzazione** - Consente l&#39;accesso a una risorsa protetta specifica identificata da un `resourceID` univoco. Consiste in una concessione di autorizzazione rilasciata dalla parte autorizzatrice insieme all&#39;originale `resourceID`. Queste informazioni sono associate al dispositivo che avvia la richiesta.
+- **Token multimediale di breve durata** - AccessEnabler concede l&#39;accesso all&#39;applicazione di hosting per una determinata risorsa restituendo un token multimediale di breve durata. Questo token viene generato in base al token di autorizzazione ottenuto in precedenza per quella specifica risorsa. Inoltre, questo token non è associato al dispositivo e la durata associata è significativamente più breve (impostazione predefinita: 5 minuti).
 
 In caso di autenticazione e autorizzazione corrette, l’autenticazione Adobe Pass rilascia l’autenticazione, l’autorizzazione e i token multimediali di breve durata. Questi token devono essere memorizzati nella cache del dispositivo dell’utente e utilizzati per la durata della vita associata.
 
@@ -80,7 +80,7 @@ In caso di autenticazione e autorizzazione corrette, l’autenticazione Adobe Pa
 
 #### Token di autenticazione
 
-- **AccessEnabler 1.10.1 per FireOS** è basato su AccessEnabler per Android 1.9.1 - Questo SDK introduce un nuovo metodo di archiviazione dei token, abilitando più bucket Programmer-MVPD e, quindi, più token di autenticazione.
+- **AccessEnabler 1.10.1 per FireOS** è basato su AccessEnabler per Android 1.9.1. Questo SDK introduce un nuovo metodo di archiviazione dei token, abilitando più bucket Programmer-MVPD e quindi più token di autenticazione.
 
 #### Token di autorizzazione
 
@@ -94,7 +94,7 @@ Il token multimediale di breve durata NON deve essere memorizzato nella cache. I
 
 I token devono essere persistenti su esecuzioni consecutive della stessa applicazione. Ciò significa che una volta acquisiti i token di autenticazione e autorizzazione e che l’utente chiude l’applicazione, gli stessi token sono disponibili per l’applicazione quando l’utente riapre l’applicazione. Inoltre, è auspicabile che tali token siano persistenti in più applicazioni. In altre parole, dopo che un utente utilizza un’applicazione per accedere con un provider di identità specifico (ottenendo con successo i token di autenticazione e autorizzazione), gli stessi token possono essere utilizzati tramite un’applicazione diversa e all’utente non vengono più richieste le credenziali quando esegue l’accesso tramite lo stesso provider di identità.
 
-Questo tipo di flusso di lavoro di autenticazione/autorizzazione senza soluzione di continuità è ciò che rende la soluzione di autenticazione Adobe Pass una vera implementazione TV-Everywhere. Dal punto di vista puramente tecnico, la libreria Android AccessEnabler risolve i problemi di condivisione dei dati tra le applicazioni memorizzando i dati del token in un file di database che si trova sull’archiviazione esterna. Queste risorse condivise a livello di sistema forniscono gli ingredienti chiave che consentono l’implementazione del caso d’uso dei token persistenti desiderati:
+Questo tipo di flusso di lavoro di autenticazione/autorizzazione senza soluzione di continuità è ciò che rende la soluzione di autenticazione Adobe Pass una vera implementazione TV-Everywhere. Dal punto di vista puramente tecnico, la libreria Android AccessEnabler risolve i problemi di condivisione dei dati tra le applicazioni memorizzando i dati del token in un file di database che si trova nell’archiviazione esterna. Queste risorse condivise a livello di sistema forniscono gli ingredienti chiave che consentono l’implementazione del caso d’uso dei token persistenti desiderati:
 
 - Supporto per l’archiviazione strutturata: l’archiviazione dei token di autenticazione Adobe Pass non è solo una semplice struttura lineare di memoria simile a un buffer. Fornisce un meccanismo di archiviazione simile al dizionario che consente l’indicizzazione dei dati in base a valori chiave specificati dall’utente.
 - Supporto per la persistenza dei dati utilizzando il file system sottostante: per impostazione predefinita, il contenuto del file di database viene mantenuto e i dati vengono salvati nella memoria esterna del dispositivo.
@@ -176,7 +176,7 @@ L’elenco seguente presenta il formato del token multimediale breve.  Questo to
 
 #### Binding dispositivo {#device_binding}
 
-Negli elenchi XML riportati sopra, prendere nota del tag intitolato `simpleTokenFingerprint`. Lo scopo di questo tag è quello di contenere le informazioni di personalizzazione degli ID dispositivo nativi. La libreria AccessEnabler è in grado di ottenere tali informazioni di personalizzazione e di renderle disponibili ai servizi di autenticazione di Adobe Pass durante le chiamate di adesione. Il servizio utilizzerà queste informazioni e le incorporerà nei token effettivi, associando quindi in modo efficace i token a un dispositivo specifico. L’obiettivo finale è quello di rendere i token non trasferibili tra i dispositivi.
+Negli elenchi XML riportati sopra, prendere nota del tag con titolo `simpleTokenFingerprint`. Lo scopo di questo tag è quello di contenere le informazioni di personalizzazione degli ID dispositivo nativi. La libreria AccessEnabler è in grado di ottenere tali informazioni di personalizzazione e di renderle disponibili ai servizi di autenticazione di Adobe Pass durante le chiamate di adesione. Il servizio utilizzerà queste informazioni e le incorporerà nei token effettivi, associando quindi in modo efficace i token a un dispositivo specifico. L’obiettivo finale è quello di rendere i token non trasferibili tra i dispositivi.
 
 Negli elenchi XML riportati sopra, si noti il tag simpleTokenFingerprint. Lo scopo di questo tag è quello di contenere le informazioni di personalizzazione degli ID dispositivo nativi. La libreria AccessEnabler è in grado di ottenere tali informazioni di personalizzazione e di renderle disponibili ai servizi di autenticazione di Adobe Pass durante le chiamate di adesione. Il servizio utilizzerà queste informazioni e le incorporerà nei token effettivi, associando quindi in modo efficace i token a un dispositivo specifico. L’obiettivo finale è quello di rendere i token non trasferibili tra i dispositivi.
 

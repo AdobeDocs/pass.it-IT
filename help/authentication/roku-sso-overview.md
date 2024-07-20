@@ -49,12 +49,12 @@ I programmatori devono verificare che le loro implementazioni correnti basate su
 
 ## Domande frequenti {#faq}
 
-* **Come funzionerà l&#39;SSO?**
+* **Funzionamento dell&#39;SSO**
 
   L’SSO funziona su tutte le applicazioni Programmer basate sull’autenticazione Adobe Pass su tutti i dispositivi Roku associati allo stesso utente Roku.
 Non tutti gli MVPD consentiranno Roku SSO.
 
-* **Verranno modificati i TTL di autenticazione?**
+* **Verranno apportate modifiche ai TTL di autenticazione?**
 
   Il primo token di autenticazione valido verrà utilizzato per l&#39;esecuzione dell&#39;SSO e, in questo caso, tutte le altre applicazioni che verranno autenticate tramite l&#39;SSO utilizzeranno lo stesso TTL fino alla scadenza. Pertanto, quando si passa da un’applicazione all’altra, la seconda applicazione condividerà il TTL della prima applicazione che si autentica.
 
@@ -62,6 +62,6 @@ Non tutti gli MVPD consentiranno Roku SSO.
 
   Tutte le funzionalità di autenticazione di Adobe Pass funzioneranno come prima.
 
-* **Esiste un processo di consenso/rinuncia del programmatore che trae vantaggio dall’SSO sulla piattaforma Roku?**
+* **Esiste un processo di consenso/rinuncia del programmatore che trae vantaggio dall&#39;SSO sulla piattaforma Roku?**
 
   Si tratta di una modifica alla configurazione nel dashboard TVE di Adobe. Ogni programmatore può abilitare/disabilitare SSO sulla piattaforma Roku per integrazioni specifiche.

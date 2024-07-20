@@ -1,9 +1,10 @@
 ---
 title: Note sulla versione di Adobe Pass Authentication 2.66
 description: Note sulla versione di Adobe Pass Authentication 2.66
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+exl-id: 7c3cd007-ed2b-455f-8f70-6ec5d0a6552a
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '148'
+source-wordcount: '154'
 ht-degree: 0%
 
 ---
@@ -33,5 +34,5 @@ Con questa versione abbiamo continuato gli aggiornamenti interni per la nuova AP
 #### Correzioni di bug {#release-overview-bugfixes-266}
 
 * È stato risolto il flusso di logout per MVPD basati su SAML, in cui il parametro RelayState mancava dalla richiesta di logout. Dopo la versione, eseguiremo il targeting degli aggiornamenti della configurazione per ripristinare il flusso di logout per gli MVPD interessati.
-* È stata aggiunta la possibilità di aggiornare i certificati SSL nella configurazione per gli endpoint di autorizzazione SOAP.
+* È stata aggiunta la possibilità di aggiornare i certificati SSL nella nostra configurazione per gli endpoint di autorizzazione SOAP.
 * È stato risolto un caso limite in cui dati non corretti venivano registrati nel campo Programmatore in alcuni rapporti ESM.

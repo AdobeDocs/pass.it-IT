@@ -15,7 +15,7 @@ ht-degree: 9%
 # Aiuto per il monitoraggio della concorrenza di Adobe Pass {#cm}
 
 + [Introduzione al monitoraggio della concorrenza](cm-home.md)
-+ [Glossario del monitoraggio della concorrenza](cm-glossary.md)
++ [Glossario di monitoraggio concorrenza](cm-glossary.md)
 + [Casi di utilizzo del monitoraggio della concorrenza](cm-use-cases.md)
 + [Punto decisionale criterio](cm-policy-decision-point.md)
 + [Panoramica API di monitoraggio della concorrenza](cm-api-overview.md)
@@ -23,14 +23,14 @@ ht-degree: 9%
 + [Criteri di conservazione dei dati](data-retention-policy.md)
 + [Meccanismo di limitazione](throttling-mechanism.md)
 + [Procedure di riassegnazione](cm-escalation-procedures.md)
-+ Utilizzo del monitoraggio concorrenza {#cmu}
++ Utilizzo monitoraggio concorrenza {#cmu}
    + [Rapporti di utilizzo del monitoraggio della concorrenza](cm-usage-reports.md)
    + [API di utilizzo del monitoraggio della concorrenza](cmu-api.md)
    + [Accesso all’API per il monitoraggio della concorrenza](cmu-api-access.md)
-+ API versione 1{#v1-api}
++ Versione 1 API{#v1-api}
    + [Punto di informazione sui criteri](policy-info-pt-versionone.md)
    + [Metadati personalizzati](custom-metadata.md)
-   + Cookie di integrazione {#int-cookbooks}
+   + Manuali di integrazione {#int-cookbooks}
       + [Limitazione dell&#39;utilizzo simultaneo con più applicazioni appartenenti a proprietari diversi](restrict-concurr-usage-mult-apps.md)
       + [Singolo tenant/policy e più applicazioni](single-tenant-policy-mult-app.md)
    + [Modelli di implementazione](implementation-models.md)

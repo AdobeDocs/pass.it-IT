@@ -4,7 +4,7 @@ description: Registrazione applicazione Amazon FireOS
 exl-id: 650fd4a2-dfc3-4c74-9b5b-6bea832a28ca
 source-git-commit: 1b8371a314488335c68c82882c930b7c19aa64ad
 workflow-type: tm+mt
-source-wordcount: '513'
+source-wordcount: '514'
 ht-degree: 0%
 
 ---
@@ -21,13 +21,13 @@ ht-degree: 0%
 
 A partire dalla versione 3.0 dell’SDK di FireOS AccessEnabler, stiamo modificando il meccanismo di autenticazione con i server di Adobe. Invece di utilizzare una chiave pubblica e un sistema segreto per firmare l’ID richiedente, introduciamo il concetto di stringa di informativa software che può essere utilizzata per ottenere un token di accesso che viene successivamente utilizzato per tutte le chiamate dell’SDK ai nostri server. Oltre a una dichiarazione software, è necessario creare un collegamento profondo per l&#39;applicazione.
 
-Per ulteriori informazioni, consulta [Registrazione client dinamici](/help/authentication/dynamic-client-registration.md)
+Per ulteriori informazioni, vedere [Registrazione client dinamica](/help/authentication/dynamic-client-registration.md)
 
 ## Che cos&#39;è una dichiarazione software? {#what}
 
 Un rendiconto software è un token JWT che contiene informazioni sull’applicazione. Ogni applicazione deve disporre di una dichiarazione software univoca utilizzata dai nostri server per identificare l&#39;applicazione nel sistema Adobe. L&#39;istruzione software deve essere passata quando si inizializza l&#39;SDK di AccessEnabler e verrà utilizzata per registrare l&#39;applicazione con Adobe. Al momento della registrazione, l’SDK riceverà un ID client e un segreto client che verranno utilizzati per ottenere un token di accesso. Qualsiasi chiamata effettuata dall&#39;SDK ai nostri server richiederà un token di accesso valido. L’SDK è responsabile della registrazione dell’applicazione, del recupero e dell’aggiornamento del token di accesso.
 
-**Nota:** Le istruzioni software sono specifiche dell&#39;app e non possono essere utilizzate per più di un&#39;applicazione. Tieni presente che questo vale anche per le applicazioni che offrono accesso a più canali.
+**Nota:** le istruzioni software sono specifiche per l&#39;app e non è possibile utilizzare una singola istruzione software per più applicazioni. Tieni presente che questo vale anche per le applicazioni che offrono accesso a più canali.
 
 ## Come si ottiene una dichiarazione software? {#how-to}
 
@@ -35,27 +35,27 @@ Un rendiconto software è un token JWT che contiene informazioni sull’applicaz
 
 1. Apri il browser e passa a `https://console.auth.adobe.com`.
 
-1. Accedi a **[!UICONTROL Channels]** , quindi seleziona il tuo canale.
+1. Passa alla sezione **[!UICONTROL Channels]**, quindi seleziona il tuo canale.
 
-1. Accedi a **[!UICONTROL Registered Applications]** scheda.
+1. Passare alla scheda **[!UICONTROL Registered Applications]**.
 
-1. Clic **[!UICONTROL Add new application]**.
+1. Fare clic su **[!UICONTROL Add new application]**.
 
 1. Specifica un nome e una versione per l’applicazione e seleziona le piattaforme su cui sarà disponibile (ad esempio Android).
 
 1. Fornisci un **[!UICONTROL Domain Name]** scegliendo da un elenco di domini già configurati per il programmatore.
 
-1. Invia le modifiche al server, quindi torna a **[!UICONTROL Registered Applications]** scheda.
+1. Invia le modifiche al server, quindi torna alla scheda **[!UICONTROL Registered Applications]** del canale.
 
    Dovresti visualizzare un elenco con tutte le applicazioni registrate.
 
-1. Clic **[!UICONTROL Download]** sull&#39;applicazione appena creata.
+1. Fai clic su **[!UICONTROL Download]** nell&#39;applicazione appena creata.
 
    Potrebbe essere necessario attendere alcuni minuti prima che l&#39;informativa software sia pronta per il download.
 
    Viene scaricato un file di testo. Utilizzarne il contenuto come informativa software.
 
-Per ulteriori informazioni, consulta [Dynamic Client Registration Management](/help/authentication/dynamic-client-registration-management.md)
+Per ulteriori informazioni, vedere [Dynamic Client Registration Management](/help/authentication/dynamic-client-registration-management.md)
 
 ### Se non hai accesso al dashboard TVE di Adobe:
 
@@ -67,7 +67,7 @@ Dopo aver ottenuto l&#39;Informativa software, è necessario trasmetterla come p
 
 ## Come utilizzare l&#39;Informativa sul software {#use-both}
 
-Nel file di risorse dell’applicazione `strings.xml` aggiungi il seguente codice:
+Nel file di risorse dell&#39;applicazione `strings.xml` aggiungere il codice seguente:
 
 ```XML
 <string name="software_statement">softwarestatement value</string>

@@ -4,7 +4,7 @@ description: Utilizzo dell’ID Experience Cloud nell’autenticazione di Adobe 
 exl-id: 03354c01-5aad-4d81-beee-1c3834599134
 source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
 workflow-type: tm+mt
-source-wordcount: '397'
+source-wordcount: '396'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ L’ID Experience Cloud (ECID) è un ID univoco generato da Adobe Experience Clo
 
 Se disponi già di un sistema che fornisce un ID visitatore, utilizza lo stesso ID per l’ambito di questo documento.
 
-Un modo per ottenere l’ECID è utilizzare il servizio ID Experience Cloud. Puoi utilizzare il tipo di implementazione preferito, basato su TDM, libreria JS, lato server, integrazione diretta o librerie native per piattaforme mobili. Per una panoramica completa dei servizi, librerie, SDK e guide all&#39;implementazione disponibili, consulta: <https://experienceleague.adobe.com/docs/id-service/using/implementation/implementation-guides.html>
+Un modo per ottenere l’ECID è utilizzare il servizio ID Experience Cloud. Puoi utilizzare il tipo di implementazione preferito, basato su TDM, libreria JS, lato server, integrazione diretta o librerie native per piattaforme mobili. Per una visualizzazione completa dei servizi, delle librerie, degli SDK e delle guide all&#39;implementazione disponibili, vedere: <https://experienceleague.adobe.com/docs/id-service/using/implementation/implementation-guides.html>
 
 ## Quali vantaggi offre l’utilizzo dell’ID Experience Cloud nell’autenticazione di Adobe Pass? {#benefit-ex-cloud-id}
 
@@ -33,7 +33,7 @@ Dopo aver ottenuto l’ECID (descritto in precedenza), devi trasmettere queste i
 
 ### SDK JS {#js-sdk}
 
-Per JavaScript è necessario trasmettere l’ECID in una mappa come terzo parametro alla chiamata setRequestor.
+Per JavaScript è necessario passare l’ECID in una mappa come terzo parametro alla chiamata setRequestor.
 
 **Esempio di utilizzo:**
 
@@ -61,7 +61,7 @@ accessEnabler.setOptions(
 
 ### SDK Android/fireTV {#android-sdk}
 
-Per l’SDK Android/fireTV il meccanismo è simile a iOS. Solo il nome del parametro è diverso. La documentazione dell’API è disponibile qui.
+Per l’SDK di Android/fireTV, il meccanismo è simile a iOS. Solo il nome del parametro è diverso. La documentazione dell’API è disponibile qui.
 
 **Esempio di utilizzo:**
 
@@ -76,7 +76,7 @@ accessEnabler.setOptions(options);
 
 ### API senza client {#clientless-api}
 
-Quando si utilizza Adobe Pass tramite la relativa API REST, il **ECID** il valore deve essere inviato **su tutte le API** come parametro denominato **&#39;ap_vi&#39;**.
+Quando si utilizza Adobe Pass tramite la relativa API REST, il valore **ECID** deve essere inviato **su tutte le API** come parametro denominato **&#39;ap_vi&#39;**.
 
 **Esempio di utilizzo:**
 

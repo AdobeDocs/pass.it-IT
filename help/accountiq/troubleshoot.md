@@ -19,4 +19,4 @@ Se riscontri ritardi nel caricamento di dati e grafici, difficoltà nell’espor
 
 * Se non riesci a visualizzare dati o grafici anche dopo l’aggiornamento, esci da Account IQ e accedi di nuovo.
 
-* Se nessuno dei metodi di risoluzione dei problemi sopra descritti è utile, o se hai altre domande relative ai dati o all’impossibilità di esportare statistiche, contatta il supporto Adobe inviando un’e-mail a <tve-support@adobe.com>.
+* Se nessuno dei metodi di risoluzione dei problemi di cui sopra è utile o se hai altre domande relative ai dati o all&#39;impossibilità di esportare statistiche, contatta il supporto Adobe inviando un&#39;e-mail a <tve-support@adobe.com>.

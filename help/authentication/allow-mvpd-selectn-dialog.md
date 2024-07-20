@@ -4,7 +4,7 @@ description: Consenti MVPD nella finestra di dialogo di selezione
 exl-id: 2c0e0f06-ddc6-4bea-90dc-d7ef8e78d27e
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '129'
+source-wordcount: '128'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ Il programmatore potrebbe voler testare o verificare l&#39;esperienza utente del
 
 ## Soluzione {#solution}
 
-In `displayProviderDialog()` callback, Adobe Pass Authentication restituisce tutti gli MVPD integrati con il programmatore selezionato (ID richiedente). Ma il Programmatore può applicare un filtro all&#39;array di ritorno di MVPD e visualizzare solo quelli che sono in entrambi gli elenchi.
+Nel callback `displayProviderDialog()`, l&#39;autenticazione Adobe Pass restituisce tutti gli MVPD integrati con il programmatore selezionato (ID richiedente). Ma il Programmatore può applicare un filtro all&#39;array di ritorno di MVPD e visualizzare solo quelli che sono in entrambi gli elenchi.
 
 ## Esempio {#example}
 

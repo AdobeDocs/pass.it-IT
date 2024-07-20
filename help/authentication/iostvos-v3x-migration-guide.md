@@ -4,7 +4,7 @@ description: Guida alla migrazione ad iOS/tvOS v3.x
 exl-id: 4c43013c-40af-48b7-af26-0bd7f8df2bdb
 source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
 workflow-type: tm+mt
-source-wordcount: '561'
+source-wordcount: '559'
 ht-degree: 0%
 
 ---
@@ -26,7 +26,7 @@ ht-degree: 0%
 
 ## Aggiornare le impostazioni della build {#update}
 
-Questa versione contiene funzionalità scritte in linguaggio SWIFT. Se la tua app è completamente Objective-C, devi impostare su &quot;Sì&quot; la casella di controllo &quot;Incorpora sempre le librerie Swift standard&quot; nelle impostazioni di build della tua destinazione. Quando questa opzione è impostata, Xcode analizza i framework inclusi nell’app e, se uno di essi contiene codice Swift, copia le librerie pertinenti nel bundle dell’app. Se non aggiorni le impostazioni della build, l’app potrebbe bloccarsi a causa di errori che indicano che non è possibile caricare AccessEnabler.framework o vari `ibswift*` librerie.
+Questa versione contiene funzionalità scritte in linguaggio SWIFT. Se la tua app è completamente Objective-C, devi impostare su &quot;Sì&quot; la casella di controllo &quot;Incorpora sempre le librerie Swift standard&quot; nelle impostazioni di build della tua destinazione. Quando questa opzione è impostata, Xcode analizza i framework inclusi nell’app e, se uno di essi contiene codice Swift, copia le librerie pertinenti nel bundle dell’app. Se non si aggiornano le impostazioni della build, l&#39;app potrebbe bloccarsi con errori che indicano che non è possibile caricare AccessEnabler.framework o diverse librerie `ibswift*`.
 
 </br>
 
@@ -42,15 +42,15 @@ Una volta ottenuta l&#39;istruzione software, si consiglia di ospitarla su un se
     accessEnabler = AccessEnabler("YOUR_SOFTWARE_STATEMENT_HERE");
 ```
 
-> Informazioni API qui: [Riferimento API per iOS/tvOS](/help/authentication/iostvos-sdk-api-reference.md)
+> Informazioni API qui: [Riferimento API iOS / tvOS](/help/authentication/iostvos-sdk-api-reference.md)
 
 </br>
 
 ## Aggiungere lo schema URL personalizzato {#add-custom}
 
-> Per informazioni su come ottenere uno schema URL personalizzato, consulta questa pagina: [Ottenere uno schema URL cliente](/help/authentication/iostvos-application-registration.md)
+> Per informazioni su come ottenere uno schema URL personalizzato, visitare questa pagina: [Ottenere uno schema URL cliente](/help/authentication/iostvos-application-registration.md)
 
-Dopo aver ottenuto lo schema URL personalizzato, devi aggiungerlo al file info.plist dell’applicazione. Lo schema personalizzato ha il seguente formato: `adbe.u-XFXJeTSDuJiIQs0HVRAg://`. È necessario omettere i due punti e le barre in avanti quando lo si aggiunge al file. L’esempio precedente diventerà `adbe.u-XFXJeTSDuJiIQs0HVRAg`.
+Dopo aver ottenuto lo schema URL personalizzato, devi aggiungerlo al file info.plist dell’applicazione. Lo schema personalizzato ha questo formato: `adbe.u-XFXJeTSDuJiIQs0HVRAg://`. È necessario omettere i due punti e le barre in avanti quando lo si aggiunge al file. L&#39;esempio precedente diventerà `adbe.u-XFXJeTSDuJiIQs0HVRAg`.
 
 ```plist
     <key>CFBundleURLTypes</key>
@@ -68,11 +68,11 @@ Dopo aver ottenuto lo schema URL personalizzato, devi aggiungerlo al file info.p
 
 ## Intercettazione delle chiamate sullo schema URL personalizzato {#intercept}
 
-Questo vale solo nel caso in cui l&#39;applicazione abbia precedentemente abilitato la gestione manuale di Safari View Controller (SVC) tramite [setOptions(\[&quot;handleSVC&quot;:true&quot;\])](/help/authentication/iostvos-sdk-api-reference.md) e per MVPD specifici che richiedono Safari View Controller (SVC), richiedendo pertanto il caricamento degli URL degli endpoint di autenticazione e disconnessione da parte di un controller SFSafariViewController anziché da un controller UIWebView/WKWebView.
+Ciò si applica solo nel caso in cui l&#39;applicazione abbia precedentemente abilitato la gestione manuale di Safari View Controller (SVC) tramite la chiamata [setOptions(\[&quot;handleSVC&quot;:true&quot;\])](/help/authentication/iostvos-sdk-api-reference.md) e per MVPD specifici che richiedono Safari View Controller (SVC), richiedendo pertanto il caricamento degli URL degli endpoint di autenticazione e disconnessione da un controller SFSafariViewController anziché da un controller UIWebView/WKWebView.
 
-Durante i flussi di autenticazione e disconnessione, l&#39;applicazione deve monitorare l&#39;attività del `SFSafariViewController `il controller durante diversi reindirizzamenti. L&#39;applicazione deve rilevare il momento in cui carica un URL personalizzato specifico definito dal `application's custom URL scheme` (ad es.`adbe.u-XFXJeTSDuJiIQs0HVRAg://adobe.com)`. Quando il controller carica questo URL personalizzato specifico, l&#39;applicazione deve chiudere `SFSafariViewController` e chiama AccessEnabler `handleExternalURL:url `metodo API.
+Durante i flussi di autenticazione e disconnessione, l&#39;applicazione deve monitorare l&#39;attività del controller `SFSafariViewController ` mentre viene eseguita una serie di reindirizzamenti. L&#39;applicazione deve rilevare il momento in cui carica un URL personalizzato specifico definito da `application's custom URL scheme` (ad esempio `adbe.u-XFXJeTSDuJiIQs0HVRAg://adobe.com)`. Quando il controller carica questo URL personalizzato specifico, l&#39;applicazione deve chiudere `SFSafariViewController` e chiamare il metodo API `handleExternalURL:url ` di AccessEnabler.
 
-Nel tuo `AppDelegate` aggiungi il seguente metodo:
+In `AppDelegate`, aggiungi il seguente metodo:
 
 ```swift
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey: Any]) -> Bool {
@@ -89,7 +89,7 @@ Nel tuo `AppDelegate` aggiungi il seguente metodo:
 
 ## Aggiorna la firma del metodo setRequestor {#update-setreq}
 
-Poiché il nuovo SDK utilizza un nuovo meccanismo di autenticazione, non sono necessari il parametro signedRequestId o la chiave pubblica e il segreto (per tvOS). Il `setRequestor` Il metodo è semplificato e richiede solo il valore requestorID.
+Poiché il nuovo SDK utilizza un nuovo meccanismo di autenticazione, non sono necessari il parametro signedRequestId o la chiave pubblica e il segreto (per tvOS). Il metodo `setRequestor` è semplificato e richiede solo il valore requestorID.
 
 ### iOS
 
@@ -128,7 +128,7 @@ diventa:
 
 ## Sostituisci il metodo getAuthenticationToken con il metodo handleExternalURL {#replace}
 
-`getAuthentication` è stato utilizzato in passato per completare il flusso di autenticazione. Poiché il suo nome era fuorviante, è stato rinominato in `handleExternalURL` e considera l’url come un parametro.
+Metodo `getAuthentication` utilizzato in passato per il completamento del flusso di autenticazione. Poiché il nome è fuorviante, è stato rinominato in `handleExternalURL` e considera l&#39;URL come parametro.
 
 Modifica tutte le occorrenze di questo:
 

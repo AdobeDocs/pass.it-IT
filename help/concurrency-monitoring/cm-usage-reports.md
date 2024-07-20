@@ -1,13 +1,13 @@
 ---
 title: Report utilizzo monitoraggio concorrenza
 description: Report utilizzo monitoraggio concorrenza
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+exl-id: 20220436-e748-4b22-8e7c-e074e0bfe242
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '723'
+source-wordcount: '757'
 ht-degree: 0%
 
 ---
-
 
 # Report utilizzo monitoraggio concorrenza {#cm-usage-reports}
 
@@ -19,11 +19,11 @@ ht-degree: 0%
 
 ## Panoramica {#usage-rep-overview}
 
-Il **Report utilizzo monitoraggio concorrenza** Il servizio è disponibile tramite un’API REST che fornisce informazioni approfondite sull’utilizzo simultaneo, come segnalato dalle applicazioni del cliente.
+Il servizio **Report sull&#39;utilizzo del monitoraggio della concorrenza** è disponibile tramite un&#39;API REST che fornisce informazioni approfondite sull&#39;utilizzo concorrente, come riportato dalle applicazioni del cliente.
 
 ## Prerequisiti {#usage-rep-prerequisites}
 
-Per accedere al prodotto Report utilizzo controllo concorrenza, il cliente deve prima contattare il servizio di controllo della concorrenza [Team di supporto](mailto:tve-support@adobe.com) e eseguiranno i passaggi necessari per consentirti di accedere al prodotto API.
+Per accedere al prodotto Report sull&#39;utilizzo del monitoraggio della concorrenza, un cliente deve prima contattare il [Team di supporto](mailto:tve-support@adobe.com) per il monitoraggio della concorrenza ed eseguire i passaggi necessari per consentire l&#39;accesso al prodotto API.
 
 ## Metriche e raggruppamenti generali dei rapporti {#general-rep-metrics-breakdown}
 
@@ -68,7 +68,7 @@ Per accedere al prodotto Report utilizzo controllo concorrenza, il cliente deve 
 
 ## Metriche e raggruppamenti dei rapporti sulla concorrenza {#concurrency-reports-metrics-breakdown}
 
-A partire dalla versione 2.9.0 del monitoraggio della concorrenza, è stato introdotto un nuovo rapporto per comprendere l’utilizzo simultaneo: un istogramma per **a livello di concorrenza** e **livello di attività**.
+A partire dalla versione 2.9.0 del monitoraggio della concorrenza è stato introdotto un nuovo rapporto per comprendere l&#39;utilizzo simultaneo: un istogramma per **livello di concorrenza** e **livello attività**.
 
 Lo scopo principale di questo rapporto è quello di aiutarti a comprendere l’impatto dell’impostazione di una policy con un determinato limite di concorrenza e di fornirti informazioni sufficienti per decidere se aumentare il limite.
 
@@ -85,6 +85,6 @@ Lo scopo principale di questo rapporto è quello di aiutarti a comprendere l’i
 | anno | Anno a 4 cifre |
 | mese | Il mese dell&#39;anno (1-12) |
 | giorno | Il giorno del mese (1-31) |
-| a livello di concorrenza | Rappresenta qualsiasi elemento distinto **attività di flusso approvata nella fase di inizializzazione della sessione** per un utente per poter osservare quanti flussi simultanei **sono stati aperti** da parte di un utente e per comprendere l’impatto dell’applicazione di un determinato limite di concorrenza |
-| livello di attività | Rappresenta qualsiasi elemento distinto **attività di flusso (indipendentemente dal suo stato: avviato, attivo, arrestato, rifiutato)** per un utente, al fine di poter osservare quanti flussi simultanei ha tentato di essere aperti da un utente e capire l’impatto dell’applicazione di un determinato limite di concorrenza |
+| a livello di concorrenza | Rappresenta qualsiasi attività di flusso **distinta approvata durante la fase di inizializzazione della sessione** per un utente per poter osservare quanti flussi simultanei **sono stati aperti** da un utente e capire l&#39;impatto dell&#39;applicazione di un determinato limite di concorrenza |
+| livello di attività | Rappresenta qualsiasi **attività di flusso distinta (indipendentemente dal suo stato: avviato, attivo, arrestato, rifiutato)** per un utente per poter osservare quanti flussi simultanei sono stati tentati di essere aperti da un utente e capire l&#39;impatto dell&#39;applicazione di un determinato limite di concorrenza |
 | mvpd | MVPD fornito durante la gestione della sessione |

@@ -1,9 +1,10 @@
 ---
 title: Meccanismo di controllo dell'integrità dello storage iOS/tvOS
 description: Meccanismo di controllo dell’integrità di iOS/tvOS
-source-git-commit: 444a81ad18afcb26dcf3ae8b41f4d02c465f4655
+exl-id: 5d7cdc46-3e51-4e14-9e30-d7f48bc87506
+source-git-commit: e8a9e53f8bb0a06379d90a91a57335d2897342b0
 workflow-type: tm+mt
-source-wordcount: '327'
+source-wordcount: '323'
 ht-degree: 0%
 
 ---
@@ -68,5 +69,5 @@ L&#39;enumerazione IntegrityCheckType è esposta all&#39;applicazione client e p
 | Valore | Controlli eseguiti | Archiviazione cancellata | Descrizione | Caso d’uso consigliato |
 |-----------------------|-----------------------------------------------------|-----------------|------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
 | INTEGRITY_CHECK_NONE | Nessuno | Mai | Nessun controllo di integrità eseguito all&#39;inizializzazione dell&#39;archiviazione | Quando i flussi SDK funzionano come previsto |
-| INTEGRITY_CHECK_ALL | Operabilità dello storage <br/> Validità dei valori memorizzati | Errore al momento dell’assegno | Tutti i controlli di integrità disponibili vengono eseguiti all&#39;inizializzazione dell&#39;archiviazione | Quando si sospetta un danneggiamento dell’archiviazione SDK. <br/> Se uno dei controlli di integrità non riesce, l&#39;utente verrà disconnesso |
+| INTEGRITY_CHECK_ALL | Operabilità archiviazione <br/> Validità dei valori archiviati | Errore al momento dell’assegno | Tutti i controlli di integrità disponibili vengono eseguiti all&#39;inizializzazione dell&#39;archiviazione | Quando si sospetta un danneggiamento dell’archiviazione SDK. <br/> In caso di errore di uno dei controlli di integrità, l&#39;utente verrà disconnesso |
 | INTEGRITY_CHECK_CLEAR | Nessuno | Sempre | L&#39;archiviazione viene cancellata durante l&#39;inizializzazione dell&#39;archiviazione | Quando i flussi SDK non possono essere completati come previsto |

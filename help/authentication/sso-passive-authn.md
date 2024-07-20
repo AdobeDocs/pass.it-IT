@@ -4,7 +4,7 @@ description: SSO tramite autenticazione passiva
 exl-id: ce45899f-6e94-4bb0-a2c1-51f03bd66d8d
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '776'
+source-wordcount: '778'
 ht-degree: 0%
 
 ---
@@ -76,7 +76,8 @@ Il diagramma seguente illustra il flusso migliorato e l’autenticazione passiva
 
 
 
-Esempio di richiesta SAML Ecco un esempio di richiesta SAML per il flusso di autenticazione passiva:
+Esempio di richiesta SAML
+Di seguito è riportato un esempio di richiesta SAML per il flusso di autenticazione passivo:
 
 
 ```xml

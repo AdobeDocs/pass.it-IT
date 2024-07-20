@@ -1,9 +1,10 @@
 ---
 title: Note sulla versione di Adobe Pass Authentication Android 3.7.3
 description: Note sulla versione di Adobe Pass Authentication Android 3.7.3
-source-git-commit: 284ae59837fd42bc6b711b3041eb6b7ef79aaed3
+exl-id: f335357e-c209-428d-af2a-2181551447d4
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '141'
+source-wordcount: '146'
 ht-degree: 0%
 
 ---
@@ -26,12 +27,12 @@ Data di rilascio: 09/19/2023
 
 ## Panoramica sulla versione {#overview-android-sdk-373}
 
-* Modifiche per il supporto di Android 14 e delle applicazioni che eseguono il targeting dell’API al livello 34
-   * Aggiungi il flag richiesto da [Ricevitori di trasmissioni registrati runtime Android 14](https://developer.android.com/about/versions/14/behavior-changes-14#runtime-receivers-exported).
+* Modifiche per supportare Android 14 e le applicazioni che eseguono il targeting dell’API al livello 34
+   * Aggiungi il flag richiesto da [ricevitori di trasmissioni registrate in runtime di Android 14](https://developer.android.com/about/versions/14/behavior-changes-14#runtime-receivers-exported).
 * Correzione di ChromeCustomTabs che non apre per l’accesso MVPD sull’API dell’emulatore 32+
    * Nota: una soluzione alternativa per questo problema sull’SDK &lt;3.7.3 consiste nell’aprire l’app Chrome sull’emulatore e completarne la configurazione prima di tentare l’accesso MVPD
 
 
 ## Pacchetto di rilascio {#rel-pkg-android373}
 
-Puoi scaricare l&#39;SDK Android v3.7.3 da [qui](https://tve.zendesk.com/hc/en-us/articles/204963219-Android-Native-AccessEnabler-Library).
+Puoi scaricare Android SDK v3.7.3 da [qui](https://tve.zendesk.com/hc/en-us/articles/204963219-Android-Native-AccessEnabler-Library).

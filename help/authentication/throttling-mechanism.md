@@ -1,13 +1,13 @@
 ---
 title: Meccanismo di limitazione
 description: Scopri il meccanismo di limitazione utilizzato nell’autenticazione di Adobe Pass. Per una panoramica di questo meccanismo, consulta questa pagina.
-source-git-commit: 4f81f39427d87e4274c27d8f1b4bd1eb366d9abb
+exl-id: f00f6c8e-2281-45f3-b592-5bbc004897f7
+source-git-commit: 8552a62f4d6d80ba91543390bf0689d942b3a6f4
 workflow-type: tm+mt
 source-wordcount: '987'
 ht-degree: 0%
 
 ---
-
 
 # Meccanismo di limitazione {#throttling-mechanism}
 
@@ -40,7 +40,7 @@ Il meccanismo di limitazione proposto utilizza i dispositivi identificati singol
 
 Le implementazioni server-to-server devono inoltrare gli indirizzi IP dei propri client utilizzando il meccanismo di intestazione &quot;X-Forwarded-For&quot;.
 
-Puoi trovare ulteriori dettagli su come trasmettere l’intestazione X-Forwarded-For [qui](rest-api-cookbook-servertoserver.md).
+Ulteriori dettagli su come trasmettere l&#39;intestazione X-Forwarded-For [qui](rest-api-cookbook-servertoserver.md).
 
 ### Limiti ed endpoint effettivi
 
@@ -76,23 +76,23 @@ Poiché i client che utilizzano l’autenticazione di Adobe Pass fornita dagli S
 
 #### setRequestor
 
-Quando si raggiunge il limite di velocità utilizzando `setRequestor` funzione dall’SDK, l’SDK restituirà un codice di errore CFG429 tramite `errorHandler` callback.
+Quando viene raggiunto il limite di velocità utilizzando la funzione `setRequestor` dell&#39;SDK, l&#39;SDK restituirà un codice di errore CFG429 tramite callback `errorHandler`.
 
 #### getAuthorization
 
-Quando si raggiunge il limite di velocità utilizzando `getAuthorization` dall&#39;SDK, restituirà un codice di errore Z100 tramite `errorHandler` callback.
+Quando viene raggiunto il limite di velocità utilizzando la funzione `getAuthorization` dell&#39;SDK, l&#39;SDK restituirà un codice di errore Z100 tramite callback `errorHandler`.
 
 #### checkPreauthorizedResources
 
-Quando si raggiunge il limite di velocità utilizzando `checkPreauthorizedResources` dall&#39;SDK, restituirà un codice di errore P100 tramite il comando `errorHandler` callback.
+Quando viene raggiunto il limite di velocità utilizzando la funzione `checkPreauthorizedResources` dell&#39;SDK, l&#39;SDK restituirà un codice di errore P100 tramite callback `errorHandler`.
 
 #### getMetadata
 
-Quando si raggiunge il limite di velocità utilizzando `getMetadata` dall&#39;SDK, l&#39;SDK restituirà una risposta vuota tramite `setMetadataStatus` callback.
+Quando viene raggiunto il limite di velocità utilizzando la funzione `getMetadata` dell&#39;SDK, l&#39;SDK restituirà una risposta vuota tramite il callback `setMetadataStatus`.
 
 Per ogni dettaglio di implementazione specifico, consulta la documentazione SDK specifica.
 
-- [Riferimento API dell&#39;SDK JavaScript](javascript-sdk-api-reference.md)
+- [Riferimento API di JavaScript SDK](javascript-sdk-api-reference.md)
 - [Riferimento API dell&#39;SDK per Android](android-sdk-api-reference.md)
 - [Riferimento API per iOS/tvOS](iostvos-sdk-api-reference.md)
 
@@ -135,7 +135,7 @@ p3p: CP="NOI DSP COR CURa ADMa DEVa OUR BUS IND UNI COM NAV STA"
 
 I clienti che utilizzano un’implementazione personalizzata (inclusi quelli da server a server) per interagire con l’API di autenticazione pass devono assicurarsi di poter acquisire l’indirizzo IP dell’utente e inoltrarlo correttamente, utilizzando l’intestazione X-Forwarded-For anche per Pass Authentication API.
 
-Consulta [qui](rest-api-cookbook-servertoserver.md) per ulteriori dettagli.
+Vedi [qui](rest-api-cookbook-servertoserver.md) per ulteriori dettagli.
 
 ### Reazione al nuovo codice di risposta
 

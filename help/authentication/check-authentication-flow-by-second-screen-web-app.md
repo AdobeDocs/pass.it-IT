@@ -17,16 +17,16 @@ ht-degree: 0%
 
 >[!NOTE]
 >
-> L’implementazione REST API è limitata da [Meccanismo di limitazione](/help/authentication/throttling-mechanism.md)
+> L&#39;implementazione REST API è limitata dal [meccanismo di limitazione](/help/authentication/throttling-mechanism.md)
 
 ## Endpoint REST API {#clientless-endpoints}
 
-&lt;reggie_fqdn>:
+&lt;FQDN_REGGIE>:
 
 * Produzione - [api.auth.adobe.com](http://api.auth.adobe.com/)
 * Staging - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
-&lt;sp_fqdn>:
+&lt;SP_FQDN>:
 
 * Produzione - [api.auth.adobe.com](http://api.auth.adobe.com/)
 * Staging - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
@@ -38,9 +38,9 @@ ht-degree: 0%
 Questa API deve essere utilizzata dalla seconda app web di accesso schermata per confermare che l’autenticazione Adobe Pass ha confermato il corretto accesso da MVPD. È consigliabile chiamare questa API prima di mostrare un messaggio di successo all’utente finale che gli indica di passare alla console del dispositivo per continuare con i flussi di lavoro.
 
 
-| Endpoint | Chiamato  </br>Da | Input   </br>Parametri | HTTP  </br>Metodo | Risposta | HTTP  </br>Risposta |
+| Endpoint | Chiamato </br> da | Input   </br>Parametri | Metodo HTTP </br> | Risposta | HTTP </br>Risposta |
 | --- | --- | --- | --- | --- | --- |
-| SP_FQDN/api/v1/checkauthn/{codice di registrazione} | Accedi all’app web | 1. codice di registrazione  </br>    (componente Percorso)</br>2.  richiedente  </br>    (Obbligatorio) | GET | XML o JSON contenente i dettagli dell’errore in caso di esito negativo. | 200 - Operazione completata   </br>403 - Non consentito |
+| SP_FQDN/api/v1/checkauthn/{codice di registrazione} | Accedi all’app web | 1. codice di registrazione </br>    (componente percorso)</br>2.  richiedente </br>    (Obbligatorio) | GET | XML o JSON contenente i dettagli dell’errore in caso di esito negativo. | 200 - Operazione completata   </br>403 - Non consentito |
 
 </br>
 
@@ -59,4 +59,4 @@ Questa API deve essere utilizzata dalla seconda app web di accesso schermata per
     }
 ```
 
-### [Torna a Riferimento API REST](/help/authentication/rest-api-reference.md)
+### [Torna al riferimento API REST](/help/authentication/rest-api-reference.md)

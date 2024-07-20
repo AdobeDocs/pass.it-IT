@@ -1,7 +1,8 @@
 ---
 title: Pannelli dati nel dashboard
 description: La dashboard consente di individuare le istanze di condivisione delle password analizzando un’ampia gamma di dati degli abbonati.
-source-git-commit: 88b11527b2a432c2cd27bf9e29fd286969036eb0
+exl-id: 12abba05-7422-4bcc-8b11-76aca4911c0b
+source-git-commit: 2bb570ab14a3295d46ee6dc0d38485697d63809c
 workflow-type: tm+mt
 source-wordcount: '889'
 ht-degree: 0%
@@ -12,11 +13,11 @@ ht-degree: 0%
 
 Dopo aver selezionato un segmento e un intervallo di tempo, il dashboard visualizza vari pannelli di dati, tabelle e grafici che riflettono una visualizzazione di alto livello dell’attività di condivisione all’interno del segmento selezionato.
 
-La tabella seguente illustra la disponibilità e le differenze tra i pannelli dati in diversi [versioni](/help/accountiq/versions-aiq.md) di Account IQ:
+La tabella seguente illustra la disponibilità e le differenze tra i pannelli dati in diverse [versioni](/help/accountiq/versions-aiq.md) di Account IQ:
 
 | Pannelli dati | Servizi D2C | Programmatori TVE | MVPD TVE |
 |---|---|---|---|
-| [Punteggio di condivisione medio aggregato per il segmento corrente](#aggregated-sharing) | Disponibile e coerente | Disponibile e coerente | Disponibile e coerente |
+| [Punteggio medio di condivisione aggregato per il segmento corrente](#aggregated-sharing) | Disponibile e coerente | Disponibile e coerente | Disponibile e coerente |
 | [Categorie video nel segmento](#video-categories-segment) | Disponibile con lievi varianti | Disponibile con lievi varianti | Disponibile con lievi varianti |
 | [Condivisione del punteggio per canali e MVPD](#sharin-score-by-channels-and-mvpds) | Non disponibile | Disponibile | Non disponibile |
 | [Probabilità di condivisione account](#accounts-sharing-probability) | Disponibile e coerente | Disponibile e coerente | Disponibile e coerente |
@@ -32,11 +33,11 @@ Le metriche ti aiutano a comprendere l’entità (che varia da bassa, media, alt
 ![](assets/aggregate-sharing-score.png)
 
 
-*Punteggio di condivisione medio aggregato per pannello per il segmento corrente*
+*Punteggio medio di condivisione aggregato per pannello per il segmento corrente*
 
 >[!NOTE]
 >
-> L&#39;indicatore blu nella **Punteggio medio di condivisione aggregato per il segmento corrente** ha scopi diversi per i servizi D2C rispetto a TV Everywhere. Per i servizi D2C, rappresenta il **Indice medio servizio** come illustrato nell&#39;immagine precedente. Se si accede come programmatore o MVPD, l&#39;etichetta viene modificata in **Indice medio del settore**.
+> L&#39;indicatore blu nel **punteggio medio di condivisione aggregato per il segmento corrente** ha scopi diversi per i servizi D2C rispetto a TV Everywhere. Per i servizi D2C, rappresenta l&#39;**Indice medio servizio** come mostrato nell&#39;immagine precedente. Se accedi come programmatore o MVPD, questa etichetta diventa **Indice medio settore**.
 
 Le metriche seguenti sono componenti del pannello Punteggio di condivisione medio.
 
@@ -55,7 +56,7 @@ L’indicatore Tendenza mostra la variazione percentuale nel valore della metric
 
 ### Utilizzo da account condivisi {#usage-from-shared-accounts}
 
-Il contatore indica la percentuale di utilizzo da parte dei conti condivisi tra tutti i conti sottoscrittori per il segmento e il periodo di tempo definiti. Questi intervalli, denominati Bassa, Media, Alta e Anormale, sono basati sulle medie del settore.
+Il contatore indica la percentuale di utilizzo da parte dei conti condivisi tra tutti i conti sottoscrittori per il segmento e il periodo di tempo definiti. Questi intervalli, denominati Low, Medium, High e Abnormal, sono basati sulle medie del settore.
 
 L’indicatore Tendenza, che mostra un aumento o una diminuzione nell’utilizzo da account condivisi rispetto all’intervallo di tempo precedente.
 
@@ -81,15 +82,15 @@ Puoi selezionare le intestazioni di colonna per ordinare i dati in tutte le vers
 
 Servizi +++D2C: Regioni nel segmento
 
-Quando si accede come servizio D2C, **Aree nel segmento** tabella fornisce una visualizzazione comparativa dei diversi punteggi di condivisione aggregati per [categorie video](/help/accountiq/product-concepts.md#video-category-def) nel segmento corrente.
+Quando si effettua l&#39;accesso come servizio D2C, la tabella **Aree nel segmento** fornisce una visualizzazione comparativa dei diversi punteggi di condivisione aggregati per le [categorie video](/help/accountiq/product-concepts.md#video-category-def) nel segmento corrente.
 
 ![](assets/sharing-scores-by-regions-in-segment.png)
 
-*Condivisione del punteggio per aree nel segmento*
+*Punteggio di condivisione per aree nel segmento*
 
 >[!NOTE]
 >
-> Il [categorie video](product-concepts.md#video-category-def)  mostrato nell’immagine precedente, ad esempio **Aree geografiche** In segment (nel segmento) è solo un esempio. Quando accedi a Account IQ, questo pannello visualizza la categoria video specifica della tua azienda.
+> Le [categorie video](product-concepts.md#video-category-def) mostrate nell&#39;immagine precedente, ad esempio **Aree geografiche** nel segmento, sono solo un esempio. Quando accedi ad Account IQ, questo pannello mostra la categoria video specifica della tua azienda.
 
 Seleziona **Esporta** per scaricare i dati in un file .csv. Scopri [come esportare i rapporti del pannello dati](/help/accountiq/export-reports.md).
 
@@ -97,7 +98,7 @@ Seleziona **Esporta** per scaricare i dati in un file .csv. Scopri [come esporta
 
 +++Programmatori: MVPD nel segmento
 
-Quando accedi come programmatore, **MVPD nel segmento** La tabella fornisce una visualizzazione comparativa dei diversi punteggi di condivisione aggregata per gli MVPD nel segmento corrente.
+Quando si accede come programmatore, la tabella **MVPDs nel segmento** fornisce una visualizzazione comparativa dei diversi punteggi di condivisione aggregati per gli MVPD nel segmento corrente.
 
 ![](assets/sharing-scores-by-mvpds-in-segment.png)
 
@@ -107,13 +108,13 @@ Seleziona **Esporta** per scaricare i dati in un file .csv. Scopri [come esporta
 
 +++MVPDs: programmatori nel segmento
 
-Quando accedi come MVPD, **Programmatori nel segmento** La tabella fornisce una visualizzazione comparativa dei diversi punteggi di condivisione aggregati per i Programmatori nel segmento corrente.
+Quando si effettua l&#39;accesso come MVPD, la tabella **Programmatori nel segmento** fornisce una visualizzazione comparativa dei diversi punteggi di condivisione aggregati per i Programmatori nel segmento corrente.
 
 Selezionare le intestazioni di colonna per ordinare i dati.
 
 ![](assets/sharing-scores-by-programmers-in-segment.png)
 
-*Condivisione del punteggio per programmatori nel segmento*
+*Punteggio di condivisione per programmatori nel segmento*
 
 Seleziona **Esporta** per scaricare i dati in un file .csv. Scopri [come esportare i rapporti del pannello dati](/help/accountiq/export-reports.md).
 
@@ -132,7 +133,7 @@ Selezionare le intestazioni di colonna per ordinare i dati.
 
 ## Probabilità di condivisione account {#accounts-sharing-probability}
 
-Questo grafico suddivide i dati in intervalli di quintili di probabilità di condivisione, da molto basso (0-20%) a molto alto (80-100%). Ulteriori informazioni sugli intervalli di [Probabilità di condivisione dell’account](#accounts-sharing-probability).
+Questo grafico suddivide i dati in intervalli di quintili di probabilità di condivisione, da molto basso (0-20%) a molto alto (80-100%). Ulteriori informazioni sugli intervalli di [probabilità di condivisione account](#accounts-sharing-probability).
 
 >[!NOTE]
 >
@@ -142,16 +143,15 @@ Questo grafico suddivide i dati in intervalli di quintili di probabilità di con
 ![](assets/dashboard-ac-sharing-prob.png)
 
 
-*Numeri e percentuali degli account degli abbonati in diversi intervalli di probabilità di condivisione*
+*Numeri e percentuali di account sottoscrittori in intervalli di probabilità di condivisione diversi*
 
 
 ## Numero di account e utilizzo condividendo il livello di probabilità {#number-of-accounts-usage-sharing-probability}
 
-Questo pannello fornisce una vista tabulare degli account suddivisi in intervalli di quintili di probabilità di condivisione, da molto basso (0-20%) a molto alto (80-100%), con l’utilizzo associato di ciascun quintile dagli account condivisi. Ulteriori informazioni sugli intervalli di [Probabilità di condivisione dell’account](#accounts-sharing-probability).
+Questo pannello fornisce una vista tabulare degli account suddivisi in intervalli di quintili di probabilità di condivisione, da molto basso (0-20%) a molto alto (80-100%), con l’utilizzo associato di ciascun quintile dagli account condivisi. Ulteriori informazioni sugli intervalli di [probabilità di condivisione account](#accounts-sharing-probability).
 
 ![](assets/no-acc-usage-prob-level.png)
 
 *Numero di account, tendenze e utilizzi che rientrano in diversi intervalli di probabilità*
 
 Seleziona **Esporta** per scaricare i dati in un file .csv. Scopri [come esportare i rapporti del pannello dati](/help/accountiq/export-reports.md).
-

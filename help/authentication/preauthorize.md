@@ -19,9 +19,9 @@ L’API di preautorizzazione può essere utilizzata per ottenere una decisione d
 
 >[!IMPORTANT]
 >
->API di autorizzazione **deve** prima di concedere all&#39;utente l&#39;accesso alle risorse specificate.
+>Prima di concedere all&#39;utente l&#39;accesso alle risorse specificate, è necessario utilizzare l&#39;API di autorizzazione **1}.**
 
-Se il risultato della risposta API di preautorizzazione contiene una o più risorse con una decisione di preautorizzazione negata, è possibile includere ulteriori informazioni sull’errore **(vedi la nota seguente)** per ogni risorsa interessata.
+Nel caso in cui il risultato della risposta API di preautorizzazione contenga una o più risorse con una decisione di preautorizzazione negata, è possibile includere ulteriori informazioni sull&#39;errore **(vedi la nota seguente)** per ciascuna risorsa interessata.
 
 >[!IMPORTANT]
 >
@@ -169,7 +169,7 @@ Questa sezione evidenzia la struttura JSON di alcuni possibili oggetti Preauthor
 
 >[!IMPORTANT]
 >
->L’elenco dei possibili errori aggiuntivi recuperati tramite la funzione di segnalazione errori avanzata è documentato in [Segnalazione avanzata degli errori](/help/authentication/enhanced-error-codes.md).
+>L&#39;elenco dei possibili errori aggiuntivi recuperati tramite la funzionalità di segnalazione errori avanzata è documentato in [Segnalazione errori avanzata](/help/authentication/enhanced-error-codes.md).
 
 #### Completato
 
@@ -321,7 +321,7 @@ L’SDK per l’autenticazione di Adobe Pass restituisce un errore durante la ma
 
 </br>
 
-## **Stato classe** {#status}
+## **stato classe** {#status}
 
 ```
     ///
@@ -377,7 +377,7 @@ L’SDK per l’autenticazione di Adobe Pass restituisce un errore durante la ma
 
 <br>
 
-## **class Decision** {#decision}
+## **decisione classe** {#decision}
 
 ```
     ///

@@ -1,15 +1,15 @@
 ---
-title: Panoramica dell’SDK JavaScript
-description: Panoramica dell’SDK JavaScript
+title: Panoramica dell’SDK per JavaScript
+description: Panoramica dell’SDK per JavaScript
 exl-id: 8756c804-a4c1-4ee3-b2b9-be45f38bdf94
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '511'
+source-wordcount: '510'
 ht-degree: 0%
 
 ---
 
-# Panoramica dell’SDK JavaScript {#javascript-sdk-overview}
+# Panoramica dell’SDK per JavaScript {#javascript-sdk-overview}
 
 >[!NOTE]
 >
@@ -19,9 +19,9 @@ ht-degree: 0%
 
 L’Adobe consiglia vivamente di migrare alla versione più recente di JS v4.x della libreria AccessEnabler.
 
-L’integrazione JavaScript di autenticazione di Adobe Pass offre ai programmatori una soluzione TV-Everywhere nel familiare ambiente di sviluppo delle applicazioni web JS. I componenti principali dell’integrazione sono l’applicazione di &quot;alto livello&quot; (interazione dell’utente, presentazione video) e la libreria AccessEnabler di &quot;basso livello&quot; fornita dall’Adobe, che fornisce l’accesso ai flussi di adesione e gestisce le comunicazioni con i server di autenticazione di Adobe Pass.
+L’integrazione Adobe Pass Authentication JavaScript offre ai programmatori una soluzione TV-Everywhere nel familiare ambiente di sviluppo delle applicazioni web JS. I componenti principali dell’integrazione sono l’applicazione di &quot;alto livello&quot; (interazione dell’utente, presentazione video) e la libreria AccessEnabler di &quot;basso livello&quot; fornita dall’Adobe, che fornisce l’accesso ai flussi di adesione e gestisce le comunicazioni con i server di autenticazione di Adobe Pass.
 
-Il flusso di adesioni all’autenticazione generale di Adobe Pass è trattato in [Flusso adesione programmatore](/help/authentication/entitlement-flow.md), e il manuale JavaScript Integration Cookbook illustra l’implementazione. Le sezioni seguenti forniscono descrizioni ed esempi specifici per l’integrazione JavaScript AccessEnabler.
+Il flusso di adesione generale per l&#39;autenticazione di Adobe Pass è incluso in [Flusso di adesione dei programmatori](/help/authentication/entitlement-flow.md) e il manuale di integrazione di JavaScript illustra l&#39;implementazione. Nelle sezioni seguenti vengono fornite descrizioni ed esempi specifici dell&#39;integrazione di JavaScript AccessEnabler.
 
 >[!IMPORTANT]
 >
@@ -31,13 +31,13 @@ Il flusso di adesioni all’autenticazione generale di Adobe Pass è trattato in
 
 Affinché un utente possa accedere al proprio MVPD e autenticarsi, la pagina o il lettore deve fornire all’utente un modo per identificare il proprio MVPD. Viene fornita una versione predefinita della finestra di dialogo di selezione MVPD per lo sviluppo. Per l’utilizzo in produzione, devi implementare un selettore MVPD personalizzato.
 
-Se sai già chi è il fornitore del cliente, puoi [impostare MVPD a livello di programmazione](/help/authentication/home.md), senza interazione dell’utente. La tecnica è la stessa, ma ignora il passaggio di richiamare la finestra di dialogo Selettore provider e chiedere al cliente di selezionare il proprio MVPD.
+Se sai già chi è il provider del cliente, puoi [impostare MVPD a livello di programmazione](/help/authentication/home.md), senza l&#39;interazione dell&#39;utente. La tecnica è la stessa, ma ignora il passaggio di richiamare la finestra di dialogo Selettore provider e chiedere al cliente di selezionare il proprio MVPD.
 
 ## Visualizzazione del provider di servizi {#displaying-the-service-provider}
 
 Nell&#39;esempio di codice riportato di seguito viene illustrato come individuare e visualizzare il provider di servizi per il cliente corrente:
 
-**HTML** - Questa pagina aggiunge una sezione alla pagina in cui viene visualizzato il provider scelto dal cliente, se questo ha già effettuato l’accesso:
+**HTML** - Questa pagina aggiunge una sezione alla pagina in cui viene visualizzato il provider scelto dal cliente, se questi ha già effettuato l&#39;accesso:
 
 ```HTML
     <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
@@ -76,7 +76,7 @@ Nell&#39;esempio di codice riportato di seguito viene illustrato come individuar
 ```
 
 
-**JavaScript** Se l&#39;utente ha già eseguito l&#39;accesso, questo file JavaScript esegue una query sull&#39;Access Enabler per il provider corrente e visualizza il risultato nella sezione della pagina riservata a tale provider. Implementa anche una finestra di dialogo del selettore MVPD:
+**JavaScript** Se l&#39;utente ha già eseguito l&#39;accesso, questo file JavaScript esegue una query sull&#39;attivatore di accesso per il provider corrente e visualizza il risultato nella sezione della pagina riservata a tale utente. Implementa anche una finestra di dialogo del selettore MVPD:
 
 ```JS
     $(function() {
@@ -197,13 +197,13 @@ Nell&#39;esempio di codice riportato di seguito viene illustrato come individuar
 
 ## Disconnessione {#logout}
 
-Chiamata `logout()` per avviare il processo di disconnessione. Questo metodo non accetta argomenti. Consente di disconnettere l&#39;utente corrente, cancellando tutte le informazioni di autenticazione e autorizzazione per tale utente ed eliminando tutti i token AuthN e AuthZ dal sistema locale.
+Chiamare `logout()` per avviare il processo di disconnessione. Questo metodo non accetta argomenti. Consente di disconnettere l&#39;utente corrente, cancellando tutte le informazioni di autenticazione e autorizzazione per tale utente ed eliminando tutti i token AuthN e AuthZ dal sistema locale.
 
 In alcuni casi, il lettore non è responsabile della gestione dei loghi utente:
 
 
 
-- **Quando la disconnessione viene avviata da un sito non integrato con l&#39;autenticazione di Adobe Pass.** In questo caso, MVPD può richiamare il servizio di disconnessione singola dell’autenticazione di Adobe Pass tramite un reindirizzamento del browser. La chiamata SLO tramite una chiamata backchannel non è attualmente supportata.
+- **Quando la disconnessione viene avviata da un sito non integrato con l&#39;autenticazione di Adobe Pass.** In questo caso MVPD può richiamare il servizio di disconnessione singola dell&#39;autenticazione di Adobe Pass tramite un reindirizzamento del browser. La chiamata SLO tramite una chiamata backchannel non è attualmente supportata.
 
 >[!NOTE]
 >

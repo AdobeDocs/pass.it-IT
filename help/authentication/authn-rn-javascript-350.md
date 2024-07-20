@@ -1,7 +1,8 @@
 ---
 title: Note sulla versione di Adobe Pass Authentication JavaScript 3.5.0
 description: Note sulla versione di Adobe Pass Authentication JavaScript 3.5.0
-source-git-commit: 7057aeda34b4fe0d059912ab0a71ea856427654c
+exl-id: 580839ef-4265-422f-8508-339bb8cdd636
+source-git-commit: 8552a62f4d6d80ba91543390bf0689d942b3a6f4
 workflow-type: tm+mt
 source-wordcount: '105'
 ht-degree: 0%
@@ -25,7 +26,7 @@ Data di rilascio: **02/14/2020**
 
 ## Panoramica sulla versione {#overview-javascript-sdk-350}
 
-* Aggiornamenti per il supporto della nuova policy per i cookie SameSite (dettagli [qui](https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-cookie-same-site-00)).
+* Aggiornamenti per il supporto del nuovo criterio per i cookie SameSite (dettagliato [qui](https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-cookie-same-site-00)).
 
 
 ## Pacchetto di rilascio {#rel-pkg-javascript-sdk-350}

@@ -1,14 +1,15 @@
 ---
-title: Note sulla versione di JavaScript 4.2.0 per l’autenticazione di Adobe Pass
-description: Note sulla versione di JavaScript 4.2.0 per l’autenticazione di Adobe Pass
-source-git-commit: 7057aeda34b4fe0d059912ab0a71ea856427654c
+title: Note sulla versione di Adobe Pass Authentication JavaScript 4.2.0
+description: Note sulla versione di Adobe Pass Authentication JavaScript 4.2.0
+exl-id: 2b022d31-a062-4b4e-b2cd-25749ce38f74
+source-git-commit: 8552a62f4d6d80ba91543390bf0689d942b3a6f4
 workflow-type: tm+mt
 source-wordcount: '99'
 ht-degree: 0%
 
 ---
 
-# Note sulla versione di JavaScript 4.2.0 per l’autenticazione di Adobe Pass {#javascript-sdk-420-release-notes}
+# Note sulla versione di Adobe Pass Authentication JavaScript 4.2.0 {#javascript-sdk-420-release-notes}
 
 >[!NOTE]
 >
@@ -25,7 +26,7 @@ Data di rilascio: **02/14/2020**
 
 ## Panoramica sulla versione {#overview-javascript-sdk-420}
 
-* Aggiornamenti per il supporto della nuova policy per i cookie SameSite (dettagli [qui](https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-cookie-same-site-00)).
+* Aggiornamenti per il supporto del nuovo criterio per i cookie SameSite (dettagliato [qui](https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-cookie-same-site-00)).
 
 
 ## Pacchetto di rilascio {#rel-pkg-javascript-sdk-420}

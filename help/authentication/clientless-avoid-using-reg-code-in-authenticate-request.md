@@ -4,7 +4,7 @@ description: Evita di usare '&'reg_code nella richiesta /authenticate
 exl-id: c0ecb6f9-2167-498c-8a2d-a692425b31c5
 source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
 workflow-type: tm+mt
-source-wordcount: '235'
+source-wordcount: '223'
 ht-degree: 0%
 
 ---
@@ -21,11 +21,11 @@ ht-degree: 0%
 
 ## Problema
 
-Il browser IE 9 interpreta &#39;\®&#39; come comando speciale e lo converte in ®.
+Il browser IE 9 interpreta &#39;\&amp;reg&#39; come comando speciale e lo converte in ®.
 
 ## Spiegazione
 
-Se il `/authenticate` La richiesta è composta come segue...
+Se la richiesta `/authenticate` è composta come segue...
 
 
 ```
@@ -41,7 +41,7 @@ Se il `/authenticate` La richiesta è composta come segue...
 ```
 
 
-Il requestor\_id verrà interpretato come univision®\_code=EKAFMFI, poiché non esiste &#39;&amp;&#39; e l&#39;Adobe non troverà un `regCode` parametro a cui associare il token.  Esiste la possibilità che il token di autenticazione non venga creato, nel qual caso `/checkauthn` le chiamate di non riusciranno a trovare alcun token.
+Il richiedente\_id verrà interpretato come univision®\_code=EKAFMFI, poiché non esiste &#39;&amp;&#39; e l&#39;Adobe non troverà un parametro `regCode` a cui associare il token.  È possibile che il token AuthN non venga creato, nel qual caso `/checkauthn` chiamate non riusciranno a trovare alcun token.
 
 
 
@@ -49,14 +49,14 @@ Il requestor\_id verrà interpretato come univision®\_code=EKAFMFI, poiché non
 
 Per risolvere il problema, scegliere una delle seguenti opzioni:
 
-1. Evita di utilizzare `&reg_code` parametro tra gli altri parametri della stringa di query.  Spostalo invece sul primo parametro della stringa di query nell’URL della richiesta, creando l’URL della richiesta come segue:
+1. Evitare di utilizzare il parametro `&reg_code` tra gli altri parametri della stringa di query.  Spostalo invece sul primo parametro della stringa di query nell’URL della richiesta, creando l’URL della richiesta come segue:
 
 
-       &lt;fqdn>autentica?reg_code =EKAFMFI&amp;requestor_id=someRequestor&amp;domain_name=someRequestor.com&amp;noflash=true&amp;mso_id=someMvpd&amp;redirect_url=someRequestor.redirect.url.html
+       &lt;FQDN>autentica?reg_code =EKAFMFI&amp;requestor_id=someRequestor&amp;domain_name=someRequestor.com&amp;noflash=true&amp;mso_id=someMvpd&amp;redirect_url=someRequestor.redirect.url.html
    
 
-   In questo modo, `&reg` param non verrà interpretato in modo errato.
+   In questo modo, il parametro `&reg` non verrà interpretato in modo errato.
 
-1. Normalizza `&reg_code` come utilizzando `&amp;reg_code`.
+1. Normalizza `&reg_code` come utente di `&amp;reg_code`.
 
 1. Un Adobe potrebbe introdurre una nuova funzione per inviare un codice di errore alla seconda schermata in risposta a una chiamata di autenticazione, se la creazione del token AuthN non è riuscita.

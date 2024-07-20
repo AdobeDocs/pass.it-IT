@@ -1,13 +1,13 @@
 ---
 title: Meccanismo di limitazione
 description: Meccanismo di limitazione
-source-git-commit: cbb45cae576332e2b63027992c597b834210988d
+exl-id: 15236570-1a75-42fb-9bba-0e2d7a59c9f6
+source-git-commit: 8552a62f4d6d80ba91543390bf0689d942b3a6f4
 workflow-type: tm+mt
 source-wordcount: '624'
 ht-degree: 1%
 
 ---
-
 
 # Meccanismo di limitazione {#throttling-mechanism}
 
@@ -20,22 +20,22 @@ Una volta raggiunto il limite, le richieste verranno contrassegnate con uno stat
 ## Panoramica sul meccanismo {#mechanism-overview}
 
 Il meccanismo determina il numero massimo di chiamate accettate per ogni endpoint di monitoraggio della concorrenza entro un intervallo di tempo specifico.
-Una volta raggiunto il numero massimo di chiamate, il nostro servizio risponderà con &quot;429 Troppe richieste&quot;. L’intestazione &quot;Scade&quot; della risposta 429 include il timestamp del momento in cui la chiamata successiva verrà considerata valida o il momento in cui scade la limitazione. Al momento, la limitazione scade dopo un minuto dalla prima risposta 429.
+Una volta raggiunto il numero massimo di chiamate, il nostro servizio risponderà con &quot;429 Troppe richieste&quot;. L’intestazione &quot;Scade&quot; della risposta 429 include il timestamp del momento in cui la chiamata successiva verrà considerata valida o il momento in cui scade la limitazione. Al momento, la limitazione scade dopo una   minuto dalla prima risposta 429.
 
 Gli endpoint configurati con limitazione sono:
 1. Crea una nuova sessione: POST /session/{idp}/{subject}
-2. Chiamata Heartbeat: POST /session/{idp}/{subject}/{sessionId}
+2. Chiamata heartbeat: POST /session/{idp}/{subject}/{sessionId}
 3. Termina una sessione: DELETE /session/{idp}/{subject}/{sessionId}
 
 La limitazione è configurata su due livelli:
-1. session: same unique {sessionId} parametro inviato `Heartbeat` chiama e `Terminate a session` chiamare.
-2. utente: stesso univoco {subject} parametro inviato `Create a new session` chiamare.
+1. sessione: stesso parametro univoco {sessionId} inviato nella chiamata `Heartbeat` e nella chiamata `Terminate a session`.
+2. utente: stesso parametro univoco {subject} inviato nella chiamata `Create a new session`.
 
 Il limite per la limitazione a livello di sessione è impostato su 200 richieste in un minuto.\
 Il limite per la limitazione a livello utente è impostato su 200 richieste in un minuto.\
 Entrambi questi limiti (limitazione a livello di sessione e limitazione a livello di utente) sono configurabili e verranno aggiornati nel caso in cui vengano raggiunti tramite scenari di integrazione validi. Per questo consigliamo di contattare il team di supporto.
 
-**Scenario per la limitazione a livello di sessione:**
+**Scenario per limitazione a livello di sessione:**
 
 | Ora | Invio richiesta a CM | Numero di richieste | Risposta ricevuta da CM | Spiegazione |
 |-----------|-----------------------------------------|--------------------|------------------------------------------------------------------------------|---------------------------------------------------------------------------------|
@@ -44,7 +44,7 @@ Entrambi questi limiti (limitazione a livello di sessione e limitazione a livell
 | Secondo 61 | DELETE/session/idp1/subject1/session1 | 1 | 1 chiamata riceve ‘429 Troppe richieste’ | Nessuna chiamata nel limite ancora disponibile |
 | Secondo 70 | DELETE/session/idp1/subject1/session1 | 1 | 1 chiamata riceve &quot;202 Accepted&quot; (Accettato) | Limite impostato su 200 chiamate disponibili perché sono trascorsi 60 secondi dal secondo 10 |
 
-**Scenario per la limitazione a livello di utente:**
+**Scenario per limitazione a livello utente:**
 
 | Ora | Invio richiesta a CM | Numero di richieste | Risposta ricevuta da CM | Spiegazione |
 |-----------|------------------------------|--------------------|------------------------------------------------------------------------------|---------------------------------------------------------------------------------|

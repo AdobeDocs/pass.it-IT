@@ -1,13 +1,13 @@
 ---
 title: Attributi metadati standard
 description: Attributi metadati standard
-source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
+exl-id: 99ffa98c-213f-47a5-a6e7-fbacb77875d0
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '1257'
+source-wordcount: '1053'
 ht-degree: 0%
 
 ---
-
 
 # Attributi metadati standard {#std-metadata-attributes}
 
@@ -18,13 +18,13 @@ Questa pagina si propone di fornire un elenco completo degli attributi di metada
 
 ## Attributi richiesti per progettazione {#attr-req-by-design}
 
-L’API di monitoraggio della concorrenza forza i client a inviare i seguenti valori come parte di qualsiasi chiamata di inizializzazione valida: [chiamate di avvio sessione](/help/concurrency-monitoring/restrict-concurr-usage-mult-apps.md#api-calls-descr).
+L&#39;API di monitoraggio della concorrenza forza i client a inviare i seguenti valori come parte di qualsiasi chiamata di inizializzazione valida: [chiamate di avvio sessione](/help/concurrency-monitoring/restrict-concurr-usage-mult-apps.md#api-calls-descr).
 
 | Nome campo | Esempio di valore | Dove utilizzarlo | Ottenuto da |
 |-------------|---------------------------|--------------------|------------------------------------------------------------------------------------------------------------------------------------|
 | applicationId | 75b4-431b-adb2-eb6b9e546013 | Intestazione di autorizzazione | Ticket Zendesk all&#39;integrazione |
 | mvpdName | Sample_MVPD | Percorso URI | Autenticazione di Adobe Pass dall’endpoint di configurazione quando l’utente seleziona l’MVPD |
-| accountId | 12345 | Percorso URI | Metadati upstreamUserID di autenticazione Adobe Pass dopo l’accesso dell’utente [Metadati utente upstreamUserID - Autenticazione Adobe Pass](/help/authentication/user-metadata-feature.md) |
+| accountId | 12345 | Percorso URI | Metadati upstreamUserID di autenticazione Adobe Pass dopo l&#39;accesso utente [Metadati utente upstreamUserID - Autenticazione Adobe Pass](/help/authentication/user-metadata-feature.md) |
 
 
 ## Attributi metadati {#metadata-attr}
@@ -39,25 +39,25 @@ Con [API v2.0](http://docs.adobeptime.io/cm-api-v2/), se uno di questi attributi
 | Media Company | programmerName | stringa | Nome del programmatore |                                                   | ProgrammatoreX |                                                                                   |
 | Risorsa | channel | stringa | Canale TV |                                                   | ChannelY |                                                                                   |
 |                 | assetId | stringa | Il titolo &quot;descrittivo&quot; o leggibile da leggere per questo contenuto | [Riferimento campi dati EIDR 2.0](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/EIDR_2_0_Data_Fields.pdf){target=_blank} | Ben-Hur |                                                                                   |
-|                 | tipo | enumerazione | Valore che descrive il tipo generale di contenuto rappresentato da TveItem. I valori enumerati includono: trasmissione di filmEpisodio nonBroadcastEpisodio musicaVideo awardsMostra clip concerto conferenza newsEvento sportivotrailer evento | [Procedura consigliata per feed metadati OATC](https://userfiles-kb.s3.amazonaws.com/userfiles/258/326/ckfinder/files/OATC%20Metadata%20Feed%201_0d_1%20OATC%20BOARD%20APPROVED%20FOR%20RELEASE%20%281%29.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&amp;X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAIMM7Q2VAGHGVAOHA%2F20230803%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230803T144225Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=1200&amp;X-Amz-Signature=e61658133a4875ff48757b1a3bafb7627054ba6fc75c134a3dea9fa8022b45fa){target=_blank} | broadcastEpisode | Il campo deve corrispondere a uno degli elementi nell’enumerazione |
+|                 | tipo | enumerazione | Valore che descrive il tipo generale di contenuto rappresentato da TveItem. I valori enumerati includono: trasmissione di filmEpisodio nonBroadcastEpisodio musicaVideo awardsMostra clip concerto conferenza newsEvento sportivotrailer evento | [Esercitazione consigliata feed metadati OATC](https://userfiles-kb.s3.amazonaws.com/userfiles/258/326/ckfinder/files/OATC%20Metadata%20Feed%201_0d_1%20OATC%20BOARD%20APPROVED%20FOR%20RELEASE%20%281%29.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&amp;X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAIMM7Q2VAGHGVAOHA%2F20230803%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230803T144225Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=1200&amp;X-Amz-Signature=e61658133a4875ff48757b1a3bafb7627054ba6fc75c134a3dea9fa8022b45fa){target=_blank} | broadcastEpisode | Il campo deve corrispondere a uno degli elementi nell’enumerazione |
 |                 | contentType | stringa | Questo campo determina se il contenuto richiesto è live o VOD | N/D | live, vod | live o vod |
 |                 | genere | stringa | Genere del contenuto riprodotto in streaming. Descrive il tipo di programmazione generale | [Feed metadati OATC consigliato](https://userfiles-kb.s3.amazonaws.com/userfiles/258/326/ckfinder/files/OATC%20Metadata%20Feed%201_0d_1%20OATC%20BOARD%20APPROVED%20FOR%20RELEASE%20%281%29.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&amp;X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAIMM7Q2VAGHGVAOHA%2F20230803%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230803T144225Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=1200&amp;X-Amz-Signature=e61658133a4875ff48757b1a3bafb7627054ba6fc75c134a3dea9fa8022b45fa){target=_blank} Esercitazione | Commedia | Tipo di genere valido |
-|                 | durata | numero | Durata dell&#39;elemento multimediale in secondi | [Procedura consigliata per feed metadati OATC](https://userfiles-kb.s3.amazonaws.com/userfiles/258/326/ckfinder/files/OATC%20Metadata%20Feed%201_0d_1%20OATC%20BOARD%20APPROVED%20FOR%20RELEASE%20%281%29.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&amp;X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAIMM7Q2VAGHGVAOHA%2F20230803%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230803T144225Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=1200&amp;X-Amz-Signature=e61658133a4875ff48757b1a3bafb7627054ba6fc75c134a3dea9fa8022b45fa){target=_blank} | 1800 | sequenza numerica |
+|                 | durata | numero | Durata dell&#39;elemento multimediale in secondi | [Esercitazione consigliata feed metadati OATC](https://userfiles-kb.s3.amazonaws.com/userfiles/258/326/ckfinder/files/OATC%20Metadata%20Feed%201_0d_1%20OATC%20BOARD%20APPROVED%20FOR%20RELEASE%20%281%29.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&amp;X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAIMM7Q2VAGHGVAOHA%2F20230803%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230803T144225Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=1200&amp;X-Amz-Signature=e61658133a4875ff48757b1a3bafb7627054ba6fc75c134a3dea9fa8022b45fa){target=_blank} | 1800 | sequenza numerica |
 | Dispositivo/browser | deviceId | stringa | L’identificatore univoco del dispositivo. | [Proprietà di Device Atlas](https://deviceatlas.com/device-data/properties){target=_blank} | 2b6f0cc904d137be2e1730235f5664094b831186 |                                                                                   |
 |                 | deviceName | stringa | Il nome descrittivo del dispositivo. |                                                   | Joe’s iPad |                                                                                   |
 |                 | marketingName | stringa | Il nome marketing (o il nome descrittivo del cliente) di un dispositivo | [Proprietà di Device Atlas](https://deviceatlas.com/device-data/properties){target=_blank} | iPhone 6s | nome marketing valido |
 |                 | mobileDevice | booleano | True se il dispositivo è destinato all&#39;uso in movimento | [Proprietà di Device Atlas](https://deviceatlas.com/device-data/properties){target=_blank} | true, false | true, false |
 |                 | deviceModel | stringa | Il nome del modello del dispositivo, del browser o di un altro componente | [Proprietà di Device Atlas](https://deviceatlas.com/device-data/properties){target=_blank} | tablet, telefono, xbox. set-top box | nome del modello di dispositivo valido |
-|                 | osName | stringa | Sistema operativo in esecuzione sul dispositivo | [Device Atlas - Valori delle proprietà predefinite del sistema operativo](https://deviceatlas.com/device-data/explorer/#defined_property_values/877430/4121272){target=_blank} | Android, Windows 10, OS X, Linux, Altro Nota: per visualizzare i valori delle proprietà è necessario aver effettuato l’accesso con un nome utente e una password in Device Atlas | il valore previsto è uno dei valori delle proprietà predefinite di Device Atlas |
-|                 | browserName | stringa | Il nome o il tipo di browser sul dispositivo | [Device Atlas - Valori delle proprietà predefinite del browser](https://deviceatlas.com/device-data/explorer/#defined_property_values/7/2705619){target=_blank} | Nome o tipo del browser sul dispositivo.  Nota: per visualizzare i valori delle proprietà, devi aver effettuato l’accesso con un nome utente e una password in Device Atlas | il valore previsto è uno dei valori delle proprietà predefinite di Device Atlas |
+|                 | osName | stringa | Sistema operativo in esecuzione sul dispositivo | [Atlante dispositivo - Valori proprietà predefiniti del sistema operativo](https://deviceatlas.com/device-data/explorer/#defined_property_values/877430/4121272){target=_blank} | Android, Windows 10, OS X, Linux, Altro Nota: per visualizzare i valori delle proprietà è necessario aver effettuato l’accesso con un nome utente e una password in Device Atlas | il valore previsto è uno dei valori delle proprietà predefinite di Device Atlas |
+|                 | browserName | stringa | Il nome o il tipo di browser sul dispositivo | [Atlante dispositivo - Valori proprietà predefiniti browser](https://deviceatlas.com/device-data/explorer/#defined_property_values/7/2705619){target=_blank} | Nome o tipo del browser sul dispositivo.  Nota: per visualizzare i valori delle proprietà, devi aver effettuato l’accesso con un nome utente e una password in Device Atlas | il valore previsto è uno dei valori delle proprietà predefinite di Device Atlas |
 |                 | browserVersion | stringa | Versione del browser sul dispositivo | [Proprietà di Device Atlas](https://deviceatlas.com/device-data/properties){target=_blank} | Versione del browser sul dispositivo |                                                                                   |
 | Applicazione | applicationName | stringa | Nome dell’applicazione leggibile dal consumatore o di facile utilizzo | N/D | Applicazione_Esempio |                                                                                   |
 |                 | applicationId | stringa | L’ID applicazione che identifica in modo univoco un’applicazione client. | N/D | de305d54-75b4-431b-adb2-eb6b9e546013 |                                                                                   |
 |                 | applicationPlatform | stringa | Piattaforma nativa dell’applicazione | N/D | ios, android |                                                                                   |
-|                 | applicationVersion | stringa | Questo valore può essere utilizzato a scopo di analisi | N/D | 1.0, 2.0 |                                                                                   |
+|                 | applicationVersion | stringa | Questo valore può essere utilizzato a scopo di analisi | N/D | 1,0, 2,0 |                                                                                   |
 | Oggetto | accountId | stringa | ID conto del soggetto del monitoraggio della concorrenza (nell’ambito dell’MVPD) | N/D | account test |                                                                                   |
 |                 | contractType | stringa | premium, base. I clienti possono aggiungere questo elemento come metadati personalizzati e utilizzarlo nei propri realm. | N/D | premium, base |                                                                                   |
-| Utente | nome | stringa | Alcuni MVPD forniscono informazioni relative all’utente specifico che riproduce il contenuto. | N/D |                                                                                                                                                         |                                                                                   |
+| Utente | name | stringa | Alcuni MVPD forniscono informazioni relative all’utente specifico che riproduce il contenuto. | N/D |                                                                                                                                                         |                                                                                   |
 |                 | hba | booleano | Identifica se l’utente tenta di avviare il flusso dalla propria posizione principale | N/D | true, false | true o false |
 | Posizione | continente | stringa | Il continente da cui proviene l’ID dispositivo che invia la richiesta di riproduzione | N/D | Nord America | nome continente valido |
 |                 | paese | stringa | Il paese da cui proviene l’ID dispositivo che invia la richiesta di riproduzione | N/D | Stati Uniti | nome paese valido |
@@ -71,15 +71,15 @@ Con [API v2.0](http://docs.adobeptime.io/cm-api-v2/), se uno di questi attributi
 
 I campi di metadati standard possono essere utilizzati per definire criteri lato server in base ai loro valori di campo:
 
-* Puoi configurare un criterio in modo che venga applicato solo a valori di campo specifici (ad esempio, un criterio iOS dedicato: dove `osType` è `iOS`)
+* È possibile configurare un criterio per applicarlo solo a valori di campo specifici (ad esempio, un criterio iOS dedicato: dove `osType` è `iOS`)
 * È possibile limitare il numero di valori distinti per un determinato campo. Alcuni esempi sono i seguenti:
    * non più di X dispositivi distinti: `HAVING DISTINCT COUNT(deviceId) <= 2`
    * non più di X codici zip distinti: `HAVING DISTINCT COUNT(zipcode) <= 3`
 * Puoi limitare il numero di flussi attivi per valore di campo. Alcuni esempi sono i seguenti:
    * non più di X flussi attivi per un singolo tipo di dispositivo: `GROUP BY deviceType HAVING COUNT(streamId) <= 3`
-   * non più di X flussi attivi per flussi di contenuti live: `SELECT COUNT(streamId) AS streamCount WHERE contentType='live' HAVING streamCount <= 3`
+   * non più di X flussi attivi per flussi di contenuto live: `SELECT COUNT(streamId) AS streamCount WHERE contentType='live' HAVING streamCount <= 3`
 
-Contatta il team di monitoraggio della concorrenza tramite [creazione di un ticket in Zendesk](mailto:tve-support@adobe.com) e indica i criteri che desideri implementare.
+Contatta il team di monitoraggio della concorrenza [creando un ticket in Zendesk](mailto:tve-support@adobe.com) e indica i criteri che desideri implementare.
 
 Di seguito sono riportati ulteriori esempi di criteri e manuali di integrazione:
 

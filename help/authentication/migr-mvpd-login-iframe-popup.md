@@ -4,7 +4,7 @@ description: Migrazione della pagina di accesso MVPD da iFrame a Popup
 exl-id: 389ea0ea-4e18-4c2e-a527-c84bffd808b4
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '689'
+source-wordcount: '686'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ Alcuni utenti hanno riscontrato problemi con i cookie di terze parti nell’impl
 * [Adobe Pass Authentication and Safari login issues](https://tve.helpdocsonline.com/adobe-pass)
 * [MVPD iFrame login and 3rd party cookies](https://tve.helpdocsonline.com/mvpd)-->
 
-Il team di autenticazione di Adobe Pass **consiglia di implementare la finestra popup/nuova pagina di accesso alla finestra** piuttosto che la versione iFrame su Firefox e Safari.  Tuttavia, se implementi una pagina di accesso per Internet Explorer, potrebbero verificarsi problemi con l’implementazione della finestra a comparsa. I problemi di Internet Explorer sono causati dal fatto che, dopo che l’utente si autentica con il proprio MVPD nella finestra popup, l’autenticazione di Adobe Pass forza un reindirizzamento della pagina padre, che viene visto come un blocco popup da Internet Explorer. Il team di autenticazione di Adobe Pass **consiglia di implementare l&#39;accesso iFrame per Internet Explorer**.
+Il team di autenticazione di Adobe Pass **consiglia di implementare la pagina di accesso a comparsa o la nuova pagina di accesso alla finestra**, anziché la versione iFrame su Firefox e Safari.  Tuttavia, se implementi una pagina di accesso per Internet Explorer, potrebbero verificarsi problemi con l’implementazione della finestra a comparsa. I problemi di Internet Explorer sono causati dal fatto che, dopo che l’utente si autentica con il proprio MVPD nella finestra popup, l’autenticazione di Adobe Pass forza un reindirizzamento della pagina padre, che viene visto come un blocco popup da Internet Explorer. Il team di autenticazione di Adobe Pass **consiglia di implementare l&#39;accesso iFrame per Internet Explorer**.
 
 Il codice di esempio presentato in questa nota tecnica utilizza un’implementazione ibrida sia di iFrame che di un elemento a comparsa, aprendo un iFrame su Internet Explorer e un elemento a comparsa sugli altri browser.
 
@@ -32,7 +32,7 @@ Considerando che esiste già un’implementazione iFrame, la prima parte della n
 
 ## Selettore MVPD con pagina di accesso in un iFrame {#mvpd-pickr-iframe}
 
-Gli esempi di codice precedenti mostravano una pagina HTML contenente &lt;div> tag in cui deve essere creato l’iFrame insieme al pulsante chiudi iFrame:
+Gli esempi di codice precedenti mostravano una pagina HTML contenente il tag &lt;div> in cui deve essere creato l’iFrame insieme al pulsante chiudi iFrame:
 
 ```HTML
 <body> 
@@ -48,7 +48,7 @@ Gli esempi di codice precedenti mostravano una pagina HTML contenente &lt;div> t
 </body>
 ```
 
-Ecco la **JavaScript** codice:
+Ecco il codice **JavaScript** associato:
 
 ```JavaScript
 /*
@@ -105,7 +105,7 @@ function setSelectedProvider(providerID) {
 
 ## Selettore MVPD con pagina di accesso in una finestra popup {#mvpd-pickr-popup}
 
-Poiché non utilizzeremo un’ **iFrame** il codice HTML non conterrà più l’iFrame né il pulsante per chiuderlo. Il div che in precedenza conteneva l&#39;iFrame - **mvpddiv** - sono conservati e utilizzati per:
+Poiché non verrà più utilizzato un **iFrame**, il codice HTML non conterrà l&#39;iFrame o il pulsante per chiudere l&#39;iFrame. Il div che in precedenza conteneva l&#39;iFrame - **mvpddiv** - verrà mantenuto e utilizzato per i seguenti elementi:
 
 * per notificare all&#39;utente che la pagina di accesso MVPD è già aperta se lo stato attivo della finestra a comparsa viene perso
 * per fornire un collegamento che consenta di riattivare la finestra a comparsa
@@ -134,7 +134,7 @@ Poiché non utilizzeremo un’ **iFrame** il codice HTML non conterrà più l’
 </body>
 ```
 
-L’elenco degli MVPD verrà visualizzato nel div denominato **selettore** come selezione **-mvpdList**.
+L&#39;elenco di MVPD verrà visualizzato nel div denominato **selettore** come **-mvpdList** selezionato.
 
 Verrà utilizzato un nuovo callback API - **setConfig(configXML)**. Il callback viene attivato dopo la chiamata della funzione setRequestor(requestorID). Questo callback restituisce l&#39;elenco di MVPD integrati con requestorID precedentemente impostato. Nel metodo di callback verrà analizzato il codice XML in ingresso e verrà memorizzato nella cache l&#39;elenco di MVPD. Viene creato anche il selettore MVPD, ma non visualizzato.
 
@@ -181,13 +181,13 @@ function displayProviderDialog(providers) {
 
 Dopo che l’utente ha selezionato un MVPD dal selettore, è necessario creare la finestra a comparsa. Alcuni browser possono bloccare la finestra a comparsa se viene creata con about:blank o con una pagina presente in un altro dominio, pertanto si consiglia di aprirla con il nome host da cui è caricato AccessEnabler.
 
-Nell’implementazione di iFrame, il ripristino del flusso di autenticazione veniva eseguito dal pulsante btnCloseIframe e dalla funzione JavaScript closeIframeAction(), ma ora la decorazione dell’iFrame non è più possibile. Quindi, lo stesso comportamento si ottiene osservando quando la finestra a comparsa viene chiusa (dall’utente o completando il flusso di autenticazione). È stato aggiunto uno snippet di codice che aiuta anche nel caso in cui l’utente perda lo stato attivo della finestra a comparsa:
+Nell’implementazione di iFrame, il ripristino del flusso di autenticazione veniva eseguito dal pulsante btnCloseIframe e dalla funzione di JavaScript closeIframeAction(), ma ora la decorazione dell’iFrame non è più possibile. Quindi, lo stesso comportamento si ottiene osservando quando la finestra a comparsa viene chiusa (dall’utente o completando il flusso di autenticazione). È stato aggiunto uno snippet di codice che aiuta anche nel caso in cui l’utente perda lo stato attivo della finestra a comparsa:
 
 ```HTML
 "<a href="javascript:mvpdWindow.focus();">Click here to open it.</a>".
 ```
 
-Nel callback createIFrame() viene **mvpddiv** verrà visualizzato div.
+Nel callback createIFrame() verrà visualizzato il div **mvpddiv**.
 
 ```JavaScript
 function createIFrame(width, height) {
@@ -230,5 +230,5 @@ function checkClosed() {
 >
 >* Il codice di esempio contiene una variabile hardcoded per il requestorID - &#39;REF&#39; utilizzato che deve essere sostituito da un vero ID richiedente programmatore.
 >* Il codice di esempio verrà eseguito correttamente solo da un dominio inserito nella whitelist associato all’ID richiedente utilizzato.
->* Poiché l’intero codice è disponibile per il download, il codice presentato in questa nota tecnica è stato troncato. Per un esempio completo, vedi **Esempio a comparsa e iFrame JS**.
->* Le librerie JavaScript esterne sono state collegate da [Servizi in hosting Google](https://developers.google.com/speed/libraries/).
+>* Poiché l’intero codice è disponibile per il download, il codice presentato in questa nota tecnica è stato troncato. Per un esempio completo, vedere **Esempio di iFrame JS vs. esempio popup**.
+>* Le librerie JavaScript esterne sono state collegate da [Google Hosted Services](https://developers.google.com/speed/libraries/).

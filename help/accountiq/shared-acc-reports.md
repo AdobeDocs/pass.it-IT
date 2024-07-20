@@ -11,7 +11,7 @@ ht-degree: 0%
 
 # Rapporti sugli account condivisi {#shared-accounts-reports}
 
-I rapporti Conti condivisi forniscono un altro gruppo di grafici e grafici che riflettono il comportamento di condivisione e il consumo per il segmento corrente. Ad esempio: **[!UICONTROL Over Moderate Probability]** e **[!UICONTROL Over Low Probability]** per il segmento corrente.
+I rapporti Conti condivisi forniscono un altro gruppo di grafici e grafici che riflettono il comportamento di condivisione e il consumo per il segmento corrente. Ad esempio, **[!UICONTROL Over Moderate Probability]** e **[!UICONTROL Over Low Probability]** per il segmento corrente.
 
 ## Probabilità di condivisione account {#accounts-sharing-probability}
 
@@ -23,7 +23,7 @@ Questi grafici ad anello e a barre mostrano le percentuali (e i numeri assoluti)
 * Basso (20%-40%)
 * Molto bassa (0%-20%)
 
-La linea rossa contrassegna l’intervallo di soglia selezionato nel [Conti oltre la soglia nel segmento corrente](#threshold-selector) e l’area di colore rosso chiaro contiene il totale di tutti gli account al di sopra di tale soglia.
+La linea rossa contrassegna l&#39;intervallo di soglia selezionato nel pannello [Account oltre la soglia nel segmento corrente](#threshold-selector) e l&#39;area rossa chiara contiene il totale di tutti gli account al di sopra di tale soglia.
 
 ![](assets/accounts-sharing-probability-pie.png)
 
@@ -41,13 +41,13 @@ Anche in questo caso, la linea rossa indica la soglia corrente e l&#39;area ross
 
 Questo pannello consente di selezionare l’intervallo di soglia per i grafici ad anello e a barre qui sopra. Le quattro opzioni sono:
 
-* Account **su molto basso** condivisione **probabilità**
+* Gli account **su molto bassi** condividono **probabilità**
 
-* Account **oltre il basso** condivisione **probabilità**
+* Account **oltre il minimo** che condividono **probabilità**
 
-* Account **oltre moderato** condivisione **probabilità**
+* Account **superiori a moderati** che condividono **probabilità**
 
-* Account **oltre l&#39;altezza** condivisione **probabilità**
+* Account **oltre l&#39;alto** che condividono **probabilità**
 
 ![](assets/threshold-selector-shared-accounts.png)
 
@@ -77,7 +77,7 @@ Questo grafico ti informa sul numero di abbonati nel segmento corrente che utili
 
 >[!NOTE]
 >
->È possibile ingrandire le barre che rappresentano più set di codici postali, rappresentati da un **+** (segno più) (ad esempio, 10+), facendo doppio clic su di essi.
+>Per ingrandire le barre che rappresentano più set di codici postali, rappresentati da un segno più (**+**), fare doppio clic su di esse.
 
 
 ## Estensione geografica del segmento per periodo per conto {#geo-span-period-account}
@@ -88,8 +88,8 @@ Questo grafico a barre rappresenta il numero di account degli abbonati che utili
 
 >[!NOTE]
 >
-> È possibile ingrandire le barre che rappresentano più di un insieme di distanze geografiche, rappresentate da **+** (segno più) (ad esempio, 1000+), facendo doppio clic su di essi.
+> È possibile ingrandire le barre che rappresentano più di un insieme di distanze geografiche, rappresentate da un segno più (**+**), ad esempio 1000+, facendo doppio clic su di esse.
 
 >[!MORELIKETHIS]
 >
->* Scopri come esportare rapporti per i primi 1000 abbonati nel segmento selezionato utilizzando i filtri nei rapporti Account condivisi utilizzando [Esporta i primi 1000 account](/help/accountiq/export-acc-information.md) opzione.
+>* Scopri come esportare i rapporti per i primi 1000 abbonati nel segmento selezionato utilizzando i filtri nei rapporti Account condivisi utilizzando l’opzione [Esporta i primi 1000 account](/help/accountiq/export-acc-information.md).

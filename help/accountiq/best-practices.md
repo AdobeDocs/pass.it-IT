@@ -1,5 +1,5 @@
 ---
-title: Best practice per l’Account IQ
+title: Best practice per Account IQ
 description: Informazioni su [!UICONTROL Account IQ] in Adobe Pass.
 exl-id: 55901f5d-d9c1-4ee5-9349-afa28445b324
 source-git-commit: 60aeba449cae1c4dc510a23aaf1ba793a7a60db0
@@ -11,11 +11,11 @@ ht-degree: 0%
 
 # Best practice {#aiq-best-practices}
 
-[!UICONTROL Account IQ] consente di identificare la condivisione delle credenziali, misurarne l’ambito e l’impatto, segmentare le coorti rilevanti e tenere traccia dell’effetto delle azioni mirate. Offre una varietà di strumenti, grafici e rapporti utilizzati per comprendere e gestire account condivisi che possono essere utilizzati in vari modi. Ogni servizio di streaming adotta questo comportamento e sviluppa processi che corrispondono ai loro obiettivi specifici e il prodotto è progettato per soddisfare in modo flessibile tali esigenze.  Tuttavia, esistono alcune regole di prassi generali che possono essere applicate a un ampio insieme di scenari.
+[!UICONTROL Account IQ] consente di identificare la condivisione delle credenziali, misurarne l&#39;ambito e l&#39;impatto, segmentare le coorti rilevanti e tenere traccia dell&#39;effetto delle azioni mirate. Offre una varietà di strumenti, grafici e rapporti utilizzati per comprendere e gestire account condivisi che possono essere utilizzati in vari modi. Ogni servizio di streaming adotta questo comportamento e sviluppa processi che corrispondono ai loro obiettivi specifici e il prodotto è progettato per soddisfare in modo flessibile tali esigenze.  Tuttavia, esistono alcune regole di prassi generali che possono essere applicate a un ampio insieme di scenari.
 
 ## Analizzare e comprendere {#analyze-understand}
 
-[!UICONTROL Account IQ] gli strumenti aiutano a comprendere la natura e l’ampiezza della condivisione delle credenziali nell’azienda, dai grafici di livello più alto che visualizzano la percentuale di account condivisi alle esportazioni di livello più basso che segnalano le caratteristiche dei singoli account. Soprattutto all&#39;inizio, utilizza questi strumenti per esplorare i dati e identificare coorti o modelli comportamentali insoliti o interessanti, indicando ad esempio alti livelli di condivisione. Quindi, è possibile identificare i segmenti che rappresentano una particolare opportunità o obiettivo.
+Gli strumenti di [!UICONTROL Account IQ] consentono di comprendere la natura e l&#39;ampiezza della condivisione delle credenziali nell&#39;azienda, dai grafici di livello più alto che visualizzano la percentuale di account condivisi alle esportazioni di livello più basso che segnalano le caratteristiche dei singoli account. Soprattutto all&#39;inizio, utilizza questi strumenti per esplorare i dati e identificare coorti o modelli comportamentali insoliti o interessanti, indicando ad esempio alti livelli di condivisione. Quindi, è possibile identificare i segmenti che rappresentano una particolare opportunità o obiettivo.
 
 Per comprendere la natura e l&#39;impatto della condivisione sulla tua attività:
 

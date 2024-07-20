@@ -4,7 +4,7 @@ description: Manuale Apple SSO (REST API)
 exl-id: cb27c4b7-bdb4-44a3-8f84-c522a953426f
 source-git-commit: 1b8371a314488335c68c82882c930b7c19aa64ad
 workflow-type: tm+mt
-source-wordcount: '1435'
+source-wordcount: '1344'
 ht-degree: 0%
 
 ---
@@ -19,11 +19,11 @@ ht-degree: 0%
 
 L’API REST per l’autenticazione di Adobe Pass Authentication può supportare l’autenticazione Single Sign-On (SSO) della piattaforma per gli utenti finali delle applicazioni client in esecuzione su iOS, iPadOS o tvOS tramite quello che chiamiamo flusso di lavoro SSO di Apple.
 
-Questo documento funge da estensione della documentazione REST API esistente, accessibile [qui](/help/authentication/rest-api-reference.md).
+Tieni presente che questo documento funge da estensione della documentazione API REST esistente, disponibile [qui](/help/authentication/rest-api-reference.md).
 
 ## Cookbook {#Cookbooks}
 
-Per beneficiare dell’esperienza utente SSO di Apple, un’applicazione dovrebbe integrare [Account abbonato video](https://developer.apple.com/documentation/videosubscriberaccount) framework sviluppato da Apple, per quanto riguarda la comunicazione API REST per l’autenticazione di Adobe Pass, dovrebbe seguire la sequenza di suggerimenti presentata di seguito.
+Per beneficiare dell&#39;esperienza utente SSO di Apple, un&#39;applicazione dovrebbe integrare il framework [Video Subscriber Account](https://developer.apple.com/documentation/videosubscriberaccount) sviluppato da Apple, mentre per quanto riguarda la comunicazione API REST per l&#39;autenticazione di Adobe Pass, dovrebbe seguire la sequenza di suggerimenti presentata di seguito.
 
 ### Autenticazione {#Authentication}
 
@@ -47,18 +47,18 @@ Per beneficiare dell’esperienza utente SSO di Apple, un’applicazione dovrebb
 
 >[!TIP]
 >
-> **<u>Suggerimento</u>** Implementare questa soluzione tramite [Autenticazione Adobe Pass](/help/authentication/check-authentication-token.md) servizio.
+> **<u>Suggerimento:</u>** implementare questa impostazione tramite il servizio [Autenticazione Adobe Pass](/help/authentication/check-authentication-token.md).
 
 
 #### Passaggio: &quot;L’utente ha effettuato l’accesso tramite SSO a Platform?&quot; {#Is_the_user_logged_in_via_Platform_SSO}
 
 >[!TIP]
 >
-> **<u>Suggerimento</u>** Implementare questa soluzione tramite [Account abbonato video](https://developer.apple.com/documentation/videosubscriberaccount) infrastruttura.
+> **<u>Suggerimento:</u>** implementare questa impostazione tramite il framework [Account del sottoscrittore video](https://developer.apple.com/documentation/videosubscriberaccount).
 
-- L’applicazione dovrebbe verificare la presenza di [autorizzazione di accesso](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmanager/1949763-checkaccessstatus) le informazioni di abbonamento dell’utente e procedi solo se l’utente lo ha consentito.
-- La domanda dovrebbe presentare una [richiesta](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadatarequest) per informazioni sull’account dell’abbonato.
-- L’applicazione deve attendere ed elaborare il [metadati](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadata) informazioni.
+- L&#39;applicazione dovrebbe verificare la presenza di [autorizzazioni per accedere](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmanager/1949763-checkaccessstatus) alle informazioni di sottoscrizione dell&#39;utente e procedere solo se l&#39;utente lo consente.
+- L&#39;applicazione dovrebbe inviare una [richiesta](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadatarequest) per le informazioni sull&#39;account del sottoscrittore.
+- L&#39;applicazione dovrebbe attendere ed elaborare le informazioni [metadati](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadata).
 
 
 
@@ -124,23 +124,23 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 
 >[!TIP]
 >
-> **<u>Suggerimento</u>** Implementare questa soluzione tramite [Autenticazione Adobe Pass](/help/authentication/provide-mvpd-list.md) servizio.
+> **<u>Suggerimento:</u>** implementare questa impostazione tramite il servizio [Autenticazione Adobe Pass](/help/authentication/provide-mvpd-list.md).
 
 
 >[!TIP]
 >
-> **<u>Suggerimento pro:</u>** Tieni presente le proprietà MVPD: *`enablePlatformServices`*, *`boardingStatus`*, *`displayInPlatformPicker`*, *`platformMappingId`*, *`requiredMetadataFields`* e prestare particolare attenzione ai commenti presentati nei frammenti di codice di altri passaggi.
+> **<u>Suggerimento pro:</u>** Tieni presente le proprietà MVPD: *`enablePlatformServices`*, *`boardingStatus`*, *`displayInPlatformPicker`*, *`platformMappingId`*, *`requiredMetadataFields`* e presta particolare attenzione ai commenti presentati nei frammenti di codice di altri passaggi.
 
 #### Passaggio &quot;Avviare il flusso di lavoro SSO di Platform con la configurazione Adobe&quot; {#Initiate_Platform_SSO_workflow_with_Adobe_config}
 
 >[!TIP]
 >
-> **<u>Suggerimento</u>** Implementare questa soluzione tramite [Account abbonato video](https://developer.apple.com/documentation/videosubscriberaccount) infrastruttura.
+> **<u>Suggerimento:</u>** implementare questa impostazione tramite il framework [Account del sottoscrittore video](https://developer.apple.com/documentation/videosubscriberaccount).
 
-- L’applicazione dovrebbe verificare la presenza di [autorizzazione di accesso](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmanager/1949763-checkaccessstatus) le informazioni di abbonamento dell’utente e procedi solo se l’utente lo ha consentito.
-- La domanda dovrebbe fornire un [delegare](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmanagerdelegate) per VSAccountManager.
-- La domanda dovrebbe presentare una [richiesta](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadatarequest) per informazioni sull’account dell’abbonato.
-- L’applicazione deve attendere ed elaborare il [metadati](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadata) informazioni.
+- L&#39;applicazione dovrebbe verificare la presenza di [autorizzazioni per accedere](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmanager/1949763-checkaccessstatus) alle informazioni di sottoscrizione dell&#39;utente e procedere solo se l&#39;utente lo consente.
+- L&#39;applicazione deve fornire un [delegato](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmanagerdelegate) per VSAccountManager.
+- L&#39;applicazione dovrebbe inviare una [richiesta](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadatarequest) per le informazioni sull&#39;account del sottoscrittore.
+- L&#39;applicazione dovrebbe attendere ed elaborare le informazioni [metadati](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadata).
 
 
 
@@ -250,28 +250,28 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 
 >[!TIP]
 >
-> **<u>Suggerimento pro:</u>** Tieni presente il frammento di codice da [&quot;Avvia il flusso di lavoro SSO di Platform con la configurazione Adobe&quot;](#Initiate_Platform_SSO_workflow_with_Adobe_config) passaggio. L’accesso utente ha esito positivo se *`vsaMetadata!.accountProviderIdentifier`* contiene un valore valido e la data corrente non ha superato il *`vsaMetadata!.authenticationExpirationDate`* valore.
+> **<u>Suggerimento pro:</u>** Tieni presente lo snippet di codice del passaggio [&quot;Avvia flusso di lavoro SSO di Platform con configurazione Adobe&quot;](#Initiate_Platform_SSO_workflow_with_Adobe_config). L&#39;accesso utente ha esito positivo nel caso in cui *`vsaMetadata!.accountProviderIdentifier`* contenga un valore valido e la data corrente non abbia superato il valore *`vsaMetadata!.authenticationExpirationDate`*.
 
 #### Passaggio &quot;Ottieni una richiesta di profilo da Adobe per l’MVPD selezionato&quot; {#Obtain_a_profile_request_from_Adobe_for_the_selected_MVPD}
 
 >[!TIP]
 >
-> **<u>Suggerimento</u>** Implementare questa impostazione tramite l’autenticazione di Adobe Pass [Richiesta profilo](/help/authentication/retrieve-profilerequest.md) servizio.
+> **<u>Suggerimento:</u>** implementalo tramite il servizio [Richiesta profilo](/help/authentication/retrieve-profilerequest.md) di autenticazione Adobe Pass.
 
 >[!TIP]
 >
-> **<u>Suggerimento pro:</u>** L’identificatore del provider ottenuto dal framework dell’account dell’abbonato video rappresenta *`platformMappingId`* in termini di configurazione dell’autenticazione di Adobe Pass. Pertanto, l&#39;applicazione deve determinare il valore della proprietà ID MVPD, utilizzando *`platformMappingId`* tramite Adobe Pass Authentication [Fornisci elenco MVPD](/help/authentication/provide-mvpd-list.md) servizio.
+> **<u>Suggerimento pro:</u>** l&#39;identificatore del provider ottenuto dal framework dell&#39;account del sottoscrittore video rappresenta *`platformMappingId`* in termini di configurazione dell&#39;autenticazione Adobe Pass. Pertanto, l&#39;applicazione deve determinare il valore della proprietà ID MVPD, utilizzando il valore *`platformMappingId`*, tramite il servizio Autenticazione Adobe Pass [Fornisci elenco MVPD](/help/authentication/provide-mvpd-list.md).
 
 #### Passaggio: &quot;Inoltra la richiesta di Adobe all’SSO della piattaforma per ottenere il profilo&quot; {#Forward_the_Adobe_request_to_Platform_SSO_to_obtain_the_profile}
 
 >[!TIP]
 >
-> **<u>Suggerimento</u>** Implementare questa soluzione tramite [Account abbonato video](https://developer.apple.com/documentation/videosubscriberaccount) infrastruttura.
+> **<u>Suggerimento:</u>** implementare questa impostazione tramite il framework [Account del sottoscrittore video](https://developer.apple.com/documentation/videosubscriberaccount).
 
 
-- L’applicazione dovrebbe verificare la presenza di [autorizzazione di accesso](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmanager/1949763-checkaccessstatus) le informazioni di abbonamento dell’utente e procedi solo se l’utente lo ha consentito.
-- La domanda dovrebbe presentare una [richiesta](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadatarequest) per informazioni sull’account dell’abbonato.
-- L’applicazione deve attendere ed elaborare il [metadati](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadata) informazioni.
+- L&#39;applicazione dovrebbe verificare la presenza di [autorizzazioni per accedere](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmanager/1949763-checkaccessstatus) alle informazioni di sottoscrizione dell&#39;utente e procedere solo se l&#39;utente lo consente.
+- L&#39;applicazione dovrebbe inviare una [richiesta](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadatarequest) per le informazioni sull&#39;account del sottoscrittore.
+- L&#39;applicazione dovrebbe attendere ed elaborare le informazioni [metadati](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadata).
 
 
 
@@ -347,12 +347,12 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 
 >[!TIP]
 >
-> **<u>Suggerimento</u>** Implementare questa impostazione tramite l’autenticazione di Adobe Pass [Scambio di token](/help/authentication/token-exchange.md) servizio.
+> **<u>Suggerimento:</u>** implementalo tramite il servizio [Token Exchange](/help/authentication/token-exchange.md) di autenticazione Adobe Pass.
 
 
 >[!TIP]
 >
-> **<u>Suggerimento pro:</u>** Tieni presente il frammento di codice da [&quot;Inoltra la richiesta di Adobe all’SSO della piattaforma per ottenere il profilo&quot;](#Forward_the_Adobe_request_to_Platform_SSO_to_obtain_the_profile) passaggio. Questo *`vsaMetadata!.samlAttributeQueryResponse!`* rappresenta il *`SAMLResponse`*, che deve essere trasmesso [Scambio di token](/help/authentication/token-exchange.md) e richiede la manipolazione e la codifica delle stringhe (*Base64* codificato e *URL* codificati successivamente) prima di effettuare la chiamata.
+> **<u>Suggerimento pro:</u>** Tieni presente il frammento di codice dal passaggio [&quot;Inoltra la richiesta di Adobe all&#39;SSO della piattaforma per ottenere il profilo&quot;](#Forward_the_Adobe_request_to_Platform_SSO_to_obtain_the_profile). *`vsaMetadata!.samlAttributeQueryResponse!`* rappresenta *`SAMLResponse`*, che deve essere passato a [Token Exchange](/help/authentication/token-exchange.md) e richiede la manipolazione delle stringhe e la codifica (*Base64* codificata e *URL* codificata successivamente) prima di effettuare la chiamata.
 
 </br>
 
@@ -360,20 +360,20 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 
 >[!TIP]
 >
-> **<u>Suggerimento</u>** Implementarlo tramite l’autenticazione Adobe Pass di supporto [Scambio di token](/help/authentication/token-exchange.md) risposta corretta, che sarà un *`204 No Content`*, che indica che il token è stato creato correttamente ed è pronto per essere utilizzato per i flussi di autorizzazione.
+> **<u>Suggerimento:</u>** implementalo tramite la risposta di esito positivo [Scambio token](/help/authentication/token-exchange.md) di autenticazione Adobe Pass di livello medio, che sarà *`204 No Content`*, a indicare che il token è stato creato correttamente ed è pronto per essere utilizzato per i flussi di autorizzazione.
 
 </br>
 
 #### Passaggio: &quot;Avvia il flusso di lavoro di autenticazione nella seconda schermata&quot; {#Initiate_second_screen_authentication_workflow}
 
-**Importante:** La terminologia &quot;Flusso di lavoro di autenticazione secondo schermo&quot; è appropriata per AppleTV, mentre la terminologia &quot;Flusso di lavoro di autenticazione primo schermo&quot; / &quot;Flusso di lavoro di autenticazione regolare&quot; sarebbe più appropriata per iPhone e iPad.
+**Importante:** la terminologia &quot;Flusso di lavoro di autenticazione secondo schermo&quot; è appropriata per AppleTV, mentre la terminologia &quot;Flusso di lavoro di autenticazione primo schermo&quot; / &quot;Flusso di lavoro di autenticazione regolare&quot; è più appropriata per iPhone e iPad.
 
 
 >[!TIP]
 >
-> **<u>Suggerimento</u>** Implementare questa impostazione tramite l’autenticazione di Adobe Pass
+> **<u>Suggerimento:</u>** implementalo tramite l&#39;autenticazione di Adobe Pass
 
-[Richiesta codice di registrazione](/help/authentication/registration-code-request.md), [Avvia autenticazione](/help/authentication/initiate-authentication.md) e [Recupero token di autenticazione API REST](/help/authentication/retrieve-authentication-token.md) o [Controlla token di autenticazione](/help/authentication/check-authentication-token.md) servizi.
+[Richiesta codice di registrazione](/help/authentication/registration-code-request.md), [Avvia autenticazione](/help/authentication/initiate-authentication.md) e [Servizi Recupero token di autenticazione API REST](/help/authentication/retrieve-authentication-token.md) o [Controlla token di autenticazione](/help/authentication/check-authentication-token.md).
 
 
 >[!TIP]
@@ -381,20 +381,20 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 > **<u>Suggerimento pro:</u>** Segui i passaggi seguenti per le implementazioni tvOS.
 
 - L&#39;applicazione dovrebbe [ottenere un codice di registrazione](/help/authentication/registration-code-request.md) e presentarlo all&#39;utente finale sul primo dispositivo (schermo).
-- L&#39;applicazione dovrebbe iniziare [polling per riconoscere lo stato di autenticazione](/help/authentication/retrieve-authentication-token.md) sul primo dispositivo (schermo) dopo aver ottenuto il codice di registrazione.
-- Un&#39;altra applicazione dovrebbe [avvia autenticazione](/help/authentication/initiate-authentication.md) su un secondo dispositivo (schermo) quando viene utilizzato il codice di registrazione.
-- L&#39;applicazione dovrebbe essere interrotta [sondaggio](/help/authentication/retrieve-authentication-token.md) sul primo dispositivo (schermata) quando viene generato il token di autenticazione.
+- L&#39;applicazione deve avviare il [polling per riconoscere lo stato di autenticazione](/help/authentication/retrieve-authentication-token.md) sul primo dispositivo (schermo) dopo l&#39;ottenimento del codice di registrazione.
+- Un&#39;altra applicazione dovrebbe [avviare l&#39;autenticazione](/help/authentication/initiate-authentication.md) su un secondo dispositivo (schermo) quando viene utilizzato il codice di registrazione.
+- L&#39;applicazione dovrebbe interrompere il [polling](/help/authentication/retrieve-authentication-token.md) sul primo dispositivo (schermo) quando viene generato il token di autenticazione.
 
 
 
 >[!TIP]
 >
-> **<u>Suggerimento pro:</u>** Segui i passaggi seguenti per le implementazioni iOS/iPadOS.
+> **<u>Suggerimento pro:</u>** Segui i passaggi indicati di seguito per l&#39;implementazione iOS/iPadOS.
 
-- L&#39;applicazione dovrebbe [ottenere un codice di registrazione](/help/authentication/registration-code-request.md) che non deve essere presentato all&#39;utente finale sul primo dispositivo (schermo).
-- L&#39;applicazione dovrebbe [avvia autenticazione](/help/authentication/initiate-authentication.md) sul primo dispositivo (schermo) utilizzando il codice di registrazione e un [WKWebView](https://developer.apple.com/documentation/webkit/wkwebview) o un [SFSafariViewController](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller) componente.
-- L&#39;applicazione dovrebbe iniziare [polling per conoscere lo stato di autenticazione](/help/authentication/retrieve-authentication-token.md) sul primo dispositivo (schermo) dopo [WKWebView](https://developer.apple.com/documentation/webkit/wkwebview) o [SFSafariViewController](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller) il componente viene chiuso.
-- L&#39;applicazione dovrebbe essere interrotta [sondaggio](/help/authentication/retrieve-authentication-token.md) sul primo dispositivo (schermata) quando viene generato il token di autenticazione.
+- L&#39;applicazione deve [ottenere un codice di registrazione](/help/authentication/registration-code-request.md) che non deve essere presentato all&#39;utente finale sul primo dispositivo (schermo).
+- L&#39;applicazione deve [avviare l&#39;autenticazione](/help/authentication/initiate-authentication.md) sul primo dispositivo (schermo) utilizzando il codice di registrazione e un componente [WKWebView](https://developer.apple.com/documentation/webkit/wkwebview) o [SFSafariViewController](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller).
+- L&#39;applicazione dovrebbe avviare il [polling per conoscere lo stato di autenticazione](/help/authentication/retrieve-authentication-token.md) sul primo dispositivo (schermo) dopo la chiusura del componente [WKWebView](https://developer.apple.com/documentation/webkit/wkwebview) o [SFSafariViewController](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller).
+- L&#39;applicazione dovrebbe interrompere il [polling](/help/authentication/retrieve-authentication-token.md) sul primo dispositivo (schermo) quando viene generato il token di autenticazione.
 
 </br>
 
@@ -402,17 +402,17 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 
 >[!TIP]
 >
-> **<u>Suggerimento</u>** Implementare questa impostazione tramite l’autenticazione di Adobe Pass [Avvia autorizzazione](/help/authentication/initiate-authorization.md) e [Ottieni token multimediale breve](/help/authentication/obtain-short-media-token.md) servizi.
+> **<u>Suggerimento:</u>** implementalo tramite i servizi Autenticazione Adobe Pass [Avvia autorizzazione](/help/authentication/initiate-authorization.md) e [Ottieni token di file multimediali brevi](/help/authentication/obtain-short-media-token.md).
 
 </br>
 
 ### Disconnetti {#Logout}
 
-Il [Account abbonato video](https://developer.apple.com/documentation/videosubscriberaccount) Il framework non fornisce un&#39;API per disconnettere programmaticamente gli utenti che hanno effettuato l&#39;accesso al proprio account di provider TV a livello di sistema del dispositivo. Pertanto, affinché la disconnessione diventi effettiva, l&#39;utente finale dovrà disconnettersi esplicitamente da *`Settings -> TV Provider`* su iOS/iPadOS o *`Settings -> Accounts -> TV Provider`* su tvOS. L&#39;altra opzione che l&#39;utente avrebbe è quella di revocare l&#39;autorizzazione per accedere alle informazioni sull&#39;abbonamento dell&#39;utente dalla sezione delle impostazioni specifiche dell&#39;applicazione (accesso al provider TV).
+Il framework [Account sottoscrittore video](https://developer.apple.com/documentation/videosubscriberaccount) non fornisce un&#39;API per disconnettere a livello di programmazione gli utenti che hanno effettuato l&#39;accesso al proprio account del provider TV a livello di sistema del dispositivo. Pertanto, affinché la disconnessione diventi effettiva, l&#39;utente finale dovrà disconnettersi esplicitamente da *`Settings -> TV Provider`* su iOS/iPadOS o da *`Settings -> Accounts -> TV Provider`* su tvOS. L&#39;altra opzione che l&#39;utente avrebbe è quella di revocare l&#39;autorizzazione per accedere alle informazioni sull&#39;abbonamento dell&#39;utente dalla sezione delle impostazioni specifiche dell&#39;applicazione (accesso al provider TV).
 
 >[!TIP]
 >
-> **<u>Suggerimento</u>** Implementare questa impostazione tramite l’autenticazione di Adobe Pass [Chiamata metadati utente](/help/authentication/user-metadata.md) e [Disconnetti](/help/authentication/initiate-logout.md) servizi.
+> **<u>Suggerimento:</u>** implementare questa impostazione tramite la [Chiamata metadati utente](/help/authentication/user-metadata.md) e i servizi [Logout](/help/authentication/initiate-logout.md) di autenticazione Adobe Pass.
 
 
 >[!TIP]
@@ -420,19 +420,19 @@ Il [Account abbonato video](https://developer.apple.com/documentation/videosubsc
 > **<u>Suggerimento pro:</u>** Segui i passaggi seguenti per le implementazioni tvOS.
 
 
-- L’applicazione dovrebbe determinare se l’autenticazione è avvenuta a seguito di un accesso tramite l’SSO della piattaforma o meno, utilizzando il comando &quot;*tokenSource&quot;* [metadati utente](/help/authentication/user-metadata.md) dal servizio Adobe Pass Authentication.
-- L’applicazione deve indicare/richiedere all’utente di disconnettersi esplicitamente da *`Settings -> Accounts -> TV Provider`* su tvOS **solo** se il *&quot;tokenSource&quot;* il valore è uguale a &quot;*Apple&quot;.*
-- L&#39;applicazione dovrebbe [avvia la disconnessione](/help/authentication/initiate-logout.md) dal servizio Adobe Pass Authentication tramite una chiamata HTTP diretta. Ciò non faciliterebbe la pulizia delle sessioni da parte di MVPD.
+- L&#39;applicazione dovrebbe determinare se l&#39;autenticazione è avvenuta a seguito di un accesso tramite l&#39;SSO della piattaforma o meno, utilizzando &quot;*tokenSource&quot;* [metadati utente](/help/authentication/user-metadata.md) dal servizio di autenticazione di Adobe Pass.
+- L&#39;applicazione dovrebbe indicare/richiedere all&#39;utente di disconnettersi esplicitamente da *`Settings -> Accounts -> TV Provider`* in tvOS **only** se il valore *&quot;tokenSource&quot;* è uguale a &quot;*Apple&quot;.*
+- L&#39;applicazione dovrebbe [avviare la disconnessione](/help/authentication/initiate-logout.md) dal servizio di autenticazione di Adobe Pass utilizzando una chiamata HTTP diretta. Ciò non faciliterebbe la pulizia delle sessioni da parte di MVPD.
 
 
 
 >[!TIP]
 >
-> **<u>Suggerimento pro:</u>** Segui i passaggi seguenti per le implementazioni iOS/iPadOS.
+> **<u>Suggerimento pro:</u>** Segui i passaggi indicati di seguito per l&#39;implementazione iOS/iPadOS.
 
-- L’applicazione dovrebbe determinare se l’autenticazione è avvenuta a seguito di un accesso tramite l’SSO della piattaforma o meno, utilizzando il comando &quot;*tokenSource&quot;* [metadati utente](/help/authentication/user-metadata.md) dal servizio Adobe Pass Authentication.
-- L’applicazione deve indicare/richiedere all’utente di disconnettersi esplicitamente da *`Settings -> TV Provider`* su iOS/iPadOS **solo** se il *&quot;tokenSource&quot;* il valore è uguale a *&quot;Apple&quot;*.
-- L&#39;applicazione dovrebbe [avvia la disconnessione](/help/authentication/initiate-logout.md) dal servizio di autenticazione di Adobe Pass tramite un [WKWebView](https://developer.apple.com/documentation/webkit/wkwebview) o un [SFSafariViewController](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller) componente. Questo faciliterebbe la pulizia delle sessioni da parte di MVPD.
+- L&#39;applicazione dovrebbe determinare se l&#39;autenticazione è avvenuta a seguito di un accesso tramite l&#39;SSO della piattaforma o meno, utilizzando &quot;*tokenSource&quot;* [metadati utente](/help/authentication/user-metadata.md) dal servizio di autenticazione di Adobe Pass.
+- L&#39;applicazione dovrebbe indicare/richiedere all&#39;utente di disconnettersi esplicitamente da *`Settings -> TV Provider`* su iOS/iPadOS **only** nel caso in cui il valore *&quot;tokenSource&quot;* sia uguale a *&quot;Apple&quot;*.
+- L&#39;applicazione deve [avviare la disconnessione](/help/authentication/initiate-logout.md) dal servizio di autenticazione di Adobe Pass utilizzando un componente [WKWebView](https://developer.apple.com/documentation/webkit/wkwebview) o [SFSafariViewController](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller). Questo faciliterebbe la pulizia delle sessioni da parte di MVPD.
 
 <!--
 

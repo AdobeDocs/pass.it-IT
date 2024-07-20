@@ -14,7 +14,7 @@ ht-degree: 28%
 
 + [Panoramica di Account IQ](/help/accountiq/home.md)
 + [Versioni di Account IQ](/help/accountiq/versions-aiq.md)
-+ [Introduzione a Account IQ](/help/accountiq/get-started.md)
++ [Introduzione ad Account IQ](/help/accountiq/get-started.md)
 + [Utilizzare i segmenti](/help/accountiq/work-with-segments.md)
 + Dashboard {#dashboard}
    + [Introduzione alla dashboard](/help/accountiq/introduction-dashboard.md)

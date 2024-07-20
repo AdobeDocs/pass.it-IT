@@ -22,7 +22,7 @@ ht-degree: 0%
 
 ## Soluzione {#solution-prevent-mvpd-sel-dialog}
 
-La soluzione consiste nell’eseguire un’inserzione di blocchi quando `displayProviderDialog()` viene chiamato.
+La soluzione consiste nell&#39;eseguire l&#39;inserimento in un elenco Bloccati quando viene chiamato `displayProviderDialog()`.
 
 Ad esempio, se si desidera che CableCompany_1 e CableCompany_2 non vengano visualizzati all&#39;interno del selettore MVPD, è necessario eseguire una procedura simile a quella illustrata nell&#39;esempio seguente.
 

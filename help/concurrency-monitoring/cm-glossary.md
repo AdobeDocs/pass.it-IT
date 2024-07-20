@@ -1,13 +1,13 @@
 ---
 title: Glossario
 description: Glossario dei termini nel monitoraggio della concorrenza
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+exl-id: 3b3b36fe-9f04-4de9-bd84-9f8d766bbc71
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '760'
+source-wordcount: '762'
 ht-degree: 0%
 
 ---
-
 
 # Glossario {#glossary}
 
@@ -17,26 +17,26 @@ ht-degree: 0%
 
 ## Azione {#action-defn}
 
-* Il tipo di accesso richiesto dall’oggetto; i valori possibili per CM sono ***avviare*** o ***continua*** una sessione di streaming.
+* Tipo di accesso richiesto dall&#39;oggetto. I valori possibili per CM sono ***begin*** o ***continue*** una sessione di streaming.
 
 ## Flusso attivo {#active-stream-defn}
 
 * Un flusso che ha ricevuto almeno 1 evento (heartbeat) negli ultimi 90 secondi.
 
-* ***Nota:*** Se l&#39;ultimo evento nel flusso è di tipo stop (`?event=stop`), non verrà conteggiato. Si tratta di un’ottimizzazione che consente a un lettore di chiudere esplicitamente un flusso in modo che non venga più considerato &quot;attivo&quot;.
+* ***Nota:*** se l&#39;ultimo evento nel flusso è di tipo stop (`?event=stop`), non verrà conteggiato. Si tratta di un’ottimizzazione che consente a un lettore di chiudere esplicitamente un flusso in modo che non venga più considerato &quot;attivo&quot;.
 
 ## Applicazione {#application-defn}
 
 * Sviluppato dal tenant per l’accesso ai contenuti video
-* Prende decisioni e applica decisioni sull’accesso ai contenuti in base alle informazioni fornite dal servizio di monitoraggio della concorrenza (valido nella [Punto di informazione sui criteri](/help/concurrency-monitoring/policy-info-pt-versionone.md) case)
-* Avrà un **ID applicazione** fornite dall’Adobe.
+* Prende e applica decisioni sull&#39;accesso ai contenuti in base alle informazioni fornite dal servizio di monitoraggio della concorrenza (valido nel caso [Punto informazioni criteri](/help/concurrency-monitoring/policy-info-pt-versionone.md))
+* Avrà un **ID applicazione** univoco fornito da Adobe.
 
 ## Servizio di monitoraggio della concorrenza {#cm-service-defn}
 
 * Funge da sistema di monitoraggio per gli abbonati, sostenendo gli MVPD e i programmatori nei loro requisiti di applicazione incrociata dei criteri.
 * Riceve heartbeat che indicano l’attività del flusso.
-* Agisce come _Punto decisionale criterio_ valutando le richieste di autorizzazione in base all’attività dell’utente e fornendo una risposta di tipo consenti/nega.
-* Agisce come _Punto di informazione sui criteri_ segnalando il numero di flussi attivi (e di metadati di flusso aggiuntivi) per un abbonato.
+* Agisce come _punto decisionale dei criteri_ valutando le richieste di autorizzazione in base all&#39;attività dell&#39;utente e fornendo una risposta di tipo consenti/nega.
+* Agisce come _Punto informazioni criteri_ segnalando il numero di flussi attivi (e metadati di flusso aggiuntivi) per un sottoscrittore.
 
 ## Ambiente {#env-defn}
 
@@ -76,9 +76,9 @@ ht-degree: 0%
 * Deve supportare l’MVPD nella raccolta delle attività degli abbonati e nell’applicazione delle regole di limitazione quando sulle loro proprietà.
 * Potrebbe anche essere interessato a limitare l’accesso simultaneo ai propri contenuti su tutti i portali di destinazione, come regola separata.
 
-  *D: Perché il programmatore e non l’ID richiedente come nel resto dell’autenticazione Adobe Pass?*
+  *Q: perché il programmatore e non l&#39;ID richiedente come nel resto dell&#39;autenticazione Adobe Pass?*
 
-  *R: Il motivo è quello di consentire ai programmatori di utilizzare questo parametro in modo flessibile per trasmettere o isolare i dati tra le loro proprietà a seconda dei casi d’uso.*
+  *A: il motivo è consentire ai programmatori di utilizzare questo parametro in modo flessibile per passare o isolare i dati tra le proprietà a seconda dei casi d&#39;uso.*
 
 ## Risorsa {#resource-defn}
 
@@ -94,7 +94,7 @@ ht-degree: 0%
 
 ## Oggetto {#subj-defn}
 
-* Il consumatore del contenuto (video) su Internet. Stiamo deliberatamente evitando il termine _**utente**_, poiché il monitoraggio della concorrenza di solito tratta gli ID account MVPD (che coinvolgono diversi utenti effettivi che condividono lo stesso contratto, ad esempio i familiari di una famiglia).
+* Il consumatore del contenuto (video) su Internet. Stiamo deliberatamente evitando il termine _**utente**_, in quanto il monitoraggio della concorrenza di solito tratta gli ID account MVPD (che coinvolgono diversi utenti effettivi che condividono lo stesso contratto, ad esempio i membri della famiglia per una famiglia).
 
 * Per ogni flusso, l’oggetto può essere migliorato con gli attributi relativi alla persona che utilizza effettivamente il servizio, al dispositivo connesso alla rete e così via.
 

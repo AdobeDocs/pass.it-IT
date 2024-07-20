@@ -4,7 +4,7 @@ description: Ripristina passaggio temporaneo su iOS
 exl-id: 53a22fae-192c-4b4c-9d63-fd9a2d960923
 source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
 workflow-type: tm+mt
-source-wordcount: '717'
+source-wordcount: '698'
 ht-degree: 0%
 
 ---
@@ -19,18 +19,18 @@ ht-degree: 0%
 
 L’app di dimostrazione iOS include una schermata dedicata per il ripristino del TTL di Temp Pass. Per l&#39;operazione di ripristino sono necessarie le seguenti informazioni:
 
-- **Ambiente:** specifica l&#39;endpoint Adobe del server di pass Pay-TV che riceverà la chiamata di rete Reset Temp Pass. Valori possibili: **Prequal** (*mgmt-prequal.auth-staging.adobe.com*), **Versione** (*mgmt.auth.adobe.com*) o **Personalizzato** (riservato ad Adobe ai test interni).
-- **Token Bearer OAuth2:** il token OAuth2 è necessario per autorizzare il programmatore, ad Adobe per l’autenticazione a pagamento. Tale token può essere ottenuto dall’endpoint dedicato di autenticazione Pay-TV OAuth2 (ad esempio *curl -u &quot;\&lt;consumer _key=&quot;&quot;>:\&lt;consumer _secret=&quot;&quot; _key=&quot;&quot;>*&quot; *&quot;https://mgmt.auth.adobe.com/oauth2/permanent\_accesstoken?grant\_type=client\_credentials&quot;*).
-- **ID richiedente:** ID univoco del programmatore corrente. Questo valore viene letto dalla schermata principale dell’app demo (il campo richiedente).
-- **ID passaggio temporaneo:** l’ID univoco dell’MVPD di Passaggio Temp.
+- **Ambiente:** specifica l&#39;endpoint Adobe del server di passaggio PayTV che riceverà la chiamata di rete per reimpostare il passaggio Temp. Valori possibili: **Prequal** (*mgmt-prequal.auth-staging.adobe.com*), **Release** (*mgmt.auth.adobe.com*) o **Custom** (riservato ad Adobe per test interni).
+- **Token Bearer OAuth2:** il token OAuth2 è necessario per autorizzare il programmatore, ad Adobe per l&#39;autenticazione a pagamento. Tale token può essere ottenuto dall&#39;endpoint OAuth2 dedicato di autenticazione della Pay-TV (ad esempio *curl -u &quot;\&lt;consumer\_key\>:\&lt;consumer\_secret\_key\>*&quot; *&quot;https://mgmt.auth.adobe.com/oauth2/permanent\_accesstoken?grant\_type=client\_credentials&quot;*).
+- **ID richiedente:** l&#39;ID univoco per il programmatore corrente. Questo valore viene letto dalla schermata principale dell’app demo (il campo richiedente).
+- **ID passaggio temporaneo:** l&#39;ID univoco per l&#39;MVPD passaggio temporaneo.
 - **ID dispositivo:** ID dispositivo con hash calcolato dall&#39;app demo.
-- **Chiave generica:** alcuni MVPD di Passaggio Temp (ovvero la funzionalità Passaggio Temp estensibile successiva) supportano una chiave generica per la reimpostazione di Passaggio Temp (insieme all&#39;ID dispositivo).
+- **Chiave generica:** alcuni file MVPD di Passaggio temporaneo (ovvero la funzionalità Passaggio temporaneo estensibile successiva) supportano una chiave generica per la reimpostazione del Passaggio temporaneo (insieme all&#39;ID dispositivo).
 
-Tutti i parametri di cui sopra (ad eccezione di *Chiave generica*) sono obbligatori. Ecco un esempio di parametri e la chiamata di rete associata che verrà eseguita dall’app demo (l’esempio è sotto forma di un comando *curl *):
+Tutti i parametri di cui sopra (ad eccezione della *chiave generica*) sono obbligatori. Ecco un esempio di parametri e la chiamata di rete associata che verrà eseguita dall’app demo (l’esempio è sotto forma di un comando *curl *):
 
 - **Ambiente:** Versione (*mgmt.auth.adobe.com*)
 - **Token Bearer OAuth2:** H4j7cF3GtJX81BrsgDa10GwSizVz
-- **ID programmatore:** RIF
+- **ID programmatore:** REF
 - **ID passaggio temporaneo:** TempPassREF
 - **ID dispositivo:** f23804a37802993fdc8e28a7f244dfe088b6a9ea21457670728e6731fa639991
 - **Chiave generica:** null (nessun valore specificato)
@@ -39,11 +39,14 @@ Tutti i parametri di cui sopra (ad eccezione di *Chiave generica*) sono obbligat
 curl -X DELETE -H "Authorization:Bearer* *H4j7cF3GtJX81BrsgDa10GwSizVz" "https://mgmt.auth.adobe.com/reset-tempass/v2.1/reset?device_id=f23804a37802993fdc8e28a7f244dfe088b6a9ea21457670728e6731fa639991&requestor_id=REF&mvpd_id=TempPassREF"
 ```
 
-verrà effettuata una richiesta HTTP di DELETE al **/reset** endpoint, passaggio di *Token Bearer OAuth2* nell’intestazione Autorizzazione e nella sezione *ID dispositivo*, *ID richiedente* e *ID passaggio temporaneo (ID MVPD)* come parametri.
+verrà effettuata una richiesta HTTP DELETE all&#39;endpoint **/reset**, passando il *Token Bearer OAuth2* nell&#39;intestazione Autorizzazione e il *ID dispositivo*, *ID richiedente* e *ID passaggio temporaneo (ID MVPD)* come parametri.
 
-Se il programmatore fornisce un valore per *Chiave generica*, verrà eseguita un&#39;altra chiamata HTTP (questa volta al **/reset/generic** endpoint), passando il *Chiave generica* all&#39;interno del *chiave* parametro di richiesta.
+Se il programmatore fornisce un valore per la *chiave generica*, verrà eseguita un&#39;altra chiamata HTTP (questa volta all&#39;endpoint **/reset/generic**), passando la *chiave generica* nel parametro della richiesta *chiave*.
 
-Ad esempio, impostando *Chiave generica* a un hash di indirizzo e-mail (per gli MVPD che supportano questo tipo di funzionalità) genererà la seguente chiamata HTTP (l’e-mail è `user@domain.com` il relativo hash SHA-256 è `f7ee5ec7312165148b69fcca1d29075b14b8aef0b5048a332b18b88d09069fb7`):
+Ad esempio, impostando la *chiave generica* su un hash di indirizzo di posta elettronica (per
+I file MVPD con passaggio temporaneo che supportano questo tipo di funzionalità) produrranno
+seguente chiamata HTTP (l&#39;e-mail è `user@domain.com` il relativo SHA-256
+hash `f7ee5ec7312165148b69fcca1d29075b14b8aef0b5048a332b18b88d09069fb7`):
 
 ```curl
 curl -X DELETE -H "Authorization:Bearer H4j7cF3GtJX81BrsgDa10GwSizVz"
@@ -58,10 +61,10 @@ curl -X DELETE -H "Authorization:Bearer H4j7cF3GtJX81BrsgDa10GwSizVz"
 
 L’ultimo caso d’uso (iOS 7 e versioni successive) è il più comune, quindi vediamo come i programmatori possono reimpostare il passaggio temporaneo per le loro app in questa situazione. Sono disponibili diverse opzioni:
 
-1. Porta il codice dall’app demo all’app programmatore. Il *TempPassResetViewController* e *DeviceIdDemoApp* Le classi contengono la logica di base per il ripristino di Passaggio Temp e possono essere facilmente modificate e incluse nell’app Programmatore.
+1. Porta il codice dall’app demo all’app programmatore. Le classi *TempPassResetViewController* e *DeviceIdDemoApp* contengono la logica di base per la reimpostazione di Temp Pass e possono essere facilmente modificate e incluse nell&#39;app Programmatore.
 
-1. Esegui la richiesta HTTP per reimpostare il passaggio temporaneo con *ricciolo*. Il parametro device\_Id può essere ottenuto calcolando l’IDFV dell’app Programmer e applicando un hash SHA-256 su di esso (codice di esempio nel *DeviceIdDemoApp* classe).
+1. Esegui la richiesta HTTP per reimpostare il passaggio temporaneo con *curl*. Il parametro device\_Id può essere ottenuto calcolando l&#39;IDFV dell&#39;app Programmer e applicando un hash SHA-256 (codice di esempio nella classe *DeviceIdDemoApp*).
 
-1. È sufficiente eseguire il ripristino dall’app demo specificando l’IDFV con hash dell’app del programmatore come *Chiave generica*. Ciò comporterà due chiamate di rete: una per la reimpostazione del passaggio temporaneo per l&#39;app demo (irrilevante per il programmatore) e una per la reimpostazione del passaggio temporaneo per l&#39;app programmatore.
+1. È sufficiente eseguire il ripristino dall&#39;app demo specificando l&#39;IDFV con hash dell&#39;app del programmatore come *chiave generica*. Ciò comporterà due chiamate di rete: una per la reimpostazione del passaggio temporaneo per l&#39;app demo (irrilevante per il programmatore) e una per la reimpostazione del passaggio temporaneo per l&#39;app programmatore.
 
 Tutte le opzioni di cui sopra sono simili, spetta al programmatore sceglierne una a seconda della facilità di implementazione.

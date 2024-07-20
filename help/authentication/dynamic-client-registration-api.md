@@ -4,7 +4,7 @@ description: API di registrazione client dinamica
 exl-id: 06a76c71-bb19-4115-84bc-3d86ebcb60f3
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '930'
+source-wordcount: '904'
 ht-degree: 0%
 
 ---
@@ -19,8 +19,8 @@ ht-degree: 0%
 
 Attualmente, l’autenticazione Adobe Pass identifica e registra le applicazioni in due modi:
 
-* i client basati su browser sono registrati tramite consentiti [elenco domini](/help/authentication/programmer-overview.md)
-* i client delle applicazioni native, come le applicazioni iOS e Android, vengono registrati tramite il meccanismo del richiedente firmato.
+* i client basati su browser sono registrati tramite [elenco domini consentito](/help/authentication/programmer-overview.md)
+* i client dell’applicazione nativa, come le applicazioni iOS e Android, vengono registrati tramite il meccanismo del richiedente firmato.
 
 Adobe Pass Authentication propone un nuovo meccanismo per la registrazione delle applicazioni. Questo meccanismo è descritto nei paragrafi seguenti.
 
@@ -28,11 +28,13 @@ Adobe Pass Authentication propone un nuovo meccanismo per la registrazione delle
 
 ### Motivi tecnici {#reasons}
 
-Il meccanismo di autenticazione nell’autenticazione di Adobe Pass si basava sui cookie di sessione, ma a causa di [Schede personalizzate Android Chrome](https://developer.chrome.com/multidevice/android/customtabs){target=_blank} and [Apple Safari View Controller](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller){target=_blank}, questo obiettivo non può più essere raggiunto.
+Il meccanismo di autenticazione nell&#39;autenticazione di Adobe Pass si basava sui cookie di sessione, ma a causa delle [schede personalizzate di Android Chrome](https://developer.chrome.com/multidevice/android/customtabs){target=_blank} e del [controller vista Apple Safari](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller){target=_blank}, questo obiettivo non può più essere raggiunto.
 
-Date queste limitazioni, Adobe introduce un nuovo meccanismo di registrazione per tutti i suoi clienti. Si basa sulla RFC di OAuth 2.0 ed è costituito dai seguenti passaggi:
+Date queste limitazioni, Adobe introduce un nuovo meccanismo di registrazione per tutti i suoi clienti. È basato su RFC OAuth 2.0 ed è costituito da
+dei seguenti passaggi:
 
-1. Recupero dell&#39;istruzione software da TVE Dashboard
+1. Recupero dell&#39;istruzione software da TVE
+Dashboard
 1. Ottenimento delle credenziali del client
 1. Ottenimento del token di accesso
 
@@ -44,7 +46,7 @@ Per ogni applicazione rilasciata, è necessario ottenere un rendiconto software.
 >
 >Quando si utilizza un&#39;istruzione software, il meccanismo dell&#39;ID richiedente firmato non sarà più necessario.
 
-Per ulteriori dettagli su come creare istruzioni software, visitare il sito Web all&#39;indirizzo [Registrazione client nel dashboard TVE](/help/authentication/dynamic-client-registration.md).
+Per ulteriori dettagli su come creare istruzioni software, visitare [Registrazione client nel dashboard TVE](/help/authentication/dynamic-client-registration.md).
 
 ### Ottenimento delle credenziali client {#clientCredentials}
 
@@ -80,7 +82,7 @@ Dopo aver recuperato un&#39;istruzione software da TVE Dashboard, è necessario 
 | client_secret | Stringa | obbligatorio |
 | client_id_issue_at | long | obbligatorio |
 | redirect_uris | elenco di stringhe | obbligatorio |
-| grant_types | elenco di stringhe<br/> **valore accettato**<br/> `client_credentials`: utilizzato da client non sicuri, ad esempio SDK per Android. | obbligatorio |
+| grant_types | elenco di stringhe<br/> **valore accettato**<br/> `client_credentials`: utilizzato da client non sicuri, ad esempio Android SDK. | obbligatorio |
 | errore | **valori accettati**<ul><li>invalid_request</li><li>invalid_redirect_uri</li><li>invalid_software_statement</li><li>unauthorized_software_statement</li></ul> | obbligatorio in un flusso di errore |
 
 
@@ -167,7 +169,7 @@ Dopo aver recuperato l’identificatore client univoco (ID client e segreto clie
 
 | **parametri di richiesta** | |
 | --- | --- |
-| `grant_type` | Ricevuto nel processo di registrazione del client.<br/> **Valore accettato**<br/>`client_credentials`: utilizzato per client non sicuri, come l’SDK per Android. |
+| `grant_type` | Ricevuto nel processo di registrazione client.<br/> **Valore accettato**<br/>`client_credentials`: utilizzato per client non sicuri, ad esempio l&#39;SDK di Android. |
 | `client_id` | Identificatore client ottenuto nel processo di registrazione client. |
 | `client_secret` | Identificatore client ottenuto nel processo di registrazione client. |
 
@@ -177,7 +179,7 @@ Dopo aver recuperato l’identificatore client univoco (ID client e segreto clie
 | --- | --- | --- |
 | `access_token` | Il valore del token di accesso da utilizzare per chiamare le API di Adobe Pass | obbligatorio |
 | `expires_in` | Il tempo in secondi che deve trascorrere prima della scadenza del token di accesso | obbligatorio |
-| `token_type` | Tipo del token **portatore** | obbligatorio |
+| `token_type` | Tipo del token **bearer** | obbligatorio |
 | `created_at` | Ora di emissione del token | obbligatorio |
 | **intestazioni di risposta** | | |
 | `Content-Type` | application/json | obbligatorio |
@@ -232,9 +234,9 @@ Pragma: no-cache
 
 ## Esecuzione di richieste di autenticazione {#autheticationRequests}
 
-Utilizza il token di accesso per eseguire Adobe Pass [Chiamate API di autenticazione](/help/authentication/initiate-authentication.md). A questo scopo, è necessario aggiungere il token di accesso alla richiesta API in uno dei seguenti modi:
+Utilizza il token di accesso per eseguire [chiamate API di autenticazione di Adobe Pass](/help/authentication/initiate-authentication.md). A questo scopo, è necessario aggiungere il token di accesso alla richiesta API in uno dei seguenti modi:
 
-* aggiungendo un nuovo parametro di query alla richiesta. Questo nuovo parametro viene chiamato **access_token**.
+* aggiungendo un nuovo parametro di query alla richiesta. Il nuovo parametro è denominato **access_token**.
 
 * aggiungendo una nuova intestazione HTTP alla richiesta: Authorization: Bearer. È consigliabile utilizzare l’intestazione HTTP, in quanto le stringhe di query tendono a essere visibili nei registri del server.
 

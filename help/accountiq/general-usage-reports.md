@@ -9,13 +9,13 @@ ht-degree: 0%
 
 ---
 
-# [!UICONTROL General usage] rapporti {#general-usage-reports}
+# [!UICONTROL General usage] report {#general-usage-reports}
 
-[!UICONTROL Account IQ] i report sono strumenti analitici di base che consentono di analizzare i dati per isolarli [coorti](/help/accountiq/product-concepts.md#segmet-def), identifica le anomalie e acquisisci una maggiore comprensione delle caratteristiche del tuo account.
+I report [!UICONTROL Account IQ] sono strumenti analitici di base che consentono di analizzare i dati per isolare [coorti](/help/accountiq/product-concepts.md#segmet-def), identificare le anomalie e comprendere le caratteristiche dell&#39;account.
 
-[!UICONTROL General usage] La pagina dei rapporti fornisce gli strumenti necessari per suddividere le metriche dei sottogruppi in base al numero di dispositivi account in uso, IP rilevati e relativi codici postali.
+La pagina dei report [!UICONTROL General usage] fornisce gli strumenti per ricavare le metriche dei sottogruppi in base al numero di dispositivi dell&#39;account in uso, agli IP rilevati e ai rispettivi codici postali.
 
-I rapporti si basano tutti sul segmento corrente selezionato da [Segmenti e intervallo di tempo](/help/accountiq/segments-timeinterval.md) pannello. Puoi ottimizzare la selezione e limitarla ulteriormente specificando (numero di dispositivi, numero di IP e numero di codici postali) le soglie in [Panoramica snapshot - Conti superiori alle soglie](#snapshot-overview) pannello.
+I report sono tutti basati sul segmento corrente selezionato dal pannello [Segmenti e intervallo di tempo](/help/accountiq/segments-timeinterval.md). Puoi ottimizzare la selezione e limitarla ulteriormente specificando (numero di dispositivi, numero di IP e numero di codici postali) soglie nel pannello [Panoramica snapshot-Account superiori alle soglie](#snapshot-overview).
 
 ## Riproduci richieste e abbonati univoci {#playreq-uniquesubs}
 
@@ -26,7 +26,7 @@ I grafici a linee forniscono una visualizzazione delle modifiche nel tempo dei v
 ![](assets/d2c-line-graph-gu.png)
 
 
-*Richieste Play/Abbonati univoci per servizi D2C*
+*Richieste Play/Sottoscrittori univoci per servizi D2C*
 
 +++
 
@@ -35,7 +35,7 @@ I grafici a linee forniscono una visualizzazione delle modifiche nel tempo dei v
 ![](assets/progr-line-graph-gu.png)
 
 
-*Richieste Play/Abbonati Univoci per programmatori*
+*Riproduci richieste/Sottoscrittori univoci per programmatori*
 
 +++
 
@@ -43,7 +43,7 @@ I grafici a linee forniscono una visualizzazione delle modifiche nel tempo dei v
 
 ![](assets/mvpd-line-graph-gu.png)
 
-*Abbonati univoci per MVPD*
+*Sottoscrittori univoci per MVPDs*
 
 +++
 
@@ -55,13 +55,13 @@ L’asse x rappresenta il tempo in base all’intervallo corrente e l’asse y r
 
 * **AuthZ OK**: numero di autorizzazioni completate. Ulteriori informazioni su [AuthZ OK](/help/accountiq/product-concepts.md#authz-ok-def).
 
-* **Riproduci richieste**: numero di richieste di riproduzione. Ulteriori informazioni su [Riproduci richieste](/help/accountiq/product-concepts.md#play-requests-def).
+* **Richieste Play**: numero di richieste Play. Ulteriori informazioni sulle [richieste Play](/help/accountiq/product-concepts.md#play-requests-def).
 
-* **Abbonati univoci**: numero di abbonati univoci riusciti. Ulteriori informazioni su [Abbonati univoci](/help/accountiq/product-concepts.md#unique-subscriber-def).
+* **Sottoscrittori univoci**: numero di sottoscrittori univoci riusciti. Ulteriori informazioni su [Sottoscrittori univoci](/help/accountiq/product-concepts.md#unique-subscriber-def).
 
 >[!NOTE]
 >
->La disponibilità delle metriche varia a seconda della versione di Account IQ.
+>La disponibilità delle metriche dipende dalla versione di Account IQ.
 
 ## Panoramica snapshot - Conti superiori alle soglie {#snapshot-overview}
 
@@ -73,7 +73,7 @@ Ottimizza le analisi e i rapporti utilizzando questo filtro aggiuntivo per impos
 
 * Soglia numero di codici postali
 
-Quando si aggiornano i valori di soglia in [Conti basati sul segmento in base alle soglie selezionate](#account-segments-basedon-segments) dell&#39;effetto in:
+Quando aggiorni i valori di soglia nel pannello [Segmento account in base alle soglie selezionate](#account-segments-basedon-segments), visualizzerai l&#39;effetto in:
 
 * [Dispositivi per settimana (o mese) per account](#devices-week-account)
 
@@ -85,11 +85,11 @@ Quando si aggiornano i valori di soglia in [Conti basati sul segmento in base al
 
 >[!NOTE]
 >
->Ogni soglia è impostata su un valore predefinito pari a 4. Ciò significa che la pagina Uso generale mostra l’analisi per gli abbonati che utilizzano più di quattro dispositivi, utilizzando contenuti provenienti da più di quattro indirizzi IP diversi, *e* più di quattro diversi codici postali.
+>Ogni soglia è impostata su un valore predefinito pari a 4. In altre parole, la pagina Uso generale mostra l&#39;analisi per gli abbonati che utilizzano più di quattro dispositivi, che utilizzano contenuti provenienti da più di quattro indirizzi IP diversi, *e* più di quattro codici postali diversi.
 
 ### Conti basati su segmenti in base alle soglie selezionate {#account-segments-basedon-segments}
 
-Il **Conti basati sul segmento in base alle soglie selezionate** Il pannello consente di impostare soglie (tra 1 e 10) per il numero di dispositivi, il numero di IP e il numero di codici postali.
+Il pannello **Account basati sul segmento in base alle soglie selezionate** consente di impostare soglie (comprese tra 1 e 10) per il numero di dispositivi, il numero di IP e il numero di codici postali.
 
 Il grafico mostra:
 
@@ -121,7 +121,7 @@ L&#39;anello fornisce una vista alternativa dei dispositivi in uso dagli account
 
 ## Posizioni per settimana (o mese) per account {#locations-week-account}
 
-Simile alla metrica per [Dispositivi per settimana (o mese) per account](#devices-week-account), la metrica Posizioni per settimana (o mese) per account consente di analizzare l’utilizzo dell’account abbonato da posizioni diverse. L&#39;asse x rappresenta il numero di conti e l&#39;asse y il numero di posizioni.
+Analogamente alla metrica per [Dispositivi alla settimana (o al mese) per account](#devices-week-account), la metrica Posizioni alla settimana (o al mese) per account consente di analizzare l&#39;utilizzo dell&#39;account dell&#39;abbonato da posizioni diverse. L&#39;asse x rappresenta il numero di conti e l&#39;asse y il numero di posizioni.
 
 ![](assets/graph-loc-week-acc.png)
 
@@ -135,7 +135,7 @@ Dopo aver impostato la soglia per il numero di posizioni, puoi utilizzare il gra
 
 ## Ips per settimana (o mese) per account {#ip-week-account}
 
-Simile alla metrica per **Numero di sedi per settimana per account**, il **Numero di IP alla settimana per account** La metrica ti consente di valutare la quantità di modifica all’origine dello streaming per il segmento corrente.
+Simile alla metrica per **Numero di posizioni per settimana per account**, la metrica per **Numero di IP per settimana per account** consente di valutare la quantità di modifica all&#39;origine dello streaming per il segmento corrente.
 
 L’asse x rappresenta il numero di account e l’asse y il numero di IP.
 
@@ -151,13 +151,13 @@ Dopo aver definito un segmento e impostato la soglia per il numero di IP, puoi u
 
 ## Visualizzazione cronologica dei segmenti degli account {#account-segment-historical-view}
 
-Il grafico a barre Visualizzazione cronologica consente di confrontare le metriche di utilizzo tra intervalli di tempo diversi. Inoltre, traccia collettivamente le varie metriche di utilizzo, come [Dispositivi per settimana (o mese) per account](#devices-week-account), [Posizioni per settimana (o mese) per account](#locations-week-account), e [IP per settimana (o mese) per account](#ip-week-account).
+Il grafico a barre Visualizzazione cronologica consente di confrontare le metriche di utilizzo tra intervalli di tempo diversi. Inoltre, traccia collettivamente le varie metriche di utilizzo, ad esempio [Dispositivi per settimana (o mese) per account](#devices-week-account), [Posizioni per settimana (o mese) per account](#locations-week-account) e [IP per settimana (o mese) per account](#ip-week-account).
 
 * L’asse x rappresenta l’intervallo di tempo e l’asse y rappresenta il numero di account abbonato, dispositivi, posizioni e IP.
 
 * Le barre arancioni colorate indicano i segmenti in vari intervalli di tempo.
 
-* Il grafico a linee traccia le modifiche in [Dispositivi per settimana (o mese) per account](#devices-week-account), [Posizioni per settimana (o mese) per account](#locations-week-account), e [IP per settimana (o mese) per account](#ip-week-account) valori nell&#39;intervallo di tempo in base alla soglia.
+* Il grafico a linee traccia le modifiche in [Dispositivi per settimana (o mese) per account](#devices-week-account), [Posizioni per settimana (o mese) per account](#locations-week-account) e [IP per settimana (o mese) per account](#ip-week-account) valori nell&#39;intervallo di tempo in base alla soglia.
 
 ![](assets/historical-view.png)
 

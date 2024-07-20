@@ -1,32 +1,32 @@
 ---
 title: Procedure di inoltro per il monitoraggio della concorrenza
 description: Procedure di inoltro per il monitoraggio della concorrenza
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+exl-id: eb110465-3a74-489e-a521-0e17f5aeecb8
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '823'
+source-wordcount: '849'
 ht-degree: 0%
 
 ---
-
 
 # Procedure di inoltro per il monitoraggio della concorrenza {#esc-procedures}
 
 >[!NOTE]
 >
->Chiama la hotline: +1-205-693-9813 e invia un&#39;e-mail a `tve-support@adobe.com` l&#39;inclusione di &quot;URGENT - INCIDENT&quot; (INCIDENTE URGENTE) nell&#39;oggetto.
+>Chiamare il numero verde: +1-205-693-9813 e inviare un&#39;e-mail a `tve-support@adobe.com` specificando &quot;URGENT - INCIDENT&quot; nell&#39;oggetto.
 
 
 ## Introduzione {#cm-escalation-intro}
 
-Questo documento descrive le procedure di supporto per gli incidenti gravi (**GRAVITÀ 1** Adobe Pass, Adobe Pass Concurrency Monitoring e i relativi partner.
+In questo documento vengono descritte le procedure di supporto per gli incidenti gravi (**GRAVITÀ 1** livello) che interessano l&#39;autenticazione di Adobe Pass, il monitoraggio della concorrenza di Adobe Pass e i relativi partner.
 
 ## Definizione del livello di gravità della riassegnazione 1 {#defn-escl-sevrityone-level}
 
-A **GRAVITÀ 1** livello incidente è un **LIVE** situazione, **nell&#39;ambiente di produzione**, che non consente il completamento dei flussi di autenticazione e/o autorizzazione per un canale e un MVPD, interessando un gran numero di abbonati dell&#39;MVPD che esegue il flusso.
+Un evento imprevisto di livello **SEVERITY 1** è una situazione **LIVE**, **che si verifica nell&#39;ambiente di produzione**, che non consente il completamento dei flussi di autenticazione e/o autorizzazione per un canale e un MVPD, e interessa un numero elevato di sottoscrittori dell&#39;MVPD che eseguono il flusso.
 
 ## Esempi di incidenti con gravità 1 {#exampl-sevone-incident}
 
-* L’Access Enabler di produzione ospitato in <http://entitlement.auth.adobe.com/entitlement/AccessEnabler.js> non è disponibile.
+* L&#39;attivatore dell&#39;accesso alla produzione ospitato in <http://entitlement.auth.adobe.com/entitlement/AccessEnabler.js> non è disponibile.
 
 * Per un MVPD specifico, Adobe non reindirizza più / visualizza la pagina di accesso, dopo che l’utente seleziona l’MVPD (in nessuno dei browser supportati).
 
@@ -35,14 +35,14 @@ A **GRAVITÀ 1** livello incidente è un **LIVE** situazione, **nell&#39;ambient
 * Durante il processo di autenticazione, l’utente si blocca su una pagina di errore di Adobe senza la possibilità di riavviare il flusso di autenticazione/autorizzazione.
 
 
-## Esempi di *NOT* un caso di gravità 1 {#exampl-not-sev1}
+## Esempi di cosa è *NOT* un problema di gravità 1 {#exampl-not-sev1}
 
 *Per problemi di questo tipo, Adobe fornirà supporto per le indagini, ma non si tratta di incidenti di gravità 1:*
 
 * Uno o più abbonati non sono in grado di eseguire il flusso a causa di un problema di versione del Flash (Flash mancante, blocchi del Flash, versione del Flash errata).
 * Uno o più abbonati non sono in grado di eseguire l&#39;autenticazione e rimangono nella pagina di accesso MVPD.
 * Uno o più abbonati sono autenticati ma non sono in grado di riprodurre video.
-* Uno o pochi abbonati/tutti riscontrano un errore JavaScript sul sito Programmer.
+* Uno/pochi/tutti gli abbonati incontrano un errore JavaScript sul sito Programmatore.
 
 ## Flussi di escalation gravità 1 {#sevone-escalation-flows}
 
@@ -83,7 +83,7 @@ Gli incidenti di gravità 1 possono essere avviati da Adobe o da un partner di a
 
 1. L&#39;Adobe identifica un problema relativo all&#39;integrazione con un MVPD o su uno dei siti del programmatore.
 
-1. Adobe di notifica al partner interessato **seguire le procedure di assistenza in atto con tale partner** e apre un ticket con l’organizzazione di supporto del partner.
+1. Adobe invia una notifica al partner interessato **seguendo le procedure di supporto in vigore con tale partner** e apre un ticket con l&#39;organizzazione di supporto del partner.
 
 1. Se, durante l’analisi dell’impatto, l’Adobe rileva che la questione appartiene a una delle decisioni concordate in precedenza sugli scenari di incidente (vedi la sezione &quot;Decisioni concordate in precedenza sugli scenari di incidente&quot; di seguito), agirà di conseguenza senza attendere il partner1. dell&#39;input.
 

@@ -1,13 +1,13 @@
 ---
 title: Casi d’uso
 description: Casi d’uso nel monitoraggio della concorrenza.
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+exl-id: 6cc30bb6-e985-4d9a-9f99-a7f04ae8deb7
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
 source-wordcount: '387'
 ht-degree: 0%
 
 ---
-
 
 # Casi d’uso {#use-cases}
 
@@ -17,8 +17,8 @@ Per monitorare l&#39;utilizzo da parte dell&#39;abbonato, è necessario un servi
 
 I principali casi d’uso supportati da questo servizio centralizzato dovrebbero essere:
 
-1. Non appena un abbonato inizia a guardare un video, l’applicazione può **inizializzare una sessione di streaming** e inizia **attività di reporting** dati.
-1. Nello stesso servizio centrale, un’altra istanza riceverà ***Decisioni CM*** - nel caso in cui l’applicazione disponga di uno o più criteri registrati nel servizio CM, il servizio risponderà con una decisione di accesso basata sull’attività corrente.
+1. Non appena un abbonato inizia a guardare un video, l&#39;applicazione può **inizializzare una sessione di streaming** e avviare i dati di **attività di reporting**.
+1. Nello stesso servizio centrale, un&#39;altra istanza riceverà ***decisioni CM***. Nel caso in cui l&#39;applicazione disponga di uno o più criteri registrati nel servizio CM, il servizio risponderà con una decisione di accesso basata sull&#39;attività corrente.
 
 
 ## Creazione di una sessione {#create-session}

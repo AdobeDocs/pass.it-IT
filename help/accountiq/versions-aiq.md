@@ -1,7 +1,8 @@
 ---
 title: Versioni di Account IQ
-description: Scopri le versioni utilizzate per i diversi servizi in Account IQ.
-source-git-commit: cfcaa00ab05c99a64bcb0edfe5af60845a6769a9
+description: Scopri le versioni utilizzate per diversi servizi in Account IQ.
+exl-id: b8b014d5-a8a8-4327-b6aa-15f7e6a63274
+source-git-commit: 2bb570ab14a3295d46ee6dc0d38485697d63809c
 workflow-type: tm+mt
 source-wordcount: '312'
 ht-degree: 0%
@@ -14,7 +15,7 @@ Account IQ è progettato per identificare automaticamente la condivisione di pas
 
 Questa guida affronta le esigenze degli abbonati D2C, dei programmatori TV Everywhere e delle aziende MVPD di TV Everywhere all&#39;interno del settore dello streaming video.
 
-A causa di lievi differenze tra D2C e TVE, vi sono corrispondenti varianti di Account IQ. Ogni tipo di società di streaming video interagisce con la propria versione specifica di Account IQ.
+A causa di lievi differenze tra D2C e TVE, esistono corrispondenti varianti di Account IQ. Ogni tipo di società di streaming video interagisce con la propria versione specifica di Account IQ.
 
 ## Servizi Direct-to-Consumer (D2C) {#d-to-c}
 
@@ -24,9 +25,9 @@ D2C si riferisce ai servizi di streaming video venduti direttamente da un fornit
 
 TV Everywhere si riferisce alla componente online dell&#39;abbonamento TV tradizionale di un cliente. Esso include gli abbonati a servizi di televisione via cavo o via satellite, come Comcast o DirecTV, che possono accedere ai contenuti di tali fornitori online attraverso varie piattaforme di streaming.
 
-Sono disponibili due versioni di TV Everywhere: [Programmatori](/help/accountiq/product-concepts.md#programmer-def) e [MVPD](/help/accountiq/product-concepts.md#mvpd-def).
+Sono disponibili due versioni di TV Everywhere: [Programmer](/help/accountiq/product-concepts.md#programmer-def) e [MVPDs](/help/accountiq/product-concepts.md#mvpd-def).
 
-Quando [integrato](/help/accountiq/get-started.md) all’Account IQ della tua organizzazione, ti viene assegnata una versione Programmatore o MVPD.
+Quando [esegui l&#39;onboarding](/help/accountiq/get-started.md) dell&#39;organizzazione in Account IQ, ti viene assegnata una versione Programmatore o MVPD.
 
 ### Programmatori {#programmers}
 
@@ -38,8 +39,4 @@ Gli MVPD forniscono più canali televisivi agli abbonati attraverso varie tecnol
 
 >[!NOTE]
 >
-> A seconda della versione di Account IQ a cui accedi, alcune etichette cambieranno e alcune visualizzazioni potrebbero non essere disponibili.
-
-
-
-
+> A seconda della versione di Account IQ a cui accedi, alcune etichette cambieranno e alcune viste potrebbero non essere disponibili.

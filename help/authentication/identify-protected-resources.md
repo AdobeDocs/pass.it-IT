@@ -56,7 +56,7 @@ Un identificatore più complesso potrebbe includere, ad esempio, informazioni di
     getAuthorization(resource);
 ```
 
-Gli identificatori di risorse sono opachi all’autenticazione di Adobe Pass e vengono semplicemente trasmessi al MVPD. Se MVPD non riconosce o non è in grado di analizzare l’identificatore di risorsa, restituisce un errore ad Adobe Pass Authentication, che restituisce l’errore al `tokenRequestFailed()` callback.
+Gli identificatori di risorse sono opachi all’autenticazione di Adobe Pass e vengono semplicemente trasmessi al MVPD. Se MVPD non riconosce o non è in grado di analizzare l&#39;identificatore di risorsa, restituisce un errore all&#39;autenticazione Adobe Pass, che restituisce l&#39;errore al callback `tokenRequestFailed()`.
 
 <!--
 ## Related Information {#related}

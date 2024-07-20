@@ -1,14 +1,13 @@
 ---
 title: Metadati personalizzati
 description: Metadati personalizzati
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+exl-id: 0cfd1158-8c6c-47c2-b838-5490ff4bf0ce
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '363'
+source-wordcount: '367'
 ht-degree: 0%
 
 ---
-
-
 
 # Metadati personalizzati {#cm}
 
@@ -40,10 +39,9 @@ In base a queste chiavi/valori inviati, è possibile stabilire regole diverse. Q
 
 1. Il cliente decide di voler inviare il gruppo di parametri, che avrà come valori &quot;SPORTS&quot; e &quot;KIDS&quot;.
 1. L’app dovrà quindi eseguire questa operazione:
-   * Per i canali sportivi, al momento dell’inizializzazione del flusso l’app invierebbe ***type=SPORTS*** come parametro di query
-   * Per i canali con contenuti relativi ai bambini, al momento dell’inizializzazione del flusso l’app inviava ***type=KIDS*** come parametro di query
+   * Per i canali sportivi, al momento dell&#39;inizializzazione del flusso l&#39;app invierebbe ***type=SPORTS*** come parametro di query
+   * Per i canali con contenuti correlati ai bambini, al momento dell&#39;inizializzazione del flusso l&#39;app invierebbe ***type=KIDS*** come parametro di query
 1. Quindi si potrebbe definire un criterio come questo:
    * `GROUP by type HAVING COUNT(streamID) < 4) IF type=KIDS`
    * `GROUP by type HAVING COUNT(streamID) < 2) IF type=SPORTS`
 1. In pratica, questo significa che quando un utente guarda contenuti sportivi, non può farlo su più di 1 dispositivo; tuttavia, quando l’utente guarda contenuti per bambini, la visualizzazione è consentita su un massimo di 3 dispositivi.
-

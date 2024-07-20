@@ -4,7 +4,7 @@ description: Autorizzazione di verifica preliminare
 exl-id: 036b1a8e-f2dc-4e9a-9eeb-0787e40c00d9
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '1518'
+source-wordcount: '1522'
 ht-degree: 0%
 
 ---
@@ -21,16 +21,16 @@ ht-degree: 0%
 
 Questa funzione fornisce un controllo di autorizzazione semplificato per più risorse. Lo scopo di questo controllo leggero è decorare l’interfaccia utente (ad esempio, indicando lo stato di accesso con icone di blocco e sblocco). L’autorizzazione di verifica preliminare è il più semplice ed efficiente possibile, in modo che una singola chiamata API generi lo stato di autorizzazione per un elenco di risorse. Tieni presente che questa funzione non è autorevole per quanto riguarda l’autorizzazione di una risorsa.
 
-A `getAuthorization(resource)` o `checkAuthorization(resource)` prima di consentire la riproduzione, è necessario effettuare una chiamata.
+È ancora NECESSARIO effettuare una chiamata `getAuthorization(resource)` o `checkAuthorization(resource)` prima di consentire la riproduzione.
 
 L’autorizzazione di verifica preliminare fornisce anche il supporto per un diverso caso d’uso, in cui il programmatore deve richiedere l’autorizzazione per più ID di risorsa per consentire la riproduzione di un elemento del contenuto multimediale. Il Programmatore può effettuare un controllo preliminare iniziale sulle risorse richieste e, a seconda della risposta, potrebbe non riuscire in anticipo se le condizioni di business non vengono soddisfatte.
 
-Per un elenco di MVPD che supportano l&#39;autorizzazione di verifica preliminare, vedere [Autorizzazione di verifica preliminare MVPD](/help/authentication/mvpd-preflight-authz.md#preflight_support_list) pagina.
+Per un elenco di MVPD che supportano l&#39;autorizzazione di verifica preliminare, vedere la pagina [Autorizzazione di verifica preliminare MVPD](/help/authentication/mvpd-preflight-authz.md#preflight_support_list).
 
 >[!NOTE]
 >
-> L&#39;utilizzo di questa funzionalità per gli MVPD che non dispongono del supporto completo per l&#39;autorizzazione di verifica preliminare deve essere concordato in anticipo con Adobe e MVPD. L&#39;utilizzo dell&#39;autorizzazione di verifica preliminare su questi MVPD rientra nello &quot;scenario peggiore&quot; descritto [qui](/help/authentication/mvpd-preflight-authz.md#intro) e possono causare problemi di prestazioni e rallentamento dei tempi di risposta. </br>
-> Inoltre, si prega di notare che l&#39;utilizzo dell&#39;autorizzazione di verifica preliminare con **più di 5 risorse devono essere esplicitamente approvate dall&#39;Adobe**.
+> L&#39;utilizzo di questa funzionalità per gli MVPD che non dispongono del supporto completo per l&#39;autorizzazione di verifica preliminare deve essere concordato in anticipo con Adobe e MVPD. L&#39;utilizzo dell&#39;autorizzazione di verifica preliminare per questi MVPD rientra nello &quot;scenario peggiore&quot; descritto [qui](/help/authentication/mvpd-preflight-authz.md#intro) e può causare problemi di prestazioni e rallentamento del tempo di risposta. </br>
+> Inoltre, tieni presente che l&#39;utilizzo dell&#39;autorizzazione di verifica preliminare con **più di 5 risorse deve essere esplicitamente accettato dall&#39;Adobe**.
 
 ## API di verifica preliminare di AccessEnabler {#AE_pre_api}
 
@@ -40,7 +40,7 @@ AccessEnabler espone una coppia di funzioni API/callback per implementare l&#39;
 
 Chiamare questa funzione sull&#39;oggetto AccessEnabler per richiedere lo stato di autorizzazione per un elenco di risorse.
 
-Il parametro resources è l&#39;elenco delle risorse per le quali deve essere controllata l&#39;autorizzazione. Ogni elemento dell’elenco deve essere una stringa che rappresenta l’ID della risorsa. L’ID risorsa è soggetto alle stesse limitazioni dell’ID risorsa in `getAuthorization()` Chiamata, ovvero viene concordato un valore stabilito tra il Programmatore e l&#39;MVPD, o un frammento RSS del contenuto multimediale. Tieni presente che l’autenticazione Adobe Pass non gestisce le risorse in alcun modo, ad eccezione di un livello di mediazione sottile che può trasformare i formati delle risorse in base a ciò che MVPD supporta effettivamente.
+Il parametro resources è l&#39;elenco delle risorse per le quali deve essere controllata l&#39;autorizzazione. Ogni elemento dell’elenco deve essere una stringa che rappresenta l’ID della risorsa. L&#39;ID risorsa è soggetto alle stesse limitazioni dell&#39;ID risorsa nella chiamata `getAuthorization()`, ovvero al valore concordato tra il Programmatore e l&#39;MVPD, o un frammento RSS del supporto. Tieni presente che l’autenticazione Adobe Pass non gestisce le risorse in alcun modo, ad eccezione di un livello di mediazione sottile che può trasformare i formati delle risorse in base a ciò che MVPD supporta effettivamente.
 
 ### preauthorizedResources(Array:authorizedResources) {#preauthRes}
 
@@ -70,19 +70,19 @@ Si tratta di una funzione di callback che deve essere implementata nell&#39;appl
 
 La chiamata API tenta di trovare un elenco memorizzato nella cache delle risorse autorizzate per l’utente corrente nell’archiviazione locale del client. Se non è presente alcun elenco memorizzato in cache, viene effettuata una chiamata HTTPS ai server AdobePass per recuperare l’elenco.
 
-Il meccanismo di caching migliora i tempi di prestazione nelle chiamate successive saltando completamente la chiamata di rete. Inoltre, l’elenco memorizzato in cache può essere popolato in anticipo come parte del processo di autenticazione.  (Per informazioni sulla configurazione di questo scenario, consulta [Integrazione autorizzazione verifica preliminare](/help/authentication/authz-usecase.md#preflight_authz_int) nella sezione Autorizzazione della Guida all’integrazione di MVPD).
+Il meccanismo di caching migliora i tempi di prestazione nelle chiamate successive saltando completamente la chiamata di rete. Inoltre, l’elenco memorizzato in cache può essere popolato in anticipo come parte del processo di autenticazione.  (Per informazioni sulla configurazione di questo scenario, vedere [Integrazione autorizzazione verifica preliminare](/help/authentication/authz-usecase.md#preflight_authz_int) nella sezione Autorizzazione della Guida all&#39;integrazione MVPD).
 
-Inoltre, l’elenco delle risorse memorizzato nella cache può potenzialmente essere utilizzato per ottimizzare il flusso di autorizzazione, nel senso che, se esiste un elenco di risorse memorizzato nella cache, `checkAuthorization()` può controllarlo prima di effettuare una chiamata di rete. Se la risorsa non è presente nell’elenco delle risorse preautorizzate, il controllo può non riuscire senza dover chiamare i server di autenticazione di Adobe Pass.
+Inoltre, l&#39;elenco delle risorse memorizzate nella cache può essere utilizzato per ottimizzare il flusso di autorizzazione, nel senso che se esiste un elenco di risorse memorizzato nella cache, `checkAuthorization()` può controllarlo prima di eseguire una chiamata di rete. Se la risorsa non è presente nell’elenco delle risorse preautorizzate, il controllo può non riuscire senza dover chiamare i server di autenticazione di Adobe Pass.
 
 
 ### Verifica preliminare tramite ChannelID {#preflight_using_channelID}
 
 A partire dalla versione di Adobe Pass Authentication 2.4.1, il flusso di verifica preliminare funziona come segue:
 
-1. Durante l’autenticazione, l’autenticazione di Adobe Pass legge `channelIID` dalla risposta SAML di MVPD e utilizza questo valore per impostare `authorizedResources` nel token di autenticazione.
-1. All&#39;interno del `checkPreauthorizedResources()` API, l’autenticazione di Adobe Pass verifica se il `authorizedResources` è impostato.
-1. Se il `authorizedResources` è impostato, Adobe Pass Authentication legge tale valore ed esegue un&#39;intersezione tra l&#39;elenco delle risorse e `authorizedResources` e l&#39;elenco delle risorse ricevute da `checkPreauthorizedResources()` parametro.  Il risultato di questa intersezione è l’elenco finale delle risorse preautorizzate.
-1. Se il `authorizedResources` non è impostato, esegui il flusso implementato in precedenza, in cui l’elenco delle risorse ricevute da `checkPreauthorizedResources()` Il parametro viene passato a PreAuthorizationServlet. Questo servlet esegue le chiamate di autorizzazione agli endpoint MVPD e restituisce l’elenco delle risorse preautorizzate.
+1. Durante l&#39;autenticazione, Adobe Pass Authentication legge l&#39;elemento `channelIID` dalla risposta SAML di MVPD e utilizza questo valore per impostare l&#39;elemento `authorizedResources` nel token di autenticazione.
+1. All&#39;interno della funzione API `checkPreauthorizedResources()`, l&#39;autenticazione di Adobe Pass verifica se l&#39;elemento `authorizedResources` è impostato.
+1. Se l&#39;elemento `authorizedResources` è impostato, Adobe Pass Authentication legge tale valore ed esegue un&#39;intersezione tra l&#39;elenco delle risorse dall&#39;elemento `authorizedResources` e l&#39;elenco delle risorse ricevute dal parametro `checkPreauthorizedResources()`.  Il risultato di questa intersezione è l’elenco finale delle risorse preautorizzate.
+1. Se l&#39;elemento `authorizedResources` non è impostato, eseguire il flusso implementato in precedenza, in cui l&#39;elenco delle risorse ricevute dal parametro `checkPreauthorizedResources()` viene passato a PreAuthorizationServlet. Questo servlet esegue le chiamate di autorizzazione agli endpoint MVPD e restituisce l’elenco delle risorse preautorizzate.
 
 ### Esempio di verifica preliminare con ChannelID
 
@@ -108,7 +108,7 @@ L’esempio seguente mostra un esempio di allineamento del canale. Tieni present
 ```
 
 
-Il `authorizedResources` dall&#39;elemento authentication viene visualizzato come segue:
+L&#39;elemento `authorizedResources` dell&#39;elemento di autenticazione viene visualizzato come segue:
 
 ```JSON
     <authorizedResources>
@@ -129,14 +129,14 @@ Il `authorizedResources` dall&#39;elemento authentication viene visualizzato com
     </authorizedResources>
 ```
 
-Il programmatore esegue `checkPreauthorizedResources()` Chiamata API, trasmettendo il seguente elenco di parametri:</span>
+Il programmatore esegue la chiamata API `checkPreauthorizedResources()`, passando il seguente elenco di parametri:</span>
 
 - &quot;MSNBC&quot;
 - &quot;FBN&quot;
 - &quot;TruTV&quot;
 - fbc-fox
 
-L&#39;implementazione della verifica preliminare corrente esegue l&#39;intersezione con l&#39;elenco di risorse della `authorizedResources` e restituisce questo elenco:
+L&#39;implementazione corrente della verifica preliminare esegue l&#39;intersezione con l&#39;elenco di risorse dell&#39;elemento `authorizedResources` e restituisce questo elenco:
 
 - &quot;MSNBC&quot;
 - &quot;FBN&quot;
@@ -144,7 +144,7 @@ L&#39;implementazione della verifica preliminare corrente esegue l&#39;intersezi
 
 
 
-**Nota:** L’intersezione non distingue tra maiuscole e minuscole.
+**Nota:** l&#39;intersezione non distingue tra maiuscole e minuscole.
 
 
 
@@ -158,11 +158,11 @@ Questa chiamata verrà eseguita automaticamente da AccessEnabler se non esiste a
 | Parametro | Tipo | Obbligatorio | Descrizione |
 | --- | --- | --- | --- |
 | `authentication_token` | stringa | SÌ | Token di autenticazione. |
-| `resource_id` | stringa | SÌ | Una singola risorsa. Questo può essere specificato più volte, una volta per ogni elemento dell’array di risorse fornito in `checkPreauthorizedResources()` Chiamata API. |
+| `resource_id` | stringa | SÌ | Una singola risorsa. Questa impostazione può essere specificata più volte, una volta per ogni elemento dell&#39;array di risorse fornito nella chiamata API `checkPreauthorizedResources()`. |
 
 
-**Nota:** È possibile configurare il numero massimo di risorse richieste.
-**Il valore massimo predefinito è 5.**
+**Nota:** è possibile configurare il numero massimo di risorse richieste.
+**Il valore predefinito massimo è 5.**
 
 
 #### Risposta {#resp}
@@ -192,8 +192,10 @@ La risposta inviata dal servlet di preautorizzazione ha il seguente formato:
 Elenco di risorse preautorizzate ottenute da AccessEnabler dal provider di servizi. Questo elenco di risorse:
 
 - Viene memorizzato insieme ai token AuthN e AuthZ
-- È valido finché l’utente si trova sullo stesso sito web o fino alla scadenza del token AuthN
-- viene recuperato ogni volta che l’utente arriva a un nuovo sito web integrato per l’autenticazione di Adobe Pass;
+- È valido finché l’utente si trova sullo stesso sito web o fino a quando
+Scadenza token di autenticazione
+- Viene recuperato nuovamente ogni volta che l’utente arriva a una nuova Adobe Pass
+sito Web integrato di autenticazione
 
 Ogni voce contiene l&#39;ID risorsa per il quale l&#39;utente è preautorizzato.
 
@@ -211,17 +213,17 @@ Questo elenco è denominato &quot;cache di preautorizzazione&quot;.
 
 #### Flusso {#flow}
 
-1. L’app/sito del programmatore crea un `checkPreauthorizedResources(resourceList)` chiamare.
+1. L&#39;app/sito del programmatore effettua una chiamata `checkPreauthorizedResources(resourceList)`.
 1. AccessEnabler verifica il token di autenticazione per le risorse autorizzate:
-   1. Se il token di autenticazione contiene risorse autorizzate: questo elenco è autorevole e non deve essere effettuata alcuna chiamata per ottenere queste informazioni. Le risorse da resourceList vengono cercate nell’elenco delle risorse autorizzate nel token di autenticazione e solo quelle trovate vengono restituite da `preauthorizedResources()` callback.
-   1. Se il token di autenticazione NON contiene risorse autorizzate: `resourceList` viene confrontato con l’elenco delle risorse nella cache di preautorizzazione.
-      1. Se l’elenco contiene le stesse risorse, significa che è già stata effettuata una chiamata al server e che la risposta si trova già nella cache di preautorizzazione. Solo le risorse autorizzate verranno restituite dal `preauthorizedResources()` callback.
-      1. Se l&#39;elenco NON contiene le stesse risorse, il client deve effettuare una chiamata al server per ottenere lo stato di autorizzazione per le risorse in resourceList. La risposta verrà recuperata e memorizzata nella cache di preautorizzazione, sostituendo completamente le risorse precedenti. Solo le risorse autorizzate verranno restituite dal `preauthorizedResources()` callback.
+   1. Se il token di autenticazione contiene risorse autorizzate: questo elenco è autorevole e non deve essere effettuata alcuna chiamata per ottenere queste informazioni. Le risorse da resourceList vengono cercate nell&#39;elenco delle risorse autorizzate nel token di autenticazione e solo quelle trovate vengono restituite dal callback `preauthorizedResources()`.
+   1. Se il token di autenticazione NON contiene risorse autorizzate, `resourceList` viene confrontato con l&#39;elenco di risorse nella cache di preautorizzazione.
+      1. Se l’elenco contiene le stesse risorse, significa che è già stata effettuata una chiamata al server e che la risposta si trova già nella cache di preautorizzazione. Solo le risorse autorizzate verranno restituite dal callback `preauthorizedResources()`.
+      1. Se l&#39;elenco NON contiene le stesse risorse, il client deve effettuare una chiamata al server per ottenere lo stato di autorizzazione per le risorse in resourceList. La risposta verrà recuperata e memorizzata nella cache di preautorizzazione, sostituendo completamente le risorse precedenti. Solo le risorse autorizzate verranno restituite dal callback `preauthorizedResources()`.
 
 
 #### Recupero elenco {#listRetrieve}
 
-Ogni volta che `checkPreauthorizedResources()` viene chiamato, l’elenco delle risorse da verificare per l’autorizzazione viene controllato in base alla cache di preautorizzazione. Se l&#39;elenco contiene lo stesso set di risorse, non viene effettuata alcuna chiamata al provider di servizi, in quanto tutte le risorse necessarie per attivare `preauthorizedResources()` callback già presenti nella cache.
+Ogni volta che si chiama un `checkPreauthorizedResources()`, l&#39;elenco delle risorse da verificare per l&#39;autorizzazione viene controllato rispetto alla cache di preautorizzazione. Se l&#39;elenco contiene lo stesso set di risorse, non verrà effettuata alcuna chiamata al provider di servizi, poiché tutte le risorse necessarie per attivare il callback `preauthorizedResources()` sono già nella cache.
 
 
 #### logout() {#logout}
@@ -231,7 +233,7 @@ La cache di preautorizzazione viene svuotata al momento della disconnessione.
 
 ## Dipendenze {#depends}
 
-Le prestazioni dell’API di verifica preliminare dipendono da implementazioni MVPD specifiche.  Per le opzioni di implementazione, consulta [Integrazione autorizzazione verifica preliminare](/help/authentication/authz-usecase.md#preflight_authz_int) nella sezione Autorizzazione della Guida all’integrazione di MVPD.
+Le prestazioni dell’API di verifica preliminare dipendono da implementazioni MVPD specifiche.  Per le opzioni di implementazione, vedere [Integrazione autorizzazione verifica preliminare](/help/authentication/authz-usecase.md#preflight_authz_int) nella sezione Autorizzazione della Guida all&#39;integrazione MVPD.
 
 
 ## Sicurezza {#security}
@@ -240,14 +242,14 @@ Le API client sono disponibili per tutti i programmatori.
 
 L’implementazione utilizza HTTPS come trasporto, ma per avere una chiamata più leggera non vengono impiegate misure di sicurezza aggiuntive (nessuna firma, nessun FAXS).
 
-**Attenzione:** NON utilizzare questa API in modo autorevole per determinare se a un utente deve essere concesso l’accesso a una risorsa protetta. Lo scopo di questa API è la decorazione dell’interfaccia utente e/o la verifica preliminare delle decisioni aziendali. Il `getAuthorization()` e `checkAuthorization()` le chiamate devono sempre essere effettuate prima di consentire la riproduzione.
+**Attenzione:** NON utilizzare questa API in modo autorevole per determinare se a un utente deve essere concesso l&#39;accesso a una risorsa protetta. Lo scopo di questa API è la decorazione dell’interfaccia utente e/o la verifica preliminare delle decisioni aziendali. Le chiamate `getAuthorization()` e `checkAuthorization()` devono sempre essere effettuate prima di consentire la riproduzione.
 
 
 ## Compatibilità {#compat}
 
 Questa funzione è supportata in tutte le versioni di AccessEnabler: AS, JS, AIR, iOS, Android, Xbox (nel flusso AuthN del secondo schermo).
 
-L&#39;autorizzazione di verifica preliminare non supporta le risorse di pre-autorizzazione che contengono sezioni CDATA. Lo scopo del sistema di verifica preliminare corrente è di supportare il filtro a livello di canale. Le risorse con sezioni CDATA sono probabilmente risorse a livello di risorsa. La verifica preliminare supporta la semplice `mrss` risorse per la pre-autorizzazione a livello di canale, purché non contengano CDATA.
+L&#39;autorizzazione di verifica preliminare non supporta le risorse di pre-autorizzazione che contengono sezioni CDATA. Lo scopo del sistema di verifica preliminare corrente è di supportare il filtro a livello di canale. Le risorse con sezioni CDATA sono probabilmente risorse a livello di risorsa. La verifica preliminare supporta risorse `mrss` semplici per la pre-autorizzazione a livello di canale, purché non contengano CDATA.
 
 ## Integrazione Con Altre Funzioni {#integ_w_other_features}
 

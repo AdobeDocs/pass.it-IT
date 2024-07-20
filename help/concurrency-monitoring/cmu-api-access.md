@@ -1,7 +1,8 @@
 ---
 title: Accesso API CMU
 description: Accesso API CMU
-source-git-commit: 598eb878168f6e352a8eae369cbc8cb833033328
+exl-id: 8d216703-aabc-489e-93fe-d4d105616b1d
+source-git-commit: 52c0ffe75f6ac9fda3da39ff08b0dc4c5d5ca428
 workflow-type: tm+mt
 source-wordcount: '407'
 ht-degree: 0%
@@ -20,14 +21,14 @@ Abbiamo aggiornato l’accesso ai rapporti CMU per renderli compatibili con il p
 Affinché le applicazioni client possano utilizzare l&#39;autorizzazione OAuth 2.0, il server deve registrarsi in modo dinamico per ottenere informazioni specifiche (credenziali client) per poter interagire con essa. Come parte del processo di registrazione, il client deve presentare un set di metadati incorporati all’endpoint di registrazione del client.
 Questi metadati vengono comunicati come un&#39;istruzione software, che contiene un &quot;software_id&quot; per consentire al nostro server di autorizzazione di correlare diverse istanze di un&#39;applicazione utilizzando la stessa istruzione software.
 Un’istruzione software è un JSON Web Token (JWT) che asserisce i valori dei metadati del software client come bundle. Quando viene presentata al server di autorizzazione come parte di una richiesta di registrazione client, l&#39;istruzione software deve essere firmata digitalmente o MACed utilizzando la firma Web JSON (JWS). \
-Per maggiori informazioni sulle istruzioni software e sul loro funzionamento, consulta la documentazione ufficiale.  <a href="https://datatracker.ietf.org/doc/html/rfc7591" target="_blank">[RFC7591]</a>.
+Per ulteriori informazioni sulle istruzioni software e sul loro funzionamento, vedere la documentazione ufficiale <a href="https://datatracker.ietf.org/doc/html/rfc7591" target="_blank">[RFC7591]</a>.
 Per ottenere l’accesso, segui i passaggi descritti nelle sezioni seguenti.
 
 ## Passaggi della procedura di accesso {#access-procedure-steps}
 
-1. Avere un&#39;applicazione registrata nel server Adobe Pass DCR. Per questo passaggio, contatta il [Team di supporto](mailto:tve-support@adobe.com).
+1. Avere un&#39;applicazione registrata nel server Adobe Pass DCR. Per questo passaggio, contatta il nostro [team di supporto](mailto:tve-support@adobe.com).
 2. Ottieni il rendiconto del software
-   1. Passa a dashboard TVE <a href="https://console-preprod.auth.adobe.com/#!/" target="_blank"> Pre-produzione </a>  o <a href="https://console.auth.adobe.com/" target="_blank">PROD</a>
+   1. Vai a Dashboard TVE <a href="https://console-preprod.auth.adobe.com/#!/" target="_blank"> Pre-produzione </a> o <a href="https://console.auth.adobe.com/" target="_blank">PROD</a>
    2. Seleziona programmatore
    3. Vai alla scheda Applicazioni
    4. Seleziona applicazione
@@ -43,14 +44,14 @@ Per ottenere l’accesso, segui i passaggi descritti nelle sezioni seguenti.
 
 3. Ottieni token di accesso
    1. Ottieni le credenziali del client utilizzando l’istruzione software ottenuta in precedenza ed eseguendo la chiamata di seguito. In questo modo verrà ottenuta una coppia client_id - client_secret, che può essere utilizzata per ottenere il token di accesso.
-      *Questo passaggio non deve essere eseguito ogni volta. Questa operazione deve essere ripetuta solo dopo la scadenza delle credenziali.*
+      *Questo passaggio non deve essere eseguito ogni volta. Questa operazione deve essere ripetuta solo alla scadenza delle credenziali.*
       <figure>
           <img src="assets/dcr_request_1_get_client_credentials.png"
                alt="Ottieni credenziali client">
        </figure>
 
    2. Ottieni il token di accesso utilizzando la chiamata di seguito. Utilizza questo token di accesso per chiamare qualsiasi API CMU fino alla scadenza del token.
-      *Questo passaggio deve essere eseguito solo se l’ultimo token generato è scaduto.*
+      *Questo passaggio deve essere eseguito solo se l&#39;ultimo token generato è scaduto.*
       <figure>
           <img src="assets/dcr_get_access_token_call.png"
                alt="Ottieni token di accesso">

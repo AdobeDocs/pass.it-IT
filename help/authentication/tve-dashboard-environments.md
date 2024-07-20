@@ -1,7 +1,8 @@
 ---
 title: Ambienti dashboard TVE
 description: Comprendi l’utilizzo e il funzionamento dei diversi ambienti nel dashboard TVE.
-source-git-commit: 06c2e1e54515a2ec47722ba1f360467dadd1f73b
+exl-id: 591becb8-2f6c-46e0-b108-c64e6df69f89
+source-git-commit: c2dcea9e4170a3e10654bcd3f8d2f5cdb82c9603
 workflow-type: tm+mt
 source-wordcount: '346'
 ht-degree: 0%
@@ -16,15 +17,15 @@ ht-degree: 0%
 
 Il dashboard TVE fornisce diversi ambienti personalizzati per soddisfare scopi specifici all’interno dell’autenticazione di Adobe Pass. Esistono due ambienti principali:
 
-* **Prequal**: l’ambiente di pre-qualificazione funge da campo di prova per la preparazione e il test di nuove build prima della distribuzione in produzione.
+* **Prequal**: l&#39;ambiente di pre-qualificazione funge da test per la preparazione e il test di nuove build prima della distribuzione in produzione.
 
-* **Versione**: l’ambiente di rilascio ospita le build finalizzate e testate per la produzione.
+* **Versione**: l&#39;ambiente di rilascio ospita le build finalizzate e testate per la produzione.
 
 All’interno di ogni ambiente, sono disponibili due profili diversi:
 
-* **Staging**: il profilo di staging si connette al server di staging di MVPD per il test e la convalida delle integrazioni prima della pubblicazione.
+* **Gestione temporanea**: il profilo di gestione temporanea si connette al server di gestione temporanea di MVPD per il test e la convalida delle integrazioni prima della pubblicazione.
 
-* **Produzione**: il profilo di produzione si collega al profilo di produzione dell’MVPD per le attività di produzione effettive.
+* **Produzione**: il profilo di produzione si connette al profilo di produzione MVPD per le attività di produzione effettive.
 
 ## Casi d’uso
 
@@ -56,13 +57,12 @@ Gli ambienti nel dashboard TVE vengono utilizzati per vari casi d’uso durante 
 Segui i passaggi per passare da un ambiente dashboard TVE di autenticazione Adobe Pass all’altro.
 
 1. Accedi con le credenziali del programmatore.
-1. Seleziona l’ambiente di staging o produzione richiesto da **Ambiente** menu a discesa nella parte superiore del pannello sinistro.
+1. Seleziona l&#39;ambiente di staging o produzione richiesto dal menu a discesa **Ambiente** nella parte superiore del pannello a sinistra.
 
    ![Menu a discesa degli ambienti del dashboard TVE](assets/tve-dashboard-env.png)
 
-   *Menu a discesa dell’ambiente del dashboard TVE di autenticazione di Adobe Pass*
+   *Menu a discesa dell&#39;ambiente del dashboard TVE di autenticazione di Adobe Pass*
 
 >[!NOTE]
 >
 > Le configurazioni possono variare in ogni ambiente in base alle impostazioni.
-

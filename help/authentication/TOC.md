@@ -15,14 +15,14 @@ ht-degree: 3%
 # Guida all’autenticazione di Adobe Pass {#authentication}
 
 + [Panoramica sull’autenticazione di Adobe Pass](home.md)
-+ Concetti di autenticazione di Adobe Pass {#authentication-concepts}
++ Concetti di autenticazione Adobe Pass {#authentication-concepts}
    + [Documento tecnico](technical-paper.md)
    + [Panoramica sui programmatori](programmer-overview.md)
    + [Panoramica di MVPD](mvpd-overview.md)
-+ Guide Kick-Start {#kickstart-guides}
++ Guide rapide {#kickstart-guides}
    + [Guida introduttiva per programmatori](programmer-kickstart-guide.md)
    + [Guida introduttiva MVPD](mvpd-kickstart-guide.md)
-+ Guida all’integrazione dei programmatori {#programmer-integration-guide}
++ Guida all&#39;integrazione dei programmatori {#programmer-integration-guide}
    + [Panoramica della guida all’integrazione dei programmatori](programmer-integration-guide-overview.md)
    + [Flusso adesione programmatore](entitlement-flow.md)
    + [Casi di utilizzo dei programmatori](programmer-use-cases.md)
@@ -52,19 +52,19 @@ ht-degree: 3%
          + [Recupera richiesta-profilo](retrieve-profilerequest.md)
          + [Scambio di token](token-exchange.md)
          + [Anteprima gratuita per Passaggio temporaneo e Passaggio temporaneo promozionale](free-preview-for-temp-pass-and-promotional-temp-pass.md)
-   + SDK di AccessEnabler {#accessenabler-sdk}
+   + SDK AccessEnabler {#accessenabler-sdk}
       + SDK JavaScript {#javascriptsdk}
-         + [Panoramica dell’SDK JavaScript](javascript-sdk-overview.md)
-         + [Manuale dell’SDK JavaScript](javascript-sdk-cookbook.md)
-         + [Riferimento API dell&#39;SDK JavaScript](javascript-sdk-api-reference.md)
+         + [Panoramica dell’SDK per JavaScript](javascript-sdk-overview.md)
+         + [Manuale dell’SDK di JavaScript](javascript-sdk-cookbook.md)
+         + [Riferimento API di JavaScript SDK](javascript-sdk-api-reference.md)
          + Linee guida {#js-sdk-guidelines}
             + [Accesso e disconnessione senza aggiornamento](refreshless-login-and-logout.md)
          + API JavaScript {#js-api}
             + [Autorizza in anticipo](js-preauthorize.md)
-      + SDK per iOS/tvOS {#ios-sdk}
+      + SDK iOS/tvOS {#ios-sdk}
          + [Panoramica dell’SDK iOS/tvOS](iostvos-sdk-overview.md)
          + [Manuale dell’SDK iOS/tvOS](iostvos-sdk-cookbook.md)
-         + [Riferimento API per iOS/tvOS SDK](iostvos-sdk-api-reference.md)
+         + [Riferimento API SDK per iOS/tvOS](iostvos-sdk-api-reference.md)
          + Linee guida {#ios-tvos-sdk-guidelines}
             + [Registrazione applicazione iOS/tvOS](iostvos-application-registration.md)
             + Linee guida per la migrazione {#migration-guidelines}
@@ -72,9 +72,9 @@ ht-degree: 3%
             + [Controlli di integrità archiviazione iOS/tvOS](iostvos-sdk-storage-integrity-checks.md)
          + API iOS/tvOS {#ios-tvos-api}
             + [Autorizza in anticipo](preauthorize.md)
-      + SDK per Android {#androidsdk}
-         + [Panoramica dell’SDK per Android](android-sdk-overview.md)
-         + [Manuale dell’SDK per Android](android-sdk-cookbook.md)
+      + SDK di Android {#androidsdk}
+         + [Panoramica dell’SDK di Android](android-sdk-overview.md)
+         + [Manuale dell’SDK di Android](android-sdk-cookbook.md)
          + [Riferimento API dell&#39;SDK per Android](android-sdk-api-reference.md)
          + Linee guida {#androidguidelines}
             + [Registrazione applicazione Android](android-application-registration.md)
@@ -90,7 +90,7 @@ ht-degree: 3%
          + [Registrazione applicazione Amazon FireOS](amazon-fireos-application-registration.md)
          + [SDK FireOS con registrazione client dinamica](fireos-sdk-with-dynamic-client-registration.md)
    + SSO piattaforma {#platform-sso}
-      + SSO APPLE {#apple-sso}
+      + SSO Apple {#apple-sso}
          + [Panoramica di Apple SSO](apple-sso-overview.md)
          + [Manuale Apple SSO (REST API)](apple-sso-cookbook-rest-api.md)
          + [Manuale Apple SSO (iOS/tvOS SDK)](apple-sso-cookbook-iostvos-sdk.md)
@@ -102,7 +102,7 @@ ht-degree: 3%
       + [Integrare Media Token Verifier](media-token-verifier-int.md)
    + Appendici {#appendices}
       + [Suggerimenti per il debug](appendix-b-debugging-tips.md)
-+ Guida all’integrazione di MVPD {#mvpd-int-guide}
++ Guida all&#39;integrazione di MVPD {#mvpd-int-guide}
    + [Funzioni di integrazione](mvpd-integr-features.md)
    + [Autenticazione](authn-usecase.md)
    + [Autenticazione tramite il protocollo OAuth 2.0](authn-oauth2-protocol.md)
@@ -116,10 +116,10 @@ ht-degree: 3%
    + [Ambito provider di servizi](serv-provider-scoping.md)
    + [Indirizzi IP consentiti MVPD](mvpd-listing-ip-addres.md)
 + Funzioni di autenticazione di Adobe Pass {#auth-features}
-   + Integrazione con Adobe Analytics {#analytics-int}
+   + Integrazione Adobe Analytics {#analytics-int}
       + [Integrazione dei dati lato server di autenticazione di Adobe Pass in Adobe Analytics](integrate-authn-servr-data-analytics.md)
       + [Utilizzo dell’ID Experience Cloud nell’autenticazione di Adobe Pass](exp-cloud-id-authn.md)
-   + Monitoraggio del servizio di adesione {#entitlement-service-monitoring}
+   + Monitoraggio del servizio spettanti {#entitlement-service-monitoring}
       + [Panoramica sul monitoraggio del servizio di adesione](entitlement-service-monitoring-overview.md)
       + [API di monitoraggio del servizio di adesione](entitlement-service-monitoring-api.md)
       + [Metriche lato server](understanding-serverside-metrics.md)
@@ -136,16 +136,16 @@ ht-degree: 3%
    + Metadati utente {#user-metadat}
       + [Metadati utente](user-metadata-feature.md)
    + [Autorizzazione di verifica preliminare](preflight-authz.md)
-   + Segnalazione di errori {#error-reportn}
+   + Segnalazione errori {#error-reportn}
       + [Segnalazione di errori](error-reporting.md)
       + [Codici di errore migliorati](enhanced-error-codes.md)
    + Registrazione client {#client-regn}
       + [Registrazione client dinamici](dynamic-client-registration.md)
       + [API di registrazione client dinamica](dynamic-client-registration-api.md)
       + [Dynamic Client Registration Management](dynamic-client-registration-management.md)
-   + Servizio di degrado {#degrn-service}
+   + Servizio di degradazione {#degrn-service}
       + [Panoramica dell’API di degradazione](degradation-api-overview.md)
-   + Preparazione alla privacy {#privacy-readiness}
+   + Conformità privacy {#privacy-readiness}
       + [Panoramica sul supporto della privacy](privacy-supp-overview.md)
       + [Come effettuare una richiesta di accesso a dati personali](make-privacy-req.md)
 + Suggerimenti e risoluzione dei problemi {#tips-troubleshoot}
@@ -167,42 +167,42 @@ ht-degree: 3%
    + [Note sulla versione di Adobe Pass Authentication 2.64](auth-rn-264.md)
    + [Note sulla versione di Adobe Pass Authentication 2.63](auth-rn-263.md)
    + [Note sulla versione di Adobe Pass Authentication 2.62.1](auth-rn-2621.md)
-   + Note sulla versione dell’SDK JavaScript  {#release-notes-javascript}
-      + [Note sulla versione di JavaScript 4.7.0 per l’autenticazione di Adobe Pass](authn-rn-javascript-470.md)
-      + [Note sulla versione di JavaScript 4.6.0 per l’autenticazione di Adobe Pass](authn-rn-javascript-460.md)
-      + [Note sulla versione di JavaScript 4.4.0 per l’autenticazione di Adobe Pass](authn-rn-javascript-440.md)
-      + [Note sulla versione di JavaScript 4.2.0 per l’autenticazione di Adobe Pass](authn-rn-javascript-420.md)
-      + [Note sulla versione di JavaScript 4.1.1 per l’autenticazione di Adobe Pass](authn-rn-javascript-411.md)
-      + [Note sulla versione di JavaScript 4.1.0 per l’autenticazione di Adobe Pass](authn-rn-javascript-410.md)
-      + [Note sulla versione di JavaScript 4.0.0 per l’autenticazione di Adobe Pass](authn-rn-javascript-400.md)
+   + Note sulla versione di JavaScript SDK {#release-notes-javascript}
+      + [Note sulla versione di Adobe Pass Authentication JavaScript 4.7.0](authn-rn-javascript-470.md)
+      + [Note sulla versione di Adobe Pass Authentication JavaScript 4.6.0](authn-rn-javascript-460.md)
+      + [Note sulla versione di Adobe Pass Authentication JavaScript 4.4.0](authn-rn-javascript-440.md)
+      + [Note sulla versione di Adobe Pass Authentication JavaScript 4.2.0](authn-rn-javascript-420.md)
+      + [Note sulla versione di Adobe Pass Authentication JavaScript 4.1.1](authn-rn-javascript-411.md)
+      + [Note sulla versione di Adobe Pass Authentication JavaScript 4.1.0](authn-rn-javascript-410.md)
+      + [Note sulla versione di Adobe Pass Authentication JavaScript 4.0.0](authn-rn-javascript-400.md)
       + [Note sulla versione di Adobe Pass Authentication JavaScript 3.5.0](authn-rn-javascript-350.md)
-   + Note sulla versione dell’SDK iOS/tvOS  {#release-notes-ios}
+   + Note sulla versione dell&#39;SDK iOS/tvOS {#release-notes-ios}
       + [Note sulla versione di Adobe Pass Authentication iOS/tvOS 3.9.2](authn-rn-ios-tvos-392.md)
       + [Note sulla versione di Adobe Pass Authentication iOS/tvOS 3.8.4](authn-rn-ios-tvos-384.md)
       + [Note sulla versione di Adobe Pass Authentication iOS/tvOS 3.8.3](authn-rn-ios-tvos-383.md)
       + [Note sulla versione di Adobe Pass Authentication iOS/tvOS 3.8.2](authn-rn-ios-tvos-382.md)
       + [Note sulla versione di Adobe Pass Authentication iOS/tvOS 3.8.1](authn-rn-ios-tvos-381.md)
       + [Note sulla versione di Adobe Pass Authentication iOS/tvOS 3.7.0](authn-rn-ios-tvos-370.md)
-   + Note sulla versione dell’SDK per Android {#release-notes-android}
+   + Note sulla versione di Android SDK {#release-notes-android}
       + [Note sulla versione di Adobe Pass Authentication Android 3.7.3](authn-rn-android-373.md)
 + Note tecniche {#tech-notes}
-   + SDK di autenticazione di Adobe Pass {#primetime-authentication-sdks}
+   + SDK di autenticazione Adobe Pass {#primetime-authentication-sdks}
       + [Domande e risposte sui certificati](certificates-qa.md)
       + SDK JavaScript {#javascript}
          + [Valutazione della prevenzione del tracciamento - Apple Safari](tracking-prevention-assessment-apple-safari.md)
          + [Valutazione della prevenzione del tracciamento - Google Chrome](tracking-prevention-assessment-google-chrome.md)
          + [Aggiornamenti dei cookie - Flag SameSite e Secure](cookies-updates-samesite-and-secure-flags.md)
-      + SDK per Android {#android}
-         + [Accesso a Single Sign-On (SSO) SDK per Android su app Android 10](access-enabler-android-sdk-single-signon-sso-on-android-10-devices.md)
-         + [Autenticazione Adobe Pass e il nuovo modello di autorizzazioni &quot;Marshmallow&quot; per Android 6](adobe-primetime-authentication-and-the-android-6-marshmallow-new-permissions-model.md)
-      + SDK per iOS/tvOS {#iostvos}
+      + SDK di Android {#android}
+         + [Accesso Single Sign-On (SSO) SDK di Android Enabler sulle app Android 10](access-enabler-android-sdk-single-signon-sso-on-android-10-devices.md)
+         + [Autenticazione di Adobe Pass e il nuovo modello di autorizzazioni &quot;Marshmallow&quot; di Android 6](adobe-primetime-authentication-and-the-android-6-marshmallow-new-permissions-model.md)
+      + SDK iOS/tvOS {#iostvos}
          + [Supporto WKWebView sull&#39;SDK iOS 3.1+](wkwebview-support-on-ios-sdk-31.md)
          + [Supporto di SFSafariViewController sull&#39;SDK iOS 3.2+](sfsafariviewcontroller-support-on-ios-sdk-32.md)
          + [SSO su iOS quando si utilizza Adobe Pass Authentication Access Enabler](sso-on-ios-when-using-the-primetime-authentication-access-enabler.md)
          + [Errore di autenticazione iOS - Impossibile trovare adobepass.ios.app](ios-authentication-error-adobepassiosapp-cannot-be-found.md)
          + [Ripristina passaggio temporaneo su iOS](reset-temp-pass-on-ios.md)
          + [Debug dell’SDK iOS/tvOS di AccessEnabler tramite i registri dell’app della console](debugging-the-accessenabler-iostvos-sdk-using-console-app-logs.md)
-         + [Percorso di aggiornamento ad AccessEnabler iOS/tvOS 3.7.0](accessenabler-iostvos-370-upgrade-path.md)
+         + [Percorso di aggiornamento di AccessEnabler iOS/tvOS 3.7.0](accessenabler-iostvos-370-upgrade-path.md)
    + Ambienti di autenticazione pass {#primetime-authentication-environments}
       + [Informazioni sugli ambienti Adobe](understanding-the-adobe-environments.md)
       + [Configurazione dell’ambiente e test in Pre-Qual](setting-up-your-environment-and-testing-in-prequal.md)

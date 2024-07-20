@@ -17,16 +17,16 @@ ht-degree: 1%
 
 >[!NOTE]
 >
-> L’implementazione REST API è limitata da [Meccanismo di limitazione](/help/authentication/throttling-mechanism.md)
+> L&#39;implementazione REST API è limitata dal [meccanismo di limitazione](/help/authentication/throttling-mechanism.md)
 
 ## Endpoint REST API {#clientless-endpoints}
 
-&lt;reggie_fqdn>:
+&lt;FQDN_REGGIE>:
 
 * Produzione - [api.auth.adobe.com](http://api.auth.adobe.com/)
 * Staging - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
-&lt;sp_fqdn>:
+&lt;SP_FQDN>:
 
 * Produzione - [api.auth.adobe.com](http://api.auth.adobe.com/)
 * Staging - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
@@ -38,9 +38,9 @@ ht-degree: 1%
 
 Elimina il record del codice reg e rilascia il codice reg per il riutilizzo.
 
-| Endpoint | Chiamato  </br>Da | Input   </br>Parametri | HTTP  </br>Metodo | Risposta | HTTP  </br>Risposta |
+| Endpoint | Chiamato </br> da | Input   </br>Parametri | Metodo HTTP </br> | Risposta | HTTP </br>Risposta |
 | --- | --- | --- | --- | --- | --- |
-| &lt;reggie_fqdn>/reggie/v1/{requestorId}/regcode/{registrationCode}</br></br>Ad esempio:</br></br>&lt;reggie_fqdn>/reggie/v1/regcode/ER45RTY | App di streaming</br></br>o</br></br>Servizio programmatore | 1. ID richiedente  </br>    (componente Percorso)</br>2.  Codice di registrazione  </br>    (componente Percorso) | DELETE | Nessuno | 204 |
+| &lt;REGGIE_FQDN>/reggie/v1/{requestorId}/regcode/{registrationCode}</br></br>Esempio:</br></br>&lt;REGGIE_FQDN>/reggie/v1/regcode/ER45RTY | Servizio programmatore </br></br>o</br></br>app in streaming | 1. ID richiedente </br>    (componente percorso)</br>2.  Codice di registrazione </br>    (componente Percorso) | DELETE | Nessuno | 204 |
 
 {style="table-layout:auto"}
 
@@ -55,4 +55,4 @@ Elimina il record del codice reg e rilascia il codice reg per il riutilizzo.
 
 </br>
 
-### [Torna a Riferimento API REST](/help/authentication/rest-api-reference.md)
+### [Torna al riferimento API REST](/help/authentication/rest-api-reference.md)

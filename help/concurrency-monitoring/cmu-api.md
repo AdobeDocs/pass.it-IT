@@ -1,13 +1,13 @@
 ---
 title: Panoramica API
 description: Panoramica API
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+exl-id: 3fe6f6d8-5b2f-47e5-a8da-06fb18a5d46b
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '2054'
+source-wordcount: '2043'
 ht-degree: 0%
 
 ---
-
 
 # API di utilizzo del monitoraggio della concorrenza {#cmu-api-usage}
 
@@ -17,14 +17,14 @@ ht-degree: 0%
 
 ## Panoramica API {#api-overview}
 
-L&#39;utilizzo del monitoraggio della concorrenza (CMU) è implementato come WOLAP (basato sul Web [Elaborazione analitica online](http://en.wikipedia.org/wiki/Online_analytical_processing)). CMU è un’API web generica per la generazione di rapporti di business supportata da un data warehouse. Funge da linguaggio di query HTTP che consente l&#39;esecuzione completa di operazioni OLAP tipiche.
+L&#39;utilizzo del monitoraggio della concorrenza (CMU) è implementato come progetto WOLAP (Web-based [Online Analytical Processing](http://en.wikipedia.org/wiki/Online_analytical_processing)). CMU è un’API web generica per la generazione di rapporti di business supportata da un data warehouse. Funge da linguaggio di query HTTP che consente l&#39;esecuzione completa di operazioni OLAP tipiche.
 
 
 >[!NOTE]
 >
 >L’API della CMU non è generalmente disponibile. Per domande sulla disponibilità, contatta il rappresentante di Adobe.
 
-L&#39;API CMU fornisce una visualizzazione gerarchica dei cubi OLAP sottostanti. Ogni risorsa ([dimensione](/help/authentication/entitlement-service-monitoring-overview.md#progr-filter-metrics) nella gerarchia delle dimensioni, mappato come segmento di percorso URL) genera rapporti con (aggregato) [metriche](/help/authentication/entitlement-service-monitoring-overview.md#programmers-can-monitor-the-following-metrics) per la selezione corrente. Ogni risorsa punta alla relativa risorsa padre (per l’aggregazione) e alle relative risorse secondarie (per l’espansione). Le operazioni di suddivisione in porzioni e dicing vengono eseguite tramite parametri di stringa di query che fissano dimensioni a valori o intervalli specifici.
+L&#39;API CMU fornisce una visualizzazione gerarchica dei cubi OLAP sottostanti. Ogni risorsa ([dimensione](/help/authentication/entitlement-service-monitoring-overview.md#progr-filter-metrics) nella gerarchia delle dimensioni, mappata come segmento di percorso URL) genera rapporti con [metriche](/help/authentication/entitlement-service-monitoring-overview.md#programmers-can-monitor-the-following-metrics) (aggregate) per la selezione corrente. Ogni risorsa punta alla relativa risorsa padre (per l’aggregazione) e alle relative risorse secondarie (per l’espansione). Le operazioni di suddivisione in porzioni e dicing vengono eseguite tramite parametri di stringa di query che fissano dimensioni a valori o intervalli specifici.
 
 L’API REST fornisce i dati disponibili entro un intervallo di tempo specificato nella richiesta (fallback ai valori predefiniti se non ne viene fornito alcuno), in base al percorso della dimensione, ai filtri forniti e alle metriche selezionate. L’intervallo di tempo non verrà applicato ai rapporti che non contengono dimensioni temporali (anno, mese, giorno, ora, minuto, secondo).
 
@@ -40,7 +40,7 @@ Le seguenti strutture di espansione illustrano le dimensioni (risorse) disponibi
 
 ![](assets/new_breakdown.png)
 
-A `GET` al `https://mgmt.auth.adobe.com/cmu/v2` L’endpoint API restituirà una rappresentazione contenente:
+Un `GET` all&#39;endpoint API `https://mgmt.auth.adobe.com/cmu/v2` restituirà una rappresentazione contenente:
 
 * Collegamenti ai percorsi di drill-down radice disponibili:
 
@@ -62,10 +62,10 @@ Ad eccezione delle dimensioni data/ora, qualsiasi dimensione disponibile per la 
 
 Sono disponibili le seguenti opzioni di filtro:
 
-* **Uguale a** I filtri vengono forniti impostando il nome della dimensione su un valore particolare nella stringa query.
-* **IN** è possibile specificare i filtri aggiungendo più volte lo stesso parametro nome-dimensione con valori diversi: dimension=value1&amp;dimension=value2
-* **Non è uguale a** i filtri devono utilizzare &#39;!&#39; dopo il nome della quota, risultante in &quot;!=&#39; &quot;operator&quot;: dimension!=valore
-* **NOT IN** i filtri richiedono &#39;!operatore =&#39; da utilizzare più volte, una volta per ogni valore nel set: dimension!=valore1&amp;dimensione!=valore2&amp;...
+* I filtri **Equals** vengono forniti impostando il nome della dimensione su un valore particolare nella stringa di query.
+* È possibile specificare **IN** filtri aggiungendo più volte lo stesso parametro del nome dimensione con valori diversi: dimension=value1&amp;dimension=value2
+* **Not equals** i filtri devono utilizzare &#39;!&#39; dopo il nome della quota, risultante in &quot;!=&#39; &quot;operator&quot;: dimension!=valore
+* I filtri **NOT IN** richiedono &#39;!operatore =&#39; da utilizzare più volte, una volta per ogni valore nel set: dimension!=valore1&amp;dimensione!=valore2&amp;...
 
 
 Esiste anche un utilizzo speciale per i nomi delle dimensioni nella stringa di query: se il nome della dimensione viene utilizzato come parametro della stringa di query senza valore, questo indicherà all’API di restituire una proiezione che include tale dimensione nel rapporto.
@@ -76,9 +76,9 @@ Esempio di query CMU:
 |:---|:---|
 | /dimension1/dimension2/dimension3?dimension1=value1 | SELECT * from projection WHERE dimensione1 = &#39;valore1&#39; GROUP BY dimensione1, dimensione2, dimensione3 |
 | /dimension1/dimension2/dimension3?dimension1=value1&amp;dimension1=value2 | SELECT * from projection WHERE dimensione1 IN (&#39;valore1&#39;, &#39;valore2&#39;) GROUP BY dimensione1, dimensione2, dimensione3 |
-| /dimension1/dimension2/dimension3?dimension1!=value1 | SELECT * from proiezione WHERE dimensione1 &lt;> &#39;valore1&#39; GROUP BY dimensione1, dimensione2, dimensione3 |
-| /dimension1/dimension2/dimension3?dimension1!=valore1&amp;dimensione2!=value2 | SELECT * from projection WHERE dimensione1 NOT IN (&#39;valore1&#39;, &#39;valore2&#39;) GROUP BY dimensione1, dimensione2, dimensione3 |
-| Supponendo che non esista un percorso diretto: /dimension1/dimension3 ma che esista un percorso: /dimension1/dimension2/dimension3  </br></br> /dimension1?dimension3 | SELECT * da proiezione GROUP BY dimensione1,dimensione3 |
+| /dimension1/dimension2/dimension3?dimension1!=valore1 | SELECT * from proiezione WHERE dimensione1 &lt;> &#39;valore1&#39; GROUP BY dimensione1, dimensione2, dimensione3 |
+| /dimension1/dimension2/dimension3?dimension1!=valore1&amp;dimensione2!=valore2 | SELECT * from projection WHERE dimensione1 NOT IN (&#39;valore1&#39;, &#39;valore2&#39;) GROUP BY dimensione1, dimensione2, dimensione3 |
+| Supponendo che non esista un percorso diretto: /dimension1/dimension3 ma esista un percorso: /dimension1/dimension2/dimension3 </br></br> /dimension1?dimension3 | SELECT * da proiezione GROUP BY dimensione1,dimensione3 |
 
 >[!NOTE]
 >
@@ -129,9 +129,9 @@ I dati sono disponibili nei seguenti formati:
 
 I client possono utilizzare le seguenti strategie di negoziazione dei contenuti (la precedenza è data dalla posizione nell&#39;elenco, prima le cose):
 
-1. Estensione di file aggiunta all&#39;ultimo segmento del percorso URL, ad esempio /cmu/v2/tenant/year/month/day.xml. Se l’URL contiene una stringa di query, l’estensione deve precedere il punto interrogativo: `/cmu/v2/tenant/year/month/day.csv?mvpd=SomeMVPD`
-1. Un parametro stringa query formato: ad esempio, `/cmu/report?format=json`
-1. L’intestazione HTTP Accept standard: ad esempio, `Accept: application/xml`
+1. Estensione di file aggiunta all&#39;ultimo segmento del percorso URL, ad esempio /cmu/v2/tenant/year/month/day.xml. Se l&#39;URL contiene una stringa di query, l&#39;estensione deve precedere il punto interrogativo: `/cmu/v2/tenant/year/month/day.csv?mvpd=SomeMVPD`
+1. Parametro stringa query di formato: ad esempio `/cmu/report?format=json`
+1. Intestazione HTTP Accept standard: ad esempio, `Accept: application/xml`
 
 Sia l’&quot;estensione&quot; che il parametro query supportano i seguenti valori:
 
@@ -174,9 +174,9 @@ Il rapporto effettivo (un tag/proprietà nidificata denominata &quot;report&quot
 
 Per i formati XML e JSON, l’ordine dei campi (dimensioni e metriche) all’interno di un record non è specificato, ma è coerente (l’ordine è lo stesso in tutti i record). Tuttavia, i clienti non devono basarsi su un ordine particolare dei campi all’interno di un record.
 
-Il collegamento della risorsa (il rel &quot;self&quot; in JSON e l’attributo di risorsa &quot;href&quot; in XML) contiene il percorso corrente e la stringa di query utilizzati per il rapporto in linea. La stringa di query rivelerà tutti i parametri impliciti ed espliciti, in modo che il payload indichi esplicitamente l’intervallo di tempo utilizzato, i filtri impliciti (se presenti) e così via. Gli altri collegamenti all’interno della risorsa conterranno tutti i segmenti disponibili che possono essere seguiti per eseguire il drill-down dei dati correnti. Verrà inoltre fornito un collegamento per il rollup che punterà al percorso principale (se presente). Il `href` il valore per i collegamenti di espansione/rollup contiene solo il percorso URL (non include la stringa di query, pertanto se necessario il client deve accodarlo). Nota che non tutti i parametri della stringa di query utilizzati (o impliciti) dalla risorsa corrente saranno applicabili per i collegamenti &quot;roll-up&quot; o &quot;drill-down&quot; (ad esempio, i filtri potrebbero non essere applicabili alle risorse secondarie o super).
+Il collegamento della risorsa (il rel &quot;self&quot; in JSON e l’attributo di risorsa &quot;href&quot; in XML) contiene il percorso corrente e la stringa di query utilizzati per il rapporto in linea. La stringa di query rivelerà tutti i parametri impliciti ed espliciti, in modo che il payload indichi esplicitamente l’intervallo di tempo utilizzato, i filtri impliciti (se presenti) e così via. Gli altri collegamenti all’interno della risorsa conterranno tutti i segmenti disponibili che possono essere seguiti per eseguire il drill-down dei dati correnti. Verrà inoltre fornito un collegamento per il rollup che punterà al percorso principale (se presente). Il valore `href` per i collegamenti drill-down/roll-up contiene solo il percorso URL (non include la stringa di query, pertanto se necessario il client deve accodarlo). Nota che non tutti i parametri della stringa di query utilizzati (o impliciti) dalla risorsa corrente saranno applicabili per i collegamenti &quot;roll-up&quot; o &quot;drill-down&quot; (ad esempio, i filtri potrebbero non essere applicabili alle risorse secondarie o super).
 
-Esempio (supponendo che sia presente una singola metrica denominata client e che sia presente una preaggregazione per `year/month/day/...`):
+Esempio (supponendo che sia presente una singola metrica denominata client e una preaggregazione per `year/month/day/...`):
 
 * `https://mgmt.auth.adobe.com/cmu/v2/year/month.xml`
 
@@ -228,7 +228,7 @@ Nel formato dati CSV, non verranno forniti collegamenti o altri metadati (tranne
 report__<start-date>_<end-date>_<filter-values,...>.csv
 ```
 
-Il file CSV conterrà una riga di intestazione e quindi i dati del rapporto come righe successive. La riga di intestazione conterrà tutte le dimensioni seguite da tutte le metriche. L’ordinamento dei dati del rapporto si rifletterà nell’ordine delle dimensioni. Pertanto, se i dati sono ordinati per D1 e poi per D2, l’intestazione CSV si presenterà come segue: `D1, D2, ...metrics....`
+Il file CSV conterrà una riga di intestazione e quindi i dati del rapporto come righe successive. La riga di intestazione conterrà tutte le dimensioni seguite da tutte le metriche. L’ordinamento dei dati del rapporto si rifletterà nell’ordine delle dimensioni. Pertanto, se i dati sono ordinati per D1 e poi per D2, l&#39;intestazione CSV sarà simile a: `D1, D2, ...metrics....`
 
 L’ordine dei campi nella riga di intestazione rifletterà l’ordinamento dei dati della tabella.
 
@@ -241,14 +241,14 @@ Esempio: https://mgmt.auth.adobe.com/cmu/v2/year/month.csv produrrà un file den
 
 ## Aggiornamento dei dati {#data-freshness}
 
-Sebbene la richiesta contenga un’intestazione Last-Modified, **NON** riflette l’ora dell’ultimo aggiornamento del rapporto nel corpo. Le relazioni generali vengono calcolate su base regolare, con le seguenti regole:
+Sebbene la richiesta contenga un&#39;intestazione Last-Modified, **DOES NOT** riflette l&#39;ora dell&#39;ultimo aggiornamento del report nel corpo. Le relazioni generali vengono calcolate su base regolare, con le seguenti regole:
 
-* se la granularità temporale è **anno** o **mese**, quindi il rapporto viene aggiornato ogni 2 giorni
-* se la granularità temporale è **giorno**, quindi il rapporto viene aggiornato ogni 3 ore
-* se la granularità temporale è **ora**, quindi il rapporto viene aggiornato ogni ora
-* se la granularità temporale è **minuto**, quindi il rapporto viene aggiornato ogni minuto
+* se la granularità temporale è **anno** o **mese**, il rapporto viene aggiornato ogni 2 giorni
+* se la granularità temporale è **giorno**, il rapporto viene aggiornato ogni 3 ore
+* se la granularità temporale è **ora**, il rapporto viene aggiornato ogni ora
+* se la granularità temporale è di **minuti**, il rapporto viene aggiornato ogni minuto
 
-Il **livello di attività** e **livello di concorrenza** I rapporti di vengono aggiornati ogni giorno, indipendentemente dalla granularità temporale.
+I report **livello attività** e **livello concorrenza** vengono aggiornati ogni giorno, indipendentemente dalla granularità temporale.
 
 ## Compressione GZIP {#gzip-compression}
 

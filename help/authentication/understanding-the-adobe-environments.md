@@ -15,11 +15,11 @@ ht-degree: 0%
 >
 >Il contenuto di questa pagina viene fornito solo a scopo informativo. L’utilizzo di questa API richiede una licenza corrente di Adobe. Non è consentito alcun uso non autorizzato.
 
-È disponibile la documentazione ufficiale che descrive gli ambienti Adobe [Configurazione dell’ambiente e test in Pre-qual](/help/authentication/setting-up-your-environment-and-testing-in-prequal.md):
+La documentazione ufficiale che descrive gli ambienti Adobe è disponibile [Configurazione dell&#39;ambiente e test in Pre-qual](/help/authentication/setting-up-your-environment-and-testing-in-prequal.md):
 
 L’Adobe Ambienti, riassunto in poche parole:
 
-Adobe dispone di due ambienti: **Pre-qualificazione** e **Versione**.
+Adobe con due ambienti: **Pre-qualificazione** e **Versione**.
 
 * Nell’ambiente di pre-qualificazione stiamo preparando la nuova build da rilasciare.
 
@@ -32,6 +32,6 @@ Ogni ambiente ha due profili: **staging** e **produzione**.
 
 Il motivo per cui disponiamo dei due profili è che sul profilo di staging stiamo preparando nuovi partner per la pubblicazione e desiderano testare il sistema con la prossima build (Pre-Qualificazione) o con la versione uno (più stabile).
 
-Se un partner desidera testare la nuova versione, è necessario eseguire alcuni passaggi aggiuntivi. Vedi, [Configurazione dell’ambiente e test in Pre-qual](/help/authentication/setting-up-your-environment-and-testing-in-prequal.md).
+Se un partner desidera testare la nuova versione, è necessario eseguire alcuni passaggi aggiuntivi. Vedi [Configurazione dell&#39;ambiente e test in Pre-qual](/help/authentication/setting-up-your-environment-and-testing-in-prequal.md).
 
 Seguendo i passaggi precedenti, si garantisce che la prossima versione verrà testata nell’ambiente di pre-qualifica.

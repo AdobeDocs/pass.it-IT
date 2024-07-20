@@ -4,7 +4,7 @@ description: Requisiti minimi di sistema
 exl-id: 57b21e2a-abd7-4b4b-85f1-25584a850e40
 source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
 workflow-type: tm+mt
-source-wordcount: '434'
+source-wordcount: '446'
 ht-degree: 0%
 
 ---
@@ -43,13 +43,13 @@ Adobe Pass incoraggia i nostri clienti e partner a prendere in considerazione lâ
 
 | Sistema operativo | Versioni supportate |
 |---|---|
-| *Android* | **7,0** (Nougat) o versione successiva |
+| *Android* | **7.0** (Nougat) o versione successiva |
 | *iOS* | **14** o versione successiva |
 | *iPadOS* | **14** o versione successiva |
 | *tvOS* | **14** o versione successiva |
-| *Fire OS* | **5 (Android 5.1)** o versione successiva |
-| *MAC OS* | **10,13** o versione successiva |
-| *Microsoft Windows* | **10** o versione successiva |
+| *Attiva sistema operativo* | **5 (Android 5.1)** o versione successiva |
+| *SO Mac* | **10.13** o versione successiva |
+| *Microsoft* | **10** o versione successiva |
 
 
 

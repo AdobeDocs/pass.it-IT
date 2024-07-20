@@ -11,9 +11,9 @@ ht-degree: 0%
 
 # Modelli di utilizzo {#usage-patterns}
 
-Account IQ classifica gli utenti degli account degli abbonati in varie categorie in termini di comportamento sociale, come viaggiatori o pendolari, famiglie numerose e condivisione della community. Il **Modelli di utilizzo** mostra diverse analisi e rapporti per queste tipologie di utenti. Ad esempio: **Distribuzione dei pattern di utilizzo** i rapporti confrontano il comportamento d’uso del segmento corrente rispetto a tutti gli account.
+Account IQ classifica gli utenti degli account degli abbonati in varie categorie in termini di comportamento sociale, ad esempio viaggiatori o pendolari, famiglie numerose e condivisione della community. La pagina **Modelli di utilizzo** mostra diverse analisi e report per queste tipologie di utenti. Ad esempio, i rapporti **Distribuzione dei pattern di utilizzo** confrontano il comportamento di utilizzo per il segmento corrente con quello di tutti gli account.
 
-Come le altre pagine dell’app, l’analisi e i rapporti qui presenti si basano sul segmento corrente definito in [pannello segmenti](/help/accountiq/segments-timeinterval.md).
+Come le altre pagine dell&#39;app, l&#39;analisi e i report si basano sul segmento corrente definito nel [pannello segmenti](/help/accountiq/segments-timeinterval.md).
 
 ## Distribuzione dei pattern di utilizzo {#usage-pattern-dis}
 
@@ -25,7 +25,7 @@ Il grafico a barre cluster riportato di seguito confronta la distribuzione del p
 
 ![](assets/d2c-segment-users-industry.png)
 
-*Modelli di utilizzo distribuzione-Utenti nel segmento*
+*Distribuzione dei pattern di utilizzo-Utenti nel segmento*
 
 +++
 
@@ -35,13 +35,13 @@ Oltre a confrontare ogni modello di utilizzo nel segmento corrente con l’inter
 
 ![](assets/segment-users-industry.png)
 
-*Distribuzione dei modelli di utilizzo - Utenti nel segmento e nel settore*
+*Distribuzione dei pattern di utilizzo-Utenti nel segmento rispetto al settore*
 
 +++
 
 ## Distribuzione del pattern di utilizzo nel segmento {#usage-pattern-dis-segment}
 
-Il **[!UICONTROL Usage patterns distribution in segment]** Il pannello compila le seguenti informazioni per ciascun pattern utente:
+Il pannello **[!UICONTROL Usage patterns distribution in segment]** compila le seguenti informazioni per ogni pattern utente:
 
 * Condivisione dell&#39;intervallo di probabilità in cui rientrano i singoli conti.
 * Numero e percentuale di conti nel modello.
@@ -63,31 +63,31 @@ Ad esempio, nella visualizzazione precedente:
 
 Servizi +++D2C: distribuzione del pattern di utilizzo per le aree geografiche
 
-Il **[!UICONTROL Usage pattern distribution]** tabella fornisce un confronto dei pattern di utilizzo tra [categorie video](product-concepts.md##video-category-def) nel segmento corrente.
+La tabella **[!UICONTROL Usage pattern distribution]** fornisce un confronto dei pattern di utilizzo tra [categorie video](product-concepts.md##video-category-def) nel segmento corrente.
 
 ![](assets/d2c-usage-patterns-regions.png)
 
-*Distribuzione dei pattern di utilizzo per le aree geografiche*
+*Distribuzione dei pattern di utilizzo per aree geografiche*
 
 >[!NOTE]
 >
->La categoria video mostrata nell’immagine precedente, ad esempio **Aree geografiche** è solo un esempio. Quando accedi a Account IQ, l’etichetta mostra le categorie video specifiche della tua azienda.
+>La categoria di video mostrata nell&#39;immagine precedente, ad esempio **Aree geografiche**, è solo un esempio. Quando accedi ad Account IQ, l’etichetta mostra le categorie video specifiche della tua azienda.
 
 +++
 
 +++Programmatore: distribuzione pattern di utilizzo per MVPDs
 
-Il **[!UICONTROL Usage pattern distribution]** La tabella fornisce un confronto della distribuzione del pattern di utilizzo per gli MVPD nel segmento corrente.
+La tabella **[!UICONTROL Usage pattern distribution]** fornisce un confronto della distribuzione del pattern di utilizzo per gli MVPD nel segmento corrente.
 
 ![](assets/usage-patterns-mvpdwise.png)
 
-*Distribuzione dei pattern di utilizzo per programmatori*
+*Distribuzione dei pattern di utilizzo per i programmatori*
 
 +++
 
 +++MVPD: distribuzione del pattern di utilizzo per programmatori
 
-Il **[!UICONTROL Usage pattern distribution]** La tabella fornisce un confronto della distribuzione del pattern di utilizzo per i programmatori o i canali nel segmento corrente.
+La tabella **[!UICONTROL Usage pattern distribution]** fornisce un confronto della distribuzione del pattern di utilizzo per i programmatori o i canali nel segmento corrente.
 
 ![](assets/usage-patterns-programmerwise.png)
 

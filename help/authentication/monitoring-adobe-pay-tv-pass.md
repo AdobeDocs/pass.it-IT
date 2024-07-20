@@ -17,13 +17,13 @@ ht-degree: 0%
 
 ## Introduzione {#intro}
 
-I clienti possono utilizzare [Nagios](http://www.nagios.org) o altri strumenti per verificare se l’autenticazione Adobe Pass è attiva o inattiva.
+I clienti possono utilizzare [Nagios](http://www.nagios.org) o altri strumenti per verificare se l&#39;autenticazione Adobe Pass è attiva o inattiva.
 
 ## Endpoint di monitoraggio {#monitoring-endpoints}
 
 ### Endpoint che è possibile monitorare {#endpoints-to-monitor}
 
-* Endpoint di configurazione per tutte le piattaforme: `https://sp.auth.adobe.com/adobe-services/config/[your-config-ID]`: è disponibile tramite HTTP o HTTPS (a seconda della scelta effettuata dallo sviluppatore del provider di contenuti). Se questo endpoint non è presente, significa che il contenuto non sarà disponibile su tutte le piattaforme e su tutti gli MVPD. Per l’API REST senza client è disponibile anche il seguente endpoint:  `https://api.auth.adobe.com/adobe-services/config your-config-ID]`.
+* L&#39;endpoint di configurazione per tutte le piattaforme: `https://sp.auth.adobe.com/adobe-services/config/[your-config-ID]`- È disponibile tramite HTTP o HTTPS (a seconda della scelta effettuata dallo sviluppatore del provider di contenuti). Se questo endpoint non è presente, significa che il contenuto non sarà disponibile su tutte le piattaforme e su tutti gli MVPD. Per l&#39;API REST senza client è disponibile anche il seguente endpoint: `https://api.auth.adobe.com/adobe-services/config your-config-ID]`.
 
 * I seguenti endpoint fanno parte di Adobe Pass Authentication Web SDK.  Se manca significa che pay-TVpass è inattivo per tutti i programmatori e tutte le proprietà web:
 

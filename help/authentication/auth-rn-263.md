@@ -4,7 +4,7 @@ description: Note sulla versione di Adobe Pass Authentication 2.63
 exl-id: 40987328-6d41-4948-aa4a-bab31f98a18a
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '296'
+source-wordcount: '304'
 ht-degree: 0%
 
 ---
@@ -24,7 +24,7 @@ Questa pagina descrive nuove funzioni, modifiche e problemi noti relativi a ques
 
 ### Numero build {#build-number-263}
 
-Autenticazione Adobe Pass: adobe-pass-**2,63**
+Autenticazione Adobe Pass: adobe-pass-**2.63**
 Data di rilascio: **09/20/2022 - 09/22/2022**
 
 ### Nuove funzioni {#new-features-263}
@@ -52,7 +52,7 @@ Questa funzione aggiunge l’ID di un MVPD proxy di Synacor nell’intestazione 
 In questa versione è stato risolto un problema a causa del quale il TTL authN o authZ impostato a livello di MVPD non veniva calcolato correttamente nei rapporti di configurazione.
 
 
-#### SDK JavaScript 4.6.0 {#js-sdk}
+#### SDK 4.6.0 per JavaScript {#js-sdk}
 
-* È stato rimosso l’utilizzo di `eval` rendendo l’SDK conforme alle direttive sulla sicurezza dei contenuti.
+* È stato rimosso l&#39;utilizzo della funzione `eval`, rendendo l&#39;SDK conforme ai criteri sulla sicurezza dei contenuti.
 * È stato risolto un problema che impediva il completamento corretto del flusso di autenticazione quando l’archiviazione locale del browser veniva esplicitamente cancellata da un’applicazione partner.

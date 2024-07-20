@@ -17,16 +17,16 @@ ht-degree: 2%
 
 >[!NOTE]
 >
-> L’implementazione REST API è limitata da [Meccanismo di limitazione](/help/authentication/throttling-mechanism.md)
+> L&#39;implementazione REST API è limitata dal [meccanismo di limitazione](/help/authentication/throttling-mechanism.md)
 
 ## Endpoint REST API {#clientless-endpoints}
 
-&lt;reggie_fqdn>:
+&lt;FQDN_REGGIE>:
 
 * Produzione - [api.auth.adobe.com](http://api.auth.adobe.com/)
 * Staging - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
-&lt;sp_fqdn>:
+&lt;SP_FQDN>:
 
 * Produzione - [api.auth.adobe.com](http://api.auth.adobe.com/)
 * Staging - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
@@ -37,9 +37,9 @@ ht-degree: 2%
 
 Restituisce l&#39;elenco di MVPD configurati per il richiedente.
 
-| Endpoint | Chiamato  </br>Da | Input   </br>Parametri | HTTP  </br>Metodo | Risposta | HTTP  </br>Risposta |
+| Endpoint | Chiamato </br> da | Input   </br>Parametri | Metodo HTTP </br> | Risposta | HTTP </br>Risposta |
 | --- | --- | --- | --- | --- | --- |
-| &lt;sp_fqdn>/api/v1/config/{requestorId}</br></br>Ad esempio:</br></br>&lt;sp_fqdn>/api/v1/config/sampleRequestorId | Autenticazione Adobe Pass | 1. Richiedente</br>    (componente Percorso)</br>_2.  deviceType (obsoleto)_ | GET | XML o JSON contenente l’elenco degli MVPD. | 200 |
+| &lt;SP_FQDN>/api/v1/config/{requestorId}</br></br>Esempio:</br></br>&lt;SP_FQDN>/api/v1/config/sampleRequestorId | Autenticazione Adobe Pass | 1. Richiedente</br>    (componente percorso)</br>_2.  deviceType (obsoleto)_ | GET | XML o JSON contenente l’elenco degli MVPD. | 200 |
 
 {style="table-layout:auto"}
 
@@ -47,7 +47,7 @@ Restituisce l&#39;elenco di MVPD configurati per il richiedente.
 | Parametro di input | Descrizione |
 | --------------- | ------------------------------------------------------------- |
 | richiedente | ID richiedente del programmatore per il quale è valida questa operazione. |
-| *deviceType* | Tipo di dispositivo. |
+| *tipoDispositivo* | Tipo di dispositivo. |
 
 {style="table-layout:auto"}
 
@@ -57,8 +57,8 @@ Come risposta XML MVPD esistente al servlet /config
 
 Nota: tutti gli MVPD configurati per utilizzare l’SSO di Platform avranno le seguenti proprietà aggiuntive all’interno del nodo corrispondente (JSON/XML):
 
-* **enablePlatformServices (booleano):** Flag che indica se questo MVPD è integrato tramite SSO piattaforma
-* **boardingStatus (stringa):** Flag che indica se MVPD supporta completamente Platform SSO (SUPPORTED) o se MVPD appare solo nel selettore della piattaforma (PICKER)
-* **displayInPlatformPicker (booleano):** indica se questo MVPD deve essere visualizzato nel selettore piattaforma
-* **platformMappingId (stringa):** l’identificatore di questo MVPD noto alla piattaforma
-* **requiredMetadataFields (matrice di stringhe):** i campi di metadati utente che si prevede saranno disponibili al momento dell’accesso
+* **enablePlatformServices (booleano):** flag che indica se MVPD è integrato tramite SSO piattaforma
+* **boardingStatus (stringa):** flag che indica se MVPD supporta completamente Platform SSO (SUPPORTED) o se MVPD appare solo nel selettore della piattaforma (PICKER)
+* **displayInPlatformPicker (booleano):** se MVPD deve essere visualizzato nel selettore della piattaforma
+* **platformMappingId (stringa):** l&#39;identificatore di questo MVPD noto alla piattaforma
+* **requiredMetadataFields (array di stringhe):** i campi di metadati dell&#39;utente prevedevano di essere disponibili in caso di accesso riuscito

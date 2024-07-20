@@ -1,13 +1,13 @@
 ---
 title: Implementazione di CM per un singolo tenant/criterio e più applicazioni
 description: Implementazione di CM per un singolo tenant/criterio e più applicazioni
-source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
+exl-id: 5c579c7d-f235-4dba-95c2-8485021d9065
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '236'
+source-wordcount: '241'
 ht-degree: 0%
 
 ---
-
 
 # Implementazione di CM per un singolo tenant/criterio e più applicazioni {#imp-cm}
 
@@ -29,7 +29,7 @@ Per avviare i flussi vengono utilizzate due app e un sito web:
 
 1. L’utente avvia un flusso dall’app iPhone e uno dall’app iPad. La politica lo consente.
 1. L&#39;utente avvia quindi un terzo flusso dal sito web del programmatore.
-1. La regola nel criterio (massimo 2 flussi, ultime vittorie) consente di riprodurre il flusso più recente in questo modo **il primo flusso avviato verrà contrassegnato come non conforme al criterio e verrà interrotto.**
+1. La regola nel criterio (massimo 2 flussi, ultime vittorie) consente la riproduzione del flusso più recente in modo **il primo flusso avviato verrà contrassegnato come non conforme al criterio e verrà interrotto.**
 
 
 

@@ -4,7 +4,7 @@ description: Appendice B "Suggerimenti per il debug"
 exl-id: ea024797-315e-47c0-99ea-1ac49c8c9697
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '170'
+source-wordcount: '161'
 ht-degree: 0%
 
 ---
@@ -31,9 +31,9 @@ L’autenticazione di Adobe Pass memorizza dati temporanei come la cache del bro
 
 ## Cancellazione cache LSO {#clearing-lsos-cache}
 
-Accedere a [Guida del Flash Player](http://www.macromedia.com/support/documentation/en/flashplayer/help/settings_manager07.html).
+Accedi alla [Guida del Flash Player](http://www.macromedia.com/support/documentation/en/flashplayer/help/settings_manager07.html).
 
-Seleziona la ```entitlement.\*``` (a seconda di ciò che viene testato) e fare clic su &quot;Elimina sito Web&quot;.
+Selezionare ```entitlement.\*``` (a seconda di ciò che è stato testato) e fare clic su &quot;Elimina sito Web&quot;.
 
 
 ## Strumenti di debug {#tools}
@@ -43,8 +43,8 @@ I tecnici dell’autenticazione di Adobe Pass utilizzano i seguenti strumenti di
 - Firebug - <http://www.getfirebug.com/>
 - Flashbug (funziona con la versione di debug di Flash Player)
 - Filtro - <http://www.fiddler2.com/fiddler2/>
-- Charles <http://www.charlesproxy.com/>
-- Wireshark <http://www.wireshark.org/>
+- Charles - <http://www.charlesproxy.com/>
+- Wireshark - <http://www.wireshark.org/>
 
 
 <!--

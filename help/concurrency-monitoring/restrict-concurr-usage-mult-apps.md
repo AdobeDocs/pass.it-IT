@@ -1,13 +1,13 @@
 ---
 title: Limita l'utilizzo simultaneo con più applicazioni appartenenti a proprietari diversi
 description: Limitazione dell'utilizzo simultaneo con più applicazioni appartenenti a proprietari diversi
-source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
+exl-id: c358befc-36d6-4f55-92cc-4d02064c65fb
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '290'
+source-wordcount: '275'
 ht-degree: 1%
 
 ---
-
 
 # Limitazione dell&#39;utilizzo simultaneo con più applicazioni appartenenti a proprietari diversi {#restr-concurr-usage}
 

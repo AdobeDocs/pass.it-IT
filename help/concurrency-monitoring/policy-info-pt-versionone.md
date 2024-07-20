@@ -1,14 +1,13 @@
 ---
 title: Punto di informazione sui criteri
 description: Punto di informazione sui criteri
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+exl-id: 964bb28d-cfef-4a37-b6c4-10cc59be0b47
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '226'
+source-wordcount: '227'
 ht-degree: 0%
 
 ---
-
-
 
 # Punto di informazione sui criteri {#pip}
 
@@ -16,7 +15,7 @@ ht-degree: 0%
 >
 >Questa pagina è obsoleta in quanto si applica alla versione precedente dell’API, che non è più consigliata per le nuove integrazioni
 
-Il diagramma seguente mostra il flusso nel caso in cui il cliente opti per il **Punto di informazione sui criteri**, nel qual caso CM viene utilizzato semplicemente per eseguire una query sull’attività e tutta la logica di accesso è incorporata nell’applicazione client):
+Il diagramma seguente mostra il flusso nel caso in cui il cliente opti per il **punto di informazioni sui criteri**, nel qual caso CM viene semplicemente utilizzato per eseguire una query sull&#39;attività e tutta la logica di accesso è incorporata nell&#39;applicazione client.
 
 ![](assets/pip-workflow.png)
 
@@ -33,4 +32,3 @@ In breve, il flusso di messaggi abituale è il seguente:
 1. Durante la riproduzione di un video, l’applicazione instrumentata effettua chiamate heartbeat al servizio di monitoraggio della concorrenza, mostrando che l’utente sta attualmente utilizzando un video.
 1. In qualsiasi altro momento, altre applicazioni instrumentate possono effettuare chiamate di query di stato al servizio di monitoraggio della concorrenza, che restituirà l&#39;attività utente corrente.
 1. Al termine della riproduzione del video, l’applicazione dotata di strumentazione può effettuare una chiamata heartbeat con &quot;event=stop&quot;, che indica che il video è stato interrotto e che il flusso corrente non deve più essere conteggiato come flusso attivo.
-

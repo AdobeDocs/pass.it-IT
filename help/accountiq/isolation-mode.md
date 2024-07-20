@@ -1,13 +1,13 @@
 ---
 title: Modalità di isolamento MVPD
 description: Informazioni sulla modalità di isolamento MVPD per i programmatori TV Everywhere
-source-git-commit: 5639319ce8915f0c33d927ca9554c405b3b2e87d
+exl-id: 7ffe4ce3-e9cb-4382-a421-bb57d1927b53
+source-git-commit: 2bb570ab14a3295d46ee6dc0d38485697d63809c
 workflow-type: tm+mt
 source-wordcount: '502'
 ht-degree: 0%
 
 ---
-
 
 # Modalità isolamento MVPD per programmatori TV Everywhere {#isolation-mode-tve}
 
@@ -21,7 +21,7 @@ Ecco un esempio:
 
 ![](assets/isolation-diff-new.png)
 
-*Modalità isolamento MVPD identifica quattro abbonati diversi anziché due*
+*La modalità di isolamento MVPD identifica quattro sottoscrittori diversi anziché due*
 
 * Se un abbonato B di un MVPD in modalità isolamento (come Xfinity) accede al contenuto offerto da due diversi programmatori che utilizzano lo stesso dispositivo, il MVPD assocerà identificatori diversi ai due diversi tentativi di accesso. Sembra che ci siano due diversi abbonati che accedono al contenuto per i programmatori (L e M nella figura).
 
@@ -53,11 +53,11 @@ Per creare un segmento analizzato in modalità isolamento, trascinare MVPD modal
 
 ![](assets/xfinity-in-segment.png)
 
-*Selezione di Xfinity in modalità isolamento*
+*Selezione Xfinity in modalità isolamento*
 
 >[!IMPORTANT]
 >
-> La condivisione dell’account è più rilevante se misurata per lo streaming tra tutte le applicazioni del programmatore. Aspettati un valore inferiore **Condivisione dei punteggi** e alcune variazioni nelle metriche in modalità isolamento.
+> La condivisione dell’account è più rilevante se misurata per lo streaming tra tutte le applicazioni del programmatore. Previsti **Punteggi di condivisione** inferiori e alcune variazioni nelle metriche in modalità isolamento.
 
 ![](assets/aggregate-sharing-isolation.png)
 

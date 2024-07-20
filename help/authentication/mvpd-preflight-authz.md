@@ -4,7 +4,7 @@ description: Autorizzazione di verifica preliminare MVPD
 exl-id: da2e7150-b6a8-42f3-9930-4bc846c7eee9
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '745'
+source-wordcount: '750'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ Al momento l’autenticazione Adobe Pass supporta la verifica preliminare delle 
 
 * **Scenario migliore** - MVPD fornisce l&#39;elenco delle risorse preautorizzate durante la fase di autorizzazione (Multi-channel AuthZ).
 * **Scenario del caso peggiore** - Se un MVPD non supporta alcuna forma di autorizzazione per più risorse, il server di autenticazione di Adobe Pass esegue una chiamata di autorizzazione all&#39;MVPD per ogni risorsa nell&#39;elenco delle risorse. Questo scenario ha un impatto (proporzionale al numero di risorse) sul tempo di risposta per la richiesta di autorizzazione di verifica preliminare. Può aumentare il carico sui server Adobe e MVPD causando problemi di prestazioni. Inoltre, genera richieste di autorizzazione/eventi di risposta senza l’effettiva necessità di un gioco.
-* **Obsoleto** - MVPD fornisce l’elenco delle risorse preautorizzate durante la fase di autenticazione, quindi non ci saranno chiamate di rete necessarie, nemmeno la richiesta di verifica preliminare, poiché l’elenco è memorizzato nella cache del client.
+* **Obsoleto** - MVPD fornisce l&#39;elenco delle risorse preautorizzate durante la fase di autenticazione, pertanto non saranno necessarie chiamate di rete, nemmeno la richiesta di verifica preliminare, poiché l&#39;elenco è memorizzato nella cache del client.
 
 Sebbene gli MVPD non debbano supportare l’autorizzazione di verifica preliminare, le sezioni seguenti descrivono alcuni metodi di autorizzazione supportati dall’autenticazione di Adobe Pass prima di ricorrere allo scenario più sfavorevole descritto sopra.
 

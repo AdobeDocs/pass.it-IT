@@ -4,8 +4,8 @@ description: Integrazione dei dati lato server di autenticazione di Adobe Pass i
 exl-id: c1f1f2a3-c98c-4aed-92ad-1f9bfd80b82b
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '1138'
-ht-degree: 4%
+source-wordcount: '1139'
+ht-degree: 0%
 
 ---
 
@@ -19,7 +19,7 @@ I clienti di Adobe Pass Authentication desiderano visualizzare i dati lato serve
 
 I dati serviranno a tenere traccia di metriche TVE importanti, come i tassi di conversione di autenticazione per MVPD, gli utenti univoci in base all’ID utente MVPD e altro ancora.
 
-Non intende sostituire un’implementazione lato client se ne esiste già una, in quanto l’attività utente non può essere tracciata oltre gli eventi specifici riportati di seguito in assenza di un ID visitatore. Se i clienti forniscono un ID visitatore nelle chiamate di accesso, possiamo sbloccare un altro tipo di integrazione di Analytics (in tempo reale) che può unire tutti gli eventi di accesso ai dati esistenti dei clienti, maggiori dettagli su questo nuovo tipo di possibile integrazione qui: &quot;[Utilizzo dell’ID Experience Cloud nell’autenticazione di Adobe Pass](/help/authentication/exp-cloud-id-authn.md)&quot;
+Non intende sostituire un’implementazione lato client se ne esiste già una, in quanto l’attività utente non può essere tracciata oltre gli eventi specifici riportati di seguito in assenza di un ID visitatore. Se i clienti forniscono un ID visitatore nelle chiamate Pass, possiamo sbloccare un altro tipo di integrazione Analytics (in tempo reale) che può unire tutti gli eventi Pass ai dati esistenti del cliente. Ulteriori dettagli su questo nuovo tipo di possibile integrazione qui: &quot;[Utilizzo dell&#39;ID Experience Cloud nell&#39;autenticazione di Adobe Pass](/help/authentication/exp-cloud-id-authn.md)&quot;
 
 ## Metriche incluse {#metrics-included-int-authn-analyt}
 
@@ -48,9 +48,9 @@ Non intende sostituire un’implementazione lato client se ne esiste già una, i
 | Tipo di SDK | L’SDK client utilizzato (Flash, HTML5, Android nativo, iOS, Clientless, ecc.) |
 | Versione SDK | Versione dell’SDK del client di autenticazione di Adobe Pass |
 | ID risorsa | Titolo effettivo della risorsa coinvolto nella richiesta di autorizzazione (estratto dal payload MRSS come articolo/titolo se fornito) |
-| Tipo di errore AuthZ | Motivo degli errori, segnalato dall’autenticazione di Adobe Pass <br/> Di seguito sono riportati i valori più comuni <br/> **noAuthZ** = l&#39;MVPD ha risposto che l&#39;utente non ha il canale nel pacchetto<br/> **rete** = impossibile raggiungere MVPD (MVPD ha un problema al momento della chiamata e non ha risposto)<br/> **norefreshtoken** = questo è rigorosamente per le implementazioni OAuth e potrebbe verificarsi se l’utente ha modificato la propria password o se l’MVPD l’ha negata per qualche motivo. In genere si ottiene una nuova autenticazione<br/> **mancata corrispondenza** = se la richiesta viene effettuata da un dispositivo diverso da quello che aveva il token di autenticazione. Può verificarsi se gli utenti tentano di ingannare il sistema, ma la maggior parte di queste si verifica nel contesto del vecchio SDK JavaScript in cui l’ID dispositivo utilizzava l’indirizzo IP come parte del calcolo. Se un utente guardava TVE a casa e poi al lavoro, questo errore veniva attivato e doveva autenticarsi di nuovo<br/> **non valido** = richiesta non valida, parametri mancanti o non validi<br/>  **authzNone** = I programmatori hanno la possibilità di negare le autorizzazioni per una specifica combinazione di channelMVPD. Questo viene attivato da un’API di back-end a cui i programmatori hanno accesso<br/> **truffa** = è un meccanismo di protezione dalla nostra parte. Se l’utente non riesce a ottenere l’autorizzazione e successivamente la richiede nuovamente un numero di volte in un breve intervallo (secondi), la chiamata viene negata direttamente. In genere si verifica quando un programmatore presenta un bug nell’implementazione che richiede costantemente l’autorizzazione in caso di errore. |
-| Tipo di token | Quando i token vengono creati a causa di AuthZ All e AuthN All, dobbiamo sapere cosa viene fatto a causa di una misura di degradazione.<br/> Sono:<br/> &quot;normal&quot; = il caso normale<br/> &quot;authnall&quot; = Quando AuthN All è abilitato<br/> &quot;authzall&quot; = Quando AuthZ All è abilitato<br/>  &quot;hba&quot; = quando l&#39;HBA è abilitato |
-| Tipo di dispositivo senza client | La piattaforma del dispositivo (alternativa), attualmente utilizzata per Clientless.<br/> I valori possono essere:<br/> N/D: l’evento non proviene da un SDK senza client<br/> Sconosciuto: poiché il parametro deviceType da un **API senza client** è facoltativo, ci sono chiamate che non contengono alcun valore.<br/> Qualsiasi altro valore inviato tramite **API senza client**. Ad esempio, xbox, appletv e roku. |
+| Tipo di errore AuthZ | Motivo degli errori, come segnalato dall&#39;autenticazione Adobe Pass <br/> Di seguito sono riportati i valori più comuni <br/> **noAuthZ** = MVPD ha risposto che l&#39;utente non ha il canale nel pacchetto<br/> **rete** = impossibile raggiungere MVPD (MVPD ha un problema al momento della chiamata e non ha risposto)<br/> **norefreshtoken** = strettamente per le implementazioni OAuth e ciò potrebbe verificarsi se l&#39;utente ha modificato la propria password o se l&#39;MVPD ha negato per qualche motivo. Generalmente genera una nuova autenticazione<br/> **mancata corrispondenza** = se la richiesta viene effettuata da un dispositivo diverso da quello che aveva il token di autenticazione. Può verificarsi se gli utenti tentano di ingannare il sistema, ma la maggior parte di queste si verifica nel contesto del vecchio SDK JavaScript, in cui l’ID dispositivo utilizzava l’indirizzo IP come parte del calcolo. Se un utente guardava TVE a casa e poi al lavoro, questo errore veniva attivato e doveva autenticarsi di nuovo<br/> **non valido** = richiesta non valida, parametri mancanti o non validi<br/>  **authzNone** = I programmatori possono negare le autorizzazioni per una specifica combinazione channelxMVPD. Attivato da un&#39;API di back-end a cui i programmatori hanno accesso<br/> **frode** = è un meccanismo di protezione dalla nostra parte. Se l’utente non riesce a ottenere l’autorizzazione e successivamente la richiede nuovamente un numero di volte in un breve intervallo (secondi), la chiamata viene negata direttamente. In genere si verifica quando un programmatore presenta un bug nell’implementazione che richiede costantemente l’autorizzazione in caso di errore. |
+| Tipo di token | Quando i token vengono creati a causa di AuthZ All e AuthN All, dobbiamo sapere cosa viene fatto a causa di una misura di degradazione.<br/> Sono:<br/> &quot;normal&quot; = Caso normale<br/> &quot;authnall&quot; = Quando AuthN All è abilitato<br/> &quot;authzall&quot; = Quando AuthZ All è abilitato<br/> &quot;hba&quot; = Quando HBA è abilitato |
+| Tipo di dispositivo senza client | La piattaforma del dispositivo (alternativa), attualmente utilizzata per Clientless.<br/> I valori possono essere:<br/> N/D - l&#39;evento non ha avuto origine da un SDK senza client<br/> Sconosciuto - Poiché il parametro deviceType di un&#39;API **senza client** è facoltativo, esistono chiamate che non contengono alcun valore.<br/> Qualsiasi altro valore inviato tramite **API senza client**. Ad esempio, xbox, appletv e roku. |
 | ID utente MVPD | Sostituisce l&#39;ID visitatore basato su cookie |
 
 
@@ -114,41 +114,41 @@ Il rapporto deve avere una marca temporale in quanto gli eventi verranno inviati
 
 | Proprietà | eVar |
 |-----------------------------------|--------------------------------|
-| Canale | eVar1 |
-| MVPD | eVar2 |
-| Proxy | eVar3 |
-| Tipo di SDK | eVar4 |
-| Versione SDK | eVar5 |
-| ID risorsa | eVar6 |
-| Tipo di errore AuthZ | eVar7 |
-| Tipo di token | eVar8 |
-| Tipo di dispositivo senza client | eVar9 |
+| Canale | EVAR 1 |
+| MVPD | EVAR 2 |
+| Proxy | EVAR 3 |
+| Tipo di SDK | EVAR 4 |
+| Versione SDK | EVAR 5 |
+| ID risorsa | EVAR 6 |
+| Tipo di errore AuthZ | EVAR 7 |
+| Tipo di token | EVAR 8 |
+| Tipo di dispositivo senza client | EVAR 9 |
 | ID utente MVPD | visitorID (completato automaticamente) |
-| ID utente MVPD | eVar10 |
-| Tipo di dispositivo | eVar11 |
-| Sistema operativo | eVar12 |
-| Tipo di hardware principale | eVar13 |
-| TTL | eVar14 |
-| Tipo di autenticazione | eVar15 |
-| Versione dell&#39;architettura del server | eVar16 |
-| Provider di autenticazione esterno | eVar17 |
-| Latenza | eVar18 |
-| ID visitatore | eVar19 |
-| Meccanismo SSO | eVar20 |
-| Modello dispositivo | eVar21 |
-| Versione dispositivo | eVar22 |
-| Modello hardware del dispositivo | eVar23 |
-| Fornitore hardware dispositivo | eVar24 |
-| Produttore hardware del dispositivo | eVar25 |
-| Versione hardware del dispositivo | eVar26 |
-| Nome SO dispositivo | eVar27 |
-| Famiglia SO dispositivo | eVar28 |
-| Fornitore SO dispositivo | eVar29 |
-| Versione SO dispositivo | eVar30 |
-| Nome browser dispositivi | eVar31 |
-| Fornitore browser dispositivi | eVar32 |
-| Versione browser dispositivi | eVar33 |
-| Tipo di dispositivo senza client normalizzato | eVar34 |
+| ID utente MVPD | eVar 10 |
+| Tipo di dispositivo | eVar 11 |
+| Sistema operativo | eVar 12 |
+| Tipo di hardware principale | eVar 13 |
+| TTL | eVar 14 |
+| Tipo di autenticazione | eVar 15 |
+| Versione dell&#39;architettura del server | eVar 16 |
+| Provider di autenticazione esterno | eVar 17 |
+| Latenza | eVar 18 |
+| ID visitatore | eVar 19 |
+| Meccanismo SSO | eVar 20 |
+| Modello dispositivo | eVar 21 |
+| Versione dispositivo | eVar 22 |
+| Modello hardware del dispositivo | eVar 23 |
+| Fornitore hardware dispositivo | eVar 24 |
+| Produttore hardware del dispositivo | eVar 25 |
+| Versione hardware del dispositivo | eVar 26 |
+| Nome SO dispositivo | eVar 27 |
+| Famiglia SO dispositivo | eVar 28 |
+| Fornitore SO dispositivo | eVar 29 |
+| Versione SO dispositivo | eVar 30 |
+| Nome browser dispositivi | eVar 31 |
+| Fornitore browser dispositivi | eVar 32 |
+| Versione browser dispositivi | eVar 33 |
+| Tipo di dispositivo senza client normalizzato | eVar 34 |
 
 ## Prezzi {#pricing}
 

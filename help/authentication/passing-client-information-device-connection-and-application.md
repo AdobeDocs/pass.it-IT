@@ -4,8 +4,8 @@ description: Trasmissione delle informazioni del client (dispositivo, connession
 exl-id: 0b21ef0e-c169-48ff-ac01-25411cfece1e
 source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
 workflow-type: tm+mt
-source-wordcount: '1681'
-ht-degree: 0%
+source-wordcount: '1643'
+ht-degree: 1%
 
 ---
 
@@ -31,31 +31,31 @@ I vantaggi della fornitura di informazioni ai clienti sono:
 
 Le informazioni sul cliente sono costituite da:
 
-* **Dispositivo** informazioni sugli attributi hardware e software del dispositivo da cui l&#39;utente sta tentando di utilizzare il contenuto del programmatore.
-* **Connessione** informazioni sugli attributi di connessione del dispositivo da cui l’utente si connette ai servizi di autenticazione e/o ai servizi programmatori di Adobe Pass (ad esempio implementazioni server-to-server).
+* **Informazioni sul dispositivo** relative agli attributi hardware e software del dispositivo da cui l&#39;utente sta tentando di utilizzare il contenuto del programmatore.
+* **Connessione** informazioni sugli attributi di connessione del dispositivo da cui l&#39;utente si connette ai servizi di autenticazione e/o ai servizi Programmer di Adobe Pass (ad esempio, implementazioni server-to-server).
 * **Applicazione** informazioni sull&#39;applicazione registrata da cui l&#39;utente sta tentando di utilizzare il contenuto del programmatore.
 
 Le informazioni client sono un oggetto JSON creato con le chiavi presentate nella tabella seguente.
 
 >[!NOTE]
 >
->I seguenti elementi **tasti** sono **obbligatorio** da inviare nell’oggetto JSON di informazioni client: **modello**, **osName**.
+>Le **chiavi** seguenti sono **obbligatorie** da inviare nell&#39;oggetto JSON delle informazioni client: **model**, **osName**.
 >
->I seguenti tasti sono **limitato** valori: `primaryHardwareType`, `osName`, `osFamily`, `browserName`, `browserVendor`, `connectionSecure`.
+>Le chiavi seguenti hanno **valori limitati**: `primaryHardwareType`, `osName`, `osFamily`, `browserName`, `browserVendor`, `connectionSecure`.
 
 |   | Chiave | Limitato | Descrizione | Valori possibili |
 |---|---|---|---|---|
-|            | primaryHardwareType | # Sì | Il tipo di hardware principale del dispositivo. | # I valori sono limitati: Camera DataCollectionTerminal Desktop EmbeddedNetworkModule eReader GamesConsole GeolocationTracker Occhiali MediaPlayer MobilePhone PaymentTerminal PluginModem SetTopBox TV Tablet WirelessHotspot Orologio da polso sconosciuto |
+|            | primaryHardwareType | # Sì | Il tipo di hardware principale del dispositivo. | # I valori sono limitati:                                                                     Fotocamera                                                      DataCollectionTerminal                                                      Desktop                                                      EmbeddedNetworkModule                                                      eReader                                                      Console giochi                                                      GeolocationTracker                                                      Occhiali                                                      MediaPlayer                                                      Cellulare                                                      PaymentTerminal                                                      PluginModem                                                      SetTopBox                                                      TV                                                      Tablet                                                      Punto attivo wireless                                                      Orologio                                                      Sconosciuto |
 | #mandatory | modello | No | Il nome del modello del dispositivo. | ad es. iPhone, SM-G930V, AppleTV, ecc. |
 |            | version | No | Versione del dispositivo. | ad esempio 2.0.1, ecc. |
 |            | produttore | No | La società/organizzazione di produzione del dispositivo. | ad es. Samsung, LG, ZTE, Huawei, Motorola, Apple, ecc. |
 |            | fornitore | No | Azienda/organizzazione di vendita del dispositivo. | ad es. Apple, Samsung, LG, Google, ecc. |
-| #mandatory | osName | # Sì | Il nome del sistema operativo del dispositivo. | # I valori sono limitati: Android Chrome OS Linux Mac OS X OpenBSD Roku OS Windows iOS tvOS webOS |
-|            | osFamily | Sì | Il nome del gruppo del sistema operativo del dispositivo. | # I valori sono limitati: Android BSD Linux PlayStation OS Roku OS Symbian Tizen Windows iOS macOS tvOS webOS |
-|            | osVendor | No | Il sistema operativo del dispositivo. | Amazon Apple Google LG Microsoft Mozilla Nintendo Nokia Roku Samsung Sony Tizen Project |
+| #mandatory | osName | # Sì | Il nome del sistema operativo del dispositivo. | # I valori sono limitati:                                                   Android                   CHROME OS                   Linux                   MAC OS                   OS X                   OpenBSD                   Sistema operativo Roku                   Windows                   iOS                   tvOS                   webOS |
+|            | osFamily | Sì | Il nome del gruppo del sistema operativo del dispositivo. | # I valori sono limitati:                                                   Android                   BSD                   Linux                   Sistema operativo PlayStation                   Sistema operativo Roku                   Symbian                   Tizen                   Windows                   iOS                   macOS                   tvOS                   webOS |
+|            | osVendor | No | Il sistema operativo del dispositivo. | Amazon                   Apple                   Google                   LG                   Microsoft                   Mozilla                   Nintendo                   Nokia                   Roku                   Samsung                   Sony                   Progetto Tizen |
 |            | osVersion | No | Versione del sistema operativo del dispositivo. | ad esempio 10.2, 9.0.1, ecc. |
-|            | browserName | # Sì | Nome del browser. | # I valori sono limitati: Browser Android Chrome Edge Firefox Internet Explorer Opera Safari SeaMonkey Symbian Browser |
-|            | browserVendor | # Sì | La società/organizzazione di creazione del browser. | # I valori sono limitati: Amazon Apple Google Microsoft Motorola Mozilla Netscape Nintendo Nokia Samsung Sony Ericsson |
+|            | browserName | # Sì | Nome del browser. | # I valori sono limitati:                                                   Browser Android                   Chrome                   Edge                   Firefox                   Internet Explorer                   Opera                   Safari                   SeaMonkey                   Browser Symbian |
+|            | browserVendor | # Sì | La società/organizzazione di creazione del browser. | # I valori sono limitati:                                                   Amazon                   Apple                   Google                   Microsoft                   Motorola                   Mozilla                   Netscape                   Nintendo                   Nokia                   Samsung                   Sony Ericsson |
 |            | browserVersion | No | Versione del browser del dispositivo. | esempio: 60.0.3112 |
 |            | userAgent | No | Agente utente del dispositivo. | ad esempio Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/602.4.8 (KHTML, like Gecko) versione/10.0.3 Safari/602.4.8 |
 |            | displayWidth | No | Larghezza fisica dello schermo del dispositivo. |                                                                                                                                                                                                                                                                                                                                                           |
@@ -65,7 +65,7 @@ Le informazioni client sono un oggetto JSON creato con le chiavi presentate nell
 |            | connectionIp | No | L’IP del dispositivo utilizzato per inviare richieste HTTP. | es. 8.8.4.4 |
 |            | connectionPort | No | Porta del dispositivo utilizzata per l’invio di richieste HTTP. | ad es. 53124 |
 |            | connectionType | No | Tipo di connessione di rete. | ad esempio WiFi, LAN, 3G, 4G, 5G |
-|            | connectionSecure | # Sì | Stato di protezione della connessione di rete. | # I valori sono limitati: true - nel caso di una rete sicura false - nel caso di un hotspot pubblico |
+|            | connectionSecure | # Sì | Stato di protezione della connessione di rete. | # I valori sono limitati:                                                   true - nel caso di una rete sicura                   false - nel caso di un hotspot pubblico |
 |            | applicationId | No | L’identificatore univoco dell’applicazione. | es. CNN |
 
 ## Riferimenti API {#api-ref}
@@ -76,52 +76,52 @@ Questa sezione descrive l’API responsabile della gestione delle informazioni c
 
 I servizi di autenticazione di Adobe Pass supportano la ricezione delle informazioni client nei modi seguenti:
 
-* As a **intestazione: &quot;X-Device-Info&quot;**
-* As a **parametro query: &quot;device_info&quot;**
-* As a **parametro post: &quot;device_info&quot;**
+* Come **intestazione: &quot;X-Device-Info&quot;**
+* Come parametro **query: &quot;device_info&quot;**
+* Come **parametro post: &quot;device_info&quot;**
 
 >[!IMPORTANT]
 >
->In tutti e tre gli scenari, il payload dell’intestazione o del parametro deve essere **Codifica Base64 e codifica URL**.
+>In tutti e tre gli scenari, il payload dell&#39;intestazione o del parametro deve essere **Codificato Base64 e Codificato URL**.
 
 **SDK**
 
-#### SDK JavaScript {#js-sdk}
+#### SDK per JavaScript {#js-sdk}
 
-L’SDK JavaScript di AccessEnabler crea per impostazione predefinita un oggetto JSON di informazioni client, che verrà passato ai servizi di autenticazione di Adobe Pass, a meno che non venga sostituito.
+L’SDK di JavaScript per AccessEnabler crea per impostazione predefinita un oggetto JSON di informazioni client, che verrà passato ai servizi di autenticazione di Adobe Pass, a meno che non venga sostituito.
 
-L’SDK JavaScript di AccessEnabler supporta **solo sostituzione** la chiave &quot;applicationId&quot; dall’oggetto JSON di informazioni client attraverso [setRequestor](/help/authentication/javascript-sdk-api-reference.md#setrequestor(inRequestorID,endpoints,options))di *applicationId* parametro options.
+L&#39;SDK di JavaScript per AccessEnabler supporta **l&#39;override solo** della chiave &quot;applicationId&quot; dall&#39;oggetto JSON delle informazioni client tramite il parametro *applicationId* delle opzioni [setRequestor](/help/authentication/javascript-sdk-api-reference.md#setrequestor(inRequestorID,endpoints,options)).
 
 >[!CAUTION]
 >
->Il `applicationId` Il valore del parametro deve essere un valore String di testo normale.
->Se l’applicazione Programmer decide di passare l’applicationId, le altre chiavi di informazioni client verranno comunque calcolate dall’SDK JavaScript di AccessEnabler.
+>Il valore del parametro `applicationId` deve essere un valore String di testo normale.
+>Se l&#39;applicazione Programmer decide di passare l&#39;applicationId, le altre chiavi di informazioni client verranno comunque calcolate dall&#39;SDK di AccessEnabler JavaScript.
 
 #### SDK per iOS/tvOS {#ios-tvos-sdk}
 
 L’SDK iOS/tvOS di AccessEnabler crea per impostazione predefinita un oggetto JSON di informazioni client, che verrà passato ai servizi di autenticazione di Adobe Pass, a meno che non venga sostituito.
 
-L’SDK di AccessEnabler per iOS/tvOS supporta **sovrascrittura di tutto** informazioni client oggetto JSON tramite [setOptions](/help/authentication/iostvos-sdk-api-reference.md#setoptions)parametro device_info di.
+L&#39;SDK iOS/tvOS di AccessEnabler supporta **l&#39;override dell&#39;intero oggetto JSON delle informazioni client** tramite il parametro device_info di [setOptions](/help/authentication/iostvos-sdk-api-reference.md#setoptions).
 
 >[!CAUTION]
 >
->Il *device_info* il valore del parametro deve essere un **Codifica Base64** *NSString* valore.
+>Il valore del parametro *device_info* deve essere un valore **Base64 codificato** *NSString*.
 >
->Nel caso in cui l’applicazione Programmatore decida di trasmettere il *device_info*, quindi tutte le chiavi di informazioni client calcolate dall’SDK di AccessEnabler iOS/tvOS verranno ignorate. Pertanto, è molto importante calcolare e trasmettere i valori per il maggior numero possibile di chiavi. Per ulteriori dettagli sull’implementazione, vedi [Panoramica](#pass-client-info-overview) tabella e [Manuale iOS/tvOS](#ios-tvos).
+>Nel caso in cui l&#39;applicazione Programmer decida di passare *device_info*, tutte le chiavi di informazioni client calcolate dall&#39;SDK AccessEnabler iOS/tvOS verranno ignorate. Pertanto, è molto importante calcolare e trasmettere i valori per il maggior numero possibile di chiavi. Per ulteriori dettagli sull&#39;implementazione, consulta la tabella [Panoramica](#pass-client-info-overview) e il [manuale iOS/tvOS](#ios-tvos).
 
-#### SDK per Android e FireOS {#and-fire-os-sdk}
+#### SDK per Android/FireOS {#and-fire-os-sdk}
 
-Il `AccessEnabler` L’SDK Android/FireOS crea per impostazione predefinita un oggetto JSON di informazioni client, che verrà passato ai servizi di autenticazione di Adobe Pass, a meno che non venga sostituito.
+L&#39;SDK Android/FireOS `AccessEnabler` crea per impostazione predefinita un oggetto JSON di informazioni client, che verrà passato ai servizi di autenticazione di Adobe Pass, a meno che non venga sostituito.
 
-Il `AccessEnabler` L’SDK per Android/FireOS supporta **sovrascrittura di tutto** informazioni client oggetto JSON tramite [setOptions](/help/authentication/android-sdk-api-reference.md#setOptions)s/[setOptions](/help/authentication/amazon-fireos-native-client-api-reference.md#fire_setOption)di `device_info` parametro.
+L&#39;SDK di Android/FireOS `AccessEnabler` supporta **l&#39;override dell&#39;intero oggetto JSON delle informazioni client** tramite il parametro `device_info` di [setOptions](/help/authentication/android-sdk-api-reference.md#setOptions)&#39;s/[setOptions](/help/authentication/amazon-fireos-native-client-api-reference.md#fire_setOption).
 
 >[!NOTE]
 >
->Il `device_info` il valore del parametro deve essere un **Codifica Base64** Valore stringa.
+>Il valore del parametro `device_info` deve essere un valore stringa **Base64 codificato**.
 
 >[!IMPORTANT]
 >
->Nel caso in cui l’applicazione Programmatore decida di trasmettere il `device_info`, quindi tutte le chiavi di informazioni client calcolate da `AccessEnabler` L’SDK Android/FireOS verrà sovrascritto. Pertanto, è molto importante calcolare e trasmettere i valori per il maggior numero possibile di chiavi. Per ulteriori dettagli sull’implementazione, vedi [Panoramica](#pass-client-info-overview) tabella e [Android](#android) e [FireOS](#fire-tv) manuale di cucina.
+>Nel caso in cui l&#39;applicazione Programmer decida di passare `device_info`, tutte le chiavi di informazioni client calcolate dall&#39;SDK Android/FireOS `AccessEnabler` verranno ignorate. Pertanto, è molto importante calcolare e trasmettere i valori per il maggior numero possibile di chiavi. Per ulteriori dettagli sull&#39;implementazione, consulta la tabella [Panoramica](#pass-client-info-overview) e il manuale di istruzioni [Android](#android) e [FireOS](#fire-tv).
 
 ## Cookbook {#cookbooks}
 
@@ -129,13 +129,13 @@ Questa sezione presenta un manuale per la creazione dell’oggetto JSON delle in
 
 >[!IMPORTANT]
 >
->Tasti contrassegnati con  **!** sono obbligatori per l’invio.
+>Le chiavi contrassegnate con **.** sono obbligatori per essere inviati.
 
 ### Android {#android}
 
 Le informazioni sul dispositivo possono essere costruite nel modo seguente:
 
-|   | Chiave | Sorgente | Valore (esempio) |
+|   | Chiave | Source | Valore (esempio) |
 |---|---------------|-----------------------------|---------------|
 | ! | modello | Build.MODEL | GT-I9505 |
 |   | fornitore | Build.BRAND | samsung |
@@ -144,24 +144,24 @@ Le informazioni sul dispositivo possono essere costruite nel modo seguente:
 |   | displayWidth | DisplayMetrics.widthPixels | 600 |
 |   | displayHeight | DisplayMetrics.heightPixels | 800 |
 | ! | osName | hardcoded | Android |
-| ! | osVersion | Build.VERSION.RELEASE | 5.0.1 |
+| ! | osVersion | Build.VERSION.RELEASE | 5.0.1. |
 
 Le informazioni di connessione possono essere costruite nel modo seguente:
 
-|   | Chiave | Sorgente | Valore (esempio) |
+|   | Chiave | Source | Valore (esempio) |
 |---|---|---|---|
 | ! | connectionType | `<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>` `getSystemService(Context.CONNECTIVITY_SERVICE).getActiveNetworkInfo().getType()` | `"WIFI","BLUETOOTH","MOBILE","ETHERNET","VPN","DUMMY","MOBILE_DUN","WIMAX","notAccessible"` |
 |   | connectionSecure |                                                                                                                                                           |                                                                                           |
 
 Le informazioni sull&#39;applicazione possono essere costruite nel modo seguente:
 
-|   | Chiave | Sorgente | Valore (esempio) |
+|   | Chiave | Source | Valore (esempio) |
 |---|---------------|-----------|--------------|
 |   | applicationId | hardcoded | CNN |
 
 >[!IMPORTANT]
 >
-Le informazioni su dispositivo, connessione e applicazione devono essere aggiunte allo stesso oggetto JSON. In seguito, l’oggetto risultante deve essere **Codifica Base64**. Inoltre, nel caso delle API REST di autenticazione di Adobe Pass, il valore deve essere **Codifica URL**.
+Le informazioni su dispositivo, connessione e applicazione devono essere aggiunte allo stesso oggetto JSON. In seguito, l&#39;oggetto risultante deve essere **Codificato Base64**. Inoltre, nel caso delle API REST di autenticazione di Adobe Pass, il valore deve essere **URL codificato**.
 
 **Codice di esempio**
 
@@ -247,7 +247,7 @@ private JSONObject computeClientInformation() {
 
 Le informazioni sul dispositivo possono essere costruite nel modo seguente:
 
-|   | Chiave | Sorgente | Valore (ad es.) |
+|   | Chiave | Source | Valore (ad es.) |
 |---|---------------|-----------------------------|--------------|
 | ! | modello | Build.MODEL | AFTM |
 |   | fornitore | Build.BRAND | Amazon |
@@ -256,36 +256,36 @@ Le informazioni sul dispositivo possono essere costruite nel modo seguente:
 |   | displayWidth | DisplayMetrics.widthPixels |              |
 |   | displayHeight | DisplayMetrics.heightPixels |              |
 | ! | osName | hardcoded | Android |
-| ! | osVersion | Build.VERSION.RELEASE | 5.1.1 |
+| ! | osVersion | Build.VERSION.RELEASE | 5.1.1. |
 
 Le informazioni di connessione possono essere costruite nel modo seguente:
 
-|   | Chiave | Sorgente | Valore (esempio) |
+|   | Chiave | Source | Valore (esempio) |
 |---|------------------|--------|---------------|
 | ! | connectionType |        |               |
 |   | connectionSecure |        |               |
 
 Le informazioni sull&#39;applicazione possono essere costruite nel modo seguente:
 
-|   | Chiave | Sorgente | Valore (esempio) |
+|   | Chiave | Source | Valore (esempio) |
 |---|---------------|-----------|--------------|
 |   | applicationId | hardcoded | CNN |
 
 >[!IMPORTANT]
 >
-Le informazioni su dispositivo, connessione e applicazione devono essere aggiunte allo stesso oggetto JSON. In seguito, l’oggetto risultante deve essere **Codifica Base64**. Inoltre, nel caso delle API REST di autenticazione di Adobe Pass, il valore deve essere **Codifica URL**.
+Le informazioni su dispositivo, connessione e applicazione devono essere aggiunte allo stesso oggetto JSON. In seguito, l&#39;oggetto risultante deve essere **Codificato Base64**. Inoltre, nel caso delle API REST di autenticazione di Adobe Pass, il valore deve essere **URL codificato**.
 
 >[!NOTE]
 >
 **Risorse:**
-* classe pubblica [Genera](https://developer.android.com/reference/android/os/Build.html){target=_blank} nella documentazione per gli sviluppatori di Android.
-* [Identificazione dei dispositivi FireTV](https://developer.amazon.com/docs/fire-tv/identify-amazon-fire-tv-devices.html){target=_blank}
+* classe pubblica [Build](https://developer.android.com/reference/android/os/Build.html){target=_blank} nella documentazione per gli sviluppatori di Android.
+* [Identificazione dispositivi FireTV](https://developer.amazon.com/docs/fire-tv/identify-amazon-fire-tv-devices.html){target=_blank}
 
 ### iOS/tvOS {#ios-tvos}
 
 Le informazioni sul dispositivo possono essere costruite nel modo seguente:
 
-|   | Chiave | Sorgente | Valore (esempio) |
+|   | Chiave | Source | Valore (esempio) |
 |---|---------------|------------------------|--------------|
 | ! | modello | uname.machine | iPhone |
 |   | fornitore | hardcoded | Apple |
@@ -294,11 +294,11 @@ Le informazioni sul dispositivo possono essere costruite nel modo seguente:
 |   | displayWidth | UIScreen.mainScreen | 320 |
 |   | displayHeight | UIScreen.mainScreen | 568 |
 | ! | osName | UIDevice.systemName | iOS |
-| ! | osVersion | UIDevice.systemVersion | 10.2 |
+| ! | osVersion | UIDevice.systemVersion | 10,2 |
 
 Le informazioni di connessione possono essere costruite nel modo seguente:
 
-|   | Chiave | Sorgente | Valore (esempio) |
+|   | Chiave | Source | Valore (esempio) |
 |---|------------------|-------------------------------------------|--------------|
 | ! | connectionType | [Raggiungibilità currentReachabilityStatus] |              |
 |   | connectionSecure |                                           |              |
@@ -306,7 +306,7 @@ Le informazioni di connessione possono essere costruite nel modo seguente:
 
 Le informazioni sull&#39;applicazione possono essere costruite nel modo seguente:
 
-|   | Chiave | Sorgente | Valore (esempio) |
+|   | Chiave | Source | Valore (esempio) |
 |---|---------------|-----------|--------------|
 |   | applicationId | hardcoded | CNN |
 
@@ -393,7 +393,7 @@ Le informazioni su dispositivo, connessione e applicazione devono essere aggiunt
 
 Le informazioni sul dispositivo possono essere costruite nel modo seguente:
 
-| Chiave | Sorgente | Valore (esempio) |                 |
+| Chiave | Source | Valore (esempio) |                 |
 |-----|---------------|--------------------------------------------|-----------------|
 | ! | modello | hardcoded | &quot;Roku&quot; |
 |     | fornitore | ifDeviceInfo.GetModelDetails().VendorName | &quot;Sharp&quot;, &quot;Roku&quot; |
@@ -406,30 +406,30 @@ Le informazioni sul dispositivo possono essere costruite nel modo seguente:
 
 Le informazioni di connessione possono essere costruite nel modo seguente:
 
-|   | Chiave | Sorgente | Valore (esempio) |
+|   | Chiave | Source | Valore (esempio) |
 |---|---|---|---|
 | ! | connectionType | ifDeviceInfo.GetConnectionType() | &quot;WifiConnection&quot;, &quot;WiredConnection&quot; |
 |   | connectionSecure | hardcoded | true se la connessione è cablata |
 
 Le informazioni sull&#39;applicazione possono essere costruite nel modo seguente:
 
-|   | Chiave | Sorgente | Valore (esempio) |
+|   | Chiave | Source | Valore (esempio) |
 |---|---------------|-----------|--------------|
 |   | applicationId | hardcoded | CNN |
 
 >[!IMPORTANT]
 >
-Le informazioni su dispositivo, connessione e applicazione devono essere aggiunte allo stesso oggetto JSON. In seguito, l’oggetto risultante deve essere **Codifica Base64**. Inoltre, nel caso delle API REST di autenticazione di Adobe Pass, il valore deve essere codificato in URL.
+Le informazioni su dispositivo, connessione e applicazione devono essere aggiunte allo stesso oggetto JSON. In seguito, l&#39;oggetto risultante deve essere **Codificato Base64**. Inoltre, nel caso delle API REST di autenticazione di Adobe Pass, il valore deve essere codificato in URL.
 
 >[!NOTE]
 >
-Per ulteriori informazioni, consulta [ifDeviceInfo](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md)
+Per ulteriori informazioni, vedere [ifDeviceInfo](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md)
 
 ### XBOX 1/360 {#xbox}
 
 Le informazioni sul dispositivo possono essere costruite nel modo seguente:
 
-|   | Chiave | Sorgente | Valore (esempio) |
+|   | Chiave | Source | Valore (esempio) |
 |---|---|---|---|
 | ! | modello | EasClientDeviceInformation.SystemProductName |                 |
 |   | fornitore | hardcoded | Microsoft |
@@ -442,20 +442,20 @@ Le informazioni sul dispositivo possono essere costruite nel modo seguente:
 
 Le informazioni di connessione possono essere costruite nel modo seguente:
 
-|   | Chiave | Sorgente | Esempio |
+|   | Chiave | Source | Esempio |
 |---|---|---|---|
 | ! | connectionType |                                                   |                   |
 |   | connectionSecure | TipoAutenticazioneRete | &quot;None&quot;, &quot;Wpa&quot; ecc. |
 
 Le informazioni sull&#39;applicazione possono essere costruite nel modo seguente:
 
-| Chiave | Sorgente | Valore (esempio) |
+| Chiave | Source | Valore (esempio) |
 |---|---|---|
 | applicationId | hardcoded | CNN |
 
 >[!IMPORTANT]
 >
-Le informazioni su dispositivo, connessione e applicazione devono essere aggiunte allo stesso oggetto JSON. In seguito, l’oggetto risultante deve essere **Codifica Base64**. Inoltre, nel caso delle API REST di autenticazione di Adobe Pass, il valore deve essere **Codifica URL**.
+Le informazioni su dispositivo, connessione e applicazione devono essere aggiunte allo stesso oggetto JSON. In seguito, l&#39;oggetto risultante deve essere **Codificato Base64**. Inoltre, nel caso delle API REST di autenticazione di Adobe Pass, il valore deve essere **URL codificato**.
 
 **Risorse**
 

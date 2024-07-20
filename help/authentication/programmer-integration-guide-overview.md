@@ -19,22 +19,22 @@ ht-degree: 0%
 
 ## Cookbook {#cookbooks}
 
-* Manuale dell’SDK JavaScript di AccessEnabler
+* Manuale di AccessEnabler JavaScript SDK
 * Manuale di AccessEnabler per SDK iOS/tvOS
-* Manuale dell’SDK di AccessEnabler per Android
+* Manuale di AccessEnabler Android SDK
 * Manuale dell’API REST (server-to-server)
 * Manuale dell’API REST (da client a server)
 
 ## Riferimenti API {#api-references}
 
-* Riferimento API per l&#39;SDK JavaScript di AccessEnabler
+* Riferimento API di AccessEnabler JavaScript SDK
 * Riferimento API di AccessEnabler per iOS/tvOS SDK
-* Riferimento API per l&#39;SDK di AccessEnabler per Android
+* Riferimento API di AccessEnabler Android SDK
 * Riferimento API REST
 
 ## Panoramica tecnica {#technical-overviews}
 
-* Panoramica dell’SDK JavaScript di AccessEnabler
+* Panoramica di AccessEnabler JavaScript SDK
 * Panoramica di AccessEnabler iOS/tvOS SDK
 * Panoramica dell’SDK di AccessEnabler per Android
 * Panoramica API REST

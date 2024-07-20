@@ -17,16 +17,16 @@ ht-degree: 1%
 
 >[!NOTE]
 >
-> L’implementazione REST API è limitata da [Meccanismo di limitazione](/help/authentication/throttling-mechanism.md)
+> L&#39;implementazione REST API è limitata dal [meccanismo di limitazione](/help/authentication/throttling-mechanism.md)
 
 ## Endpoint REST API {#clientless-endpoints}
 
-&lt;reggie_fqdn>:
+&lt;FQDN_REGGIE>:
 
 * Produzione - [api.auth.adobe.com](http://api.auth.adobe.com/)
 * Staging - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
-&lt;sp_fqdn>:
+&lt;SP_FQDN>:
 
 * Produzione - [api.auth.adobe.com](http://api.auth.adobe.com/)
 * Staging - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
@@ -38,13 +38,13 @@ ht-degree: 1%
 Questa risorsa genera richieste di profilo per un ID richiedente e una tupla MVPD.
 
 
-| Endpoint | Chiamato  </br>Da | Input   </br>Parametri | HTTP  </br>Metodo | Risposta | HTTP  </br>Risposta |
+| Endpoint | Chiamato </br> da | Input   </br>Parametri | Metodo HTTP </br> | Risposta | HTTP </br>Risposta |
 | --- | --- | --- | --- | --- | --- |
-| &lt;sp_fqdn>/api/v1/{requestor}/profile-requests/{mvpd} | App di streaming</br></br>o</br></br>Servizio programmatore | 1. richiedente (parametro percorso)</br>2. mvpd (parametro percorso)</br>3. deviceType (obbligatorio) | GET | Il Content-Type di risposta sarà application/octet-stream, poiché il payload effettivo è opaco per l’applicazione client.</br></br>La risposta deve essere inoltrata dall’applicazione alla piattaforma</br></br>Motore SSO per ottenere un SSO profilo. | 200 - Operazione completata   </br>400 - Richiesta non valida |
+| &lt;SP_FQDN>/api/v1/{requestor}/profile-requests/{mvpd} | Servizio programmatore </br></br>o</br></br>app in streaming | 1. richiedente (parametro percorso)</br>2. mvpd (parametro percorso)</br>3. deviceType (obbligatorio) | GET | Il Content-Type di risposta sarà application/octet-stream, poiché il payload effettivo è opaco per l’applicazione client.</br></br>La risposta deve essere inoltrata dall&#39;applicazione al motore SSO di Platform</br></br>per ottenere un SSO profilo. | 200 - Operazione completata   </br>400 - Richiesta non valida |
 
 
 | Parametro di input | Descrizione |
 | --------------- | -------------------------------------------------------------------------------------------------------- |
 | richiedente | ID richiedente del programmatore per il quale è valida questa operazione. |
 | mvpd | L&#39;ID MVPD per il quale è valida questa operazione. |
-| deviceType | La piattaforma Apple per la quale stiamo tentando di ottenere una richiesta di profilo.  o **iOS** o **tvOS**. |
+| deviceType | La piattaforma Apple per la quale stiamo tentando di ottenere una richiesta di profilo.  **iOS** o **tvOS**. |

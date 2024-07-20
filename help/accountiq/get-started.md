@@ -1,6 +1,6 @@
 ---
 title: Introduzione a [!UICONTROL Account IQ]
-description: Scopri l’onboarding, i prerequisiti e come iniziare a utilizzare [!UICONTROL Account IQ].
+description: Scopri l'onboarding, i prerequisiti e come iniziare a utilizzare [!UICONTROL Account IQ].
 exl-id: 840ab081-0073-492f-86b2-ba174ae93256
 source-git-commit: a7a37ffea0169a302890ee50b2e2202ddf58d021
 workflow-type: tm+mt
@@ -11,7 +11,7 @@ ht-degree: 0%
 
 # Introduzione a [!UICONTROL Account IQ] {#onboard}
 
-[!UICONTROL Account IQ] è un’applicazione web in hosting. Per iniziare a utilizzare questo strumento di analisi come provider di streaming D2C, programmatore o distributore (MVPD) e attenuare la condivisione delle credenziali, è necessario integrare la tua organizzazione nelle organizzazioni Adobe Experience Cloud e assegnarvi gli utenti **[!UICONTROL Primetime Account IQ]** profilo su [Adobe Admin Console](https://adminconsole.adobe.com/). Continua a leggere per conoscere i prerequisiti e i dettagli per l’onboarding.
+[!UICONTROL Account IQ] è un&#39;applicazione Web ospitata. Per iniziare a utilizzare questo strumento di analisi come provider di streaming D2C, programmatore o distributore (MVPD) e attenuare la condivisione delle credenziali, è necessario integrare l&#39;organizzazione nelle organizzazioni Adobe Experience Cloud e assegnare gli utenti dell&#39;organizzazione al profilo **[!UICONTROL Primetime Account IQ]** in [Adobe Admin Console](https://adminconsole.adobe.com/). Continua a leggere per conoscere i prerequisiti e i dettagli per l’onboarding.
 
 ## Prerequisiti del browser {#browser-prerequisites}
 
@@ -23,33 +23,33 @@ ht-degree: 0%
 
 ## Passaggi per l’onboarding {#steps-to-onboard}
 
-1. Per registrare la tua organizzazione **Adobe Experience Cloud** contatto organizzazioni **Adobe** inviando un messaggio e-mail a tve-support@adobe.com.
+1. Per registrare la tua organizzazione in **Adobe Experience Cloud** organizzazioni contatta **Adobe** inviando un&#39;e-mail a tve-support@adobe.com.
 
-1. Assegna utenti organizzazione a **[!UICONTROL TVE Dashboard Read-Write]** o **[!UICONTROL TVE Dashboard Read Only]** profili in [Adobe Admin Console](https://adminconsole.adobe.com/).
+1. Assegnare gli utenti dell&#39;organizzazione ai profili **[!UICONTROL TVE Dashboard Read-Write]** o **[!UICONTROL TVE Dashboard Read Only]** in [Adobe Admin Console](https://adminconsole.adobe.com/).
 
-   Gli utenti amministratore della tua organizzazione possono creare utenti e concedere loro l’accesso a [!UICONTROL Account IQ Dashboard and Reports]. Per concedere agli utenti dell&#39;organizzazione l&#39;accesso a [!UICONTROL Account IQ], gli amministratori dell’organizzazione devono:
+   Gli utenti amministratori dell&#39;organizzazione possono creare utenti e concedere loro l&#39;accesso a [!UICONTROL Account IQ Dashboard and Reports]. Per concedere agli utenti dell&#39;organizzazione l&#39;accesso a [!UICONTROL Account IQ], gli amministratori dell&#39;organizzazione devono:
 
    1. Accedi a [Adobe Admin Console](https://adminconsole.adobe.com/).
 
 
       ![](assets/admin-console.png)
 
-   1. Seleziona **[!UICONTROL Adobe Primetime]** da **[!UICONTROL Products and services]**.
+   1. Selezionare **[!UICONTROL Adobe Primetime]** da **[!UICONTROL Products and services]**.
 
-   1. Da **[!UICONTROL Product Profiles]**, seleziona una **[!UICONTROL TVE Dashboard Read-Write]** o **[!UICONTROL TVE Dashboard Read Only]** profilo.
+   1. Da **[!UICONTROL Product Profiles]**, selezionare il profilo **[!UICONTROL TVE Dashboard Read-Write]** o **[!UICONTROL TVE Dashboard Read Only]**.
 
       ![](assets/product-profiles.png)
 
       >[!NOTE]
       >
-      >Prossimamente, Primetime [!UICONTROL Account IQ] si divide da [!UICONTROL TVE Dashboard].
+      >In un prossimo futuro, Primetime [!UICONTROL Account IQ] si separerà da [!UICONTROL TVE Dashboard].
 
    1. Da qui puoi creare gruppi di utenti o selezionare gruppi esistenti a cui aggiungere gli utenti.
 
       ![](assets/add-users-2profile.png)
 
-   1. Per aggiungere utenti, seleziona **[!UICONTROL Add User]**.
+   1. Per aggiungere utenti, selezionare **[!UICONTROL Add User]**.
 
 >[!IMPORTANT]
 >
->Se gli utenti non possono accedere a [!UICONTROL Account IQ] , contatta l’Adobe di supporto per assicurarti che l’ID della tua organizzazione sia inserito nella whitelist di [!UICONTROL Account IQ].
+>Se gli utenti non riescono ad accedere al dashboard di [!UICONTROL Account IQ], contatta il supporto Adobe per assicurarti che l&#39;ID della tua organizzazione sia inserito nella whitelist di [!UICONTROL Account IQ].

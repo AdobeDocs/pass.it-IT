@@ -11,21 +11,21 @@ ht-degree: 1%
 
 # Esporta informazioni per account con punteggio di condivisione elevato {#export-account-info-high-score}
 
-[!UICONTROL Account IQ] consente di esportare i dettagli di condivisione dell’account per i primi 1000 account abbonati in base ai [condivisione delle probabilità](/help/accountiq/product-concepts.md#account-sharing-probability-def). Puoi esportare le informazioni sulla condivisione dell’account per il [segmento](/help/accountiq/product-concepts.md#segment-def) e [intervallo di tempo specificato](/help/accountiq/product-concepts.md#time-interval-def) il [Rapporti sugli account condivisi](/help/accountiq/shared-acc-reports.md) pagina.
+[!UICONTROL Account IQ] consente di esportare i dettagli di condivisione dell&#39;account per i primi 1000 account sottoscrittori in base alle loro [probabilità di condivisione](/help/accountiq/product-concepts.md#account-sharing-probability-def). È possibile esportare le informazioni sulla condivisione dell&#39;account per il [segmento](/help/accountiq/product-concepts.md#segment-def) corrente e il [intervallo di tempo specificato](/help/accountiq/product-concepts.md#time-interval-def) nella pagina [Report account condivisi](/help/accountiq/shared-acc-reports.md).
 
 Segui i passaggi per esportare le informazioni sulla condivisione dell’account degli account abbonato per un segmento specifico.
 
 1. Accedi con le tue credenziali.
-1. Accedi a **Account condivisi** scheda in **Rapporti** sezione.
+1. Passa alla scheda **Account condivisi** nella sezione **Rapporti**.
 1. Seleziona il segmento e l’intervallo di tempo richiesti dal pannello segmento e intervallo di tempo. Scopri [come selezionare un segmento e un intervallo di tempo](segments-timeinterval.md).
 
-   Se necessario, fare riferimento alle istruzioni per [creazione di un segmento](work-with-segments.md#create-new-segment) o [modifica di un segmento](work-with-segments.md#edit-segment).
+   Se necessario, fare riferimento alle istruzioni per [creare un segmento](work-with-segments.md#create-new-segment) o [modificare un segmento](work-with-segments.md#edit-segment).
 
-1. Seleziona **[!UICONTROL Export top 1000 accounts]** si trova nell’angolo superiore destro del pannello segmento e intervallo di tempo.
+1. Seleziona **[!UICONTROL Export top 1000 accounts]** che si trova nell&#39;angolo superiore destro del segmento e del pannello Intervallo di tempo.
 
    ![Esporta i primi 1000 account](assets/export-top-1000-accounts.png)
 
-   *Seleziona l’opzione Esporta i primi 1000 account*
+   *Selezionare l&#39;opzione Esporta i primi 1000 account*
 
 Il file verrà scaricato automaticamente nel computer locale come file .csv.
 
@@ -33,15 +33,15 @@ Questo file contiene i dati per i primi 1000 account in base alle probabilità d
 
 Di seguito è riportato un esempio del file .csv esportato.
 
-![dati esportati in un file .csv](assets/exported-csv.png)
+![dati esportati nel file CSV](assets/exported-csv.png)
 
-*Dati esportati in un file .csv*
+*Dati esportati nel file CSV*
 
 ## Colonne nel report esportato {#columns-in-export}
 
 **Settimana/Mese**
 
-La settimana o il mese selezionato entro il **[!UICONTROL Granularity and Time Interval]** nel selettore dei segmenti.
+La settimana o il mese selezionato all&#39;interno dell&#39;opzione **[!UICONTROL Granularity and Time Interval]** nel selettore di segmenti.
 
 **MVPD**
 
@@ -49,9 +49,9 @@ Se sei un programmatore, la colonna mostra il distributore con cui l’account �
 
 >[!NOTE]
 >
-> Il **MVPD** è disponibile solo per le versioni di TV Everywhere.
+> La colonna **MVPD** è disponibile solo per le versioni di TV Everywhere.
 
-**ID abbonato**
+**ID sottoscrittore**
 
 L’identificatore univoco dell’account specifico.
 
@@ -89,7 +89,7 @@ Il numero di stati in cui ha avuto luogo l’attività di streaming.
 
 **[!UICONTROL # Clusters]**
 
-Numero di elementi distinti [cluster](/help/accountiq/product-concepts.md#cluster-def) dove ha avuto luogo lo streaming.
+Numero di [cluster](/help/accountiq/product-concepts.md#cluster-def) distinti in cui è stato eseguito lo streaming.
 
 **[!UICONTROL Geographic span (miles)]**
 
@@ -101,7 +101,7 @@ Il numero di accessi effettuati dagli utenti durante il periodo specificato util
 
 >[!NOTE]
 >
-> Alcuni servizi D2C potrebbero non visualizzare **[!UICONTROL # AuthN OK]** dati in quanto potrebbero non essere inclusi nei dati della loro azienda.
+> Alcuni servizi D2C potrebbero non visualizzare i dati di **[!UICONTROL # AuthN OK]** perché potrebbero non essere inclusi nei dati della loro azienda.
 
 **[!UICONTROL # AuthZ OK]**
 
@@ -113,7 +113,7 @@ Il numero di volte in cui un MVPD ha autorizzato un flusso o concesso l&#39;acce
 
 >[!NOTE]
 >
->Per la TV Ovunque, **[!UICONTROL # AuthZ OK]** è correlato al numero di **[N. richieste Play](/help/accountiq/product-concepts.md##play-requests-def)**. Sarà sempre minore di **[!UICONTROL # Play Requests]** poiché Adobe in genere memorizza nella cache le autorizzazioni degli MVPD per circa 24 ore.
+>Per TV Everywhere, **[!UICONTROL # AuthZ OK]** è correlato al numero di **[# richieste Play](/help/accountiq/product-concepts.md##play-requests-def)**. Sarà sempre inferiore a **[!UICONTROL # Play Requests]** perché Adobe in genere memorizza nella cache le autorizzazioni degli MVPD per circa 24 ore.
 
 
 **[!UICONTROL # Play Requests]**
@@ -122,7 +122,7 @@ Il numero effettivo di flussi che si sono verificati durante un periodo di tempo
 
 >[!NOTE]
 >
->Il [N. richieste Play](/help/accountiq/product-concepts.md##play-requests-def) non è disponibile nella versione MVPD di TV Everywhere.
+>La colonna [# richieste Play](/help/accountiq/product-concepts.md##play-requests-def) non è disponibile nella versione MVPD di TV Everywhere.
 
 **[!UICONTROL # Channels]**
 
@@ -130,14 +130,14 @@ Il numero complessivo di canali controllati dall’account in un determinato per
 
 >[!NOTE]
 >
-> Per i servizi D2C **[!UICONTROL # Channels]** è equivalente al numero di **[!UICONTROL # Video categories]**.
+> Per i servizi D2C **[!UICONTROL # Channels]** equivale al numero di **[!UICONTROL # Video categories]**.
 
 >[!NOTE]
 >
 >Per TV Everywhere, includono i canali che potrebbero non appartenere al programmatore connesso. Questo numero per l’account include il tuo canale e altri canali a cui si accede durante il periodo specificato.
 
 
-**Pattern di utilizzo**
+**Schema di utilizzo**
 
 I valori all’interno di queste colonne fungono da identificatori corrispondenti a uno dei 14 modelli utilizzati per categorizzare tutti gli account utente.
 
@@ -198,7 +198,7 @@ I valori all’interno di queste colonne fungono da identificatori corrispondent
     </tbody>
   </table>
 
-*Identificatori del pattern di utilizzo nella mappatura .csv esportata con pattern di utilizzo*
+*Identificatori pattern di utilizzo nel mapping .csv esportato con pattern di utilizzo*
 
 **Probabilità di condivisione**
 
@@ -206,4 +206,4 @@ La probabilità che un account specifico condivida le sue credenziali.
 
 >[!NOTE]
 >
-> La media della probabilità di condivisione di tutti i conti nel segmento selezionato viene utilizzata per calcolare [livello di condivisione](/help/accountiq/data-panels.md#sharing-level) del [punteggio medio di condivisione](/help/accountiq/data-panels.md#aggregated-sharing).
+> La media della probabilità di condivisione di tutti gli account nel segmento selezionato viene utilizzata per calcolare il [livello di condivisione](/help/accountiq/data-panels.md#sharing-level) del [punteggio medio di condivisione](/help/accountiq/data-panels.md#aggregated-sharing).

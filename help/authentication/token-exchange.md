@@ -17,16 +17,16 @@ ht-degree: 0%
 
 >[!NOTE]
 >
-> L’implementazione REST API è limitata da [Meccanismo di limitazione](/help/authentication/throttling-mechanism.md)
+> L&#39;implementazione REST API è limitata dal [meccanismo di limitazione](/help/authentication/throttling-mechanism.md)
 
 ## Endpoint REST API {#clientless-endpoints}
 
-&lt;reggie_fqdn>:
+&lt;FQDN_REGGIE>:
 
 * Produzione - [api.auth.adobe.com](http://api.auth.adobe.com/)
 * Staging - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
-&lt;sp_fqdn>:
+&lt;SP_FQDN>:
 
 * Produzione - [api.auth.adobe.com](http://api.auth.adobe.com/)
 * Staging - [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
@@ -37,9 +37,9 @@ ht-degree: 0%
 
 Consente lo &quot;scambio&quot; di un profilo SSO di Platform con un token di Adobe.
 
-| Endpoint | Chiamato  </br>Da | Input   </br>Parametri | HTTP  </br>Metodo | Risposta | HTTP  </br>Risposta |
+| Endpoint | Chiamato </br> da | Input   </br>Parametri | Metodo HTTP </br> | Risposta | HTTP </br>Risposta |
 | --- | --- | --- | --- | --- | --- |
-| &lt;sp_fqdn>/api/v1/tokens/authn | App di streaming</br></br>o</br></br>Servizio programmatore | 1. richiedente (obbligatorio)</br>    </br>2.  deviceId (obbligatorio)</br>    </br>3.  mvpd (obbligatorio)</br>    </br>4.  deviceType (obbligatorio)</br>    </br>5.  SAMLResponse (obbligatorio)</br>    </br>6.  deviceUser (obsoleto)</br>    </br>7.  appId (obsoleto) | POST | In caso di esito positivo, la risposta sarà No Content (Nessun contenuto) 204, che indica che il token è stato creato correttamente ed è pronto per l’utilizzo per i flussi di autenticazione. | 204 - Nessun contenuto   </br>400 - Richiesta non valida |
+| &lt;SP_FQDN>/api/v1/token/author | Servizio programmatore </br></br>o</br></br>app in streaming | 1. richiedente (obbligatorio)</br>    </br>2.  deviceId (obbligatorio)</br>    </br>3.  mvpd (obbligatorio)</br>    </br>4.  deviceType (obbligatorio)</br>    </br>5.  SAMLResponse (obbligatorio)</br>    </br>6.  deviceUser (obsoleto)</br>    </br>7.  appId (obsoleto) | POST | In caso di esito positivo, la risposta sarà No Content (Nessun contenuto) 204, che indica che il token è stato creato correttamente ed è pronto per l’utilizzo per i flussi di autenticazione. | 204 - Nessun contenuto   </br>400 - Richiesta non valida |
 
 
 | Parametro di input | Descrizione |
@@ -47,7 +47,7 @@ Consente lo &quot;scambio&quot; di un profilo SSO di Platform con un token di Ad
 | richiedente | ID richiedente del programmatore per il quale è valida questa operazione. |
 | deviceId | Byte ID dispositivo. |
 | mvpd | L&#39;ID MVPD per il quale è valida questa operazione. |
-| deviceType | La piattaforma Apple per la quale stiamo tentando di ottenere una richiesta di profilo.  o **iOS** o **tvOS**. |
+| deviceType | La piattaforma Apple per la quale stiamo tentando di ottenere una richiesta di profilo.  **iOS** o **tvOS**. |
 | SAMLResponse | Profilo effettivo restituito dall’SSO di Platform. |
-| _deviceUser_ | L’identificatore utente del dispositivo. |
+| _utenteDispositivo_ | L’identificatore utente del dispositivo. |
 | _appId_ | ID/nome dell’applicazione. |

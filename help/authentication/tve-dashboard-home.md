@@ -1,13 +1,13 @@
 ---
 title: Dashboard
 description: Scopri la home page di TVE Dashboard.
-source-git-commit: 06c2e1e54515a2ec47722ba1f360467dadd1f73b
+exl-id: 3073cd86-89f8-4c65-996b-24edda24f25b
+source-git-commit: c2dcea9e4170a3e10654bcd3f8d2f5cdb82c9603
 workflow-type: tm+mt
 source-wordcount: '276'
 ht-degree: 0%
 
 ---
-
 
 # Dashboard {#dashboard}
 
@@ -15,7 +15,7 @@ ht-degree: 0%
 >
 >Il contenuto di questa pagina viene fornito solo a scopo informativo. L’utilizzo di questa API richiede una licenza corrente di Adobe. Non è consentito alcun uso non autorizzato.
 
-Il **Dashboard** sezione nel pannello a sinistra funge da home page del dashboard TVE di autenticazione di Adobe Pass.
+La sezione **Dashboard** nel pannello a sinistra funge da home page del dashboard TVE di autenticazione di Adobe Pass.
 
 Nella home page sono disponibili due sezioni:
 
@@ -26,25 +26,25 @@ Nella home page sono disponibili due sezioni:
 
 In questa sezione puoi accedere alla documentazione pubblica direttamente dal messaggio di benvenuto e visualizzare un’istantanea delle configurazioni correnti.
 
-* **Integrazioni attive**: numero di integrazioni attive nell’ambiente corrente. Seleziona **Ulteriori informazioni nella sezione Integrazione** per accedere a informazioni dettagliate in [Integrazioni](tve-dashboard-integrations.md) sezione.
-* **Canali attivi**: numero di canali attivi nell’ambiente corrente. Seleziona **Visualizza altro nella sezione Canali** per accedere a informazioni dettagliate in [Canali](tve-dashboard-channels.md) sezione.
-* **Aggiornamenti del database**: numero di modifiche di configurazione apportate all’ambiente corrente. Seleziona **Visualizza altro nella sezione Log delle modifiche** per accedere a informazioni dettagliate in [Registro modifiche](tve-dashboard-changes-log.md) sezione.
-* **Dashboard ESM**: tieni d’occhio la prossima dashboard ESM, che offre metriche approfondite sull’utilizzo delle proprietà nell’ambiente corrente. Questa funzionalità sarà accessibile in aggiornamenti futuri.
+* **Integrazioni attive**: numero di integrazioni attive nell&#39;ambiente corrente. Seleziona **Visualizza altro nella sezione di integrazione** per accedere alle informazioni dettagliate nella sezione [Integrazioni](tve-dashboard-integrations.md).
+* **Canali attivi**: numero di canali attivi nell&#39;ambiente corrente. Seleziona **Visualizza altro nella sezione Canali** per accedere alle informazioni dettagliate nella sezione [Canali](tve-dashboard-channels.md).
+* **Aggiornamenti del database**: numero di modifiche di configurazione apportate all&#39;ambiente corrente. Selezionare **Visualizza altro nella sezione Registro modifiche** per accedere alle informazioni dettagliate nella sezione [Registro modifiche](tve-dashboard-changes-log.md).
+* **Dashboard ESM**: tieni d&#39;occhio la prossima dashboard ESM, che offre metriche approfondite sull&#39;utilizzo delle proprietà nell&#39;ambiente corrente. Questa funzionalità sarà accessibile in aggiornamenti futuri.
 
-![Schermata iniziale](assets/welcome-screen.png)
+![Schermata introduttiva](assets/welcome-screen.png)
 
-*Schermata iniziale*
+*Schermata introduttiva*
 
 ## Stato configurazione {#conf-status}
 
 Questa sezione presenta le 10 modifiche di configurazione più recenti, tra cui:
 
-* **Descrizione delle modifiche**: breve descrizione della modifica selezionata dall’utente.
-* **Spinto da**: account responsabile della modifica.
-* **Data push**: data in cui è stata apportata la modifica.
+* **Descrizione modifiche**: breve descrizione della modifica selezionata dall&#39;utente.
+* **Inviato da**: account responsabile della modifica.
+* **Data push**: la data in cui è stata apportata la modifica.
 
 ![Stato configurazione di un registro modifiche](assets/configuration-status.png)
 
 *Stato configurazione di un registro modifiche*
 
-Per visualizzare l&#39;elenco completo delle modifiche, selezionare **Visualizza altro nel registro delle modifiche** in basso a destra per visualizzare [Registro modifiche](tve-dashboard-changes-log.md) sezione.
+Per visualizzare l&#39;elenco completo delle modifiche, selezionare **Visualizza altro nel log delle modifiche** in basso a destra per visualizzare la sezione [Log delle modifiche](tve-dashboard-changes-log.md).

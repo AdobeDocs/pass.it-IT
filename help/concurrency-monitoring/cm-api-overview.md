@@ -11,18 +11,18 @@ ht-degree: 0%
 
 # Panoramica API {#api-overview}
 
-Visualizza [documentazione API online](http://docs.adobeptime.io/cm-api-v2/) per ulteriori dettagli.
+Per ulteriori dettagli, consulta la [documentazione API online](http://docs.adobeptime.io/cm-api-v2/).
 
 ## Finalità e prerequisiti {#purpose-prerequisites}
 
-Questo documento aiuta gli sviluppatori di applicazioni a utilizzare le nostre specifiche API Swagger durante l’implementazione di un’integrazione con il monitoraggio della concorrenza. Prima di seguire questa linea guida, si consiglia vivamente al lettore di avere una precedente comprensione dei concetti definiti dal servizio. Per avere questa comprensione, è necessario avere una panoramica del [documentazione del prodotto](/help/concurrency-monitoring/cm-home.md) e [Specifica API Swagger](http://docs.adobeptime.io/cm-api-v2/).
+Questo documento aiuta gli sviluppatori di applicazioni a utilizzare le nostre specifiche API Swagger durante l’implementazione di un’integrazione con il monitoraggio della concorrenza. Prima di seguire questa linea guida, si consiglia vivamente al lettore di avere una precedente comprensione dei concetti definiti dal servizio. Per ottenere questa comprensione, è necessario avere una panoramica della [documentazione del prodotto](/help/concurrency-monitoring/cm-home.md) e della [specifica API Swagger](http://docs.adobeptime.io/cm-api-v2/).
 
 
 ## Introduzione {#api-overview-intro}
 
 Durante il processo di sviluppo, la documentazione pubblica di Swagger rappresenta la linea guida di riferimento per comprendere e testare i flussi API. Questo è un ottimo punto di partenza per avere un approccio pratico e familiarizzare con il modo in cui le applicazioni del mondo reale si comporterebbero in diversi scenari di interazione dell’utente.
 
-Inviare un ticket in [Zendesk](mailto:tve-support@adobe.com) per registrare l&#39;azienda e le applicazioni in Monitoraggio concorrenza. Adobe assegnerà un ID applicazione a ogni entità. In questa guida utilizzeremo due applicazioni di riferimento con ID **demo-app** e **demo-app-2** che si troverà nell’Adobe del tenant.
+Invia un ticket in [Zendesk](mailto:tve-support@adobe.com) per registrare la tua azienda e le tue applicazioni nel monitoraggio della concorrenza. Adobe assegnerà un ID applicazione a ogni entità. In questa guida utilizzeremo due applicazioni di riferimento con ID **demo-app** e **demo-app-2** che saranno inclusi nell&#39;Adobe tenant.
 
 
 ## Casi d’uso {#api-use-case}
@@ -31,12 +31,12 @@ Il primo passaggio nel testare un flusso utilizzando Swagger è quello di immett
 
 ![](assets/setting-app-id.png)
 
-In seguito, premiamo **Esplora** per impostare l’ID che verrà utilizzato nell’intestazione Autorizzazione per tutte le chiamate effettuate all’API REST.  Ogni chiamata API prevede che l’ID applicazione venga trasmesso tramite l’autenticazione HTTP di base. Il nome utente è l&#39;ID applicazione e la password è vuota.
+In seguito, premi **Esplora** per impostare l&#39;ID che verrà utilizzato nell&#39;intestazione Autorizzazione per tutte le chiamate effettuate all&#39;API REST.  Ogni chiamata API prevede che l’ID applicazione venga trasmesso tramite l’autenticazione HTTP di base. Il nome utente è l&#39;ID applicazione e la password è vuota.
 
 
 ### Prima applicazione {#first-app-use-cases}
 
-Applicazione con ID **demo-app** Il team di Adobe ha assegnato un criterio con una regola che limita a 3 il numero di flussi simultanei. Una polizza viene assegnata a una specifica applicazione in base alla richiesta presentata in Zendesk.
+L&#39;applicazione con ID **demo-app** è stata assegnata dal team di Adobi a un criterio con una regola che limita a 3 il numero di flussi simultanei. Una polizza viene assegnata a una specifica applicazione in base alla richiesta presentata in Zendesk.
 
 
 #### Recupero metadati {#retrieve-metadata-use-case}
@@ -45,11 +45,11 @@ La prima chiamata che effettuiamo è per la risorsa Metadati al fine di ottenere
 
 ![](assets/retrieving-metadata.png)
 
-Dopo aver premuto &quot;Try it out&quot; (Prova), per l’applicazione con ID **demo-app** otterremo il seguente risultato:
+Dopo aver premuto &quot;Try it out&quot; (Prova), per l&#39;applicazione con ID **demo-app** otterremo il seguente risultato:
 
 ![](assets/empty-metadata-call.png)
 
-Come è possibile vedere dal campo corpo della risposta, l’elenco degli attributi dei metadati è vuoto. Ciò significa che gli attributi richiesti dalla progettazione sono sufficienti per valutare il criterio dei 3 flussi assegnato a questa applicazione. Vedi anche, [Documentazione sui campi metadati standard](/help/concurrency-monitoring/standard-metadata-attributes.md). Dopo questa chiamata, possiamo continuare e creare una nuova sessione sulla risorsa REST Sessioni.
+Come è possibile vedere dal campo corpo della risposta, l’elenco degli attributi dei metadati è vuoto. Ciò significa che gli attributi richiesti dalla progettazione sono sufficienti per valutare il criterio dei 3 flussi assegnato a questa applicazione. Consulta anche la [documentazione sui campi di metadati standard](/help/concurrency-monitoring/standard-metadata-attributes.md). Dopo questa chiamata, possiamo continuare e creare una nuova sessione sulla risorsa REST Sessioni.
 
 
 #### Inizializzazione della sessione {#session-initial}
@@ -60,7 +60,7 @@ La chiamata di inizializzazione della sessione viene eseguita da un’applicazio
 
 Non è necessario fornire codice di terminazione alla prima chiamata perché non sono presenti altri flussi attivi. E nessun attributo di metadati perché non ne è stato restituito alcuno dalla chiamata di recupero dei metadati.
 
-Il **oggetto** e **idp** I parametri sono obbligatori e verranno specificati come variabili di percorso URI. È possibile ottenere **oggetto** e **idp** effettuando una chiamata per **mvpd** e **upstreamUserID** campi di metadati da Autenticazione Adobe Pass. Vedi anche, [panoramica delle API di metadati](https://experienceleague.adobe.com/docs/primetime/authentication/auth-features/user-metadat/user-metadata-feature.html?lang=en#). In questo esempio forniremo il valore &quot;12345&quot; come soggetto e &quot;adobe&quot; come idp.
+I parametri **subject** e **idp** sono obbligatori e verranno specificati come variabili di percorso URI. Puoi ottenere i parametri **subject** e **idp** effettuando una chiamata per i campi di metadati **mvpd** e **upstreamUserID** dall&#39;autenticazione di Adobe Pass. Vedi anche la [panoramica delle API dei metadati](https://experienceleague.adobe.com/docs/primetime/authentication/auth-features/user-metadat/user-metadata-feature.html?lang=en#). In questo esempio forniremo il valore &quot;12345&quot; come soggetto e &quot;adobe&quot; come idp.
 
 
 ![](assets/session-init-params-frstapp.png)
@@ -71,11 +71,11 @@ Eseguire la chiamata di inizializzazione della sessione. Riceverai la seguente r
 ![](assets/session-init-result-first-app.png)
 
 
-Tutti i dati necessari sono contenuti nelle intestazioni di risposta. Il **Posizione** rappresenta l’id della nuova sessione creata e il **Data** e **Scade** le intestazioni rappresentano i valori utilizzati per pianificare l’applicazione in modo che esegua l’heartbeat successivo al fine di mantenere attiva la sessione.
+Tutti i dati necessari sono contenuti nelle intestazioni di risposta. L&#39;intestazione **Location** rappresenta l&#39;ID della nuova sessione creata e le intestazioni **Date** e **Expires** rappresentano i valori utilizzati per pianificare l&#39;applicazione in modo che esegua l&#39;heartbeat successivo per mantenere attiva la sessione.
 
 #### Heartbeat {#heartbeat}
 
-Effettuare una chiamata heartbeat. Fornisci **id sessione** ottenuto nella chiamata di inizializzazione della sessione, insieme alla **oggetto** e **idp** parametri utilizzati.
+Effettuare una chiamata heartbeat. Fornisci l&#39;**ID sessione** ottenuto nella chiamata di inizializzazione della sessione, insieme ai parametri **subject** e **idp** utilizzati.
 
 ![](assets/heartbeat.png)
 
@@ -84,7 +84,7 @@ Se la sessione è ancora valida (non è scaduta o è stata eliminata manualmente
 
 ![](assets/heartbeat-succesfull-result.png)
 
-Come nel primo caso, utilizzeremo **Data** e **Scade** intestazioni per pianificare un altro heartbeat per questa particolare sessione. Se la sessione non è più valida, la chiamata avrà esito negativo con il codice di stato HTTP 410 GONE.
+Come nel primo caso, utilizzeremo le intestazioni **Data** e **Scade** per pianificare un altro heartbeat per questa particolare sessione. Se la sessione non è più valida, la chiamata avrà esito negativo con il codice di stato HTTP 410 GONE.
 
 Puoi utilizzare l’opzione &quot;Keep the stream alive&quot; disponibile nell’interfaccia utente di Swagger per eseguire heartbeat automatici in una sessione specifica, questo può aiutarti a testare una regola senza doverti preoccupare della piattaforma standard necessaria per eseguire heartbeat di sessione puntuali. Questo pulsante è posizionato accanto al pulsante &quot;Prova&quot; nella scheda Swagger Heartbeat. Per impostare un heartbeat automatico per tutte le sessioni create, è necessario che siano programmate in un’interfaccia utente Swagger separata aperta in una scheda del browser web.
 
@@ -103,7 +103,7 @@ Utilizza per la chiamata gli stessi parametri utilizzati per l’heartbeat di se
 
 #### Ottieni tutti i flussi in esecuzione {#get-all-running-streams}
 
-Questo endpoint offre tutte le sessioni attualmente in esecuzione per un tenant specifico in tutte le relative applicazioni. Utilizzare **oggetto** e **idp** parametri per la chiamata:
+Questo endpoint offre tutte le sessioni attualmente in esecuzione per un tenant specifico in tutte le relative applicazioni. Utilizza i parametri **subject** e **idp** per la chiamata:
 
 ![](assets/get-all-running-streams-parameters.png)
 
@@ -111,13 +111,13 @@ Quando effettui la chiamata riceverai la seguente risposta:
 
 ![](assets/get-all-running-streams-success.png)
 
-Tieni presente la **Scade** intestazione. Questo è il momento in cui la prima sessione deve scadere a meno che non venga inviato un heartbeat. OtherStreams ha il valore 0 perché non ci sono altri flussi in esecuzione per questo utente sulle applicazioni di altri tenant.
+Nota l&#39;intestazione **Scade**. Questo è il momento in cui la prima sessione deve scadere a meno che non venga inviato un heartbeat. OtherStreams ha il valore 0 perché non ci sono altri flussi in esecuzione per questo utente sulle applicazioni di altri tenant.
 Nel campo metadati verranno inseriti tutti i metadati inviati all’avvio della sessione. Non lo filtriamo, riceverai tutto quello che hai inviato.
 Se non sono presenti sessioni in esecuzione per un utente specifico quando effettui la chiamata, riceverai questa risposta:
 
 ![](assets/get-all-running-streams-empty.png)
 
-Si noti inoltre che in questo caso **Scade** l’intestazione non è presente.
+Inoltre, in questo caso l&#39;intestazione **Scade** non è presente.
 
 #### Interruzione del criterio {#breaking-policy-app-first}
 
@@ -127,9 +127,9 @@ Per simulare il comportamento della nostra applicazione quando il criterio dei 3
 ![](assets/breaking-policy-frstapp.png)
 
 
-Nel payload viene visualizzata una risposta 409 CONFLICT insieme a un oggetto risultato della valutazione. Leggere una descrizione completa dei risultati della valutazione in [Specifica API Swagger](http://docs.adobeptime.io/cm-api-v2/#evaluation-result).
+Nel payload viene visualizzata una risposta 409 CONFLICT insieme a un oggetto risultato della valutazione. Leggi una descrizione completa del risultato della valutazione nella [specifica API Swagger](http://docs.adobeptime.io/cm-api-v2/#evaluation-result).
 
-L’applicazione può utilizzare le informazioni del risultato della valutazione per visualizzare un determinato messaggio all’utente quando interrompe il video e per intraprendere ulteriori azioni, se necessario. Un caso d’uso può essere quello di interrompere altri flussi esistenti per avviarne uno nuovo. Questa operazione viene eseguita utilizzando **terminationCode** valore presente nel **conflitti** per un attributo in conflitto specifico. Il valore viene fornito come intestazione HTTP X-Terminate nella chiamata per una nuova inizializzazione di sessione.
+L’applicazione può utilizzare le informazioni del risultato della valutazione per visualizzare un determinato messaggio all’utente quando interrompe il video e per intraprendere ulteriori azioni, se necessario. Un caso d’uso può essere quello di interrompere altri flussi esistenti per avviarne uno nuovo. Questa operazione viene eseguita utilizzando il valore **terminationCode** presente nel campo **conflitti** per uno specifico attributo in conflitto. Il valore viene fornito come intestazione HTTP X-Terminate nella chiamata per una nuova inizializzazione di sessione.
 
 ![](assets/session-init-termination-code.png)
 
@@ -139,7 +139,7 @@ Quando fornisci uno o più codici di terminazione all’inizializzazione della s
 
 ### Seconda applicazione {#second-application}
 
-L’altra applicazione di esempio che utilizzeremo è quella con ID **demo-app-2**. A questo è stato assegnato un criterio con una regola che limita a un massimo di 2 il numero di flussi disponibili per un canale.   Devi fornire la variabile del canale per valutare questo criterio.
+L&#39;altra applicazione di esempio che utilizzeremo è quella con ID **demo-app-2**. A questo è stato assegnato un criterio con una regola che limita a un massimo di 2 il numero di flussi disponibili per un canale.   Devi fornire la variabile del canale per valutare questo criterio.
 
 #### Recupero metadati {#retrieving-metadata}
 
@@ -147,12 +147,12 @@ Imposta il nuovo ID applicazione nell’angolo in alto a destra della pagina ed 
 
 ![](assets/non-empty-metadata-secndapp.png)
 
-Questa volta, il corpo della risposta non è più un elenco vuoto, come nell’esempio della prima applicazione. Ora il Servizio di monitoraggio della concorrenza indica nel corpo della risposta che **channel** i metadati sono necessari all’inizializzazione della sessione per valutare il criterio.
+Questa volta, il corpo della risposta non è più un elenco vuoto, come nell’esempio della prima applicazione. Ora il servizio di monitoraggio della concorrenza indica nel corpo della risposta che i metadati **channel** sono necessari all&#39;inizializzazione della sessione per valutare il criterio.
 
-Se effettui una chiamata senza fornire un valore per **channel** parametro, otterrai:
+Se effettui una chiamata senza fornire un valore per il parametro **channel**, otterrai:
 
 * Codice risposta - RICHIESTA 400 BAD
-* Corpo della risposta: un payload dei risultati di valutazione che descrive in **obblighi** inserire il valore previsto nella richiesta di inizializzazione della sessione per consentire la riuscita dell&#39;operazione.
+* Corpo di risposta: payload dei risultati di valutazione che descrive nel campo **requirements** ciò che è previsto nella richiesta di inizializzazione della sessione affinché l&#39;operazione venga completata correttamente.
 
 ![](assets/metadata-request-secndapp.png)
 

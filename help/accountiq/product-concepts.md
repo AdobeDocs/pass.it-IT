@@ -13,7 +13,7 @@ ht-degree: 0%
 
 ## Terminologie comuni per D2C e TV Everywhere
 
-Le seguenti terminologie di prodotto e le relative definizioni sono comuni a tutti [versioni di Account IQ](versions-aiq.md).
+Le seguenti terminologie di prodotto e le relative definizioni sono comuni a tutte le [versioni di Account IQ](versions-aiq.md).
 
 ### [!UICONTROL Accounts Sharing Probability] {#account-sharing-probability-def}
 
@@ -21,7 +21,7 @@ Pannello della dashboard con grafici che divide i punteggi di condivisione del s
 
 ### [!UICONTROL Action] {#action-def}
 
-Un evento diretto o indiretto associato a un [Operazione](#operation-def) che influisce sulle caratteristiche (ad esempio, condivisione di un punteggio o del numero di dispositivi in uso) di un segmento operativo correlato.
+Un evento diretto o indiretto associato a un&#39;operazione [Operation](#operation-def) che influisce sulle caratteristiche (ad esempio, la condivisione di un punteggio o del numero di dispositivi in uso) di un segmento di operazione correlato.
 
 ### [!UICONTROL Aggregated sharing score] {#sharing-probability-level-def}
 

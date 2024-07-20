@@ -1,7 +1,8 @@
 ---
 title: Note sulla versione di Adobe Pass Authentication 2.70
 description: Note sulla versione di Adobe Pass Authentication 2.70
-source-git-commit: 30e2507c0622b882744cf8291525c388575df32f
+exl-id: 81713f8e-bc51-4057-9b00-6a2d6c83cd02
+source-git-commit: 6d46beb688299aeef2a7dbb013b3eca7b4509593
 workflow-type: tm+mt
 source-wordcount: '141'
 ht-degree: 0%
@@ -23,7 +24,7 @@ Questa pagina descrive nuove funzioni, modifiche e problemi noti relativi a ques
 
 ### Numero build {#build-number-270}
 
-Autenticazione Adobe Pass: adobe-pass-**2,70**
+Autenticazione Adobe Pass: adobe-pass-**2.70**
 Data di rilascio: **04/23/2024 - 04/25/2024**
 
 ### Nuove funzioni {#new-features-270}
@@ -33,7 +34,7 @@ Data di rilascio: **04/23/2024 - 04/25/2024**
 * Sono state corrette le vulnerabilità di sicurezza.
 * Miglioramenti al servizio Degradation API.
    * Utilizza DCR come meccanismo di sicurezza per l’API di degradazione.
-   * Ulteriori dettagli sono disponibili qui: [Panoramica dell’API di degradazione](degradation-api-overview.md)
+   * Ulteriori dettagli sono disponibili qui: [Panoramica API di degradazione](degradation-api-overview.md)
 
 #### API REST {#rest-apis}
 

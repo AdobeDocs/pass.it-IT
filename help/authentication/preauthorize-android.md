@@ -1,6 +1,6 @@
 ---
-title: Autorizza in anticipo Android
-description: Autorizza in anticipo Android
+title: Preautorizza Android
+description: Preautorizza Android
 exl-id: b5337595-135f-4981-a578-2da432f125d6
 source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
 workflow-type: tm+mt
@@ -36,7 +36,8 @@ In caso di errore imprevisto (ad esempio, problema di rete, endpoint di autorizz
 
 - *PreauthorizeRequest*: oggetto Builder utilizzato per definire la richiesta
 - AccessEnablerCallback : callback utilizzato per restituire la risposta API
-- PreauthorizeResponse: oggetto utilizzato per restituire il contenuto della risposta API
+- PreauthorizeResponse: oggetto utilizzato per restituire l’API
+contenuto di risposta
 
 
 ### public class PreauthorizeRequest {#androidpreauthorizerequest}
@@ -62,7 +63,7 @@ In caso di errore imprevisto (ad esempio, problema di rete, endpoint di autorizz
     ///
 ```
 
-**setResources(List\ pubblico di Builder&lt;string> resources)**
+**risorse setResources(List\&lt;String\> di Public Builder)**
 
 ```
     ///
@@ -84,8 +85,8 @@ In caso di errore imprevisto (ad esempio, problema di rete, endpoint di autorizz
 ```
 
 
-**public Builder disableFeatures(Set\&lt;preauthorizerequest.feature>
-)**
+**public Builder disableFeatures(Set\&lt;PreauthorizeRequest.Feature\>
+caratteristiche)**
 
 ```
     ///
@@ -162,7 +163,7 @@ In caso di errore imprevisto (ad esempio, problema di rete, endpoint di autorizz
 ```
 
 
-**Stato classe** {#status}
+**stato classe** {#status}
 
 ```java
 ///
@@ -226,7 +227,7 @@ In caso di errore imprevisto (ad esempio, problema di rete, endpoint di autorizz
 
 </br>
 
->**class Decision** {#decision}
+>**decisione classe** {#decision}
 
 ```
     ///
