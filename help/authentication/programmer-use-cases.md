@@ -2,7 +2,7 @@
 title: Casi di utilizzo dei programmatori
 description: Casi di utilizzo dei programmatori
 exl-id: 51ca7e4f-b0d8-4e35-8398-2efb4879de2a
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: 189d0e5c83d1bc171c6ff3057f22dbf4055ea6b1
 workflow-type: tm+mt
 source-wordcount: '1654'
 ht-degree: 0%
@@ -131,11 +131,12 @@ Abilita l’adesione TVE per eventi speciali che potrebbero non essere risorse p
 **Priorità**- Medium
 
 Abilitazione della convalida del token multimediale prima di rilasciare il flusso video al lettore client.
-| Priorità  |                                                   Caso d’uso                                                  |                                                                                                                                                              Descrizione                                                                                                                                                             | Piattaforme | Note MVPD |
----------|-----------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------|----------|
-| Alta      | Programmatore Federated Player - Con autorizzazione a livello di pagina                                                 | Le API di autenticazione di Adobe Pass vengono eseguite in JavaScript nella pagina e il token viene passato al lettore. Il token può essere passato al servizio di convalida in due modi:                                 Ottieni parametro nell’URL del servizio di convalida                    Parametro URL passato nella stringa di query dell’URL del flusso                    API interfaccia esterna                    FlashVars                           |           |            |
-| Medium    | Programmatore Federated Player - Con Autorizzazione Interna Del Lettore                                            | Le API di autenticazione di Adobe Pass vengono eseguite in ActionScript nel SWF del lettore, in modo che il token sia disponibile per il lettore dal callback.                                                                                                                                                                                         |           |            |
-| Alta      | Lettore sindacato: ospitato sul portale MVPD con autorizzazione a livello di pagina utilizzando un iFrame per racchiudere il lettore  | Simile al lettore con autorizzazione a livello di pagina, ma con il wrapper della pagina del lettore iFrame inserito nel portale MVPD. L&#39;autenticazione deve avvenire separatamente nel portale MVPD.                                                                                                                                                    |           |                        |
+
+| Priorità | Caso d’uso | Descrizione | Piattaforme | Note MVPD |
+|---------|-----------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------|----------|
+| Alta | Programmatore Federated Player - Con autorizzazione a livello di pagina | Le API di autenticazione di Adobe Pass vengono eseguite in JavaScript nella pagina e il token viene passato al lettore. Il token può essere passato al servizio di convalida in due modi:                                 Ottieni parametro nell’URL del servizio di convalida                    Parametro URL passato nella stringa di query dell’URL del flusso                    API interfaccia esterna                    FlashVars |           |            |
+| Medium | Programmatore Federated Player - Con Autorizzazione Interna Del Lettore | Le API di autenticazione di Adobe Pass vengono eseguite in ActionScript nel SWF del lettore, in modo che il token sia disponibile per il lettore dal callback. |           |            |
+| Alta | Lettore sindacato: ospitato sul portale MVPD con autorizzazione a livello di pagina utilizzando un iFrame per racchiudere il lettore | Simile al lettore con autorizzazione a livello di pagina, ma con il wrapper della pagina del lettore iFrame inserito nel portale MVPD. L&#39;autenticazione deve avvenire separatamente nel portale MVPD. |           |                        |
 
 
 <!--
