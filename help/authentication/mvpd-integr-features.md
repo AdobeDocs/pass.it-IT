@@ -2,7 +2,7 @@
 title: Funzioni di integrazione MVPD
 description: Funzioni di integrazione MVPD
 exl-id: fcd65940-9a86-49b2-9d52-9031fb763338
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: e4567dd870790d11b9c5904d635fc00bdd1a23d2
 workflow-type: tm+mt
 source-wordcount: '1733'
 ht-degree: 2%
@@ -84,8 +84,8 @@ Le informazioni contenute nelle tabelle sono destinate a indirizzare il processo
 | 3,3 | Registrazione account in linea | MVPD consente di creare un nuovo account in linea con il flusso AuthN federato. | A |                                                                                                                                                           |
 | 3,4 | Guida e supporto in linea | MVPD fornisce un mezzo per fornire assistenza durante il flusso AuthN federato. | A |                                                                                                                                                           |
 | 3,5 | Autenticazione interna basata su modem | MVPD autentica automaticamente un dispositivo quando si trova sulla rete locale di un modello registrato (solo ISP MVPD). | B | Questa è una priorità più bassa perché è un&#39;ottimizzazione che molti non possono ancora supportare e introduce alcune sfide per la mitigazione delle frodi e il controllo dei genitori |
-Ora puoi importare il codice della tabella Markdown direttamente utilizzando la finestra di dialogo File/Incolla dati tabella...
 
+Ora puoi importare il codice della tabella Markdown direttamente utilizzando la finestra di dialogo File/Incolla dati tabella...
 
 
 ## 4. Funzioni di Analytics {#analytics-features}
