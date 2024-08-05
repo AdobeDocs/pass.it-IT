@@ -1,7 +1,7 @@
 ---
 title: Intestazione - AD-Service-Token
 description: REST API V2 - Intestazione - AD-Service-Token
-source-git-commit: 4d1ce1301d6baf7309e8ee52c43b02403aa2fab9
+source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
 workflow-type: tm+mt
 source-wordcount: '252'
 ht-degree: 1%
@@ -21,7 +21,7 @@ L&#39;intestazione della richiesta <b>AD-Service-Token</b> contiene l&#39;identi
 
 Questa intestazione è progettata per l’utilizzo in flussi abilitati per il Single Sign-On (SSO) utilizzando il metodo Service Token.
 
-Per ulteriori dettagli sui flussi abilitati per il Single Sign-On (SSO) che sfruttano il metodo Service Token, fare riferimento alla documentazione [Single Sign-On utilizzando i flussi di token di servizio](../../flows/single-sign-on-flows/rest-api-v2-single-sign-on-service-token-flows.md).
+Per ulteriori dettagli sui flussi abilitati per il Single Sign-On (SSO) che sfruttano il metodo Service Token, fare riferimento alla documentazione [Single Sign-On utilizzando i flussi di token di servizio](../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md).
 
 ## Sintassi {#syntax}
 

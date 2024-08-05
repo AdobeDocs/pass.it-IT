@@ -1,7 +1,7 @@
 ---
 title: Recuperare le decisioni di autorizzazione utilizzando mvpd specifico
 description: REST API V2 - Recuperare le decisioni di autorizzazione utilizzando mvpd specifico
-source-git-commit: 4598aaa0827b943de83a9e7d847227edf6b0b387
+source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
 workflow-type: tm+mt
 source-wordcount: '921'
 ht-degree: 1%
@@ -11,7 +11,7 @@ ht-degree: 1%
 
 # Recuperare le decisioni di autorizzazione utilizzando mvpd specifico {#retrieve-authorization-decisions-using-specific-mvpd}
 
->[!NOTE]
+>[!IMPORTANT]
 >
 > Il contenuto di questa pagina viene fornito solo a scopo informativo. L’utilizzo di questa API richiede una licenza corrente di Adobe. Non è consentito alcun uso non autorizzato.
 
@@ -115,7 +115,7 @@ ht-degree: 1%
       <td>
         La generazione del payload Single Sign-On per il metodo Platform Identity è descritta nella documentazione di <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Adobe-Subject-Token</a>.
         <br/><br/>
-        Per ulteriori dettagli sui flussi abilitati per il Single Sign-On che utilizzano un'identità di piattaforma, fare riferimento alla documentazione <a href="../../flows/single-sign-on-flows/rest-api-v2-single-sign-on-platform-identity-flows.md">Single Sign-On che utilizza flussi di identità di piattaforma</a>.
+        Per ulteriori dettagli sui flussi abilitati per il Single Sign-On che utilizzano un'identità di piattaforma, fare riferimento alla documentazione <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md">Single Sign-On che utilizza flussi di identità di piattaforma</a>.
       </td>
       <td>facoltativo</td>
    </tr>
@@ -124,7 +124,7 @@ ht-degree: 1%
       <td>
         La generazione del payload Single Sign-On per il metodo Service Token è descritta nella documentazione di <a href="../../appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md">AD-Service-Token</a>.
         <br/><br/>
-        Per ulteriori dettagli sui flussi abilitati per il Single Sign-On tramite un token di servizio, fare riferimento alla documentazione <a href="../../flows/single-sign-on-flows/rest-api-v2-single-sign-on-service-token-flows.md">Single Sign-On tramite flussi di token di servizio</a>.
+        Per ulteriori dettagli sui flussi abilitati per il Single Sign-On tramite un token di servizio, fare riferimento alla documentazione <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md">Single Sign-On tramite flussi di token di servizio</a>.
       </td>
       <td>facoltativo</td>
    </tr>
@@ -133,7 +133,7 @@ ht-degree: 1%
       <td>
         La generazione del payload Single Sign-On per il metodo Partner è descritta nella documentazione di <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md">AP-Partner-Framework-Status</a>.
         <br/><br/>
-        Per ulteriori dettagli sui flussi abilitati per il Single Sign-On tramite un partner, fare riferimento alla documentazione <a href="../../flows/single-sign-on-flows/rest-api-v2-single-sign-on-partner-flows.md">Single Sign-On tramite flussi partner</a>.</td>
+        Per ulteriori dettagli sui flussi abilitati per il Single Sign-On tramite un partner, fare riferimento alla documentazione <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md">Single Sign-On tramite flussi partner</a>.</td>
       <td>facoltativo</td>
    </tr>
    <tr>

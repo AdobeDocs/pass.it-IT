@@ -1,7 +1,7 @@
 ---
 title: Recupera il profilo utilizzando la risposta di autenticazione partner
 description: REST API V2 - Recuperare il profilo utilizzando la risposta di autenticazione del partner
-source-git-commit: 4598aaa0827b943de83a9e7d847227edf6b0b387
+source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
 workflow-type: tm+mt
 source-wordcount: '729'
 ht-degree: 1%
@@ -11,7 +11,7 @@ ht-degree: 1%
 
 # Recupera il profilo utilizzando la risposta di autenticazione partner {#retrieve-profile-using-partner-authentication-response}
 
->[!NOTE]
+>[!IMPORTANT]
 >
 > Il contenuto di questa pagina viene fornito solo a scopo informativo. L’utilizzo di questa API richiede una licenza corrente di Adobe. Non è consentito alcun uso non autorizzato.
 
@@ -108,7 +108,7 @@ ht-degree: 1%
       <td>
         La generazione del payload Single Sign-On per il metodo Partner è descritta nella documentazione di <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md">AP-Partner-Framework-Status</a>.
         <br/><br/>
-        Per ulteriori dettagli sui flussi abilitati per il Single Sign-On tramite un partner, fare riferimento alla documentazione <a href="../../flows/single-sign-on-flows/rest-api-v2-single-sign-on-partner-flows.md">Single Sign-On tramite flussi partner</a>.</td>
+        Per ulteriori dettagli sui flussi abilitati per il Single Sign-On tramite un partner, fare riferimento alla documentazione <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md">Single Sign-On tramite flussi partner</a>.</td>
       <td>facoltativo</td>
    </tr>
    <tr>

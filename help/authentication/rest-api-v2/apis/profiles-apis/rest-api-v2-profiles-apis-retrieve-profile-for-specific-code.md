@@ -1,15 +1,15 @@
 ---
-title: Recuperare i profili
-description: REST API V2 - Recupero profili
+title: Recupera profilo per codice specifico
+description: REST API V2 - Recupera il profilo per il codice specifico
 source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
 workflow-type: tm+mt
-source-wordcount: '823'
+source-wordcount: '570'
 ht-degree: 1%
 
 ---
 
 
-# Recuperare i profili {#retrieve-profiles}
+# Recupera profilo per codice specifico {#retrieve-profile-for-specific-code}
 
 >[!IMPORTANT]
 >
@@ -29,7 +29,7 @@ ht-degree: 1%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">percorso</td>
-      <td>/api/v2/{serviceProvider}/profiles</td>
+      <td>/api/v2/{serviceProvider}/profiles/{code}</td>
       <td></td>
    </tr>
    <tr>
@@ -48,6 +48,11 @@ ht-degree: 1%
       <td><i>obbligatorio</i></td>
    </tr>
    <tr>
+      <td style="background-color: #DEEBFF;">codice</td>
+      <td>Il codice di autenticazione ottenuto dopo la creazione della sessione di autenticazione sul dispositivo di streaming.</td>
+      <td><i>obbligatorio</i></td>
+   </tr>
+   <tr>
       <th style="background-color: #EFF2F7; width: 15%;">Intestazioni</th>
       <th style="background-color: #EFF2F7;"></th>
       <th style="background-color: #EFF2F7; width: 10%;"></th>
@@ -55,24 +60,6 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">Autorizzazione</td>
       <td>La generazione del payload del token Bearer è descritta nella documentazione di <a href="../../../dynamic-client-registration-api.md">Registrazione client dinamica</a>.</td>
-      <td><i>obbligatorio</i></td>
-   </tr>
-   <tr>
-      <td style="background-color: #DEEBFF;">AP-Device-Id</td>
-      <td>La generazione del payload dell'identificatore del dispositivo è descritta nella documentazione di <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-device-identifier.md">AP-Device-Identifier</a>.</td>
-      <td><i>obbligatorio</i></td>
-   </tr>
-   <tr>
-      <td style="background-color: #DEEBFF;">X-Device-Info</td>
-      <td>
-         La generazione del payload di informazioni sul dispositivo è descritta nella documentazione di <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a>.
-         <br/><br/>
-         Si consiglia vivamente di utilizzarlo sempre quando la piattaforma del dispositivo dell’applicazione consente di fornire esplicitamente valori validi.
-         <br/><br/>
-         Se fornito, il backend di autenticazione di Adobe Pass unirà in modo esplicito i valori con quelli estratti in modo implicito (per impostazione predefinita).
-         <br/><br/>
-         Se non viene fornito, il backend di autenticazione Adobe Pass utilizzerà i valori estratti in modo implicito (per impostazione predefinita).
-      </td>
       <td><i>obbligatorio</i></td>
    </tr>
    <tr>
@@ -84,32 +71,6 @@ ht-degree: 1%
          <br/><br/>
          Per le implementazioni client-server, l’indirizzo IP del dispositivo di streaming viene inviato in modo implicito.
       </td>
-      <td>facoltativo</td>
-   </tr>
-   <tr>
-      <td style="background-color: #DEEBFF;">Adobe-Subject-Token</td>
-      <td>
-        La generazione del payload Single Sign-On per il metodo Platform Identity è descritta nella documentazione di <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Adobe-Subject-Token</a>.
-        <br/><br/>
-        Per ulteriori dettagli sui flussi abilitati per il Single Sign-On che utilizzano un'identità di piattaforma, fare riferimento alla documentazione <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md">Single Sign-On che utilizza flussi di identità di piattaforma</a>.
-      </td>
-      <td>facoltativo</td>
-   </tr>
-   <tr>
-      <td style="background-color: #DEEBFF;">AD-Service-Token</td>
-      <td>
-        La generazione del payload Single Sign-On per il metodo Service Token è descritta nella documentazione di <a href="../../appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md">AD-Service-Token</a>.
-        <br/><br/>
-        Per ulteriori dettagli sui flussi abilitati per il Single Sign-On tramite un token di servizio, fare riferimento alla documentazione <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md">Single Sign-On tramite flussi di token di servizio</a>.
-      </td>
-      <td>facoltativo</td>
-   </tr>
-   <tr>
-      <td style="background-color: #DEEBFF;">AP-Partner-Framework-Status</td>
-      <td>
-        La generazione del payload Single Sign-On per il metodo Partner è descritta nella documentazione di <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md">AP-Partner-Framework-Status</a>.
-        <br/><br/>
-        Per ulteriori dettagli sui flussi abilitati per il Single Sign-On tramite un partner, fare riferimento alla documentazione <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md">Single Sign-On tramite flussi partner</a>.</td>
       <td>facoltativo</td>
    </tr>
    <tr>
@@ -248,17 +209,16 @@ ht-degree: 1%
                             Il profilo è stato creato in seguito a:
                             <ul>
                                 <li>Autenticazione di base</li>
-                                <li>Single sign-on con identità di piattaforma</li>
-                                <li>Single sign-on con token di servizio</li>
                             </ul>
                         </td>
                      </tr>
                      <tr>
-                        <td style="background-color: #DEEBFF;">Apple</td>
+                        <td style="background-color: #DEEBFF;">Adobe</td>
                         <td>
                             Il profilo è stato creato in seguito a:
                             <ul>
-                                <li>Single sign-on con Apple partner</li>
+                                <li>Accesso degradato</li>
+                                <li>Accesso temporaneo</li>
                             </ul>
                         </td>
                      </tr>
@@ -286,29 +246,20 @@ ht-degree: 1%
                         </td>
                      </tr>
                      <tr>
-                        <td style="background-color: #DEEBFF;">appleSSO</td>
+                        <td style="background-color: #DEEBFF;">degradato</td>
                         <td>
                             Il profilo è stato creato in seguito a:
                             <ul>
-                                <li>Single sign-on con Apple partner</li>
+                                <li>Accesso degradato</li>
                             </ul>
                         </td>
                      </tr>
                      <tr>
-                        <td style="background-color: #DEEBFF;">platformSSO</td>
+                        <td style="background-color: #DEEBFF;">temporaneo</td>
                         <td>
                             Il profilo è stato creato in seguito a:
                             <ul>
-                                <li>Single sign-on con identità di piattaforma</li>
-                            </ul>
-                        </td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">serviceTokenSSO</td>
-                        <td>
-                            Il profilo è stato creato in seguito a:
-                            <ul>
-                                <li>Single sign-on con token di servizio</li>
+                                <li>Accesso temporaneo</li>
                             </ul>
                         </td>
                      </tr>
@@ -371,20 +322,19 @@ ht-degree: 1%
 
 ## Esempi {#samples}
 
-### 1. Recupera tutti i profili autenticati esistenti e validi ottenuti tramite autenticazione di base
+### 1. Recupera i profili autenticati esistenti e validi su un dispositivo secondario dopo aver eseguito un’autenticazione di base
 
 >[!BEGINTABS]
 
 >[!TAB Richiesta]
 
 ```JSON
-GET /api/v2/REF30/profiles
+GET /api/v2/REF30/profiles/Cablevision/XTC98W
  
 Authorization: Bearer ....
 AP-Device-Identifier: fingerprint YmEyM2QxNDEtZDcxNS01NjFjLTk0ZjQtZTllNGM5NjZiMWVi
 X-Device-Info ....
 Accept: application/json
-User-Agent: Mozilla/5.0 (Apple TV; U; CPU AppleTV5,3 OS 14.5 like Mac OS X; en_US)
 ```
 
 >[!TAB Risposta]
@@ -416,148 +366,10 @@ Content-Type: application/json; charset=utf-8
                 "parental-controls" : {
                     "value" : BASE64_value_parental-controls,
                     "state" : "plain"
-                }          
-            }
-        },
-        "Spectrum" : {
-            "notBefore" : 1623943955,
-            "notAfter" : 1623951155,
-            "issuer" : "Spectrum",
-            "type" : "regular",
-            "attributes" : {
-                "userId" : {
-                    "value" : "BASE64_value_userId",
-                    "state" : "plain"
                 }
             }
         }
      }
-}
-```
-
->[!ENDTABS]
-
-### 2. Recupera tutti i profili autenticati esistenti e validi, inclusi quelli ottenuti tramite l’autenticazione single sign-on utilizzando il metodo Service Token
-
->[!BEGINTABS]
-
->[!TAB Richiesta]
-
-```JSON
-GET /api/v2/REF30/profiles
- 
-Authorization: Bearer ....
-AP-Device-Identifier: fingerprint YmEyM2QxNDEtZDcxNS01NjFjLTk0ZjQtZTllNGM5NjZiMWVi
-X-Device-Info ....
-AD-Service-Token : eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJkZDNmYWIyN2NmMjg0ZmU2ZWU0ZDY3ZmExZjY4MzE3YyIsImlzcyI6IkFkb2JlIiw.....
-Accept: application/json
-User-Agent: Mozilla/5.0 (Apple TV; U; CPU AppleTV5,3 OS 14.5 like Mac OS X; en_US)
-```
-
->[!TAB Risposta]
-
-```JSON
-HTTP/1.1 200 OK
-Content-Type: application/json; charset=utf-8
-
-{
-   "profiles": {
-      "AdobeShibboleth": {
-         "notBefore": 1748073636999,
-         "notAfter": 1748105173000,
-         "issuer": "AdobeShibboleth",
-         "type": "serviceTokenSSO",
-         "attributes": {
-            "upstreamUserID": {
-               "value": "AAdzZWNyZXQxydCkywfPBl0KExk8OWhdbUBVDDJBttfKD7RAcRlc32Pbuwd1...",
-               "state": "plain"
-            },
-            "userID": {
-               "value": "AAdzZWNyZXQxydCkywfPBl0KExk8OWhdbUBVDDJBttfKD7RAcRlc32Pbuwd14aTV....",
-               "state": "plain"
-            },
-            "mvpd": {
-               "value": "AdobeShibboleth",
-               "state": "plain"
-            }
-         }
-      },
-      "Spectrum": {
-         "notBefore": 1623943955,
-         "notAfter": 1623951155,
-         "issuer": "Spectrum",
-         "type": "regular",
-         "attributes": {
-            "userId": {
-               "value": "BASE64_value_userId",
-               "state": "plain"
-            }
-         }
-      }
-   }
-}
-```
-
->[!ENDTABS]
-
-### 3. Recupera tutti i profili autenticati esistenti e validi, inclusi quelli ottenuti tramite l’autenticazione single sign-on utilizzando il metodo Platform Identity
-
->[!BEGINTABS]
-
->[!TAB Richiesta]
-
-```JSON
-GET /api/v2/REF30/profiles
- 
-Authorization: Bearer ....
-AP-Device-Identifier: fingerprint YmEyM2QxNDEtZDcxNS01NjFjLTk0ZjQtZTllNGM5NjZiMWVi
-X-Device-Info ....
-Adobe-Subject-Token : eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIyMmM4MDU1MjEzMDIwYzhmZGYzOGZkMTI1YWViMzUzYSIsImlzcyI6....
-Accept: application/json
-User-Agent: Mozilla/5.0 (Apple TV; U; CPU AppleTV5,3 OS 14.5 like Mac OS X; en_US)
-```
-
->[!TAB Risposta]
-
-```JSON
-HTTP/1.1 200 OK
-Content-Type: application/json; charset=utf-8    
- 
-{
-   "profiles": {
-      "AdobePass_SMI": {
-         "notBefore": 1724337476000,
-         "notAfter": 1724345252000,
-         "issuer": "AdobePass_SMI",
-         "type": "platformSSO",
-         "attributes": {
-            "upstreamUserID": {
-               "value": "38524bdc3d1caac0b3e139003ea0954e15ad9648",
-               "state": "plain"
-            },
-            "userID": {
-               "value": "38524bdc3d1caac0b3e139003ea0954e15ad9648",
-               "state": "plain"
-            },
-            "mvpd": {
-               "value": "AdobePass_SMI",
-               "state": "plain"
-            }
-         }
-      },
-      "Cablevision": {
-         "notBefore": 1623943955,
-         "notAfter": 1623951155,
-         "issuer": "Spectrum",
-         "type": "regular",
-         "attributes": {
-            "userId": {
-               "value": "BASE64_value_userId",
-               "state": "plain"
-            }
-         }
-      }
-   }
 }
 ```
 

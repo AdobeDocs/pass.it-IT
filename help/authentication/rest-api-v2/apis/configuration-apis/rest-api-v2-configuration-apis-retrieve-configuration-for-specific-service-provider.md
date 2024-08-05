@@ -1,7 +1,7 @@
 ---
 title: Recupera la configurazione per un provider di servizi specifico
 description: 'REST API V2: recupero della configurazione per un provider di servizi specifico'
-source-git-commit: 4598aaa0827b943de83a9e7d847227edf6b0b387
+source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
 workflow-type: tm+mt
 source-wordcount: '521'
 ht-degree: 2%
@@ -11,7 +11,7 @@ ht-degree: 2%
 
 # Recupera la configurazione per un provider di servizi specifico {#retrieve-configuration-for-specific-service-provider}
 
->[!NOTE]
+>[!IMPORTANT]
 >
 > Il contenuto di questa pagina viene fornito solo a scopo informativo. L’utilizzo di questa API richiede una licenza corrente di Adobe. Non è consentito alcun uso non autorizzato.
 

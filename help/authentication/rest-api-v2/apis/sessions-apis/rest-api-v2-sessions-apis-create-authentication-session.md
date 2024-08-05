@@ -1,7 +1,7 @@
 ---
 title: Crea sessione di autenticazione
 description: REST API V2 - Crea sessione di autenticazione
-source-git-commit: 4598aaa0827b943de83a9e7d847227edf6b0b387
+source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
 workflow-type: tm+mt
 source-wordcount: '966'
 ht-degree: 1%
@@ -11,7 +11,7 @@ ht-degree: 1%
 
 # Crea sessione di autenticazione {#create-authentication-session}
 
->[!NOTE]
+>[!IMPORTANT]
 >
 > Il contenuto di questa pagina viene fornito solo a scopo informativo. L’utilizzo di questa API richiede una licenza corrente di Adobe. Non è consentito alcun uso non autorizzato.
 
@@ -64,11 +64,9 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">domainName</td>
       <td>
-        Dominio di origine dell'applicazione che esegue l'accesso MVPD.
-        <br/><br/>
-        Se la piattaforma del dispositivo di streaming presenta limitazioni nell’offerta di un valore, un’applicazione dovrà riprendere la sessione di autenticazione e fornire un valore valido.
+        Dominio di origine dell'applicazione che esegue il login MVPD.        <br/><br/>Se la piattaforma di dispositivo di streaming presenta limitazioni nel fornire un valore, un applicazione dovrà riprendere la sessione di autenticazione e fornire un valore valido.
       </td>
-      <td><i>obbligatorio</i></td>
+      <td><i>Obbligatorio</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">redirectUrl</td>
@@ -79,7 +77,7 @@ ht-degree: 1%
         <br/><br/>
         Se la piattaforma del dispositivo di streaming presenta limitazioni nell’offerta di un valore, un’applicazione dovrà riprendere la sessione di autenticazione e fornire un valore valido.
         </td>
-      <td><i>obbligatorio</i></td>
+      <td><i>Obbligatorio</i></td>
    </tr>
    <tr>
       <th style="background-color: #EFF2F7; width: 15%;">Intestazioni</th>
@@ -88,8 +86,8 @@ ht-degree: 1%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Autorizzazione</td>
-      <td>La generazione del payload del token Bearer è descritta nella documentazione di <a href="../../../dynamic-client-registration-api.md">Registrazione client dinamica</a>.</td>
-      <td><i>obbligatorio</i></td>
+      <td>La generazione del payload del token portatore è descritta nella documentazione relativa alla <a href="../../../dynamic-client-registration-api.md">registrazione</a> dinamica dei client.</td>
+      <td><i>Obbligatorio</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Content-Type</td>
@@ -134,7 +132,7 @@ ht-degree: 1%
       <td>
         La generazione del payload Single Sign-On per il metodo Platform Identity è descritta nella documentazione di <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Adobe-Subject-Token</a>.
         <br/><br/>
-        Per ulteriori dettagli sui flussi abilitati per il Single Sign-On che utilizzano un'identità di piattaforma, fare riferimento alla documentazione <a href="../../flows/single-sign-on-flows/rest-api-v2-single-sign-on-platform-identity-flows.md">Single Sign-On che utilizza flussi di identità di piattaforma</a>.
+        Per ulteriori dettagli sui flussi abilitati per il Single Sign-On che utilizzano un'identità di piattaforma, fare riferimento alla documentazione <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md">Single Sign-On che utilizza flussi di identità di piattaforma</a>.
       </td>
       <td>facoltativo</td>
    </tr>
@@ -143,7 +141,7 @@ ht-degree: 1%
       <td>
         La generazione del payload Single Sign-On per il metodo Service Token è descritta nella documentazione di <a href="../../appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md">AD-Service-Token</a>.
         <br/><br/>
-        Per ulteriori dettagli sui flussi abilitati per il Single Sign-On tramite un token di servizio, fare riferimento alla documentazione <a href="../../flows/single-sign-on-flows/rest-api-v2-single-sign-on-service-token-flows.md">Single Sign-On tramite flussi di token di servizio</a>.
+        Per ulteriori dettagli sui flussi abilitati per il Single Sign-On tramite un token di servizio, fare riferimento alla documentazione <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md">Single Sign-On tramite flussi di token di servizio</a>.
       <td>facoltativo</td>
    </tr>
    <tr>
@@ -207,7 +205,7 @@ ht-degree: 1%
    </tr>
 </table>
 
-### Completato {#success}
+### Successo {#success}
 
 <table>
    <tr>
@@ -222,8 +220,8 @@ ht-degree: 1%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Content-Type</td>
-      <td>application/json</td>
-      <td><i>obbligatorio</i></td>
+      <td>applicazione/json</td>
+      <td><i>Obbligatorio</i></td>
    </tr>
    <tr>
       <th style="background-color: #EFF2F7; width: 15%;">Corpo</th>
@@ -269,9 +267,7 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">actionType</td>
                <td>
-                  Tipo di interazione che il dispositivo di streaming deve eseguire per continuare il flusso con l’azione specificata dall’attributo "actionName".
-                  <br/><br/>
-                  I valori possibili sono:
+                  Il tipo di interazione che il flusso dispositivo deve eseguire per continuare il flusso con l'azione specificata dall'attributo 'actionName'.                  <br/><br/>I valori possibili sono:
                   <table>
                      <tr>
                         <th style="background-color: #EFF2F7; width: 30%;">Valore</th>
@@ -279,7 +275,7 @@ ht-degree: 1%
                      </tr>
                      <tr>
                         <td style="background-color: #DEEBFF;">diretto</td>
-                        <td>Il flusso continua con una chiamata diretta all’URL fornito tramite un client HTTP disponibile per l’implementazione del client.</td>
+                        <td>Il flusso continua con una chiamata diretta al URL fornito utilizzando un client HTTP disponibile per il client implementazione.</td>
                      </tr>
                      <tr>
                         <td style="background-color: #DEEBFF;">interattivo</td>
@@ -353,9 +349,9 @@ ht-degree: 1%
    </tr>
 </table>
 
-## Esempi {#samples}
+## Campioni {#samples}
 
-### 1. Crea una sessione di autenticazione fornendo al tempo stesso i valori per tutti i parametri richiesti
+### 1. Crea sessione di autenticazione fornendo i valori per tutti i parametri richiesti
 
 >[!BEGINTABS]
 
