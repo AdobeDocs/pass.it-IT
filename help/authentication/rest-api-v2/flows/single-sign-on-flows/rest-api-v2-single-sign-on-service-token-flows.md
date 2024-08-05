@@ -1,15 +1,19 @@
 ---
 title: Single Sign-On - Token di servizio - Flussi
 description: REST API V2 - Single Sign-On - Token di servizio - Flussi
-source-git-commit: c3aa2a24b242669ce0818b95ec34de2adec8001b
+source-git-commit: 4d1ce1301d6baf7309e8ee52c43b02403aa2fab9
 workflow-type: tm+mt
-source-wordcount: '1811'
+source-wordcount: '1837'
 ht-degree: 0%
 
 ---
 
 
 # Single sign-on con flussi di token di servizio{#single-sign-on-service-token-full-flows}
+
+>[!NOTE]
+>
+> Il contenuto di questa pagina viene fornito solo a scopo informativo. L’utilizzo di questa API richiede una licenza corrente di Adobe. Non è consentito alcun uso non autorizzato.
 
 Il metodo Service Token consente a più applicazioni di utilizzare un identificatore utente univoco per ottenere un Single Sign-On (SSO) su più dispositivi e piattaforme quando si utilizzano i servizi Adobe Pass.
 

@@ -1,15 +1,19 @@
 ---
 title: Autorizzazione di base - Applicazione principale - Flusso
 description: REST API V2 - Autorizzazione di base - Applicazione principale - Flusso
-source-git-commit: c3aa2a24b242669ce0818b95ec34de2adec8001b
+source-git-commit: 4d1ce1301d6baf7309e8ee52c43b02403aa2fab9
 workflow-type: tm+mt
-source-wordcount: '566'
+source-wordcount: '592'
 ht-degree: 0%
 
 ---
 
 
 # Flusso di autorizzazione di base eseguito nell&#39;applicazione principale {#basic-authorization-flow-performed-within-primary-application}
+
+>[!NOTE]
+>
+> Il contenuto di questa pagina viene fornito solo a scopo informativo. L’utilizzo di questa API richiede una licenza corrente di Adobe. Non è consentito alcun uso non autorizzato.
 
 Il **flusso di autorizzazione** all&#39;interno del diritto di autenticazione di Adobe Pass consente all&#39;applicazione di streaming di determinare se un MVPD consente o nega la richiesta dell&#39;utente di inviare contenuti in streaming. Se la decisione è `Permit`, la risposta include un token multimediale. Il server di Adobe Pass firma il token multimediale e consente all’applicazione di streaming di utilizzare la libreria di verificatori del token multimediale per verificarne l’autenticità prima che il flusso venga rilasciato.
 

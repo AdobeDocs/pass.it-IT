@@ -1,15 +1,19 @@
 ---
 title: Intestazione - Adobe-Subject-Token
 description: REST API V2 - Intestazione - Adobe-Subject-Token
-source-git-commit: c3aa2a24b242669ce0818b95ec34de2adec8001b
+source-git-commit: 4d1ce1301d6baf7309e8ee52c43b02403aa2fab9
 workflow-type: tm+mt
-source-wordcount: '130'
+source-wordcount: '156'
 ht-degree: 1%
 
 ---
 
 
 # Intestazione - Adobe-Subject-Token {#header-adobe-subject-token}
+
+>[!NOTE]
+>
+> Il contenuto di questa pagina viene fornito solo a scopo informativo. L’utilizzo di questa API richiede una licenza corrente di Adobe. Non è consentito alcun uso non autorizzato.
 
 ## Panoramica {#overview}
 
