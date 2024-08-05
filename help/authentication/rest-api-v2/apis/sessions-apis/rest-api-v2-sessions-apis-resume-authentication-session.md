@@ -1,7 +1,7 @@
 ---
 title: Riprendi sessione di autenticazione
 description: REST API V2 - Riprendi sessione di autenticazione
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+source-git-commit: 4afd8492c77fdceae3c2504ba392fbcfc0979b22
 workflow-type: tm+mt
 source-wordcount: '755'
 ht-degree: 1%
@@ -11,7 +11,7 @@ ht-degree: 1%
 
 # Riprendi sessione di autenticazione {#resume-authentication-session}
 
->[!NOTE]
+>[!IMPORTANT]
 >
 > Il contenuto di questa pagina viene fornito solo a scopo informativo. L’utilizzo di questa API richiede una licenza corrente di Adobe. Non è consentito alcun uso non autorizzato.
 

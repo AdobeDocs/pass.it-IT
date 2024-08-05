@@ -1,7 +1,7 @@
 ---
 title: Crea sessione di autenticazione
 description: REST API V2 - Crea sessione di autenticazione
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+source-git-commit: 4afd8492c77fdceae3c2504ba392fbcfc0979b22
 workflow-type: tm+mt
 source-wordcount: '966'
 ht-degree: 1%
@@ -13,19 +13,19 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
-> Il contenuto di questa pagina viene fornito solo a scopo informativo. L’utilizzo di questa API richiede una licenza corrente di Adobe. Non è consentito alcun uso non autorizzato.
+>Il contenuto di questa pagina viene fornito solo a scopo informativo. L’utilizzo di questa API richiede una licenza corrente di Adobe. Non è consentito alcun uso non autorizzato.
 
 >[!IMPORTANT]
 >
-> L&#39;implementazione REST API V2 è limitata dalla documentazione del [meccanismo di limitazione](/help/authentication/throttling-mechanism.md).
+>L&#39;implementazione REST API V2 è limitata dalla documentazione del [meccanismo di limitazione](/help/authentication/throttling-mechanism.md).
 
 ## Richiesta {#request}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">HTTP</th>
+      <th style="background-color: #EFF2F7;">HTTP</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">percorso</td>
@@ -38,9 +38,9 @@ ht-degree: 1%
       <td></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Parametri percorso</th>
+      <th style="background-color: #EFF2F7;">Parametri percorso</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">serviceProvider</td>
@@ -48,9 +48,9 @@ ht-degree: 1%
       <td><i>obbligatorio</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Parametri corpo</th>
+      <th style="background-color: #EFF2F7;">Parametri corpo</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">mvpd</td>
@@ -64,9 +64,11 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">domainName</td>
       <td>
-        Dominio di origine dell'applicazione che esegue il login MVPD.        <br/><br/>Se la piattaforma di dispositivo di streaming presenta limitazioni nel fornire un valore, un applicazione dovrà riprendere la sessione di autenticazione e fornire un valore valido.
+        Dominio di origine dell'applicazione che esegue l'accesso MVPD.
+        <br/><br/>
+        Se la piattaforma del dispositivo di streaming presenta limitazioni nell’offerta di un valore, un’applicazione dovrà riprendere la sessione di autenticazione e fornire un valore valido.
       </td>
-      <td><i>Obbligatorio</i></td>
+      <td><i>obbligatorio</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">redirectUrl</td>
@@ -77,17 +79,17 @@ ht-degree: 1%
         <br/><br/>
         Se la piattaforma del dispositivo di streaming presenta limitazioni nell’offerta di un valore, un’applicazione dovrà riprendere la sessione di autenticazione e fornire un valore valido.
         </td>
-      <td><i>Obbligatorio</i></td>
+      <td><i>obbligatorio</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Intestazioni</th>
+      <th style="background-color: #EFF2F7;">Intestazioni</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Autorizzazione</td>
-      <td>La generazione del payload del token portatore è descritta nella documentazione relativa alla <a href="../../../dynamic-client-registration-api.md">registrazione</a> dinamica dei client.</td>
-      <td><i>Obbligatorio</i></td>
+      <td>La generazione del payload del token Bearer è descritta nella documentazione di <a href="../../../dynamic-client-registration-api.md">Registrazione client dinamica</a>.</td>
+      <td><i>obbligatorio</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Content-Type</td>
@@ -162,10 +164,10 @@ ht-degree: 1%
 
 ## Risposta {#response}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 10%;">Codice</th>
-      <th style="background-color: #EFF2F7; width: 20%;">Testo</th>
+      <th style="background-color: #EFF2F7;">Codice</th>
+      <th style="background-color: #EFF2F7;">Testo</th>
       <th style="background-color: #EFF2F7;">Descrizione</th>
    </tr>
    <tr>
@@ -205,13 +207,13 @@ ht-degree: 1%
    </tr>
 </table>
 
-### Successo {#success}
+### Completato {#success}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Intestazioni</th>
+      <th style="background-color: #EFF2F7;">Intestazioni</th>
       <th style="background-color: #EFF2F7"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Stato</td>
@@ -220,23 +222,23 @@ ht-degree: 1%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Content-Type</td>
-      <td>applicazione/json</td>
-      <td><i>Obbligatorio</i></td>
+      <td>application/json</td>
+      <td><i>obbligatorio</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Corpo</th>
+      <th style="background-color: #EFF2F7;">Corpo</th>
       <th style="background-color: #EFF2F7"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"></td>
       <td>
          Oggetto JSON con i seguenti attributi:
-         <table>
+         <table style="table-layout:auto">
             <tr>
-               <th style="background-color: #EFF2F7; width: 20%;">Attributo</th>
+               <th style="background-color: #EFF2F7;">Attributo</th>
                <th style="background-color: #EFF2F7"></th>
-               <th style="background-color: #EFF2F7; width: 15%;"></th>
+               <th style="background-color: #EFF2F7;"></th>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">actionName</td>
@@ -244,9 +246,9 @@ ht-degree: 1%
                   Azione che il dispositivo di streaming deve eseguire per completare il flusso di autenticazione.
                   <br/><br/>
                   I valori possibili sono:
-                  <table>
+                  <table style="table-layout:auto">
                      <tr>
-                        <th style="background-color: #EFF2F7; width: 30%;">Valore</th>
+                        <th style="background-color: #EFF2F7;">Valore</th>
                         <th style="background-color: #EFF2F7;"></th>
                      </tr>
                      <tr>
@@ -267,15 +269,17 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">actionType</td>
                <td>
-                  Il tipo di interazione che il flusso dispositivo deve eseguire per continuare il flusso con l'azione specificata dall'attributo 'actionName'.                  <br/><br/>I valori possibili sono:
-                  <table>
+                  Tipo di interazione che il dispositivo di streaming deve eseguire per continuare il flusso con l’azione specificata dall’attributo "actionName".
+                  <br/><br/>
+                  I valori possibili sono:
+                  <table style="table-layout:auto">
                      <tr>
-                        <th style="background-color: #EFF2F7; width: 30%;">Valore</th>
+                        <th style="background-color: #EFF2F7;">Valore</th>
                         <th style="background-color: #EFF2F7;"></th>
                      </tr>
                      <tr>
                         <td style="background-color: #DEEBFF;">diretto</td>
-                        <td>Il flusso continua con una chiamata diretta al URL fornito utilizzando un client HTTP disponibile per il client implementazione.</td>
+                        <td>Il flusso continua con una chiamata diretta all’URL fornito tramite un client HTTP disponibile per l’implementazione del client.</td>
                      </tr>
                      <tr>
                         <td style="background-color: #DEEBFF;">interattivo</td>
@@ -321,11 +325,11 @@ ht-degree: 1%
 
 ### Errore {#error}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Intestazioni</th>
+      <th style="background-color: #EFF2F7;">Intestazioni</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Stato</td>
@@ -338,9 +342,9 @@ ht-degree: 1%
       <td><i>obbligatorio</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Corpo</th>
+      <th style="background-color: #EFF2F7;">Corpo</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">errore</td>
@@ -349,9 +353,9 @@ ht-degree: 1%
    </tr>
 </table>
 
-## Campioni {#samples}
+## Esempi {#samples}
 
-### 1. Crea sessione di autenticazione fornendo i valori per tutti i parametri richiesti
+### 1. Crea una sessione di autenticazione fornendo al tempo stesso i valori per tutti i parametri richiesti
 
 >[!BEGINTABS]
 
