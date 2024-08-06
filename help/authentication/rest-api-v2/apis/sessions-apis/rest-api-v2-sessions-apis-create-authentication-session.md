@@ -1,9 +1,9 @@
 ---
 title: Crea sessione di autenticazione
 description: REST API V2 - Crea sessione di autenticazione
-source-git-commit: 9c04ec17c848d6734dc2ca2d6357ed5fb49341ec
+source-git-commit: cf479236cbd43d5e4585bf0eac18a12dbe4bc6c4
 workflow-type: tm+mt
-source-wordcount: '967'
+source-wordcount: '965'
 ht-degree: 1%
 
 ---
@@ -246,24 +246,20 @@ ht-degree: 1%
                   Azione che il dispositivo di streaming deve eseguire per completare il flusso di autenticazione.
                   <br/><br/>
                   I valori possibili sono:
-                  <table style="table-layout:auto">
-                     <tr>
-                        <th style="background-color: #EFF2F7;">Valore</th>
-                        <th style="background-color: #EFF2F7;"></th>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">autenticare</td>
-                        <td>Il dispositivo di streaming o un altro dispositivo deve aprire l’URL fornito in un agente utente.</td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">ripresa</td>
-                        <td>Il dispositivo di streaming o un altro dispositivo deve fornire i parametri mancanti e riprendere la sessione di autenticazione utilizzando il codice.</td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">autorizzare</td>
-                        <td>Il dispositivo di streaming può procedere direttamente con i flussi decisionali.</td>
-                     </tr>
-                  </table>
+                  <ul>
+                    <li><b>autenticare</b></li>
+                    <ul>
+                        <li>Il dispositivo di streaming o un altro dispositivo deve aprire l’URL fornito in un agente utente.</li>
+                    </ul>
+                    <li><b>ripresa</b></li>
+                    <ul>
+                        <li>Il dispositivo di streaming o un altro dispositivo deve fornire i parametri mancanti e riprendere la sessione di autenticazione utilizzando il codice.</li>
+                    </ul>
+                    <li><b>autorizzare</b></li>
+                    <ul>
+                        <li>Il dispositivo di streaming può procedere direttamente con i flussi decisionali.</li>
+                    </ul>
+                  </ul>
                <td><i>obbligatorio</i></td>
             </tr>
             <tr>
@@ -272,20 +268,16 @@ ht-degree: 1%
                   Tipo di interazione che il dispositivo di streaming deve eseguire per continuare il flusso con l’azione specificata dall’attributo "actionName".
                   <br/><br/>
                   I valori possibili sono:
-                  <table style="table-layout:auto">
-                     <tr>
-                        <th style="background-color: #EFF2F7;">Valore</th>
-                        <th style="background-color: #EFF2F7;"></th>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">diretto</td>
-                        <td>Il flusso continua con una chiamata diretta all’URL fornito tramite un client HTTP disponibile per l’implementazione del client.</td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">interattivo</td>
-                        <td>Il flusso continua con la navigazione all’URL specificato tramite un agente utente.</td>
-                     </tr>
-                  </table>
+                  <ul>
+                    <li><b>interattivo</b></li>
+                    <ul>
+                        <li>Il flusso continua con la navigazione all’URL specificato tramite un agente utente.</li>
+                    </ul>
+                    <li><b>diretto</b></li>
+                    <ul>
+                        <li>Il flusso continua con una chiamata diretta all’URL fornito tramite un client HTTP disponibile per l’implementazione del client.</li>
+                    </ul>
+                  </ul>
                <td><i>obbligatorio</i></td>
             </tr>
             <tr>
