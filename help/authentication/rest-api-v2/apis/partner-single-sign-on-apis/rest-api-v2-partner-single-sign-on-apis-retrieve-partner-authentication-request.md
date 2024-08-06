@@ -1,10 +1,10 @@
 ---
 title: Recupera richiesta di autenticazione partner
 description: REST API V2 - Recupera richiesta di autenticazione partner
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+source-git-commit: dc9fab27c7eced2be5dd9f364ab8f2d64f8e4177
 workflow-type: tm+mt
-source-wordcount: '1104'
-ht-degree: 0%
+source-wordcount: '1092'
+ht-degree: 1%
 
 ---
 
@@ -21,11 +21,11 @@ ht-degree: 0%
 
 ## Richiesta {#request}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">HTTP</th>
+      <th style="background-color: #EFF2F7;">HTTP</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">percorso</td>
@@ -38,9 +38,9 @@ ht-degree: 0%
       <td></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Parametri percorso</th>
+      <th style="background-color: #EFF2F7;">Parametri percorso</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">serviceProvider</td>
@@ -53,9 +53,9 @@ ht-degree: 0%
       <td><i>obbligatorio</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Parametri corpo</th>
+      <th style="background-color: #EFF2F7;">Parametri corpo</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">domainName</td>
@@ -82,9 +82,9 @@ ht-degree: 0%
       <td><i>obbligatorio</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Intestazioni</th>
+      <th style="background-color: #EFF2F7;">Intestazioni</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Autorizzazione</td>
@@ -155,10 +155,10 @@ ht-degree: 0%
 
 ## Risposta {#response}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 10%;">Codice</th>
-      <th style="background-color: #EFF2F7; width: 20%;">Testo</th>
+      <th style="background-color: #EFF2F7;">Codice</th>
+      <th style="background-color: #EFF2F7;">Testo</th>
       <th style="background-color: #EFF2F7;">Descrizione</th>
    </tr>
    <tr>
@@ -200,11 +200,11 @@ ht-degree: 0%
 
 ### Completato {#success}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Intestazioni</th>
+      <th style="background-color: #EFF2F7;">Intestazioni</th>
       <th style="background-color: #EFF2F7"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Stato</td>
@@ -217,19 +217,19 @@ ht-degree: 0%
       <td><i>obbligatorio</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Corpo</th>
+      <th style="background-color: #EFF2F7;">Corpo</th>
       <th style="background-color: #EFF2F7"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"></td>
       <td>
          Oggetto JSON con i seguenti attributi:
-         <table>
+         <table style="table-layout:auto">
             <tr>
-               <th style="background-color: #EFF2F7; width: 20%;">Attributo</th>
+               <th style="background-color: #EFF2F7;">Attributo</th>
                <th style="background-color: #EFF2F7"></th>
-               <th style="background-color: #EFF2F7; width: 15%;"></th>
+               <th style="background-color: #EFF2F7;"></th>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">actionName</td>
@@ -237,36 +237,12 @@ ht-degree: 0%
                   Azione che il dispositivo di streaming deve eseguire per completare il flusso di autenticazione.
                   <br/><br/>
                   I valori possibili sono:
-                  <table>
-                     <tr>
-                        <th style="background-color: #EFF2F7; width: 30%;">Valore</th>
-                        <th style="background-color: #EFF2F7;"></th>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">partner_profile</td>
-                        <td>Il dispositivo di streaming può utilizzare la richiesta di autenticazione partner fornita per ottenere una risposta di autenticazione partner che può essere utilizzata per recuperare un profilo.</td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">autenticare</td>
-                        <td>
-                            Quando il flusso Single Sign-On del partner non riesce a procedere, il dispositivo di streaming può tornare al flusso di autenticazione di base.
-                            <br/><br/>
-                            Il dispositivo di streaming o un altro dispositivo deve aprire l’URL fornito in un agente utente.
-                        </td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">ripresa</td>
-                        <td>
-                            Quando il flusso Single Sign-On del partner non riesce a procedere, il dispositivo di streaming può tornare al flusso di autenticazione di base.
-                            <br/><br/>
-                            Il dispositivo di streaming o un altro dispositivo deve fornire i parametri mancanti e riprendere la sessione di autenticazione utilizzando il codice.
-                        </td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">autorizzare</td>
-                        <td>Il dispositivo di streaming può procedere direttamente con i flussi decisionali.</td>
-                     </tr>
-                  </table>
+                  <ul>
+                    <li><b>partner_profile</b><br/>Il dispositivo di streaming può utilizzare la richiesta di autenticazione partner fornita per ottenere una risposta di autenticazione partner che può essere utilizzata per recuperare un profilo.</li>
+                    <li><b>autentica</b><br/>Quando il flusso Single Sign-On del partner non riesce a procedere, il dispositivo di streaming può tornare al flusso di autenticazione di base.<br/>Il dispositivo di streaming o un altro dispositivo deve aprire l'URL specificato in un agente utente.</li>
+                    <li><b>riprendi</b><br/>Quando il flusso Single Sign-On del partner non riesce a continuare, il dispositivo di streaming può tornare al flusso di autenticazione di base.<br/>Il dispositivo di streaming o un altro dispositivo deve fornire i parametri mancanti e riprendere la sessione di autenticazione utilizzando il codice.</li>
+                    <li><b>autorizza</b><br/>Il dispositivo di streaming può procedere direttamente con i flussi decisionali.</li>
+                  </ul>
                <td><i>obbligatorio</i></td>
             </tr>
             <tr>
@@ -275,20 +251,10 @@ ht-degree: 0%
                   Tipo di interazione che il dispositivo di streaming deve eseguire per continuare il flusso con l’azione specificata dall’attributo "actionName".
                   <br/><br/>
                   I valori possibili sono:
-                  <table>
-                     <tr>
-                        <th style="background-color: #EFF2F7; width: 30%;">Valore</th>
-                        <th style="background-color: #EFF2F7;"></th>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">diretto</td>
-                        <td>Il flusso continua con una chiamata diretta all’URL fornito tramite un client HTTP disponibile per l’implementazione del client.</td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">interattivo</td>
-                        <td>Il flusso continua con la navigazione all’URL specificato tramite un agente utente.</td>
-                     </tr>
-                  </table>
+                  <ul>
+                    <li><b>interattivo</b><br/>Il flusso continua con la navigazione all'URL specificato tramite un agente utente.</li>
+                    <li><b>diretto</b><br/>Il flusso continua con una chiamata diretta all'URL fornito tramite un client HTTP disponibile per l'implementazione del client.</li>
+                  </ul>
                <td><i>obbligatorio</i></td>
             </tr>
             <tr>
@@ -322,38 +288,11 @@ ht-degree: 0%
                     Questo campo è presente quando il flusso Single Sign-On del partner può procedere.
                     <br/><br/>
                     Oggetto JSON con i seguenti attributi:
-                    <table>
-                        <tr>
-                            <th style="background-color: #EFF2F7; width: 30%;">Attributo</th>
-                            <th style="background-color: #EFF2F7;"></th>
-                        </tr>
-                        <tr>
-                            <td style="background-color: #DEEBFF;">tipo</td>
-                            <td>
-                                Indica il tipo di protocollo supportato da MVPD.
-                                <br/><br/>
-                                I valori possibili sono:
-                                <table>
-                                    <tr>
-                                        <th style="background-color: #EFF2F7; width: 30%;">Valore</th>
-                                        <th style="background-color: #EFF2F7;"></th>
-                                    </tr>
-                                    <tr>
-                                        <td style="background-color: #DEEBFF;">saml</td>
-                                        <td>MVPD supporta il protocollo SAML.</td>
-                                    </tr>
-                                </table>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="background-color: #DEEBFF;">richiesta</td>
-                            <td>La richiesta SAML.</td>
-                        </tr>
-                        <tr>
-                            <td style="background-color: #DEEBFF;">attributi</td>
-                            <td>Attributi della richiesta SAML.</td>
-                        </tr>
-                    </table>
+                    <ul>
+                        <li><b>tipo</b><br/>Indica il tipo di protocollo supportato da MVPD (solo SAML).</li>
+                        <li><b>richiesta</b><br/>La richiesta SAML.</li>
+                        <li><b>attributi</b><br/>Attributi della richiesta SAML.</li>
+                    </ul>
                </td>
                <td>facoltativo</td>
             </tr>
@@ -378,11 +317,11 @@ ht-degree: 0%
 
 ### Errore {#error}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Intestazioni</th>
+      <th style="background-color: #EFF2F7;">Intestazioni</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Stato</td>
@@ -395,9 +334,9 @@ ht-degree: 0%
       <td><i>obbligatorio</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Corpo</th>
+      <th style="background-color: #EFF2F7;">Corpo</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">errore</td>

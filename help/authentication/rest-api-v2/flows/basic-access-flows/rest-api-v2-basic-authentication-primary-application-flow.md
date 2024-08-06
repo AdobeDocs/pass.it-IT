@@ -1,7 +1,7 @@
 ---
 title: Autenticazione di base - Applicazione principale - Flusso
 description: REST API V2 - Autenticazione di base - Applicazione principale - Flusso
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+source-git-commit: dc9fab27c7eced2be5dd9f364ab8f2d64f8e4177
 workflow-type: tm+mt
 source-wordcount: '894'
 ht-degree: 0%
@@ -91,6 +91,8 @@ Segui i passaggi forniti per implementare il flusso di autenticazione di base es
    >
    > * I parametri e le intestazioni _required_ devono essere validi.
    > * L&#39;integrazione tra `serviceProvider` e `mvpd` specificati deve essere attiva.
+   > 
+   > <br/>
    > 
    > Se la convalida non riesce, verrà generata una risposta di errore che fornirà informazioni aggiuntive conformi alla documentazione di [Codici di errore avanzati](../../../enhanced-error-codes.md).
 

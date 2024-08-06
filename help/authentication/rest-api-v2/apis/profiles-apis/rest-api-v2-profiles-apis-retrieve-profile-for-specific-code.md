@@ -1,7 +1,7 @@
 ---
 title: Recupera profilo per codice specifico
 description: REST API V2 - Recupera il profilo per il codice specifico
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+source-git-commit: dc9fab27c7eced2be5dd9f364ab8f2d64f8e4177
 workflow-type: tm+mt
 source-wordcount: '570'
 ht-degree: 1%
@@ -21,11 +21,11 @@ ht-degree: 1%
 
 ## Richiesta {#request}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">HTTP</th>
+      <th style="background-color: #EFF2F7;">HTTP</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">percorso</td>
@@ -38,9 +38,9 @@ ht-degree: 1%
       <td></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Parametri percorso</th>
+      <th style="background-color: #EFF2F7;">Parametri percorso</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">serviceProvider</td>
@@ -53,9 +53,9 @@ ht-degree: 1%
       <td><i>obbligatorio</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Intestazioni</th>
+      <th style="background-color: #EFF2F7;">Intestazioni</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Autorizzazione</td>
@@ -91,10 +91,10 @@ ht-degree: 1%
 
 ## Risposta {#response}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 10%;">Codice</th>
-      <th style="background-color: #EFF2F7; width: 20%;">Testo</th>
+      <th style="background-color: #EFF2F7;">Codice</th>
+      <th style="background-color: #EFF2F7;">Testo</th>
       <th style="background-color: #EFF2F7;">Descrizione</th>
    </tr>
    <tr>
@@ -136,11 +136,11 @@ ht-degree: 1%
 
 ### Completato {#success}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Intestazioni</th>
+      <th style="background-color: #EFF2F7;">Intestazioni</th>
       <th style="background-color: #EFF2F7"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Stato</td>
@@ -153,9 +153,9 @@ ht-degree: 1%
       <td><i>obbligatorio</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Corpo</th>
+      <th style="background-color: #EFF2F7;">Corpo</th>
       <th style="background-color: #EFF2F7"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">profili</td>
@@ -163,11 +163,11 @@ ht-degree: 1%
         JSON contenente una mappa di coppie chiave-valore.
         <br/><br/>
         L’elemento chiave è definito dal seguente valore:
-        <table>
+        <table style="table-layout:auto">
             <tr>
-               <th style="background-color: #EFF2F7; width: 20%;">Valore</th>
+               <th style="background-color: #EFF2F7;">Valore</th>
                <th style="background-color: #EFF2F7"></th>
-               <th style="background-color: #EFF2F7; width: 15%;"></th>
+               <th style="background-color: #EFF2F7;"></th>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">mvpd</td>
@@ -176,11 +176,11 @@ ht-degree: 1%
             </tr>
          </table>
          L'elemento value è definito dai seguenti attributi:
-         <table>
+         <table style="table-layout:auto">
             <tr>
-               <th style="background-color: #EFF2F7; width: 20%;">Attributo</th>
+               <th style="background-color: #EFF2F7;">Attributo</th>
                <th style="background-color: #EFF2F7"></th>
-               <th style="background-color: #EFF2F7; width: 15%;"></th>
+               <th style="background-color: #EFF2F7;"></th>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notBefore</td>
@@ -198,31 +198,10 @@ ht-degree: 1%
                   Entità a cui appartiene il profilo.
                   <br/><br/>
                   I valori possibili sono:
-                  <table>
-                     <tr>
-                        <th style="background-color: #EFF2F7; width: 30%;">Valore</th>
-                        <th style="background-color: #EFF2F7;"></th>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">mvpd<br/><br/>ad esempio Spectrum, Cablevision e così via.</td>
-                        <td>
-                            Il profilo è stato creato in seguito a:
-                            <ul>
-                                <li>Autenticazione di base</li>
-                            </ul>
-                        </td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">Adobe</td>
-                        <td>
-                            Il profilo è stato creato in seguito a:
-                            <ul>
-                                <li>Accesso degradato</li>
-                                <li>Accesso temporaneo</li>
-                            </ul>
-                        </td>
-                     </tr>
-                  </table>
+                  <ul>
+                    <li><b>mvpd (ad esempio, Spectrum, Cablevision e così via)</b><br/>Il profilo è stato creato come risultato di: autenticazione di base.</li>
+                    <li><b>Adobe</b><br/>Il profilo è stato creato in seguito a: accesso danneggiato, accesso temporaneo.</li>
+                  </ul>
                <td><i>obbligatorio</i></td>
             </tr>
             <tr>
@@ -231,39 +210,11 @@ ht-degree: 1%
                   Tipo del profilo.
                   <br/><br/>
                   I valori possibili sono:
-                  <table>
-                     <tr>
-                        <th style="background-color: #EFF2F7; width: 30%;">Valore</th>
-                        <th style="background-color: #EFF2F7;"></th>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">normale</td>
-                        <td>
-                            Il profilo è stato creato in seguito a:
-                            <ul>
-                                <li>Autenticazione di base</li>
-                            </ul>
-                        </td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">degradato</td>
-                        <td>
-                            Il profilo è stato creato in seguito a:
-                            <ul>
-                                <li>Accesso degradato</li>
-                            </ul>
-                        </td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">temporaneo</td>
-                        <td>
-                            Il profilo è stato creato in seguito a:
-                            <ul>
-                                <li>Accesso temporaneo</li>
-                            </ul>
-                        </td>
-                     </tr>
-                  </table>
+                  <ul>
+                    <li><b>regolare</b><br/>Il profilo è stato creato come risultato di: autenticazione di base.</li>
+                    <li><b>danneggiato</b><br/>Il profilo è stato creato in seguito a: accesso danneggiato.</li>
+                    <li><b>temporaneo</b><br/>Il profilo è stato creato in seguito a: accesso temporaneo.</li>
+                  </ul>
                <td><i>obbligatorio</i></td>
             </tr>
             <tr>
@@ -292,11 +243,11 @@ ht-degree: 1%
 
 ### Errore {#error}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Intestazioni</th>
+      <th style="background-color: #EFF2F7;">Intestazioni</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Stato</td>
@@ -309,9 +260,9 @@ ht-degree: 1%
       <td><i>obbligatorio</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Corpo</th>
+      <th style="background-color: #EFF2F7;">Corpo</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">errore</td>

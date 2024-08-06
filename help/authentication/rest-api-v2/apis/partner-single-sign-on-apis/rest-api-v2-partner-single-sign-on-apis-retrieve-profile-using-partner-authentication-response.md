@@ -1,7 +1,7 @@
 ---
 title: Recupera il profilo utilizzando la risposta di autenticazione partner
 description: REST API V2 - Recuperare il profilo utilizzando la risposta di autenticazione del partner
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+source-git-commit: dc9fab27c7eced2be5dd9f364ab8f2d64f8e4177
 workflow-type: tm+mt
 source-wordcount: '729'
 ht-degree: 1%
@@ -21,11 +21,11 @@ ht-degree: 1%
 
 ## Richiesta {#request}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">HTTP</th>
+      <th style="background-color: #EFF2F7;">HTTP</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">percorso</td>
@@ -38,9 +38,9 @@ ht-degree: 1%
       <td></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Parametri percorso</th>
+      <th style="background-color: #EFF2F7;">Parametri percorso</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">serviceProvider</td>
@@ -53,9 +53,9 @@ ht-degree: 1%
       <td><i>obbligatorio</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Parametri corpo</th>
+      <th style="background-color: #EFF2F7;">Parametri corpo</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">SAMLResponse</td>
@@ -67,9 +67,9 @@ ht-degree: 1%
       <td><i>obbligatorio</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Intestazioni</th>
+      <th style="background-color: #EFF2F7;">Intestazioni</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Autorizzazione</td>
@@ -140,10 +140,10 @@ ht-degree: 1%
 
 ## Risposta {#response}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 10%;">Codice</th>
-      <th style="background-color: #EFF2F7; width: 20%;">Testo</th>
+      <th style="background-color: #EFF2F7;">Codice</th>
+      <th style="background-color: #EFF2F7;">Testo</th>
       <th style="background-color: #EFF2F7;">Descrizione</th>
    </tr>
    <tr>
@@ -185,11 +185,11 @@ ht-degree: 1%
 
 ### Completato {#success}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Intestazioni</th>
+      <th style="background-color: #EFF2F7;">Intestazioni</th>
       <th style="background-color: #EFF2F7"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Stato</td>
@@ -202,9 +202,9 @@ ht-degree: 1%
       <td><i>obbligatorio</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Corpo</th>
+      <th style="background-color: #EFF2F7;">Corpo</th>
       <th style="background-color: #EFF2F7"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">profili</td>
@@ -212,11 +212,11 @@ ht-degree: 1%
          JSON contenente una mappa di coppie chiave-valore.
          <br/><br/>
          L’elemento chiave è definito dal seguente valore:
-         <table>
+         <table style="table-layout:auto">
             <tr>
-               <th style="background-color: #EFF2F7; width: 20%;">Valore</th>
+               <th style="background-color: #EFF2F7;">Valore</th>
                <th style="background-color: #EFF2F7"></th>
-               <th style="background-color: #EFF2F7; width: 15%;"></th>
+               <th style="background-color: #EFF2F7;"></th>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">mvpd</td>
@@ -225,11 +225,11 @@ ht-degree: 1%
             </tr>
          </table>
          L'elemento value è definito dai seguenti attributi:
-         <table>
+         <table style="table-layout:auto">
             <tr>
-               <th style="background-color: #EFF2F7; width: 20%;">Attributo</th>
+               <th style="background-color: #EFF2F7;">Attributo</th>
                <th style="background-color: #EFF2F7"></th>
-               <th style="background-color: #EFF2F7; width: 15%;"></th>
+               <th style="background-color: #EFF2F7;"></th>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notBefore</td>
@@ -247,21 +247,9 @@ ht-degree: 1%
                   Entità a cui appartiene il profilo.
                   <br/><br/>
                   I valori possibili sono:
-                  <table>
-                     <tr>
-                        <th style="background-color: #EFF2F7; width: 30%;">Valore</th>
-                        <th style="background-color: #EFF2F7;"></th>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">Apple</td>
-                        <td>
-                            Il profilo è stato creato in seguito a:
-                            <ul>
-                                <li>Single sign-on con Apple partner</li>
-                            </ul>
-                        </td>
-                     </tr>
-                  </table>
+                  <ul>
+                    <li><b>Apple</b><br/>Il profilo è stato creato in seguito a: single sign-on con il partner Apple.</li>
+                  </ul>
                </td>
                <td><i>obbligatorio</i></td>
             </tr>
@@ -271,21 +259,9 @@ ht-degree: 1%
                   Tipo del profilo.
                   <br/><br/>
                   I valori possibili sono:
-                  <table>
-                     <tr>
-                        <th style="background-color: #EFF2F7; width: 30%;">Valore</th>
-                        <th style="background-color: #EFF2F7;"></th>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">appleSSO</td>
-                        <td>
-                            Il profilo è stato creato in seguito a:
-                            <ul>
-                                <li>Single sign-on con Apple partner</li>
-                            </ul>
-                        </td>
-                     </tr>
-                  </table>
+                  <ul>
+                    <li><b>appleSSO</b><br/>Il profilo è stato creato in seguito a: single sign-on con Apple partner.</li>
+                  </ul>
                </td>
                <td><i>obbligatorio</i></td>
             </tr>
@@ -315,11 +291,11 @@ ht-degree: 1%
 
 ### Errore {#error}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Intestazioni</th>
+      <th style="background-color: #EFF2F7;">Intestazioni</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Stato</td>
@@ -332,9 +308,9 @@ ht-degree: 1%
       <td><i>obbligatorio</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Corpo</th>
+      <th style="background-color: #EFF2F7;">Corpo</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">errore</td>

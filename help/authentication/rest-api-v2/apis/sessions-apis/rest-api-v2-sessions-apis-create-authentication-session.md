@@ -1,23 +1,23 @@
 ---
 title: Crea sessione di autenticazione
 description: REST API V2 - Crea sessione di autenticazione
-source-git-commit: cf479236cbd43d5e4585bf0eac18a12dbe4bc6c4
+source-git-commit: dc9fab27c7eced2be5dd9f364ab8f2d64f8e4177
 workflow-type: tm+mt
-source-wordcount: '965'
+source-wordcount: '964'
 ht-degree: 1%
 
 ---
 
 
-# Crea sessione di autenticazione - test {#create-authentication-session}
+# Crea sessione di autenticazione {#create-authentication-session}
 
 >[!IMPORTANT]
 >
->Il contenuto di questa pagina viene fornito solo a scopo informativo. L’utilizzo di questa API richiede una licenza corrente di Adobe. Non è consentito alcun uso non autorizzato.
+> Il contenuto di questa pagina viene fornito solo a scopo informativo. L’utilizzo di questa API richiede una licenza corrente di Adobe. Non è consentito alcun uso non autorizzato.
 
 >[!IMPORTANT]
 >
->L&#39;implementazione REST API V2 è limitata dalla documentazione del [meccanismo di limitazione](/help/authentication/throttling-mechanism.md).
+> L&#39;implementazione REST API V2 è limitata dalla documentazione del [meccanismo di limitazione](/help/authentication/throttling-mechanism.md).
 
 ## Richiesta {#request}
 
@@ -247,18 +247,9 @@ ht-degree: 1%
                   <br/><br/>
                   I valori possibili sono:
                   <ul>
-                    <li><b>autenticare</b></li>
-                    <ul>
-                        <li>Il dispositivo di streaming o un altro dispositivo deve aprire l’URL fornito in un agente utente.</li>
-                    </ul>
-                    <li><b>ripresa</b></li>
-                    <ul>
-                        <li>Il dispositivo di streaming o un altro dispositivo deve fornire i parametri mancanti e riprendere la sessione di autenticazione utilizzando il codice.</li>
-                    </ul>
-                    <li><b>autorizzare</b></li>
-                    <ul>
-                        <li>Il dispositivo di streaming può procedere direttamente con i flussi decisionali.</li>
-                    </ul>
+                    <li><b>autentica</b><br/>Il dispositivo di streaming o un altro dispositivo deve aprire l'URL specificato in un agente utente.</li>
+                    <li><b>riprendi</b><br/>Il dispositivo di streaming o un altro dispositivo deve fornire i parametri mancanti e riprendere la sessione di autenticazione utilizzando il codice.</li>
+                    <li><b>autorizza</b><br/>Il dispositivo di streaming può procedere direttamente con i flussi decisionali.</li>
                   </ul>
                <td><i>obbligatorio</i></td>
             </tr>
@@ -269,14 +260,8 @@ ht-degree: 1%
                   <br/><br/>
                   I valori possibili sono:
                   <ul>
-                    <li><b>interattivo</b></li>
-                    <ul>
-                        <li>Il flusso continua con la navigazione all’URL specificato tramite un agente utente.</li>
-                    </ul>
-                    <li><b>diretto</b></li>
-                    <ul>
-                        <li>Il flusso continua con una chiamata diretta all’URL fornito tramite un client HTTP disponibile per l’implementazione del client.</li>
-                    </ul>
+                    <li><b>interattivo</b><br/>Il flusso continua con la navigazione all'URL specificato tramite un agente utente.</li>
+                    <li><b>diretto</b><br/>Il flusso continua con una chiamata diretta all'URL fornito tramite un client HTTP disponibile per l'implementazione del client.</li>
                   </ul>
                <td><i>obbligatorio</i></td>
             </tr>

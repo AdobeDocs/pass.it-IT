@@ -1,9 +1,9 @@
 ---
 title: Avvia disconnessione per mvpd specifico
 description: REST API V2 - Avvia disconnessione per mvpd specifico
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+source-git-commit: dc9fab27c7eced2be5dd9f364ab8f2d64f8e4177
 workflow-type: tm+mt
-source-wordcount: '911'
+source-wordcount: '909'
 ht-degree: 1%
 
 ---
@@ -21,11 +21,11 @@ ht-degree: 1%
 
 ## Richiesta {#request}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">HTTP</th>
+      <th style="background-color: #EFF2F7;">HTTP</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">percorso</td>
@@ -38,9 +38,9 @@ ht-degree: 1%
       <td></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Parametri percorso</th>
+      <th style="background-color: #EFF2F7;">Parametri percorso</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">serviceProvider</td>
@@ -53,9 +53,9 @@ ht-degree: 1%
       <td><i>obbligatorio</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Parametri di query</th>
+      <th style="background-color: #EFF2F7;">Parametri di query</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">redirectUrl</td>
@@ -67,9 +67,9 @@ ht-degree: 1%
       <td><i>obbligatorio</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Intestazioni</th>
+      <th style="background-color: #EFF2F7;">Intestazioni</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Autorizzazione</td>
@@ -141,10 +141,10 @@ ht-degree: 1%
 
 ## Risposta {#response}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 10%;">Codice</th>
-      <th style="background-color: #EFF2F7; width: 20%;">Testo</th>
+      <th style="background-color: #EFF2F7;">Codice</th>
+      <th style="background-color: #EFF2F7;">Testo</th>
       <th style="background-color: #EFF2F7;">Descrizione</th>
    </tr>
    <tr>
@@ -186,11 +186,11 @@ ht-degree: 1%
 
 ### Completato {#success}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Intestazioni</th>
+      <th style="background-color: #EFF2F7;">Intestazioni</th>
       <th style="background-color: #EFF2F7"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Stato</td>
@@ -203,9 +203,9 @@ ht-degree: 1%
       <td><i>obbligatorio</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Corpo</th>
+      <th style="background-color: #EFF2F7;">Corpo</th>
       <th style="background-color: #EFF2F7"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">logoout</td>
@@ -213,11 +213,11 @@ ht-degree: 1%
          JSON contenente una mappa di coppie chiave-valore.
          <br/><br/>
          L’elemento chiave è definito dal seguente valore:
-         <table>
+         <table style="table-layout:auto">
             <tr>
-               <th style="background-color: #EFF2F7; width: 20%;">Valore</th>
+               <th style="background-color: #EFF2F7;">Valore</th>
                <th style="background-color: #EFF2F7"></th>
-               <th style="background-color: #EFF2F7; width: 15%;"></th>
+               <th style="background-color: #EFF2F7;"></th>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">mvpd</td>
@@ -225,11 +225,11 @@ ht-degree: 1%
                <td><i>obbligatorio</i></td>
          </table>
          L'elemento value è definito dai seguenti attributi:
-         <table>
+         <table style="table-layout:auto">
             <tr>
-               <th style="background-color: #EFF2F7; width: 20%;">Attributo</th>
+               <th style="background-color: #EFF2F7;">Attributo</th>
                <th style="background-color: #EFF2F7"></th>
-               <th style="background-color: #EFF2F7; width: 15%;"></th>
+               <th style="background-color: #EFF2F7;"></th>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">actionName</td>
@@ -237,47 +237,11 @@ ht-degree: 1%
                   Azione che il dispositivo di streaming deve eseguire per completare il flusso di logout.
                   <br/><br/>
                   I valori possibili sono:
-                  <table>
-                     <tr>
-                        <th style="background-color: #EFF2F7; width: 30%;">Valore</th>
-                        <th style="background-color: #EFF2F7;"></th>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">logout</td>
-                        <td>
-                            Il dispositivo di streaming deve aprire l’URL fornito in un agente utente.
-                            <br/><br/>
-                            Questa azione si applica ai seguenti scenari:
-                            <ul>
-                                <li>Disconnettersi da MVPD con un endpoint di disconnessione</li>
-                            </ul>
-                        </td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">completo</td>
-                        <td>
-                            Il dispositivo di streaming non deve eseguire alcuna azione successiva.
-                            <br/><br/>
-                            Questa azione si applica ai seguenti scenari:
-                            <ul>\
-                                <li>Disconnettersi da MVPD senza un endpoint di disconnessione (funzionalità di disconnessione fittizia)</li>
-                                <li>Disconnetti durante l'accesso ridotto</li>
-                                <li>Disconnetti durante l'accesso temporaneo</li>
-                            </ul>
-                        </td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">non valido</td>
-                        <td>
-                            Il dispositivo di streaming non deve eseguire alcuna azione successiva.
-                            <br/><br/>
-                            Questa azione si applica ai seguenti scenari:
-                            <ul>
-                                <li>Esci da MVPD quando non viene trovato alcun profilo valido</li>
-                            </ul>
-                        </td>
-                     </tr>
-                  </table>
+                  <ul>
+                    <li><b>logout</b><br/>Il dispositivo di streaming deve aprire l'URL specificato in un agente utente.<br/>Questa azione si applica ai seguenti scenari: disconnettersi da MVPD con un endpoint di disconnessione.</li>
+                    <li><b>complete</b><br/>Il dispositivo di streaming non deve eseguire alcuna azione successiva.<br/>Questa azione è valida per i seguenti scenari: disconnettersi da MVPD senza un endpoint di disconnessione (funzionalità di disconnessione fittizia), disconnettersi durante un accesso ridotto, disconnettersi durante un accesso temporaneo.</li>
+                    <li><b>non valido</b><br/>Il dispositivo di streaming non deve eseguire alcuna azione successiva.<br/>Questa azione si applica ai seguenti scenari: disconnettersi da MVPD quando non viene trovato alcun profilo valido.</li>
+                  </ul>  
                <td><i>obbligatorio</i></td>
             </tr>
             <tr>
@@ -286,31 +250,10 @@ ht-degree: 1%
                   Tipo di interazione che il dispositivo di streaming deve eseguire per continuare il flusso con l’azione specificata dall’attributo "actionName".
                   <br/><br/>
                   I valori possibili sono:
-                  <table>
-                     <tr>
-                        <th style="background-color: #EFF2F7; width: 30%;">Valore</th>
-                        <th style="background-color: #EFF2F7;"></th>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">interattivo</td>
-                        <td>
-                            Questo tipo si applica ai seguenti valori dell’attributo "actionName":
-                            <ul>
-                                <li>logout</li>
-                            </ul>
-                        </td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">nessuno</td>
-                        <td>
-                            Questo tipo si applica ai seguenti valori dell’attributo "actionName":
-                            <ul>
-                                <li>completo</li>
-                                <li>non valido</li>
-                            </ul>
-                        </td>
-                     </tr>
-                  </table>
+                  <ul>
+                    <li><b>interactive</b><br/>Questo tipo si applica ai seguenti valori dell'attributo "actionName": <b>logout</b>.</li>
+                    <li><b>none</b><br/>Questo tipo si applica ai seguenti valori dell'attributo "actionName": <b>complete</b>, <b>invalid</b>.</li>
+                  </ul>
                <td><i>obbligatorio</i></td>
             </tr>
             <tr>
@@ -325,8 +268,8 @@ ht-degree: 1%
                   <br/><br/>
                   Ciò non è presente per i seguenti valori dell’attributo "actionName":
                   <ul>
-                    <li>completo</li>
-                    <li>non valido</li>
+                    <li><b>completo</b></li>
+                    <li><b>non valido</b></li>
                   </ul>
                </td>
                <td>facoltativo</td>
@@ -338,11 +281,11 @@ ht-degree: 1%
 
 ### Errore {#error}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Intestazioni</th>
+      <th style="background-color: #EFF2F7;">Intestazioni</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Stato</td>
@@ -355,9 +298,9 @@ ht-degree: 1%
       <td><i>obbligatorio</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">Corpo</th>
+      <th style="background-color: #EFF2F7;">Corpo</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">errore</td>
