@@ -1,50 +1,60 @@
 ---
-title: API REST v2 - Flussi - Panoramica
-description: API REST v2 - Flussi - Panoramica
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+title: REST API V2 - API - Panoramica
+description: REST API V2 - API - Panoramica
+source-git-commit: c849882286c88d16a5652717d381700287c53277
 workflow-type: tm+mt
-source-wordcount: '114'
+source-wordcount: '184'
 ht-degree: 0%
 
 ---
 
 
-# Panoramica delle API REST V2 {#rest-api-v2-apis-overview}
+# REST API V2 - API - Panoramica {#rest-api-v2-apis-overview}
 
 >[!IMPORTANT]
 >
-> Il contenuto presente in questa pagina è fornito solo a scopo informativo. L&#39;utilizzo di questa API richiede una licenza valida da Adobe Systems. Non è consentito alcun uso non autorizzato.
+> Il contenuto di questa pagina viene fornito solo a scopo informativo. L’utilizzo di questa API richiede una licenza corrente di Adobe. Non è consentito alcun uso non autorizzato.
 
 >[!IMPORTANT]
 >
-> Il implementazione API REST V2 è limitato dalla documentazione relativa al meccanismo](/help/authentication/throttling-mechanism.md) di limitazione ([Throttling).
+> L&#39;implementazione REST API V2 è limitata dalla documentazione del [meccanismo di limitazione](/help/authentication/throttling-mechanism.md).
 
-## Configurazione {#rest-api-v2-apis-configuration}
+## Vuoi provare la nostra API REST V2?
 
-* [Recupera configurazione per provider di servizi specifico](configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md)
+Ora puoi esplorare l&#39;API REST per l&#39;autenticazione di Adobe Pass V2 tramite la nostra pagina dedicata al prodotto dal sito Web [Adobe Developer](https://developer.adobe.com/adobe-pass/).
 
-## Sessioni {#rest-api-v2-apis-sessions}
+Il nostro team dedicato di supporto è disponibile anche per aiutarti con qualsiasi domanda o assistenza tecnica di cui potresti aver bisogno.
+
+## REST API V2 - API {#rest-api-v2-apis}
+
+Per iniziare, visita la documentazione pubblica per ogni voce di [REST API V2 - API](./rest-api-v2-apis-overview.md) e [REST API V2 - Flussi](../flows/rest-api-v2-flows-overview.md).
+
+### Configurazione {#rest-api-v2-apis-configuration}
+
+* [Recupera la configurazione per un provider di servizi specifico](configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md)
+
+### Sessioni {#rest-api-v2-apis-sessions}
 
 * [Crea sessione di autenticazione](sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)
 * [Riprendi sessione di autenticazione](sessions-apis/rest-api-v2-sessions-apis-resume-authentication-session.md)
 * [Recupera sessione di autenticazione](sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md)
 
-## Profili {#rest-api-v2-apis-profiles}
+### Profili {#rest-api-v2-apis-profiles}
 
-* [Recupera profili](profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md)
+* [Recuperare i profili](profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md)
 * [Recupera profilo per mvpd specifico](profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)
 * [Recupera profilo per codice specifico](profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)
 
-## Decisioni {#rest-api-v2-apis-decisions}
+### Decisioni {#rest-api-v2-apis-decisions}
 
-* [Recupera le decisioni di autorizzazione utilizzando un mvpd specifico](decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)
-* [Recupera le decisioni di preautorizzazione utilizzando un mvpd specifico](decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)
+* [Recuperare le decisioni di autorizzazione utilizzando mvpd specifico](decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)
+* [Recuperare le decisioni di pre-autorizzazione utilizzando mvpd specifico](decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)
 
-## Logout {#rest-api-v2-apis-logout}
+### Disconnetti {#rest-api-v2-apis-logout}
 
-* [Avvia logout per mvpd specifico](logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md)
+* [Avvia disconnessione per mvpd specifico](logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md)
 
-## Partner Single Sign-On {#rest-api-v2-apis-partner-single-sign-on}
+### Single Sign-On partner {#rest-api-v2-apis-partner-single-sign-on}
 
-* [Recuperare partner richiesta di autenticazione](partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-partner-authentication-request.md)
-* [Recupera profilo utilizzando partner risposta di autenticazione](partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md)
+* [Recupera richiesta di autenticazione partner](partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-partner-authentication-request.md)
+* [Recupera il profilo utilizzando la risposta di autenticazione partner](partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md)

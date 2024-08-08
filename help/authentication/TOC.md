@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Autenticazione Adobe Pass
 user-guide-description: L’autenticazione Adobe Pass è una soluzione di gestione dei diritti per TV Everywhere, che fornisce un framework modulare per determinare se chi richiede l’accesso a una risorsa ne abbia diritto.
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+source-git-commit: c849882286c88d16a5652717d381700287c53277
 workflow-type: tm+mt
-source-wordcount: '1137'
+source-wordcount: '1142'
 ht-degree: 2%
 
 ---
@@ -61,6 +61,7 @@ ht-degree: 2%
             + [Crea sessione di autenticazione](./rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)
             + [Riprendi sessione di autenticazione](./rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-resume-authentication-session.md)
             + [Recupera sessione di autenticazione](./rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md)
+            + [Eseguire l’autenticazione nell’agente utente](./rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-perform-authentication-in-user-agent.md)
          + Profili {#rest-api-v2-profiles-apis}
             + [Recuperare i profili](./rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md)
             + [Recupera profilo per mvpd specifico](./rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)

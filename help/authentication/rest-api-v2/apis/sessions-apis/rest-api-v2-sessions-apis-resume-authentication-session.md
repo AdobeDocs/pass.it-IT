@@ -1,7 +1,7 @@
 ---
 title: Riprendi sessione di autenticazione
 description: REST API V2 - Riprendi sessione di autenticazione
-source-git-commit: dc9fab27c7eced2be5dd9f364ab8f2d64f8e4177
+source-git-commit: c849882286c88d16a5652717d381700287c53277
 workflow-type: tm+mt
 source-wordcount: '753'
 ht-degree: 1%
@@ -47,7 +47,7 @@ ht-degree: 1%
       <td>Identificatore univoco interno associato al provider di servizi durante il processo di onboarding.</td>
       <td><i>obbligatorio</i></td>
    </tr>
-    <tr>
+   <tr>
       <td style="background-color: #DEEBFF;">codice</td>
       <td>Il codice di autenticazione ottenuto dopo la creazione della sessione di autenticazione sul dispositivo di streaming.</td>
       <td><i>obbligatorio</i></td>

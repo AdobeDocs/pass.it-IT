@@ -1,9 +1,9 @@
 ---
 title: Autenticazione di base - Applicazione secondaria - Flusso
 description: REST API V2 - Autenticazione di base - Applicazione secondaria - Flusso
-source-git-commit: dc9fab27c7eced2be5dd9f364ab8f2d64f8e4177
+source-git-commit: c849882286c88d16a5652717d381700287c53277
 workflow-type: tm+mt
-source-wordcount: '1756'
+source-wordcount: '2000'
 ht-degree: 0%
 
 ---
@@ -109,7 +109,46 @@ Segui i passaggi forniti per implementare il flusso di autenticazione di base es
 
    Se il backend di Adobe Pass non identifica un profilo valido, l&#39;applicazione di streaming visualizza `code` che può essere utilizzato per riprendere la sessione di autenticazione all&#39;interno di un&#39;applicazione secondaria.
 
+1. **Convalida codice di autenticazione:** L&#39;applicazione secondaria convalida l&#39;utente fornito `code` per assicurarsi che possa procedere con l&#39;autenticazione MVPD nell&#39;agente utente.
+
+   >[!IMPORTANT]
+   >
+   > Per informazioni dettagliate su [Recuperare le informazioni sulla sessione di autenticazione](../../apis/sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md), consulta la documentazione API di:
+   >
+   > * Tutti i parametri _required_, come `serviceProvider` e `code`
+   > * Tutte le intestazioni _required_, come `Authorization`
+   > * Tutti i parametri e le intestazioni _optional_
+
+1. **Informazioni restituite sulla sessione di autenticazione:** La risposta dell&#39;endpoint Sessions contiene i dati seguenti:
+   * L&#39;attributo `existing` contiene i parametri esistenti già specificati.
+   * L&#39;attributo `missing` contiene i parametri mancanti che devono essere forniti per completare il flusso di autenticazione.
+
+   >[!IMPORTANT]
+   >
+   > Per informazioni dettagliate sulle informazioni fornite in una risposta di convalida della sessione, consultare la documentazione API [Recupera informazioni sulla sessione di autenticazione](../../apis/sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md).
+   >
+   > <br/>
+   >
+   > L’endpoint Sessions convalida i dati della richiesta per garantire che siano soddisfatte le condizioni di base:
+   >
+   > * I parametri e le intestazioni _required_ devono essere validi.
+   >
+   > <br/>
+   >
+   > Se la convalida non riesce, verrà generata una risposta di errore che fornirà informazioni aggiuntive conformi alla documentazione di [Codici di errore avanzati](../../../enhanced-error-codes.md).
+
+   >[!NOTE]
+   >
+   > Suggerimento: l&#39;applicazione secondaria può informare gli utenti che `code` utilizzato non è valido nel caso in cui una risposta di errore indichi una sessione di autenticazione mancante e consigliare loro di riprovare con una nuova sessione.
+
 1. **Apri URL nell&#39;agente utente:** L&#39;applicazione secondaria apre un agente utente per caricare `url` calcolato automaticamente, effettuando una richiesta all&#39;endpoint Authenticate. Questo flusso può includere diversi reindirizzamenti, che portano l’utente alla pagina di accesso MVPD e forniscono credenziali valide.
+
+   >[!IMPORTANT]
+   >
+   > Per informazioni dettagliate su [Eseguire l&#39;autenticazione nella documentazione API dell&#39;agente utente](../../apis/sessions-apis/rest-api-v2-sessions-apis-perform-authentication-in-user-agent.md):
+   >
+   > * Tutti i parametri _required_, come `serviceProvider` e `code`
+   > * Tutti i parametri e le intestazioni _optional_
 
 1. **Autenticazione MVPD completa:** Se il flusso di autenticazione ha esito positivo, l&#39;interazione dell&#39;agente utente salva un profilo regolare nel backend di Adobe Pass e raggiunge il `redirectUrl` fornito.
 
@@ -231,6 +270,10 @@ Segui i passaggi forniti per implementare il flusso di autenticazione di base es
    > <br/>
    > 
    > Se la convalida non riesce, verrà generata una risposta di errore che fornirà informazioni aggiuntive conformi alla documentazione di [Codici di errore avanzati](../../../enhanced-error-codes.md).
+
+   >[!NOTE]
+   >
+   > Suggerimento: l&#39;applicazione secondaria può informare gli utenti che `code` utilizzato non è valido nel caso in cui una risposta di errore indichi una sessione di autenticazione mancante e consigliare loro di riprovare a utilizzarne una nuova.
 
 1. **Indicare il profilo esistente:** La risposta dell&#39;endpoint Sessions contiene i dati seguenti:
    * L&#39;attributo `actionName` è impostato su &quot;authorize&quot;.
