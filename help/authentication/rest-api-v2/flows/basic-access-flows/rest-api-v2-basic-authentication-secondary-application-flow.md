@@ -1,7 +1,7 @@
 ---
 title: Autenticazione di base - Applicazione secondaria - Flusso
 description: REST API V2 - Autenticazione di base - Applicazione secondaria - Flusso
-source-git-commit: c849882286c88d16a5652717d381700287c53277
+source-git-commit: d59afc0384a1c3617143efcef4ab5fb1a323e511
 workflow-type: tm+mt
 source-wordcount: '2000'
 ht-degree: 0%
@@ -139,7 +139,7 @@ Segui i passaggi forniti per implementare il flusso di autenticazione di base es
 
    >[!NOTE]
    >
-   > Suggerimento: l&#39;applicazione secondaria può informare gli utenti che `code` utilizzato non è valido nel caso in cui una risposta di errore indichi una sessione di autenticazione mancante e consigliare loro di riprovare con una nuova sessione.
+   > Suggerimento: l&#39;applicazione secondaria può informare gli utenti che `code` utilizzato non è valido nel caso in cui una risposta di errore indichi una sessione di autenticazione mancante e consigliare loro di riprovare a utilizzarne una nuova.
 
 1. **Apri URL nell&#39;agente utente:** L&#39;applicazione secondaria apre un agente utente per caricare `url` calcolato automaticamente, effettuando una richiesta all&#39;endpoint Authenticate. Questo flusso può includere diversi reindirizzamenti, che portano l’utente alla pagina di accesso MVPD e forniscono credenziali valide.
 
