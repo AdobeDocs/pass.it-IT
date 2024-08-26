@@ -1,7 +1,7 @@
 ---
 title: Riprendi sessione di autenticazione
 description: REST API V2 - Riprendi sessione di autenticazione
-source-git-commit: d59afc0384a1c3617143efcef4ab5fb1a323e511
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
 source-wordcount: '753'
 ht-degree: 1%
@@ -93,7 +93,7 @@ ht-degree: 1%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Autorizzazione</td>
-      <td>La generazione del payload del token Bearer è descritta nella documentazione di <a href="../../../dynamic-client-registration-api.md">Registrazione client dinamica</a>.</td>
+      <td>La generazione del payload del token Bearer è descritta nella documentazione dell'intestazione <a href="../../appendix/headers/rest-api-v2-appendix-headers-authorization.md">Authorization</a>.</td>
       <td><i>obbligatorio</i></td>
    </tr>
    <tr>
@@ -158,7 +158,7 @@ ht-degree: 1%
       <td>401</td>
       <td>Non autorizzato</td>
       <td>
-        Il token di accesso non è valido, il client deve ottenere un nuovo token di accesso e riprovare. Per ulteriori dettagli, consulta la documentazione di <a href="../../../dynamic-client-registration-api.md">Registrazione client dinamica</a>.
+        Il token di accesso non è valido, il client deve ottenere un nuovo token di accesso e riprovare. Per ulteriori dettagli, consulta la documentazione <a href="../../../dcr-api/dynamic-client-registration-overview.md">Panoramica registrazione client dinamico</a>.
       </td>
    </tr>
    <tr>

@@ -2,18 +2,27 @@
 title: API di monitoraggio del servizio di adesione
 description: API di monitoraggio del servizio di adesione
 exl-id: a9572372-14a6-4caa-9ab6-4a6baababaa1
-source-git-commit: 1ad2a4e75cd64755ccbde8f3b208148b7d990d82
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
-source-wordcount: '2010'
+source-wordcount: '2070'
 ht-degree: 0%
 
 ---
 
 # API di monitoraggio del servizio di adesione {#entitlement-service-monitoring-api}
 
->[!NOTE]
+>[!IMPORTANT]
 >
 >Il contenuto di questa pagina viene fornito solo a scopo informativo. L’utilizzo di questa API richiede una licenza corrente di Adobe. Non è consentito alcun uso non autorizzato.
+
+>[!IMPORTANT]
+>
+> Prima di utilizzare l’API di degradazione, assicurati di soddisfare i seguenti prerequisiti:
+>
+> * Ottenere le credenziali del client come descritto nella [Documentazione API per il recupero delle credenziali del client](./dcr-api/apis/dynamic-client-registration-apis-retrieve-client-credentials.md).
+> * Ottenere il token di accesso come descritto nella documentazione API [Recuperare il token di accesso](./dcr-api/apis/dynamic-client-registration-apis-retrieve-access-token.md).
+>
+> Per ulteriori informazioni su come creare un&#39;applicazione registrata e scaricare l&#39;istruzione software, consultare la documentazione [Panoramica registrazione client dinamica](./dcr-api/dynamic-client-registration-overview.md).
 
 ## Panoramica API {#api-overview}
 

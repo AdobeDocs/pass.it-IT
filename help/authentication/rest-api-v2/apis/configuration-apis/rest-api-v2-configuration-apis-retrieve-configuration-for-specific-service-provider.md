@@ -1,9 +1,9 @@
 ---
 title: Recupera la configurazione per un provider di servizi specifico
 description: 'REST API V2: recupero della configurazione per un provider di servizi specifico'
-source-git-commit: dc9fab27c7eced2be5dd9f364ab8f2d64f8e4177
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
-source-wordcount: '521'
+source-wordcount: '523'
 ht-degree: 2%
 
 ---
@@ -64,18 +64,18 @@ ht-degree: 2%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Autorizzazione</td>
-      <td>La generazione del payload del token Bearer è descritta nella documentazione di <a href="../../../dynamic-client-registration-api.md">Registrazione client dinamica</a>.</td>
+      <td>La generazione del payload del token Bearer è descritta nella documentazione dell'intestazione <a href="../../appendix/headers/rest-api-v2-appendix-headers-authorization.md">Authorization</a>.</td>
       <td><i>obbligatorio</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">AP-Device-Id</td>
-      <td>La generazione del payload dell'identificatore del dispositivo è descritta nella documentazione di <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-device-identifier.md">AP-Device-Identifier</a>.</td>
+      <td>La generazione del payload dell'identificatore del dispositivo è descritta nella documentazione dell'intestazione <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-device-identifier.md">AP-Device-Identifier</a>.</td>
       <td><i>obbligatorio</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">X-Device-Info</td>
       <td>
-         La generazione del payload di informazioni sul dispositivo è descritta nella documentazione di <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a>.
+         La generazione del payload di informazioni sul dispositivo è descritta nella documentazione dell'intestazione <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a>.
          <br/><br/>
          Si consiglia vivamente di utilizzarlo sempre quando la piattaforma del dispositivo dell’applicazione consente di fornire esplicitamente valori validi.
          <br/><br/>
@@ -138,7 +138,7 @@ ht-degree: 2%
       <td>401</td>
       <td>Non autorizzato</td>
       <td>
-        Il token di accesso non è valido, il client deve ottenere un nuovo token di accesso e riprovare. Per ulteriori dettagli, consulta la documentazione di <a href="../../../dynamic-client-registration-api.md">Registrazione client dinamica</a>.
+        Il token di accesso non è valido, il client deve ottenere un nuovo token di accesso e riprovare. Per ulteriori dettagli, consulta la documentazione <a href="../../../dcr-api/dynamic-client-registration-overview.md">Panoramica registrazione client dinamico</a>.
       </td>
    </tr>
    <tr>

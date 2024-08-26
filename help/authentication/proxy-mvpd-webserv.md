@@ -2,29 +2,28 @@
 title: Servizio Web MVPD proxy
 description: Servizio Web MVPD proxy
 exl-id: f75cbc4d-4132-4ce8-a81c-1561a69d1d3a
-source-git-commit: f8cef3c41fb7132204c4fa499301c3010f62ca14
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
 source-wordcount: '1003'
 ht-degree: 0%
 
 ---
 
+
 # Servizio Web MVPD proxy {#proxy-mvpd-wbservice}
 
->[!NOTE]
+>[!IMPORTANT]
 >
->Il contenuto di questa pagina viene fornito solo a scopo informativo. L’utilizzo di questa API richiede una licenza corrente di Adobe. Non è consentito alcun uso non autorizzato.
->Per utilizzare il servizio Web MVPD proxy, è necessario:
->- chiedere al team di supporto un rendiconto software per l&#39;applicazione registrata
->- ottenere un token di accesso basato su [Registrazione client dinamica](dynamic-client-registration.md)
-> 
+> Il contenuto di questa pagina viene fornito solo a scopo informativo. L’utilizzo di questa API richiede una licenza corrente di Adobe. Non è consentito alcun uso non autorizzato.
 
->[!NOTE]
+>[!IMPORTANT]
 >
->Per utilizzare il servizio Web MVPD proxy, è necessario:
->- chiedere al team di supporto un rendiconto software per l&#39;applicazione registrata
->- ottenere un token di accesso basato su [Registrazione client dinamica](dynamic-client-registration.md)
-> 
+> Prima di utilizzare il servizio Web MVPD proxy, verificare che siano soddisfatti i seguenti prerequisiti:
+>
+> * Ottenere le credenziali del client come descritto nella [Documentazione API per il recupero delle credenziali del client](./dcr-api/apis/dynamic-client-registration-apis-retrieve-client-credentials.md).
+> * Ottenere il token di accesso come descritto nella documentazione API [Recuperare il token di accesso](./dcr-api/apis/dynamic-client-registration-apis-retrieve-access-token.md).
+>
+> Per ulteriori informazioni su come creare un&#39;applicazione registrata e scaricare l&#39;istruzione software, consultare la documentazione [Panoramica registrazione client dinamica](./dcr-api/dynamic-client-registration-overview.md).
 
 ## Panoramica {#overview-proxy-mvpd-webserv}
 
@@ -232,7 +231,7 @@ Adobe ha definito il seguente formato accettato per la pubblicazione/il recupero
 
 Per essere considerata valida, una richiesta deve rispettare le seguenti regole:
 
-- L&#39;intestazione della richiesta deve contenere il token di accesso Oauth2 di sicurezza di [Registrazione client dinamica](dynamic-client-registration.md).
+- L&#39;intestazione della richiesta deve contenere il token di accesso Oauth2 di sicurezza ottenuto come descritto nella documentazione API [Recupera token di accesso](./dcr-api/apis/dynamic-client-registration-apis-retrieve-access-token.md).
 - La richiesta deve provenire da un indirizzo IP specifico che è stato consentito.
 - La richiesta deve essere inviata tramite il protocollo SSL.
 

@@ -2,29 +2,28 @@
 title: Panoramica dell’API di degradazione
 description: Panoramica dell’API di degradazione
 exl-id: c7d6685b-a235-42eb-9c9c-0ffa1747f614
-source-git-commit: f918d7f9f7b2af5b4364421f6703211e413eafb4
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
-source-wordcount: '431'
+source-wordcount: '427'
 ht-degree: 0%
 
 ---
 
+
 # Panoramica dell’API di degradazione {#degradation-api-overview}
 
->[!NOTE]
+>[!IMPORTANT]
 >
->Il contenuto di questa pagina viene fornito solo a scopo informativo. L’utilizzo di questa API richiede una licenza corrente di Adobe. Non è consentito alcun uso non autorizzato.
->Per utilizzare l’API di degradazione, è necessario:
->- chiedere al team di supporto un rendiconto software per l&#39;applicazione registrata
->- ottenere un token di accesso basato su [Registrazione client dinamica](dynamic-client-registration.md)
-> 
+> Il contenuto di questa pagina viene fornito solo a scopo informativo. L’utilizzo di questa API richiede una licenza corrente di Adobe. Non è consentito alcun uso non autorizzato.
 
->[!NOTE]
+>[!IMPORTANT]
 >
->Per utilizzare l’API di degradazione, è necessario:
->- chiedere al team di supporto un rendiconto software per l&#39;applicazione registrata
->- ottenere un token di accesso basato su [Registrazione client dinamica](dynamic-client-registration.md)
-> 
+> Prima di utilizzare l’API di degradazione, assicurati di soddisfare i seguenti prerequisiti:
+>
+> * Ottenere le credenziali del client come descritto nella [Documentazione API per il recupero delle credenziali del client](./dcr-api/apis/dynamic-client-registration-apis-retrieve-client-credentials.md).
+> * Ottenere il token di accesso come descritto nella documentazione API [Recuperare il token di accesso](./dcr-api/apis/dynamic-client-registration-apis-retrieve-access-token.md).
+>
+> Per ulteriori informazioni su come creare un&#39;applicazione registrata e scaricare l&#39;istruzione software, consultare la documentazione [Panoramica registrazione client dinamica](./dcr-api/dynamic-client-registration-overview.md).
 
 ## Informazioni generali {#general_info}
 
@@ -42,7 +41,7 @@ Note sulla degradazione:
 
 : questa funzione è progettata per essere utilizzata insieme all’API di monitoraggio dell’utilizzo, che fornisce informazioni in tempo reale sul numero di autenticazioni e autorizzazioni per MVPD, latenza media delle autorizzazioni e altre metriche necessarie per una panoramica completa del servizio.
 - Questa funzione non consente di bypassare il servizio di autenticazione Adobe Primetim. Se l’autenticazione Adobe Pass non è attiva, all’interno del servizio non è disponibile alcun meccanismo che possa essere utilizzato per consentire agli utenti di visualizzare i contenuti. I siti o le app potrebbero, tuttavia, aggirare l’autenticazione di Adobe Pass da soli.
-- L&#39;Adobe non innescherà direttamente il degrado - la decisione deve sempre risiedere con un programmatore specifico che ha accettato tali condizioni con MVPDs. In futuro, l’autenticazione di Adobe Pass potrebbe essere proattiva nell’attivazione delle regole di degrado se è possibile raggiungere accordi (protezione SLA) con gli MVPD.
+- L&#39;Adobe non innescherà direttamente il degrado - la decisione deve sempre risiedere con un programmatore specifico che ha accettato tali condizioni con MVPDs. In futuro, l’autenticazione di Adobe Pass potrebbe essere proattiva nell’attivazione delle regole di degradazione se è possibile raggiungere accordi (protezione SLA) con gli MVPD.
 
 <!--
 ## Related Information {#related}

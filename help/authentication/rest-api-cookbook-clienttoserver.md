@@ -2,9 +2,9 @@
 title: Manuale dell’API REST (da client a server)
 description: Client-to-server del manuale API REST.
 exl-id: f54a1eda-47d5-4f02-b343-8cdbc99a73c0
-source-git-commit: ea064031c3a1fee3298d85cf442c40bd4bb56281
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
-source-wordcount: '870'
+source-wordcount: '868'
 ht-degree: 0%
 
 ---
@@ -50,7 +50,7 @@ Ulteriori termini utilizzati nel flusso sono definiti nel [Glossario](/help/auth
 
 ### Registrazione Dynamic Client (DCR)
 
-Adobe Pass utilizza il DCR per proteggere le comunicazioni client tra un’applicazione o un server di programmazione e i servizi Adobe Pass. Il flusso DCR è separato, dipendente e prerequisito ed è disponibile in [Registrazione client dinamico](/help/authentication/dynamic-client-registration.md)
+Adobe Pass utilizza il DCR per proteggere le comunicazioni client tra un’applicazione o un server di programmazione e i servizi Adobe Pass. Il flusso DCR è separato ed è descritto nella documentazione [Panoramica registrazione client dinamica](./dcr-api/dynamic-client-registration-overview.md).
 
 
 ### Flussi di app in streaming (per dispositivi avanzati)

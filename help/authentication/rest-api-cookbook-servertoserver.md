@@ -2,9 +2,9 @@
 title: Manuale dell’API REST (server-to-server)
 description: Rest API cookbook server to server.
 exl-id: 36ad4a64-dde8-4a5f-b0fe-64b6c0ddcbee
-source-git-commit: ea064031c3a1fee3298d85cf442c40bd4bb56281
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
-source-wordcount: '1847'
+source-wordcount: '1844'
 ht-degree: 0%
 
 ---
@@ -49,7 +49,7 @@ I termini aggiuntivi utilizzati nel flusso sono definiti nel
 ### Registrazione Dynamic Client (DCR)
 
 
-Adobe Pass utilizza il DCR per proteggere le comunicazioni client tra un’applicazione o un server di programmazione e i servizi Adobe Pass. Il flusso DCR è separato, dipendente e prerequisito ed è disponibile in [Registrazione client dinamica](/help/authentication/dynamic-client-registration.md).
+Adobe Pass utilizza il DCR per proteggere le comunicazioni client tra un’applicazione o un server di programmazione e i servizi Adobe Pass. Il flusso DCR è separato e descritto nella documentazione [Panoramica registrazione client dinamica](./dcr-api/dynamic-client-registration-overview.md).
 
 
 ### Autenticazione (authN)

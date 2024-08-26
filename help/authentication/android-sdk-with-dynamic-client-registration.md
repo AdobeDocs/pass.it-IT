@@ -2,9 +2,9 @@
 title: SDK per Android con registrazione client dinamica
 description: SDK per Android con registrazione client dinamica
 exl-id: 8d0c1507-8e80-40a4-8698-fb795240f618
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
-source-wordcount: '1277'
+source-wordcount: '1278'
 ht-degree: 0%
 
 ---
@@ -33,7 +33,7 @@ Per Android, l’utilizzo delle schede personalizzate di Chrome limita l’acces
 
 ## Registrazione client dinamici {#DCR}
 
-Android SDK v3.0+ utilizzerà la procedura di registrazione del client dinamico definita in [Registrazione client dinamico](/help/authentication/dynamic-client-registration.md).
+Android SDK v3.0+ utilizzerà la procedura di registrazione del client dinamico definita in [Panoramica registrazione client dinamico](./dcr-api/dynamic-client-registration-overview.md).
 
 
 ## Demo sulle funzioni {#Demo}

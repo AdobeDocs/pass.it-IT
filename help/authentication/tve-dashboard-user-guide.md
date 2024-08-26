@@ -2,9 +2,9 @@
 title: Guida utente di Primetime TVE Dashboard
 description: Guida utente di Primetime TVE Dashboard
 exl-id: 6f7f7901-db3a-4c68-ac6a-27082db9240a
-source-git-commit: c6afb9b080ffe36344d7a3d658450e9be767be61
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
-source-wordcount: '4377'
+source-wordcount: '5504'
 ht-degree: 0%
 
 ---
@@ -112,12 +112,11 @@ Questa sezione consente di visualizzare e modificare le impostazioni per i canal
   Contiene l’elenco delle integrazioni con gli MVPD disponibili, insieme allo stato di ogni integrazione che potrebbe essere abilitata o meno. Per accedere alla pagina Integrazione, fai clic su una voce specifica.
 * **Applicazioni registrate**
 
-  Contiene l’elenco delle registrazioni delle applicazioni. Per ulteriori dettagli, vedere il documento [Dynamic Client Registration Management](/help/authentication/dynamic-client-registration-management.md).
+  Contiene l’elenco delle registrazioni delle applicazioni. Per ulteriori dettagli, vedere il documento [Dynamic Client Registration Management](/help/authentication/dcr-api/dynamic-client-registration-overview.md#dynamic-client-registration-management).
 
 * **Schemi personalizzati**
 
-  Contiene l’elenco degli schemi personalizzati. Per ulteriori dettagli, vedere [Registrazione dell&#39;applicazione iOS/tvOS](/help/authentication/iostvos-application-registration.md) e [Gestione della registrazione client dinamica](/help/authentication/dynamic-client-registration-management.md)
-
+  Contiene l’elenco degli schemi personalizzati. Per ulteriori dettagli, vedere [Registrazione dell&#39;applicazione iOS/tvOS](/help/authentication/iostvos-application-registration.md) e [Dynamic Client Registration Management](/help/authentication/dcr-api/dynamic-client-registration-overview.md#dynamic-client-registration-management)
 
 #### Aggiungi/Elimina domini {#add-delete-domains}
 
@@ -126,6 +125,50 @@ Per avviare il processo di aggiunta di un nuovo dominio per il canale selezionat
 ![Aggiungi un nuovo dominio a una sezione canale selezionata](assets/add-domain-to-channel-sec.png)
 
 *Figura: scheda Domini nei canali*
+
+#### Creare un&#39;applicazione registrata a livello di canale {#create-registered-application-channel-level}
+
+Per creare un&#39;applicazione registrata a livello di canale, passare al menu &quot;Canali&quot; e scegliere quello per il quale si desidera creare un&#39;applicazione. Quindi, dopo aver selezionato la scheda &quot;Applicazioni registrate&quot;, fare clic sul pulsante &quot;Aggiungi nuova applicazione&quot;.
+
+![](./assets/reg-new-app-channel-level.png)
+
+Come mostrato nell’immagine seguente, i campi da compilare sono:
+
+* **Nome applicazione**: il nome dell&#39;applicazione
+
+* **Assegnato al canale** - Come mostrato di seguito, ciò che qui è leggermente diverso, rispetto alla stessa azione eseguita a livello di Programmatore, è il menu a discesa &quot;Canali assegnati&quot; che non è abilitato, quindi non c&#39;è alcuna opzione per associare l&#39;applicazione registrata al di fuori del canale corrente.
+
+* **Versione applicazione** - per impostazione predefinita, è impostato su &quot;1.0.0&quot;, ma si consiglia di modificarlo con la propria versione dell&#39;applicazione. Come best practice, se decidi di modificare la versione dell’applicazione, rifletterla creando una nuova applicazione registrata.
+
+* **Piattaforme applicazione**: le piattaforme con cui collegare l&#39;applicazione. È possibile selezionarli tutti o più valori.
+
+* **Nomi dominio**: i domini con cui collegare l&#39;applicazione. I domini nell’elenco a discesa sono una selezione unificata di tutti i domini da tutti i canali. È possibile selezionare più domini dall&#39;elenco. Il significato dei domini è URL di reindirizzamento [RFC6749](https://tools.ietf.org/html/rfc6749). Nel processo di registrazione del client, l’applicazione client può richiedere di essere autorizzata a utilizzare un URL di reindirizzamento per la finalizzazione del flusso di autenticazione. Quando un’applicazione client richiede un URL di reindirizzamento specifico, questo viene convalidato in base ai domini inseriti nella whitelist di questa applicazione registrata associata all’istruzione software.
+
+![](./assets/new-reg-app-channel.png)
+
+Dopo aver riempito i campi con i valori appropriati, fai clic su &quot;Fine&quot; per salvare l’applicazione nella configurazione.
+
+Tieni presente che **non è disponibile alcuna opzione per modificare un&#39;applicazione già creata**. Se si scopre che un elemento creato non soddisfa più i requisiti, sarà necessario creare e utilizzare una nuova applicazione registrata con l&#39;applicazione client di cui soddisfa i requisiti.
+
+##### Scaricare un rendiconto software {#download-software-statement-channel-level}
+
+![](./assets/reg-app-list.png)
+
+Facendo clic sul pulsante &quot;Download&quot; nella voce dell’elenco per la quale è necessaria un’istruzione software, verrà generato un file di testo. Questo file contiene un elemento simile all’output di esempio seguente.
+
+![](./assets/download-software-statement.png)
+
+Il nome del file viene identificato in modo univoco tramite il prefisso &quot;software_statement&quot; e l’aggiunta della marca temporale corrente.
+
+Si noti che, per la stessa applicazione registrata, ogni volta che si fa clic sul pulsante di download verranno ricevute istruzioni software diverse, ma ciò non invalida le istruzioni software ottenute in precedenza per l&#39;applicazione. Questo accade perché vengono generate sul posto, per richiesta di azione.
+
+Esiste una **limitazione** relativa all&#39;azione di download. Se un’istruzione software viene richiesta facendo clic sul pulsante &quot;Scarica&quot; poco dopo la creazione dell’applicazione registrata e tale istruzione non è stata ancora salvata e il json di configurazione non è stato sincronizzato, nella parte inferiore della pagina viene visualizzato il seguente messaggio di errore.
+
+![](./assets/error-sw-statement-notready.png)
+
+Viene eseguito il wrapping di un codice di errore HTTP 404 Non trovato ricevuto dal core poiché l&#39;ID dell&#39;applicazione registrata non è stato ancora propagato e il core non ne è a conoscenza.
+
+Dopo aver creato l&#39;applicazione registrata, la soluzione consiste nell&#39;attendere al massimo 2 minuti per la sincronizzazione della configurazione. In questo caso, il messaggio di errore non verrà più ricevuto e il file di testo con l&#39;istruzione software sarà disponibile per il download.
 
 ### Programmatori {#tve-db-programmers-section}
 
@@ -147,12 +190,57 @@ Questa sezione consente di visualizzare e modificare le impostazioni per i progr
 
 * **Applicazioni registrate**
 
-  Contiene l’elenco delle registrazioni delle applicazioni. Per ulteriori dettagli, vedere [Dynamic Client Registration Management](/help/authentication/dynamic-client-registration-management.md).
+  Contiene l’elenco delle registrazioni delle applicazioni. Per ulteriori dettagli, vedere [Dynamic Client Registration Management](/help/authentication/dcr-api/dynamic-client-registration-overview.md#dynamic-client-registration-management).
 
 * **Schemi personalizzati**
 
-  Contiene l’elenco degli schemi personalizzati. Per ulteriori dettagli, vedere [Registrazione dell&#39;applicazione iOS/tvOS](/help/authentication/iostvos-application-registration.md) e [Gestione della registrazione client dinamica](/help/authentication/dynamic-client-registration-management.md).
+  Contiene l’elenco degli schemi personalizzati. Per ulteriori dettagli, consulta [Registrazione dell&#39;applicazione iOS/tvOS](/help/authentication/iostvos-application-registration.md).
 
+#### Creare un&#39;applicazione registrata a livello di programmatore {#create-registered-application-programmer-level}
+
+Vai alla scheda **Programmatori** > **Applicazioni registrate**.
+
+![](./assets/reg-app-progr-level.png)
+
+Nella scheda Applicazioni registrate fare clic su **Aggiungi nuova applicazione**. Compila i campi obbligatori nella nuova finestra.
+
+Come mostrato nell’immagine seguente, i campi da compilare sono:
+
+* **Nome applicazione**: il nome dell&#39;applicazione
+
+* **Assegnato al canale**: il nome del canale, t</span>o al quale è collegata l&#39;applicazione. L&#39;impostazione predefinita nella maschera a discesa è **Tutti i canali.** L&#39;interfaccia consente di selezionare un canale o tutti i canali.
+
+* **Versione applicazione** - per impostazione predefinita, è impostato su &quot;1.0.0&quot;, ma si consiglia di modificarlo con la propria versione dell&#39;applicazione. Come best practice, se decidi di modificare la versione dell’applicazione, rifletterla creando una nuova applicazione registrata.
+
+* **Piattaforme applicazione**: le piattaforme con cui collegare l&#39;applicazione. È possibile selezionarli tutti o più valori.
+
+* **Nomi dominio**: i domini con cui collegare l&#39;applicazione. I domini nell’elenco a discesa sono una selezione unificata di tutti i domini da tutti i canali. È possibile selezionare più domini dall&#39;elenco. Il significato dei domini è URL di reindirizzamento [RFC6749](https://tools.ietf.org/html/rfc6749). Nel processo di registrazione del client, l’applicazione client può richiedere di essere autorizzata a utilizzare un URL di reindirizzamento per la finalizzazione del flusso di autenticazione. Quando un’applicazione client richiede un URL di reindirizzamento specifico, questo viene convalidato in base ai domini inseriti nella whitelist di questa applicazione registrata associata all’istruzione software.
+
+![](./assets/new-reg-app.png)
+
+Dopo aver riempito i campi con i valori appropriati, fai clic su &quot;Fine&quot; per salvare l’applicazione nella configurazione.
+
+Tieni presente che **non è disponibile alcuna opzione per modificare un&#39;applicazione già creata**. Se si scopre che un elemento creato non soddisfa più i requisiti, sarà necessario creare e utilizzare una nuova applicazione registrata con l&#39;applicazione client di cui soddisfa i requisiti.
+
+##### Scaricare un rendiconto software {#download-software-statement-programmer-level}
+
+![](./assets/reg-app-list.png)
+
+Facendo clic sul pulsante &quot;Download&quot; nella voce dell’elenco per la quale è necessaria un’istruzione software, verrà generato un file di testo. Questo file contiene un elemento simile all’output di esempio seguente.
+
+![](./assets/download-software-statement.png)
+
+Il nome del file viene identificato in modo univoco tramite il prefisso &quot;software_statement&quot; e l’aggiunta della marca temporale corrente.
+
+Si noti che, per la stessa applicazione registrata, ogni volta che si fa clic sul pulsante di download verranno ricevute istruzioni software diverse, ma ciò non invalida le istruzioni software ottenute in precedenza per l&#39;applicazione. Questo accade perché vengono generate sul posto, per richiesta di azione.
+
+Esiste una **limitazione** relativa all&#39;azione di download. Se un’istruzione software viene richiesta facendo clic sul pulsante &quot;Scarica&quot; poco dopo la creazione dell’applicazione registrata e tale istruzione non è stata ancora salvata e il json di configurazione non è stato sincronizzato, nella parte inferiore della pagina viene visualizzato il seguente messaggio di errore.
+
+![](./assets/error-sw-statement-notready.png)
+
+Viene eseguito il wrapping di un codice di errore HTTP 404 Non trovato ricevuto dal core poiché l&#39;ID dell&#39;applicazione registrata non è stato ancora propagato e il core non ne è a conoscenza.
+
+Dopo aver creato l&#39;applicazione registrata, la soluzione consiste nell&#39;attendere al massimo 2 minuti per la sincronizzazione della configurazione. In questo caso, il messaggio di errore non verrà più ricevuto e il file di testo con l&#39;istruzione software sarà disponibile per il download.
 
 ### Integrazioni {#tve-db-integrations-sec}
 

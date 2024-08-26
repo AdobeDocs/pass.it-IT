@@ -2,9 +2,9 @@
 title: Programmatori
 description: Scopri i programmatori e le relative configurazioni nel dashboard di TVE.
 exl-id: b450d7cc-d5b5-4454-8f95-8047856bfb98
-source-git-commit: c2dcea9e4170a3e10654bcd3f8d2f5cdb82c9603
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
-source-wordcount: '717'
+source-wordcount: '701'
 ht-degree: 0%
 
 ---
@@ -120,11 +120,11 @@ Per eliminare un certificato, segui la procedura riportata di seguito.
 
 ### Applicazioni registrate {#registered-applications}
 
-Questa scheda fornisce un elenco delle registrazioni delle applicazioni. Per ulteriori informazioni, visualizzare [Dynamic Client Registration Management](/help/authentication/dynamic-client-registration-management.md).
+Questa scheda fornisce un elenco delle registrazioni delle applicazioni.
 
 ### Schemi personalizzati {#custom-schemes}
 
-In questa scheda viene visualizzato un elenco di schemi personalizzati. Per ulteriori informazioni, visualizzare [Registrazione applicazione iOS/tvOS](/help/authentication/iostvos-application-registration.md) e [Gestione registrazione client dinamica](/help/authentication/dynamic-client-registration-management.md).
+In questa scheda viene visualizzato un elenco di schemi personalizzati. Visualizza [registrazione applicazione iOS/tvOS](/help/authentication/iostvos-application-registration.md).
 
 ## Aggiungi nuovo programmatore {#add-new-programmer}
 

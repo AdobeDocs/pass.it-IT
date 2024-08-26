@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Autenticazione Adobe Pass
 user-guide-description: L’autenticazione Adobe Pass è una soluzione di gestione dei diritti per TV Everywhere, che fornisce un framework modulare per determinare se chi richiede l’accesso a una risorsa ne abbia diritto.
-source-git-commit: d59afc0384a1c3617143efcef4ab5fb1a323e511
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
-source-wordcount: '1142'
+source-wordcount: '1149'
 ht-degree: 2%
 
 ---
@@ -68,7 +68,7 @@ ht-degree: 2%
             + [Recupera profilo per codice specifico](./rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)
          + Decisioni {#rest-api-v2-decisions-apis}
             + [Recuperare le decisioni di autorizzazione utilizzando mvpd specifico](./rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)
-            + [Recupera le decisioni di preautorizzazione utilizzando mvpd](./rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md) specifico
+            + [Recuperare le decisioni di pre-autorizzazione utilizzando mvpd specifico](./rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)
          + Disconnetti {#rest-api-v2-logout-apis}
             + [Avvia disconnessione per mvpd specifico](./rest-api-v2/apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md)
          + Single Sign-On Partner {#rest-api-v2-partner-single-sign-on-apis}
@@ -95,12 +95,13 @@ ht-degree: 2%
             + [Flusso disconnessione singola](rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-logout-flow.md)
       + Appendice {#rest-api-v2-appendix}
          + Intestazioni {#rest-api-v2-appendix-headers}
+            + [Intestazione - Authorization](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-authorization.md)
+            + [Intestazione - AP-Device-Identifier](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-device-identifier.md)
+            + [Intestazione - X-Device-Info](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md)
             + [Intestazione - AD-Service-Token](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md)
             + [Intestazione - Adobe-Subject-Token](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md)
-            + [Intestazione - AP-Device-Identifier](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-device-identifier.md)
             + [Intestazione - AP-Partner-Framework-Status](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md)
             + [Intestazione - AP-TempPass-Identity](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-temppass-identity.md)
-            + [Intestazione - X-Device-Info](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md)
    + SDK AccessEnabler {#accessenabler-sdk}
       + SDK JavaScript {#javascriptsdk}
          + [Panoramica dell’SDK per JavaScript](javascript-sdk-overview.md)
@@ -113,7 +114,7 @@ ht-degree: 2%
       + SDK iOS/tvOS {#ios-sdk}
          + [Panoramica dell’SDK iOS/tvOS](iostvos-sdk-overview.md)
          + [Manuale dell’SDK iOS/tvOS](iostvos-sdk-cookbook.md)
-         + [Riferimento API SDK per iOS/tvOS](iostvos-sdk-api-reference.md)
+         + [Riferimento API per iOS/tvOS SDK](iostvos-sdk-api-reference.md)
          + Linee guida {#ios-tvos-sdk-guidelines}
             + [Registrazione applicazione iOS/tvOS](iostvos-application-registration.md)
             + Linee guida per la migrazione {#migration-guidelines}
@@ -188,10 +189,13 @@ ht-degree: 2%
    + Segnalazione errori {#error-reportn}
       + [Segnalazione di errori](error-reporting.md)
       + [Codici di errore migliorati](enhanced-error-codes.md)
-   + Registrazione client {#client-regn}
-      + [Registrazione client dinamici](dynamic-client-registration.md)
-      + [API di registrazione client dinamica](dynamic-client-registration-api.md)
-      + [Dynamic Client Registration Management](dynamic-client-registration-management.md)
+   + Registrazione client {#dcr-api}
+      + [Panoramica sulla registrazione client dinamica](./dcr-api/dynamic-client-registration-overview.md)
+      + API {#dcr-api-apis}
+         + [Recupera credenziali client](./dcr-api/apis/dynamic-client-registration-apis-retrieve-client-credentials.md)
+         + [Recupera token di accesso](./dcr-api/apis/dynamic-client-registration-apis-retrieve-access-token.md)
+      + Flussi {#dcr-api-flows}
+         + [Flusso di registrazione client dinamico](./dcr-api/flows/dynamic-client-registration-flow.md)
    + Servizio di degradazione {#degrn-service}
       + [Panoramica dell’API di degradazione](degradation-api-overview.md)
    + Conformità privacy {#privacy-readiness}
@@ -251,7 +255,7 @@ ht-degree: 2%
          + [Errore di autenticazione iOS - Impossibile trovare adobepass.ios.app](ios-authentication-error-adobepassiosapp-cannot-be-found.md)
          + [Ripristina passaggio temporaneo su iOS](reset-temp-pass-on-ios.md)
          + [Debug dell’SDK iOS/tvOS di AccessEnabler tramite i registri dell’app della console](debugging-the-accessenabler-iostvos-sdk-using-console-app-logs.md)
-         + [Percorso di aggiornamento di AccessEnabler iOS/tvOS 3.7.0](accessenabler-iostvos-370-upgrade-path.md)
+         + [Percorso di aggiornamento ad AccessEnabler iOS/tvOS 3.7.0](accessenabler-iostvos-370-upgrade-path.md)
    + Ambienti di autenticazione pass {#primetime-authentication-environments}
       + [Informazioni sugli ambienti Adobe](understanding-the-adobe-environments.md)
       + [Configurazione dell’ambiente e test in Pre-Qual](setting-up-your-environment-and-testing-in-prequal.md)
@@ -282,4 +286,3 @@ ht-degree: 2%
    + [Rapporti](/help/authentication/tve-dashboard-reports.md)
    + [Registro delle modifiche](/help/authentication/tve-dashboard-changes-log.md)
 + [Glossario](glossary.md)
-

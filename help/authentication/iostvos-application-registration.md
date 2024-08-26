@@ -2,12 +2,13 @@
 title: Registrazione applicazione iOS/tvOS
 description: Registrazione applicazione iOS/tvOS
 exl-id: 89ee6b5a-29fa-4396-bfc8-7651aa3d6826
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
-source-wordcount: '608'
+source-wordcount: '609'
 ht-degree: 0%
 
 ---
+
 
 # Registrazione applicazione iOS/tvOS {#iostvos-application-registration}
 
@@ -17,9 +18,9 @@ ht-degree: 0%
 
 ## Introduzione {#Intro}
 
-A partire dalla versione 3.0 dell’SDK iOS/tvOS AccessEnabler, stiamo modificando il meccanismo di autenticazione con i server di Adobe. Invece di utilizzare una chiave pubblica e un sistema segreto per firmare l’ID richiedente, introduciamo il concetto di una stringa di istruzione Software che può essere utilizzata per ottenere un token di accesso che viene successivamente utilizzato per tutte le chiamate dell’SDK ai nostri server. Oltre a un&#39;informativa sul software, è necessario anche uno schema URL personalizzato per l&#39;applicazione.
+A partire dalla versione 3.0 dell’SDK iOS/tvOS AccessEnabler, stiamo modificando il meccanismo di autenticazione con i server di Adobe. Invece di utilizzare una chiave pubblica e un sistema segreto per firmare l’ID richiedente, introduciamo il concetto di una stringa di istruzione software che può essere utilizzata per ottenere un token di accesso che viene successivamente utilizzato per tutte le chiamate dell’SDK ai nostri server. Oltre a un&#39;informativa sul software, è necessario anche uno schema URL personalizzato per l&#39;applicazione.
 
-Per ulteriori informazioni, vedere [Registrazione client dinamica](/help/authentication/dynamic-client-registration.md)
+Per ulteriori informazioni, vedere [Panoramica sulla registrazione client dinamica](./dcr-api/dynamic-client-registration-overview.md).
 
 ## Che cos&#39;è una dichiarazione software? {#Soft_state}
 
@@ -40,7 +41,7 @@ Un rendiconto software è un token JWT che contiene informazioni sull’applicaz
 - Dovresti visualizzare un elenco con tutte le applicazioni registrate. Fai clic su   Pulsante `Download` dell&#39;applicazione appena creata. Potrebbe essere necessario attendere alcuni minuti prima che il Software Statement sia pronto per il download.
 - Verrà scaricato un file di testo. Utilizza il contenuto come informativa sul software.
 
-Per ulteriori informazioni, vedere [Dynamic Client Registration Management](/help/authentication/dynamic-client-registration-management.md).
+Per ulteriori informazioni, vedere [Dynamic Client Registration Management](./dcr-api/dynamic-client-registration-overview.md#dynamic-client-registration-management).
 
 ### Se non hai accesso al dashboard TVE di Adobe:
 
