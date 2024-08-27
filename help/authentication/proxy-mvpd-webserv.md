@@ -2,9 +2,9 @@
 title: Servizio Web MVPD proxy
 description: Servizio Web MVPD proxy
 exl-id: f75cbc4d-4132-4ce8-a81c-1561a69d1d3a
-source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
+source-git-commit: 186335e27c05b2e0dd553607715a625376d9f299
 workflow-type: tm+mt
-source-wordcount: '1003'
+source-wordcount: '1027'
 ht-degree: 0%
 
 ---
@@ -239,14 +239,14 @@ Eventuali parametri presenti nell’intestazione della richiesta non elencati so
 
 Esempio di curl:
 
-`curl -X GET -H "Authorization: Bearer <access_token_here>" "https://mgmt-prequal.auth-staging.adobe.com/control/v3/proxiedMvpds"`
+`curl -X GET -H "Authorization: Bearer <access_token_here>" "https://mgmt-prequal.auth-staging.adobe.com/control/v3/mvpd-proxies/&lt;proxy-mvpd-identifier&gt;/mvpds"`
 
 ## Endpoint del servizio Web MVPD proxy per gli ambienti di autenticazione Adobe Pass {#proxy-mvpd-wevserv-endpoints}
 
-- **URL di produzione:** https://mgmt.auth.adobe.com/control/v3/proxiedMvpds
-- **URL gestione temporanea:** https://mgmt.auth-staging.adobe.com/control/v3/proxiedMvpds
-- **URL di preQual-produzione:** https://mgmt-prequal.auth.adobe.com/control/v3/proxiedMvpds
-- **URL preQual-staging:** https://mgmt-prequal.auth-staging.adobe.com/control/v3/proxiedMvpds
+- **URL di produzione:** https://mgmt.auth.adobe.com/control/v3/mvpd-proxies/&lt;proxy-mvpd-identifier>/mvpds
+- **URL di gestione temporanea:** https://mgmt.auth-staging.adobe.com/control/v3/mvpd-proxies/&lt;proxy-mvpd-identifier>/mvpds
+- **URL preQual-produzione:** https://mgmt-prequal.auth.adobe.com/control/v3/mvpd-proxies/&lt;proxy-mvpd-identifier>/mvpds
+- **URL preQual-staging:** https://mgmt-prequal.auth-staging.adobe.com/control/v3/mvpd-proxies/&lt;proxy-mvpd-identifier>/mvpds
 
 <!--
 >[!RELATEDINFORMATION]
