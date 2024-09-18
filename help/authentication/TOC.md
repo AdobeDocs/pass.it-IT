@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Autenticazione Adobe Pass
 user-guide-description: L’autenticazione Adobe Pass è una soluzione di gestione dei diritti per TV Everywhere, che fornisce un framework modulare per determinare se chi richiede l’accesso a una risorsa ne abbia diritto.
-source-git-commit: acff285f7db1bdd32d5da3e01a770d9581d3ba75
+source-git-commit: 94fcb4e8c94330561596cd4006738c4f4d75e371
 workflow-type: tm+mt
-source-wordcount: '1155'
+source-wordcount: '1159'
 ht-degree: 2%
 
 ---
@@ -53,6 +53,7 @@ ht-degree: 2%
          + [Scambio di token](token-exchange.md)
          + [Anteprima gratuita per Passaggio temporaneo e Passaggio temporaneo promozionale](free-preview-for-temp-pass-and-promotional-temp-pass.md)
    + API REST V2 {#rest-api-v2}
+      + [API REST V2 - Panoramica](./rest-api-v2/rest-api-v2-overview.md)
       + API {#rest-api-v2-apis}
          + [REST API V2 - API - Panoramica](./rest-api-v2/apis/rest-api-v2-apis-overview.md)
          + Configurazione {#rest-api-v2-configuration-apis}
