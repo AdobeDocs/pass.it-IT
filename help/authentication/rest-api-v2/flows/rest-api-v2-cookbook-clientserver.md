@@ -1,7 +1,7 @@
 ---
 title: REST API V2 - Manuale - Passaggi di implementazione client/server
 description: REST API V2 - Manuale - Passaggi di implementazione client/server
-source-git-commit: 5ba888b35731ef64b3dd1878f2fa55083989f857
+source-git-commit: 5ba538bdb13d121ba27005df82d4ae604f912241
 workflow-type: tm+mt
 source-wordcount: '698'
 ht-degree: 0%
@@ -26,6 +26,7 @@ Per implementare Adobe Pass REST API V2, devi seguire i passaggi riportati di se
 ## A. Fase di registrazione {#registration-phase}
 
 ### Passaggio 1: registrare l&#39;applicazione {#step-1-register-your-application}
+
 Per poter chiamare l’API REST di Adobe Pass V2, l’applicazione necessita di un token di accesso richiesto dal livello di sicurezza API.
 Per ottenere il token di accesso, l’applicazione deve seguire i passaggi descritti:
 [Registrazione Client Dinamico](./dynamic-client-registration.md)
@@ -33,6 +34,7 @@ Per ottenere il token di accesso, l’applicazione deve seguire i passaggi descr
 ## B. Fase di autenticazione {#authentication-phase}
 
 ### Passaggio 2: verificare la presenza di profili autenticati esistenti {#step-2-check-for-existing-authenticated-profiles}
+
 L&#39;applicazione di streaming verifica i profili autenticati esistenti: <b>/api/v2/{serviceProvider}/profiles</b><br>
 ([Recupera profili autenticati](./apis/profiles-apis/rest-api-v2-retrieve-authenticated-profiles.md))
 
@@ -49,6 +51,7 @@ L&#39;applicazione di streaming verifica i profili autenticati esistenti: <b>/ap
       * Se viene trovato un profilo, l&#39;applicazione di streaming può passare a <a href="#preauthorization-phase">C. Fase di pre-autorizzazione</a> o <a href="#authorization-phase">D. Fase di autorizzazione</a>
 
 ### Passaggio 3: autenticare l’utente {#step-3-authenticate-the-user}
+
 Utilizzo di un browser o di un&#39;applicazione basata sul Web Second Screen:
 
 * Opzione 1. L’applicazione di streaming può aprire un browser o una visualizzazione web, caricare l’URL per l’autenticazione e l’utente arriva alla pagina di accesso di MVPD in cui è necessario inviare le credenziali
@@ -57,6 +60,7 @@ Utilizzo di un browser o di un&#39;applicazione basata sul Web Second Screen:
    * utente immetti login/password, reindirizzamento finale mostra una pagina di successo
 
 ### Passaggio 4: verificare la presenza di profili autenticati {#step-4-check-for-authenticated-profiles}
+
 L&#39;applicazione in streaming verifica l&#39;autenticazione con MVPD da completare nel browser o nella seconda schermata
 
 * polling ogni 15 secondi consigliato il <b>/api/v2/{serviceProvider}/profiles/{mvpd}</b><br>
@@ -70,8 +74,10 @@ L&#39;applicazione in streaming verifica l&#39;autenticazione con MVPD da comple
 ## C. Fase di preautorizzazione {#preauthorization-phase}
 
 ### Passaggio 5: verificare la presenza di risorse preautorizzate {#step-5-check-for-preauthorized-resources}
+
 L’applicazione di streaming si prepara a visualizzare i video disponibili per l’utente autenticato e ha la possibilità di controllare
 accedere a queste risorse.
+
 * il passaggio è facoltativo ed eseguito se l’applicazione desidera filtrare le risorse non disponibili nel pacchetto utente autenticato
 * chiamata a <b>/api/v2/{serviceProvider}/Decisions/preauthorize/{mvpd}</b><br>
 ([Recupera la decisione di pre-autorizzazione utilizzando MVPD](.apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md) specifico)
@@ -80,6 +86,7 @@ accedere a queste risorse.
 ## D. Fase di autorizzazione {#authorization-phase}
 
 ### Passaggio 6: verificare la disponibilità di risorse autorizzate {#step-6-check-for-authorized-resources}
+
 L’applicazione in streaming si prepara a riprodurre un video, una risorsa o una risorsa selezionati dall’utente.
 
 * il passaggio è necessario per ogni avvio di riproduzione
@@ -91,6 +98,7 @@ L’applicazione in streaming si prepara a riprodurre un video, una risorsa o un
 ## E. Fase di disconnessione {#logout-phase}
 
 ### Passaggio 7: disconnessione {#step-7-logout}
+
 Dispositivo di streaming: l’utente desidera disconnettersi da MVPD
 
 * chiama <b>/api/v2/{serviceProvider}/logout/{mvpd}</b><br>
