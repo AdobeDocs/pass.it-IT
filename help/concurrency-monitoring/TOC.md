@@ -4,9 +4,9 @@ feature: Concurrency Monitoring
 audience: end-user
 user-guide-title: Monitoraggio della concorrenza Adobe Pass
 user-guide-description: Scopri come definire e applicare limiti all’utilizzo simultaneo in più applicazioni.
-source-git-commit: 37ad9151d404d58b7d4df2c959f3f8fcaa5c011f
+source-git-commit: 452ac2ebe140497464869f7cf9d579ecaf4018af
 workflow-type: tm+mt
-source-wordcount: '166'
+source-wordcount: '171'
 ht-degree: 9%
 
 ---
@@ -25,6 +25,7 @@ ht-degree: 9%
 + [Procedure di riassegnazione](cm-escalation-procedures.md)
 + Utilizzo monitoraggio concorrenza {#cmu}
    + [Rapporti di utilizzo del monitoraggio della concorrenza](cm-usage-reports.md)
+   + [Esempi di report di utilizzo del monitoraggio della concorrenza](cm-usage-reports-examples.md)
    + [API di utilizzo del monitoraggio della concorrenza](cmu-api.md)
    + [Accesso all’API per il monitoraggio della concorrenza](cmu-api-access.md)
 + Versione 1 API{#v1-api}

@@ -2,7 +2,7 @@
 title: Panoramica API
 description: Panoramica API
 exl-id: 3fe6f6d8-5b2f-47e5-a8da-06fb18a5d46b
-source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
+source-git-commit: 301825253b21746684df9b6372a239b03305d50e
 workflow-type: tm+mt
 source-wordcount: '2043'
 ht-degree: 0%
@@ -24,7 +24,7 @@ L&#39;utilizzo del monitoraggio della concorrenza (CMU) è implementato come pro
 >
 >L’API della CMU non è generalmente disponibile. Per domande sulla disponibilità, contatta il rappresentante di Adobe.
 
-L&#39;API CMU fornisce una visualizzazione gerarchica dei cubi OLAP sottostanti. Ogni risorsa ([dimensione](/help/authentication/entitlement-service-monitoring-overview.md#progr-filter-metrics) nella gerarchia delle dimensioni, mappata come segmento di percorso URL) genera rapporti con [metriche](/help/authentication/entitlement-service-monitoring-overview.md#programmers-can-monitor-the-following-metrics) (aggregate) per la selezione corrente. Ogni risorsa punta alla relativa risorsa padre (per l’aggregazione) e alle relative risorse secondarie (per l’espansione). Le operazioni di suddivisione in porzioni e dicing vengono eseguite tramite parametri di stringa di query che fissano dimensioni a valori o intervalli specifici.
+L&#39;API CMU fornisce una visualizzazione gerarchica dei cubi OLAP sottostanti. Ogni risorsa ([dimensione](/help/concurrency-monitoring/cm-usage-reports.md#dimensions-2-filter-metrics) nella gerarchia delle dimensioni, mappata come segmento di percorso URL) genera rapporti con [metriche](/help/concurrency-monitoring/cm-usage-reports.md#monitor-metrics) (aggregate) per la selezione corrente. Ogni risorsa punta alla relativa risorsa padre (per l’aggregazione) e alle relative risorse secondarie (per l’espansione). Le operazioni di suddivisione in porzioni e dicing vengono eseguite tramite parametri di stringa di query che fissano dimensioni a valori o intervalli specifici.
 
 L’API REST fornisce i dati disponibili entro un intervallo di tempo specificato nella richiesta (fallback ai valori predefiniti se non ne viene fornito alcuno), in base al percorso della dimensione, ai filtri forniti e alle metriche selezionate. L’intervallo di tempo non verrà applicato ai rapporti che non contengono dimensioni temporali (anno, mese, giorno, ora, minuto, secondo).
 

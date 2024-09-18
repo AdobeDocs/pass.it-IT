@@ -2,9 +2,9 @@
 title: Report utilizzo monitoraggio concorrenza
 description: Report utilizzo monitoraggio concorrenza
 exl-id: 20220436-e748-4b22-8e7c-e074e0bfe242
-source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
+source-git-commit: 36da78fd66cfbc86e7bea7575c757fef536c0755
 workflow-type: tm+mt
-source-wordcount: '757'
+source-wordcount: '799'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ Il servizio **Report sull&#39;utilizzo del monitoraggio della concorrenza** è d
 
 ## Prerequisiti {#usage-rep-prerequisites}
 
-Per accedere al prodotto Report sull&#39;utilizzo del monitoraggio della concorrenza, un cliente deve prima contattare il [Team di supporto](mailto:tve-support@adobe.com) per il monitoraggio della concorrenza ed eseguire i passaggi necessari per consentire l&#39;accesso al prodotto API.
+Per accedere al prodotto Report sull&#39;utilizzo del monitoraggio della concorrenza, un cliente deve prima contattare il [Team di supporto](mailto:tve-support@adobe.com) per il monitoraggio della concorrenza ed eseguire i passaggi necessari per consentire l&#39;accesso al prodotto API. Ulteriori dettagli sull&#39;accesso API [CMU](/help/concurrency-monitoring/cmu-api-access.md).
 
 ## Metriche e raggruppamenti generali dei rapporti {#general-rep-metrics-breakdown}
 
@@ -54,12 +54,12 @@ Per accedere al prodotto Report sull&#39;utilizzo del monitoraggio della concorr
 ### I report sull’utilizzo possono filtrare le metriche elencate in precedenza in base alle seguenti dimensioni: {#dimensions-2-filter-metrics}
 
 | Nome Dimension | Descrizione |
-|:---|:---|
+|:---------------|:------------------------------------------------------------------------------------------------------------------|
 | anno | Anno a 4 cifre |
 | mese | Il mese dell&#39;anno (1-12) |
 | giorno | Il giorno del mese (1-31) |
 | ora | L&#39;ora del giorno |
-| minuto | Il minuto dell&#39;ora |
+| minuto | Il minuto dell&#39;ora[^1] |
 | applicazione | Nome dell&#39;applicazione registrato in Monitoraggio concorrenza utilizzato per gestire le sessioni |
 | application-id | ID applicazione registrato in Monitoraggio concorrenza utilizzato per gestire le sessioni |
 | channel | Metadati del canale inviati durante l’inizializzazione della sessione (contrassegnati come Sconosciuti se non vengono inviati metadati) |
@@ -88,3 +88,9 @@ Lo scopo principale di questo rapporto è quello di aiutarti a comprendere l’i
 | a livello di concorrenza | Rappresenta qualsiasi attività di flusso **distinta approvata durante la fase di inizializzazione della sessione** per un utente per poter osservare quanti flussi simultanei **sono stati aperti** da un utente e capire l&#39;impatto dell&#39;applicazione di un determinato limite di concorrenza |
 | livello di attività | Rappresenta qualsiasi **attività di flusso distinta (indipendentemente dal suo stato: avviato, attivo, arrestato, rifiutato)** per un utente per poter osservare quanti flussi simultanei sono stati tentati di essere aperti da un utente e capire l&#39;impatto dell&#39;applicazione di un determinato limite di concorrenza |
 | mvpd | MVPD fornito durante la gestione della sessione |
+
+### Esempi di rapporti
+
+Per una maggiore precisione dei dati, consigliamo i rapporti presentati in questa pagina [Esempi di rapporti CMU](/help/concurrency-monitoring/cm-usage-reports-examples.md)
+
+[^1]: per impostazione predefinita, i rapporti dettagliati non sono disponibili. Contatta il [Team di supporto](mailto:tve-support@adobe.com) per richiederli.
