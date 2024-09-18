@@ -1,13 +1,13 @@
 ---
 title: Panoramica di Registrazione client dinamici
 description: Panoramica di Registrazione client dinamici
-source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
+exl-id: 9f98dfcd-4375-48c3-beff-259dfb1d3a26
+source-git-commit: acff285f7db1bdd32d5da3e01a770d9581d3ba75
 workflow-type: tm+mt
 source-wordcount: '840'
 ht-degree: 0%
 
 ---
-
 
 # Panoramica di Registrazione client dinamici {#dynamic-client-registration-overview}
 
@@ -53,7 +53,7 @@ Per ulteriori informazioni su come gestire e utilizzare la registrazione client 
 
 Il processo di gestione della registrazione client dinamica consente alle applicazioni client in esecuzione su piattaforme specifiche e che necessitano dell&#39;accesso a API di autenticazione Adobe Pass specifiche di registrarsi tramite il [dashboard TVE di Adobe Pass](https://console.auth.adobe.com/).
 
-Adobe Pass TVE Dashboard è uno strumento che consente ai clienti di autenticazione Adobe Pass (programmatori) di gestire la configurazione e i dati. Questa dashboard self-service abilita una serie di funzionalità descritte nella [Guida utente di Adobe Pass TVE Dashboard](../tve-dashboard-user-guide.md).
+Adobe Pass TVE Dashboard è uno strumento che consente ai clienti di autenticazione Adobe Pass (programmatori) di gestire la configurazione e i dati. Questa dashboard self-service abilita una serie di funzionalità descritte nella [Guida utente di Adobe Pass TVE Dashboard](../tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md).
 
 Se hai accesso a [Adobe Pass TVE Dashboard](https://console.auth.adobe.com/), segui i passaggi descritti nelle sezioni seguenti per creare un&#39;applicazione registrata e scaricare l&#39;istruzione software.
 
@@ -67,12 +67,12 @@ Se hai accesso a [Adobe Pass TVE Dashboard](https://console.auth.adobe.com/), se
 
 * **Livello programmatore**
 
-  Il processo di registrazione a livello di programmatore consente di creare un&#39;applicazione registrata collegata a tutti i canali disponibili o a un sottoinsieme selezionato di canali. Per ulteriori dettagli, consulta la sezione [Creare un&#39;applicazione registrata a livello di programmatore](../tve-dashboard-user-guide.md#create-registered-application-programmer-level) dalla [Guida utente di TVE Dashboard](../tve-dashboard-user-guide.md).
+  Il processo di registrazione a livello di programmatore consente di creare un&#39;applicazione registrata collegata a tutti i canali disponibili o a un sottoinsieme selezionato di canali. Per ulteriori dettagli, consulta la sezione [Creare un&#39;applicazione registrata a livello di programmatore](../tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md#create-registered-application-programmer-level) dalla [Guida utente di TVE Dashboard](../tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md).
 
 
 * **Livello canale**
 
-  Il processo di registrazione a livello di canale consente di creare un&#39;applicazione registrata collegata solo al canale corrente selezionato. Per ulteriori dettagli, consulta la sezione [Creare un&#39;applicazione registrata a livello di canale](../tve-dashboard-user-guide.md#create-registered-application-channel-level) dalla [Guida utente di TVE Dashboard](../tve-dashboard-user-guide.md).
+  Il processo di registrazione a livello di canale consente di creare un&#39;applicazione registrata collegata solo al canale corrente selezionato. Per ulteriori dettagli, consulta la sezione [Creare un&#39;applicazione registrata a livello di canale](../tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md#create-registered-application-channel-level) dalla [Guida utente di TVE Dashboard](../tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md).
 
 >[!IMPORTANT]
 >
@@ -92,11 +92,11 @@ Sono disponibili due modi per scaricare un&#39;istruzione software in base al li
 
 * **Livello programmatore**
 
-  Per ulteriori dettagli, fare riferimento alla sezione [Scaricare un&#39;istruzione software a livello di programmatore](../tve-dashboard-user-guide.md#download-software-statement-programmer-level) dalla [Guida utente di TVE Dashboard](../tve-dashboard-user-guide.md).
+  Per ulteriori dettagli, fare riferimento alla sezione [Scaricare un&#39;istruzione software a livello di programmatore](../tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md#download-software-statement-programmer-level) dalla [Guida utente di TVE Dashboard](../tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md).
 
 * **Livello canale**
 
-  Per ulteriori dettagli, consulta la sezione [Scaricare un&#39;istruzione software a livello di canale](../tve-dashboard-user-guide.md#download-software-statement-channel-level) dalla [Guida utente di TVE Dashboard](../tve-dashboard-user-guide.md).
+  Per ulteriori dettagli, consulta la sezione [Scaricare un&#39;istruzione software a livello di canale](../tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md#download-software-statement-channel-level) dalla [Guida utente di TVE Dashboard](../tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md).
 
 L&#39;istruzione software è un token Web JSON (`JWT`) che contiene informazioni sul software dell&#39;applicazione client come bundle. Quando viene presentata all&#39;API [Recupera credenziali client](./apis/dynamic-client-registration-apis-retrieve-client-credentials.md), l&#39;istruzione software è firmata digitalmente utilizzando la firma Web JSON (`JWS`).
 

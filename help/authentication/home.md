@@ -2,7 +2,7 @@
 title: Benvenuto in Adobe&reg; Pass Authentication!
 description: Benvenuto in Adobe&reg; Panoramica su Pass Authentication
 exl-id: a8b01469-3d5f-4a44-9ae8-06a68c29d56d
-source-git-commit: 6699f37915551a19252dc84b6a37cc4565011fd5
+source-git-commit: acff285f7db1bdd32d5da3e01a770d9581d3ba75
 workflow-type: tm+mt
 source-wordcount: '331'
 ht-degree: 0%
@@ -27,7 +27,7 @@ Il tuo feedback è sempre apprezzato!
 
 | **Elementi in primo piano** |
 |-|
-| <ul><li>[Single Sign-On per iOS](/help/authentication/apple-sso-overview.md)</li><li>[Passaggio temporaneo promozionale](/help/authentication/promotional-temp-pass.md)</li><li>[Autenticazione basata su Home (HBA)](/help/authentication/home-based-authn-tve.md)</li><li>[Infografica HBA](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/AdobeNewsletterHBA.pdf)</li><li>[Guida utente di Adobe Pass TVE Dashboard](/help/authentication/tve-dashboard-user-guide.md)</li></ul> |
+| <ul><li>[Single Sign-On per iOS](/help/authentication/apple-sso-overview.md)</li><li>[Passaggio temporaneo promozionale](/help/authentication/promotional-temp-pass.md)</li><li>[Autenticazione basata su Home (HBA)](/help/authentication/home-based-authn-tve.md)</li><li>[Infografica HBA](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/AdobeNewsletterHBA.pdf)</li><li>[Guida utente di Adobe Pass TVE Dashboard](/help/authentication/tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md)</li></ul> |
 
 | **Per Programmatori** | **Per MVPD** |
 |------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
