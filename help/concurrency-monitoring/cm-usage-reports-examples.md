@@ -1,9 +1,9 @@
 ---
 title: Esempi di report sull’utilizzo del monitoraggio della concorrenza
 description: Esempi di report sull’utilizzo del monitoraggio della concorrenza
-source-git-commit: 7adfa5c803d27ac63f4fde64cf86edfb6bfca9cd
+source-git-commit: ca9bfb964ad7e7437bbea4704bca4ac5105874f1
 workflow-type: tm+mt
-source-wordcount: '2387'
+source-wordcount: '2374'
 ht-degree: 0%
 
 ---
@@ -67,8 +67,6 @@ ht-degree: 0%
 | Rapporto giornaliero a livello di attività | &quot;anno&quot;, &quot;mese&quot;, &quot;giorno&quot;, &quot;livello di attività&quot; | cmu/v2/anno/mese/giorno/livello di attività | &quot;activity-level&quot;, &quot;users&quot; |
 | Rapporto giornaliero a livello di attività per tenant | &quot;year&quot;, &quot;month&quot;, &quot;day&quot;, &quot;activity-level&quot;, &quot;tenant&quot; | cmu/v2/anno/mese/giorno/livello di attività/tenant | &quot;activity-level&quot;, &quot;tenant&quot;, &quot;users&quot; |
 | Report giornaliero a livello di attività per mvpd tenant | &quot;year&quot;, &quot;month&quot;, &quot;day&quot;, &quot;activity-level&quot;, &quot;tenant&quot;, &quot;mvpd&quot; | cmu/v2/anno/mese/giorno/livello di attività/tenant/mvpd | &quot;activity-level&quot;, &quot;tenant&quot;, &quot;mvpd&quot;, &quot;users&quot; |
-
-*TODO: verificare con BG se i report della concorrenza e del livello di attività sono corretti*
 
 ## Esempi di rapporti orari {#hourly-reports-examples}
 
