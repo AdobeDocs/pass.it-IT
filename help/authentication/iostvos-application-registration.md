@@ -2,7 +2,7 @@
 title: Registrazione applicazione iOS/tvOS
 description: Registrazione applicazione iOS/tvOS
 exl-id: 89ee6b5a-29fa-4396-bfc8-7651aa3d6826
-source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
+source-git-commit: 7107d4a915113fb237602143aafc350b776c55d6
 workflow-type: tm+mt
 source-wordcount: '609'
 ht-degree: 0%
@@ -32,7 +32,7 @@ Un rendiconto software è un token JWT che contiene informazioni sull’applicaz
 
 ### Se hai accesso al dashboard TVE di Adobe:
 
-- Apri il browser e passa a <https://console.auth.adobe.com>
+- Apri il browser e passa a <https://experience.adobe.com/#/pass/authentication>
 - Passa alla sezione `Channels` e seleziona il tuo canale.
 - Passa alla scheda `Registered Applications`.
 - Fai clic su `Add new application`.
@@ -55,7 +55,7 @@ Dopo aver ottenuto l&#39;Informativa sul software, è necessario trasmetterla co
 
 ### Se hai accesso al dashboard TVE di Adobe:
 
-- Apri il browser e passa a <https://console.auth.adobe.com>
+- Apri il browser e passa a <https://experience.adobe.com/#/pass/authentication>
 - Passa alla sezione `Channels` e seleziona il tuo canale.
 - Passa alla scheda `Custom Schemes`.
 - Fai clic su `Generate a new custom scheme`.

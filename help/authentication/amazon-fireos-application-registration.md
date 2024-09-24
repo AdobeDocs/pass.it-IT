@@ -2,7 +2,7 @@
 title: Registrazione applicazione Amazon FireOS
 description: Registrazione applicazione Amazon FireOS
 exl-id: 650fd4a2-dfc3-4c74-9b5b-6bea832a28ca
-source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
+source-git-commit: 7107d4a915113fb237602143aafc350b776c55d6
 workflow-type: tm+mt
 source-wordcount: '515'
 ht-degree: 0%
@@ -33,7 +33,7 @@ Un rendiconto software è un token JWT che contiene informazioni sull’applicaz
 
 ### Se hai accesso al dashboard TVE di Adobe:
 
-1. Apri il browser e passa a `https://console.auth.adobe.com`.
+1. Apri il browser e passa a `https://experience.adobe.com/#/pass/authentication`.
 
 1. Passa alla sezione **[!UICONTROL Channels]**, quindi seleziona il tuo canale.
 

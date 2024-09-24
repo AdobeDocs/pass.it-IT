@@ -2,7 +2,7 @@
 title: Autenticazione basata su Home per TV Everywhere
 description: Autenticazione basata su Home per TV Everywhere
 exl-id: abdc7724-4290-404a-8f93-953662cdc2bc
-source-git-commit: acff285f7db1bdd32d5da3e01a770d9581d3ba75
+source-git-commit: 7107d4a915113fb237602143aafc350b776c55d6
 workflow-type: tm+mt
 source-wordcount: '1638'
 ht-degree: 0%
@@ -115,7 +115,7 @@ Descrizione del flusso di autenticazione HBA per il protocollo di autenticazione
 ## Come attivare l&#39;HBA {#how-to-activate-hba}
 
 * **Protocollo OAuth:**
-   * Per abilitare l&#39;HBA, vedere [Guida utente di Adobe Pass TVE Dashboard](/help/authentication/tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md)
+   * Per abilitare l&#39;HBA, vedere [Guida utente di Adobe Pass TVE Dashboard](/help/authentication/tve-dashboard/new-tve-dashboard/tve-dashboard-overview.md)
 * **Protocollo SAML:** autenticazione basata su Home attivata sul lato MVPD. Non è richiesta alcuna azione da parte del programmatore o dell’Adobe.
 Per ulteriori informazioni sugli MVPD che supportano l&#39;autenticazione basata su Home, vedere [Stato HBA per MVPD](/help/authentication/hba-status-mvpds.md).
 
@@ -156,5 +156,5 @@ Per ulteriori informazioni sugli MVPD che supportano l&#39;autenticazione basata
 * [Infografica autenticazione basata su Home](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/AdobeNewsletterHBA.pdf?dc=201604260953-2640){target=_blank} - per Adobe
 * [Autenticazione tramite il protocollo OAuth 2.0](/help/authentication/authn-oauth2-protocol.md)
 * [Autenticazione con MVPD SAML](/help/authentication/authn-usecase.md)
-* [Guida utente di Adobe Pass TVE Dashboard](/help/authentication/tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md)
+* [Guida utente di Adobe Pass TVE Dashboard](/help/authentication/tve-dashboard/new-tve-dashboard/tve-dashboard-overview.md)
 * [hba_status Metadati utente](/help/authentication/user-metadata-feature.md#obtaining)

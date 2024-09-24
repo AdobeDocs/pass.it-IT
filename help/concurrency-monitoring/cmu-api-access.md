@@ -2,9 +2,9 @@
 title: Accesso API CMU
 description: Accesso API CMU
 exl-id: 8d216703-aabc-489e-93fe-d4d105616b1d
-source-git-commit: 52c0ffe75f6ac9fda3da39ff08b0dc4c5d5ca428
+source-git-commit: 7107d4a915113fb237602143aafc350b776c55d6
 workflow-type: tm+mt
-source-wordcount: '407'
+source-wordcount: '420'
 ht-degree: 0%
 
 ---
@@ -27,20 +27,22 @@ Per ottenere l’accesso, segui i passaggi descritti nelle sezioni seguenti.
 ## Passaggi della procedura di accesso {#access-procedure-steps}
 
 1. Avere un&#39;applicazione registrata nel server Adobe Pass DCR. Per questo passaggio, contatta il nostro [team di supporto](mailto:tve-support@adobe.com).
+
 2. Ottieni il rendiconto del software
-   1. Vai a Dashboard TVE <a href="https://console-preprod.auth.adobe.com/#!/" target="_blank"> Pre-produzione </a> o <a href="https://console.auth.adobe.com/" target="_blank">PROD</a>
+   1. Vai a [Dashboard TVE di Adobe Pass](https://experience.adobe.com/#/pass/authentication)
    2. Seleziona programmatore
-   3. Vai alla scheda Applicazioni
+   3. Vai alla scheda *Applicazioni registrate*
    4. Seleziona applicazione
-   5. Fare clic su DownLoad Software Statement per ottenere un file simile con l&#39;acquisizione sotto
+   5. Fare clic su Scarica nella riga dell&#39;applicazione registrata per la quale si desidera ottenere un&#39;istruzione software e salvarla come file nel computer locale
       <figure>
-          <img src="assets/software_statement_1_download.png"
+          <img src="assets/programmer-download-software-statement-button.png"
                alt="Scarica la dichiarazione del software">
-       </figure>
+      </figure>
+
       <figure>
           <img src="assets/software_statement_2.png"
                alt="Esempio di istruzioni software">
-       </figure>
+      </figure>
 
 3. Ottieni token di accesso
    1. Ottieni le credenziali del client utilizzando l’istruzione software ottenuta in precedenza ed eseguendo la chiamata di seguito. In questo modo verrà ottenuta una coppia client_id - client_secret, che può essere utilizzata per ottenere il token di accesso.
