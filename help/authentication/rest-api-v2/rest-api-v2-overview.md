@@ -1,14 +1,14 @@
 ---
-title: API REST V2 - Panoramica
-description: API REST V2 - Panoramica
-source-git-commit: 94fcb4e8c94330561596cd4006738c4f4d75e371
+title: Panoramica di REST API V2
+description: Panoramica di REST API V2
+source-git-commit: dd3451f8761ce6183e9a11099fb3094abae09466
 workflow-type: tm+mt
-source-wordcount: '494'
+source-wordcount: '490'
 ht-degree: 0%
 
 ---
 
-# API REST V2 - Panoramica {#rest-api-v2-overview}
+# Panoramica di REST API V2 {#rest-api-v2-overview}
 
 >[!IMPORTANT]
 >
@@ -70,7 +70,11 @@ Tuttavia, tutti gli sviluppi futuri saranno basati sull’API REST V2. Consiglia
 
 ## Vuoi saperne di più?
 
-Per iniziare, visita la documentazione pubblica per accedere a [descrizione del flusso](./flows/rest-api-v2-flows-overview.md) e [riferimento API](./apis/rest-api-v2-apis-overview.md).
+Per iniziare, consulta la nostra documentazione pubblica:
+
+- [Glossario](rest-api-v2-glossary.md)
+- [API](./apis/rest-api-v2-apis-overview.md)
+- [Flussi](./flows/rest-api-v2-flows-overview.md)
 
 Il nostro team dedicato di supporto è disponibile anche per aiutarti con qualsiasi domanda o assistenza tecnica di cui potresti aver bisogno.
 

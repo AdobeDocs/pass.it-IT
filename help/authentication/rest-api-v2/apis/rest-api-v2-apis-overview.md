@@ -1,21 +1,21 @@
 ---
-title: REST API V2 - API - Panoramica
-description: REST API V2 - API - Panoramica
+title: Panoramica delle API REST API V2
+description: Panoramica delle API REST API V2
 exl-id: 62b48bf0-d200-4949-b268-8f8ea2daabfa
-source-git-commit: 94fcb4e8c94330561596cd4006738c4f4d75e371
+source-git-commit: dd3451f8761ce6183e9a11099fb3094abae09466
 workflow-type: tm+mt
-source-wordcount: '141'
+source-wordcount: '144'
 ht-degree: 0%
 
 ---
 
-# REST API V2 - API - Panoramica {#rest-api-v2-apis-overview}
+# Panoramica delle API REST API V2 {#rest-api-v2-apis-overview}
 
 >[!IMPORTANT]
 >
 > Il contenuto di questa pagina viene fornito solo a scopo informativo. L’utilizzo di questa API richiede una licenza corrente di Adobe. Non è consentito alcun uso non autorizzato.
 
-Per iniziare, consulta la documentazione pubblica di ciascuna voce dall’elenco seguente.
+Per iniziare, visita la documentazione pubblica delle API che ti interessano nell’elenco seguente.
 
 ## Configurazione {#rest-api-v2-apis-configuration}
 
