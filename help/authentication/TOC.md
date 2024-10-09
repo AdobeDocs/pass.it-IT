@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Autenticazione Adobe Pass
 user-guide-description: L’autenticazione Adobe Pass è una soluzione di gestione dei diritti per TV Everywhere, che fornisce un framework modulare per determinare se chi richiede l’accesso a una risorsa ne abbia diritto.
-source-git-commit: dd3451f8761ce6183e9a11099fb3094abae09466
+source-git-commit: 8c5203aa4a897a5e119a9886afc64a1b1556ee4f
 workflow-type: tm+mt
-source-wordcount: '1169'
+source-wordcount: '1174'
 ht-degree: 2%
 
 ---
@@ -189,6 +189,7 @@ ht-degree: 2%
       + [Stato HBA per MVPD](hba-status-mvpds.md)
    + Metadati utente {#user-metadat}
       + [Metadati utente](user-metadata-feature.md)
+      + [Certificato metadati utente per la crittografia](user-metadata-certificate.md)
    + [Autorizzazione di verifica preliminare](preflight-authz.md)
    + Segnalazione errori {#error-reportn}
       + [Segnalazione di errori](error-reporting.md)
