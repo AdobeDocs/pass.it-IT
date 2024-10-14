@@ -1,13 +1,13 @@
 ---
 title: Recupera profilo per codice specifico
 description: REST API V2 - Recupera il profilo per il codice specifico
-source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
+exl-id: d6ead7d5-de5f-4033-8115-980953a370c0
+source-git-commit: 6c328eb2c635a1d76fc7dae8148a4de291c126e0
 workflow-type: tm+mt
-source-wordcount: '571'
-ht-degree: 1%
+source-wordcount: '573'
+ht-degree: 2%
 
 ---
-
 
 # Recupera profilo per codice specifico {#retrieve-profile-for-specific-code}
 
@@ -265,8 +265,8 @@ ht-degree: 1%
       <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">errore</td>
-      <td>L'errore fornisce informazioni aggiuntive conformi alla documentazione di <a href="../../../enhanced-error-codes.md">Codici di errore avanzati</a>.</td>
+      <td style="background-color: #DEEBFF;"></td>
+      <td>Il corpo della risposta può fornire informazioni di errore aggiuntive conformi alla documentazione di <a href="../../../enhanced-error-codes.md">Codici di errore avanzati</a>.</td>
       <td><i>obbligatorio</i></td>
    </tr>
 </table>

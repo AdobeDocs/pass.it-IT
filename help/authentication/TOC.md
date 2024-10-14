@@ -4,7 +4,7 @@ audience: end-user
 feature: Authentication
 user-guide-title: Autenticazione Adobe Pass
 user-guide-description: L’autenticazione Adobe Pass è una soluzione di gestione dei diritti per TV Everywhere, che fornisce un framework modulare per determinare se chi richiede l’accesso a una risorsa ne abbia diritto.
-source-git-commit: 8c5203aa4a897a5e119a9886afc64a1b1556ee4f
+source-git-commit: 6c328eb2c635a1d76fc7dae8148a4de291c126e0
 workflow-type: tm+mt
 source-wordcount: '1174'
 ht-degree: 2%
@@ -113,8 +113,8 @@ ht-degree: 2%
          + [Riferimento API di JavaScript SDK](javascript-sdk-api-reference.md)
          + Linee guida {#js-sdk-guidelines}
             + [Accesso e disconnessione senza aggiornamento](refreshless-login-and-logout.md)
-         + API JavaScript {#js-api}
-            + [Autorizza in anticipo](js-preauthorize.md)
+         + API JavaScript {#javascript-sdk-api}
+            + [Autorizza in anticipo](preauthorize-api-javascript-sdk.md)
       + SDK iOS/tvOS {#ios-sdk}
          + [Panoramica dell’SDK iOS/tvOS](iostvos-sdk-overview.md)
          + [Manuale dell’SDK iOS/tvOS](iostvos-sdk-cookbook.md)
@@ -124,8 +124,8 @@ ht-degree: 2%
             + Linee guida per la migrazione {#migration-guidelines}
                + [Guida alla migrazione ad iOS/tvOS v3.x](iostvos-v3x-migration-guide.md)
             + [Controlli di integrità archiviazione iOS/tvOS](iostvos-sdk-storage-integrity-checks.md)
-         + API iOS/tvOS {#ios-tvos-api}
-            + [Autorizza in anticipo](preauthorize.md)
+         + API iOS/tvOS {#ios-tvos-sdk-api}
+            + [Autorizza in anticipo](preauthorize-api-ios-tvos-sdk.md)
       + SDK di Android {#androidsdk}
          + [Panoramica dell’SDK di Android](android-sdk-overview.md)
          + [Manuale dell’SDK di Android](android-sdk-cookbook.md)
@@ -133,8 +133,8 @@ ht-degree: 2%
          + Linee guida {#androidguidelines}
             + [Registrazione applicazione Android](android-application-registration.md)
             + [SDK per Android con registrazione client dinamica](android-sdk-with-dynamic-client-registration.md)
-         + API Android{#androidapi}
-            + [Autorizza in anticipo](preauthorize-android.md)
+         + API Android{#android-sdk-api}
+            + [Autorizza in anticipo](preauthorize-api-android-sdk.md)
       + SDK di Amazon FireOS {#fireossdk}
          + [Amazon FireOS SSO - Guida introduttiva per il programmatore](amazon-firetv-sso-programmer-kickoff-guide.md)
          + [SSO di Amazon FireOS utilizzando il manuale API senza client](amazon-fireos-sso-using-clientless-api-cookbook.md)

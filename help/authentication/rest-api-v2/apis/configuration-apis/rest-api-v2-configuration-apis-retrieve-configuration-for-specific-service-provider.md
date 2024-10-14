@@ -1,13 +1,13 @@
 ---
 title: Recupera la configurazione per un provider di servizi specifico
 description: 'REST API V2: recupero della configurazione per un provider di servizi specifico'
-source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
+exl-id: ad7e4c6d-ed96-4ae7-82a9-3c24e5fc9302
+source-git-commit: 6c328eb2c635a1d76fc7dae8148a4de291c126e0
 workflow-type: tm+mt
-source-wordcount: '523'
+source-wordcount: '525'
 ht-degree: 2%
 
 ---
-
 
 # Recupera la configurazione per un provider di servizi specifico {#retrieve-configuration-for-specific-service-provider}
 
@@ -270,8 +270,8 @@ ht-degree: 2%
       <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">errore</td>
-      <td>L'errore fornisce informazioni aggiuntive conformi alla documentazione di <a href="../../../enhanced-error-codes.md">Codici di errore avanzati</a>.</td>
+      <td style="background-color: #DEEBFF;"></td>
+      <td>Il corpo della risposta può fornire informazioni di errore aggiuntive conformi alla documentazione di <a href="../../../enhanced-error-codes.md">Codici di errore avanzati</a>.</td>
       <td><i>obbligatorio</i></td>
    </tr>
 </table>
