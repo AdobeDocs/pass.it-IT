@@ -2,9 +2,9 @@
 title: Meccanismo di limitazione
 description: Scopri il meccanismo di limitazione utilizzato nell’autenticazione di Adobe Pass. Per una panoramica di questo meccanismo, consulta questa pagina.
 exl-id: f00f6c8e-2281-45f3-b592-5bbc004897f7
-source-git-commit: 8552a62f4d6d80ba91543390bf0689d942b3a6f4
+source-git-commit: 83998257b25465c109cac56ae753291d1572696c
 workflow-type: tm+mt
-source-wordcount: '987'
+source-wordcount: '1141'
 ht-degree: 0%
 
 ---
@@ -44,7 +44,7 @@ Ulteriori dettagli su come trasmettere l&#39;intestazione X-Forwarded-For [qui](
 
 ### Limiti ed endpoint effettivi
 
-Attualmente, il limite predefinito consente un massimo di 1 richiesta al secondo., con un burst iniziale di 3 richieste (una tantum per la prima interazione del client identificato, che dovrebbe consentire il completamento dell’inizializzazione). Questo non dovrebbe influenzare nessun caso di business regolare tra tutti i nostri clienti.
+Attualmente, il limite predefinito consente un massimo di 1 richiesta al secondo, con un burst iniziale di 10 richieste (una tantum per la prima interazione del client identificato, che dovrebbe consentire il completamento dell’inizializzazione). Questo non dovrebbe influenzare nessun caso di business regolare tra tutti i nostri clienti.
 
 Il meccanismo di limitazione verrà attivato sui seguenti endpoint:
 
@@ -67,6 +67,7 @@ Il meccanismo di limitazione verrà attivato sui seguenti endpoint:
 - /api/v1/authenticate/
 - /api/v1/.+/profile-requests/.+
 - /api/v1/identities
+- /adobe-services/config/
 - /reggie/v1/.+/regcode
 - /reggie/v1/.+/regcode/.+
 
@@ -144,13 +145,21 @@ I clienti che utilizzano un’implementazione personalizzata (incluse quelle da 
 ## Esempio di scenario per la limitazione
 
 | Tempo dalla prima richiesta | Risposta ricevuta | Spiegazione |
-|--------------------------|-----------------------------------|----------------------------------------------------------------------------------------------------------|
+|--------------------------|-----------------------------------|-----------------------------------------------------------------------------------------------------------|
 | Secondo 0 | La chiamata riceve il codice di stato di esito positivo | 1 chiamate consumate dal limite |
 | Secondo 0,3 | La chiamata riceve il codice di stato di esito positivo | 1 chiamate consumate dal limite e 1 chiamate contrassegnate come burst |
 | Secondo 0,6 | La chiamata riceve il codice di stato di esito positivo | 1 chiamate consumate dal limite e 2 chiamate contrassegnate come burst |
 | Secondo 0,9 | La chiamata riceve il codice di stato di esito positivo | 1 chiamate consumate dal limite e 3 chiamate contrassegnate come burst |
 | Secondo 1,2 | La chiamata riceve il codice di stato di esito positivo | 2 chiamate consumate dal limite e 3 chiamate contrassegnate come burst |
-| Secondo 1,4 | La chiamata riceve il codice di stato 429 | 2 chiamate consumate dal limite e 3 chiamate contrassegnate come burst e 1 chiamata riceve &quot;429 Troppe richieste&quot; |
-| Secondo 1,6 | La chiamata riceve il codice di stato 429 | 2 chiamate consumate dal limite e 3 chiamate contrassegnate come burst e 2 chiamate ricevono ‘429 Troppe richieste’ |
-| Secondo 1,8 | La chiamata riceve il codice di stato 429 | 2 chiamate consumate dal limite e 3 chiamate contrassegnate come burst e 3 chiamate ricevono &quot;429 Troppe richieste&quot; |
-| Secondo 2.1 | La chiamata riceve il codice di stato di esito positivo | 3 chiamate consumate dal limite e 3 chiamate contrassegnate come burst e 3 chiamate ricevono &quot;429 Troppe richieste&quot; |
+| Secondo 1,3 | La chiamata riceve il codice di stato di esito positivo | 2 chiamate utilizzate dal limite e 4 chiamate contrassegnate come burst |
+| Secondo 1,4 | La chiamata riceve il codice di stato di esito positivo | 2 chiamate consumate dal limite e 5 chiamate contrassegnate come burst |
+| Secondo 1,5 | La chiamata riceve il codice di stato di esito positivo | 2 chiamate utilizzate dal limite e 6 chiamate contrassegnate come burst |
+| Secondo 1,6 | La chiamata riceve il codice di stato di esito positivo | 2 chiamate consumate dal limite e 7 chiamate contrassegnate come burst |
+| Secondo 1,7 | La chiamata riceve il codice di stato di esito positivo | 2 chiamate consumate dal limite e 8 chiamate contrassegnate come burst |
+| Secondo 1,8 | La chiamata riceve il codice di stato di esito positivo | 2 chiamate consumate dal limite e 9 chiamate contrassegnate come burst |
+| Secondo 2.1 | La chiamata riceve il codice di stato di esito positivo | 3 chiamate consumate dal limite e 9 chiamate contrassegnate come burst |
+| Secondo 2.2 | La chiamata riceve il codice di stato di esito positivo | 3 chiamate consumate dal limite e 10 chiamate contrassegnate come burst |
+| Secondo 2,4 | La chiamata riceve il codice di stato 429 | 3 chiamate consumate dal limite e 10 chiamate contrassegnate come burst e 1 chiamata riceve &quot;429 Troppe richieste&quot; |
+| Secondo 2,6 | La chiamata riceve il codice di stato 429 | 3 chiamate consumate dal limite e 10 chiamate contrassegnate come burst e 2 chiamate ricevono ‘429 Troppe richieste’ |
+| Secondo 2,8 | La chiamata riceve il codice di stato 429 | 3 chiamate consumate dal limite e 10 chiamate contrassegnate come burst e 3 chiamate ricevono ‘429 Troppe richieste’ |
+| Secondo 3.1 | La chiamata riceve il codice di stato di esito positivo | 4 chiamate consumate dal limite e 10 chiamate contrassegnate come burst e 3 chiamate ricevono ‘429 Troppe richieste’ |
