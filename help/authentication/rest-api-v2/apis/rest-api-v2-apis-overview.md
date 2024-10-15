@@ -2,9 +2,9 @@
 title: Panoramica delle API REST API V2
 description: Panoramica delle API REST API V2
 exl-id: 62b48bf0-d200-4949-b268-8f8ea2daabfa
-source-git-commit: dd3451f8761ce6183e9a11099fb3094abae09466
+source-git-commit: ca8eaff83411daab5f136f01394e1d425e66f393
 workflow-type: tm+mt
-source-wordcount: '144'
+source-wordcount: '149'
 ht-degree: 0%
 
 ---
@@ -26,6 +26,7 @@ Per iniziare, visita la documentazione pubblica delle API che ti interessano nel
 * [Crea sessione di autenticazione](sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)
 * [Riprendi sessione di autenticazione](sessions-apis/rest-api-v2-sessions-apis-resume-authentication-session.md)
 * [Recupera sessione di autenticazione](sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md)
+* [Eseguire l’autenticazione nell’agente utente](sessions-apis/rest-api-v2-sessions-apis-perform-authentication-in-user-agent.md)
 
 ## Profili {#rest-api-v2-apis-profiles}
 
