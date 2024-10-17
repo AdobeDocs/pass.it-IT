@@ -1,9 +1,9 @@
 ---
 title: Manuale dell’API REST V2 (da client a server)
 description: Manuale dell’API REST V2 (da client a server)
-source-git-commit: 709835276710ec4b92abec3e39aaecae99872e77
+source-git-commit: 0d6693d51887c9e794401e984f3a4075be091ee5
 workflow-type: tm+mt
-source-wordcount: '689'
+source-wordcount: '695'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 0%
 
 ## Passaggi per implementare REST API V2 nelle applicazioni lato client {#steps-to-implement-the-rest-api-v2-in-client-side-applications}
 
-Per implementare Adobe Pass REST API V2, devi seguire i passaggi riportati di seguito raggruppati in fasi.
+Per implementare Adobe Pass REST API V2, devi seguire i passaggi seguenti, raggruppati in fasi.
 
 ## A. Fase di registrazione {#registration-phase}
 
@@ -40,12 +40,12 @@ L&#39;applicazione di streaming verifica i profili autenticati esistenti: <b>/ap
 
 * Se non viene trovato alcun profilo e l&#39;applicazione Streaming implementa un flusso TempPass
    * Segui la documentazione su come implementare [Flussi di accesso temporanei](../flows/temporary-access-flows/rest-api-v2-access-temporary-flows.md)
-* Se non viene trovato alcun profilo, l&#39;applicazione Streaming implementa un flusso di autenticazione
+* Se non viene trovato alcun profilo e l&#39;applicazione Streaming implementa un flusso di autenticazione
    * L&#39;applicazione di streaming recupera l&#39;elenco di MVPD disponibili per serviceProvider: <b>/api/v2/{serviceProvider}/configuration</b><br>
 ([Recupera elenco di MVPD disponibili](../apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md))
    * L&#39;applicazione di streaming può implementare il filtro nell&#39;elenco degli MVPD e visualizzare solo gli MVPD destinati a nasconderne altri (TempPass, MVPD di prova, MVPD in fase di sviluppo, ecc.)
-   * Selettore di visualizzazione delle applicazioni in streaming, l&#39;utente seleziona il MVPD
-   * Creazione di una sessione da parte dell&#39;applicazione di streaming: <b>/api/v2/{serviceProvider}/session</b><br>
+   * L&#39;applicazione di streaming visualizza il selettore, l&#39;utente seleziona l&#39;MVPD
+   * L&#39;applicazione di streaming crea una sessione: <b>/api/v2/{serviceProvider}/session</b><br>
 ([Crea sessione di autenticazione](../apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md))<br>
       * Vengono restituiti un CODICE e un URL da utilizzare per l’autenticazione
       * Se viene trovato un profilo, l&#39;applicazione di streaming può passare a <a href="#preauthorization-phase">C. Fase di pre-autorizzazione</a> o <a href="#authorization-phase">D. Fase di autorizzazione</a>
@@ -54,8 +54,8 @@ L&#39;applicazione di streaming verifica i profili autenticati esistenti: <b>/ap
 
 Utilizzo di un browser o di un&#39;applicazione basata sul Web Second Screen:
 
-* Opzione 1. L’applicazione di streaming può aprire un browser o una visualizzazione web, caricare l’URL per l’autenticazione e l’utente arriva alla pagina di accesso di MVPD in cui è necessario inviare le credenziali
-   * utente immetti login/password, reindirizzamento finale mostra una pagina di successo
+* Opzione 1. L’applicazione Streaming può aprire un browser o una visualizzazione web, caricare l’URL per l’autenticazione e l’utente arriva alla pagina di accesso di MVPD in cui è necessario inviare le credenziali
+   * l’utente immette il login/password, il reindirizzamento finale mostra una pagina di successo
 * Opzione 2. L&#39;applicazione di streaming non può aprire un browser e semplicemente visualizzare il CODICE. <b>È necessario sviluppare un&#39;applicazione Web separata</b> per richiedere all&#39;utente di immettere CODE, build e aprire l&#39;URL: <b>/api/v2/authenticate/{serviceProvider}/{CODE}</b>
    * utente immetti login/password, reindirizzamento finale mostra una pagina di successo
 
