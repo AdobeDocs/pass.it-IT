@@ -2,7 +2,7 @@
 title: API di monitoraggio del servizio di adesione
 description: API di monitoraggio del servizio di adesione
 exl-id: a9572372-14a6-4caa-9ab6-4a6baababaa1
-source-git-commit: 8fa1e63619f4e22794d701a218c77649f73d9f60
+source-git-commit: 59ece09a8a72e67ea0944059064dba65e3137bd7
 workflow-type: tm+mt
 source-wordcount: '2027'
 ht-degree: 0%
@@ -122,11 +122,11 @@ I seguenti parametri della stringa di query hanno significati riservati per l’
 | --- | ---- |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| ---- | --- |
 | access_token | Sì | Il token DCR può essere passato come token Bearer di autorizzazione standard. | Nessuno | access_token=XXXXXX |
 | dimension-name | Sì | Qualsiasi nome di dimensione - presente nel percorso URL corrente o in un percorso secondario valido; il valore verrà trattato come filtro &quot;è uguale a&quot;. Se non viene fornito alcun valore, la dimensione specificata verrà inclusa nell&#39;output anche se non è inclusa o adiacente al percorso corrente | Nessuno | someDimension=someValue&amp;someOtherDimension |
-| fine | Sì | Ora di fine del rapporto in millisecondi | Ora corrente del server | fine=30/07/2012 |
+| fine | Sì | Ora di fine del rapporto in millisecondi | Ora corrente del server | fine=30/07/2024 |
 | formato | Sì | Utilizzato per la negoziazione dei contenuti (con lo stesso effetto ma precedenza inferiore rispetto al percorso &quot;estensione&quot; - vedi di seguito). | Nessuno: la negoziazione dei contenuti proverà le altre strategie | format=json |
 | limit | Sì | Numero massimo di righe da restituire | Valore predefinito segnalato dal server nel collegamento autonomo se nella richiesta non è specificato alcun limite | limit=1500 |
 | metriche | Sì | Elenco separato da virgole di nomi di metriche da restituire; deve essere utilizzato sia per filtrare un sottoinsieme delle metriche disponibili (per ridurre la dimensione del payload) che per forzare l’API a restituire una proiezione che contiene le metriche richieste (anziché la proiezione ottimale predefinita). | Se questo parametro non viene fornito, verranno restituite tutte le metriche disponibili per la proiezione corrente. | metriche=m1,m2 |
-| inizio | Sì | Ora di inizio per il report come ISO8601; il server compilerà la parte rimanente se viene fornito solo un prefisso: ad esempio, start=2012 si tradurrà in start=2012-01-01:00:00:00 | Segnalato dal server nel collegamento autonomo; il server tenta di fornire valori predefiniti ragionevoli in base alla granularità temporale selezionata | start=15/07/2012 |
+| inizio | Sì | Ora di inizio per il report come ISO8601; il server compilerà la parte rimanente se viene fornito solo un prefisso: ad esempio, start=2024 restituirà start=2024-01-01:00:00:00 | Segnalato dal server nel collegamento autonomo; il server tenta di fornire valori predefiniti ragionevoli in base alla granularità temporale selezionata | start=15-07-2024 |
 
 Al momento l’unico metodo HTTP disponibile è GET.
 
@@ -207,14 +207,14 @@ Esempio (supponendo che sia presente una singola metrica denominata `clients` ed
 * https://mgmt.auth.adobe.com/esm/v3/year/month.xml
 
 ```XML
-   <resource href="/esm/v3/year/month?start=2012-07-20T00:00:00&end=2012-08-20T14:35:21">
+   <resource href="/esm/v3/year/month?start=2024-07-20T00:00:00&end=2024-08-20T14:35:21">
    <links>
    <link rel="roll-up" href="/esm/v3/year"/>
    <link rel="drill-down" href="/esm/v3/year/month/day"/>
    </links>
    <report>
-   <record month="6" year="2012" clients="205"/>
-   <record month="7" year="2012" clients="466"/>
+   <record month="6" year="2024" clients="205"/>
+   <record month="7" year="2024" clients="466"/>
    </report>
    </resource>
 ```
@@ -225,7 +225,7 @@ Esempio (supponendo che sia presente una singola metrica denominata `clients` ed
       {
         "_links" : {
           "self" : {
-            "href" : "/esm/v3/year/month?start=2012-07-20T00:00:00&end=2012-08-20T14:35:21"
+            "href" : "/esm/v3/year/month?start=2024-07-20T00:00:00&end=2024-08-20T14:35:21"
           },
           "roll-up" : {
             "href" : "/esm/v3/year"
@@ -236,11 +236,11 @@ Esempio (supponendo che sia presente una singola metrica denominata `clients` ed
         },
         "report" : [ {
           "month" : "6",
-          "year" : "2012",
+          "year" : "2024",
           "clients" : "205"
         }, {
           "month" : "7",
-          "year" : "2012",
+          "year" : "2024",
           "clients" : "466"
         } ]
       }
@@ -259,13 +259,13 @@ Il file CSV conterrà una riga di intestazione e quindi i dati del rapporto come
 L’ordine dei campi nella riga di intestazione rifletterà l’ordinamento dei dati della tabella.
 
 
-Esempio: https://mgmt.auth.adobe.com/esm/v3/year/month.csv produrrà un file denominato `report__2012-07-20_2012-08-20_1000.csv` con il seguente contenuto:
+Esempio: https://mgmt.auth.adobe.com/esm/v3/year/month.csv produrrà un file denominato `report__2024-07-20_2024-08-20_1000.csv` con il seguente contenuto:
 
 
 | Anno | Mese | Client |
 | ---- | :---: | ------- |
-| 2012 | 6 | 580 |
-| 2012 | 7 | 231 |
+| 2024 | 6 | 580 |
+| 2024 | 7 | 231 |
 
 ## Aggiornamento dei dati {#data-freshness}
 
