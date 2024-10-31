@@ -1,23 +1,35 @@
 ---
 title: Single Sign-On - Partner - Flussi
 description: REST API V2 - Single Sign-On - Partner - Flussi
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+exl-id: 5735d67f-a311-4d03-ad48-93c0fcbcace5
+source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
 workflow-type: tm+mt
-source-wordcount: '1317'
+source-wordcount: '1444'
 ht-degree: 0%
 
 ---
-
 
 # Single sign-on con flussi di partner {#single-sign-on-partner-flows}
 
 >[!IMPORTANT]
 >
-> Il contenuto di questa pagina viene fornito solo a scopo informativo. L’utilizzo di questa API richiede una licenza corrente di Adobe. Non è consentito alcun uso non autorizzato.
+> Il contenuto di questa pagina viene fornito solo a scopo informativo. L’utilizzo di questa API richiede una licenza corrente da Adobe. Non è consentito alcun uso non autorizzato.
 
 >[!IMPORTANT]
 >
 > L&#39;implementazione REST API V2 è limitata dalla documentazione del [meccanismo di limitazione](/help/authentication/throttling-mechanism.md).
+
+Il metodo Partner consente a più applicazioni di utilizzare un payload di stato del framework partner per ottenere un Single Sign-On (SSO) a livello di dispositivo quando si utilizzano i servizi Adobe Pass.
+
+Le applicazioni sono responsabili del recupero del payload dello stato del framework del partner utilizzando framework o librerie specifici del partner al di fuori dei sistemi Adobe Pass.
+
+Le applicazioni sono responsabili dell&#39;inclusione del payload dello stato del framework partner come parte dell&#39;intestazione `AP-Partner-Framework-Status` per tutte le richieste che lo specificano.
+
+Per ulteriori dettagli sull&#39;intestazione `AP-Partner-Framework-Status`, consulta la documentazione [AP-Partner-Framework-Status](../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md).
+
+L’API REST per l’autenticazione di Adobe Pass V2 supporta l’SSO (Single Sign-On) per i partner per gli utenti finali delle applicazioni client in esecuzione su iOS, iPadOS o tvOS.
+
+Per ulteriori dettagli sul Single Sign-On (SSO) per la piattaforma Apple, consulta la documentazione [Manuale Apple SSO (REST API V2)](/help/authentication/single-sign-on/partner-single-sign-on/apple-single-sign-on/apple-sso-cookbook-rest-api-v2.md).
 
 ## Recupera richiesta di autenticazione partner {#retrieve-partner-authentication-request}
 
@@ -61,7 +73,7 @@ Effettua i passaggi forniti per recuperare la richiesta di autenticazione del pa
    > Per informazioni dettagliate su [Recuperare la richiesta di autenticazione partner](../../apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-partner-authentication-request.md), consulta la documentazione API di:
    >
    > * Tutti i parametri _required_, come `serviceProvider` e `partner`
-   > * Tutte le intestazioni _required_ come `Authorization`, `AP-Device-Identifier` e `AP-Partner-Framework-Status`
+   > * Tutte le intestazioni _required_ come `Authorization`, `AP-Device-Identifier`, `Content-Type`, `X-Device-Info` e `AP-Partner-Framework-Status`
    > * Tutte le intestazioni e i parametri _optional_
    >
    > <br/>
@@ -175,7 +187,7 @@ Esegui i passaggi forniti per implementare il flusso di recupero del profilo uti
    > Per informazioni dettagliate su [Recuperare il profilo utilizzando la risposta di autenticazione partner](../../apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md), consultare la documentazione API:
    >
    > * Tutti i parametri _required_, come `serviceProvider`, `partner` e `SAMLResponse`
-   > * Tutte le intestazioni _required_, come `Authorization`, `AP-Device-Identifier` e `AP-Partner-Framework-Status`
+   > * Tutte le intestazioni _required_, come `Authorization`, `AP-Device-Identifier`, `Content-Type`, `X-Device-Info` e `AP-Partner-Framework-Status`
    > * Tutte le intestazioni e i parametri _optional_
    >
    > <br/>

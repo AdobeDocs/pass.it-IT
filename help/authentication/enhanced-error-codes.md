@@ -2,7 +2,7 @@
 title: Codici di errore migliorati
 description: Codici di errore migliorati
 exl-id: 2b0a9095-206b-4dc7-ab9e-e34abf4d359c
-source-git-commit: 6c328eb2c635a1d76fc7dae8148a4de291c126e0
+source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
 workflow-type: tm+mt
 source-wordcount: '2593'
 ht-degree: 2%
@@ -13,7 +13,7 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->Il contenuto di questa pagina viene fornito solo a scopo informativo. L’utilizzo di questa API richiede una licenza corrente di Adobe. Non è consentito alcun uso non autorizzato.
+>Il contenuto di questa pagina viene fornito solo a scopo informativo. L’utilizzo di questa API richiede una licenza corrente da Adobe. Non è consentito alcun uso non autorizzato.
 
 I codici di errore avanzati rappresentano una funzione di autenticazione di Adobe Pass che fornisce informazioni aggiuntive sugli errori alle applicazioni client integrate con:
 
@@ -301,8 +301,8 @@ La tabella seguente elenca i possibili codici di errore avanzati che un’applic
 | **nessuno** | *invalid_parameter_service_provider* | 400 | Il valore del parametro del provider di servizi è mancante o non valido. |
 |                              | *invalid_parameter_mvpd* | 400 | Il valore del parametro mvpd è mancante o non valido. |
 |                              | *invalid_parameter_code* | 400 | Valore del parametro di codice mancante o non valido. |
-|                              | *invalid_parameter_resources* | 400 | Il valore del parametro URL di reindirizzamento è mancante o non valido. |
-|                              | *invalid_parameter_redirect_url* | 400 | Il valore del parametro delle risorse è mancante o non valido. |
+|                              | *invalid_parameter_resources* | 400 | Il valore del parametro delle risorse è mancante o non valido. |
+|                              | *invalid_parameter_redirect_url* | 400 | Il valore del parametro URL di reindirizzamento è mancante o non valido. |
 |                              | *partner_parametro_non valido* | 400 | Il valore del parametro partner è mancante o non valido. |
 |                              | *invalid_parameter_saml_response* | 400 | Il valore del parametro di risposta SAML è mancante o non valido. |
 |                              | *informazioni_dispositivo_intestazione_non_valida* | 400 | Valore dell&#39;intestazione delle informazioni sul dispositivo mancante o non valido. |

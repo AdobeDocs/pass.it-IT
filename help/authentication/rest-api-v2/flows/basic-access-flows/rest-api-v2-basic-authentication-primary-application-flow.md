@@ -1,19 +1,19 @@
 ---
 title: Autenticazione di base - Applicazione principale - Flusso
 description: REST API V2 - Autenticazione di base - Applicazione principale - Flusso
-source-git-commit: dc9fab27c7eced2be5dd9f364ab8f2d64f8e4177
+exl-id: 8122108d-e9da-43c5-9abb-ab177cb21eb6
+source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
 workflow-type: tm+mt
 source-wordcount: '894'
 ht-degree: 0%
 
 ---
 
-
 # Flusso di autenticazione di base eseguito nell&#39;applicazione principale {#basic-authentication-flow-performed-within-primary-application}
 
 >[!IMPORTANT]
 >
-> Il contenuto di questa pagina viene fornito solo a scopo informativo. L’utilizzo di questa API richiede una licenza corrente di Adobe. Non è consentito alcun uso non autorizzato.
+> Il contenuto di questa pagina viene fornito solo a scopo informativo. L’utilizzo di questa API richiede una licenza corrente da Adobe. Non è consentito alcun uso non autorizzato.
 
 >[!IMPORTANT]
 >
@@ -121,7 +121,7 @@ Segui i passaggi forniti per implementare il flusso di autenticazione di base es
    > * Tutte le intestazioni _required_, come `Authorization`, `AP-Device-Identifier`
    > * Tutti i parametri e le intestazioni _optional_
 
-   >[!NOTE]
+   >[!TIP]
    >
    > Suggerimento: l&#39;applicazione di streaming può attendere che l&#39;agente utente raggiunga il `redirectUrl` fornito per verificare se il profilo regolare è stato generato e salvato correttamente.
 

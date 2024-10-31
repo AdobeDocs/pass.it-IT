@@ -1,19 +1,19 @@
 ---
 title: Intestazione - Adobe-Subject-Token
 description: REST API V2 - Intestazione - Adobe-Subject-Token
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+exl-id: 906d88f4-3b8f-491a-ab58-8e63d3b958d8
+source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
 workflow-type: tm+mt
-source-wordcount: '156'
+source-wordcount: '166'
 ht-degree: 1%
 
 ---
-
 
 # Intestazione - Adobe-Subject-Token {#header-adobe-subject-token}
 
 >[!NOTE]
 >
-> Il contenuto di questa pagina viene fornito solo a scopo informativo. L’utilizzo di questa API richiede una licenza corrente di Adobe. Non è consentito alcun uso non autorizzato.
+> Il contenuto di questa pagina viene fornito solo a scopo informativo. L’utilizzo di questa API richiede una licenza corrente da Adobe. Non è consentito alcun uso non autorizzato.
 
 ## Panoramica {#overview}
 
@@ -47,10 +47,10 @@ La firma Web JSON (`JWS`) o la crittografia Web JSON (`JWE`) che è un token Web
 
 Questa funzione è disponibile per le seguenti piattaforme:
 
-* [Amazon](../../../amazon-fireos-sso-using-clientless-api-cookbook.md)
+* [Manuale Amazon SSO (REST API V2)](../../../single-sign-on/platform-single-sign-on/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v1.md)
 
 ## Esempi {#examples}
 
 Consulta gli esempi come descritto per le seguenti piattaforme:
 
-* [Amazon](../../../amazon-fireos-sso-using-clientless-api-cookbook.md)
+* [Manuale Amazon SSO (REST API V2)](../../../single-sign-on/platform-single-sign-on/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v1.md)

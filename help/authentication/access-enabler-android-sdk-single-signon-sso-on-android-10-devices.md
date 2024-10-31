@@ -2,9 +2,9 @@
 title: Accesso Single Sign-On (SSO) SDK di Android Enabler sulle app Android 10
 description: Accesso Single Sign-On (SSO) SDK di Android Enabler sulle app Android 10
 exl-id: dedade15-c451-4757-b684-d3728e11dd87
-source-git-commit: 1b8371a314488335c68c82882c930b7c19aa64ad
+source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
 workflow-type: tm+mt
-source-wordcount: '383'
+source-wordcount: '379'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Il contenuto di questa pagina viene fornito solo a scopo informativo. L’utilizzo di questa API richiede una licenza corrente di Adobe. Non è consentito alcun uso non autorizzato.
+>Il contenuto di questa pagina viene fornito solo a scopo informativo. L’utilizzo di questa API richiede una licenza corrente da Adobe. Non è consentito alcun uso non autorizzato.
 
 ## Panoramica
 
@@ -23,8 +23,6 @@ Tuttavia, nell’ultima versione di Android 10, Google ha prodotto alcune modifi
 
 Come conseguenza di queste modifiche, l&#39;SSO (Single Sign-On) offerto da Access Enabler Android versione **3.2.1 SDK (più recente)** e versioni precedenti può essere influenzato sui dispositivi Android 10, come spiegato nella sezione successiva.
 
-Vedi [Panoramica di Roku SSO](/help/authentication/roku-sso-overview.md).
-
 ## Comportamento
 
 A seconda dell&#39;attributo del manifesto **[!UICONTROL target SDK level]** dell&#39;app o dell&#39;utilizzo di **android:requestLegacyExternalStorage**, l&#39;SSO (Single Sign-On) offerto dall&#39;SDK Access Enabler Android versione 3.2.1 (più recente) e dalle versioni precedenti si comporterà attualmente come segue:
@@ -32,7 +30,6 @@ A seconda dell&#39;attributo del manifesto **[!UICONTROL target SDK level]** del
 - L&#39;app è destinata a **Android 9 (livello API 28)** o a **-\>** Single Sign-On (SSO) **funzionerà**
 - L&#39;app è destinata a **Android 10** **(livello API 29)** e **imposta** il valore di **requestLegacyExternalStorage su true** nel file manifesto dell&#39;app **-\>** Single Sign-On (SSO) **funzionerà**
 - L&#39;app è destinata a **Android 10** **(livello API 29)** e **non imposta** il valore di **requestLegacyExternalStorage su true** nel file manifesto dell&#39;app **-\>** Single Sign-On (SSO) **non funzionerà**
-
 
 >[!TIP]
 >

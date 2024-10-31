@@ -2,7 +2,7 @@
 title: Flussi di accesso temporanei
 description: REST API V2 - Flussi di accesso temporanei
 exl-id: 387fcdb0-3a42-4893-ba83-e809426f92be
-source-git-commit: ca8eaff83411daab5f136f01394e1d425e66f393
+source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
 workflow-type: tm+mt
 source-wordcount: '3215'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
-> Il contenuto di questa pagina viene fornito solo a scopo informativo. L’utilizzo di questa API richiede una licenza corrente di Adobe. Non è consentito alcun uso non autorizzato.
+> Il contenuto di questa pagina viene fornito solo a scopo informativo. L’utilizzo di questa API richiede una licenza corrente da Adobe. Non è consentito alcun uso non autorizzato.
 
 >[!IMPORTANT]
 >
@@ -349,7 +349,7 @@ Segui i passaggi forniti per implementare il flusso di autorizzazione quando uti
 
 1. **Gestire i dettagli della decisione `Deny`:** L&#39;applicazione di streaming elabora le informazioni sull&#39;errore dalla risposta e può utilizzarle per visualizzare facoltativamente un messaggio specifico nell&#39;interfaccia utente.
 
-   >[!NOTE]
+   >[!TIP]
    >
    > Suggerimento: l’applicazione di streaming può informare gli utenti che è stato superato il numero massimo di risorse e consigliarli di avviare un flusso di autenticazione di base utilizzando un MVPD regolare per continuare a monitorare.
 
@@ -429,7 +429,7 @@ Segui i passaggi forniti per implementare il flusso di autorizzazione quando il 
 
 1. **Gestire i dettagli della decisione `Deny`:** L&#39;applicazione di streaming elabora le informazioni sull&#39;errore dalla risposta e può utilizzarle per visualizzare facoltativamente un messaggio specifico nell&#39;interfaccia utente.
 
-   >[!NOTE]
+   >[!TIP]
    >
    > Suggerimento: l’applicazione di streaming può informare gli utenti che l’accesso temporaneo è scaduto e consigliarli di avviare un flusso di autenticazione di base utilizzando un MVPD regolare per continuare a monitorare.
 

@@ -1,19 +1,19 @@
 ---
 title: Benvenuto in Adobe&reg; Pass Authentication!
-description: Benvenuto in Adobe&reg; Panoramica su Pass Authentication
+description: Panoramica di Adobe&reg; Pass Authentication
 exl-id: a8b01469-3d5f-4a44-9ae8-06a68c29d56d
-source-git-commit: 7107d4a915113fb237602143aafc350b776c55d6
+source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
 workflow-type: tm+mt
 source-wordcount: '331'
 ht-degree: 0%
 
 ---
 
-# Adobe ® Autenticazione pass {#pt-auth-overview}
+# Benvenuto in Autenticazione pass di Adobe® {#pt-auth-overview}
 
 >[!NOTE]
 >
->Il contenuto di questa pagina viene fornito solo a scopo informativo. L’utilizzo di questa API richiede una licenza corrente di Adobe. Non è consentito alcun uso non autorizzato.
+>Il contenuto di questa pagina viene fornito solo a scopo informativo. L’utilizzo di questa API richiede una licenza corrente da Adobe. Non è consentito alcun uso non autorizzato.
 
 L’autenticazione Adobe Pass è una soluzione di adesione per TV Everywhere che fornisce un framework modulare per determinare se qualcuno che richiede l’accesso a una risorsa ne ha diritto. Per partecipare alla soluzione di adesione all’autenticazione di Adobe Pass, i provider di contenuti (programmatori) e i provider di servizi televisivi a pagamento (MVPD) integrano i propri sistemi di adesione con i flussi di lavoro di autenticazione di Adobe Pass. Questo sito di documentazione fornisce dettagli sul processo di integrazione e suggerimenti per i partner esistenti.
 
@@ -21,13 +21,13 @@ Il tuo feedback è sempre apprezzato!
 
 >[!NOTE]
 >
->Il contenuto di questa pagina viene fornito solo a scopo informativo. L’utilizzo di questa API richiede una licenza corrente di Adobe. Non è consentito alcun uso non autorizzato.
+>Il contenuto di questa pagina viene fornito solo a scopo informativo. L’utilizzo di questa API richiede una licenza corrente da Adobe. Non è consentito alcun uso non autorizzato.
 
 ## Guida e domande frequenti {#help-faqs}
 
 | **Elementi in primo piano** |
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| <ul><li>[Single Sign-On per iOS](/help/authentication/apple-sso-overview.md)</li><li>[Passaggio temporaneo promozionale](/help/authentication/promotional-temp-pass.md)</li><li>[Autenticazione basata su Home (HBA)](/help/authentication/home-based-authn-tve.md)</li><li>[Infografica HBA](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/AdobeNewsletterHBA.pdf)</li><li>[Guida utente di Adobe Pass TVE Dashboard](/help/authentication/tve-dashboard/new-tve-dashboard/tve-dashboard-overview.md)</li></ul> |
+| <ul><li>[Single Sign-On per iOS](/help/authentication/single-sign-on/partner-single-sign-on/apple-single-sign-on/apple-sso-overview.md)</li><li>[Passaggio temporaneo promozionale](/help/authentication/promotional-temp-pass.md)</li><li>[Autenticazione basata su Home (HBA)](/help/authentication/home-based-authn-tve.md)</li><li>[Infografica HBA](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/AdobeNewsletterHBA.pdf)</li><li>[Guida utente di Adobe Pass TVE Dashboard](/help/authentication/tve-dashboard/new-tve-dashboard/tve-dashboard-overview.md)</li></ul> |
 
 | **Per Programmatori** | **Per MVPD** |
 |------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|

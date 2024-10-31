@@ -2,9 +2,9 @@
 title: Manuale dell’API REST (da client a server)
 description: Client-to-server del manuale API REST.
 exl-id: f54a1eda-47d5-4f02-b343-8cdbc99a73c0
-source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
+source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
 workflow-type: tm+mt
-source-wordcount: '868'
+source-wordcount: '876'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Il contenuto di questa pagina viene fornito solo a scopo informativo. L’utilizzo di questa API richiede una licenza corrente di Adobe. Non è consentito alcun uso non autorizzato.
+>Il contenuto di questa pagina viene fornito solo a scopo informativo. L’utilizzo di questa API richiede una licenza corrente da Adobe. Non è consentito alcun uso non autorizzato.
 
 
 ## Panoramica {#overview}
@@ -73,7 +73,7 @@ Adobe Pass utilizza il DCR per proteggere le comunicazioni client tra un’appli
 
 1. Ottieni un codice di registrazione e un URL da utilizzare per accedere all’app di accesso alla seconda schermata e presentali all’utente:
 
-   a. Invia una richiesta POST al servizio Codice di registrazione Adobe, trasmettendo un ID dispositivo con hash e un &quot;URL di registrazione&quot;.  Esempio: [`<REGGIE_FQDN>/reggie/v1/[requestorId]/regcode [device ID]`](/help/authentication/registration-code-request.md)
+   a. Invia una richiesta POST al servizio Codice di registrazione di Adobe, trasmettendo un ID dispositivo con hash e un &quot;URL di registrazione&quot;.  Esempio: [`<REGGIE_FQDN>/reggie/v1/[requestorId]/regcode [device ID]`](/help/authentication/registration-code-request.md)
 
    b. Presenta all’utente il codice di registrazione e l’URL restituiti.
 
@@ -130,16 +130,22 @@ utente.
 
 1. Invia nuovamente l&#39;utente all&#39;app Smart Device per completare il flusso di autorizzazione.
 
-## SSO piattaforma {#platform-sso}
+## Single Sign-On partner {#partner-sso}
 
-Alcune piattaforme forniscono supporto dedicato per il Single Sign-On (SSO). I dettagli di implementazione sono disponibili per ciascuna piattaforma:
+Alcuni dispositivi forniscono supporto dedicato per il Single Sign-On (SSO) dei partner:
 
-* [SSO APPLE](/help/authentication/apple-sso-cookbook-rest-api.md)
-* SSO AMAZON
+* [SSO APPLE](/help/authentication/single-sign-on/partner-single-sign-on/apple-single-sign-on/apple-sso-cookbook-rest-api-v1.md)
+
+## Single Sign-On della piattaforma {#platform-sso}
+
+Alcuni dispositivi forniscono supporto dedicato per l’SSO (Single Sign-On) della piattaforma:
+
+* [SSO AMAZON](./single-sign-on/platform-single-sign-on/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v1.md)
+* [SSO Roku](./single-sign-on/platform-single-sign-on/roku-single-sign-on/roku-sso-overview.md)
 
 ## TempPass e Promotional TempPass per API REST {#temppass}
 
-Per le implementazioni TempPass e Promotional TempPass in cui l’utente non è tenuto a inserire le credenziali, l’autenticazione può essere implementata direttamente nell’app di streaming.
+Per le implementazioni TempPass e Promotional TempPass in cui l’utente non è tenuto a immettere credenziali, l’autenticazione può essere implementata direttamente nell’app di streaming.
 
 **Per utilizzare questa API, l&#39;app di streaming deve verificare l&#39;univocità dell&#39;ID dispositivo, in quanto viene utilizzata per identificare il token, insieme ai dati aggiuntivi facoltativi.**
 

@@ -1,19 +1,19 @@
 ---
 title: Autenticazione di base - Applicazione secondaria - Flusso
 description: REST API V2 - Autenticazione di base - Applicazione secondaria - Flusso
-source-git-commit: d59afc0384a1c3617143efcef4ab5fb1a323e511
+exl-id: 83bf592e-c679-4cfe-984d-710a9598c620
+source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
 workflow-type: tm+mt
 source-wordcount: '2000'
 ht-degree: 0%
 
 ---
 
-
 # Flusso di autenticazione di base eseguito nell&#39;applicazione secondaria {#basic-authentication-flow-performed-within-secondary-application}
 
 >[!IMPORTANT]
 >
-> Il contenuto di questa pagina viene fornito solo a scopo informativo. L’utilizzo di questa API richiede una licenza corrente di Adobe. Non è consentito alcun uso non autorizzato.
+> Il contenuto di questa pagina viene fornito solo a scopo informativo. L’utilizzo di questa API richiede una licenza corrente da Adobe. Non è consentito alcun uso non autorizzato.
 
 >[!IMPORTANT]
 >
@@ -137,7 +137,7 @@ Segui i passaggi forniti per implementare il flusso di autenticazione di base es
    >
    > Se la convalida non riesce, verrà generata una risposta di errore che fornirà informazioni aggiuntive conformi alla documentazione di [Codici di errore avanzati](../../../enhanced-error-codes.md).
 
-   >[!NOTE]
+   >[!TIP]
    >
    > Suggerimento: l&#39;applicazione secondaria può informare gli utenti che `code` utilizzato non è valido nel caso in cui una risposta di errore indichi una sessione di autenticazione mancante e consigliare loro di riprovare a utilizzarne una nuova.
 
@@ -162,7 +162,7 @@ Segui i passaggi forniti per implementare il flusso di autenticazione di base es
    > * Tutte le intestazioni _required_, come `Authorization`, `AP-Device-Identifier`
    > * Tutti i parametri e le intestazioni _optional_
 
-   >[!NOTE]
+   >[!TIP]
    >
    > Suggerimento: l&#39;applicazione di streaming può implementare un meccanismo di polling utilizzando `code` per verificare se il profilo regolare è stato generato e salvato correttamente.
 
@@ -271,7 +271,7 @@ Segui i passaggi forniti per implementare il flusso di autenticazione di base es
    > 
    > Se la convalida non riesce, verrà generata una risposta di errore che fornirà informazioni aggiuntive conformi alla documentazione di [Codici di errore avanzati](../../../enhanced-error-codes.md).
 
-   >[!NOTE]
+   >[!TIP]
    >
    > Suggerimento: l&#39;applicazione secondaria può informare gli utenti che `code` utilizzato non è valido nel caso in cui una risposta di errore indichi una sessione di autenticazione mancante e consigliare loro di riprovare a utilizzarne una nuova.
 
@@ -300,7 +300,7 @@ Segui i passaggi forniti per implementare il flusso di autenticazione di base es
    > * Tutte le intestazioni _required_, come `Authorization`, `AP-Device-Identifier`
    > * Tutti i parametri e le intestazioni _optional_
 
-   >[!NOTE]
+   >[!TIP]
    >
    > Suggerimento: l&#39;applicazione di streaming può implementare un meccanismo di polling utilizzando `code` per verificare se il profilo regolare è stato generato e salvato correttamente.
 
