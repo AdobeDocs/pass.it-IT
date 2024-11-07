@@ -1,7 +1,7 @@
 ---
 title: Manuale dell’API REST V2 (server-to-server)
 description: Manuale dell’API REST V2 (server-to-server)
-source-git-commit: e1e1835d0d523377c48b39170919f7120cc3ef90
+source-git-commit: c17e52dd52fa14c50d59945598d1913f02be2468
 workflow-type: tm+mt
 source-wordcount: '1566'
 ht-degree: 0%
@@ -186,4 +186,4 @@ Il servizio Programmatore deve mantenere i certificati condivisi con Adobe (per 
 
 ## Informazioni correlate {#related}
 
-* [Riferimento REST API V2](/help/authentication/rest-api-v2/rest-api-v2-flows-overview.md)
+* [Riferimento REST API V2](/help/authentication/rest-api-v2/rest-api-v2-overview.md)
