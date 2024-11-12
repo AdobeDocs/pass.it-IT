@@ -2,9 +2,9 @@
 title: Codici di errore migliorati
 description: Codici di errore migliorati
 exl-id: 2b0a9095-206b-4dc7-ab9e-e34abf4d359c
-source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
+source-git-commit: ce9659074bfa3fac3ea62a70a6da470f15bad3fe
 workflow-type: tm+mt
-source-wordcount: '2593'
+source-wordcount: '2606'
 ht-degree: 2%
 
 ---
@@ -313,6 +313,7 @@ La tabella seguente elenca i possibili codici di errore avanzati che un’applic
 |                              | *invalid_header_pfs_permission_access_not_allowed* | 400 | Il valore dello stato di accesso alle autorizzazioni dall’intestazione dello stato del framework del partner non è concesso. |
 |                              | *intestazione_non_valida_pfs_provider_id_non_determinata* | 400 | Il valore dell&#39;ID provider dall&#39;intestazione dello stato del framework partner non è associato a un mvpd noto. |
 |                              | *invalid_header_pfs_provider_id_mismatch* | 400 | Il valore dell’ID del provider dall’intestazione dello stato del framework del partner non corrisponde al mvpd inviato come parametro. |
+|                              | *intestazione_non_valida_pfs_provider_info_scaduta* | 400 | Le informazioni sul provider dall&#39;intestazione dello stato del framework partner sono scadute. |
 |                              | *invalid_integration* | 400 | L&#39;integrazione tra il provider di servizi specificato e mvpd non esiste o è disabilitata. |
 |                              | *invalid_authentication_session* | 400 | La sessione di autenticazione associata a questa richiesta è mancante o non valida. |
 |                              | *preautorizzazione_negata_da_mvpd* | 403 | L&#39;MVPD ha restituito una decisione di rifiuto quando ha richiesto la pre-autorizzazione per la risorsa specificata. |
