@@ -1,9 +1,10 @@
 ---
 title: Manuale Apple SSO (REST API V2)
 description: Manuale Apple SSO (REST API V2)
-source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
+exl-id: 81476312-9ba4-47a0-a4f7-9a557608cfd6
+source-git-commit: e5ef8c0cba636ac4d2bda1abe0e121d0ecc1b795
 workflow-type: tm+mt
-source-wordcount: '3402'
+source-wordcount: '3410'
 ht-degree: 0%
 
 ---
@@ -16,11 +17,11 @@ ht-degree: 0%
 
 L’API REST per l’autenticazione di Adobe Pass V2 supporta l’SSO (Single Sign-On) per i partner per gli utenti finali delle applicazioni client in esecuzione su iOS, iPadOS o tvOS.
 
-Questo documento funge da estensione della documentazione API REST V2 esistente che descrive come implementare [Single Sign-On utilizzando i flussi dei partner](/help/authentication/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md).
+Questo documento funge da estensione della [Panoramica API REST V2](/help/authentication/rest-api-v2/rest-api-v2-overview.md) esistente che fornisce una visualizzazione di alto livello e il documento che descrive come implementare [Single Sign-On utilizzando i flussi dei partner](/help/authentication/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md).
 
-## Single Sign-On di Apple tramite i flussi dei partner {#apple-sso-cookbook-rest-api-v2-cookbook}
+## Single Sign-On di Apple tramite i flussi dei partner {#cookbook}
 
-### Prerequisiti {#apple-sso-cookbook-rest-api-v2-prerequisites}
+### Prerequisiti {#prerequisites}
 
 Prima di procedere con il Single Sign-On Apple utilizzando i flussi di partner, verifica che siano soddisfatti i seguenti prerequisiti:
 
@@ -40,7 +41,7 @@ Prima di procedere con il Single Sign-On Apple utilizzando i flussi di partner, 
 >
 > * L&#39;applicazione di streaming ha completato i [prerequisiti per l&#39;onboarding](/help/authentication/single-sign-on/partner-single-sign-on/apple-single-sign-on/apple-sso-overview.md#apple-sso-prerequisites-programmer) applicabili a un programmatore e necessari per abilitare l&#39;esperienza utente Single Sign-On di Apple.
 
-### Flusso di lavoro {#apple-sso-cookbook-rest-api-v2-workflow}
+### Flusso di lavoro {#workflow}
 
 Segui i passaggi forniti per implementare il Single Sign-On Apple utilizzando i flussi dei partner, come illustrato nel diagramma seguente.
 
