@@ -1,9 +1,10 @@
 ---
 title: Panoramica di REST API V2
 description: Panoramica di REST API V2
-source-git-commit: dd3451f8761ce6183e9a11099fb3094abae09466
+exl-id: a5595193-82c4-4033-bd98-596b4908b401
+source-git-commit: f2bbcaf979080bbde8e4de52b069454042959437
 workflow-type: tm+mt
-source-wordcount: '490'
+source-wordcount: '493'
 ht-degree: 0%
 
 ---
@@ -12,7 +13,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
-> Il contenuto di questa pagina viene fornito solo a scopo informativo. L’utilizzo di questa API richiede una licenza corrente di Adobe. Non è consentito alcun uso non autorizzato.
+> Il contenuto di questa pagina viene fornito solo a scopo informativo. L’utilizzo di questa API richiede una licenza corrente da Adobe. Non è consentito alcun uso non autorizzato.
 
 Si desidera migliorare l&#39;efficienza dei costi delle applicazioni TVE?
 
@@ -75,6 +76,7 @@ Per iniziare, consulta la nostra documentazione pubblica:
 - [Glossario](rest-api-v2-glossary.md)
 - [API](./apis/rest-api-v2-apis-overview.md)
 - [Flussi](./flows/rest-api-v2-flows-overview.md)
+- [Requisiti minimi di sistema](/help/authentication/minimum-system-requirements.md)
 
 Il nostro team dedicato di supporto è disponibile anche per aiutarti con qualsiasi domanda o assistenza tecnica di cui potresti aver bisogno.
 
