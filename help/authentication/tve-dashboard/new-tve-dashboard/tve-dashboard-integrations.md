@@ -2,7 +2,7 @@
 title: Integrazioni dashboard TVE
 description: Scopri le integrazioni tra i canali e gli MVPD e come gestire le integrazioni.
 exl-id: 0add340b-120c-4e82-8e3c-6c190d77cf7e
-source-git-commit: acff285f7db1bdd32d5da3e01a770d9581d3ba75
+source-git-commit: 1370554c66116a357970fb05c046608e261f0ed3
 workflow-type: tm+mt
 source-wordcount: '2093'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Il contenuto di questa pagina viene fornito solo a scopo informativo. L’utilizzo di questa API richiede una licenza corrente di Adobe. Non è consentito alcun uso non autorizzato.
+>Il contenuto di questa pagina viene fornito solo a scopo informativo. L’utilizzo di questa API richiede una licenza corrente da Adobe. Non è consentito alcun uso non autorizzato.
 
 La sezione **Integrazioni** della dashboard TVE consente di visualizzare e gestire le impostazioni per le integrazioni tra i canali e MVPD. Puoi anche [creare una nuova integrazione](#create-new-integration) in base alle tue esigenze.
 
@@ -252,7 +252,7 @@ Questa sezione ti consente di aggiornare le impostazioni per ogni parametro di m
 
 >[!NOTE]
 >
->Ogni MVPD può condividere parametri diversi. Per ulteriori informazioni sui parametri che uno specifico MVPD può condividere, contatta il tuo rappresentante di Adobe.
+>Ogni MVPD può condividere parametri diversi. Per ulteriori informazioni sui parametri che uno specifico MVPD può condividere, contatta il tuo rappresentante Adobe.
 
 La sezione metadati utente visualizza le colonne seguenti:
 
@@ -328,7 +328,7 @@ Per creare una nuova integrazione con un nuovo MVPD nella configurazione corrent
 Una nuova integrazione verrà creata solo dopo [revisioni e modifiche push](/help/authentication/tve-dashboard/new-tve-dashboard/tve-dashboard-review-push-changes.md).
 
 
-## Disabilita integrazione {#disable-integratgion}
+## Disabilita integrazione {#disable-integration}
 
 Per disabilitare un’integrazione, effettua le seguenti operazioni:
 

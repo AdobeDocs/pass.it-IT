@@ -1,9 +1,10 @@
 ---
 title: Glossario REST API V2
 description: Glossario REST API V2
-source-git-commit: dd3451f8761ce6183e9a11099fb3094abae09466
+exl-id: 8b3bd2de-1ff8-4c57-b18d-27ecdf2b0de2
+source-git-commit: 1370554c66116a357970fb05c046608e261f0ed3
 workflow-type: tm+mt
-source-wordcount: '1872'
+source-wordcount: '1964'
 ht-degree: 0%
 
 ---
@@ -12,7 +13,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
-> Il contenuto di questa pagina viene fornito solo a scopo informativo. L’utilizzo di questa API richiede una licenza corrente di Adobe. Non è consentito alcun uso non autorizzato.
+> Il contenuto di questa pagina viene fornito solo a scopo informativo. L’utilizzo di questa API richiede una licenza corrente da Adobe. Non è consentito alcun uso non autorizzato.
 
 Questo documento fornisce le definizioni dei termini utilizzati durante l&#39;integrazione della documentazione REST API V2 per l&#39;autenticazione di Adobe Pass e funge da sostituzione del nostro [Glossario](/help/authentication/glossary.md) legacy.
 
@@ -34,6 +35,8 @@ Il codice di autenticazione è un concetto di autenticazione Adobe Pass che memo
 
 Il codice di autenticazione può essere utilizzato da un&#39;applicazione [primaria (programmatore)](#primary-application) o da un&#39;applicazione [secondaria (programmatore)](#secondary-application) per completare il processo [authentication](#authentication), recuperare informazioni sulla [sessione di autenticazione](#session) o accedere all&#39;utente [profile](#profile).
 
+Sinonimo di codice di registrazione utilizzato in precedenza.
+
 #### Sessione di autenticazione {#session}
 
 La sessione di autenticazione è un concetto di autenticazione Adobe Pass che memorizza informazioni sul processo di autenticazione dell&#39;utente avviato (o continuato) da un&#39;applicazione [Programmer](#programmer) ed è identificato in modo univoco da un [codice di autenticazione](#code).
@@ -45,6 +48,10 @@ La sessione di autenticazione può inoltre indicare all&#39;applicazione [Progra
 L&#39;autorizzazione è un processo che consente a un utente di accedere al contenuto protetto ([resource](#resource)) da un catalogo [Programmer](#programmer) basato sulla sottoscrizione di proprietà [MVPD](#mvpd), dopo aver convalidato i diritti utente con [MVPD](#mvpd).
 
 ### C {#c}
+
+#### Credenziali client {#client-credentials}
+
+Le credenziali client sono un insieme di valori univoci generati durante il processo [Dynamic Client Registration (DCR)](#dcr) e devono essere utilizzati per ottenere un [token di accesso](#access-token).
 
 #### Configurazione {#configuration}
 
@@ -114,6 +121,8 @@ Il token multimediale è un token generato dall&#39;autenticazione di Adobe Pass
 
 Il token multimediale viene passato al [Programmatore](#programmer), che lo convalida per garantire la sicurezza dell&#39;accesso per tale [risorsa](#resource).
 
+Sinonimo del precedente termine utilizzato token di autorizzazione breve.
+
 #### Media Token Verifier {#media-token-verifier}
 
 Il Media Token Verifier è una libreria distribuita da Adobe Pass Authentication responsabile della verifica dell&#39;autenticità di un [token multimediale](#media-token).
@@ -134,11 +143,19 @@ Sinonimo di [Provider TV](#tv-provider) e [Provider identità](#identity-provide
 
 Il partner è un&#39;azienda che fornisce un servizio o un framework a un [programmatore](#programmer) per abilitare un&#39;esperienza utente Single Sign-On.
 
-Il partner è identificato da un valore univoco (ad esempio, &quot;apple&quot;) definito durante il processo di onboarding tra il partner e l’Adobe.
+Il partner è identificato da un valore univoco (ad esempio, &quot;apple&quot;) definito durante il processo di onboarding tra il partner e Adobe.
 
 #### Preautorizzazione {#preauthorization}
 
-La pre-autorizzazione è un processo che consente a un utente di visualizzare in anteprima l&#39;elenco di [risorse](#resource) da un catalogo [Programmer](#programmer) a cui avrebbe diritto di accedere, dopo aver convalidato i diritti utente con [MVPD](#mvpd).
+La preautorizzazione è un processo che consente a un utente di visualizzare in anteprima un sottoinsieme di [risorse](#resource) da un catalogo [Programmer](#programmer) a cui avrebbe diritto dopo aver convalidato i diritti utente con [MVPD](#mvpd).
+
+Sinonimo di [Verifica preliminare](#preflight).
+
+#### Verifica preliminare {#preflight}
+
+La verifica preliminare è un processo che consente a un utente di visualizzare in anteprima un sottoinsieme di [risorse](#resource) da un catalogo [Programmer](#programmer) a cui avrebbe diritto dopo aver convalidato i diritti utente con [MVPD](#mvpd).
+
+Sinonimo di [Preautorizzazione](#preauthorization).
 
 #### Applicazione principale (programmatore) {#primary-application}
 
@@ -147,6 +164,8 @@ L&#39;applicazione primaria fa riferimento a un&#39;applicazione [Programmer](#p
 #### Profilo {#profile}
 
 Il profilo è un concetto di autenticazione di Adobe Pass che memorizza informazioni sulla data di inizio e di fine dell&#39;autenticazione dell&#39;utente, i metadati dell&#39;utente [](#user-metadata) insieme ad altri campi che indicano il metodo per ottenere l&#39;autenticazione (ad esempio, &quot;regolare&quot;, &quot;degradato&quot;, &quot;temporaneo&quot;, &quot;single sign-on&quot;, ecc.).
+
+Sinonimo del token di autenticazione utilizzato in precedenza.
 
 #### Programmatore {#programmer}
 
@@ -258,7 +277,7 @@ Per ulteriori informazioni, consulta la [Guida utente di TVE Dashboard](/help/au
 
 Il fornitore di servizi televisivi è una società che fornisce servizi televisivi ai consumatori via cavo, via satellite o via Internet.
 
-Il fornitore del televisore è identificato da un valore univoco definito durante la procedura di onboarding tra il fornitore del televisore e l’Adobe.
+Il fornitore del televisore è identificato da un valore univoco definito durante il processo di onboarding tra il fornitore del televisore e l’Adobe.
 
 Sinonimo di [MVPD](#mvpd) e [provider di identità](#identity-provider).
 
@@ -270,7 +289,7 @@ L&#39;agente utente fa riferimento a un browser o a un componente simile (specif
 
 #### Metadati utente {#user-metadata}
 
-I metadati dell’utente si riferiscono ad attributi specifici dell’utente (ad esempio, codici postali, valutazioni dei genitori, ID utente, ecc.) gestiti da [MVPD](#mvpd) e forniti dall&#39;autenticazione Adobe Pass come parte di un [profilo](#profile).
+I metadati dell&#39;utente si riferiscono ad attributi specifici dell&#39;utente (ad esempio, codici postali, valutazioni parentali, ID utente e così via) gestiti da [MVPD](#mvpd) e forniti dall&#39;autenticazione Adobe Pass come parte di un [profilo](#profile).
 
 Per ulteriori informazioni, consulta la documentazione di [Metadati utente](/help/authentication/user-metadata-feature.md).
 
