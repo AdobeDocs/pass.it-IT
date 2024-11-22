@@ -2,9 +2,9 @@
 title: Manuale Apple SSO (REST API V2)
 description: Manuale Apple SSO (REST API V2)
 exl-id: 81476312-9ba4-47a0-a4f7-9a557608cfd6
-source-git-commit: e5ef8c0cba636ac4d2bda1abe0e121d0ecc1b795
+source-git-commit: dbf68d75962e3e34f0c569c409f8c98ae6b9e036
 workflow-type: tm+mt
-source-wordcount: '3410'
+source-wordcount: '3442'
 ht-degree: 0%
 
 ---
@@ -508,7 +508,10 @@ Segui i passaggi forniti per implementare il Single Sign-On Apple utilizzando i 
    > * Tutte le intestazioni _required_, come `Authorization`, `AP-Device-Identifier`
    > * Tutti i parametri e le intestazioni _optional_
 
-1. **Indicare l&#39;azione successiva:** La risposta dell&#39;endpoint di disconnessione di Adobe Pass contiene i dati necessari per guidare l&#39;applicazione di streaming per quanto riguarda l&#39;azione successiva.
+1. **Indicare l&#39;azione successiva:** La risposta dell&#39;endpoint di disconnessione di Adobe Pass contiene i dati necessari per guidare l&#39;applicazione di streaming per quanto riguarda l&#39;azione successiva:
+   * Attributo `url` mancante perché l&#39;utente deve interagire con il livello del partner (sistema) per completare il flusso di disconnessione.
+   * L&#39;attributo `actionName` è impostato su &quot;partner_logout&quot;.
+   * L&#39;attributo `actionType` è impostato su &quot;partner_interactive&quot;.
 
    >[!IMPORTANT]
    >

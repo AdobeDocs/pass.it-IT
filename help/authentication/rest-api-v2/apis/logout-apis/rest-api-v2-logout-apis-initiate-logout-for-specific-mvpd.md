@@ -2,9 +2,9 @@
 title: Avvia disconnessione per mvpd specifico
 description: REST API V2 - Avvia disconnessione per mvpd specifico
 exl-id: 2482de87-b3d4-4ea8-bd4a-25bf10017e01
-source-git-commit: ca8eaff83411daab5f136f01394e1d425e66f393
+source-git-commit: dbf68d75962e3e34f0c569c409f8c98ae6b9e036
 workflow-type: tm+mt
-source-wordcount: '941'
+source-wordcount: '1006'
 ht-degree: 1%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
-> Il contenuto di questa pagina viene fornito solo a scopo informativo. L’utilizzo di questa API richiede una licenza corrente di Adobe. Non è consentito alcun uso non autorizzato.
+> Il contenuto di questa pagina viene fornito solo a scopo informativo. L’utilizzo di questa API richiede una licenza corrente da Adobe. Non è consentito alcun uso non autorizzato.
 
 >[!IMPORTANT]
 >
@@ -239,6 +239,7 @@ ht-degree: 1%
                   I valori possibili sono:
                   <ul>
                     <li><b>logout</b><br/>Il dispositivo di streaming deve aprire l'URL specificato in un agente utente.<br/>Questa azione si applica ai seguenti scenari: disconnettersi da MVPD con un endpoint di disconnessione.</li>
+                    <li><b>partner_logout</b><br/>Il dispositivo di streaming deve informare l'utente della disconnessione anche dal livello partner (sistema).<br/>Questa azione si applica ai seguenti scenari: disconnettersi da MVPD quando il tipo di profilo è "appleSSO".</li>
                     <li><b>complete</b><br/>Il dispositivo di streaming non deve eseguire alcuna azione successiva.<br/>Questa azione è valida per i seguenti scenari: disconnettersi da MVPD senza un endpoint di disconnessione (funzionalità di disconnessione fittizia), disconnettersi durante un accesso ridotto, disconnettersi durante un accesso temporaneo.</li>
                     <li><b>non valido</b><br/>Il dispositivo di streaming non deve eseguire alcuna azione successiva.<br/>Questa azione si applica ai seguenti scenari: disconnettersi da MVPD quando non viene trovato alcun profilo valido.</li>
                   </ul>  
@@ -252,6 +253,7 @@ ht-degree: 1%
                   I valori possibili sono:
                   <ul>
                     <li><b>interactive</b><br/>Questo tipo si applica ai seguenti valori dell'attributo "actionName": <b>logout</b>.</li>
+                    <li><b>partner_interactive</b><br/>Questo tipo si applica ai seguenti valori dell'attributo "actionName": <b>partner_logout</b>.</li>
                     <li><b>none</b><br/>Questo tipo si applica ai seguenti valori dell'attributo "actionName": <b>complete</b>, <b>invalid</b>.</li>
                   </ul>
                <td><i>obbligatorio</i></td>
@@ -476,7 +478,43 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 5. Avviare la disconnessione per mvpd specifico durante l&#39;applicazione della degradazione
+### 5. Avvia la disconnessione per mvpd specifici, inclusi i profili ottenuti tramite il single sign-on tramite Partner (Apple)
+
+>[!BEGINTABS]
+
+>[!TAB Richiesta]
+
+```HTTPS
+GET /api/v2/REF30/logout/Cablevision?redirectUrl=https%3A%2F%2Fadobe.com HTTP/1.1
+
+    Authorization: Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJjNGZjM2U3ZS0xMmQ5LTQ5NWQtYjc0Mi02YWVhYzhhNDkwZTciLCJuYmYiOjE3MjQwODc4NjgsImlzcyI6ImF1dGguYWRvYmUuY29tIiwic2NvcGVzIjoiYXBpOmNsaWVudDp2MiIsImV4cCI6MTcyNDEwOTQ2OCwiaWF0IjoxNzI0MDg3ODY4fQ.DJ9GFl_yKAp2Qw-NVcBeRSnxIhqrwxhns5T5jU31N2tiHxCucKLSQ5guBygqkkJx6D0N_93f50meEEyfb7frbHhVHHwmRjHYjkfrWqHCpviwVjVZKKwl8Y3FEMb0bjKIB8p_E3txX9IbzeNGWRufZBRh2sxB5Q9B7XYINpVfh8s_sFvskrbDu5c01neCx5kEagEW5CtE0_EXTgEb5FSr_SfQG3UUu_iwlkOggOh_kOP_5GueElf9jn-bYBMnpObyN5s-FzuHDG5Rtac5rvcWqVW2reEqFTHqLI4rVC7UKQb6DSvPBPV4AgrutAvk30CYgDsOQILVyrjniincp7r9Ww
+    AP-Device-Identifier: fingerprint YmEyM2QxNDEtZDcxNS01NjFjLTk0ZjQtZTllNGM5NjZiMWVi
+    X-Device-Info: ewoJInByaW1hcnlIYXJkd2FyZVR5cGUiOiAiU2V0VG9wQm94IiwKCSJtb2RlbCI6ICJUViA1dGggR2VuIiwKCSJtYW51ZmFjdHVyZXIiOiAiQXBwbGUiLAoJIm9zTmFtZSI6ICJ0dk9TIgoJIm9zVmVuZG9yIjogIkFwcGxlIiwKCSJvc1ZlcnNpb24iOiAiMTEuMCIKfQ==
+    Accept: application/json
+    User-Agent: Mozilla/5.0 (Apple TV; U; CPU AppleTV5,3 OS 11.0 like Mac OS X; en_US)
+```
+
+>[!TAB Risposta]
+
+```HTTPS
+HTTP/1.1 200 OK
+
+Content-Type: application/json;charset=UTF-8
+
+{
+   "logouts": {
+      "Cablevision": {
+         "actionName": "partner_logout",
+         "actionType": "partner_interactive",
+         "mvpd": "Cablevision"
+      }
+   }
+}
+```
+
+>[!ENDTABS]
+
+### 6. Avviare la disconnessione per mvpd specifico durante l&#39;applicazione della degradazione
 
 >[!BEGINTABS]
 
@@ -512,7 +550,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 6. Avvio della disconnessione per TempPass di base o promozionale (non richiesto)
+### 7. Avvia la disconnessione per TempPass di base o promozionale (non richiesto)
 
 >[!BEGINTABS]
 
