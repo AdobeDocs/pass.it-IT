@@ -2,7 +2,7 @@
 title: Attributi metadati standard
 description: Attributi metadati standard
 exl-id: 99ffa98c-213f-47a5-a6e7-fbacb77875d0
-source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
+source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
 workflow-type: tm+mt
 source-wordcount: '1053'
 ht-degree: 0%
@@ -24,7 +24,7 @@ L&#39;API di monitoraggio della concorrenza forza i client a inviare i seguenti 
 |-------------|---------------------------|--------------------|------------------------------------------------------------------------------------------------------------------------------------|
 | applicationId | 75b4-431b-adb2-eb6b9e546013 | Intestazione di autorizzazione | Ticket Zendesk all&#39;integrazione |
 | mvpdName | Sample_MVPD | Percorso URI | Autenticazione di Adobe Pass dall’endpoint di configurazione quando l’utente seleziona l’MVPD |
-| accountId | 12345 | Percorso URI | Metadati upstreamUserID di autenticazione Adobe Pass dopo l&#39;accesso utente [Metadati utente upstreamUserID - Autenticazione Adobe Pass](/help/authentication/user-metadata-feature.md) |
+| accountId | 12345 | Percorso URI | Metadati upstreamUserID di autenticazione Adobe Pass dopo l&#39;accesso utente [Metadati utente upstreamUserID - Autenticazione Adobe Pass](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata-feature.md) |
 
 
 ## Attributi metadati {#metadata-attr}
