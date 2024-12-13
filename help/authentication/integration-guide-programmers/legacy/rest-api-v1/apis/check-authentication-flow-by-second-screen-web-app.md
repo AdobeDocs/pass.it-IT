@@ -2,14 +2,14 @@
 title: Controlla il flusso di autenticazione tramite l’app web Second Screen
 description: Controlla il flusso di autenticazione tramite l’app web Second Screen
 exl-id: 5807f372-a520-4069-b837-67ae41b7f79b
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '211'
+source-wordcount: '212'
 ht-degree: 0%
 
 ---
 
-# Controlla il flusso di autenticazione tramite l’app web Second Screen {#check-authentication-flow-by-second-screen-web-app}
+# (Legacy) Verifica il flusso di autenticazione tramite Second Screen Web App {#check-authentication-flow-by-second-screen-web-app}
 
 >[!NOTE]
 >

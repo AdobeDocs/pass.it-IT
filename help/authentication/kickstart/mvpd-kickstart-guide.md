@@ -2,14 +2,14 @@
 title: Piano di integrazione diretta MVPD
 description: Piano di integrazione diretta MVPD
 exl-id: 6423cc9a-a45a-4cde-b562-4cb72c98e505
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
 source-wordcount: '1071'
 ht-degree: 0%
 
 ---
 
-# Guida introduttiva MVPD: piano di integrazione diretta MVPD {#mvpd-dir-int-plan}
+# Guida rapida di MVPD: piano di integrazione diretta di MVPD {#mvpd-dir-int-plan}
 
 >[!NOTE]
 >
@@ -31,24 +31,24 @@ Il supporto è disponibile in qualsiasi momento tramite il sistema di ticket di 
 
 ## 1. Riunioni di avvio {#kickoff-meetings}
 
-L&#39;ambito di tali riunioni è l&#39;avvio di discussioni tecniche tra l&#39;Adobe e l&#39;MVPD. A questo punto, la documentazione deve essere condivisa da entrambe le parti. Come follow-up, Adobe deve aprire un ticket nel nostro sistema di ticket (https://tve.zendesk.com/) per monitorare lo stato dell’integrazione.
+Lo scopo di tali riunioni è l&#39;avvio di discussioni tecniche tra Adobe e MVPD. A questo punto, la documentazione deve essere condivisa da entrambe le parti. Come follow-up, Adobe deve aprire un ticket nel nostro sistema di ticket (https://tve.zendesk.com/) per monitorare lo stato dell’integrazione.
 
 ## 2. Caratteristiche {#features}
 
-Adobe imposterà una chiamata di stato settimanale per discutere e monitorare la pianificazione complessiva, i passaggi, la tempistica e i dettagli di implementazione dell’integrazione. In questa fase, Adobe rivede le specifiche MVPD. Il risultato dovrebbe essere una pagina delle specifiche che descriva tutte le funzioni necessarie per MVPD. MVPD invierà un documento di specifica Adobe, che descrive l&#39;autenticazione / implementazione dell&#39;autorizzazione MVPD.
+Adobe imposterà una chiamata di stato settimanale per discutere e monitorare la pianificazione complessiva, i passaggi, la tempistica e i dettagli di implementazione dell’integrazione. In questa fase, Adobe rivede le specifiche di MVPD. Il risultato dovrebbe essere una pagina delle specifiche che descrive tutte le funzioni necessarie per MVPD. MVPD invierà ad Adobe un documento contenente le specifiche, con informazioni dettagliate sull’implementazione dell’autenticazione/autorizzazione di MVPD.
 
-Elementi da chiarire. Vedere [Funzionalità di integrazione MVPD](/help/authentication/integration-guide-mvpds/mvpd-integr-features.md).
+Elementi da chiarire. Vedere [Funzionalità di integrazione di MVPD](/help/authentication/integration-guide-mvpds/mvpd-integr-features.md).
 
 A questo punto è necessario descrivere in dettaglio diverse impostazioni:
 
 * **URL logo MVPD** - Si tratta di un file con le seguenti dimensioni: 112 x 33 pixel. Il logo viene visualizzato dai programmatori sui loro siti quando l&#39;utente fa clic sul pulsante &quot;Accedi&quot; per selezionare il provider di Pay TV.
-* **Valori TTL (time-to-live)** - Il TTL viene in genere impostato da MVPD durante il processo di autenticazione/autorizzazione. Tuttavia, Adobe può ignorare tali valori TTL e fornire valori diversi a seconda di quanto concordato sia dal programmatore che dall’MVPD.
+* **Valori TTL (time-to-live)** - Il TTL viene in genere impostato da MVPD durante il processo di autenticazione/autorizzazione. Tuttavia, Adobe può ignorare tali valori TTL e fornire valori diversi a seconda di ciò che è stato concordato sia dal programmatore che dal MVPD.
 * **Nome visualizzato**: viene visualizzato dai programmatori sui loro siti quando l&#39;utente fa clic sul pulsante &quot;Accedi&quot; per selezionare il provider di servizi di televisione a pagamento.
 * **Credenziali test** - Entrambi i profili (gestione temporanea e produzione) devono avere un elenco di credenziali test.
 
 >[!IMPORTANT]
 >
->Ogni volta che un utente avvia un flusso di adesione, viene associato a un singolo ID utente, opaco e univoco.  L’ID utente viene utilizzato per identificare l’utente dell’app di un programmatore, ma ha origine dall’MVPD.
+>Ogni volta che un utente avvia un flusso di adesione, viene associato a un singolo ID utente, opaco e univoco.  L’ID utente viene utilizzato per identificare l’utente dell’app di un programmatore, ma ha origine da MVPD.
 
 >[!CAUTION]
 >
@@ -71,7 +71,7 @@ I seguenti IP devono essere inseriti nella whitelist del firewall di MVPD. Per l
 
 * L’autenticazione Adobe Pass richiede l’apertura di firewall sulle porte 80 e 443 per consentire l’accesso a risorse con restrizioni.
 
-* Il MVPD deve aggiungere un elenco di indirizzi IP per i server di autenticazione e autorizzazione (se questo è il caso).
+* MVPD deve aggiungere un elenco di indirizzi IP per i server di autenticazione e autorizzazione (in tal caso).
 
 ## 5. Sviluppo {#deve}
 
@@ -79,7 +79,7 @@ La durata della fase di sviluppo sarà determinata dopo aver rivisto le specific
 
 >[!NOTE]
 >
->Tieni presente che l’autorizzazione viene eseguita per risorsa. La transazione di autorizzazione viene in genere eseguita con una stringa ID, passata dal sito del programmatore, che rappresenta il canale per il quale l’utente richiede l’autorizzazione. Questo ID risorsa viene stabilito tra il programmatore e MVPD e può essere tanto granulare quanto necessario.
+>Tieni presente che l’autorizzazione viene eseguita per risorsa. La transazione di autorizzazione viene in genere eseguita con una stringa ID, passata dal sito del programmatore, che rappresenta il canale per il quale l’utente richiede l’autorizzazione. Questo ID risorsa viene stabilito tra il Programmatore e MVPD e può essere tanto granulare quanto necessario.
 
 ## 6. Ambienti Adobe {#adobe-env}
 
@@ -88,23 +88,23 @@ Adobe fornisce ambienti diversi per le diverse fasi del processo di sviluppo:
 * **Prequalificazione** (PRE-QUAL): l&#39;ambiente PRE-QUAL contiene il candidato della prossima versione. Adobe integra inizialmente nuovi partner in questo ambiente, prima di aggiornare l’integrazione all’ambiente Release. I partner dispongono di due settimane per eseguire il test sull&#39;ambiente PRE-QUAL e devono richiedere esplicitamente eventuali modifiche alla configurazione PRE-QUAL (contattare il rappresentante dell&#39;Adobe per informazioni dettagliate sulla procedura di richiesta di modifica). Le correzioni di bug attivano nuove distribuzioni in questo ambiente.
 * **Versione** (VERSIONE): la build di produzione corrente di Adobe è distribuita in un ambiente live qui.
 
-Per ulteriori informazioni su come utilizzare gli ambienti Adobe, vedi [Informazioni sugli ambienti Adobe](/help/authentication/notes-technical/understanding-the-adobe-environments.md)
+Per ulteriori informazioni su come utilizzare gli ambienti Adobe, vedi [Informazioni sugli ambienti Adobe](/help/authentication/notes-technical/environments/understanding-the-adobe-environments.md)
 
 ## 7. Distribuzione nell’ambiente di staging {#stag-env}
 
 In base ai metadati ricevuti da MVPD, Adobe creerà e configurerà un nuovo MVPD nel sistema di autenticazione di Adobe Pass. Questo verrà implementato nell’ambiente di staging pre-uguale di Adobe e verrà configurato con il nostro programmatore di test (TestDistributors).
 
-MVPD deve eseguire la stessa distribuzione nel proprio ambiente di QA/staging/test.
+MVPD deve eseguire la stessa distribuzione nel proprio ambiente di controllo qualità, gestione temporanea e test.
 
 ## 8. Test e risoluzione dei problemi {#tes-troubleshoot}
 
-In questa fase, Adobe e il test MVPD e la risoluzione dei problemi di integrazione. Per facilitare il test dell’integrazione, il team di autenticazione di Adobe Pass può utilizzare il sito di test API di Adobe. Per ulteriori informazioni sull&#39;utilizzo del sito di test API di Adobe, vedere [Verificare l&#39;autenticazione e i flussi di autorizzazione tramite il sito di test API di Adobe](/help/authentication/notes-technical/test-authn-authz-flows-using-adobes-api-test-site.md).
+In questa fase, Adobe e MVPD testano e risolvono i problemi dell’integrazione. Per facilitare il test dell’integrazione, il team di autenticazione di Adobe Pass può utilizzare il sito di test API di Adobe. Per ulteriori informazioni sull&#39;utilizzo del sito di test API di Adobe, vedere [Verificare l&#39;autenticazione e i flussi di autorizzazione tramite il sito di test API di Adobe](/help/authentication/integration-guide-programmers/legacy/notes-technical/test-authn-authz-flows-using-adobes-api-test-site.md).
 
 Quando il test e la risoluzione dei problemi sono terminati correttamente, l’integrazione viene abilitata nell’ambiente di staging di Adobe. A questo punto, Adobe può integrare MVPD con un programmatore effettivo.
 
 ## 9. Distribuzione di produzione {#prod-dep}
 
-* Per testare la connettività, MVPD deve prima implementare nel profilo di produzione.
+* Per testare la connettività, MVPD deve essere implementato prima nel profilo di produzione.
 
 * Adobe viene distribuito in produzione preuguale.
 

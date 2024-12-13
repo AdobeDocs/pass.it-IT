@@ -2,14 +2,14 @@
 title: Preautorizzazione API iOS/tvOS
 description: Preautorizzazione API iOS/tvOS
 exl-id: 79c596a4-0e38-4b6c-bb85-f97c6af45ed8
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '391'
+source-wordcount: '392'
 ht-degree: 0%
 
 ---
 
-# Autorizza in anticipo {#preauthorize}
+# (Legacy) Preautorizza {#preauthorize}
 
 >[!NOTE]
 >
@@ -27,7 +27,7 @@ Nel caso in cui il risultato della risposta API di preautorizzazione contenga un
 >
 >La funzione avanzata di segnalazione degli errori, che aggiunge informazioni di errore aggiuntive per le decisioni di preautorizzazione negate, è disponibile su richiesta in quanto deve essere abilitata sul lato configurazione autenticazione di Adobe Pass.
 
-Nel caso in cui la richiesta API di preautorizzazione non possa essere gestita a causa di un errore dell’SDK di autenticazione di Adobe Pass o nel caso in cui si verifichi un errore dei servizi di autenticazione di Adobe Pass, verranno incluse un’ulteriore informazione di errore (indipendentemente dalla configurazione di cui sopra) e nessuna risorsa come parte del risultato della risposta API di preautorizzazione.
+Nel caso in cui la richiesta API di preautorizzazione non possa essere gestita a causa di un errore di Adobe Pass Authentication SDK o nel caso in cui si verifichi un errore di Adobe Pass Authentication Services, verranno incluse ulteriori informazioni sull’errore (indipendentemente dalla configurazione di cui sopra) e nessuna risorsa come parte del risultato della risposta API di preautorizzazione.
 
 </br>
 
@@ -273,7 +273,7 @@ I servizi di autenticazione di Adobe Pass hanno riscontrato un errore durante la
 
 #### Errore
 
-L’SDK per l’autenticazione di Adobe Pass restituisce un errore durante la manutenzione della richiesta API di preautorizzazione
+Adobe Pass Authentication SDK restituisce un errore durante la manutenzione della richiesta API di preautorizzazione
 
 ```JSON
     {

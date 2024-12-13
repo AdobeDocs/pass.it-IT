@@ -2,14 +2,14 @@
 title: Manuale dell’API REST (server-to-server)
 description: Rest API cookbook server to server.
 exl-id: 36ad4a64-dde8-4a5f-b0fe-64b6c0ddcbee
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '1844'
+source-wordcount: '1845'
 ht-degree: 0%
 
 ---
 
-# Manuale dell’API REST (server-to-server) {#rest-api-cookbook-server-to-server}
+# (Legacy) Manuale REST API (server-to-server) {#rest-api-cookbook-server-to-server}
 
 >[!NOTE]
 >
@@ -33,12 +33,12 @@ In una soluzione server-to-server funzionante sono coinvolti i seguenti componen
 | Tipo | Componente | Descrizione |
 | --- | --- | --- |
 | Dispositivo di streaming | App di streaming | L&#39;applicazione Programmer che risiede sul dispositivo di streaming dell&#39;utente e riproduce video autenticati. |
-| | \[Facoltativo\] Modulo AuthN | Se il dispositivo di streaming dispone di un agente utente (ovvero un browser web), il modulo AuthN è responsabile dell’autenticazione dell’utente sull’IdP MVPD. |
+| | \[Facoltativo\] Modulo AuthN | Se il dispositivo di streaming dispone di un agente utente (ad esempio, un browser web), il modulo AuthN è responsabile dell’autenticazione dell’utente sul MVPD IdP. |
 | \[Facoltativo\] Dispositivo AuthN | App autenticazione | Se il dispositivo di streaming non dispone di un agente utente (ad esempio, un browser web), l’applicazione AuthN è un’applicazione web Programmer a cui si accede dal dispositivo di un utente separato utilizzando un browser web. |
 | Infrastruttura del programmatore | Servizio programmatore | Servizio che collega il dispositivo di streaming al servizio Adobe Pass per ottenere le decisioni di autenticazione e autorizzazione. |
-| Infrastruttura Adobe | Servizio Adobe Pass | Servizio che si integra con MVPD IdP e AuthZ Service e fornisce decisioni di autenticazione e autorizzazione. |
+| Infrastruttura Adobe | Servizio Adobe Pass | Servizio che si integra con il servizio MVPD IdP e AuthZ e fornisce decisioni di autenticazione e autorizzazione. |
 | Infrastruttura MVPD | IdP MVPD | Endpoint MVPD che fornisce un servizio di autenticazione basato su credenziali per convalidare l&#39;identità dell&#39;utente. |
-| | Servizio AuthZ MVPD | Endpoint MVPD che fornisce decisioni di autorizzazione basate su abbonamenti dell&#39;utente, controllo genitori, ecc. |
+| | Servizio MVPD AuthZ | Un endpoint MVPD che fornisce decisioni di autorizzazione in base agli abbonamenti dell’utente, al controllo genitori, ecc. |
 
 
 I termini aggiuntivi utilizzati nel flusso sono definiti nel
@@ -55,7 +55,7 @@ Adobe Pass utilizza il DCR per proteggere le comunicazioni client tra un’appli
 ### Autenticazione (authN)
 
 Il flusso di autenticazione consente a un utente di identificarsi
-al proprio MVPD per determinare se l&#39;utente dispone di un account valido.
+al proprio MVPD per determinare se l’utente dispone di un account valido.
 
 1. L’utente avvia l’app Streaming Device e tenta di accedere o visualizzare contenuti protetti.
 2. L’app Streaming Device richiede al servizio Programmatori di determinare se il dispositivo è già autenticato.
@@ -65,9 +65,9 @@ al proprio MVPD per determinare se l&#39;utente dispone di un account valido.
 6. Nel caso in cui la chiamata **checkauthn** restituisca lo stato che indica che il dispositivo utente NON è autenticato, l&#39;app deve attendere la richiesta di accesso di un utente.
 7. Quando l’utente richiede di accedere direttamente (ad esempio, seleziona il pulsante di accesso) o indirettamente (ad esempio, seleziona contenuti protetti quando non è già autenticato), l’app Streaming Device invia una richiesta al servizio Programmatore per avviare l’autenticazione dell’utente. Il servizio programmatore richiede e riceve un codice di registrazione univoco (regcode) chiamando l&#39;API **regcode** del servizio Adobe Pass.
 8. Il servizio programmatore recupera inoltre l&#39;elenco degli MVPD e degli attributi correnti chiamando l&#39;API **config** del servizio Adobe Pass. Nota: questa API può anche essere chiamata in una fase precedente del flusso e memorizzata nella cache.
-9. Il servizio Programmatore restituisce il codice regcode all&#39;app Streaming Device e all&#39;elenco MVPD elaborato richiesto nel passaggio \#7. Nota: il formato di elenco MVPD elaborato è specificato dal programmatore e può essere filtrato per consentire o bloccare in modo esplicito MVPD specifici (cioè elenchi consentiti o bloccati).
+9. Il servizio Programmatore restituisce il codice regcode all&#39;app Streaming Device e all&#39;elenco MVPD elaborato richiesto nel passaggio \#7. Nota: il formato di elenco MVPD elaborato è specificato dal programmatore e può essere filtrato per consentire o bloccare in modo esplicito MVPD specifici (ovvero elenchi consentiti o bloccati).
 10. Se è diverso dal dispositivo AuthN (ovvero &quot;seconda schermata&quot;), per scelta o necessità (ovvero il dispositivo di streaming non supporta un agente utente), il dispositivo di streaming deve visualizzare il codice regcode e un URI affinché l’utente possa accedere all’applicazione AuthN. L&#39;utente digita l&#39;URI nell&#39;agente utente sul dispositivo AuthN per avviare l&#39;applicazione AuthN, quindi digita il codice regcode in tale applicazione. Se il dispositivo di streaming è lo stesso del dispositivo AuthN, il codice regcode può essere passato in modo programmatico al modulo AuthN.
-11. Il modulo AuthN avvia l’autenticazione utente con MVPD visualizzando un selettore MVPD. Dopo che l&#39;utente ha selezionato MVPD, il modulo AuthN chiama **authenticate** con il codice regcode, che reindirizza l&#39;agente utente all&#39;IdP MVPD. Quando l’utente si autentica correttamente con MVPD, l’agente utente viene reindirizzato tramite il servizio Adobe Pass, dove l’autenticazione corretta viene registrata con il codice regcode e quindi reindirizzato al modulo AuthN.
+11. Il modulo AuthN avvia l’autenticazione utente con MVPD visualizzando un selettore MVPD. Dopo che l&#39;utente ha selezionato MVPD, il modulo AuthN chiama **authenticate** con il codice regcode, che reindirizza l&#39;agente utente all&#39;IdP di MVPD. Quando l’utente si autentica correttamente con MVPD, l’agente utente viene reindirizzato indietro tramite il servizio Adobe Pass, dove l’autenticazione corretta viene registrata con il codice regcode e quindi reindirizzato al modulo AuthN.
 12. Se il dispositivo di streaming è diverso dal dispositivo AuthN, quest’ultimo deve visualizzare un messaggio di autenticazione all’utente e i passaggi per continuare (esempio: &quot;Operazione riuscita\! Ora puoi tornare alla console di gioco per continuare \[...\]&quot;). Se il dispositivo di streaming è lo stesso del dispositivo di autenticazione, il dispositivo di streaming può rilevare a livello di programmazione il completamento dell&#39;autenticazione.
 
 
@@ -125,7 +125,7 @@ Alcuni esempi includono ID utente, codice postale, ecc.
 
 1. Una volta autenticato l&#39;utente, il servizio Programmer può chiamare l&#39;API Adobe Pass **usermetadata** per richiedere informazioni sull&#39;utente autenticato.
 
-1. La risposta includerà tutti i metadati disponibili per l’utente specificato. I campi specifici sono configurati separatamente per ogni integrazione Programmatore/MVPD.
+1. La risposta includerà tutti i metadati disponibili per l’utente specificato. I campi specifici vengono configurati separatamente per ogni integrazione Programmatore/MVPD.
 
 Il diagramma seguente illustra il flusso di preautorizzazione:
 
@@ -184,7 +184,7 @@ Il servizio Programmatore deve trasmettere informazioni accurate sull’identifi
     
     GET/api/v1/authorize HTTP/1.1
     
-    X-HTTP warded-For:203.45.101.20
+    X-Forwarded-For:203.45.101.20
 
 
 

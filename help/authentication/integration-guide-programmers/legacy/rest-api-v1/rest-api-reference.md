@@ -2,14 +2,14 @@
 title: Riferimento API REST
 description: Riferimento API REST
 exl-id: 67e4639e-db0b-4400-bb81-e214263e8395
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '653'
+source-wordcount: '654'
 ht-degree: 2%
 
 ---
 
-# Riferimento API REST {#rest-api-reference}
+# Riferimento API REST (legacy) {#rest-api-reference}
 
 >[!NOTE]
 >
@@ -57,8 +57,8 @@ La tabella seguente elenca i servizi web disponibili per l’approccio senza cli
 | 1. | [&lt;REGGIE_FQDN>/reggie/v1/ </br> {requestorId}/regcode](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md) | Restituisce l&#39;URI del codice di registrazione e della pagina di accesso generato in modo casuale | 2 | Servizio codice reg </br>Adobe | Smart Device |
 | 2. | [&lt;REGGIE_FQDN>/reggie/v1/ </br> {requestorId}/regcode/ </br> {registrationCode}](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/return-registration-record.md) | Restituisce il record del codice di registrazione contenente il codice di registrazione UUID, il codice di registrazione e l&#39;ID dispositivo con hash | 8 | Servizio codice reg </br>Adobe | Autenticazione Adobe Pass |
 | 3. | [&lt;SP_FQDN>/api/v1/config/ </br> {requestorId}](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/provide-mvpd-list.md) | Restituisce l’elenco degli MVPD configurati per il richiedente | 5 | Adobe </br>Adobe Pass </br>autenticazione </br>Servizio | Accedi a </br>Web </br>App |
-| 4. | [&lt;SP_FQDN>/api/v1/authenticate](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/initiate-authentication.md) | Avvia il processo AuthN informando l&#39;evento di selezione MVPD. Crea un record nel database di autenticazione, che viene riconciliato quando viene ricevuta una risposta di successo da MVPD (passaggio 13) | 7 | Adobe </br>Adobe Pass </br>autenticazione </br>Servizio | Accedi a </br>Web </br>App |
-| 5. | Consumer asserzione SAML | Flusso di lavoro SAML esistente tra Autenticazione Adobe Pass e MVPD | 13 | Servizio di autenticazione </br> di Adobe Pass </br> | Autenticazione Adobe Pass |
+| 4. | [&lt;SP_FQDN>/api/v1/authenticate](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/initiate-authentication.md) | Avvia il processo AuthN informando l&#39;evento di selezione MVPD. Crea un record nel database di autenticazione, che viene riconciliato quando viene ricevuta una risposta corretta da MVPD (passaggio 13) | 7 | Adobe </br>Adobe Pass </br>autenticazione </br>Servizio | Accedi a </br>Web </br>App |
+| 5. | Consumer asserzione SAML | Flusso di lavoro SAML esistente tra autenticazione Adobe Pass e MVPD | 13 | Servizio di autenticazione </br> di Adobe Pass </br> | Autenticazione Adobe Pass |
 | 6. | [&lt;SP_FQDN>/api/v1/checkauthn/ </br> {registrationCode}](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/check-authentication-flow-by-second-screen-web-app.md) | L’app web di accesso può verificare se il tentativo di flusso di accesso è riuscito |                                                                                             | Autenticazione di Adobe Pass </br>   </br>Servizio | Login   </br>Web   </br>App |
 | 7. | [&lt;SP_FQDN>/api/v1/tokens/authn](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-authentication-token.md) | Ottiene i metadati relativi al token di autenticazione | 15 | Servizio di autenticazione </br> di Adobe Pass </br> | Smart Device |
 | 8. | [&lt;REGGIE_FQDN>/reggie/v1/ </br> {requestorId}/regcode/ </br> {registrationCode}](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/delete-registration-record.md) | Elimina il record del codice reg e rilascia il codice reg per il riutilizzo | 16 | Servizio codice reg </br>Adobe | Autenticazione Adobe Pass |

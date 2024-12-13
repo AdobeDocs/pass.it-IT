@@ -2,14 +2,14 @@
 title: Metadati utente
 description: Metadati utente
 exl-id: 3d7b6429-972f-4ccb-80fd-a99870a02f65
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '495'
+source-wordcount: '496'
 ht-degree: 0%
 
 ---
 
-# Metadati utente {#user-metadata}
+# Metadati utente (legacy) {#user-metadata}
 
 >[!NOTE]
 >
@@ -47,14 +47,14 @@ Recupera i metadati condivisi da MVPD sull’utente autenticato.
 |------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | richiedente | ID richiedente del programmatore per il quale è valida questa operazione. |
 | deviceId | Byte ID dispositivo. |
-| device_info/<p>X-Device-Info | Informazioni dispositivo di streaming.</br></br> **Nota:** È possibile che vengano passate informazioni_dispositivo come parametro URL, ma a causa delle dimensioni potenziali di questo parametro e delle limitazioni alla lunghezza di un URL di GET, DOVREBBE essere passato come informazioni-X-Device nell&#39;intestazione http. </br></br> Vedere i dettagli completi in [Trasmissione delle informazioni sul dispositivo e sulla connessione](/help/authentication/integration-guide-programmers/passing-client-information-device-connection-and-application.md). |
-| _tipoDispositivo_ | Il tipo di dispositivo (ad esempio, Roku, PC).</br></br> Se questo parametro è impostato correttamente, ESM offre metriche [suddivise per tipo di dispositivo](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#progr-filter-metrics) quando si utilizza Clientless, in modo che possano essere eseguiti diversi tipi di analisi per esempio Roku, AppleTV, Xbox ecc.</br></br> Vedere [Vantaggi dell&#39;utilizzo del parametro del tipo di dispositivo senza client nelle metriche Pass](/help/authentication/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md) </br></br> **Nota:** `device_info` sostituisce questo parametro. |
+| device_info/<p>X-Device-Info | Informazioni dispositivo di streaming.</br></br> **Nota:** È possibile che vengano passate informazioni_dispositivo come parametro URL, ma a causa delle dimensioni potenziali di questo parametro e delle limitazioni alla lunghezza di un URL di GET, DOVREBBE essere passato come informazioni-X-Device nell&#39;intestazione http. </br></br> Vedere i dettagli completi in [Trasmissione delle informazioni sul dispositivo e sulla connessione](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md). |
+| _tipoDispositivo_ | Il tipo di dispositivo (ad esempio, Roku, PC).</br></br> Se questo parametro è impostato correttamente, ESM offre metriche [suddivise per tipo di dispositivo](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#progr-filter-metrics) quando si utilizza Clientless, in modo che possano essere eseguiti diversi tipi di analisi per esempio Roku, AppleTV, Xbox ecc.</br></br> Vedere [Vantaggi dell&#39;utilizzo del parametro del tipo di dispositivo senza client nelle metriche Pass](/help/authentication/integration-guide-programmers/legacy/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md) </br></br> **Nota:** `device_info` sostituisce questo parametro. |
 | _utenteDispositivo_ | Identificatore utente del dispositivo.</br></br> **Nota:** se utilizzato, `deviceUser` deve avere gli stessi valori della richiesta [Crea codice di registrazione](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md). |
 | _appId_ | ID/nome dell’applicazione. </br></br> **Nota:** `device_info` sostituisce questo parametro. Se utilizzato, `appId` deve avere gli stessi valori della richiesta [Crea codice di registrazione](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md). |
 
 >[!NOTE]
 > 
->Le informazioni sui metadati dell’utente devono essere disponibili al termine del flusso di autenticazione, ma possono essere aggiornate in base al flusso di autorizzazione, a seconda dell’MVPD e del tipo di metadati.
+>Le informazioni sui metadati utente devono essere disponibili al termine del flusso di autenticazione, ma possono essere aggiornate in base al flusso di autorizzazione, a seconda del MVPD e del tipo di metadati.
 
 
 

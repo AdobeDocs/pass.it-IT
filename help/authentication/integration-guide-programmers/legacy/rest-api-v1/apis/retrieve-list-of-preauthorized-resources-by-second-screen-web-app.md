@@ -2,14 +2,14 @@
 title: Recupera elenco di risorse preautorizzate tramite l’app web Second Screen
 description: Recupera elenco di risorse preautorizzate tramite l’app web Second Screen
 exl-id: 78eeaf24-4cc1-4523-8298-999c9effdb7a
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '254'
+source-wordcount: '255'
 ht-degree: 0%
 
 ---
 
-# Recupera elenco di risorse preautorizzate tramite l’app web Second Screen {#retrieve-list-of-preauthorized-resources-by-second-screen-web-app}
+# (Legacy) Recuperare l’elenco delle risorse preautorizzate tramite l’app web Second Screen {#retrieve-list-of-preauthorized-resources-by-second-screen-web-app}
 
 >[!NOTE]
 >
@@ -50,7 +50,7 @@ Esistono due set di API: un set per Streaming App o Programmer Service e uno per
 | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | codice di registrazione | Il valore del codice di registrazione fornito dall’utente all’inizio del flusso di autenticazione. |
 | richiedente | ID richiedente del programmatore per il quale è valida questa operazione. |
-| elenco risorse | Una stringa che contiene un elenco delimitato da virgole di resourceIds che identifica il contenuto che potrebbe essere accessibile a un utente ed è riconosciuto dagli endpoint di autorizzazione MVPD. |
+| elenco risorse | Una stringa che contiene un elenco delimitato da virgole di resourceIds che identifica il contenuto che potrebbe essere accessibile a un utente ed è riconosciuto dagli endpoint di autorizzazione di MVPD. |
 
 
 ### Risposta di esempio {#sample-response}

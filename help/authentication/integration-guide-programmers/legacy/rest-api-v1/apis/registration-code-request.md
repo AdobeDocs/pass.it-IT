@@ -2,14 +2,14 @@
 title: Pagina di registrazione
 description: Pagina di registrazione
 exl-id: 581b8e2e-7420-4511-88b9-f2cd43a41e10
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '493'
+source-wordcount: '494'
 ht-degree: 0%
 
 ---
 
-# Pagina di registrazione {#registration-page}
+# Pagina di registrazione (legacy) {#registration-page}
 
 ## Endpoint REST API {#clientless-endpoints}
 
@@ -49,7 +49,7 @@ Restituisce l&#39;URI del codice di registrazione e della pagina di accesso gene
 | Accetta | Valore intestazione <br>: application/json | indica il tipo di contenuto che il client deve essere in grado di comprendere |
 | richiedente | Parametro query | ID richiedente del programmatore per il quale è valida questa operazione. |
 | deviceId | Parametro query | Byte ID dispositivo. |
-| device_info/<br>X-Device-Info | device_info: Body <br> X-Device-Info: Header | Informazioni sul dispositivo di streaming.<br>**Nota**: questo parametro POTREBBE essere trasmesso come parametro URL_device, ma a causa delle dimensioni potenziali del parametro e delle limitazioni alla lunghezza di un URL di GET, DOVREBBE essere trasmesso come X-Device-Info nell&#39;intestazione http. <br>Visualizza tutti i dettagli in [Trasmissione delle informazioni sul dispositivo e sulla connessione](/help/authentication/integration-guide-programmers/passing-client-information-device-connection-and-application.md). |
+| device_info/<br>X-Device-Info | device_info: Body <br> X-Device-Info: Header | Informazioni sul dispositivo di streaming.<br>**Nota**: questo parametro POTREBBE essere trasmesso come parametro URL_device, ma a causa delle dimensioni potenziali del parametro e delle limitazioni alla lunghezza di un URL di GET, DOVREBBE essere trasmesso come X-Device-Info nell&#39;intestazione http. <br>Visualizza tutti i dettagli in [Trasmissione delle informazioni sul dispositivo e sulla connessione](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md). |
 | mvpd | Parametro query | ID MVPD per il quale è valida questa operazione. |
 | ttl | Parametro query | Durata di questo codice regcode in secondi.<br>**Nota**: il valore massimo consentito per ttl è di 36000 secondi (10 ore). Valori più alti determinano una risposta HTTP 400 (richiesta non valida). Se `ttl` viene lasciato vuoto, Adobe Pass Authentication imposta il valore predefinito di 30 minuti. |
 | _tipoDispositivo_ | Parametro query | Obsoleto, non deve essere utilizzato. |

@@ -2,14 +2,14 @@
 title: Registrazione applicazione Android
 description: Registrazione applicazione Android
 exl-id: 6238bd87-ac97-4a5c-9d92-3631f7b2d46a
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '586'
+source-wordcount: '587'
 ht-degree: 0%
 
 ---
 
-# Registrazione applicazione Android {#android-application-registration}
+# Registrazione applicazione Android (legacy) {#android-application-registration}
 
 >[!NOTE]
 >
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 ## Introduzione {#intro}
 
-A partire dalla versione 3.0 dell’SDK di Android AccessEnabler, stiamo modificando il meccanismo di autenticazione con i server di Adobe. Invece di utilizzare una chiave pubblica e un sistema segreto per firmare l’ID richiedente, introduciamo il concetto di stringa di informativa software che può essere utilizzata per ottenere un token di accesso che viene successivamente utilizzato per tutte le chiamate dell’SDK ai nostri server. Oltre a una dichiarazione software, è necessario creare un collegamento profondo per l&#39;applicazione.
+A partire dalla versione 3.0 di Android AccessEnabler SDK, stiamo modificando il meccanismo di autenticazione con i server di Adobe. Invece di utilizzare una chiave pubblica e un sistema segreto per firmare l’ID richiedente, introduciamo il concetto di stringa di informativa software che può essere utilizzata per ottenere un token di accesso che viene successivamente utilizzato per tutte le chiamate effettuate da SDK ai nostri server. Oltre a una dichiarazione software, è necessario creare un collegamento profondo per l&#39;applicazione.
 
 Per ulteriori informazioni, vedere [Panoramica sulla registrazione client dinamica](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
 
@@ -25,7 +25,7 @@ Per ulteriori informazioni, vedere [Panoramica sulla registrazione client dinami
 
 Un rendiconto software è un token JWT che contiene informazioni sull’applicazione. Ogni applicazione deve disporre di una dichiarazione software univoca utilizzata dai nostri server per identificare l’applicazione nel sistema Adobe.
 
-L&#39;istruzione software deve essere passata quando si inizializza l&#39;SDK `AccessEnabler`. Viene utilizzato per registrare l’applicazione con Adobe. Al momento della registrazione, l’SDK riceve un ID client e un segreto client, utilizzati per ottenere un token di accesso. Qualsiasi chiamata effettuata dall’SDK ai server Adobe richiede un token di accesso valido. L’SDK è responsabile della registrazione dell’applicazione, del recupero e dell’aggiornamento del token di accesso.
+L&#39;istruzione software deve essere passata quando si inizializza il SDK `AccessEnabler`. Viene utilizzato per registrare l’applicazione con Adobe. Al momento della registrazione, SDK riceve un ID client e un segreto client utilizzati per ottenere un token di accesso. Qualsiasi chiamata effettuata da SDK ai server di Adobe richiede un token di accesso valido. SDK è responsabile della registrazione dell’applicazione, del recupero e dell’aggiornamento del token di accesso.
 
 >[!NOTE]
 >

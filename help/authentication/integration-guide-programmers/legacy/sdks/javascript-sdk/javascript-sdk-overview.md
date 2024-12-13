@@ -1,15 +1,15 @@
 ---
-title: Panoramica dell’SDK per JavaScript
-description: Panoramica dell’SDK per JavaScript
+title: Panoramica di JavaScript SDK
+description: Panoramica di JavaScript SDK
 exl-id: 8756c804-a4c1-4ee3-b2b9-be45f38bdf94
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '510'
+source-wordcount: '511'
 ht-degree: 0%
 
 ---
 
-# Panoramica dell’SDK per JavaScript {#javascript-sdk-overview}
+# (Legacy) Panoramica di JavaScript SDK {#javascript-sdk-overview}
 
 >[!NOTE]
 >
@@ -27,11 +27,11 @@ Il flusso di adesione generale per l&#39;autenticazione di Adobe Pass è incluso
 >
 >Questo documento descrive l’implementazione per una soluzione web desktop. La libreria JavaScript non è supportata sulle piattaforme mobili (ad esempio, Safari su iOS e Chrome su Android). Utilizza i nostri SDK nativi per eseguire il targeting di una piattaforma mobile (iOS, Android, Windows).
 
-## Creazione della finestra di dialogo di selezione MVPD {#creating-the-mvpd-selection-dialog}
+## Creazione della finestra di dialogo Selezione MVPD {#creating-the-mvpd-selection-dialog}
 
-Affinché un utente possa accedere al proprio MVPD e autenticarsi, la pagina o il lettore deve fornire all’utente un modo per identificare il proprio MVPD. Viene fornita una versione predefinita della finestra di dialogo di selezione MVPD per lo sviluppo. Per l’utilizzo in produzione, devi implementare un selettore MVPD personalizzato.
+Affinché un utente possa accedere al proprio MVPD e autenticarsi, la pagina o il lettore deve fornire all’utente un modo per identificare il proprio MVPD. Per lo sviluppo viene fornita una versione predefinita della finestra di dialogo di selezione di MVPD. Per l’utilizzo in produzione, devi implementare un selettore MVPD personalizzato.
 
-Se sai già chi è il provider del cliente, puoi [impostare MVPD a livello di programmazione](/help/authentication/home.md), senza l&#39;interazione dell&#39;utente. La tecnica è la stessa, ma ignora il passaggio di richiamare la finestra di dialogo Selettore provider e chiedere al cliente di selezionare il proprio MVPD.
+Se sai già chi è il provider del cliente, puoi [impostare MVPD a livello di programmazione](/help/authentication/home.md), senza l&#39;interazione dell&#39;utente. La tecnica è la stessa, ma evita di richiamare la finestra di dialogo Selettore provider e di chiedere al cliente di selezionare il proprio MVPD.
 
 ## Visualizzazione del provider di servizi {#displaying-the-service-provider}
 
@@ -207,7 +207,7 @@ In alcuni casi, il lettore non è responsabile della gestione dei loghi utente:
 
 >[!NOTE]
 >
->Se l&#39;utente lascia il computer inattivo per un tempo sufficiente a far scadere i token, può comunque tornare alla sessione e avviare correttamente la disconnessione. L’autenticazione di Adobe Pass assicura che tutti i token vengano eliminati e notifica all’MVPD di eliminare anche la loro sessione.
+>Se l&#39;utente lascia il computer inattivo per un tempo sufficiente a far scadere i token, può comunque tornare alla sessione e avviare correttamente la disconnessione. L’autenticazione di Adobe Pass assicura che tutti i token vengano eliminati e notifica al MVPD di eliminare anche la loro sessione.
 
 Il seguente codice JavaScript illustra la disconnessione (deautenticazione) di un utente attualmente autenticato:
 

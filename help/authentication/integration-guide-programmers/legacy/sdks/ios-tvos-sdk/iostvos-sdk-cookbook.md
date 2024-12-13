@@ -2,14 +2,14 @@
 title: Manuale di iOS/tvOS
 description: Manuale di iOS/tvOS
 exl-id: 4743521e-d323-4d1d-ad24-773127cfbe42
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '2402'
+source-wordcount: '2403'
 ht-degree: 0%
 
 ---
 
-# Manuale dell’SDK iOS/tvOS {#iostvos-sdk-cookbook}
+# (Legacy) Manuale di iOS/tvOS SDK {#iostvos-sdk-cookbook}
 
 >[!NOTE]
 >
@@ -44,7 +44,7 @@ L&#39;attività di rete di AccessEnabler si svolge nel proprio thread, pertanto 
 
 ## Configurazione del servizio ID Experience Cloud (ID visitatore) {#visitorIDSetup}
 
-La configurazione del valore [ID Experience Cloud](https://experienceleague.adobe.com/docs/id-service/using/home.html) è importante dal punto di vista di [!DNL Analytics]. Una volta impostato il valore `visitorID`, l&#39;SDK invia queste informazioni insieme a ogni chiamata di rete e il server di autenticazione [!DNL Adobe Pass] le raccoglie. Puoi correlare le analisi del servizio di autenticazione di Adobe Pass con qualsiasi altro rapporto di analisi disponibile in altre applicazioni o siti web. Le informazioni su come configurare visitorID sono disponibili [qui](#setOptions).
+La configurazione del valore [ID Experience Cloud](https://experienceleague.adobe.com/docs/id-service/using/home.html) è importante dal punto di vista di [!DNL Analytics]. Una volta impostato il valore `visitorID`, SDK invia queste informazioni insieme a ogni chiamata di rete e il server di autenticazione [!DNL Adobe Pass] le raccoglie. Puoi correlare le analisi del servizio di autenticazione di Adobe Pass con qualsiasi altro rapporto di analisi disponibile in altre applicazioni o siti web. Le informazioni su come configurare visitorID sono disponibili [qui](#setOptions).
 
 ## Flussi di diritti {#entitlement}
 
@@ -108,7 +108,7 @@ I. [Flusso di disconnessione con Apple SSO](#logout_flow_with_AppleSSO) </br>
 
    * [&quot;presentTvProviderDialog(viewController)&quot;](#presentTvDialog)
 
-      * Attivazione eseguita da [getAuthentication()](#getAuthN) quando il richiedente corrente supporta almeno MVPD con supporto SSO.
+      * Attivazione eseguita da [getAuthentication()](#getAuthN) quando il richiedente corrente supporta almeno in MVPD con supporto SSO.
       * Il parametro viewController è la finestra di dialogo SSO di Apple e deve essere presentato sul controller della visualizzazione principale.
 
    * [&quot;dismissTvProviderDialog(viewController)&quot;](#dismissTvDialog)
@@ -189,7 +189,7 @@ autenticato.
 1. Chiamare [`getAuthentication()`](#$getAuthN) per avviare il flusso di autenticazione o per ottenere la conferma che l&#39;utente è già autenticato.
    **Trigger:**
 
-   * Il callback [presentTvProviderDialog()](#presentTvDialog), se l&#39;utente non è autenticato e il richiedente corrente dispone almeno di un MVPD che supporta l&#39;SSO. Se nessun MVPD supporta l&#39;SSO, verrà utilizzato il flusso di autenticazione classico.
+   * Il callback [presentTvProviderDialog()](#presentTvDialog), se l&#39;utente non è autenticato e il richiedente corrente dispone almeno di in MVPD che supporta l&#39;SSO. Se nessun MVPD supporta l&#39;SSO, verrà utilizzato il flusso di autenticazione classico.
 
 1. Dopo aver selezionato un provider, la libreria AccessEnabler otterrà un token di autenticazione con le informazioni fornite dal framework VSA di Apple.
 
@@ -208,7 +208,7 @@ autenticato.
 flusso di autenticazione o per ottenere la conferma che l’utente è già
 autenticato.
    **Trigger:**
-   * Il callback [`presentTvProviderDialog()`](#presentTvDialog), se l&#39;utente non è autenticato e il richiedente corrente dispone almeno di un MVPD che supporta l&#39;SSO. Se nessun MVPD supporta l&#39;SSO, verrà utilizzato il flusso di autenticazione classico.
+   * Il callback [`presentTvProviderDialog()`](#presentTvDialog), se l&#39;utente non è autenticato e il richiedente corrente ha almeno su MVPD che supporta l&#39;SSO. Se nessun MVPD supporta l&#39;SSO, verrà utilizzato il flusso di autenticazione classico.
 
 1. Dopo che l&#39;utente ha selezionato un provider, verrà chiamato il callback [`status()`](#status_callback_implementation). Verrà fornito un codice di registrazione e la libreria AccessEnabler inizierà a eseguire il polling del server per un&#39;autenticazione a seconda schermata riuscita.
 
@@ -224,7 +224,7 @@ autenticato.
 
 1. Chiamare [getAuthorization()](#$getAuthZ) per avviare il flusso di autorizzazione.
 
-   * **Dipendenza:** ID risorsa validi concordati con gli MVPD.
+   * **Dipendenza:** ID risorsa validi concordati con i MVPD.
    * Gli ID delle risorse devono essere gli stessi utilizzati su qualsiasi altro dispositivo o piattaforma e devono essere gli stessi in tutti gli MVPD. Per informazioni sugli ID delle risorse, vedere [Identificazione delle risorse protette](/help/authentication/integration-guide-programmers/features-standard/entitlements/identify-protected-resources.md)
 
 1. Convalida autenticazione e autorizzazione.

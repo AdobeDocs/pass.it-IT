@@ -2,14 +2,14 @@
 title: Manuale dell’integrazione di Amazon FireOS
 description: Manuale dell’integrazione di Amazon FireOS
 exl-id: 1982c485-f0ed-4df3-9a20-9c6a928500c2
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '1424'
+source-wordcount: '1425'
 ht-degree: 0%
 
 ---
 
-# Manuale dell’integrazione di Amazon FireOS {#amazon-fireos-integration-cookbook}
+# Manuale dell’integrazione di Amazon FireOS (legacy) {#amazon-fireos-integration-cookbook}
 
 >[!NOTE]
 >
@@ -70,7 +70,7 @@ L&#39;attività di rete di `AccessEnabler` viene eseguita in un thread diverso, 
 
    - [navigateToUrl(url)](#$navigateToUrl)
 
-      - Ignorato nell&#39;SDK di AmazonFireOS, il metodo viene utilizzato sulle piattaforme Android in cui viene attivato da `getAuthentication()` dopo che l&#39;utente ha selezionato un MVPD.  Il parametro `url` fornisce il percorso della pagina di accesso di MVPD.
+      - Ignorato in AmazonFireOS SDK, il metodo viene utilizzato sulle piattaforme Android in cui viene attivato da `getAuthentication()` dopo che l&#39;utente ha selezionato un MVPD.  Il parametro `url` fornisce il percorso della pagina di accesso di MVPD.
 
    - [`sendTrackingData(event, data)`](#$sendTrackingData)
 
@@ -164,7 +164,7 @@ Il parametro `event` indica quale evento di adesione si è verificato; il parame
 
 1. Chiamare [`getAuthorization()`](#$getAuthZ) per avviare il flusso di autorizzazione.
 
-   Dipendenza: ID risorsa validi concordati con gli MVPD.
+   Dipendenza: ID risorsa validi concordati con i MVPD.
 
    **Nota:** i ResourceID devono essere gli stessi utilizzati su qualsiasi altro dispositivo o piattaforma e saranno gli stessi in tutti gli MVPD.
 
@@ -194,6 +194,6 @@ Il parametro `event` indica quale evento di adesione si è verificato; il parame
 
 ### F. Flusso di disconnessione {#logout_flow}
 
-1. Chiamare [`logout()`](#$logout) per disconnettersi. `AccessEnabler` cancella tutti i valori e i token memorizzati in cache ottenuti dall&#39;utente per l&#39;MVPD corrente su tutti i richiedenti che condividono l&#39;accesso tramite Single Sign-On. Dopo aver cancellato la cache, `AccessEnabler` effettua una chiamata al server per pulire le sessioni lato server.  Poiché la chiamata al server potrebbe causare un reindirizzamento SAML all’IdP (consentendo la pulizia della sessione sul lato IdP), questa chiamata deve seguire tutti i reindirizzamenti. Per questo motivo, questa chiamata verrà gestita all&#39;interno di un controllo WebView, invisibile per l&#39;utente.
+1. Chiamare [`logout()`](#$logout) per disconnettersi. `AccessEnabler` cancella tutti i valori e i token memorizzati in cache ottenuti dall&#39;utente per il MVPD corrente su tutti i richiedenti che condividono l&#39;accesso tramite Single Sign-On. Dopo aver cancellato la cache, `AccessEnabler` effettua una chiamata al server per pulire le sessioni lato server.  Poiché la chiamata al server potrebbe causare un reindirizzamento SAML all’IdP (consentendo la pulizia della sessione sul lato IdP), questa chiamata deve seguire tutti i reindirizzamenti. Per questo motivo, questa chiamata verrà gestita all&#39;interno di un controllo WebView, invisibile per l&#39;utente.
 
    **Nota:** il flusso di disconnessione è diverso dal flusso di autenticazione in quanto l&#39;utente non è tenuto a interagire in alcun modo con WebView. È quindi possibile (e consigliato) rendere il controllo WebView invisibile (ovvero nascosto) durante il processo di logout.

@@ -1,15 +1,15 @@
 ---
-title: Manuale dell’SDK di JavaScript
-description: Manuale dell’SDK di JavaScript
+title: Manuale di JavaScript SDK
+description: Manuale di JavaScript SDK
 exl-id: d57f7a4a-ac77-4f3c-8008-0cccf8839f7c
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '934'
+source-wordcount: '935'
 ht-degree: 0%
 
 ---
 
-# Manuale dell’SDK di JavaScript {#javascript-sdk-cookbook}
+# Manuale di JavaScript SDK (legacy) {#javascript-sdk-cookbook}
 
 >[!NOTE]
 >
@@ -152,7 +152,7 @@ Il completamento del flusso di autenticazione viene raggiunto quando AccessEnabl
 **Dipendenze:**
 
 - Chiamata a `setRequestor()` riuscita (questa dipendenza si applica anche a tutte le chiamate successive).
-- ResourceID validi concordati con gli MVPD. Tieni presente che gli ID risorsa devono essere gli stessi utilizzati su qualsiasi altro dispositivo o piattaforma e che saranno gli stessi in tutti gli MVPD.
+- ID risorsa validi concordati con il MVPD. Tieni presente che gli ID risorsa devono essere gli stessi utilizzati su qualsiasi altro dispositivo o piattaforma e che saranno gli stessi in tutti gli MVPD.
 
 Chiamare `getAuthorization()` e passare ResourceID per il supporto richiesto. In caso di esito positivo, la chiamata restituisce un token multimediale breve, che conferma che l’utente è autorizzato a visualizzare il contenuto multimediale richiesto.
 
@@ -182,12 +182,12 @@ libreria AccessEnabler)
 
 ## Configurazione dell’ID visitatore {#visitorID}
 
-La configurazione di un valore [Experience Cloud visitorID](https://experienceleague.adobe.com/docs/id-service/using/home.html) è molto importante dal punto di vista analitico. Una volta impostato il valore EC visitorID, l’SDK invierà queste informazioni insieme a ogni chiamata di rete e il servizio di autenticazione di Adobe Pass le raccoglierà. In questo modo potrai correlare i dati di analisi del servizio di autenticazione di Adobe Pass con qualsiasi altro rapporto di analisi disponibile in altre applicazioni o siti Web. Le informazioni su come impostare EC visitorID sono disponibili [qui](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=en).
+La configurazione di un valore [Experience Cloud visitorID](https://experienceleague.adobe.com/docs/id-service/using/home.html) è molto importante dal punto di vista analitico. Una volta impostato il valore EC visitorID, SDK invierà queste informazioni insieme a ogni chiamata di rete e il servizio di autenticazione di Adobe Pass le raccoglierà. In questo modo potrai correlare i dati di analisi del servizio di autenticazione di Adobe Pass con qualsiasi altro rapporto di analisi disponibile in altre applicazioni o siti Web. Le informazioni su come impostare EC visitorID sono disponibili [qui](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=en).
 
 
 >[!NOTE]
 >
->Questa funzionalità è disponibile a partire dalla versione 3.1.0 dell’SDK JS.
+>Questa funzionalità è disponibile a partire dalla versione 3.1.0 di JS SDK.
 
 <!--
 ### Related Information (#related)

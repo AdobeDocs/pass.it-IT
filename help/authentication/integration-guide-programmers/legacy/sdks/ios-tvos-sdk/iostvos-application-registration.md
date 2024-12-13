@@ -2,15 +2,15 @@
 title: Registrazione applicazione iOS/tvOS
 description: Registrazione applicazione iOS/tvOS
 exl-id: 89ee6b5a-29fa-4396-bfc8-7651aa3d6826
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '609'
+source-wordcount: '610'
 ht-degree: 0%
 
 ---
 
 
-# Registrazione applicazione iOS/tvOS {#iostvos-application-registration}
+# (Legacy) Registrazione applicazione iOS/tvOS {#iostvos-application-registration}
 
 >[!NOTE]
 >
@@ -18,13 +18,13 @@ ht-degree: 0%
 
 ## Introduzione {#Intro}
 
-A partire dalla versione 3.0 dell’SDK iOS/tvOS AccessEnabler, stiamo modificando il meccanismo di autenticazione con i server di Adobe. Invece di utilizzare una chiave pubblica e un sistema segreto per firmare l’ID richiedente, introduciamo il concetto di una stringa di istruzione software che può essere utilizzata per ottenere un token di accesso che viene successivamente utilizzato per tutte le chiamate dell’SDK ai nostri server. Oltre a un&#39;informativa sul software, è necessario anche uno schema URL personalizzato per l&#39;applicazione.
+A partire dalla versione 3.0 di iOS/tvOS AccessEnabler SDK, stiamo modificando il meccanismo di autenticazione con i server di Adobe. Invece di utilizzare una chiave pubblica e un sistema segreto per firmare l’ID richiedente, introduciamo il concetto di una stringa di istruzione software che può essere utilizzata per ottenere un token di accesso che viene successivamente utilizzato per tutte le chiamate effettuate da SDK ai nostri server. Oltre a un&#39;informativa sul software, è necessario anche uno schema URL personalizzato per l&#39;applicazione.
 
 Per ulteriori informazioni, vedere [Panoramica sulla registrazione client dinamica](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
 
 ## Che cos&#39;è una dichiarazione software? {#Soft_state}
 
-Un rendiconto software è un token JWT che contiene informazioni sull’applicazione. Ogni applicazione deve disporre di una dichiarazione software univoca utilizzata dai nostri server per identificare l’applicazione nel sistema Adobe. L&#39;istruzione software deve essere trasmessa quando si inizializza l&#39;SDK di AccessEnabler e verrà utilizzata per registrare l&#39;applicazione con Adobe. Al momento della registrazione, l’SDK riceverà un ID client e un segreto client che verranno utilizzati per ottenere un token di accesso. Qualsiasi chiamata effettuata dall&#39;SDK ai nostri server richiederà un token di accesso valido. L’SDK è responsabile della registrazione dell’applicazione, del recupero e dell’aggiornamento del token di accesso.
+Un rendiconto software è un token JWT che contiene informazioni sull’applicazione. Ogni applicazione deve disporre di una dichiarazione software univoca utilizzata dai nostri server per identificare l’applicazione nel sistema Adobe. L&#39;istruzione software deve essere passata quando si inizializza AccessEnabler SDK e verrà utilizzata per registrare l&#39;applicazione con Adobe. Al momento della registrazione, SDK riceverà un ID client e un segreto client che verranno utilizzati per ottenere un token di accesso. Qualsiasi chiamata effettuata da SDK ai nostri server richiederà un token di accesso valido. SDK è responsabile della registrazione dell’applicazione, del recupero e dell’aggiornamento del token di accesso.
 
 **Nota:** un&#39;istruzione software è specifica dell&#39;app e non può essere utilizzata in più applicazioni. Si noti che anche le istruzioni software a livello di programmatore seguono la stessa procedura, ovvero possono essere utilizzate solo per una singola applicazione, sia che si tratti di un singolo canale che di più canali. Questa limitazione si applica anche allo schema personalizzato.
 

@@ -2,7 +2,7 @@
 title: Panoramica sul monitoraggio dei servizi di adesione
 description: Panoramica sul monitoraggio dei servizi di adesione
 exl-id: ebd5d650-0a32-4583-9045-5156356494e2
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
 source-wordcount: '1303'
 ht-degree: 0%
@@ -42,7 +42,7 @@ L’API ESM non è generalmente disponibile.  Per domande sulla disponibilità, 
 | autenticazione riuscita | Numero di autorizzazioni riuscite |
 | autorizzazione non riuscita | Numero di autorizzazioni negate dagli MVPD a livello di applicazione |
 | Autore-rifiutato | Numero di tentativi di autorizzazione considerati dannosi da Adobe Service Provider e rifiutati in seguito alla prevenzione di attacchi DoS |
-| autentz-latenza | Numero totale di millisecondi passati sull&#39;endpoint MVPD |
+| autentz-latenza | Numero totale di millisecondi trascorsi sull’endpoint di MVPD |
 | media-token | Numero di token multimediali brevi generati (assimilati al numero di richieste di riproduzione) |
 | account univoci | Numero di utenti univoci che hanno eseguito azioni di adesione (AuthN/AuthZ) nell’intervallo di tempo selezionato. Questa metrica verrà visualizzata solo se sono richiesti valori giornalieri. </br> Questo valore viene calcolato per ogni singolo datacenter. Quando non è richiesta la dimensione &quot;dc&quot;, questa metrica non viene visualizzata. |
 | sessioni univoche | Numero di sessioni univoche che hanno eseguito chiamate del flusso di autenticazione al servizio di autenticazione di Adobe Pass entro l’intervallo di tempo selezionato. Questa metrica verrà visualizzata solo se sono richiesti valori giornalieri. </br> Questo valore viene calcolato per ogni singolo datacenter. Quando non è richiesta la dimensione &quot;dc&quot;, questa metrica non viene visualizzata. |
@@ -62,7 +62,7 @@ L’API ESM non è generalmente disponibile.  Per domande sulla disponibilità, 
 | minuto | Il minuto dell&#39;ora |
 | media-company | Società di media proprietaria del sito web che ha avviato il processo di adesione per l’utente |
 | dc | (Centro dati) L’area geografica principale in cui è stata ricevuta la richiesta. |
-| proxy | Il proxy MVPD (che sarà &quot;Direct&quot; per le integrazioni dirette) |
+| proxy | Il proxy MVPD (che sarà &quot;Direct&quot; (Diretto) per le integrazioni dirette) |
 | mvpd | MVPD responsabile della concessione dell&#39;autorizzazione all&#39;utente |
 | requestor-id | ID richiedente utilizzato per eseguire la richiesta di adesione |
 | channel | Il sito web del canale, estratto dal campo della risorsa (estratto dal payload MRSS come canale/titolo, se fornito, o mappato al valore della risorsa, se non in formato RSS). |
@@ -71,19 +71,19 @@ L’API ESM non è generalmente disponibile.  Per domande sulla disponibilità, 
 | eap | Il provider di autenticazione esterno quando il flusso di autenticazione viene eseguito tramite un sistema esterno. </br> I valori possono essere: </br> - N/D - Autenticazione Adobe Pass </br> - Apple - Sistema esterno che ha fornito l&#39;autenticazione Apple |
 | famiglia di sistemi operativi | Sistema operativo in esecuzione sul dispositivo |
 | famiglia di browser | Agente utente utilizzato per accedere all’autenticazione di Adobe Pass |
-| cdt | La piattaforma del dispositivo (alternativa), attualmente utilizzata per Clientless. </br> I valori possono essere: </br> - N/D - l&#39;evento non ha avuto origine da un SDK senza client </br> - Sconosciuto - Poiché il parametro deviceType da un&#39;API senza client è facoltativo, ci sono chiamate che non contengono alcun valore. </br> - qualsiasi altro valore inviato tramite l&#39;API senza client, ad esempio xbox, appletv, roku ecc. </br> |
-| platform-version | Versione dell’SDK senza client |
+| cdt | La piattaforma del dispositivo (alternativa), attualmente utilizzata per Clientless. </br> I valori possono essere: </br> - N/D - l&#39;evento non ha avuto origine da un SDK senza client </br> - Sconosciuto - Poiché il parametro deviceType di un&#39;API senza client è facoltativo, esistono chiamate che non contengono alcun valore. </br> - qualsiasi altro valore inviato tramite l&#39;API senza client, ad esempio xbox, appletv, roku ecc. </br> |
+| platform-version | Versione di Clientless SDK |
 | tipo di sistema operativo | Sistema operativo in esecuzione sul dispositivo, alternativo (non attualmente utilizzato) |
 | versione browser | Versione agente utente |
-| nsdk | SDK client utilizzato (android, fireTV, js, iOS, tvOS, non sdk) |
-| nsdk-version | Versione dell’SDK del client di autenticazione di Adobe Pass |
+| nsdk | Il SDK client utilizzato (android, fireTV, js, iOS, tvOS, non sdk) |
+| nsdk-version | Versione del SDK client di autenticazione di Adobe Pass |
 | evento | Nome dell’evento di autenticazione Adobe Pass |
 | motivo | Motivo degli errori, segnalato dall’autenticazione di Adobe Pass |
 | sso-type | Il meccanismo SSO sottostante: platform/passive/adobe. Indica che il token di autorizzazione è stato emesso riutilizzando l’AuthN in un’altra applicazione |
 | piattaforma | La piattaforma identificata dal dispositivo. Valori possibili: </br> - Android </br> - FireTV </br> - Roku </br> - iOS </br> - tvOS </br> - ecc |
 | application-name | Il nome dell’applicazione configurata, in Dashboard TVE, per l’applicazione registrata DCR configurata per essere utilizzata. |
 | application-version | Versione dell’applicazione configurata, in Dashboard TVE, per l’applicazione registrata DCR configurata per l’utilizzo. |
-| customer-app | ID applicazione personalizzato passato tramite [Informazioni dispositivo](/help/authentication/integration-guide-programmers/passing-client-information-device-connection-and-application.md). |
+| customer-app | ID applicazione personalizzato passato tramite [Informazioni dispositivo](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md). |
 | content-category | La categoria del contenuto richiesto dall’applicazione. |
 
 ## ESM per MVPD {#esm-for-mvpds}
@@ -100,7 +100,7 @@ L’API ESM non è generalmente disponibile.  Per domande sulla disponibilità, 
 | autenticazione riuscita | Numero di autorizzazioni riuscite |
 | autorizzazione non riuscita | Numero di autorizzazioni negate dagli MVPD a livello di applicazione |
 | Autore-rifiutato | Numero di tentativi di autorizzazione considerati dannosi da Adobe Service Provider e rifiutati in seguito alla prevenzione di attacchi DoS |
-| autentz-latenza | Numero totale di millisecondi passati sull&#39;endpoint MVPD |
+| autentz-latenza | Numero totale di millisecondi trascorsi sull’endpoint di MVPD |
 
 ### Gli MVPD possono filtrare le metriche elencate in precedenza in base alle seguenti dimensioni:
 
@@ -114,17 +114,17 @@ L’API ESM non è generalmente disponibile.  Per domande sulla disponibilità, 
 | mvpd | ID mvpd utilizzato per eseguire la richiesta di adesione |
 | requestor-id | ID richiedente utilizzato per eseguire la richiesta di adesione |
 | eap | Il provider di autenticazione esterno quando il flusso di autenticazione viene eseguito tramite un sistema esterno. </br> I valori possono essere: </br> - N/D - Autenticazione Adobe Pass </br> - Apple - Sistema esterno che ha fornito l&#39;autenticazione Apple |
-| cdt | La piattaforma del dispositivo (alternativa), attualmente utilizzata per Clientless. </br> I valori possono essere: </br> - N/D - l&#39;evento non ha avuto origine da un SDK senza client </br> - Sconosciuto - Poiché il parametro deviceType da un&#39;API senza client è facoltativo, ci sono chiamate che non contengono alcun valore. </br> - qualsiasi altro valore inviato tramite l&#39;API senza client, ad esempio xbox, appletv, roku ecc. </br> |
-| tipo sdk | L’SDK client utilizzato (Flash, HTML5, Android nativo, iOS, Clientless, ecc.) |
+| cdt | La piattaforma del dispositivo (alternativa), attualmente utilizzata per Clientless. </br> I valori possono essere: </br> - N/D - l&#39;evento non ha avuto origine da un SDK senza client </br> - Sconosciuto - Poiché il parametro deviceType di un&#39;API senza client è facoltativo, esistono chiamate che non contengono alcun valore. </br> - qualsiasi altro valore inviato tramite l&#39;API senza client, ad esempio xbox, appletv, roku ecc. </br> |
+| tipo sdk | Il client SDK utilizzato (Flash, HTML5, Android nativo, iOS, Clientless, ecc.) |
 | piattaforma | La piattaforma identificata dal dispositivo. Valori possibili: </br> - Android </br> - FireTV </br> - Roku </br> - iOS </br> - tvOS </br> - ecc |
-| nsdk | SDK client utilizzato (android, fireTV, js, iOS, tvOS, non sdk) |
-| nsdk-version | Versione dell’SDK del client di autenticazione di Adobe Pass |
+| nsdk | Il SDK client utilizzato (android, fireTV, js, iOS, tvOS, non sdk) |
+| nsdk-version | Versione del SDK client di autenticazione di Adobe Pass |
 
 ## Casi d’uso {#use-cases}
 
 Puoi utilizzare i dati ESM per i seguenti casi d’uso:
 
-- **Monitoraggio** - Le operazioni o i team di monitoraggio possono creare un dashboard o un grafico che richiama l&#39;API ogni minuto. Utilizzando le informazioni visualizzate, è possibile rilevare un problema (con Adobe Pass Authentication o con un MVPD) nel momento in cui viene visualizzato.
+- **Monitoraggio** - Le operazioni o i team di monitoraggio possono creare un dashboard o un grafico che richiama l&#39;API ogni minuto. Utilizzando le informazioni visualizzate, è possibile rilevare un problema (con Adobe Pass Authentication o MVPD) nel momento in cui viene visualizzato.
 
 - **Debug/Test di qualità** - Poiché i dati sono suddivisi anche per piattaforma, dispositivo, browser e sistema operativo, l&#39;analisi dei pattern di utilizzo può individuare problemi relativi a combinazioni specifiche (ad esempio, Safari su OSX).
 

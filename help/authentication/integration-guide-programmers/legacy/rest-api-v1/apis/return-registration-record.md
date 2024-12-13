@@ -2,14 +2,14 @@
 title: Record di registrazione di ritorno
 description: Record di registrazione di ritorno
 exl-id: 7b9e63a2-59b6-4123-a19b-ee1f021219ea
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '252'
+source-wordcount: '253'
 ht-degree: 2%
 
 ---
 
-# Record di registrazione di ritorno {#return-registration-record}
+# Record di registrazione restituzione (legacy) {#return-registration-record}
 
 >[!NOTE]
 >

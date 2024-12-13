@@ -2,14 +2,14 @@
 title: Recuperare la richiesta del profilo SSO di Platform
 description: Recuperare la richiesta del profilo SSO di Platform
 exl-id: 44fd4e26-4d9a-4607-ac2c-b85d848f5fc6
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '189'
+source-wordcount: '190'
 ht-degree: 1%
 
 ---
 
-# Recuperare la richiesta del profilo SSO di Platform {#retrieve-platform-sso-profile-request}
+# (Legacy) Recuperare la richiesta del profilo SSO di Platform {#retrieve-platform-sso-profile-request}
 
 >[!NOTE]
 >

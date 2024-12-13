@@ -2,14 +2,14 @@
 title: Accesso e disconnessione senza aggiornamento
 description: Accesso e disconnessione senza aggiornamento
 exl-id: 3ce8dfec-279a-4d10-93b4-1fbb18276543
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '1761'
+source-wordcount: '1762'
 ht-degree: 0%
 
 ---
 
-# Accesso e disconnessione senza aggiornamento {#tefresh-less-login-and-logout}
+# (Legacy) Accesso e disconnessione senza aggiornamento {#tefresh-less-login-and-logout}
 
 >[!NOTE]
 >
@@ -44,8 +44,8 @@ Iniziamo con un riepilogo dei flussi di autenticazione e disconnessione original
 
 I client web di Adobe Pass Authentication possono autenticarsi in due modi, a seconda dei requisiti degli MVPD:
 
-1. **Reindirizzamento a pagina intera -** dopo che l&#39;utente ha selezionato un provider    (configurato con reindirizzamento a pagina intera) dal selettore MVPD sulla    Il sito Web del programmatore, `setSelectedProvider(<mvpd>)`, viene richiamato in AccessEnabler e l&#39;utente viene reindirizzato alla pagina di accesso di MVPD. Dopo che l&#39;utente ha fornito credenziali valide, viene reindirizzato al sito Web del programmatore. AccessEnabler è inizializzato e il token di autenticazione viene recuperato dall&#39;autenticazione di Adobe Pass durante `setRequestor`.
-1. **Finestra iFrame/Popup -** Dopo che l&#39;utente ha selezionato un provider (configurato con iFrame), `setSelectedProvider(<mvpd>)` viene richiamato in AccessEnabler. Questa azione attiverà il callback `createIFrame(width, height)`, avvisando il programmatore di creare un iFrame (o pop-up - a seconda del browser/preferenze) con il nome `"mvpdframe"` e le dimensioni fornite. Dopo aver creato l&#39;iFrame/popup, AccessEnabler carica la pagina di accesso di MVPD nell&#39;iFrame/popup. L’utente fornisce credenziali valide e l’iFrame/popup viene reindirizzato all’autenticazione Adobe Pass, che restituisce uno snippet JS che chiude l’iFrame/popup e ricarica la pagina padre (sito web Programmatore). Analogamente al flusso 1, il token di autenticazione viene recuperato durante `setRequestor`.
+1. **Reindirizzamento a pagina intera -** dopo che l&#39;utente ha selezionato un provider    (configurato con reindirizzamento a pagina intera) dal selettore MVPD sulla    Il sito Web del programmatore `setSelectedProvider(<mvpd>)` viene richiamato in AccessEnabler e l&#39;utente viene reindirizzato alla pagina di accesso di MVPD. Dopo che l&#39;utente ha fornito credenziali valide, viene reindirizzato al sito Web del programmatore. AccessEnabler è inizializzato e il token di autenticazione viene recuperato dall&#39;autenticazione di Adobe Pass durante `setRequestor`.
+1. **Finestra iFrame/Popup -** Dopo che l&#39;utente ha selezionato un provider (configurato con iFrame), `setSelectedProvider(<mvpd>)` viene richiamato in AccessEnabler. Questa azione attiverà il callback `createIFrame(width, height)`, avvisando il programmatore di creare un iFrame (o pop-up - a seconda del browser/preferenze) con il nome `"mvpdframe"` e le dimensioni fornite. Dopo aver creato l’iFrame/popup, AccessEnabler carica la pagina di accesso di MVPD nell’iFrame/popup. L’utente fornisce credenziali valide e l’iFrame/popup viene reindirizzato all’autenticazione Adobe Pass, che restituisce uno snippet JS che chiude l’iFrame/popup e ricarica la pagina padre (sito web Programmatore). Analogamente al flusso 1, il token di autenticazione viene recuperato durante `setRequestor`.
 
 Il callback `displayProviderDialog` (attivato da `getAuthentication`/`getAuthorization`) restituisce un elenco di MVPD e le relative impostazioni appropriate. La proprietà `iFrameRequired` di un MVPD consente al programmatore di sapere se deve attivare il flusso 1 o il flusso 2. Si noti che il programmatore è tenuto a intraprendere azioni aggiuntive (creazione di un iFrame/popup) solo per il flusso 2.
 
@@ -61,7 +61,7 @@ Inoltre, l’utente annulla esplicitamente il flusso di autenticazione chiudendo
 
 ## Flusso di disconnessione originale {#orig_logout}
 
-L&#39;API di logout di AccessEnabler cancella lo stato locale della libreria e carica l&#39;URL di logout di MVPD nella scheda/finestra corrente. Il browser passa all’endpoint di disconnessione dell’MVPD e, al termine del processo, l’utente viene reindirizzato al sito web del programmatore. L&#39;unica azione richiesta per conto dell&#39;utente è premere il pulsante o il collegamento Logout e avviare il flusso; non è richiesta alcuna interazione dell&#39;utente sull&#39;endpoint logout dell&#39;MVPD.
+L&#39;API di disconnessione di AccessEnabler cancella lo stato locale della libreria e carica l&#39;URL di disconnessione di MVPD nella scheda/finestra corrente. Il browser passa all’endpoint di disconnessione di MVPD e al termine del processo, l’utente viene reindirizzato al sito web del programmatore. L&#39;unica azione richiesta per conto dell&#39;utente è premere il pulsante o il collegamento Logout e avviare il flusso; non è richiesta alcuna interazione dell&#39;utente sull&#39;endpoint logout di MVPD.
 
 **Autenticazione Originale / Flusso Di Disconnessione Con Aggiornamento Pagina**
 
@@ -92,7 +92,7 @@ I flussi di autenticazione (accesso) e disconnessione descritti in precedenza fo
 
 I punti seguenti descrivono la transizione tra i flussi di autenticazione originali e i flussi migliorati:
 
-1. Il reindirizzamento a pagina intera viene sostituito da una nuova scheda del browser in cui viene eseguito l’accesso MVPD. Il programmatore deve creare una nuova scheda (tramite `window.open`) denominata `mvpdwindow` quando l&#39;utente seleziona un MVPD (con `iFrameRequired = false`). Il programmatore esegue quindi `setSelectedProvider(<mvpd>)`, consentendo ad AccessEnabler di caricare l&#39;URL di accesso MVPD nella nuova scheda. Dopo che l&#39;utente avrà fornito credenziali valide, Adobe Pass Authentication chiuderà la scheda e invierà un window.postMessage al sito Web del programmatore che segnala ad AccessEnabler il completamento del flusso di autenticazione. Vengono attivati i seguenti callback:
+1. Il reindirizzamento a pagina intera viene sostituito da una nuova scheda del browser in cui viene eseguito l’accesso a MVPD. Il programmatore deve creare una nuova scheda (tramite `window.open`) denominata `mvpdwindow` quando l&#39;utente seleziona un MVPD (con `iFrameRequired = false`). Il programmatore esegue quindi `setSelectedProvider(<mvpd>)`, consentendo ad AccessEnabler di caricare l&#39;URL di accesso di MVPD nella nuova scheda. Dopo che l&#39;utente avrà fornito credenziali valide, Adobe Pass Authentication chiuderà la scheda e invierà un window.postMessage al sito Web del programmatore che segnala ad AccessEnabler il completamento del flusso di autenticazione. Vengono attivati i seguenti callback:
 
    - Se il flusso è stato avviato da `getAuthentication`: `setAuthenticationStatus` e `sendTrackingData(AUTHENTICATION_DETECTION...)` verranno attivati per segnalare un&#39;autenticazione riuscita/non riuscita.
 
@@ -104,7 +104,7 @@ I punti seguenti descrivono la transizione tra i flussi di autenticazione origin
 
 >[!IMPORTANT]
 > 
->È necessario caricare l&#39;iFrame di accesso MVPD o la finestra popup come figlio diretto della pagina che contiene l&#39;istanza di AccessEnabler. Se l&#39;iFrame o la finestra popup di accesso MVPD è nidificata a due o più livelli sotto la pagina contenente l&#39;istanza di AccessEnabler, il flusso potrebbe bloccarsi. Ad esempio, se disponi di un iFrame situato tra la pagina principale e l’iFrame MVPD (Page =\> iFrame =\> MVPD iFrame), il flusso di accesso potrebbe non riuscire.
+>È necessario caricare l&#39;iFrame di accesso MVPD o la finestra popup come figlio diretto della pagina che contiene l&#39;istanza di AccessEnabler. Se l&#39;iFrame o la finestra popup di accesso a MVPD è nidificata a due o più livelli sotto la pagina contenente l&#39;istanza di AccessEnabler, il flusso potrebbe bloccarsi. Ad esempio, se disponi di un iFrame situato tra la pagina principale e l’iFrame di MVPD (Page =\> iFrame =\> MVPD iFrame), il flusso di accesso potrebbe non riuscire.
 
 </br>
 
@@ -122,7 +122,7 @@ Di seguito sono riportati i flussi per annullare l’autenticazione:
 
 ## Flusso di disconnessione migliorato {#improved_logout}
 
-Il nuovo flusso di logout verrà eseguito in un iFrame nascosto, eliminando in tal modo il reindirizzamento dell’intera pagina.  Ciò è possibile perché l&#39;utente non ha bisogno di intraprendere azioni specifiche sulla pagina di disconnessione di MVPD.
+Il nuovo flusso di logout verrà eseguito in un iFrame nascosto, eliminando in tal modo il reindirizzamento dell’intera pagina.  Ciò è possibile perché l’utente non deve eseguire azioni specifiche sulla pagina di disconnessione di MVPD.
 
 Una volta completato il flusso di logout, l’iFrame verrà reindirizzato a un endpoint di autenticazione Adobe Pass personalizzato. Verrà distribuito un frammento JS che esegue `window.postMessage` all&#39;elemento padre, notificando all&#39;AccessEnabler il completamento della disconnessione. Vengono attivati i seguenti callback: `setAuthenticationStatus()` e `sendTrackingData(AUTHENTICATION_DETECTION ...)`, segnalando che l&#39;utente non è più autenticato.
 
@@ -142,11 +142,11 @@ Poiché il flusso TempPass richiede che una finestra venga creata automaticament
 
 Di seguito sono riportati gli aspetti di cui il programmatore deve essere a conoscenza quando implementa TempPass per l’accesso e la disconnessione senza aggiornamento:
 
-- Prima di avviare l&#39;autenticazione, è necessario creare l&#39;iFrame o la finestra popup solo per gli MVPD non TempPass. Il programmatore può rilevare se un MVPD è TempPass o meno leggendo la proprietà `tempPass` dell&#39;oggetto MVPD (restituito da `setConfig()` / `displayProviderDialog()`).
+- Prima di avviare l&#39;autenticazione, è necessario creare l&#39;iFrame o la finestra popup solo per gli MVPD non TempPass. Il programmatore può rilevare se un MVPD è TempPass o meno leggendo la proprietà `tempPass` dell&#39;oggetto MVPD (restituita da `setConfig()` / `displayProviderDialog()`).
 
-- Il callback `createIFrame()` deve contenere un controllo per TempPass ed eseguire la relativa logica solo quando MVPD non è TempPass.
+- Il callback `createIFrame()` deve contenere un controllo per TempPass ed eseguire la relativa logica solo quando il MVPD non è TempPass.
 
-- Il callback `destroyIFrame()` deve contenere un controllo per TempPass ed eseguire la relativa logica solo quando MVPD non è TempPass.
+- Il callback `destroyIFrame()` deve contenere un controllo per TempPass ed eseguire la relativa logica solo quando il MVPD non è TempPass.
 
 - I callback `setAuthenticationStatus()` e `sendTrackingData()` vengono richiamati al termine dell&#39;autenticazione (esattamente come nel flusso senza aggiornamento per i normali MVPD).
 
@@ -156,7 +156,7 @@ Di seguito sono riportati gli aspetti di cui il programmatore deve essere a cono
 
 </br>
 
-Nell&#39;esempio di codice riportato di seguito viene illustrato come gestire una finestra MVPD sul sito Web di un programmatore (sia per MVPD normali che per TempPass):
+Nell&#39;esempio di codice riportato di seguito viene illustrato come gestire una finestra di MVPD sul sito Web di un programmatore (sia per MVPD normali che per TempPass):
 
 ```javascript
     var aeHostname = "https://entitlement.auth.adobe.com";

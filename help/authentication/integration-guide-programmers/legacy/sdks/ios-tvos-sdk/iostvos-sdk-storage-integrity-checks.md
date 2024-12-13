@@ -2,14 +2,14 @@
 title: Meccanismo di controllo dell'integrità dello storage iOS/tvOS
 description: Meccanismo di controllo dell’integrità di iOS/tvOS
 exl-id: 5d7cdc46-3e51-4e14-9e30-d7f48bc87506
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '323'
+source-wordcount: '324'
 ht-degree: 0%
 
 ---
 
-# Meccanismo di controllo dell’integrità di iOS/tvOS {#iostvos-sdk-storage-integrity-checks}
+# Meccanismo di controllo dell’integrità di iOS/tvOS (legacy) {#iostvos-sdk-storage-integrity-checks}
 
 >[!NOTE]
 >
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 ## Introduzione {#Intro}
 
-A partire dalla versione 3.8.3 dell&#39;SDK iOS/tvOS AccessEnabler, l&#39;opzione di esecuzione dei controlli di integrità dell&#39;archiviazione è disponibile all&#39;inizializzazione di AccessEnabler.
+A partire dalla versione 3.8.3 di iOS/tvOS AccessEnabler SDK, l&#39;opzione di esecuzione dei controlli di integrità dell&#39;archiviazione è disponibile all&#39;inizializzazione di AccessEnabler.
 
 Per utilizzare questo meccanismo, l’API è stata estesa con un metodo di inizializzazione aggiuntivo per la classe AccessEnabler.
 
@@ -69,5 +69,5 @@ L&#39;enumerazione IntegrityCheckType è esposta all&#39;applicazione client e p
 | Valore | Controlli eseguiti | Archiviazione cancellata | Descrizione | Caso d’uso consigliato |
 |-----------------------|-----------------------------------------------------|-----------------|------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
 | INTEGRITY_CHECK_NONE | Nessuno | Mai | Nessun controllo di integrità eseguito all&#39;inizializzazione dell&#39;archiviazione | Quando i flussi SDK funzionano come previsto |
-| INTEGRITY_CHECK_ALL | Operabilità archiviazione <br/> Validità dei valori archiviati | Errore al momento dell’assegno | Tutti i controlli di integrità disponibili vengono eseguiti all&#39;inizializzazione dell&#39;archiviazione | Quando si sospetta un danneggiamento dell’archiviazione SDK. <br/> In caso di errore di uno dei controlli di integrità, l&#39;utente verrà disconnesso |
+| INTEGRITY_CHECK_ALL | Operabilità archiviazione <br/> Validità dei valori archiviati | Errore al momento dell’assegno | Tutti i controlli di integrità disponibili vengono eseguiti all&#39;inizializzazione dell&#39;archiviazione | Quando si sospetta un danneggiamento dello storage SDK. <br/> In caso di errore di uno dei controlli di integrità, l&#39;utente verrà disconnesso |
 | INTEGRITY_CHECK_CLEAR | Nessuno | Sempre | L&#39;archiviazione viene cancellata durante l&#39;inizializzazione dell&#39;archiviazione | Quando i flussi SDK non possono essere completati come previsto |

@@ -4,10 +4,10 @@ audience: end-user
 feature: Authentication
 user-guide-title: Autenticazione Adobe Pass
 user-guide-description: L’autenticazione Adobe Pass è una soluzione di gestione dei diritti per TV Everywhere, che fornisce un framework modulare per determinare se chi richiede l’accesso a una risorsa ne abbia diritto.
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '1154'
-ht-degree: 3%
+source-wordcount: '1258'
+ht-degree: 2%
 
 ---
 
@@ -20,8 +20,8 @@ ht-degree: 3%
    + [Panoramica sui programmatori](kickstart/programmer-overview.md)
    + [Panoramica di MVPD](kickstart/mvpd-overview.md)
    + [Guida introduttiva per programmatori](kickstart/programmer-kickstart-guide.md)
-   + [Guida introduttiva MVPD](kickstart/mvpd-kickstart-guide.md)
-   + [Procedure di riassegnazione](notes-technical/escalation-procedures.md)
+   + [Guida di Kick-Start per MVPD](kickstart/mvpd-kickstart-guide.md)
+   + [Procedure di riassegnazione](kickstart/escalation-procedures.md)
    + [Glossario](kickstart/glossary.md)
 + Guida All&#39;Integrazione Per I Programmatori {#integration-guide-programmers}
    + API REST {#rest-apis}
@@ -97,22 +97,16 @@ ht-degree: 3%
          + [Certificato metadati utente per la crittografia](integration-guide-programmers/features-standard/entitlements/user-metadata-certificate.md)
       + Segnalazione errori {#error-reporting}
          + [Codici di errore migliorati](integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md)
-         + [Segnalazione di errori](integration-guide-programmers/features-standard/error-reporting/error-reporting.md)
       + Accesso Single Sign-On {#sso-access}
          + Single Sign-On Partner {#partner-sso}
             + Apple Single Sign-On {#apple-sso}
                + [Panoramica di Apple SSO](integration-guide-programmers/features-standard/sso-access/partner-sso/apple-sso/apple-sso-overview.md)
                + [Manuale Apple SSO (REST API V2)](integration-guide-programmers/features-standard/sso-access/partner-sso/apple-sso/apple-sso-cookbook-rest-api-v2.md)
-               + [Manuale Apple SSO (REST API V1)](integration-guide-programmers/features-standard/sso-access/partner-sso/apple-sso/apple-sso-cookbook-rest-api-v1.md)
-               + [Manuale Apple SSO (iOS/tvOS SDK)](integration-guide-programmers/features-standard/sso-access/partner-sso/apple-sso/apple-sso-cookbook-iostvos-sdk.md)
          + Single Sign-On piattaforma {#platform-sso}
             + Amazon Single Sign-On {#amazon-sso}
                + [Manuale Amazon SSO (REST API V2)](integration-guide-programmers/features-standard/sso-access/platform-sso/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v2.md)
-               + [Manuale Amazon SSO (REST API V1)](integration-guide-programmers/features-standard/sso-access/platform-sso/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v1.md)
             + Single Sign-On Roku {#roku-sso}
                + [Panoramica di Roku SSO](integration-guide-programmers/features-standard/sso-access/platform-sso/roku-single-sign-on/roku-sso-overview.md)
-         + [Supporto del Single Sign-On](integration-guide-programmers/features-standard/sso-access/sso-support.md)
-         + [SSO tramite autenticazione passiva](integration-guide-programmers/features-standard/sso-access/sso-passive-authn.md)
       + Accesso all&#39;autenticazione basata sulla home page {#hba-access}
          + [Autenticazione basata su Home per TV Everywhere](integration-guide-programmers/features-standard/hba-access/home-based-authn-tve.md)
          + [Stato HBA per MVPD](integration-guide-programmers/features-standard/hba-access/hba-status-mvpds.md)
@@ -135,81 +129,127 @@ ht-degree: 3%
          + [Utilizzo dell’ID Experience Cloud nell’autenticazione di Adobe Pass](integration-guide-programmers/features-premium/analytics/exp-cloud-id-authn.md)
    + Legacy {#legacy}
       + (Legacy) API REST V1 {#rest-api-v1}
-         + [Panoramica di REST API V1](integration-guide-programmers/legacy/rest-api-v1/apis/rest-api-overview.md)
-         + [Riferimento REST API V1](integration-guide-programmers/legacy/rest-api-v1/rest-api-reference.md)
+         + [(Legacy) Panoramica di REST API V1](integration-guide-programmers/legacy/rest-api-v1/rest-api-overview.md)
+         + [(Legacy) Riferimento API REST V1](integration-guide-programmers/legacy/rest-api-v1/rest-api-reference.md)
          + (Legacy) API {#rest-api-v1-apis}
-            + [Richiesta codice di registrazione](integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md)
-            + [Record di registrazione di ritorno](integration-guide-programmers/legacy/rest-api-v1/apis/return-registration-record.md)
-            + [Elimina record di registrazione](integration-guide-programmers/legacy/rest-api-v1/apis/delete-registration-record.md)
-            + [Fornisci elenco MVPD](integration-guide-programmers/legacy/rest-api-v1/apis/provide-mvpd-list.md)
-            + [Avvia autenticazione](integration-guide-programmers/legacy/rest-api-v1/apis/initiate-authentication.md)
-            + [Controlla token di autenticazione](integration-guide-programmers/legacy/rest-api-v1/apis/check-authentication-token.md)
-            + [Recupera token di autenticazione](integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-authentication-token.md)
-            + [Avvia autorizzazione](integration-guide-programmers/legacy/rest-api-v1/apis/initiate-authorization.md)
-            + [Recupera token di autorizzazione](integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-authorization-token.md)
-            + [Ottieni token multimediale breve](integration-guide-programmers/legacy/rest-api-v1/apis/obtain-short-media-token.md)
-            + [Controlla il flusso di autenticazione tramite l’app web Second Screen](integration-guide-programmers/legacy/rest-api-v1/apis/check-authentication-flow-by-second-screen-web-app.md)
-            + [Recupera elenco risorse autorizzate](integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-list-of-preauthorized-resources.md)
-            + [Recupera elenco di risorse preautorizzate tramite l’app web Second Screen](integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-list-of-preauthorized-resources-by-second-screen-web-app.md)
-            + [Avvia disconnessione](integration-guide-programmers/legacy/rest-api-v1/apis/initiate-logout.md)
-            + [Metadati utente](integration-guide-programmers/legacy/rest-api-v1/apis/user-metadata.md)
-            + [Recupera richiesta-profilo](integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-profilerequest.md)
-            + [Scambio di token](integration-guide-programmers/legacy/rest-api-v1/apis/token-exchange.md)
-            + [Anteprima gratuita per Passaggio temporaneo e Passaggio temporaneo promozionale](integration-guide-programmers/legacy/rest-api-v1/apis/free-preview-for-temp-pass-and-promotional-temp-pass.md)
+            + [(Legacy) Richiesta codice di registrazione](integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md)
+            + [Record di registrazione restituzione (legacy)](integration-guide-programmers/legacy/rest-api-v1/apis/return-registration-record.md)
+            + [(Legacy) Elimina record di registrazione](integration-guide-programmers/legacy/rest-api-v1/apis/delete-registration-record.md)
+            + [(Legacy) Fornisci elenco MVPD](integration-guide-programmers/legacy/rest-api-v1/apis/provide-mvpd-list.md)
+            + [(Legacy) Avvia autenticazione](integration-guide-programmers/legacy/rest-api-v1/apis/initiate-authentication.md)
+            + [(Legacy) Verifica token di autenticazione](integration-guide-programmers/legacy/rest-api-v1/apis/check-authentication-token.md)
+            + [(Legacy) Recupera token di autenticazione](integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-authentication-token.md)
+            + [(Legacy) Avvia autorizzazione](integration-guide-programmers/legacy/rest-api-v1/apis/initiate-authorization.md)
+            + [(Legacy) Recupera token di autorizzazione](integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-authorization-token.md)
+            + [(Legacy) Ottieni token di file multimediali brevi](integration-guide-programmers/legacy/rest-api-v1/apis/obtain-short-media-token.md)
+            + [(Legacy) Verifica il flusso di autenticazione tramite Second Screen Web App](integration-guide-programmers/legacy/rest-api-v1/apis/check-authentication-flow-by-second-screen-web-app.md)
+            + [(Legacy) Recuperare l’elenco delle risorse pre-autorizzate](integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-list-of-preauthorized-resources.md)
+            + [(Legacy) Recuperare l’elenco delle risorse preautorizzate tramite l’app web Second Screen](integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-list-of-preauthorized-resources-by-second-screen-web-app.md)
+            + [(Legacy) Avvia disconnessione](integration-guide-programmers/legacy/rest-api-v1/apis/initiate-logout.md)
+            + [Metadati utente (legacy)](integration-guide-programmers/legacy/rest-api-v1/apis/user-metadata.md)
+            + [(Legacy) Recupera richiesta-profilo](integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-profilerequest.md)
+            + [Scambio di token (legacy)](integration-guide-programmers/legacy/rest-api-v1/apis/token-exchange.md)
+            + [(Legacy) Anteprima gratuita per Passaggio temporaneo e Passaggio temporaneo promozionale](integration-guide-programmers/legacy/rest-api-v1/apis/free-preview-for-temp-pass-and-promotional-temp-pass.md)
          + (Legacy) Cookbook {#rest-api-v1-cookbooks}
-            + [Manuale dell’API REST V1 (da client a server)](integration-guide-programmers/legacy/rest-api-v1/cookbooks/rest-api-cookbook-clienttoserver.md)
-            + [Manuale dell’API REST V1 (server-to-server)](integration-guide-programmers/legacy/rest-api-v1/cookbooks/rest-api-cookbook-servertoserver.md)
+            + [(Legacy) Manuale REST API V1 (Client-to-Server)](integration-guide-programmers/legacy/rest-api-v1/cookbooks/rest-api-cookbook-clienttoserver.md)
+            + [(Legacy) Manuale REST API V1 (server-to-server)](integration-guide-programmers/legacy/rest-api-v1/cookbooks/rest-api-cookbook-servertoserver.md)
       + (Legacy) SDK {#sdks}
          + (Legacy) JavaScript SDK {#javascript-sdk}
-            + [Panoramica dell’SDK per JavaScript](integration-guide-programmers/legacy/sdks/javascript-sdk/javascript-sdk-overview.md)
-            + [Manuale dell’SDK di JavaScript](integration-guide-programmers/legacy/sdks/javascript-sdk/javascript-sdk-cookbook.md)
-            + [Riferimento API di JavaScript SDK](integration-guide-programmers/legacy/sdks/javascript-sdk/javascript-sdk-api-reference.md)
-            + [Preautorizzazione API SDK di JavaScript](integration-guide-programmers/legacy/sdks/javascript-sdk/preauthorize-api-javascript-sdk.md)
+            + [(Legacy) Panoramica di JavaScript SDK](integration-guide-programmers/legacy/sdks/javascript-sdk/javascript-sdk-overview.md)
+            + [Manuale di JavaScript SDK (legacy)](integration-guide-programmers/legacy/sdks/javascript-sdk/javascript-sdk-cookbook.md)
+            + [Riferimento API di JavaScript SDK (legacy)](integration-guide-programmers/legacy/sdks/javascript-sdk/javascript-sdk-api-reference.md)
+            + [(Legacy) Preautorizzazione API SDK di JavaScript](integration-guide-programmers/legacy/sdks/javascript-sdk/preauthorize-api-javascript-sdk.md)
             + Linee guida (legacy) {#javascript-sdk-guidelines}
-               + [Accesso e disconnessione senza aggiornamento](integration-guide-programmers/legacy/sdks/javascript-sdk/refreshless-login-and-logout.md)
-         + (Legacy) SDK iOS/tvOS {#ios-tvos-sdk}
-            + [Panoramica dell’SDK iOS/tvOS](integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-overview.md)
-            + [Manuale dell’SDK iOS/tvOS](integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-cookbook.md)
-            + [Riferimento API per iOS/tvOS SDK](integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md)
-            + [Preautorizzazione API SDK iOS/tvOS](integration-guide-programmers/legacy/sdks/ios-tvos-sdk/preauthorize-api-ios-tvos-sdk.md)
+               + [(Legacy) Accesso e disconnessione senza aggiornamento](integration-guide-programmers/legacy/sdks/javascript-sdk/refreshless-login-and-logout.md)
+         + (Legacy) iOS/tvOS SDK {#ios-tvos-sdk}
+            + [(Legacy) Panoramica di iOS/tvOS SDK](integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-overview.md)
+            + [(Legacy) Manuale di iOS/tvOS SDK](integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-cookbook.md)
+            + [(Legacy) Riferimento API SDK per iOS/tvOS](integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md)
+            + [(Legacy) Preautorizzazione API SDK iOS/tvOS](integration-guide-programmers/legacy/sdks/ios-tvos-sdk/preauthorize-api-ios-tvos-sdk.md)
             + Linee guida (legacy) {#ios-tvos-sdk-guidelines}
-               + [Registrazione applicazione iOS/tvOS](integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-application-registration.md)
-               + [Guida alla migrazione ad iOS/tvOS v3.x](integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-v3x-migration-guide.md)
-               + [Controlli di integrità archiviazione iOS/tvOS](integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-storage-integrity-checks.md)
+               + [(Legacy) Registrazione applicazione iOS/tvOS](integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-application-registration.md)
+               + [(Legacy) Guida alla migrazione di iOS/tvOS v3.x](integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-v3x-migration-guide.md)
+               + [(Legacy) Controlli di integrità dello storage iOS/tvOS](integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-storage-integrity-checks.md)
          + (Legacy) Android SDK {#android-sdk}
-            + [Panoramica dell’SDK di Android](integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-overview.md)
-            + [Manuale dell’SDK di Android](integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-cookbook.md)
-            + [Riferimento API dell&#39;SDK per Android](integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-api-reference.md)
-            + [Preautorizzazione API SDK di Android](integration-guide-programmers/legacy/sdks/android-sdk/preauthorize-api-android-sdk.md)
+            + [(Legacy) Panoramica di Android SDK](integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-overview.md)
+            + [Manuale di Android SDK (legacy)](integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-cookbook.md)
+            + [Riferimento API di Android SDK (legacy)](integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-api-reference.md)
+            + [(Legacy) Preautorizzazione API di Android SDK](integration-guide-programmers/legacy/sdks/android-sdk/preauthorize-api-android-sdk.md)
             + Linee guida (legacy) {#android-sdk-guidelines}
-               + [Registrazione applicazione Android](integration-guide-programmers/legacy/sdks/android-sdk/android-application-registration.md)
-               + [SDK per Android con registrazione client dinamica](integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-with-dynamic-client-registration.md)
-         + (Legacy) SDK FireOS {#fireos-sdk}
-            + [Panoramica tecnica di Amazon FireOS](integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-technical-overview.md)
-            + [Manuale dell’integrazione di Amazon FireOS](integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-integration-cookbook.md)
-            + [Riferimento API di Amazon FireOS](integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-native-client-api-reference.md)
-            + [Registrazione applicazione Amazon FireOS](integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-application-registration.md)
-            + [SDK FireOS con registrazione client dinamica](integration-guide-programmers/legacy/sdks/fireos-sdk/fireos-sdk-with-dynamic-client-registration.md)
-            + [Amazon FireOS SSO - Guida introduttiva per il programmatore](integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-firetv-sso-programmer-kickoff-guide.md)
+               + [Registrazione applicazione Android (legacy)](integration-guide-programmers/legacy/sdks/android-sdk/android-application-registration.md)
+               + [(Legacy) Android SDK con registrazione client dinamica](integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-with-dynamic-client-registration.md)
+         + (Legacy) FireOS SDK {#fireos-sdk}
+            + [(Legacy) Panoramica tecnica di Amazon FireOS](integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-technical-overview.md)
+            + [Manuale dell’integrazione di Amazon FireOS (legacy)](integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-integration-cookbook.md)
+            + [Riferimento API di Amazon FireOS (legacy)](integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-native-client-api-reference.md)
+            + [Registrazione applicazione Amazon FireOS (legacy)](integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-application-registration.md)
+            + [(Legacy) FireOS SDK con registrazione client dinamica](integration-guide-programmers/legacy/sdks/fireos-sdk/fireos-sdk-with-dynamic-client-registration.md)
+            + [(Legacy) Amazon FireOS SSO - Guida introduttiva per programmatori](integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-firetv-sso-programmer-kickoff-guide.md)
+      + (Legacy) Informazioni client {#client-information}
+         + [(Legacy) Trasmissione delle informazioni del client (dispositivo, connessione e applicazione)](integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md)
+      + (Legacy) Segnalazione errori {#error-reporting}
+         + [(Legacy) Segnalazione errori](integration-guide-programmers/legacy/error-reporting/error-reporting.md)
+      + Accesso Single Sign-On (legacy) {#sso-access}
+         + [Supporto Single Sign-On (legacy)](integration-guide-programmers/legacy/sso-access/sso-support.md)
+         + [(Legacy) SSO tramite autenticazione passiva](integration-guide-programmers/legacy/sso-access/sso-passive-authn.md)
+         + [(Legacy) Manuale di Amazon SSO (REST API V1)](integration-guide-programmers/legacy/sso-access/amazon-sso-cookbook-rest-api-v1.md)
+         + [(Legacy) Manuale di Apple SSO (REST API V1)](integration-guide-programmers/legacy/sso-access/apple-sso-cookbook-rest-api-v1.md)
+         + [(Legacy) Manuale Apple SSO (iOS/tvOS SDK)](integration-guide-programmers/legacy/sso-access/apple-sso-cookbook-iostvos-sdk.md)
+      + Dashboard TVE {#tve-dashboard} (legacy)
+         + [Guida utente di (Legacy) TVE Dashboard](integration-guide-programmers/legacy/tve-dashboard/tve-dashboard-user-guide.md)
+      + (Legacy) Note tecniche {#tech-notes}
+         + (Legacy) API REST V1 {#rest-api-v1}
+            + [(Legacy) Implementazione API senza client - Codici di errore/messaggi con motivo/causa probabile](integration-guide-programmers/legacy/notes-technical/clientless-api-implementation-error-codes-messages-with-probable-reason-cause.md)
+            + [(Legacy) Flusso API senza client in assenza di ID dispositivo](integration-guide-programmers/legacy/notes-technical/clientless-api-flow-in-the-absence-of-device-id.md)
+            + [(Legacy) Clientless: evita di utilizzare &#39;&amp;&#39;reg_code nella richiesta /authenticate](integration-guide-programmers/legacy/notes-technical/clientless-avoid-using-reg-code-in-authenticate-request.md)
+            + [(Legacy) Abilitazione dei servizi di adesione Adobe Pass per un programmatore su Xbox 360 e Xbox One Clientless](integration-guide-programmers/legacy/notes-technical/enabling-primetime-entitlement-services-for-a-programmer-on-xbox-360-and-xboxone-clientless-solution.md)
+            + [(Legacy) Tipi di dispositivi e metriche senza client](integration-guide-programmers/legacy/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)
+         + (Legacy) SDK {#sdks}
+            + [(Legacy) Domande e risposte sui certificati](integration-guide-programmers/legacy/notes-technical/certificates-qa.md)
+            + [(Legacy) Informazioni sugli ID utente](integration-guide-programmers/legacy/notes-technical/understanding-user-ids.md)
+            + (Legacy) JavaScript SDK {#javascript-sdk}
+               + [(Legacy) Valutazione della prevenzione del tracciamento - Apple Safari](integration-guide-programmers/legacy/notes-technical/tracking-prevention-assessment-apple-safari.md)
+               + [(Legacy) Valutazione della prevenzione del tracciamento - Google Chrome](integration-guide-programmers/legacy/notes-technical/tracking-prevention-assessment-google-chrome.md)
+               + [(Legacy) Aggiornamenti dei cookie - Flag SameSite e Secure](integration-guide-programmers/legacy/notes-technical/cookies-updates-samesite-and-secure-flags.md)
+               + [(Legacy) Suggerimenti per il debug](integration-guide-programmers/legacy/notes-technical/appendix-b-debugging-tips.md)
+            + (Legacy) Android SDK {#android-sdk}
+               + [(Legacy) Accesso a Android SDK Single Sign-On (SSO) su app Android 10](integration-guide-programmers/legacy/notes-technical/access-enabler-android-sdk-single-signon-sso-on-android-10-devices.md)
+               + [(Legacy) Autenticazione di Adobe Pass e il nuovo modello di autorizzazioni &quot;Marshmallow&quot; di Android 6](integration-guide-programmers/legacy/notes-technical/adobe-primetime-authentication-and-the-android-6-marshmallow-new-permissions-model.md)
+            + (Legacy) iOS/tvOS SDK {#ios-tvos-sdk}
+               + [(Legacy) Supporto WKWebView su iOS SDK 3.1+](integration-guide-programmers/legacy/notes-technical/wkwebview-support-on-ios-sdk-31.md)
+               + [(Legacy) Supporto di SFSafariViewController su iOS SDK 3.2+](integration-guide-programmers/legacy/notes-technical/sfsafariviewcontroller-support-on-ios-sdk-32.md)
+               + [(Legacy) SSO su iOS quando si utilizza Adobe Pass Authentication Access Enabler](integration-guide-programmers/legacy/notes-technical/sso-on-ios-when-using-the-primetime-authentication-access-enabler.md)
+               + [(Legacy) Errore di autenticazione iOS - Impossibile trovare adobepass.ios.app](integration-guide-programmers/legacy/notes-technical/ios-authentication-error-adobepassiosapp-cannot-be-found.md)
+               + [(Legacy) Ripristina passaggio temporaneo su iOS](integration-guide-programmers/legacy/notes-technical/reset-temp-pass-on-ios.md)
+               + [(Legacy) Debug di AccessEnabler iOS/tvOS SDK tramite i registri app della console](integration-guide-programmers/legacy/notes-technical/debugging-the-accessenabler-iostvos-sdk-using-console-app-logs.md)
+               + [(Legacy) Percorso di aggiornamento ad AccessEnabler iOS/tvOS 3.7.0](integration-guide-programmers/legacy/notes-technical/accessenabler-iostvos-370-upgrade-path.md)
+         + (Legacy) Esperienza utente {#user-experience}
+            + [(Legacy) Come migrare la pagina di accesso di MVPD da iFrame a popup](integration-guide-programmers/legacy/notes-technical/migr-mvpd-login-iframe-popup.md)
+            + [(Legacy) Funzione di verifica preliminare: come abilitare, risolvere o determinare il problema](integration-guide-programmers/legacy/notes-technical/preflight-feature.md)
+            + [(Legacy) Consenti MVPD nella finestra di dialogo di selezione](integration-guide-programmers/legacy/notes-technical/allow-mvpd-selectn-dialog.md)
+            + [(Legacy) Impedisci a MVPDs di visualizzare la finestra di dialogo di selezione](integration-guide-programmers/legacy/notes-technical/prevent-mvpd-selectn-dialog.md)
+         + (Legacy) Risoluzione dei problemi {#troubleshooting}
+            + [(Legacy) Utilizzo di Charles Proxy](integration-guide-programmers/legacy/notes-technical/using-charles-proxy.md)
+            + [(Legacy) Monitoraggio di Adobe Pass Adobe PayTV Pass](integration-guide-programmers/legacy/notes-technical/monitoring-adobe-pay-tv-pass.md)
+            + [(Legacy) Come verificare i flussi di autenticazione e autorizzazione utilizzando il sito di test di Adobe API](integration-guide-programmers/legacy/notes-technical/test-authn-authz-flows-using-adobes-api-test-site.md)
    + [Panoramica della guida all’integrazione dei programmatori](integration-guide-programmers/programmer-integration-guide-overview.md)
-   + [Meccanismo di limitazione](integration-guide-programmers/throttling-mechanism.md)
-   + [Requisiti minimi di sistema](integration-guide-programmers/minimum-system-requirements.md)
    + [Flusso adesione programmatore](integration-guide-programmers/entitlement-flow.md)
    + [Casi di utilizzo dei programmatori](integration-guide-programmers/programmer-use-cases.md)
-   + [Trasmissione delle informazioni del client (dispositivo, connessione e applicazione)](integration-guide-programmers/passing-client-information-device-connection-and-application.md)
+   + [Meccanismo di limitazione](integration-guide-programmers/throttling-mechanism.md)
+   + [Requisiti minimi di sistema](integration-guide-programmers/minimum-system-requirements.md)
 + Guida All&#39;Integrazione Per MVPD {#integration-guide-mvpds}
    + [Funzioni di integrazione](integration-guide-mvpds/mvpd-integr-features.md)
    + [Autenticazione](integration-guide-mvpds/authn-usecase.md)
    + [Autenticazione tramite il protocollo OAuth 2.0](integration-guide-mvpds/authn-oauth2-protocol.md)
    + [Autorizzazione](integration-guide-mvpds/authz-usecase.md)
    + [Autorizzazione di verifica preliminare](integration-guide-mvpds/mvpd-preflight-authz.md)
-   + [Disconnessione MVPD](integration-guide-mvpds/usecase-mvpd-logout.md)
+   + [Disconnessione da MVPD](integration-guide-mvpds/usecase-mvpd-logout.md)
    + [Scambio di metadati del contenuto](integration-guide-mvpds/mvpd-content-metadata-exchange.md)
    + [Scambio di metadati utente](integration-guide-mvpds/mvpd-user-metadata-exchng.md)
    + [Servizio Web MVPD proxy](integration-guide-mvpds/proxy-mvpd-webserv.md)
    + [Integrazione SAML MVPD proxy](integration-guide-mvpds/proxy-mvpd-saml-int.md)
    + [Ambito provider di servizi](integration-guide-mvpds/serv-provider-scoping.md)
-   + [Indirizzi IP consentiti MVPD](integration-guide-mvpds/mvpd-listing-ip-addres.md)
+   + [MVPD: indirizzi IP consentiti](integration-guide-mvpds/mvpd-listing-ip-addres.md)
 + Guida Utente Per Il Dashboard TVE {#user-guide-tve-dashboard}
    + [Panoramica del dashboard di TVE](/help/authentication/user-guide-tve-dashboard/tve-dashboard-overview.md)
    + [Ambienti](/help/authentication/user-guide-tve-dashboard/tve-dashboard-environments.md)
@@ -221,7 +261,6 @@ ht-degree: 3%
    + [Integrazioni](/help/authentication/user-guide-tve-dashboard/tve-dashboard-integrations.md)
    + [Rapporti](/help/authentication/user-guide-tve-dashboard/tve-dashboard-reports.md)
    + [Registro delle modifiche](/help/authentication/user-guide-tve-dashboard/tve-dashboard-changes-log.md)
-   + [Guida utente di TVE Dashboard](user-guide-tve-dashboard/tve-dashboard-user-guide.md)
 + Note sulla versione {#release-notes}
    + 2024 {#release-notes-2024}
       + [Note sulla versione di Adobe Pass Authentication 3.0.3](notes-releases/auth-rn-303.md)
@@ -251,40 +290,6 @@ ht-degree: 3%
       + [Note sulla versione di Adobe Pass Authentication JavaScript 4.4.0](notes-releases/authn-rn-javascript-440.md)
       + [Note sulla versione di Adobe Pass Authentication iOS/tvOS 3.7.0](notes-releases/authn-rn-ios-tvos-370.md)
 + Note tecniche {#tech-notes}
-   + Ambienti {#tech-notes-environments}
-      + [Informazioni sugli ambienti Adobe](notes-technical/understanding-the-adobe-environments.md)
-      + [Configurazione dell’ambiente e test in Pre-Qual](notes-technical/setting-up-your-environment-and-testing-in-prequal.md)
-      + [Verificare i flussi di autenticazione e autorizzazione utilizzando il sito di test di Adobe API](notes-technical/test-authn-authz-flows-using-adobes-api-test-site.md)
-   + Esperienza utente {#tech-notes-user-experience}
-      + [Come migrare la pagina di accesso MVPD da iFrame a popup](notes-technical/migr-mvpd-login-iframe-popup.md)
-      + [Funzione di verifica preliminare: come abilitare, risolvere o determinare il problema](notes-technical/preflight-feature.md)
-      + [Consenti MVPD nella finestra di dialogo di selezione](notes-technical/allow-mvpd-selectn-dialog.md)
-      + [Impedisci a MVPDs di visualizzare la finestra di dialogo di selezione](notes-technical/prevent-mvpd-selectn-dialog.md)
-   + API REST V1 {#tech-notes-rest-api-v1}
-      + [Implementazione API senza client - Codici di errore/messaggi con motivo/causa probabile](notes-technical/clientless-api-implementation-error-codes-messages-with-probable-reason-cause.md)
-      + [Flusso API senza client in assenza di ID dispositivo](notes-technical/clientless-api-flow-in-the-absence-of-device-id.md)
-      + [Clientless: evita di utilizzare &#39;&amp;&#39;reg_code nella richiesta /authenticate](notes-technical/clientless-avoid-using-reg-code-in-authenticate-request.md)
-      + [Abilitazione dei servizi di adesione Adobe Pass per un programmatore su Xbox 360 e Xbox One Clientless](notes-technical/enabling-primetime-entitlement-services-for-a-programmer-on-xbox-360-and-xboxone-clientless-solution.md)
-      + [Tipo di dispositivo e metriche senza client](notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)
-   + SDK {#tech-notes-sdks}
-      + [Domande e risposte sui certificati](notes-technical/certificates-qa.md)
-      + [Informazioni sugli ID utente](notes-technical/understanding-user-ids.md)
-      + SDK JavaScript {#tech-notes-javascript-sdk}
-         + [Valutazione della prevenzione del tracciamento - Apple Safari](notes-technical/tracking-prevention-assessment-apple-safari.md)
-         + [Valutazione della prevenzione del tracciamento - Google Chrome](notes-technical/tracking-prevention-assessment-google-chrome.md)
-         + [Aggiornamenti dei cookie - Flag SameSite e Secure](notes-technical/cookies-updates-samesite-and-secure-flags.md)
-         + [Suggerimenti per il debug](notes-technical/appendix-b-debugging-tips.md)
-      + SDK di Android {#tech-notes-android-sdk}
-         + [Accesso Single Sign-On (SSO) SDK di Android Enabler sulle app Android 10](notes-technical/access-enabler-android-sdk-single-signon-sso-on-android-10-devices.md)
-         + [Autenticazione di Adobe Pass e il nuovo modello di autorizzazioni &quot;Marshmallow&quot; di Android 6](notes-technical/adobe-primetime-authentication-and-the-android-6-marshmallow-new-permissions-model.md)
-      + SDK iOS/tvOS {#tech-notes-ios-tvos-sdk}
-         + [Supporto WKWebView sull&#39;SDK iOS 3.1+](notes-technical/wkwebview-support-on-ios-sdk-31.md)
-         + [Supporto di SFSafariViewController sull&#39;SDK iOS 3.2+](notes-technical/sfsafariviewcontroller-support-on-ios-sdk-32.md)
-         + [SSO su iOS quando si utilizza Adobe Pass Authentication Access Enabler](notes-technical/sso-on-ios-when-using-the-primetime-authentication-access-enabler.md)
-         + [Errore di autenticazione iOS - Impossibile trovare adobepass.ios.app](notes-technical/ios-authentication-error-adobepassiosapp-cannot-be-found.md)
-         + [Ripristina passaggio temporaneo su iOS](notes-technical/reset-temp-pass-on-ios.md)
-         + [Debug dell’SDK iOS/tvOS di AccessEnabler tramite i registri dell’app della console](notes-technical/debugging-the-accessenabler-iostvos-sdk-using-console-app-logs.md)
-         + [Percorso di aggiornamento ad AccessEnabler iOS/tvOS 3.7.0](notes-technical/accessenabler-iostvos-370-upgrade-path.md)
-   + Risoluzione dei problemi di {#tech-notes-troubleshooting}
-      + [Utilizzo di Charles Proxy](notes-technical/using-charles-proxy.md)
-      + [Monitoraggio di Adobe Pass Adobe PayTV Pass](notes-technical/monitoring-adobe-pay-tv-pass.md)
+   + Ambienti {#environments}
+      + [Informazioni sugli ambienti Adobe](notes-technical/environments/understanding-the-adobe-environments.md)
+      + [Configurazione dell’ambiente e test in Pre-Qual](notes-technical/environments/setting-up-your-environment-and-testing-in-prequal.md)

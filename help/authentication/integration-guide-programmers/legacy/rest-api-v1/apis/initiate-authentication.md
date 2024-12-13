@@ -2,14 +2,14 @@
 title: Avvia autenticazione
 description: Avvia autenticazione
 exl-id: 55dddd29-68d6-4aae-8744-307fea285e29
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '291'
+source-wordcount: '292'
 ht-degree: 0%
 
 ---
 
-# Avvia autenticazione {#initiate-authentication}
+# (Legacy) Avvia autenticazione {#initiate-authentication}
 
 >[!NOTE]
 >
@@ -36,13 +36,13 @@ ht-degree: 0%
 
 ## Descrizione {#description}
 
-Avvia il processo di autenticazione informando di un evento di selezione MVPD. Crea un record nel database di autenticazione di Adobe Pass che viene riconciliato quando viene ricevuta una risposta di successo da MVPD.
+Avvia il processo di autenticazione informando di un evento di selezione MVPD. Crea un record nel database di autenticazione di Adobe Pass che viene riconciliato quando viene ricevuta una risposta corretta da MVPD.
 
 
 
 | Endpoint | Chiamato </br> da | Input   </br>Parametri | Metodo HTTP </br> | Risposta | HTTP </br>Risposta |
 | --- | --- | --- | --- | --- | --- |
-| &lt;SP_FQDN>/api/v1/authenticate | Modulo AuthN | 1. requestor_id (obbligatorio)</br>2.  mso_id (obbligatorio)</br>3.  reg_code (obbligatorio)</br>4.  nome_dominio (obbligatorio)</br>5.  noflash=true - </br>    (Obbligatorio, parametro residuo)</br>6.  no_iframe=true (obbligatorio, parametro residuo)</br>7.  parametri aggiuntivi (facoltativo)</br>8.  redirect_url (obbligatorio) | GET | L&#39;app Web di accesso viene reindirizzata alla pagina di accesso MVPD. | 302 per implementazioni di reindirizzamento complete |
+| &lt;SP_FQDN>/api/v1/authenticate | Modulo AuthN | 1. requestor_id (obbligatorio)</br>2.  mso_id (obbligatorio)</br>3.  reg_code (obbligatorio)</br>4.  nome_dominio (obbligatorio)</br>5.  noflash=true - </br>    (Obbligatorio, parametro residuo)</br>6.  no_iframe=true (obbligatorio, parametro residuo)</br>7.  parametri aggiuntivi (facoltativo)</br>8.  redirect_url (obbligatorio) | GET | L&#39;app Web di accesso viene reindirizzata alla pagina di accesso di MVPD. | 302 per implementazioni di reindirizzamento complete |
 
 {style="table-layout:auto"}
 
@@ -93,7 +93,7 @@ Avvia il processo di autenticazione informando di un evento di selezione MVPD. C
 
 * Il valore del parametro `domain_name` deve essere impostato su uno dei nomi di dominio registrati con l&#39;autenticazione Adobe Pass. Per ulteriori dettagli, consultare [Registrazione e inizializzazione](/help/authentication/kickstart/programmer-overview.md).
 
-* [Evita di usare &#39;&amp;&#39;reg\_code nella richiesta /authenticate (nota tecnica)](/help/authentication/notes-technical/clientless-avoid-using-reg-code-in-authenticate-request.md)
+* [Evita di usare &#39;&amp;&#39;reg\_code nella richiesta /authenticate (nota tecnica)](/help/authentication/integration-guide-programmers/legacy/notes-technical/clientless-avoid-using-reg-code-in-authenticate-request.md)
 
 * Il parametro `redirect_url` deve essere l&#39;ultimo nell&#39;ordine
 

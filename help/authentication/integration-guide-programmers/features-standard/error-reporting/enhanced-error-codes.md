@@ -2,9 +2,9 @@
 title: Codici di errore migliorati
 description: Codici di errore migliorati
 exl-id: 2b0a9095-206b-4dc7-ab9e-e34abf4d359c
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '2606'
+source-wordcount: '2610'
 ht-degree: 2%
 
 ---
@@ -18,12 +18,12 @@ ht-degree: 2%
 I codici di errore avanzati rappresentano una funzione di autenticazione di Adobe Pass che fornisce informazioni aggiuntive sugli errori alle applicazioni client integrate con:
 
 * API REST di autenticazione Adobe Pass:
-   * [API REST v1](../../legacy/rest-api-v1/apis/rest-api-overview.md)
    * [API REST v2](../../rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md)
+   * [(Legacy) API REST v1](../../legacy/rest-api-v1/rest-api-overview.md)
 * API di preautorizzazione SDK per autenticazione Adobe Pass:
-   * [JavaScript SDK (API di preautorizzazione)](../../legacy/sdks/javascript-sdk/preauthorize-api-javascript-sdk.md)
-   * [SDK iOS/tvOS (API di preautorizzazione)](../../legacy/sdks/ios-tvos-sdk/preauthorize-api-ios-tvos-sdk.md)
-   * [SDK di Android (API di preautorizzazione)](../../legacy/sdks/android-sdk/preauthorize-api-android-sdk.md)
+   * [(Legacy) JavaScript SDK (API di preautorizzazione)](../../legacy/sdks/javascript-sdk/preauthorize-api-javascript-sdk.md)
+   * [(Legacy) iOS/tvOS SDK (API di pre-autorizzazione)](../../legacy/sdks/ios-tvos-sdk/preauthorize-api-ios-tvos-sdk.md)
+   * [(Legacy) Android SDK (API di preautorizzazione)](../../legacy/sdks/android-sdk/preauthorize-api-android-sdk.md)
 
   _(*) L&#39;API di preautorizzazione è l&#39;unica API SDK di autenticazione di Adobe Pass che fornisce supporto per codici di errore avanzati._
 
@@ -256,42 +256,6 @@ I valori possibili per il campo &quot;code&quot; sono aggregati [di seguito](#en
 
 ## Elenchi {#enhanced-error-codes-lists}
 
-### API REST v1 {#enhanced-error-codes-lists-rest-api-v1}
-
-La tabella seguente elenca i possibili codici di errore avanzati che un’applicazione client potrebbe incontrare quando integrata con l’API REST di autenticazione di Adobe Pass v1.
-
-| Azione | Codice | Stato | Messaggio |
-|--------------------|---------------------------------------------------|-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **nessuno** | *invalid_requestor* | 400 | Parametro del richiedente mancante o non valido. |
-|                    | *informazioni_dispositivo_non_valido* | 400 | Informazioni dispositivo mancanti o non valide. |
-|                    | *invalid_device_id* | 400 | Identificatore dispositivo mancante o non valido. |
-|                    | *risorsa_mancante* | 400, 412 | Parametro di risorsa mancante. |
-|                    | *richiesta_authz_non valida* | 400, 412 | La richiesta di autorizzazione è nulla o non valida. |
-|                    | *preautorizzazione_negata_da_mvpd* | 403 | L&#39;MVPD ha restituito una decisione di rifiuto quando ha richiesto la pre-autorizzazione per la risorsa specificata. |
-|                    | *autorizzazione_negata_da_mvpd* | 403 | L&#39;MVPD ha restituito una decisione &quot;Nega&quot; quando ha richiesto l&#39;autorizzazione per la risorsa specificata. |
-|                    | *autorizzazione_negata_da_controlli_genitori* | 403 | L&#39;MVPD ha restituito una decisione &quot;Nega&quot; a causa delle impostazioni di Controllo genitori per la risorsa specificata. |
-|                    | *errore_interno* | 400, 405, 500 | Richiesta non riuscita a causa di un errore interno del server. |
-| **configurazione** | *integrazione_sconosciuta* | 400, 412 | L&#39;integrazione tra il programmatore specificato e il provider di identità non esiste. Utilizzate il dashboard TVE per creare l&#39;integrazione richiesta. |
-|                    | *troppe_risorse* | 403 | Richiesta di autorizzazione o preautorizzazione non riuscita perché sono state eseguite query su troppe risorse. Contatta il team di supporto per configurare correttamente le limitazioni di autorizzazione e preautorizzazione. |
-| **autenticazione** | *authentication_session_issuer_mismatch* | 400 | Richiesta di autorizzazione non riuscita a causa del fatto che l’MVPD indicato per il flusso di autorizzazione è diverso da quello che ha emesso la sessione di autenticazione. Per continuare, l’utente deve autenticare di nuovo con il MVPD desiderato. |
-|                    | *autorizzazione_negata_da_hba_policies* | 403 | MVPD ha restituito una decisione di rifiuto a causa di criteri di autenticazione basati su home. L&#39;autenticazione corrente è stata ottenuta utilizzando un flusso di autenticazione basato sulla home, ma il dispositivo non è più a casa quando si richiede l&#39;autorizzazione per la risorsa specificata. Per continuare, l’utente deve ripetere l’autenticazione con un MVPD supportato. |
-|                    | *autorizzazione_negata_da_sessione_invalidata* | 403 | Sessione di autenticazione invalidata dal provider di identità. Per continuare, l’utente deve ripetere l’autenticazione con un MVPD supportato. |
-|                    | *identità_non_riconosciuta_da_mvpd* | 403 | Richiesta di autorizzazione non riuscita a causa del mancato riconoscimento dell&#39;identità utente da parte di MVPD. |
-|                    | *autenticazione_sessione_invalidata* | 403 | Sessione di autenticazione invalidata dal provider di identità. Per continuare, l’utente deve ripetere l’autenticazione con un MVPD supportato. |
-|                    | *sessione di autenticazione_mancante* | 404, 412 | Impossibile recuperare la sessione di autenticazione associata a questa richiesta. Per continuare, l’utente deve ripetere l’autenticazione con un MVPD supportato. |
-|                    | *sessione di autenticazione_scaduta* | 404, 412 | La sessione di autenticazione corrente è scaduta. Per continuare, l’utente deve ripetere l’autenticazione con un MVPD supportato. |
-|                    | *sessione_autenticazione_preautorizzazione_mancante* | 412 | Impossibile recuperare la sessione di autenticazione associata a questa richiesta. Per continuare, l’utente deve ripetere l’autenticazione con un MVPD supportato. |
-|                    | *sessione_autenticazione_preautorizzazione_scaduta* | 412 | La sessione di autenticazione corrente è scaduta. Per continuare, l’utente deve ripetere l’autenticazione con un MVPD supportato. |
-| **autorizzazione** | *autorizzazione_non_trovata* | 403, 404 | Non è stata trovata alcuna autorizzazione per la risorsa specificata. L’utente deve ottenere una nuova autorizzazione per continuare. |
-|                    | *autorizzazione_scaduta* | 410 | L&#39;autorizzazione precedente per la risorsa specificata è scaduta. L’utente deve ottenere una nuova autorizzazione per continuare. |
-| **riprova** | *errore_ricevuto_di_rete* | 403 | Errore di lettura durante il recupero della risposta dal servizio partner associato. Un nuovo tentativo di richiesta potrebbe risolvere il problema. |
-|                    | *connessione di rete_timeout* | 403 | Timeout di connessione con il servizio partner associato. Un nuovo tentativo di richiesta potrebbe risolvere il problema. |
-|                    | *tempo_esecuzione_massimo_superato* | 403 | La richiesta non è stata completata entro il tempo massimo consentito. Un nuovo tentativo di richiesta potrebbe risolvere il problema. |
-
-### API di pre-autorizzazione SDK {#enhanced-error-codes-lists-sdks-preauthorize-api}
-
-Consulta la [sezione](#enhanced-error-codes-list-rest-api-v1) precedente per informazioni sui possibili codici di errore avanzati che un&#39;applicazione client potrebbe incontrare quando integrata con l&#39;API di preautorizzazione degli SDK di autenticazione di Adobe Pass.
-
 ### API REST v2 {#enhanced-error-codes-lists-rest-api-v2}
 
 La tabella seguente elenca i possibili codici di errore avanzati che un’applicazione client potrebbe incontrare quando integrata con l’API REST di autenticazione di Adobe Pass v2.
@@ -316,9 +280,9 @@ La tabella seguente elenca i possibili codici di errore avanzati che un’applic
 |                              | *intestazione_non_valida_pfs_provider_info_scaduta* | 400 | Le informazioni sul provider dall&#39;intestazione dello stato del framework partner sono scadute. |
 |                              | *invalid_integration* | 400 | L&#39;integrazione tra il provider di servizi specificato e mvpd non esiste o è disabilitata. |
 |                              | *invalid_authentication_session* | 400 | La sessione di autenticazione associata a questa richiesta è mancante o non valida. |
-|                              | *preautorizzazione_negata_da_mvpd* | 403 | L&#39;MVPD ha restituito una decisione di rifiuto quando ha richiesto la pre-autorizzazione per la risorsa specificata. |
-|                              | *autorizzazione_negata_da_mvpd* | 403 | L&#39;MVPD ha restituito una decisione &quot;Nega&quot; quando ha richiesto l&#39;autorizzazione per la risorsa specificata. |
-|                              | *autorizzazione_negata_da_controlli_genitori* | 403 | L&#39;MVPD ha restituito una decisione &quot;Nega&quot; a causa delle impostazioni di Controllo genitori per la risorsa specificata. |
+|                              | *preautorizzazione_negata_da_mvpd* | 403 | MVPD ha restituito una decisione di rifiuto quando ha richiesto la pre-autorizzazione per la risorsa specificata. |
+|                              | *autorizzazione_negata_da_mvpd* | 403 | MVPD ha restituito una decisione di rifiuto durante la richiesta di autorizzazione per la risorsa specificata. |
+|                              | *autorizzazione_negata_da_controlli_genitori* | 403 | Il MVPD ha restituito una decisione di rifiuto a causa delle impostazioni di Controllo genitori per la risorsa specificata. |
 |                              | *autorizzazione_negata_per_regola_degradazione* | 403 | L&#39;integrazione tra il provider di servizi specificato e mvpd prevede l&#39;applicazione di una regola di degrado che nega l&#39;autorizzazione per le risorse richieste. |
 |                              | *errore_server_interno* | 500 | Richiesta non riuscita a causa di un errore interno del server. |
 | **configurazione** | *troppe_risorse* | 403 | Richiesta di autorizzazione o preautorizzazione non riuscita perché sono state eseguite query su troppe risorse. Contatta il team di supporto per configurare correttamente le limitazioni di autorizzazione e preautorizzazione. |
@@ -339,12 +303,48 @@ La tabella seguente elenca i possibili codici di errore avanzati che un’applic
 |                              | *profilo_autenticato_invalidato* | 403 | Il profilo autenticato associato a questa richiesta è stato invalidato. |
 |                              | *temporary_access_duration_limit_exceeded* | 403 | È stato superato il limite di durata dell’accesso temporaneo. |
 |                              | *temporary_access_resources_limit_exceeded* | 403 | È stato superato il limite delle risorse di accesso temporanee. |
-|                              | *autorizzazione_negata_da_hba_policies* | 403 | MVPD ha restituito una decisione di rifiuto a causa di criteri di autenticazione basati su home. L&#39;autenticazione corrente è stata ottenuta tramite un flusso di autenticazione basato sulla Home, ma il dispositivo non è più in-home quando si richiede l&#39;autorizzazione per la risorsa specificata. Per continuare, l’utente deve ripetere l’autenticazione con un MVPD supportato. |
-|                              | *autorizzazione_negata_da_sessione_invalidata* | 403 | Sessione di autenticazione invalidata dal provider di identità. Per continuare, l’utente deve ripetere l’autenticazione con un MVPD supportato. |
-|                              | *identità_non_riconosciuta_da_mvpd* | 403 | Richiesta di autorizzazione non riuscita a causa del mancato riconoscimento dell&#39;identità utente da parte di MVPD. |
+|                              | *autorizzazione_negata_da_hba_policies* | 403 | MVPD ha restituito una decisione di rifiuto a causa di criteri di autenticazione basati su home. L&#39;autenticazione corrente è stata ottenuta tramite un flusso di autenticazione basato sulla Home, ma il dispositivo non è più in-home quando si richiede l&#39;autorizzazione per la risorsa specificata. Per continuare, l’utente deve autenticare di nuovo con un MVPD supportato. |
+|                              | *autorizzazione_negata_da_sessione_invalidata* | 403 | Sessione di autenticazione invalidata dal provider di identità. Per continuare, l’utente deve autenticare di nuovo con un MVPD supportato. |
+|                              | *identità_non_riconosciuta_da_mvpd* | 403 | La richiesta di autorizzazione non è riuscita perché l&#39;identità utente non è stata riconosciuta da MVPD. |
 | **riprova** | *errore_ricevuto_di_rete* | 403 | Errore di lettura durante il recupero della risposta dal servizio partner associato. Un nuovo tentativo di richiesta potrebbe risolvere il problema. |
 |                              | *connessione di rete_timeout* | 403 | Timeout di connessione con il servizio partner associato. Un nuovo tentativo di richiesta potrebbe risolvere il problema. |
 |                              | *tempo_esecuzione_massimo_superato* | 403 | La richiesta non è stata completata entro il tempo massimo consentito. Un nuovo tentativo di richiesta potrebbe risolvere il problema. |
+
+### API REST v1 {#enhanced-error-codes-lists-rest-api-v1}
+
+La tabella seguente elenca i possibili codici di errore avanzati che un’applicazione client potrebbe incontrare quando integrata con l’API REST di autenticazione di Adobe Pass v1.
+
+| Azione | Codice | Stato | Messaggio |
+|--------------------|---------------------------------------------------|-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **nessuno** | *invalid_requestor* | 400 | Parametro del richiedente mancante o non valido. |
+|                    | *informazioni_dispositivo_non_valido* | 400 | Informazioni dispositivo mancanti o non valide. |
+|                    | *invalid_device_id* | 400 | Identificatore dispositivo mancante o non valido. |
+|                    | *risorsa_mancante* | 400, 412 | Parametro di risorsa mancante. |
+|                    | *richiesta_authz_non valida* | 400, 412 | La richiesta di autorizzazione è nulla o non valida. |
+|                    | *preautorizzazione_negata_da_mvpd* | 403 | MVPD ha restituito una decisione di rifiuto quando ha richiesto la pre-autorizzazione per la risorsa specificata. |
+|                    | *autorizzazione_negata_da_mvpd* | 403 | MVPD ha restituito una decisione di rifiuto durante la richiesta di autorizzazione per la risorsa specificata. |
+|                    | *autorizzazione_negata_da_controlli_genitori* | 403 | Il MVPD ha restituito una decisione di rifiuto a causa delle impostazioni di Controllo genitori per la risorsa specificata. |
+|                    | *errore_interno* | 400, 405, 500 | Richiesta non riuscita a causa di un errore interno del server. |
+| **configurazione** | *integrazione_sconosciuta* | 400, 412 | L&#39;integrazione tra il programmatore specificato e il provider di identità non esiste. Utilizzate il dashboard TVE per creare l&#39;integrazione richiesta. |
+|                    | *troppe_risorse* | 403 | Richiesta di autorizzazione o preautorizzazione non riuscita perché sono state eseguite query su troppe risorse. Contatta il team di supporto per configurare correttamente le limitazioni di autorizzazione e preautorizzazione. |
+| **autenticazione** | *authentication_session_issuer_mismatch* | 400 | Richiesta di autorizzazione non riuscita a causa del fatto che il MVPD indicato per il flusso di autorizzazione è diverso da quello che ha emesso la sessione di autenticazione. Per continuare, l’utente deve autenticare di nuovo con il MVPD desiderato. |
+|                    | *autorizzazione_negata_da_hba_policies* | 403 | MVPD ha restituito una decisione di rifiuto a causa di criteri di autenticazione basati su home. L&#39;autenticazione corrente è stata ottenuta utilizzando un flusso di autenticazione basato sulla home, ma il dispositivo non è più a casa quando si richiede l&#39;autorizzazione per la risorsa specificata. Per continuare, l’utente deve autenticare di nuovo con un MVPD supportato. |
+|                    | *autorizzazione_negata_da_sessione_invalidata* | 403 | Sessione di autenticazione invalidata dal provider di identità. Per continuare, l’utente deve autenticare di nuovo con un MVPD supportato. |
+|                    | *identità_non_riconosciuta_da_mvpd* | 403 | La richiesta di autorizzazione non è riuscita perché l&#39;identità utente non è stata riconosciuta da MVPD. |
+|                    | *autenticazione_sessione_invalidata* | 403 | Sessione di autenticazione invalidata dal provider di identità. Per continuare, l’utente deve autenticare di nuovo con un MVPD supportato. |
+|                    | *sessione di autenticazione_mancante* | 404, 412 | Impossibile recuperare la sessione di autenticazione associata a questa richiesta. Per continuare, l’utente deve autenticare di nuovo con un MVPD supportato. |
+|                    | *sessione di autenticazione_scaduta* | 404, 412 | La sessione di autenticazione corrente è scaduta. Per continuare, l’utente deve autenticare di nuovo con un MVPD supportato. |
+|                    | *sessione_autenticazione_preautorizzazione_mancante* | 412 | Impossibile recuperare la sessione di autenticazione associata a questa richiesta. Per continuare, l’utente deve autenticare di nuovo con un MVPD supportato. |
+|                    | *sessione_autenticazione_preautorizzazione_scaduta* | 412 | La sessione di autenticazione corrente è scaduta. Per continuare, l’utente deve autenticare di nuovo con un MVPD supportato. |
+| **autorizzazione** | *autorizzazione_non_trovata* | 403, 404 | Non è stata trovata alcuna autorizzazione per la risorsa specificata. L’utente deve ottenere una nuova autorizzazione per continuare. |
+|                    | *autorizzazione_scaduta* | 410 | L&#39;autorizzazione precedente per la risorsa specificata è scaduta. L’utente deve ottenere una nuova autorizzazione per continuare. |
+| **riprova** | *errore_ricevuto_di_rete* | 403 | Errore di lettura durante il recupero della risposta dal servizio partner associato. Un nuovo tentativo di richiesta potrebbe risolvere il problema. |
+|                    | *connessione di rete_timeout* | 403 | Timeout di connessione con il servizio partner associato. Un nuovo tentativo di richiesta potrebbe risolvere il problema. |
+|                    | *tempo_esecuzione_massimo_superato* | 403 | La richiesta non è stata completata entro il tempo massimo consentito. Un nuovo tentativo di richiesta potrebbe risolvere il problema. |
+
+### API di pre-autorizzazione SDK {#enhanced-error-codes-lists-sdks-preauthorize-api}
+
+Consulta la [sezione](#enhanced-error-codes-list-rest-api-v1) precedente per informazioni sui possibili codici di errore avanzati che un&#39;applicazione client potrebbe incontrare quando integrata con l&#39;API di preautorizzazione degli SDK di autenticazione di Adobe Pass.
 
 ## Gestione della risposta {#enhanced-error-codes-response-handling}
 
@@ -368,4 +368,4 @@ In sintesi, quando gestisci le risposte contenenti codici di errore avanzati, pr
 
 1. **Autenticazione e autorizzazione**: per gli errori relativi all&#39;autenticazione e all&#39;autorizzazione, è necessario richiedere all&#39;utente di ripetere l&#39;autenticazione o ottenere una nuova autorizzazione in base alle esigenze.
 
-1. **Feedback utente**: facoltativo, utilizzare i campi &quot;messaggio&quot; e (potenziali) &quot;dettagli&quot; leggibili per informare l&#39;utente del problema. Il messaggio di testo &quot;details&quot; (Dettagli) potrebbe essere trasmesso dagli endpoint di preautorizzazione o autorizzazione MVPD o dal Programmatore quando si applicano regole di degradazione.
+1. **Feedback utente**: facoltativo, utilizzare i campi &quot;messaggio&quot; e (potenziali) &quot;dettagli&quot; leggibili per informare l&#39;utente del problema. Il messaggio di testo &quot;details&quot; (Dettagli) potrebbe venire trasmesso dagli endpoint di pre-autorizzazione o autorizzazione di MVPD o dal Programmatore quando si applicano regole di degradazione.

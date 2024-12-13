@@ -1,15 +1,15 @@
 ---
-title: Manuale dell’SDK di Android
-description: Manuale dell’SDK di Android
+title: Manuale di Android SDK
+description: Manuale di Android SDK
 exl-id: 7f66ab92-f52c-4dae-8016-c93464dd5254
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '1681'
+source-wordcount: '1682'
 ht-degree: 0%
 
 ---
 
-# Manuale dell’SDK di Android {#android-sdk-cookbook}
+# Manuale di Android SDK (legacy) {#android-sdk-cookbook}
 
 >[!NOTE]
 >
@@ -150,7 +150,7 @@ Libreria Android (AccessEnabler)
 
 1. Dopo che l&#39;utente ha selezionato un provider, ottenere l&#39;URL del MVPD dell&#39;utente dal callback `navigateToUrl()`.  Aprire un controllo WebView e indirizzarlo all&#39;URL.
 
-1. Tramite il WebView creato nel passaggio precedente, l&#39;utente arriva alla pagina di accesso di MVPD e immette le credenziali di accesso. Diverse operazioni di reindirizzamento si verificano all&#39;interno di WebView.
+1. Tramite il WebView creato nel passaggio precedente, l&#39;utente accede alla pagina di accesso di MVPD e immette le credenziali di accesso. Diverse operazioni di reindirizzamento si verificano all&#39;interno di WebView.
 
    **Nota:** A questo punto, l&#39;utente ha la possibilità di annullare il flusso di autenticazione. In questo caso, il livello dell&#39;interfaccia utente è responsabile dell&#39;informazione di AccessEnabler su questo evento chiamando `setSelectedProvider()` con `null` come parametro. Ciò consente ad AccessEnabler di ripulire il proprio stato interno e reimpostare il flusso di autenticazione.
 
@@ -171,7 +171,7 @@ Libreria Android (AccessEnabler)
 1. Chiama [getAuthorization()](#$getAuthZ) per avviare l&#39;autorizzazione
 flusso.
 
-   Dipendenza: ID risorsa validi concordati con gli MVPD.
+   Dipendenza: ID risorsa validi concordati con i MVPD.
 
    **Nota:** i ResourceID devono essere gli stessi utilizzati su qualsiasi altro dispositivo o piattaforma e saranno gli stessi in tutti gli MVPD.
 
@@ -203,7 +203,7 @@ flusso.
 ### F. Flusso di disconnessione {#logout_flow}
 
 1. Chiamare [`logout()`](#$logout) per disconnettersi.\
-   AccessEnabler cancella tutti i valori e i token memorizzati nella cache per il MVPD corrente per il richiedente corrente e anche per i richiedenti con Single Sign On. Dopo aver cancellato la cache, AccessEnabler effettua una chiamata al server per pulire le sessioni lato server.  Poiché la chiamata al server potrebbe causare un reindirizzamento SAML all’IdP (consentendo la pulizia della sessione sul lato IdP), questa chiamata deve seguire tutti i reindirizzamenti. Per questo motivo, è necessario gestire questa chiamata all&#39;interno di un controllo WebView.
+   AccessEnabler cancella tutti i valori e i token memorizzati nella cache per il MVPD corrente per il richiedente corrente e anche per i richiedenti con Single Sign-On. Dopo aver cancellato la cache, AccessEnabler effettua una chiamata al server per pulire le sessioni lato server.  Poiché la chiamata al server potrebbe causare un reindirizzamento SAML all’IdP (consentendo la pulizia della sessione sul lato IdP), questa chiamata deve seguire tutti i reindirizzamenti. Per questo motivo, è necessario gestire questa chiamata all&#39;interno di un controllo WebView.
 
    a. Seguendo lo stesso modello del flusso di lavoro di autenticazione, il dominio AccessEnabler invia una richiesta al livello applicazione dell&#39;interfaccia utente (tramite il callback `navigateToUrl()`) per creare un controllo WebView e istruire tale controllo a caricare l&#39;URL dell&#39;endpoint di disconnessione sul server back-end.
 
@@ -217,4 +217,4 @@ flusso.
 
 [Qui](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/AndroidSSOUserFlows.pdf) hai un documento che descrive il comportamento quando utilizzi più MVPD e cosa accade quando l&#39;utente si disconnette da un&#39;applicazione.
 
-Il comportamento descritto è disponibile quando si utilizza la versione SDK di Android >= 2.0.0.
+Il comportamento descritto è disponibile quando si utilizza Android SDK versione >= 2.0.0.

@@ -2,7 +2,7 @@
 title: Rapporti
 description: Scopri come i dati vengono aggregati nei rapporti della dashboard TVE.
 exl-id: d8ba48de-d743-4dc2-866c-7d6e3ff94773
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
 source-wordcount: '976'
 ht-degree: 0%
@@ -51,7 +51,7 @@ Seleziona **Esporta rapporti** per salvare i dati come file CSV nel computer loc
 
 ### Rapporti TTL AuthZ {#authz-ttl-reports}
 
-Nei rapporti TTL di AuthZ, denominati anche TTL (Authorization Time-To-Live), viene visualizzata la durata del token di autorizzazione configurato per le integrazioni dei canali con vari MVPD su tutte le [piattaforme](#platforms). Questi rapporti ti consentono di verificare per quanto tempo un utente rimane autorizzato a guardare contenuti per un MVPD e una piattaforma specifici. I valori di durata sono presentati in formati facili da usare, ad esempio **giorni**, **ore**, **minuti** e **secondi**. La tabella Rapporti TTL AuthZ presenta uno scorrimento orizzontale e verticale per adattarsi a schermi di dimensioni diverse.
+Nei rapporti TTL di AuthZ, denominati anche TTL (Authorization Time-To-Live), viene visualizzata la durata del token di autorizzazione configurato per le integrazioni dei canali con vari MVPD su tutte le [piattaforme](#platforms). Questi rapporti ti consentono di verificare per quanto tempo un utente rimane autorizzato a guardare contenuti per una piattaforma e un MVPD specifici. I valori di durata sono presentati in formati facili da usare, ad esempio **giorni**, **ore**, **minuti** e **secondi**. La tabella Rapporti TTL AuthZ presenta uno scorrimento orizzontale e verticale per adattarsi a schermi di dimensioni diverse.
 
 Puoi anche visualizzare e scaricare i dati per [canali specifici o MVPD](#selecting-specific-channels-mvpds).
 
@@ -67,7 +67,7 @@ Seleziona **Esporta rapporti** per salvare i dati come file CSV nel computer loc
 
 ### Rapporti SSO {#sso-reports}
 
-I report SSO, denominati anche single sign-on, visualizzano lo stato di single sign-on configurato per le integrazioni dei canali con vari MVPD su tutte le [piattaforme](#platforms). Questi rapporti ti consentono di verificare l’esperienza SSO di autenticazione utente prevista per un MVPD e una piattaforma specifici. I valori sono presentati in formati facili da usare, ad esempio **SSO disabilitato**, **SSO abilitato** e **SSO incerto**. La tabella Rapporti SSO presenta uno scorrimento orizzontale e verticale per adattarsi a schermi di dimensioni diverse.
+I report SSO, denominati anche single sign-on, visualizzano lo stato di single sign-on configurato per le integrazioni dei canali con vari MVPD su tutte le [piattaforme](#platforms). Questi rapporti ti consentono di verificare l’esperienza SSO di autenticazione utente prevista per una piattaforma e un MVPD specifici. I valori sono presentati in formati facili da usare, ad esempio **SSO disabilitato**, **SSO abilitato** e **SSO incerto**. La tabella Rapporti SSO presenta uno scorrimento orizzontale e verticale per adattarsi a schermi di dimensioni diverse.
 
 È inoltre possibile visualizzare e scaricare dati per [canali specifici o MVPD](#selecting-specific-channels-mvpds).
 
@@ -89,13 +89,13 @@ Seleziona **Esporta rapporti** per salvare i dati come file CSV nel computer loc
 
 I [rapporti TTL AuthN](#authn-ttl-reports), [rapporti TTL AuthZ](#authz-ttl-reports) e [rapporti SSO](#sso-reports) presentano dati su varie piattaforme, ad esempio:
 
-* **Desktop**: visualizza i valori applicati alle implementazioni del programmatore tramite l&#39;SDK di Adobe Pass Authentication JavaScript.
+* **Desktop**: visualizza i valori applicati alle implementazioni del programmatore tramite Adobe Pass Authentication JavaScript SDK.
 
 * **Dispositivi mobili**
 
-  **iOS**: visualizza i valori applicati mediante l&#39;SDK iOS per l&#39;autenticazione di Adobe Pass.
+  **iOS**: visualizza i valori applicati mediante l&#39;iOS SDK di autenticazione di Adobe Pass.
 
-  **Android**: visualizza i valori applicati tramite l&#39;SDK di Adobe Pass Authentication per Android.
+  **Android**: visualizza i valori applicati tramite Adobe Pass Authentication Android SDK.
 
   **Altri**: visualizza i valori applicati utilizzando l&#39;API REST di autenticazione Adobe Pass sviluppata per i dispositivi mobili.
 
@@ -103,15 +103,15 @@ I [rapporti TTL AuthN](#authn-ttl-reports), [rapporti TTL AuthZ](#authz-ttl-repo
 
   **Roku**: visualizza i valori applicati tramite l&#39;API REST per l&#39;autenticazione di Adobe Pass, identificando Roku come tipo di dispositivo.
 
-  **FireTV**: visualizza i valori applicati tramite l&#39;SDK FireTV per l&#39;autenticazione di Adobe Pass.
+  **FireTV**: visualizza i valori applicati tramite l&#39;autenticazione Adobe Pass FireTV SDK.
 
-  **AppleTV**: visualizza i valori applicati tramite l&#39;SDK tvOS per l&#39;autenticazione Adobe Pass.
+  **AppleTV**: visualizza i valori applicati tramite Adobe Pass Authentication tvOS SDK.
 
   **Altri**: visualizza i valori applicati utilizzando l&#39;API REST di autenticazione Adobe Pass per i dispositivi connessi alla TV.
 
 * **Piattaforma non identificata**: visualizza i valori applicati alle implementazioni del programmatore quando i servizi di autenticazione di Adobe Pass rilevano un tipo di dispositivo sconosciuto.
 
-Per ulteriori informazioni su come condividere il tipo di dispositivo desiderato, ad esempio **Roku** con API REST o SDK di autenticazione Adobe Pass, vedere il meccanismo di [trasmissione delle informazioni client](/help/authentication/integration-guide-programmers/passing-client-information-device-connection-and-application.md).
+Per ulteriori informazioni su come condividere il tipo di dispositivo desiderato, ad esempio **Roku** con API REST o SDK di autenticazione Adobe Pass, vedere il meccanismo di [trasmissione delle informazioni client](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md).
 
 >[!IMPORTANT]
 >

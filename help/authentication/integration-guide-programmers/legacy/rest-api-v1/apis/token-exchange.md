@@ -2,14 +2,14 @@
 title: Scambio di un token SSO di Platform con un token di Adobe
 description: Scambio di un token SSO di Platform con un token di Adobe
 exl-id: 5ab60268-8f97-4755-8281-be45e812ed7f
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '228'
+source-wordcount: '229'
 ht-degree: 0%
 
 ---
 
-# Scambio di un token SSO di Platform con un token di Adobe {#exchange-a-platform-sso-token-for-an-adobe-token}
+# (Legacy) Sostituire un token SSO di Platform con un token di Adobe {#exchange-a-platform-sso-token-for-an-adobe-token}
 
 >[!NOTE]
 >
