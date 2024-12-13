@@ -2,9 +2,9 @@
 title: Riferimento API REST
 description: Riferimento API REST
 exl-id: 67e4639e-db0b-4400-bb81-e214263e8395
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 3e69473bdb9818416e67b03e6c35d24dc3e0f991
 workflow-type: tm+mt
-source-wordcount: '654'
+source-wordcount: '647'
 ht-degree: 2%
 
 ---
@@ -66,7 +66,7 @@ La tabella seguente elenca i servizi web disponibili per l’approccio senza cli
 | 10. | [&lt;SP_FQDN>/api/v1/checkauthn](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/check-authentication-token.md) | Indica se il dispositivo ha un token AuthN non scaduto. |                                                                                             | Servizio di autenticazione </br> di Adobe Pass </br> | Smart Device |
 | 11 | [&lt;SP_FQDN>/api/v1/tokens/authn](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-authentication-token.md) | Se trovato, restituisce il token AuthN. |                                                                                             | Servizio di autenticazione </br> di Adobe Pass </br> | Smart Device |
 | 12 | [&lt;SP_FQDN>/api/v1/tokens/authz](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-authorization-token.md) | Se trovato, restituisce il token AuthZ. |                                                                                             | Servizio di autenticazione </br> di Adobe Pass </br> | Smart Device |
-| 13 | [&lt;SP_FQDN>/api/v1/token/media](/help/authentication/integration-guide-programmer/rest-apis/rest-api-v1/apis/obtain-short-media-token.md | Se trovato, restituisce il token multimediale breve: come /api/v1/mediatoken |                                                                                             | Servizio di autenticazione </br> di Adobe Pass </br> | Smart Device |
+| 13 | [&lt;SP_FQDN>/api/v1/tokens/media](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/obtain-short-media-token.md) | Se trovato, restituisce il token multimediale breve: come /api/v1/mediatoken |                                                                                             | Servizio di autenticazione </br> di Adobe Pass </br> | Smart Device |
 | 14 | [&lt;SP_FQDN>/api/v1/mediatoken](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/obtain-short-media-token.md) | Ottiene un token multimediale breve |                                                                                             | Servizio di autenticazione </br> di Adobe Pass </br> | Smart Device |
 | 15 | [&lt;SP_FQDN>/api/v1/preauthorize](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-list-of-preauthorized-resources.md) | Recupera l’elenco delle risorse preautorizzate |                                                                                             | Servizio di autenticazione </br> di Adobe Pass </br> | Smart Device |
 | 16 | [&lt;SP_FQDN>/api/v1/preauthorize/{code}](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-list-of-preauthorized-resources-by-second-screen-web-app.md) | Recupera l’elenco delle risorse preautorizzate |                                                                                             | Servizio di autenticazione </br> di Adobe Pass </br> | Accedi all’app web |
