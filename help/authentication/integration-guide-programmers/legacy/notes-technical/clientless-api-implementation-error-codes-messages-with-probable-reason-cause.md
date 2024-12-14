@@ -2,9 +2,9 @@
 title: Implementazione API Clientless - Codici Errore / Messaggi con probabile motivo / causa
 description: Implementazione API Clientless - Codici Errore / Messaggi con probabile motivo / causa
 exl-id: 616e35fc-9b72-422b-9a05-e6248bd52490
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '205'
+source-wordcount: '227'
 ht-degree: 0%
 
 ---
@@ -14,6 +14,10 @@ ht-degree: 0%
 >[!NOTE]
 >
 >Il contenuto presente in questa pagina è fornito solo a scopo informativo. L&#39;utilizzo di questa API richiede una licenza valida da Adobe Systems. Non è consentito alcun uso non autorizzato.
+
+>[!IMPORTANT]
+>
+> Assicurati di rimanere informato sulle ultime Adobe Pass Authentication annunci di prodotti e sulle tempistiche di disattivazione aggregate nella [pagina Annunci sui](/help/authentication/product-announcements.md) prodotti.
 
 </br>
 
@@ -33,7 +37,7 @@ ht-degree: 0%
 1. Potresti incorrere in problemi di scripting tra domini diversi
 1. Lo spoofing corretto dovrebbe essere aggiunto al file /etc/hosts
 
-## Errore: 400 Richiesta non valida
+## Errore: richiesta 400 non valida
 
 ### Cause:
 
@@ -52,8 +56,8 @@ ht-degree: 0%
 ### Cause:
 
 1. Nome utente e password non corrispondono
-2. L&#39;accesso potrebbe essere stato disabilitato
-3. Controlla se l&#39;accesso è per la produzione o la gestione temporanea
+2. L’accesso potrebbe essere stato disabilitato
+3. Verifica se il login è per la produzione o la messa in scena
 
 
 <!--

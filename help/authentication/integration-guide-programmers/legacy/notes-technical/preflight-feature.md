@@ -2,9 +2,9 @@
 title: Verifica preliminare, come abilitare, risolvere o determinare il problema
 description: Verifica preliminare, come abilitare, risolvere o determinare il problema
 exl-id: 9e4ec343-371f-4116-915f-191e5f42cb47
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '499'
+source-wordcount: '521'
 ht-degree: 0%
 
 ---
@@ -14,6 +14,10 @@ ht-degree: 0%
 >[!NOTE]
 >
 >Il contenuto di questa pagina viene fornito solo a scopo informativo. L’utilizzo di questa API richiede una licenza corrente da Adobe. Non è consentito alcun uso non autorizzato.
+
+>[!IMPORTANT]
+>
+> Assicurati di essere sempre informato sugli ultimi annunci di prodotto per l&#39;autenticazione di Adobe Pass e sulle timeline di disattivazione aggregate nella pagina [Annunci di prodotto](/help/authentication/product-announcements.md).
 
 Si è verificata una modifica nel modo in cui l’autenticazione Adobe Pass calcola le risorse preAuthorizeResources. L’API di pre-autorizzazione presenta una nuova implementazione. Questa implementazione sostituisce la vecchia soluzione, che prevede di effettuare solo più chiamate di autorizzazione.
 L’interfaccia esterna per l’API di pre-autorizzazione non è stata modificata e non sono richiesti aggiornamenti nell’applicazione del programmatore.

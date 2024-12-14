@@ -2,9 +2,9 @@
 title: Verificare i flussi di autenticazione e autorizzazione utilizzando il sito di test API di Adobe
 description: Verificare i flussi di autenticazione e autorizzazione utilizzando il sito di test API di Adobe
 exl-id: 04af4aed-35e4-44cb-98ce-7643165a8869
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '312'
+source-wordcount: '334'
 ht-degree: 0%
 
 ---
@@ -14,6 +14,10 @@ ht-degree: 0%
 >[!NOTE]
 >
 >Il contenuto di questa pagina viene fornito solo a scopo informativo. L’utilizzo di questa API richiede una licenza corrente da Adobe. Non è consentito alcun uso non autorizzato.
+
+>[!IMPORTANT]
+>
+> Assicurati di essere sempre informato sugli ultimi annunci di prodotto per l&#39;autenticazione di Adobe Pass e sulle timeline di disattivazione aggregate nella pagina [Annunci di prodotto](/help/authentication/product-announcements.md).
 
 Per testare i flussi AuthN e AuthZ, è stato preparato un **sito di test API** a tua disposizione. Il nostro team di supporto sarà lieto di fornirti le credenziali. Puoi contattarci al **support@tve.zendesk.com**.
 

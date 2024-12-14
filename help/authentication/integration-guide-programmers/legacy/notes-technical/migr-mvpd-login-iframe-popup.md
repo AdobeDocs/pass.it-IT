@@ -2,9 +2,9 @@
 title: Migrazione della pagina di accesso a MVPD da iFrame a Popup
 description: Migrazione della pagina di accesso a MVPD da iFrame a Popup
 exl-id: 389ea0ea-4e18-4c2e-a527-c84bffd808b4
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '687'
+source-wordcount: '709'
 ht-degree: 0%
 
 ---
@@ -14,6 +14,10 @@ ht-degree: 0%
 >[!NOTE]
 >
 >Il contenuto di questa pagina viene fornito solo a scopo informativo. L’utilizzo di questa API richiede una licenza corrente da Adobe. Non è consentito alcun uso non autorizzato.
+
+>[!IMPORTANT]
+>
+> Assicurati di essere sempre informato sugli ultimi annunci di prodotto per l&#39;autenticazione di Adobe Pass e sulle timeline di disattivazione aggregate nella pagina [Annunci di prodotto](/help/authentication/product-announcements.md).
 
 ## Popup e iFrame {#popup-vs-iframe}
 
