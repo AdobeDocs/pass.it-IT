@@ -2,7 +2,7 @@
 title: Canali
 description: Scopri i canali e le loro varie configurazioni all’interno della dashboard TVE.
 exl-id: bbddeccb-6b6f-4a8f-87ab-d4af538eee1d
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
 workflow-type: tm+mt
 source-wordcount: '1556'
 ht-degree: 0%
@@ -21,7 +21,7 @@ Nella scheda **Canali** nel pannello a sinistra viene visualizzato un elenco di 
 
 * **Nome visualizzato**: il nome del marchio del canale utilizzato a scopo commerciale.
 * **ID canale**: un identificatore univoco, noto anche come ID richiedente.
-* **Integrazioni**: numero di connessioni stabilite con [MVPDs](/help/authentication/kickstart/glossary.md#mvpd).
+* **Integrazioni**: numero di connessioni stabilite con [MVPDs](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#mvpd).
 
 ![Elenco dei canali esistenti](../assets/tve-dashboard/new-tve-dashboard/channels/channels-list-view.png)
 

@@ -2,9 +2,9 @@
 title: Manuale Apple SSO (REST API V2)
 description: Manuale Apple SSO (REST API V2)
 exl-id: 81476312-9ba4-47a0-a4f7-9a557608cfd6
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
 workflow-type: tm+mt
-source-wordcount: '3442'
+source-wordcount: '3443'
 ht-degree: 0%
 
 ---
@@ -189,14 +189,14 @@ Segui i passaggi forniti per implementare il Single Sign-On Apple utilizzando i 
    >
    > <br/>
    >
-   > Se la convalida non riesce, verrà generata una risposta di errore che fornirà informazioni aggiuntive conformi ai [codici di errore avanzati](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md)
+   > Se la convalida non riesce, verrà generata una risposta di errore che fornirà informazioni aggiuntive conformi alla documentazione di [Codici di errore avanzati](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md).
 
    >[!IMPORTANT]
    >
-   > L’applicazione di streaming deve garantire che, nel procedere, elabori i seguenti dettagli forniti per ogni MVPD:
+   > L&#39;applicazione di streaming deve garantire l&#39;elaborazione dei seguenti dettagli forniti per ciascun MVPD quando si procede ulteriormente:
    >
    > * `enablePlatformServices`: indica se MVPD supporta attualmente il Single Sign-On di Apple.
-   > * `displayInPlatformPicker`: indica se MVPD può essere visualizzato nel selettore Apple.
+   > * `displayInPlatformPicker`: indica se il MVPD può essere visualizzato nel selettore Apple.
    > * `boardingStatus`: indica se MVPD è integrato nel Single Sign-On di Apple.
 
 1. **Recupera stato framework partner:** L&#39;applicazione di streaming chiama il [Framework account sottoscrittore video](https://developer.apple.com/documentation/videosubscriberaccount) sviluppato da Apple per ottenere le autorizzazioni utente e le informazioni sul provider.
@@ -271,7 +271,7 @@ Segui i passaggi forniti per implementare il Single Sign-On Apple utilizzando i 
    * L&#39;attributo `actionName` è impostato su &quot;authorize&quot;.
    * L&#39;attributo `actionType` è impostato su &quot;direct&quot;.
 
-   Se il backend di Adobe Pass identifica un profilo valido, non è necessario che l’applicazione di streaming autentichi nuovamente con l’MVPD selezionato, in quanto esiste già un profilo che può essere utilizzato per i flussi decisionali successivi.
+   Se il backend di Adobe Pass identifica un profilo valido, non è necessario che l’applicazione di streaming autentichi nuovamente con il MVPD selezionato, in quanto esiste già un profilo che può essere utilizzato per i flussi decisionali successivi.
 
 1. **Procedi con il flusso di autenticazione di base:** La risposta dell&#39;endpoint Sessions Partner contiene i dati seguenti:
    * L&#39;attributo `actionName` è impostato su &quot;authenticate&quot; o &quot;resume&quot;.
@@ -287,13 +287,13 @@ Segui i passaggi forniti per implementare il Single Sign-On Apple utilizzando i 
 1. **Procedere con il recupero del profilo utilizzando il flusso di risposta di autenticazione partner:** La risposta dell&#39;endpoint del partner sessioni contiene i dati seguenti:
    * L&#39;attributo `actionName` è impostato su &quot;partner_profile&quot;.
    * L&#39;attributo `actionType` è impostato su &quot;direct&quot;.
-   * L&#39;attributo `authenticationRequest - type` include il protocollo di sicurezza utilizzato dal framework partner per l&#39;accesso MVPD (attualmente impostato solo su SAML).
+   * L&#39;attributo `authenticationRequest - type` include il protocollo di sicurezza utilizzato dal framework partner per l&#39;accesso a MVPD (attualmente impostato solo su SAML).
    * L&#39;attributo `authenticationRequest - request` include la richiesta SAML passata al framework partner.
    * L&#39;attributo `authenticationRequest - attributesNames` include gli attributi SAML passati al framework partner.
 
    Se il backend di Adobe Pass non identifica un profilo valido e il partner passa la convalida single sign-on, l’applicazione di streaming riceve una risposta con azioni e dati da passare al framework partner per avviare il flusso di autenticazione con MVPD.
 
-1. **Completare l&#39;autenticazione MVPD con il framework partner:** Inoltrare la richiesta di autenticazione partner (richiesta SAML) ottenuta nel passaggio precedente al [Framework account sottoscrittore video](https://developer.apple.com/documentation/videosubscriberaccount). Se il flusso di autenticazione ha esito positivo, l&#39;interazione [Framework account sottoscrittore video](https://developer.apple.com/documentation/videosubscriberaccount) con MVPD genera una risposta di autenticazione partner (risposta SAML) restituita insieme alle informazioni sullo stato del framework partner.
+1. **Completare l&#39;autenticazione di MVPD con il framework partner:** Inoltrare la richiesta di autenticazione partner (richiesta SAML) ottenuta nel passaggio precedente al [Framework account sottoscrittore video](https://developer.apple.com/documentation/videosubscriberaccount). Se il flusso di autenticazione ha esito positivo, l&#39;interazione del [Framework account sottoscrittore video](https://developer.apple.com/documentation/videosubscriberaccount) con MVPD genera una risposta di autenticazione partner (risposta SAML) restituita insieme alle informazioni sullo stato del framework partner.
 
    >[!IMPORTANT]
    >

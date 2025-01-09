@@ -2,9 +2,9 @@
 title: Manuale dell’API REST (da client a server)
 description: Client-to-server del manuale API REST.
 exl-id: f54a1eda-47d5-4f02-b343-8cdbc99a73c0
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
 workflow-type: tm+mt
-source-wordcount: '899'
+source-wordcount: '888'
 ht-degree: 0%
 
 ---
@@ -44,10 +44,6 @@ In una soluzione client-to-server funzionante sono coinvolti i seguenti componen
 | Infrastruttura Adobe | Servizio Adobe Pass | Servizio che si integra con il servizio MVPD IdP e AuthZ e fornisce decisioni di autenticazione e autorizzazione. |
 | Infrastruttura MVPD | IdP MVPD | Endpoint MVPD che fornisce un servizio di autenticazione basato su credenziali per convalidare l&#39;identità dell&#39;utente. |
 | | Servizio MVPD AuthZ | Un endpoint MVPD che fornisce decisioni di autorizzazione in base agli abbonamenti dell’utente, al controllo genitori, ecc. |
-
-
-
-Ulteriori termini utilizzati nel flusso sono definiti nel [Glossario](/help/authentication/kickstart/glossary.md).
 
 ## Flussi{#flows}
 

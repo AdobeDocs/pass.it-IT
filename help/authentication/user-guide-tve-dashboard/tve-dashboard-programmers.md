@@ -2,7 +2,7 @@
 title: Programmatori
 description: Scopri i programmatori e le relative configurazioni nel dashboard di TVE.
 exl-id: b450d7cc-d5b5-4454-8f95-8047856bfb98
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
 workflow-type: tm+mt
 source-wordcount: '1139'
 ht-degree: 0%
@@ -15,7 +15,7 @@ ht-degree: 0%
 >
 >Il contenuto di questa pagina viene fornito solo a scopo informativo. L’utilizzo di questa API richiede una licenza corrente da Adobe. Non è consentito alcun uso non autorizzato.
 
-La sezione **Programmatori** della dashboard TVE consente di visualizzare e gestire le impostazioni per i [programmatori](/help/authentication/kickstart/glossary.md#programmer) collegati alle adesioni del tuo account. Puoi anche [aggiungere un nuovo programmatore](#add-new-programmer) in base alle tue esigenze.
+La sezione **Programmatori** della dashboard TVE consente di visualizzare e gestire le impostazioni per i [programmatori](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#programmer) collegati alle adesioni del tuo account. Puoi anche [aggiungere un nuovo programmatore](#add-new-programmer) in base alle tue esigenze.
 
 La scheda **Programmatori** nel pannello a sinistra visualizza un elenco di programmatori esistenti con i dettagli seguenti:
 

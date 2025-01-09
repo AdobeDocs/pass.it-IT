@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Autenticazione Adobe Pass
 user-guide-description: L’autenticazione Adobe Pass è una soluzione di gestione dei diritti per TV Everywhere, che fornisce un framework modulare per determinare se chi richiede l’accesso a una risorsa ne abbia diritto.
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
 workflow-type: tm+mt
-source-wordcount: '1260'
+source-wordcount: '1267'
 ht-degree: 2%
 
 ---
@@ -51,16 +51,17 @@ ht-degree: 2%
    + [Guida introduttiva per programmatori](kickstart/programmer-kickstart-guide.md)
    + [Guida di Kick-Start per MVPD](kickstart/mvpd-kickstart-guide.md)
    + [Procedure di riassegnazione](kickstart/escalation-procedures.md)
-   + [Glossario](kickstart/glossary.md)
 + Guida All&#39;Integrazione Per I Programmatori {#integration-guide-programmers}
    + API REST {#rest-apis}
       + DCR REST API {#rest-api-dcr}
-         + [Panoramica sulla registrazione client dinamica](integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)
+         + [Panoramica di Registrazione client dinamici](integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)
+         + [Glossario di registrazione client dinamici](integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-glossary.md)
+         + [Domande frequenti sulla registrazione dei client dinamici](integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-faqs.md)
          + API {#rest-api-dcr-apis}
             + [Recupera credenziali client](integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-client-credentials.md)
             + [Recupera token di accesso](integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md)
          + Flussi {#rest-api-dcr-flows}
-            + [Flusso di registrazione client dinamico](integration-guide-programmers/rest-apis/rest-api-dcr/flows/dynamic-client-registration-flow.md)
+            + [Flusso di registrazione client dinamici](integration-guide-programmers/rest-apis/rest-api-dcr/flows/dynamic-client-registration-flow.md)
       + API REST V2 {#rest-api-v2}
          + [Panoramica di REST API V2](integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md)
          + [Glossario REST API V2](integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md)

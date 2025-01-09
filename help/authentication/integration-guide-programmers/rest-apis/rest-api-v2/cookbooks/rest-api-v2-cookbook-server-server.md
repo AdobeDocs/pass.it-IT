@@ -2,7 +2,7 @@
 title: Manuale dell’API REST V2 (server-to-server)
 description: Manuale dell’API REST V2 (server-to-server)
 exl-id: 3160c03c-849d-4d39-95e5-9a9cbb46174d
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
 workflow-type: tm+mt
 source-wordcount: '1578'
 ht-degree: 0%
@@ -28,14 +28,14 @@ In una soluzione server-to-server funzionante, sono coinvolti i seguenti compone
 | Tipo | Componente | Descrizione |
 |---------------------------|---------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Dispositivo di streaming | App di streaming | L&#39;applicazione Programmer che risiede sul dispositivo di streaming dell&#39;utente e riproduce video autenticati. |
-|                           | \[Facoltativo\] Modulo AuthN | Se il dispositivo di streaming dispone di un agente utente (ovvero un browser web), il modulo AuthN è responsabile dell’autenticazione dell’utente sull’IdP MVPD. |
+|                           | \[Facoltativo\] Modulo AuthN | Se il dispositivo di streaming dispone di un agente utente (ad esempio, un browser web), il modulo AuthN è responsabile dell’autenticazione dell’utente sul MVPD IdP. |
 | \[Facoltativo\] Dispositivo AuthN | App autenticazione | Se il dispositivo di streaming non dispone di un agente utente (ad esempio, un browser Web), l&#39;applicazione AuthN è un&#39;applicazione Web Programmatore a cui si accede dal dispositivo di un altro utente mediante un browser Web. |
 | Infrastruttura del programmatore | Servizio programmatore | Servizio che collega il dispositivo di streaming al servizio Adobe Pass per ottenere le decisioni di autenticazione e autorizzazione. |
-| Infrastruttura Adobe | Servizio Adobe Pass | Servizio che si integra con MVPD IdP e AuthZ Service e fornisce decisioni di autenticazione e autorizzazione. |
+| Infrastruttura Adobe | Servizio Adobe Pass | Servizio che si integra con il servizio MVPD IdP e AuthZ e fornisce decisioni di autenticazione e autorizzazione. |
 | Infrastruttura MVPD | IdP MVPD | Endpoint MVPD che fornisce un servizio di autenticazione basato su credenziali per convalidare l&#39;identità dell&#39;utente. |
-|                           | Servizio AuthZ MVPD | Endpoint MVPD che fornisce decisioni di autorizzazione basate su abbonamenti dell&#39;utente, controllo genitori, ecc. |
+|                           | Servizio MVPD AuthZ | Un endpoint MVPD che fornisce decisioni di autorizzazione in base agli abbonamenti dell’utente, al controllo genitori, ecc. |
 
-Ulteriori termini utilizzati nel flusso sono definiti nel [Glossario](/help/authentication/kickstart/glossary.md).
+Ulteriori termini utilizzati nel flusso sono definiti nel [Glossario](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md).
 
 Il diagramma seguente illustra l’intero flusso:
 
@@ -78,8 +78,8 @@ Il servizio programmatore verifica per conto dell&#39;app di streaming i profili
    * <b>Passaggio 2.a:</b> il servizio Programmatore recupera l&#39;elenco di MVPD disponibili per serviceProvider: <b>/api/v2/{serviceProvider}/configuration</b><br>
 ([Recupera elenco di MVPD disponibili](../apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md))
    * Il servizio programmatore può implementare il filtraggio nell’elenco degli MVPD e visualizzare solo gli MVPD destinati a nasconderne altri (TempPass, MVPD di prova, MVPD in fase di sviluppo, ecc.)
-   * Il servizio programmatore deve restituire un elenco MVPD filtrato per l’app di streaming per visualizzare il selettore; l’utente seleziona l’MVPD
-   * Con MVPD selezionato da Streaming App, il servizio Programmatore crea una sessione: <b>/api/v2/{serviceProvider}/session</b><br>
+   * Il servizio Programmatore deve restituire un elenco di MVPD filtrato per l&#39;app di streaming per visualizzare il selettore. L&#39;utente seleziona il MVPD
+   * Con il MVPD selezionato da Streaming App, il servizio Programmatore crea una sessione: <b>/api/v2/{serviceProvider}/session</b><br>
 ([Crea sessione di autenticazione](../apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md))<br>
       * Vengono restituiti il CODICE e l&#39;URL da utilizzare per l&#39;autenticazione
       * Se viene trovato un profilo, il servizio Programmatore potrebbe passare a <a href="#preauthorization-phase">C. Fase di pre-autorizzazione</a>
@@ -89,18 +89,18 @@ Il servizio programmatore verifica per conto dell&#39;app di streaming i profili
 
 Utilizzo di un browser o di un&#39;applicazione basata sul Web Second Screen:
 
-* Opzione 1. L’app di streaming può aprire un browser o una visualizzazione web, caricare l’URL da autenticare e l’utente accede alla pagina di accesso di MVPD in cui è necessario inviare le credenziali
+* Opzione 1. L’app di streaming può aprire un browser o una visualizzazione web, caricare l’URL da autenticare e l’utente arriva alla pagina di accesso di MVPD in cui è necessario inviare le credenziali
    * L’utente immette il login/password, il reindirizzamento finale mostra una pagina di successo
 * Opzione 2. L&#39;app di streaming non può aprire un browser e semplicemente visualizzare il CODICE. <b>È necessario sviluppare un&#39;applicazione Web separata, AuthN_APP</b>, per richiedere all&#39;utente di immettere CODE, generare e aprire l&#39;URL: <b>/api/v2/authenticate/{serviceProvider}/{CODE}</b>
    * L’utente immette il login/password, il reindirizzamento finale mostra una pagina di successo
 
 ### Passaggio 4: verificare la presenza di profili autenticati {#step-4-check-for-authenticated-profiles}
 
-Il servizio programmatore verifica l’autenticazione con MVPD da completare nel browser o nella seconda schermata
+Il servizio Programmatore verifica il completamento dell’autenticazione con MVPD nel browser o nella seconda schermata
 
 * Si consiglia di eseguire il polling ogni 15 secondi il <b>/api/v2/{serviceProvider}/profiles/{mvpd}</b><br>
 ([Recupera profili autenticati per MVPD](../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) specifici)
-   * Se la selezione MVPD non viene effettuata nell&#39;applicazione Streaming quando il selettore MVPD viene presentato nell&#39;applicazione Second Screen, il polling deve essere eseguito con CODE <b>/api/v2/{serviceProvider}/profiles/code/{CODE}</b><br>
+   * Se la selezione di MVPD non viene effettuata nell&#39;applicazione Streaming quando il selettore MVPD viene presentato nell&#39;applicazione Second Screen, il polling deve essere eseguito con CODE <b>/api/v2/{serviceProvider}/profiles/code/{CODE}</b><br>
 ([Recupera profili autenticati per codice specifico](../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md))
 * Il polling non deve superare i 30 minuti, nel caso in cui siano raggiunti 30 minuti e l’applicazione di streaming sia ancora attiva, è necessario avviare una nuova sessione e restituire un nuovo CODICE e un nuovo URL
 * Al termine dell’autenticazione, viene restituito 200 con profilo autenticato
@@ -114,7 +114,7 @@ Con un profilo di autenticazione valido per un utente, il servizio Programmatore
 
 * Il passaggio è facoltativo ed eseguito se l’applicazione desidera filtrare le risorse non disponibili nel pacchetto utente autenticato
 * Chiamata a <b>/api/v2/{serviceProvider}/Decisions/preauthorize/{mvpd}</b><br>
-([Recupera la decisione di pre-autorizzazione utilizzando MVPD](../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md) specifico)
+([Recupera la decisione di preautorizzazione utilizzando MVPD](../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md) specifico)
 
 ## D. Fase di autorizzazione {#authorization-phase}
 
@@ -125,7 +125,7 @@ L’app in streaming si prepara a riprodurre un video, una risorsa o una risorsa
 * Il passaggio è necessario per ogni inizio della riproduzione
 * L&#39;app di streaming trasmette queste informazioni al servizio Programmatore
 * Il servizio Programmatore per conto dell&#39;app di streaming, chiama <b>/api/v2/{serviceProvider}/decision/authorize/{mvpd}</b><br>
-([Recupera decisione di autorizzazione utilizzando MVPD](../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) specifico)
+([Recupera la decisione di autorizzazione utilizzando MVPD](../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) specifico)
    * decision = &#39;Permit&#39;, il servizio programmatore indica all&#39;app di streaming di avviare lo streaming
    * decision = &#39;Nega&#39;, il servizio programmatore indica allo Streaming App di informare l&#39;utente che non ha accesso a quel video
    * durante il processo, il servizio Programmatore può valutare altre regole di business e restituire la decisione appropriata allo Streaming App
@@ -136,13 +136,13 @@ L’app in streaming si prepara a riprodurre un video, una risorsa o una risorsa
 
 App di streaming: l’utente vuole disconnettersi da MVPD
 
-* L&#39;app di streaming informa il servizio programmatore che deve disconnettersi dall&#39;MVPD per questa app specifica.
+* L&#39;app di streaming informa il servizio programmatore che deve disconnettersi dal MVPD per questa app specifica.
 * Il servizio Programmatore può eliminare le informazioni memorizzate sull&#39;utente autenticato
 * Chiamata del servizio programmatore <b>/api/v2/{serviceProvider}/logout/{mvpd}</b><br>
 ([Avvia disconnessione per MVPD](../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md) specifico)
 * Se l&#39;URL e il tipo di azione di risposta sono presenti, il servizio Programmatore restituirà all&#39;app di streaming l&#39;URL
 * In base alle funzionalità esistenti, l’app di streaming può aprire l’URL nel browser (in genere lo stesso utilizzato per l’autenticazione)
-* Se l’app di streaming non dispone di un browser o se si tratta di un’istanza diversa da quella in fase di autenticazione, il flusso può essere interrotto in quanto la sessione MVPD non è stata resa persistente nella cache del browser.
+* Se l’app di streaming non dispone di un browser o se si tratta di un’istanza diversa da quella di autenticazione, il flusso può essere interrotto poiché la sessione di MVPD non è stata mantenuta nella cache del browser.
 
 ## Ambienti e requisiti funzionali{#environments}
 

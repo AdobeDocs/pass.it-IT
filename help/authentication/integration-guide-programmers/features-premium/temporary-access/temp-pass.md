@@ -2,7 +2,7 @@
 title: Passaggio temporaneo
 description: Passaggio temporaneo
 exl-id: 1df14090-8e71-4e3e-82d8-f441d07c6f64
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
 workflow-type: tm+mt
 source-wordcount: '2243'
 ht-degree: 0%
@@ -25,8 +25,8 @@ Temp Pass consente ai programmatori di offrire accesso temporaneo ai loro conten
    * Un programmatore può fornire una combinazione dei due scenari precedenti; ad esempio, un periodo di visualizzazione iniziale più lungo di un giorno, seguito da una serie di periodi brevi che si ripetono ogni giorno per un certo numero di giorni successivi.
 * I programmatori specificano la durata (Time-To-Live, TTL) della loro Temp Pass.
 * Il passaggio temporaneo funziona per richiedente.  Ad esempio, la NBC potrebbe impostare una Temp Pass di 4 ore per il richiedente &quot;NBCOlympics&quot;.
-* I programmatori possono reimpostare tutti i token concessi a un particolare richiedente.  Il &quot;MVPD temporaneo&quot; utilizzato per implementare il passaggio Temp deve essere configurato con &quot;Autenticazione per richiedente&quot; abilitato.
-* **Accesso Passaggio temporaneo concesso a singoli utenti su dispositivi specifici**. Dopo la scadenza dell&#39;accesso Passaggio temporaneo per un utente, quest&#39;ultimo non potrà ottenere l&#39;accesso temporaneo sullo stesso dispositivo finché il [token di autorizzazione](/help/authentication/kickstart/glossary.md#authz-token) scaduto dell&#39;utente non verrà cancellato dal server di autenticazione di Adobe Pass.
+* I programmatori possono reimpostare tutti i token concessi a un particolare richiedente.  Il &quot;MVPD temporaneo&quot; utilizzato per implementare il passaggio temporaneo deve essere configurato con &quot;Autenticazione per richiedente&quot; abilitato.
+* **Accesso Passaggio temporaneo concesso a singoli utenti su dispositivi specifici**. Dopo la scadenza dell’accesso Passaggio temporaneo per un utente, quest’ultimo non potrà ottenere l’accesso temporaneo sullo stesso dispositivo fino a quando il token di autorizzazione scaduto dell’utente non verrà cancellato dal server di autenticazione di Adobe Pass.
 
 
 >[!NOTE]
@@ -40,10 +40,10 @@ Temp Pass consente ai programmatori di offrire accesso temporaneo ai loro conten
    * **TTL token** - Il tempo che un utente può osservare senza accedere a un MVPD. L’ora è basata sull’orologio e scade nel caso in cui l’utente stia guardando il contenuto o meno.
   >[!NOTE]
   >A un ID richiedente non può essere associata più di una regola di passaggio temporaneo.
-* **Autenticazione/Autorizzazione** - Nel flusso Passaggio temporaneo, si specifica MVPD come &quot;Passaggio temporaneo&quot;.  L’autenticazione Adobe Pass non comunica con un MVPD effettivo nel flusso di Passaggio temporaneo, pertanto l’MVPD &quot;Passaggio temporaneo&quot; autorizza qualsiasi risorsa. I programmatori possono specificare una risorsa accessibile utilizzando Temp Pass, come fanno per le altre risorse sul loro sito. La libreria Media Verifier può essere utilizzata come di consueto per verificare il token multimediale corto Temp Pass e applicare il controllo delle risorse prima della riproduzione.
+* **Autenticazione/Autorizzazione** - Nel flusso Passaggio temporaneo, si specifica il MVPD come &quot;Passaggio temporaneo&quot;.  L’autenticazione di Adobe Pass non comunica con un MVPD effettivo nel flusso Passaggio temporaneo, pertanto il MVPD &quot;Passaggio temporaneo&quot; autorizza qualsiasi risorsa. I programmatori possono specificare una risorsa accessibile utilizzando Temp Pass, come fanno per le altre risorse sul loro sito. La libreria Media Verifier può essere utilizzata come di consueto per verificare il token multimediale corto Temp Pass e applicare il controllo delle risorse prima della riproduzione.
 * **Tracciamento dei dati nel flusso di passaggio temporaneo** - Due punti relativi al tracciamento dei dati durante un flusso di adesione al passaggio temporaneo:
    * L&#39;ID di tracciamento passato dall&#39;autenticazione Adobe Pass al callback **sendTrackingData()** è un hash dell&#39;ID dispositivo.
-   * Poiché l&#39;ID MVPD utilizzato nel flusso di Passaggio temporaneo è &quot;Passaggio temporaneo&quot;, lo stesso ID MVPD viene restituito a **sendTrackingData()**. La maggior parte dei programmatori probabilmente vorrà trattare le metriche di Passaggio Temp in modo diverso rispetto alle metriche MVPD effettive. Questo richiede un ulteriore lavoro nell’implementazione di Analytics.
+   * Poiché l&#39;ID MVPD utilizzato nel flusso di Passaggio temporaneo è &quot;Passaggio temporaneo&quot;, lo stesso ID MVPD viene restituito a **sendTrackingData()**. La maggior parte dei programmatori probabilmente vorrà trattare le metriche di Temp Pass in modo diverso rispetto alle metriche effettive di MVPD. Questo richiede un ulteriore lavoro nell’implementazione di Analytics.
 
 L&#39;illustrazione seguente mostra il flusso Passata temporanea:
 
@@ -57,14 +57,14 @@ Sul lato Autenticazione di Adobe Pass, Temp Pass è implementato con l&#39;aggiu
 
 Sul lato programmatore, Temp Pass viene implementato come segue per i due scenari utilizzati dagli MVPD per l&#39;autenticazione:
 
-* **iFrame sulla pagina del programmatore**. Il passaggio temporaneo funziona indipendentemente dal tipo di autenticazione di un MVPD, ma per lo scenario iFrame sono necessari ulteriori passaggi per annullare il flusso di autenticazione corrente e autenticarsi con il passaggio temporaneo. Questi passaggi sono illustrati nel [accesso iFrame](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass.md) di seguito.
-* **Reindirizzare alla pagina di accesso MVPD**. Nel caso più tradizionale in cui l’interfaccia utente per l’attivazione di Temp Pass viene presentata prima di avviare l’autenticazione con un MVPD, non è necessario effettuare alcuna procedura speciale. Temp Pass deve essere trattato come un normale MVPD.
+* **iFrame sulla pagina del programmatore**. Il passaggio temporaneo funziona indipendentemente dal tipo di autenticazione di un MVPD, ma per lo scenario iFrame sono necessari ulteriori passaggi per annullare il flusso di autenticazione corrente e autenticare con il passaggio temporaneo. Questi passaggi sono illustrati nel [accesso iFrame](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass.md) di seguito.
+* **Reindirizza alla pagina di accesso di MVPD**. Nel caso più tradizionale in cui l’interfaccia utente per l’attivazione del passaggio Temp viene presentata prima di avviare l’autenticazione con un MVPD, non è necessario eseguire alcuna procedura speciale. Temp Pass deve essere trattato come un normale MVPD.
 
 I punti seguenti si applicano a entrambi gli scenari di implementazione:
 
 * Il &quot;Passaggio temporaneo&quot; deve essere visualizzato nel selettore MVPD solo per gli utenti che non hanno ancora richiesto un&#39;autorizzazione Passaggio temporaneo. È possibile bloccare la visualizzazione per le richieste successive mantenendo un flag sui cookie. Questo funziona se l’utente non cancella la cache del browser. Se gli utenti cancellano le cache del browser, appare nuovamente &quot;Passaggio temporaneo&quot; nel selettore, e l&#39;utente potrà richiederlo nuovamente. L’accesso viene concesso solo se il tempo &quot;Passaggio temporaneo&quot; non è ancora scaduto.
 * Quando un utente richiede l’accesso tramite Temp Pass, il server di autenticazione di Adobe Pass non eseguirà la consueta richiesta SAML (Security Assertion Markup Language) durante il processo di autenticazione. L’endpoint di autenticazione restituirà invece esito positivo ogni volta che viene richiamato mentre i token sono validi per il dispositivo.
-* Alla scadenza di un passaggio temporaneo, l’utente non verrà più autenticato, perché nel flusso del passaggio temporaneo il token di autenticazione e il token di autorizzazione hanno la stessa data di scadenza. Per spiegare agli utenti che il loro Passaggio Temp è scaduto, i Programmatori devono recuperare il MVPD selezionato subito dopo aver chiamato `setRequestor()`, quindi chiamare `checkAuthentication()` come di consueto. Nel callback `setAuthenticationStatus()` è possibile effettuare un controllo per determinare se lo stato di autenticazione è 0, in modo che se il MVPD selezionato è &quot;TempPass&quot;, sia possibile inviare agli utenti un messaggio che informi che la loro sessione di Passaggio Temp è scaduta.
+* Alla scadenza di un passaggio temporaneo, l’utente non verrà più autenticato, perché nel flusso del passaggio temporaneo il token di autenticazione e il token di autorizzazione hanno la stessa data di scadenza. Per spiegare agli utenti che il loro Passaggio Temp è scaduto, i Programmatori devono recuperare il MVPD selezionato subito dopo aver chiamato `setRequestor()`, quindi chiamare `checkAuthentication()` come di consueto. Nel callback `setAuthenticationStatus()` è possibile verificare se lo stato di autenticazione è 0, in modo che se il MVPD selezionato è &quot;TempPass&quot;, sia possibile inviare agli utenti un messaggio che informi che la sessione di Temp Pass è scaduta.
 * Se un utente elimina il token Passaggio temporaneo prima della scadenza, i successivi controlli di adesione genereranno un token con un valore TTL uguale al tempo rimanente.
 * Se l’utente elimina il token Passaggio temporaneo dopo la scadenza, nei successivi controlli di adesione verrà restituito &quot;utente non autorizzato&quot;.
 
@@ -215,7 +215,7 @@ Questo esempio mostra come implementare Temp Pass per il caso in cui i MVPD supp
 **Per richiedere un passaggio temporaneo per la prima volta:**
 
 1. Un utente accede alla pagina del programmatore e fa clic sul collegamento di accesso.
-1. Viene visualizzato il selettore MVPD e l&#39;utente sceglie un MVPD dall&#39;elenco.
+1. Viene aperto il selettore MVPD e l’utente sceglie un MVPD dall’elenco.
 1. Viene visualizzato l’iFrame di autenticazione. Questo iFrame contiene un collegamento &quot;Passaggio temporaneo&quot;.
 1. L’utente fa clic su &quot;Passaggio temporaneo&quot;, quindi il programmatore aggiunge un flag a un cookie per impedire che l’utente visualizzi il collegamento &quot;Passaggio temporaneo&quot; nelle visite successive alla pagina.
 1. La richiesta di autenticazione tramite Passaggio temporaneo raggiunge i server di autenticazione Adobe Pass e questi ultimi generano un token di autenticazione. Il TTL è uguale al periodo di tempo impostato dal programmatore per il passaggio della temp.
@@ -227,7 +227,7 @@ Questo esempio mostra come implementare Temp Pass per il caso in cui i MVPD supp
 **Per richiedere nuovamente un passaggio temporaneo dopo che un utente che ritorna ha eliminato i cookie del browser:**
 
 1. L’utente accede alla pagina del programmatore e fa clic sul collegamento di accesso.
-1. Viene visualizzato il selettore MVPD e l&#39;utente sceglie un MVPD dall&#39;elenco.
+1. Viene aperto il selettore MVPD e l’utente sceglie un MVPD dall’elenco.
 1. Viene visualizzato l’iFrame di autenticazione. Questo iFrame contiene un collegamento &quot;Passaggio temporaneo&quot; (l&#39;utente ha eliminato il cookie originale, quindi il programmatore non sa se l&#39;utente ha già fatto clic sul collegamento &quot;Passaggio temporaneo&quot;).
 1. L’utente fa di nuovo clic su &quot;Passaggio temporaneo&quot;, quindi il programmatore aggiunge nuovamente un flag a un cookie, per impedire che l’utente visualizzi il collegamento &quot;Passaggio temporaneo&quot; nelle visite successive alla pagina.
 1. La richiesta di autenticazione tramite Passaggio temporaneo raggiunge i server di autenticazione di Adobe Pass, che generano un token di autenticazione. Il TTL è ora il tempo rimanente per il passaggio temporaneo (la differenza tra l’ora corrente e l’ora di scadenza associata all’ID dispositivo).
@@ -238,7 +238,7 @@ Questo esempio mostra come implementare Temp Pass per il caso in cui i MVPD supp
 
 ### Esempio di accesso automatico {#auto-login-sample}
 
-L’esempio seguente illustra un caso in cui un utente accede automaticamente con TempPass quando visita un sito. L’utente può scegliere di accedere con un MVPD regolare in qualsiasi momento ed è avvisato se TempPass è scaduto:
+L’esempio seguente illustra un caso in cui un utente accede automaticamente con TempPass quando visita un sito. L&#39;utente può scegliere di accedere con un normale MVPD in qualsiasi momento e viene avvisato se TempPass è scaduto:
 
 ```HTML
 <html>
@@ -476,16 +476,16 @@ L’esempio seguente illustra un caso in cui un utente accede automaticamente co
 
 Alcuni eventi richiedono un accesso graduale e gratuito ai contenuti, ad esempio un intervallo iniziale di accesso gratuito (ad esempio, 4 ore) seguito da accessi giornalieri gratuiti (ad esempio, 10 minuti per ogni giorno successivo).  Affinché un programmatore possa implementare questo scenario, è necessario organizzarlo con il proprio contatto di Adobe per configurare due MVPD temporanei per il programmatore.
 
-Per questo scenario di esempio (una sessione iniziale di 4 ore gratuita, seguita da sessioni giornaliere gratuite di 10 minuti), l’Adobe configura un MVPD denominato TempPass1 con un Time-To-Live (TTL) di 4 ore e un TempPass2 con un TTL di 10 minuti per il periodo successivo.  Entrambi sono associati all&#39;ID richiedente del programmatore.
+Per questo scenario di esempio (una sessione iniziale gratuita di 4 ore, seguita da sessioni gratuite giornaliere di 10 minuti), l’Adobe configura un MVPD denominato TempPass1 con un valore Time-To-Live (TTL) di 4 ore e un TempPass2 con un valore TTL di 10 minuti per il periodo successivo.  Entrambi sono associati all&#39;ID richiedente del programmatore.
 
 ### Implementazione del programmatore {#mult-tempass-prog-impl}
 
-Dopo che Adobe ha configurato le due istanze di TempPass, le due MVPD aggiuntive (TempPass1 e TempPass2), verranno visualizzate nell&#39;elenco MVPD del programmatore.  Per implementare più passaggi temporanei, il programmatore deve effettuare le seguenti operazioni:
+Adobe Una volta configurate le due istanze di TempPass, le due MVPD aggiuntive (TempPass1 e TempPass2) verranno visualizzate nell’elenco MVPD del programmatore.  Per implementare più passaggi temporanei, il programmatore deve effettuare le seguenti operazioni:
 
 1. Al momento della visita iniziale dell’utente al sito, effettua automaticamente l’accesso con TempPass1. Come punto di partenza per questa attività è possibile utilizzare l&#39;esempio di accesso automatico riportato sopra.
-1. Quando rilevi che TempPass1 è scaduto, archivia il fatto (in un cookie/archivio locale) e presenta all’utente il selettore MVPD standard. **Assicurarsi di escludere TempPass1 e TempPass2 dall&#39;elenco**.
+1. Quando rilevi che TempPass1 è scaduto, archivia il fatto (in un cookie/archivio locale) e presenta all’utente il selettore standard di MVPD. **Assicurarsi di escludere TempPass1 e TempPass2 dall&#39;elenco**.
 1. Se la proprietà TempPass1 è scaduta, effettuare l&#39;accesso automatico a ogni giorno successivo con TempPass2.
-1. Quando TempPass2 è scaduto, memorizza il fatto (in un cookie/archivio locale) per il giorno e presenta all’utente il selettore MVPD standard. Di nuovo, assicurati di filtrare TempPass1 e TempPass2 da tale elenco.
+1. Quando TempPass2 è scaduto, memorizza il fatto (in un cookie/archivio locale) per la giornata e presenta all’utente il selettore standard di MVPD. Di nuovo, assicurati di filtrare TempPass1 e TempPass2 da tale elenco.
 1. Ogni nuovo giorno, alle 00:00, reimpostare tutti i passaggi temporanei per TempPass2, utilizzando [Reimposta API Web TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass.md#reset-all-tempass).
 
 >[!NOTE]
@@ -493,7 +493,7 @@ Dopo che Adobe ha configurato le due istanze di TempPass, le due MVPD aggiuntive
 
 ## Reimposta tutte le passate temporanee {#reset-all-tempass}
 
-Alcune regole aziendali richiedono l’eliminazione regolare di Temp Pass o una reimpostazione ad hoc di tutte le Temp Pass rilasciate per un determinato ID richiedente e ID MVPD. Questa funzione supporta casi d’uso quali i seguenti:
+Alcune regole aziendali richiedono l’eliminazione regolare di Temp Pass o una reimpostazione ad hoc di tutte le Temp Pass rilasciate per un determinato ID richiedente e MVPD ID. Questa funzione supporta casi d’uso quali i seguenti:
 
 * Un passaggio temporaneo giornaliero di 10 minuti (il passaggio temporaneo deve essere reimpostato all&#39;inizio della giornata)
 * Un Temp Pass disponibile per tutti gli utenti durante le ultime notizie. (Il passaggio Temp deve essere reimpostato per tutti i dispositivi non appena iniziano le ultime notizie).

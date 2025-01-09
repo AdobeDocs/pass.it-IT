@@ -2,9 +2,9 @@
 title: Panoramica del dashboard di TVE
 description: Conoscere TVE Dashboard e le risorse.
 exl-id: 91baeb34-a32a-4dc3-94d8-f6cfca59dc4e
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
 workflow-type: tm+mt
-source-wordcount: '295'
+source-wordcount: '303'
 ht-degree: 0%
 
 ---
@@ -25,7 +25,7 @@ Il [[!DNL Adobe] Pass TVE Dashboard](https://experience.adobe.com/pass/authentic
    * Categorie di piattaforme come *Dispositivi connessi a desktop, dispositivi mobili e TV*
    * Piattaforme come *iOS, Android™, tvOS, Roku e FireTV*
 
-  I rapporti forniscono informazioni sul supporto del Single Sign-On (SSO) e sulla durata delle sessioni di autenticazione o autorizzazione degli abbonati a livello di MVPD e di piattaforma.
+  I rapporti forniscono informazioni sul supporto del Single Sign-On (SSO) e sulla durata delle sessioni di autenticazione o autorizzazione degli abbonati a livello di MVPD e piattaforma.
 
 * **Visualizzazione traffico**: visualizza i dati relativi al traffico di autenticazione e autorizzazione di alto livello delle proprietà del programmatore.
 
@@ -53,4 +53,5 @@ Adobe consiglia di utilizzare le risorse seguenti per comprendere in modo approf
 * [Documento tecnico TVE](/help/authentication/kickstart/technical-paper.md)
 * [Guida di Kick-Start per programmatori](/help/authentication/kickstart/programmer-kickstart-guide.md)
 * [Flusso diritto](/help/authentication/integration-guide-programmers/entitlement-flow.md)
-* [Glossario](/help/authentication/kickstart/glossary.md)
+* [Glossario di Dynamic Client Registration (DCR)](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-glossary.md)
+* [Glossario REST API v2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md)
