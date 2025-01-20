@@ -2,9 +2,9 @@
 title: Recupera elenco di risorse preautorizzate tramite l’app web Second Screen
 description: Recupera elenco di risorse preautorizzate tramite l’app web Second Screen
 exl-id: 78eeaf24-4cc1-4523-8298-999c9effdb7a
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 1c357b918fa4f6d4b92a9055de018c55ee5861e0
 workflow-type: tm+mt
-source-wordcount: '277'
+source-wordcount: '275'
 ht-degree: 0%
 
 ---
@@ -46,15 +46,15 @@ Esistono due set di API: un set per Streaming App o Programmer Service e uno per
 
 | Endpoint | Chiamato </br> da | Input   </br>Parametri | Metodo HTTP </br> | Risposta | HTTP </br>Risposta |
 | --- | --- | --- | --- | --- | --- |
-| &lt;SP_FQDN>/api/v1/preauthorize/{codice di registrazione} | Modulo AuthN | 1. codice di registrazione </br>    (componente percorso)</br>2.  richiedente (obbligatorio)</br>3.  elenco risorse (obbligatorio) | GET | XML o JSON contenente singole decisioni di pre-autorizzazione o dettagli sull’errore. Vedi gli esempi di seguito. | 200 - Operazione completata</br></br>400 - Richiesta non valida</br></br>401 - Non autorizzato</br></br>405 - Metodo non consentito </br></br>412 - Precondizione non riuscita</br></br>500 - Errore interno del server |
+| &lt;SP_FQDN>/api/v1/preauthorize/{codice di registrazione} | Modulo AuthN | 1. codice di registrazione </br>    (componente percorso)</br>2.  richiedente (obbligatorio)</br>3.  resource (obbligatorio) | GET | XML o JSON contenente singole decisioni di pre-autorizzazione o dettagli sull’errore. Vedi gli esempi di seguito. | 200 - Operazione completata</br></br>400 - Richiesta non valida</br></br>401 - Non autorizzato</br></br>405 - Metodo non consentito </br></br>412 - Precondizione non riuscita</br></br>500 - Errore interno del server |
 
 
 
 | Parametro di input | Descrizione |
-| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | codice di registrazione | Il valore del codice di registrazione fornito dall’utente all’inizio del flusso di autenticazione. |
 | richiedente | ID richiedente del programmatore per il quale è valida questa operazione. |
-| elenco risorse | Una stringa che contiene un elenco delimitato da virgole di resourceIds che identifica il contenuto che potrebbe essere accessibile a un utente ed è riconosciuto dagli endpoint di autorizzazione di MVPD. |
+| resource | Una stringa che contiene un elenco delimitato da virgole di resourceIds che identifica il contenuto che potrebbe essere accessibile a un utente ed è riconosciuto dagli endpoint di autorizzazione di MVPD. |
 
 
 ### Risposta di esempio {#sample-response}
