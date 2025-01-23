@@ -2,9 +2,9 @@
 title: Verificare i flussi di autenticazione e autorizzazione utilizzando il sito di test API di Adobe
 description: Verificare i flussi di autenticazione e autorizzazione utilizzando il sito di test API di Adobe
 exl-id: 04af4aed-35e4-44cb-98ce-7643165a8869
-source-git-commit: 811feba1f2476bdfacb20e332e33df7f7ae8ac00
+source-git-commit: 65475d6da7a1b25cb2d8ebd6229a7cb360c7ab4a
 workflow-type: tm+mt
-source-wordcount: '380'
+source-wordcount: '368'
 ht-degree: 0%
 
 ---
@@ -33,8 +33,8 @@ Dopo aver completato la parte I, effettuare le seguenti operazioni:
 
 1. Apri pagina Web: [Test API di staging](https://sp.auth-staging.adobe.com/apitest/api.html).
 1. Carica attivatore di accesso da:
-   * Scegliere dal menu a discesa la versione di AccessEnabler necessaria (v3 o v4), la posizione in cui si desidera accedervi (staging o produzione) e la modalità di debug
-   * Inserimento dell&#39;istruzione software con cui si desidera eseguire il test se si utilizza v4
+   * Scegli dal menu a discesa da dove desideri accedervi (staging o produzione) e se deve essere in modalità di debug
+   * Inserimento dell&#39;istruzione software con cui si desidera eseguire il test
    * Quindi fare clic sul pulsante &quot;**Load Access Enabler**&quot;.
 1. Ora imposta il valore ID richiedente su &quot;**requestorID**&quot; e fai clic sul pulsante &quot;setRequestor&quot;.
 1. Successivamente, premere il pulsante &quot;getAuthentication&quot; e attendere che venga visualizzato il selettore di visualizzazione.
