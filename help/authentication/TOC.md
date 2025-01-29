@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Autenticazione Adobe Pass
 user-guide-description: L’autenticazione Adobe Pass è una soluzione di gestione dei diritti per TV Everywhere, che fornisce un framework modulare per determinare se chi richiede l’accesso a una risorsa ne abbia diritto.
-source-git-commit: dbca6c630fcbfcc5b50ccb34f6193a35888490a3
+source-git-commit: c1f891fabd47954dc6cf76a575c3376ed0f5cd3d
 workflow-type: tm+mt
-source-wordcount: '1256'
+source-wordcount: '1250'
 ht-degree: 2%
 
 ---
@@ -144,9 +144,7 @@ ht-degree: 2%
          + [Come effettuare una richiesta di accesso a dati personali](integration-guide-programmers/features-premium/privacy-support/make-privacy-req.md)
    + Funzionalità Premium {#features-premium}
       + Accesso temporaneo {#temporary-access}
-         + [Passaggio temporaneo](integration-guide-programmers/features-premium/temporary-access/temp-pass.md)
-         + [Passaggio temporaneo promozionale](integration-guide-programmers/features-premium/temporary-access/promotional-temp-pass.md)
-         + [Ripristina passaggio temporaneo](integration-guide-programmers/features-premium/temporary-access/reset-temp-pass.md)
+         + [Funzione TempPass](integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)
       + Accesso Danneggiato {#degraded-access}
          + [Panoramica dell’API di degradazione](integration-guide-programmers/features-premium/degraded-access/degradation-api-overview.md)
       + ESM {#esm}

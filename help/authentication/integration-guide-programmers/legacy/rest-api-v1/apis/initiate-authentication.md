@@ -2,7 +2,7 @@
 title: Avvia autenticazione
 description: Avvia autenticazione
 exl-id: 55dddd29-68d6-4aae-8744-307fea285e29
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: c1f891fabd47954dc6cf76a575c3376ed0f5cd3d
 workflow-type: tm+mt
 source-wordcount: '314'
 ht-degree: 0%
@@ -85,7 +85,7 @@ Avvia il processo di autenticazione informando di un evento di selezione MVPD. C
 >
 >La chiamata di può anche contenere parametri opzionali che abilitano altre funzionalità come:
 >
-> * generic\_data - abilita l&#39;utilizzo di [Promotional TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/promotional-temp-pass.md)
+> * generic\_data - abilita l&#39;utilizzo di [Promotional TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#promotional-temp-pass)
 >
 >```JSON
 >Example:

@@ -2,7 +2,7 @@
 title: Valutazione della prevenzione del tracciamento Apple Safari
 description: Valutazione della prevenzione del tracciamento Apple Safari
 exl-id: a3362020-92ff-4232-b923-e462868730d5
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: c1f891fabd47954dc6cf76a575c3376ed0f5cd3d
 workflow-type: tm+mt
 source-wordcount: '1849'
 ht-degree: 0%
@@ -133,7 +133,7 @@ A questo punto questi requisiti/prompt di Safari non si allineano con i nostri r
 
 **Passaggio temporaneo**
 
-Per mitigare i problemi di individualizzazione e consentire l&#39;interazione con l&#39;utente, si consiglia di utilizzare **[Promotional Temp Pass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/promotional-temp-pass.md)** in modo interattivo e di fornire almeno un&#39;informazione aggiuntiva sull&#39;utente (ad esempio, l&#39;indirizzo e-mail).
+Per mitigare i problemi di individualizzazione e consentire l&#39;interazione con l&#39;utente, si consiglia di utilizzare **[Passaggio temporaneo promozionale](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#promotional-temp-pass)** in modo interattivo e di fornire almeno un&#39;informazione aggiuntiva sull&#39;utente (ad esempio, l&#39;indirizzo e-mail).
 
 ## Safari 13 {#safari13}
 
