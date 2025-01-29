@@ -2,7 +2,7 @@
 title: Metadati utente
 description: Metadati utente
 exl-id: 3d7b6429-972f-4ccb-80fd-a99870a02f65
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: ae2e61152695b738b0bb08d1dcd81417f3bbdfb5
 workflow-type: tm+mt
 source-wordcount: '518'
 ht-degree: 0%
@@ -48,7 +48,7 @@ Recupera i metadati condivisi da MVPD sull’utente autenticato.
 
 
 | Parametro di input | Descrizione |
-|------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | richiedente | ID richiedente del programmatore per il quale è valida questa operazione. |
 | deviceId | Byte ID dispositivo. |
 | device_info/<p>X-Device-Info | Informazioni dispositivo di streaming.</br></br> **Nota:** È possibile che vengano passate informazioni_dispositivo come parametro URL, ma a causa delle dimensioni potenziali di questo parametro e delle limitazioni alla lunghezza di un URL di GET, DOVREBBE essere passato come informazioni-X-Device nell&#39;intestazione http. </br></br> Vedere i dettagli completi in [Trasmissione delle informazioni sul dispositivo e sulla connessione](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md). |
@@ -94,6 +94,6 @@ Nella radice dell&#39;oggetto ci saranno tre nodi:
 
 In caso di errore, il server restituirà un oggetto XML o JSON che specifica un messaggio di errore dettagliato.
 
-Per ulteriori informazioni, vedere [Metadati utente](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata-feature.md).
+Per ulteriori informazioni, vedere [Metadati utente](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md).
 
 [Torna a Riferimento API REST](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/rest-api-reference.md)

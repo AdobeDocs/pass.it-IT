@@ -2,7 +2,7 @@
 title: Attributi metadati standard
 description: Attributi metadati standard
 exl-id: 99ffa98c-213f-47a5-a6e7-fbacb77875d0
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: ae2e61152695b738b0bb08d1dcd81417f3bbdfb5
 workflow-type: tm+mt
 source-wordcount: '1053'
 ht-degree: 0%
@@ -21,10 +21,10 @@ Questa pagina si propone di fornire un elenco completo degli attributi di metada
 L&#39;API di monitoraggio della concorrenza forza i client a inviare i seguenti valori come parte di qualsiasi chiamata di inizializzazione valida: [chiamate di avvio sessione](/help/concurrency-monitoring/restrict-concurr-usage-mult-apps.md#api-calls-descr).
 
 | Nome campo | Esempio di valore | Dove utilizzarlo | Ottenuto da |
-|-------------|---------------------------|--------------------|------------------------------------------------------------------------------------------------------------------------------------|
+|---------------|-----------------------------|----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | applicationId | 75b4-431b-adb2-eb6b9e546013 | Intestazione di autorizzazione | Ticket Zendesk all&#39;integrazione |
-| mvpdName | Sample_MVPD | Percorso URI | Autenticazione di Adobe Pass dall’endpoint di configurazione quando l’utente seleziona l’MVPD |
-| accountId | 12345 | Percorso URI | Metadati upstreamUserID di autenticazione Adobe Pass dopo l&#39;accesso utente [Metadati utente upstreamUserID - Autenticazione Adobe Pass](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata-feature.md) |
+| mvpdName | Sample_MVPD | Percorso URI | Autenticazione di Adobe Pass dall’endpoint di configurazione quando l’utente seleziona il MVPD |
+| accountId | 12345 | Percorso URI | Metadati upstreamUserID di autenticazione Adobe Pass dopo l&#39;accesso utente [Metadati utente upstreamUserID - Autenticazione Adobe Pass](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md) |
 
 
 ## Attributi metadati {#metadata-attr}
@@ -55,7 +55,7 @@ Con [API v2.0](http://docs.adobeptime.io/cm-api-v2/), se uno di questi attributi
 |                 | applicationId | stringa | L’ID applicazione che identifica in modo univoco un’applicazione client. | N/D | de305d54-75b4-431b-adb2-eb6b9e546013 |                                                                                   |
 |                 | applicationPlatform | stringa | Piattaforma nativa dell’applicazione | N/D | ios, android |                                                                                   |
 |                 | applicationVersion | stringa | Questo valore può essere utilizzato a scopo di analisi | N/D | 1,0, 2,0 |                                                                                   |
-| Oggetto | accountId | stringa | ID conto del soggetto del monitoraggio della concorrenza (nell’ambito dell’MVPD) | N/D | account test |                                                                                   |
+| Oggetto | accountId | stringa | ID account dell&#39;oggetto di monitoraggio della concorrenza (nell&#39;ambito di MVPD) | N/D | account test |                                                                                   |
 |                 | contractType | stringa | premium, base. I clienti possono aggiungere questo elemento come metadati personalizzati e utilizzarlo nei propri realm. | N/D | premium, base |                                                                                   |
 | Utente | name | stringa | Alcuni MVPD forniscono informazioni relative all’utente specifico che riproduce il contenuto. | N/D |                                                                                                                                                         |                                                                                   |
 |                 | hba | booleano | Identifica se l’utente tenta di avviare il flusso dalla propria posizione principale | N/D | true, false | true o false |
