@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Autenticazione Adobe Pass
 user-guide-description: L’autenticazione Adobe Pass è una soluzione di gestione dei diritti per TV Everywhere, che fornisce un framework modulare per determinare se chi richiede l’accesso a una risorsa ne abbia diritto.
-source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
+source-git-commit: dbca6c630fcbfcc5b50ccb34f6193a35888490a3
 workflow-type: tm+mt
-source-wordcount: '1267'
+source-wordcount: '1256'
 ht-degree: 2%
 
 ---
@@ -120,11 +120,10 @@ ht-degree: 2%
                + [Intestazione - AP-TempPass-Identity](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-temppass-identity.md)
    + Funzioni standard {#standard-features}
       + Diritti {#entitlements}
-         + [Identificazione di una risorsa protetta](integration-guide-programmers/features-standard/entitlements/identify-protected-resources.md)
          + [Autorizzazione di verifica preliminare](integration-guide-programmers/features-standard/entitlements/preflight-authz.md)
-         + [Integrare Media Token Verifier](integration-guide-programmers/features-standard/entitlements/media-token-verifier-int.md)
-         + [Metadati utente](integration-guide-programmers/features-standard/entitlements/user-metadata-feature.md)
-         + [Certificato metadati utente per la crittografia](integration-guide-programmers/features-standard/entitlements/user-metadata-certificate.md)
+         + [Risorsa protetta](integration-guide-programmers/features-standard/entitlements/protected-resources.md)
+         + [Token multimediali](integration-guide-programmers/features-standard/entitlements/media-tokens.md)
+         + [Metadati utente](integration-guide-programmers/features-standard/entitlements/user-metadata.md)
       + Segnalazione errori {#error-reporting}
          + [Codici di errore migliorati](integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md)
       + Accesso Single Sign-On {#sso-access}

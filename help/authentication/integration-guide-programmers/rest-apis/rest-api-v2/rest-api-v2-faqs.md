@@ -2,9 +2,9 @@
 title: Domande frequenti su REST API V2
 description: Domande frequenti su REST API V2
 exl-id: 2dd74b47-126e-487b-b467-c16fa8cc14c1
-source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
+source-git-commit: dbca6c630fcbfcc5b50ccb34f6193a35888490a3
 workflow-type: tm+mt
-source-wordcount: '6668'
+source-wordcount: '6664'
 ht-degree: 0%
 
 ---
@@ -126,7 +126,7 @@ Per ulteriori informazioni, consulta i seguenti documenti:
 
 #### 3. In che modo l&#39;applicazione client può ottenere le informazioni sui metadati dell&#39;utente? {#authentication-phase-faq3}
 
-L&#39;applicazione client può eseguire una query su uno dei seguenti endpoint in grado di restituire [informazioni sui metadati dell&#39;utente](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata-feature.md) come parte delle informazioni del profilo:
+L&#39;applicazione client può eseguire una query su uno dei seguenti endpoint in grado di restituire [informazioni sui metadati dell&#39;utente](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md) come parte delle informazioni del profilo:
 
 * [API dell’endpoint &quot;Profiles&quot;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md)
 * [Endpoint &quot;profile&quot; per API MVPD specifiche](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)
@@ -245,7 +245,7 @@ L’identificatore univoco della risorsa può avere due formati:
 * Un formato di stringa semplice, ad esempio un identificatore univoco per un canale (brand).
 * Un formato RSS per contenuti multimediali (MRSS) contenente informazioni aggiuntive come il titolo, le valutazioni e i metadati per il controllo genitori.
 
-Per ulteriori dettagli, consulta la documentazione [Identificazione delle risorse protette](/help/authentication/integration-guide-programmers/features-standard/entitlements/identify-protected-resources.md).
+Per ulteriori dettagli, consulta la documentazione di [Risorse protette](/help/authentication/integration-guide-programmers/features-standard/entitlements/protected-resources.md#identifiers).
 
 #### 6. Per quante risorse l&#39;applicazione client può ottenere una decisione di preautorizzazione alla volta? {#preauthorization-phase-faq6}
 
@@ -294,7 +294,7 @@ Il token multimediale è un termine definito nella documentazione di [Glossary](
 
 Il token multimediale è costituito da una stringa firmata inviata in testo non crittografato che può essere recuperata dall’endpoint Autorizzazione decisioni.
 
-Per ulteriori informazioni, consulta la documentazione [Integrazione del Media Token Verifier](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-token-verifier-int.md).
+Per ulteriori informazioni, consulta la documentazione di [Media Token Verifier](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md#media-token-verifier).
 
 Il token multimediale è valido per un periodo di tempo limitato e breve specificato al momento del rilascio, che indica il periodo di tempo che deve essere utilizzato dall’applicazione client prima di richiedere di nuovo la query sull’endpoint Decisions Authorize.
 
@@ -316,7 +316,7 @@ L’identificatore univoco della risorsa può avere due formati:
 * Un formato di stringa semplice, ad esempio un identificatore univoco per un canale (brand).
 * Un formato RSS per contenuti multimediali (MRSS) contenente informazioni aggiuntive come il titolo, le valutazioni e i metadati per il controllo genitori.
 
-Per ulteriori dettagli, consulta la documentazione [Identificazione delle risorse protette](/help/authentication/integration-guide-programmers/features-standard/entitlements/identify-protected-resources.md).
+Per ulteriori dettagli, consulta la documentazione di [Risorse protette](/help/authentication/integration-guide-programmers/features-standard/entitlements/protected-resources.md#identifiers).
 
 #### 6. Per quante risorse la richiesta del cliente può ottenere una decisione di autorizzazione alla volta? {#authorization-phase-faq6}
 

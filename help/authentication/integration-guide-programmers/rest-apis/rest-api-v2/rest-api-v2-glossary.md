@@ -2,9 +2,9 @@
 title: Glossario REST API V2
 description: Glossario REST API V2
 exl-id: 8b3bd2de-1ff8-4c57-b18d-27ecdf2b0de2
-source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
+source-git-commit: dbca6c630fcbfcc5b50ccb34f6193a35888490a3
 workflow-type: tm+mt
-source-wordcount: '1747'
+source-wordcount: '1744'
 ht-degree: 0%
 
 ---
@@ -115,7 +115,7 @@ Sinonimo del precedente termine utilizzato token di autorizzazione breve.
 
 Il Media Token Verifier è una libreria distribuita da Adobe Pass Authentication responsabile della verifica dell&#39;autenticità di un [token multimediale](#media-token).
 
-Per ulteriori informazioni, consulta la documentazione [Integrazione del Media Token Verifier](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-token-verifier-int.md).
+Per ulteriori informazioni, consulta la documentazione di [Media Token Verifier](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md#media-token-verifier).
 
 #### MVPD {#mvpd}
 
@@ -183,7 +183,7 @@ La risorsa è un contenuto protetto a cui un utente sta tentando di accedere da 
 
 La risorsa è identificata da un valore univoco concordato tra il programmatore e gli MVPD.
 
-Per ulteriori informazioni, consulta la documentazione [Identificazione delle risorse protette](/help/authentication/integration-guide-programmers/features-standard/entitlements/identify-protected-resources.md).
+Per ulteriori informazioni, consulta la documentazione di [Risorse protette](/help/authentication/integration-guide-programmers/features-standard/entitlements/protected-resources.md#identifiers).
 
 ### S {#s}
 
@@ -275,7 +275,7 @@ L&#39;ID utente è un identificatore univoco associato all&#39;utente e proviene
 
 I metadati dell&#39;utente fanno riferimento ad attributi specifici dell&#39;utente (ad esempio, codici postali, valutazioni dei genitori, ID utente, ecc.) gestiti da [MVPD](#mvpd) e forniti dall&#39;autenticazione Adobe Pass come parte di un [profilo](#profile).
 
-Per ulteriori informazioni, consulta la documentazione di [Metadati utente](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata-feature.md).
+Per ulteriori informazioni, consulta la documentazione di [Metadati utente](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md).
 
 ### V {#v}
 

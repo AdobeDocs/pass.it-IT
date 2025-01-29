@@ -2,7 +2,7 @@
 title: Autenticazione basata su Home per TV Everywhere
 description: Autenticazione basata su Home per TV Everywhere
 exl-id: abdc7724-4290-404a-8f93-953662cdc2bc
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: dbca6c630fcbfcc5b50ccb34f6193a35888490a3
 workflow-type: tm+mt
 source-wordcount: '1638'
 ht-degree: 0%
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 ## Cos’è l’autenticazione basata su home? {#whatis-home-based-authn}
 
-L&#39;HBA (Home Based Authentication) è una funzionalità di TV Everywhere che consente agli abbonati alla TV a pagamento di visualizzare i contenuti TV online senza immettere le credenziali MVPD quando sono a casa, migliorando in modo significativo l&#39;esperienza utente del flusso di autenticazione.
+L&#39;HBA (Home Based Authentication) è una funzionalità di TV Everywhere che consente agli abbonati alla TV a pagamento di visualizzare i contenuti TV online senza immettere le credenziali MVPD quando si trovano a casa, migliorando in modo significativo l&#39;esperienza utente del flusso di autenticazione.
 
 Home Based Authentication definition del Comitato Tecnologico di Autenticazione Aperta (OATC): &quot;L&#39;autenticazione automatica in casa è il processo mediante il quale un MVPD/OVD utilizza le caratteristiche della rete domestica (o identificatori automaticamente accessibili tra i dispositivi sulla rete domestica) per autenticare quale account abbonato è associato a quella rete domestica, in modo che gli utenti non debbano immettere manualmente le credenziali quando stabiliscono una sessione TVE per accedere al contenuto protetto da TVE.&quot;
 
@@ -43,7 +43,7 @@ Di seguito è riportato il tasso di conversione di accesso per un canale integra
 
 ![](../../../assets/hba-vs-non-hba.png)
 
-Sei mesi dopo aver abilitato l&#39;HBA per la maggior parte dei canali integrati con questo MVPD, abbiamo notato un aumento dell&#39;82% degli utenti univoci (il numero di utenti che accedono ai canali TV Everywhere tramite questo MVPD è quasi raddoppiato).
+Sei mesi dopo aver attivato l&#39;HBA per la maggior parte dei canali integrati con questo MVPD, abbiamo notato un aumento dell&#39;82% degli utenti univoci (il numero di utenti che accedono ai canali TV Everywhere tramite questo MVPD è quasi raddoppiato).
 
 2w3Al contrario, come si può vedere nel grafico seguente, altri MVPD che non avevano abilitato HBA hanno registrato un aumento del 26% degli utenti univoci negli ultimi 6 mesi.
 
@@ -59,9 +59,9 @@ In questa sezione viene descritto il supporto HBA fornito da Adobe Pass Authenti
 
 Funzionalità di autenticazione Adobe Pass con supporto HBA
 
-* Possibilità di impostare TTL di autenticazione diversi per le autenticazioni HBA e non HBA (richiede anche il supporto MVPD)
-* Possibilità di selezionare automaticamente un MVPD (ignora selettore MVPD) se l&#39;autenticazione è scaduta. Questo è utile soprattutto quando i TTL degli HBA sono di piccole dimensioni.
-* Possibilità di esporre ai programmatori se l&#39;autenticazione era HBA o meno (richiede anche il supporto MVPD)
+* Possibilità di impostare TTL di autenticazione diversi per le autenticazioni HBA e non HBA (richiede anche il supporto di MVPD)
+* Possibilità di selezionare automaticamente un MVPD (ignora selettore MVPD) se l’autenticazione è scaduta. Questo è utile soprattutto quando i TTL degli HBA sono di piccole dimensioni.
+* Possibilità di esporre ai programmatori se l&#39;autenticazione era HBA o meno (richiede anche il supporto di MVPD)
 
 ### Esperienza utente HBA sulle piattaforme di autenticazione Adobe Pass {#hba-user-exp}
 
@@ -70,7 +70,7 @@ Le tabelle seguenti forniscono informazioni sull&#39;esperienza utente per le pi
 | Flusso utente: tipo di piattaforma | swf, iOS, Android |
 |---|---|
 | Con HBA abilitato | Quando gli utenti sono a casa, vengono automaticamente autenticati. Dopo la scadenza del token di autenticazione HBA, gli utenti vengono automaticamente riautenticati. |
-| Senza HBA | Gli utenti vengono invitati a selezionare il proprio MVPD e a immettere le proprie credenziali, anche se si trovano a casa.Dopo la scadenza del token di autenticazione, gli utenti devono immettere di nuovo le proprie credenziali. |
+| Senza HBA | Agli utenti viene richiesto di selezionare il proprio MVPD e di immettere le proprie credenziali, anche se si trovano a casa.Alla scadenza del token di autenticazione, gli utenti devono immettere nuovamente le proprie credenziali. |
 
 | Flusso utente: tipo di piattaforma | js, Windows (nativo) |
 |---|---|
@@ -79,7 +79,7 @@ Le tabelle seguenti forniscono informazioni sull&#39;esperienza utente per le pi
 
 | Flusso utente: tipo di piattaforma | API REST senza client (autenticazione a seconda schermata) |
 |---|---|
-| Con HBA abilitato | Quando gli utenti sono a casa e utilizzano un’app API REST senza client, vengono automaticamente autenticati sul secondo dispositivo a schermo dopo aver inserito il codice di registrazione e aver selezionato il proprio MVPD. Dopo la scadenza del token di autenticazione HBA, gli utenti vengono automaticamente autenticati di nuovo (nella seconda periferica a schermo). |
+| Con HBA abilitato | Quando gli utenti sono a casa e utilizzano un’app API REST senza client, vengono automaticamente autenticati sul secondo dispositivo a schermo dopo aver inserito il codice di registrazione e aver selezionato il MVPD. Dopo la scadenza del token di autenticazione HBA, gli utenti vengono automaticamente autenticati di nuovo (nella seconda periferica a schermo). |
 | Senza HBA | Gli utenti sono invitati a selezionare il proprio MVPD e a immettere le proprie credenziali, anche se si trovano a casa. Dopo la scadenza del token di autenticazione, gli utenti devono immettere nuovamente le credenziali. |
 
 ### Dettagli tecnici dell&#39;implementazione dell&#39;HBA {#tech-details-hba}
@@ -96,9 +96,9 @@ Nel flusso HBA per MVPD integrati con il protocollo di autenticazione OAuth 2.0,
 
 
 | Azioni utente | Azioni di sistema |
-|---|---|
-| L’utente passa al sito del programmatore. Quando si tenta di riprodurre un video, viene visualizzato il selettore MVPD. L’utente seleziona il proprio MVPD e fa clic sull’accesso. | Viene eseguito un controllo dei precedenti personali. L&#39;MVPD applica il proprio insieme di regole per il rilevamento utente (ad esempio, mappare l&#39;indirizzo IP dell&#39;utente con l&#39;indirizzo MAC dei modem forniti dal distributore o dei set-top box connessi a banda larga). |
-| Viene visualizzata una schermata, che persiste per circa 3 secondi. È possibile visualizzare una pagina interstiziale per informare l&#39;utente che l&#39;accesso viene eseguito automaticamente utilizzando il proprio account MVPD. | <ol><li>AccessEnabler, installato sul lato del programmatore, invia una richiesta di autenticazione (come richiesta HTTP) all’endpoint di autenticazione di Adobe Pass.</li><li>L’endpoint di autenticazione Adobe Pass reindirizza la richiesta all’endpoint di autenticazione MVPD. <br />**Nota:** la richiesta contiene il parametro `hba_flag` (tentativo HBA = true) che indica che MVPD deve tentare l&#39;autenticazione HBA.</li><li>L’endpoint di autenticazione MVPD invia un codice di autorizzazione all’endpoint di autenticazione Adobe Pass.</li><li>L’autenticazione di Adobe Pass utilizza il codice di autorizzazione per richiedere un token di aggiornamento e un token di accesso dall’endpoint del token MVPD.</li><li>MVPD invia una decisione di autenticazione e il parametro `hba_status` (true/false) in `id_token`.</li><li>Viene inviata una chiamata all&#39;endpoint del profilo utente MVPD per esporre la chiave [hba_status nei metadati utente](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata-feature.md#obtaining).</li><li>MVPD imposta il TTL del token di aggiornamento su un valore concordato con MVPD e l&#39;Adobe imposta il TTL del token di autenticazione su un valore minore o uguale al valore del token di aggiornamento.</li></ol> |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| L’utente passa al sito del programmatore. Quando si tenta di riprodurre un video, viene visualizzato il selettore MVPD. L’utente seleziona il proprio MVPD e fa clic sull’accesso. | Viene eseguito un controllo dei precedenti personali. MVPD applica il proprio set di regole per il rilevamento utente (ad esempio, mappare l’indirizzo IP dell’utente con l’indirizzo MAC dei modem forniti dal distributore o dei set-top box connessi a banda larga). |
+| Viene visualizzata una schermata, che persiste per circa 3 secondi. È possibile visualizzare una pagina interstiziale che informa l’utente che l’accesso viene eseguito automaticamente utilizzando il suo account MVPD. | <ol><li>AccessEnabler, installato sul lato del programmatore, invia una richiesta di autenticazione (come richiesta HTTP) all’endpoint di autenticazione di Adobe Pass.</li><li>L’endpoint di autenticazione Adobe Pass reindirizza la richiesta all’endpoint di autenticazione MVPD. <br />**Nota:** la richiesta contiene il parametro `hba_flag` (tentativo HBA = true) che indica che MVPD deve tentare l&#39;autenticazione HBA.</li><li>L’endpoint di autenticazione MVPD invia un codice di autorizzazione all’endpoint di autenticazione Adobe Pass.</li><li>L’autenticazione di Adobe Pass utilizza il codice di autorizzazione per richiedere un token di aggiornamento e un token di accesso dall’endpoint del token di MVPD.</li><li>MVPD invia una decisione di autenticazione e il parametro `hba_status` (true/false) in `id_token`.</li><li>È stata inviata una chiamata all&#39;endpoint del profilo utente di MVPD per esporre la chiave [hba_status nei metadati utente](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md).</li><li>MVPD imposta il TTL del token di aggiornamento su un valore concordato da MVPD e Adobe imposta il TTL del token di aggiornamento su un valore minore o uguale al valore del token di aggiornamento.</li></ol> |
 | L’utente è autenticato e ora può sfogliare contenuti TV Everywhere autorizzati. | Il token di autenticazione viene passato all’utente che ora può esplorare correttamente il sito del programmatore. |
 
 #### Protocollo SAML {#saml-protocol}
@@ -106,9 +106,9 @@ Nel flusso HBA per MVPD integrati con il protocollo di autenticazione OAuth 2.0,
 Descrizione del flusso di autenticazione HBA per il protocollo di autenticazione SAML
 
 | Azioni utente | Azioni di sistema |
-|---|---|
-| L’utente passa al sito del programmatore. Quando si tenta di riprodurre un video, viene visualizzato il selettore MVPD. L’utente seleziona il proprio MVPD e fa clic sull’accesso. | Viene eseguito un controllo dei precedenti personali. L&#39;MVPD applica il proprio insieme di regole per il rilevamento utente (ad esempio, mappare l&#39;indirizzo IP dell&#39;utente con l&#39;indirizzo MAC dei modem forniti dal distributore o dei set-top box connessi a banda larga). |
-| Viene visualizzata una schermata, che persiste per circa 3 secondi. È possibile visualizzare una pagina interstiziale per informare l&#39;utente che l&#39;accesso viene eseguito automaticamente utilizzando il proprio account MVPD. | <ol><li>AccessEnabler, installato sul lato del programmatore, invia una richiesta di autenticazione (come richiesta HTTP) all’endpoint di autenticazione di Adobe Pass.</li><li>L’endpoint di autenticazione Adobe Pass reindirizza la richiesta all’endpoint di autenticazione MVPD.</li><li>MVPD deve inviare una decisione di autenticazione sotto forma di risposta SAML che deve contenere il flag HBA: hba_status (true/false).</li><li>Viene inviata una chiamata all&#39;endpoint del profilo utente MVPD per esporre la chiave [hba_status nei metadati utente](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata-feature.md#obtaining).</li></ol> |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| L’utente passa al sito del programmatore. Quando si tenta di riprodurre un video, viene visualizzato il selettore MVPD. L’utente seleziona il proprio MVPD e fa clic sull’accesso. | Viene eseguito un controllo dei precedenti personali. MVPD applica il proprio set di regole per il rilevamento utente (ad esempio, mappare l’indirizzo IP dell’utente con l’indirizzo MAC dei modem forniti dal distributore o dei set-top box connessi a banda larga). |
+| Viene visualizzata una schermata, che persiste per circa 3 secondi. È possibile visualizzare una pagina interstiziale che informa l’utente che l’accesso viene eseguito automaticamente utilizzando il suo account MVPD. | <ol><li>AccessEnabler, installato sul lato del programmatore, invia una richiesta di autenticazione (come richiesta HTTP) all’endpoint di autenticazione di Adobe Pass.</li><li>L’endpoint di autenticazione Adobe Pass reindirizza la richiesta all’endpoint di autenticazione MVPD.</li><li>Il MVPD deve inviare una decisione di autenticazione sotto forma di risposta SAML che deve contenere il flag HBA: hba_status (true/false).</li><li>È stata inviata una chiamata all&#39;endpoint del profilo utente di MVPD per esporre la chiave [hba_status nei metadati utente](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md).</li></ol> |
 | L’utente è autenticato e ora può sfogliare contenuti TV Everywhere autorizzati. | Il token di autenticazione viene passato all’utente che ora può esplorare correttamente il sito del programmatore. |
 
 
@@ -116,7 +116,7 @@ Descrizione del flusso di autenticazione HBA per il protocollo di autenticazione
 
 * **Protocollo OAuth:**
    * Per abilitare l&#39;HBA, vedere [Guida utente di Adobe Pass TVE Dashboard](/help/authentication/user-guide-tve-dashboard/tve-dashboard-overview.md)
-* **Protocollo SAML:** autenticazione basata su Home attivata sul lato MVPD. Non è richiesta alcuna azione da parte del programmatore o dell’Adobe.
+* **Protocollo SAML:** Autenticazione basata su Home attivata sul lato MVPD. Non è richiesta alcuna azione da parte del programmatore o dell’Adobe.
 Per ulteriori informazioni sugli MVPD che supportano l&#39;autenticazione basata su Home, vedere [Stato HBA per MVPD](/help/authentication/integration-guide-programmers/features-standard/hba-access/hba-status-mvpds.md).
 
 ## Domande frequenti {#faqs}
@@ -157,4 +157,4 @@ Per ulteriori informazioni sugli MVPD che supportano l&#39;autenticazione basata
 * [Autenticazione tramite il protocollo OAuth 2.0](/help/authentication/integration-guide-mvpds/authn-oauth2-protocol.md)
 * [Autenticazione con MVPD SAML](/help/authentication/integration-guide-mvpds/authn-usecase.md)
 * [Guida utente di Adobe Pass TVE Dashboard](/help/authentication/user-guide-tve-dashboard/tve-dashboard-overview.md)
-* [hba_status Metadati utente](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata-feature.md#obtaining)
+* [hba_status Metadati utente](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md)
