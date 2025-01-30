@@ -2,7 +2,7 @@
 title: Domande frequenti sulle procedure di supporto
 description: Domande frequenti sulle procedure di supporto
 exl-id: 1d754e5a-d5fa-4411-8932-2a36294da6eb
-source-git-commit: 1b9847d8dcb078755fd68a6363972f8973290e52
+source-git-commit: 0ab1fc212752dd4a4d6e12a4ab1287ef74e4a282
 workflow-type: tm+mt
 source-wordcount: '777'
 ht-degree: 0%
@@ -61,7 +61,7 @@ Un caso di livello SEVERITY 1 può essere avviato da Adobe o da un partner di au
    * Registri HTTP Trace o Device che illustrano il problema
    * (facoltativo) Eventuali schermate o acquisizioni video che dimostrino il problema
 
-1. Se Adobe non risponde al ticket entro un periodo, il partner può chiamare il seguente numero: **1-205-693-9813**.
+1. Se Adobe non risponde al ticket entro un periodo, il partner può chiamare il seguente numero: **1-657-312-4623**.
 
 >[!IMPORTANT]
 >
