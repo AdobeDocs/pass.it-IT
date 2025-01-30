@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Autenticazione Adobe Pass
 user-guide-description: L’autenticazione Adobe Pass è una soluzione di gestione dei diritti per TV Everywhere, che fornisce un framework modulare per determinare se chi richiede l’accesso a una risorsa ne abbia diritto.
-source-git-commit: 1b9847d8dcb078755fd68a6363972f8973290e52
+source-git-commit: ffedb5db269644c8d9c81480d27dff43bd4eb5d6
 workflow-type: tm+mt
-source-wordcount: '1250'
+source-wordcount: '1240'
 ht-degree: 2%
 
 ---
@@ -120,8 +120,7 @@ ht-degree: 2%
                + [Intestazione - AP-TempPass-Identity](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-temppass-identity.md)
    + Funzioni standard {#standard-features}
       + Diritti {#entitlements}
-         + [Autorizzazione di verifica preliminare](integration-guide-programmers/features-standard/entitlements/preflight-authz.md)
-         + [Risorsa protetta](integration-guide-programmers/features-standard/entitlements/protected-resources.md)
+         + [Decisioni](integration-guide-programmers/features-standard/entitlements/decisions.md)
          + [Token multimediali](integration-guide-programmers/features-standard/entitlements/media-tokens.md)
          + [Metadati utente](integration-guide-programmers/features-standard/entitlements/user-metadata.md)
       + Segnalazione errori {#error-reporting}
@@ -137,8 +136,7 @@ ht-degree: 2%
             + Single Sign-On Roku {#roku-sso}
                + [Panoramica di Roku SSO](integration-guide-programmers/features-standard/sso-access/platform-sso/roku-single-sign-on/roku-sso-overview.md)
       + Accesso all&#39;autenticazione basata sulla home page {#hba-access}
-         + [Autenticazione basata su Home per TV Everywhere](integration-guide-programmers/features-standard/hba-access/home-based-authn-tve.md)
-         + [Stato HBA per MVPD](integration-guide-programmers/features-standard/hba-access/hba-status-mvpds.md)
+         + [Autenticazione basata sulla home page (HBA)](integration-guide-programmers/features-standard/hba-access/home-based-authentication.md)
       + Supporto per la privacy {#privacy-support}
          + [Panoramica sul supporto della privacy](integration-guide-programmers/features-premium/privacy-support/privacy-supp-overview.md)
          + [Come effettuare una richiesta di accesso a dati personali](integration-guide-programmers/features-premium/privacy-support/make-privacy-req.md)
