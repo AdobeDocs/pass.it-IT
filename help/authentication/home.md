@@ -1,48 +1,76 @@
 ---
-title: Benvenuto in Adobe&reg; Pass Authentication!
-description: Panoramica di Adobe&reg; Pass Authentication
+title: Benvenuto in Adobe&reg; Pass Authentication
+description: Benvenuto in Adobe&reg; Pass Authentication
 exl-id: a8b01469-3d5f-4a44-9ae8-06a68c29d56d
-source-git-commit: ffedb5db269644c8d9c81480d27dff43bd4eb5d6
+source-git-commit: c9e31a036a0300fabd9f75dd85d472c390d9053e
 workflow-type: tm+mt
-source-wordcount: '293'
+source-wordcount: '419'
 ht-degree: 0%
 
 ---
 
-# Benvenuto in Autenticazione pass di Adobe® {#pt-auth-overview}
+# Benvenuto in Autenticazione pass di Adobe® {#welcome}
 
 >[!IMPORTANT]
 >
 > Assicurati di essere sempre informato sugli ultimi annunci di prodotto per l&#39;autenticazione di Adobe Pass e sulle timeline di disattivazione aggregate nella pagina [Annunci di prodotto](/help/authentication/product-announcements.md).
 
-L’autenticazione Adobe Pass è una soluzione di adesione per TV Everywhere che fornisce un framework modulare per determinare se qualcuno che richiede l’accesso a una risorsa ne ha diritto. Per partecipare alla soluzione di adesione all’autenticazione di Adobe Pass, i provider di contenuti (programmatori) e i provider di servizi televisivi a pagamento (MVPD) integrano i propri sistemi di adesione con i flussi di lavoro di autenticazione di Adobe Pass. Questo sito di documentazione fornisce dettagli sul processo di integrazione e suggerimenti per i partner esistenti.
+L’autenticazione Adobe Pass è una potente soluzione di adesione per TV Everywhere (TVE), progettata per semplificare e proteggere il processo di verifica dell’autorizzazione degli utenti ad accedere ai contenuti protetti. Questo framework modulare collega i provider di contenuti (programmatori) con i provider di servizi di televisione a pagamento (MVPD), facilitando le transazioni di adesione con velocità, coerenza e affidabilità.
 
-## Guida e domande frequenti {#help-faqs}
+Nell&#39;ecosistema TVE, i programmatori forniscono contenuti mentre gli MVPD gestiscono i dati degli abbonati. Questa dinamica può essere impegnativa, soprattutto quando si naviga tra i diversi sistemi di numerosi MVPD. L’autenticazione Adobe Pass elimina queste complessità fornendo un unico punto di integrazione che collega entrambe le parti al più ampio panorama TVE.
 
-| **Elementi in primo piano** |
-|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| <ul><li>[Single Sign-On per iOS](/help/authentication/integration-guide-programmers/features-standard/sso-access/partner-sso/apple-sso/apple-sso-overview.md)</li><li>[Autenticazione basata su Home (HBA)](/help/authentication/integration-guide-programmers/features-standard/hba-access/home-based-authentication.md)</li><li>[Infografica HBA](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/AdobeNewsletterHBA.pdf)</li><li>[Guida utente di Adobe Pass TVE Dashboard](/help/authentication/user-guide-tve-dashboard/tve-dashboard-overview.md)</li></ul> |
+Per i programmatori, l’autenticazione Adobe Pass garantisce un accesso sicuro ai visualizzatori idonei, riducendo al contempo il carico tecnico della verifica dell’adesione. Per gli MVPD, offre una soluzione scalabile per connettersi con più provider di contenuti tramite un&#39;interfaccia unificata, rafforzando le relazioni con i clienti e migliorando l&#39;esperienza di visualizzazione.
 
-| **Per Programmatori** | **Per MVPD** |
-|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| <ul><li>[Guida rapida per programmatori](/help/authentication/kickstart/programmer-kickstart-guide.md)</li><li>[Metadati utente](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/user-metadata.md)</li></ul> | <ul><li>[Guida rapida di MVPD](/help/authentication/kickstart/mvpd-kickstart-guide.md)</li><li>[Autenticazione](/help/authentication/integration-guide-mvpds/authn-usecase.md)</li><li>[Autorizzazione](/help/authentication/integration-guide-mvpds/authz-usecase.md)</li><li>[Disconnessione](/help/authentication/integration-guide-mvpds/usecase-mvpd-logout.md)</li></ul> |
-| **Per Client App Nativi** | **Per Tutti** |
-| <ul><li>[Panoramica tecnica di iOS](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-overview.md)</li><li>[Panoramica tecnica di Android](/help/authentication/integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-overview.md)</li></ul> | <ul><li>[Documento tecnico](/help/authentication/kickstart/technical-paper.md)</li><li>[Domande frequenti sulle procedure di supporto](/help/authentication/kickstart/support-procedures-faqs.md)</li></ul> |
-| **Per Smart Device** |                                                                                                                                                                                                                                                                                                                                                                       |
-| <ul><li>[Panoramica tecnica senza client](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/rest-api-overview.md)</li><li>[API senza client](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/rest-api-reference.md)</li></ul> |                                                                                                                                                                                                                                                                                                                                                                       |
+In quanto soluzione SaaS (Software as a Service), l’autenticazione Adobe Pass accelera il time-to-market, riduce i rischi di frode e consente un accesso continuo ai contenuti multipiattaforma, garantendo agli spettatori corretti la possibilità di ricevere facilmente i contenuti corretti.
 
->[!IMPORTANT]
->
-> Se non trovi una risposta, [**Inviaci un&#39;e-mail**](mailto:tve-support@adobe.com).
->
-> [Inviare un&#39;e-mail al team di supporto](mailto:tve-support@adobe.com) è anche il primo passaggio per qualsiasi segnalazione di problemi o incidenti.
->
-> Se hai un problema con [SEVERITY 1 LIVE](/help/authentication/kickstart/support-procedures-faqs.md) e ci hai inviato un&#39;e-mail e sono trascorsi 30 minuti senza risposta, consulta il documento [Procedure di escalation](/help/authentication/kickstart/support-procedures-faqs.md) per i numeri di telefono da chiamare.
+## ?? Community e aggiornamenti
 
-## Per trovare ciò di cui hai bisogno {#how-to-search}
+* [Annunci sui prodotti](/help/authentication/product-announcements.md)\
+  Rimani informato sugli ultimi annunci di prodotto per l’autenticazione di Adobe Pass e sulle tempistiche di disattivazione.
 
-* **Cerca** in qualsiasi punto dell&#39;Helpdesk per l&#39;autenticazione di Adobe Pass per i risultati che includono questo
-documentazione.
-* **Sfoglia** tutta la documentazione di Adobe Pass Authentication, tramite la gerarchia di cartelle nel riquadro di navigazione a sinistra.
-* **Filtra** la gerarchia delle cartelle immettendo i termini nel campo nella parte superiore del riquadro di spostamento.
-* **Segnalibro** &quot;collegamenti profondi&quot; alle pagine di interesse tramite il browser Web.
+## Supporto ❓ e risoluzione dei problemi
+
+* [Portale di assistenza clienti Zendesk](https://tve.zendesk.com/home)\
+  Accedi per accedere ai ticket, inviare query o visualizzare la knowledge base.
+
+* [Domande frequenti sulle procedure di supporto](/help/authentication/kickstart/support-procedures-faqs.md)
+Domande frequenti sulle procedure di supporto dell’autenticazione di Adobe Pass.
+
+* [Domande frequenti su Dynamic Client Registration (DCR)](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-faqs.md)\
+  Domande frequenti sulla registrazione client dinamica (DCR, Dynamic Client Registration) di Adobe Pass Authentication.
+
+* [Domande frequenti su REST API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md)\
+  Domande frequenti sull’autenticazione REST API V2 di Adobe Pass.
+
+## ?? Documentazione
+
+**Per Programmatori:**
+
+* [Guida rapida per programmatori](/help/authentication/kickstart/programmer-kickstart-guide.md)\
+  Introduzione all’autenticazione di Adobe Pass.
+
+* [Guida all&#39;integrazione per programmatori](/help/authentication/integration-guide-programmers/programmer-integration-guide-overview.md)\
+  Scopri come integrare l’autenticazione di Adobe Pass con il programmatore.
+
+**Per MVPD:**
+
+* [Guida rapida di MVPD](/help/authentication/kickstart/mvpd-kickstart-guide.md)\
+  Introduzione all’autenticazione di Adobe Pass.
+
+* [Guida all&#39;integrazione per MVPD](/help/authentication/integration-guide-mvpds/mvpd-integration-guide-overview.md)\
+  Scopri come integrare l’autenticazione di Adobe Pass con il tuo MVPD.
+
+*Cerca argomenti specifici utilizzando la barra di ricerca nella parte superiore della pagina o naviga nel menu a sinistra.*
+
+## ??️ Strumenti e librerie
+
+* [Sito Web Adobe Developer](https://developer.adobe.com/adobe-pass/)\
+  Accedi al sito web di Adobe Developer per provare le API REST di autenticazione di Adobe Pass.
+
+* [Verifica token multimediale](https://tve.zendesk.com/hc/en-us/articles/204963159-Media-Token-Verifier-library)\
+  Integra la libreria che convalida i token multimediali generati dall’autenticazione di Adobe Pass.
+
+## ?? Contatto
+
+* [Contatta Il Supporto Adobe](mailto:tve-support@adobe.com)\
+  Per ulteriore assistenza o richieste di informazioni aziendali, invia un’e-mail al team di supporto Adobe.
