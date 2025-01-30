@@ -2,9 +2,9 @@
 title: Benvenuto in Adobe&reg; Pass Authentication!
 description: Panoramica di Adobe&reg; Pass Authentication
 exl-id: a8b01469-3d5f-4a44-9ae8-06a68c29d56d
-source-git-commit: c1f891fabd47954dc6cf76a575c3376ed0f5cd3d
+source-git-commit: 1b9847d8dcb078755fd68a6363972f8973290e52
 workflow-type: tm+mt
-source-wordcount: '292'
+source-wordcount: '293'
 ht-degree: 0%
 
 ---
@@ -27,7 +27,7 @@ L’autenticazione Adobe Pass è una soluzione di adesione per TV Everywhere che
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | <ul><li>[Guida rapida per programmatori](/help/authentication/kickstart/programmer-kickstart-guide.md)</li><li>[Metadati utente](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/user-metadata.md)</li></ul> | <ul><li>[Guida rapida di MVPD](/help/authentication/kickstart/mvpd-kickstart-guide.md)</li><li>[Autenticazione](/help/authentication/integration-guide-mvpds/authn-usecase.md)</li><li>[Autorizzazione](/help/authentication/integration-guide-mvpds/authz-usecase.md)</li><li>[Disconnessione](/help/authentication/integration-guide-mvpds/usecase-mvpd-logout.md)</li></ul> |
 | **Per Client App Nativi** | **Per Tutti** |
-| <ul><li>[Panoramica tecnica di iOS](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-overview.md)</li><li>[Panoramica tecnica di Android](/help/authentication/integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-overview.md)</li></ul> | <ul><li>[Documento tecnico](/help/authentication/kickstart/technical-paper.md)</li><li>[Procedure di riassegnazione](/help/authentication/kickstart/escalation-procedures.md)</li></ul> |
+| <ul><li>[Panoramica tecnica di iOS](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-overview.md)</li><li>[Panoramica tecnica di Android](/help/authentication/integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-overview.md)</li></ul> | <ul><li>[Documento tecnico](/help/authentication/kickstart/technical-paper.md)</li><li>[Domande frequenti sulle procedure di supporto](/help/authentication/kickstart/support-procedures-faqs.md)</li></ul> |
 | **Per Smart Device** |                                                                                                                                                                                                                                                                                                                                                                       |
 | <ul><li>[Panoramica tecnica senza client](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/rest-api-overview.md)</li><li>[API senza client](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/rest-api-reference.md)</li></ul> |                                                                                                                                                                                                                                                                                                                                                                       |
 
@@ -37,7 +37,7 @@ L’autenticazione Adobe Pass è una soluzione di adesione per TV Everywhere che
 >
 > [Inviare un&#39;e-mail al team di supporto](mailto:tve-support@adobe.com) è anche il primo passaggio per qualsiasi segnalazione di problemi o incidenti.
 >
-> Se hai un problema con [SEVERITY 1 LIVE](/help/authentication/kickstart/escalation-procedures.md) e ci hai inviato un&#39;e-mail e sono trascorsi 30 minuti senza risposta, consulta il documento [Procedure di escalation](/help/authentication/kickstart/escalation-procedures.md) per i numeri di telefono da chiamare.
+> Se hai un problema con [SEVERITY 1 LIVE](/help/authentication/kickstart/support-procedures-faqs.md) e ci hai inviato un&#39;e-mail e sono trascorsi 30 minuti senza risposta, consulta il documento [Procedure di escalation](/help/authentication/kickstart/support-procedures-faqs.md) per i numeri di telefono da chiamare.
 
 ## Per trovare ciò di cui hai bisogno {#how-to-search}
 
