@@ -2,9 +2,9 @@
 title: Guida utente di Primetime TVE Dashboard
 description: Guida utente di Primetime TVE Dashboard
 exl-id: 6f7f7901-db3a-4c68-ac6a-27082db9240a
-source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
+source-git-commit: 2b9a8ce374f7a73cd815e9735d672e5c9ba285cc
 workflow-type: tm+mt
-source-wordcount: '5524'
+source-wordcount: '5517'
 ht-degree: 0%
 
 ---
@@ -287,7 +287,7 @@ Per creare una nuova integrazione, segui i passaggi seguenti:
 
 Per aggiornare un’integrazione esistente, fai clic sulla voce della tabella per tale integrazione specifica dalla sezione Integrazioni o dalla sezione Canali, che contiene una scheda Integrazioni.
 
-Quando si utilizza la modalità Workspace di base, questa sezione consente di visualizzare e modificare le impostazioni più comunemente aggiornate, ad esempio i TTL (time-to-live) dei token di autenticazione e autorizzazione e le impostazioni iFrame. Tieni presente che le impostazioni TTL possono mancare per le integrazioni con MVPD che supportano il TTL di persistenza dei token definiti in modo dinamico (vedi la voce 1.19 di [Requisiti di integrazione di MVPD](/help/authentication/integration-guide-mvpds/mvpd-integr-features.md)).
+Quando si utilizza la modalità Workspace di base, questa sezione consente di visualizzare e modificare le impostazioni più comunemente aggiornate, ad esempio i TTL (time-to-live) dei token di autenticazione e autorizzazione e le impostazioni iFrame. Tieni presente che le impostazioni TTL possono mancare per le integrazioni con MVPD che supportano il TTL di persistenza del token definito in modo dinamico.
 
 
 
