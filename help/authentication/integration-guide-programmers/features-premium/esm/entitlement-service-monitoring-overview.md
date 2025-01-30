@@ -2,7 +2,7 @@
 title: Panoramica sul monitoraggio dei servizi di adesione
 description: Panoramica sul monitoraggio dei servizi di adesione
 exl-id: ebd5d650-0a32-4583-9045-5156356494e2
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 49a6a75944549dbfb062b1be8a053e6c99c90dc9
 workflow-type: tm+mt
 source-wordcount: '1303'
 ht-degree: 0%
@@ -129,11 +129,3 @@ Puoi utilizzare i dati ESM per i seguenti casi d’uso:
 - **Debug/Test di qualità** - Poiché i dati sono suddivisi anche per piattaforma, dispositivo, browser e sistema operativo, l&#39;analisi dei pattern di utilizzo può individuare problemi relativi a combinazioni specifiche (ad esempio, Safari su OSX).
 
 - **Analytics** - I dati forniti possono essere utilizzati per integrare/controllare i dati lato client raccolti tramite Adobe Analytics o un altro strumento di analisi.
-
-<!--
-## Related Information {#related-information}
-
-- [ESM API](/help/authentication/entitlement-service-monitoring-api.md)
-- [Degradation API Overview](/help/authentication/degradation-api-overview.md)
-- [Server-side Metrics](/help/authentication/understanding-serverside-metrics.md)
--->

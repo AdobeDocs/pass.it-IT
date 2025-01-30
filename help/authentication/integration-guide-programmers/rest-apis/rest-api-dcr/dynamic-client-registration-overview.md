@@ -2,7 +2,7 @@
 title: Panoramica di Registrazione client dinamici
 description: Panoramica di Registrazione client dinamici
 exl-id: 9f98dfcd-4375-48c3-beff-259dfb1d3a26
-source-git-commit: c1f891fabd47954dc6cf76a575c3376ed0f5cd3d
+source-git-commit: 49a6a75944549dbfb062b1be8a053e6c99c90dc9
 workflow-type: tm+mt
 source-wordcount: '813'
 ht-degree: 0%
@@ -20,8 +20,8 @@ La registrazione client dinamica rappresenta un meccanismo di autorizzazione def
 Adobe Pass fornisce un servizio di registrazione client dinamico che consente di accedere alle seguenti API protette:
 
 * API di gestione autenticazione di Adobe Pass:
-   * [Ripristina API passaggio temporaneo](../../features-premium/temporary-access/temp-pass-feature.md)
-   * [API di degradazione](../../features-premium/degraded-access/degradation-api-overview.md)
+   * [Ripristina API passaggio temporaneo](../../features-premium/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
+   * [API di degradazione](../../features-premium/degraded-access/degradation-feature.md#degradation-api-access)
    * [API MVPD proxy](../../../integration-guide-mvpds/proxy-mvpd-webserv.md)
    * [API di monitoraggio del servizio di adesione](../../features-premium/esm/entitlement-service-monitoring-api.md)
 * API REST di autenticazione Adobe Pass:
@@ -102,7 +102,7 @@ L&#39;istruzione software è un token Web JSON (`JWT`) che contiene informazioni
 
 Per informazioni più dettagliate sulle istruzioni software e sul loro funzionamento, consultare la documentazione di [RFC 7591](https://tools.ietf.org/html/rfc7591).
 
-## Flusso di registrazione client dinamici  {#dynamic-client-registration-flow}
+## Flusso di registrazione client dinamici {#dynamic-client-registration-flow}
 
 In sintesi, il meccanismo dinamico di autorizzazione della registrazione dei clienti prevede diversi passaggi:
 

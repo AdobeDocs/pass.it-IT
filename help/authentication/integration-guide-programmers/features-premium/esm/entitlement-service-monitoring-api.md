@@ -2,7 +2,7 @@
 title: API di monitoraggio del servizio di adesione
 description: API di monitoraggio del servizio di adesione
 exl-id: a9572372-14a6-4caa-9ab6-4a6baababaa1
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 49a6a75944549dbfb062b1be8a053e6c99c90dc9
 workflow-type: tm+mt
 source-wordcount: '2027'
 ht-degree: 0%
@@ -280,12 +280,3 @@ Adobe consiglia vivamente di abilitare il supporto gzip nei client che recuperan
 Per abilitare la compressione Gzip nel client, impostare l&#39;intestazione `Accept-Encoding:` come segue:
 
 * Accept-Encoding: gzip, deflate
-
-
-<!--
-## Related Information {#related-information}
-
-- [ESM Overview](/help/authentication/entitlement-service-monitoring-overview.md)
-- [Degradation API Overview](/help/authentication/degradation-api-overview.md)
-- [Understanding Server-side Metrics](/help/authentication/understanding-serverside-metrics.md)
--->

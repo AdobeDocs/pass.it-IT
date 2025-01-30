@@ -2,7 +2,7 @@
 title: Flussi di accesso danneggiati
 description: REST API V2 - Flussi di accesso danneggiati
 exl-id: 9276f5d9-8b1a-4282-8458-0c1e1e06bcf5
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 49a6a75944549dbfb062b1be8a053e6c99c90dc9
 workflow-type: tm+mt
 source-wordcount: '1605'
 ht-degree: 0%
@@ -19,9 +19,9 @@ ht-degree: 0%
 >
 > L&#39;implementazione REST API V2 è limitata dalla documentazione del [meccanismo di limitazione](/help/authentication/integration-guide-programmers/throttling-mechanism.md).
 
-La degradazione consente di bypassare temporaneamente gli endpoint specifici di autenticazione e autorizzazione MVPD. Di solito, il programmatore avvia questa azione, ma indipendentemente da chi attiva un evento di degrado, l’azione dipende da accordi precedenti conclusi con gli MVPD interessati.
+Degradazione consente di bypassare temporaneamente endpoint specifici di autenticazione e autorizzazione di MVPD. Di solito, il programmatore avvia questa azione, ma indipendentemente da chi attiva un evento di degrado, l’azione dipende da accordi precedenti conclusi con gli MVPD interessati.
 
-Per ulteriori dettagli sulla funzione di degradazione, consulta la documentazione di [degradazione](../../../../features-premium/degraded-access/degradation-api-overview.md).
+Per ulteriori dettagli sulla funzione di degradazione, consulta la documentazione di [degradazione](../../../../features-premium/degraded-access/degradation-feature.md).
 
 I flussi di accesso danneggiati consentono di eseguire query per i seguenti scenari:
 
@@ -44,7 +44,7 @@ Prima di eseguire il flusso di autenticazione durante l’applicazione della deg
 > 
 > <br/>
 > 
-> * L’applicazione di streaming non dispone di un profilo valido per quello specifico MVPD salvato nel backend di Adobe Pass.
+> * L’applicazione di streaming non dispone di un profilo valido per quel MVPD specifico salvato nel backend di Adobe Pass.
 > * Regola di degradazione AuthNAll applicata all&#39;integrazione tra `serviceProvider` e `mvpd` forniti.
 
 ### Flusso di lavoro {#workflow-perform-authentication-while-degradation-is-applied}
@@ -112,7 +112,7 @@ Prima di recuperare le decisioni di autorizzazione durante l’applicazione dell
 > 
 > <br/>
 > 
-> * L&#39;applicazione di streaming non dispone di un profilo valido per quello specifico MVPD.
+> * L’applicazione di streaming non dispone di un profilo valido per quel MVPD specifico.
 > * Regola di degradazione AuthZAll o AuthNAll applicata all&#39;integrazione tra `serviceProvider` e `mvpd` forniti.
 
 ### Flusso di lavoro {#workflow-retrieve-authorization-decisions-while-degradation-is-applied}
@@ -178,7 +178,7 @@ Prima di recuperare le decisioni di preautorizzazione durante l’applicazione d
 >
 > <br/>
 > 
-> * L&#39;applicazione di streaming non dispone di un profilo valido per quello specifico MVPD.
+> * L’applicazione di streaming non dispone di un profilo valido per quel MVPD specifico.
 > * Regola di degradazione AuthZAll o AuthNAll applicata all&#39;integrazione tra `serviceProvider` e `mvpd` forniti.
 
 ### Flusso di lavoro {#workflow-retrieve-preauthorization-decisions-while-degradation-is-applied}
@@ -242,7 +242,7 @@ Segui i passaggi forniti per implementare il flusso di preautorizzazione mentre 
 
 ### Prerequisiti {#prerequisites-retrieve-profile-while-degradation-is-applied}
 
-Prima di recuperare il profilo per un MVPD specifico durante l&#39;applicazione della degradazione, verificare che siano soddisfatti i seguenti prerequisiti:
+Prima di recuperare il profilo per un MVPD specifico durante l’applicazione della degradazione, verifica che siano soddisfatti i seguenti prerequisiti:
 
 * L&#39;applicazione di streaming, che ha un identificatore `mvpd` selezionato o memorizzato nella cache, desidera recuperare il profilo per un MVPD specifico.
 
@@ -252,18 +252,18 @@ Prima di recuperare il profilo per un MVPD specifico durante l&#39;applicazione 
 >
 > <br/>
 > 
-> * L&#39;applicazione di streaming non dispone di un profilo valido per quello specifico MVPD.
+> * L’applicazione di streaming non dispone di un profilo valido per quel MVPD specifico.
 > * Regola di degradazione AuthNAll applicata all&#39;integrazione tra `serviceProvider` e `mvpd` forniti.
 
 ### Flusso di lavoro {#workflow-retrieve-profile-while-degradation-is-applied}
 
-Segui i passaggi forniti per implementare il flusso di recupero del profilo per un MVPD specifico mentre viene applicata la degradazione, come mostrato nel diagramma seguente.
+Segui i passaggi forniti per implementare il flusso di recupero del profilo per un MVPD specifico mentre viene applicata la degradazione, come illustrato nel diagramma seguente.
 
 ![Recupera il profilo durante l&#39;applicazione della degradazione](../../../../../assets/rest-api-v2/flows/degraded-access-flows/rest-api-v2-retrieve-profile-while-degradation-is-applied-flow.png)
 
 *Recupera il profilo durante l&#39;applicazione della degradazione*
 
-1. **Recupera profilo per mvpd specifico:** L&#39;applicazione di streaming raccoglie tutti i dati necessari per recuperare le informazioni sul profilo per MVPD specifico inviando una richiesta all&#39;endpoint Profili.
+1. **Recupera profilo per mvpd specifico:** L&#39;applicazione di streaming raccoglie tutti i dati necessari per recuperare le informazioni sul profilo per tale MVPD specifico inviando una richiesta all&#39;endpoint Profili.
 
    >[!IMPORTANT]
    >
