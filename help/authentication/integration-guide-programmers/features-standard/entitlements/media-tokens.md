@@ -1,9 +1,10 @@
 ---
 title: Token multimediali
 description: Token multimediali
-source-git-commit: dbca6c630fcbfcc5b50ccb34f6193a35888490a3
+exl-id: 7e486d2c-e078-464d-90b1-14e2cfb4d20a
+source-git-commit: e448427ae4a36c4c6cb9f9c1cb4d0cc5c6d564ed
 workflow-type: tm+mt
-source-wordcount: '654'
+source-wordcount: '653'
 ht-degree: 0%
 
 ---
@@ -12,9 +13,9 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->Il contenuto di questa pagina viene fornito solo a scopo informativo. L’utilizzo di questa API richiede una licenza corrente da Adobe. Non è consentito alcun uso non autorizzato.
+> Il contenuto di questa pagina viene fornito solo a scopo informativo. L’utilizzo di questa API richiede una licenza corrente da Adobe. Non è consentito alcun uso non autorizzato.
 
-Il token multimediale è un token generato dall’autenticazione di Adobe Pass in seguito a una decisione di autorizzazione destinata a fornire accesso di visualizzazione al contenuto protetto (risorsa). Il token multimediale è valido per un periodo di tempo limitato e breve (pochi minuti) specificato al momento del rilascio, che indica il periodo di tempo che deve essere utilizzato dall’applicazione client prima di richiederne uno nuovo.
+Il token multimediale è un token generato dall&#39;autenticazione Adobe Pass [REST API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md) in seguito a una decisione di autorizzazione destinata a fornire accesso di visualizzazione al contenuto protetto (risorsa). Il token multimediale è valido per un periodo di tempo limitato e breve (pochi minuti) specificato al momento del rilascio, che indica il periodo di tempo in cui deve essere verificato e utilizzato dall’applicazione client.
 
 Il token multimediale è costituito da una stringa firmata basata su Infrastruttura a chiave pubblica (PKI) inviata in testo non crittografato. Con la protezione basata su PKI, il token viene firmato utilizzando una chiave asimmetrica rilasciata a Adobe da un&#39;Autorità di certificazione (CA).
 
@@ -49,7 +50,7 @@ La libreria Media Token Verifier rappresentata dall&#39;archivio Java `mediatoke
 
 La classe `ITokenVerifier` definisce i seguenti metodi:
 
-* Metodo `isValid()` utilizzato per convalidare il token multimediale. Accetta un singolo argomento, l&#39;identificatore [della risorsa](/help/authentication/integration-guide-programmers/features-standard/entitlements/protected-resources.md). Se l&#39;identificatore di risorsa fornito è `null`, il metodo convaliderà solo l&#39;autenticità e il periodo di validità del token multimediale.
+* Metodo `isValid()` utilizzato per convalidare il token multimediale. Accetta un singolo argomento, l&#39;identificatore [della risorsa](/help/authentication/integration-guide-programmers/features-standard/entitlements/decisions.md#resource-identifier). Se l&#39;identificatore di risorsa fornito è `null`, il metodo convaliderà solo l&#39;autenticità e il periodo di validità del token multimediale.
 
   Il metodo `isValid()` restituisce uno dei seguenti valori di stato:
 
@@ -193,7 +194,7 @@ Il token multimediale può essere recuperato utilizzando la seguente API:
 
 * [Recuperare le decisioni di autorizzazione utilizzando mvpd specifico](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)
 
-Per informazioni sulla decisione di autorizzazione e sui modelli di token multimediali, consulta le sezioni **Risposta** e **Esempi** dell&#39;API precedente.
+Consulta le sezioni **Risposta** e **Esempi** dell&#39;API precedente per comprendere la struttura delle decisioni di autorizzazione e dei token multimediali.
 
 Per ulteriori dettagli su come e quando integrare la precedente API, consulta il seguente documento:
 
