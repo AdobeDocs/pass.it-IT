@@ -2,9 +2,9 @@
 title: Panoramica di MVPD
 description: Panoramica di MVPD
 exl-id: b918550b-96a8-4e80-af28-0a2f63a02396
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
 workflow-type: tm+mt
-source-wordcount: '2734'
+source-wordcount: '2727'
 ht-degree: 0%
 
 ---
@@ -55,11 +55,11 @@ L’autenticazione Adobe Pass supporta gli standard emergenti per TV Everywhere?
 
 
 
-Che cos’è l’autenticazione? L&#39;autenticazione è il processo in cui un MVPD conferma che un determinato utente è un cliente noto.
+Che cos’è l’autenticazione? L’autenticazione è il processo in cui un MVPD conferma che un determinato utente è un cliente noto.
 
 
 
-Cos’è l’autorizzazione? L&#39;autorizzazione è il processo in cui un MVPD conferma che un utente autenticato dispone di un abbonamento valido a una determinata risorsa.
+Cos’è l’autorizzazione? L’autorizzazione è il processo in cui un MVPD conferma che un utente autenticato ha una sottoscrizione valida a una determinata risorsa.
 
 
 
@@ -77,25 +77,25 @@ Servizi web senza client (per dispositivi non compatibili con il web): servizi w
 
 >[!NOTE]
 >
->In qualità di MVPD, i servizi web devono essere in grado di riconoscere le richieste di autenticazione e autorizzazione da parte di Adobe Pass Authentication e di rispondere con i dati richiesti nel formato previsto.
+>In qualità di MVPD, i servizi web devono essere in grado di riconoscere le richieste di autenticazione e autorizzazione dell’autenticazione di Adobe Pass e di rispondere con i dati richiesti nel formato previsto.
 >
 
-L’autenticazione Adobe Pass consente di fornire ai clienti la gestione federata delle identità, nota anche come autenticazione e autorizzazione Single Sign-On (SSO). Con l’autenticazione di Adobe Pass, gli abbonati non dovranno effettuare di nuovo l’accesso dopo la prima autenticazione, fino a quando quest’ultima sarà consentita dall’MVPD. In genere, 30 giorni. A tal fine, l’autenticazione Adobe Pass fornisce ai nostri clienti un dominio comune per i token di autenticazione. Queste informazioni sullo stato di autenticazione sono disponibili per tutti i siti partecipanti che sono integrati con un dato MVPD.
+L’autenticazione Adobe Pass consente di fornire ai clienti la gestione federata delle identità, nota anche come autenticazione e autorizzazione Single Sign-On (SSO). Con l’autenticazione di Adobe Pass, gli abbonati non dovranno effettuare di nuovo l’accesso dopo la prima autenticazione, fino a quando quest’ultima sarà consentita da MVPD. In genere, 30 giorni. A tal fine, l’autenticazione Adobe Pass fornisce ai nostri clienti un dominio comune per i token di autenticazione. Queste informazioni sullo stato di autenticazione sono disponibili per tutti i siti partecipanti integrati con un determinato MVPD.
 
 
 Attualmente, la maggior parte delle integrazioni di autenticazione Adobe Pass con MVPD utilizza il protocollo SAML, uno degli standard di autenticazione primari. Adobe Pass Authentication funge da provider di servizi proxy nell&#39;architettura SAML e mantiene la risposta di autenticazione SAML come token protetto nel dominio comune Adobe. L’autenticazione di Adobe Pass è conforme a SAML 2.0. Tuttavia, anche se a questo punto l’autenticazione Adobe Pass viene generalmente utilizzata con soluzioni SAML SSO, l’architettura di autenticazione Adobe Pass non è associata ad alcun protocollo specifico. Pertanto, è possibile aggiungere nel tempo il supporto per nuovi protocolli, ad esempio quelli basati su OAuth 2.0 o su protocolli personalizzati.
 
 
-Adobe collabora con il team tecnico di MVPD per configurare l’autenticazione di Adobe Pass in modo da soddisfare le esigenze di eventuali integrazioni esistenti. L&#39;integrazione è gratuita per gli MVPD, presumendo un&#39;integrazione &quot;standard&quot; e requisiti minimi di supporto (documentazione e supporto e-mail di base). Se un MVPD richiede un supporto significativo o una tempistica aumentata, può essere addebitata una tariffa di supporto, o il fornitore potrebbe voler lavorare con una terza parte a conoscenza della nostra soluzione, come Synacor.
+Adobe collabora con un team tecnico di MVPD per configurare l’autenticazione di Adobe Pass in modo da soddisfare le esigenze delle integrazioni esistenti. L&#39;integrazione è gratuita per gli MVPD, presumendo un&#39;integrazione &quot;standard&quot; e requisiti minimi di supporto (documentazione e supporto e-mail di base). Se un MVPD richiede un supporto significativo o una tempistica aumentata, è possibile che venga addebitata una tariffa di supporto o che il fornitore desideri collaborare con una terza parte che ha familiarità con la nostra soluzione, come Synacor.
 
 
-L’autenticazione Adobe Pass supporta anche la gestione efficiente della logica di business MVPD, come segue:
+L’autenticazione di Adobe Pass supporta anche la gestione efficiente della logica di business di MVPD, come segue:
 
-Per la logica di business che è indipendente e può essere applicata dal MVPD quando viene ricevuta una richiesta di autorizzazione, Adobe fornisce i dati necessari necessari per supportare l&#39;applicazione della logica di business quando il MVPD riceve una richiesta di autorizzazione. Questi dati possono includere, tra l’altro, l’ID dispositivo univoco dell’utente che effettua la richiesta e l’indirizzo IP del dispositivo.
+Per la logica di business indipendente e che può essere applicata da MVPD quando viene ricevuta una richiesta di autorizzazione, Adobe fornisce i dati necessari necessari per supportare l’applicazione della logica di business quando MVPD riceve una richiesta di autorizzazione. Questi dati possono includere, tra l’altro, l’ID dispositivo univoco dell’utente che effettua la richiesta e l’indirizzo IP del dispositivo.
 
-Per la logica di business che richiede l’intervento dell’utente e/o la gestione specifica da parte della soluzione Adobe, Adobe può mantenere alcune proprietà personalizzate per ogni MVPD. Queste configurazioni/policy specifiche per MVPD includono l’abilitazione di flussi di lavoro predefiniti che possono essere avviati in punti specifici del flusso di lavoro di primo livello. Per informazioni dettagliate sul supporto delle proprietà personalizzate, contatta il rappresentante del tuo Adobe.
+Per la logica di business che richiede l’intervento dell’utente e/o la gestione specifica da parte della soluzione Adobe, Adobe può mantenere alcune proprietà personalizzate per ogni MVPD. Queste configurazioni/policy specifiche per MVPD includono l’abilitazione di flussi di lavoro predefiniti che possono essere avviati in punti specifici del flusso di lavoro di livello superiore. Per informazioni dettagliate sul supporto delle proprietà personalizzate, contatta il rappresentante del tuo Adobe.
 
-Il diagramma seguente illustra la relazione tra MVPD e il programmatore con questi componenti di autenticazione di Adobe Pass:
+Il diagramma seguente illustra la relazione tra MVPD e il programmatore e questi componenti di autenticazione di Adobe Pass:
 
 ![](../assets/high-level-architecture-nflows.png)
 
@@ -111,15 +111,15 @@ Di seguito viene fornita una panoramica di alcuni dei componenti principali dell
 
 ### Access Enabler / Servizi Web senza client {#ae}
 
-L’Access Enabler facilita tutte le interazioni di autenticazione e autorizzazione con l’utente ed è eseguito localmente sul suo sistema. È l’Access Enabler che gestisce i flussi di lavoro effettivi per adesione con MVPD, mentre il Programmatore mantiene la responsabilità per la pagina web di livello superiore o l’applicazione del lettore.
+L’Access Enabler facilita tutte le interazioni di autenticazione e autorizzazione con l’utente ed è eseguito localmente sul suo sistema. È l’Access Enabler che gestisce i flussi di lavoro effettivi per i diritti con MVPD, mentre il Programmatore mantiene la responsabilità per la pagina web di livello superiore o l’applicazione lettore.
 
-I servizi web senza client vengono forniti dall’autenticazione di Adobe Pass per i dispositivi che non possono eseguire il rendering di pagine web.  Per questi dispositivi, il processo di adesione viene avviato e il contenuto visualizzato sul dispositivo intelligente, mentre l’autenticazione con un MVPD avviene su un dispositivo compatibile con il web (PC, smartphone e tablet).
+I servizi web senza client vengono forniti dall’autenticazione di Adobe Pass per i dispositivi che non possono eseguire il rendering di pagine web.  Per questi dispositivi, il processo di adesione viene avviato e il contenuto visualizzato sul dispositivo avanzato, mentre l’autenticazione con un MVPD avviene su un dispositivo compatibile con il web (PC, smartphone e tablet).
 
 L&#39;Access Enabler:
 
 * Avvia flussi di lavoro di autenticazione e autorizzazione specifici per MVPD.
 * Memorizza nella cache le risposte di autorizzazione riuscite per risorsa/canale del programmatore per ridurre al minimo il traffico di richieste non necessario.
-* Può essere configurato per flussi di lavoro predefiniti specifici per ogni MVPD, ad esempio la registrazione esplicita del dispositivo.
+* Può essere configurato per flussi di lavoro predefiniti specifici per ogni MVPD, ad esempio per la registrazione esplicita del dispositivo.
 * È disponibile nei seguenti formati:
    * Un file SWF che il runtime di Flash Player può eseguire
    * Un file JS eseguito direttamente dal browser
@@ -140,7 +140,7 @@ La soluzione Adobe Pass per l’autenticazione è incentrata sulla generazione d
 
 Esistono tre tipi di token rilasciati durante i flussi di lavoro di autenticazione/autorizzazione. Due sono di &quot;lunga durata&quot; e forniscono continuità nell’esperienza di visualizzazione dell’utente. Il terzo, un token di breve durata, fornisce supporto per le best practice del settore per ridurre le frodi attraverso la copia di flusso. I valori time-to-live (&quot;TTL&quot;) per i token sono impostati in base agli accordi tra MVPD e Programmatori. Puoi scegliere un valore TTL che soddisfi al meglio le esigenze della tua azienda e dei tuoi clienti.
 
-**Token di autenticazione di lunga durata**. Il completamento dell’autenticazione si verifica quando un cliente utilizza l’autenticazione Adobe Pass per accedere correttamente al proprio account MVPD. L’autenticazione Adobe Pass genera quindi un token di autenticazione di lunga durata (&quot;authN&quot;) associato al dispositivo richiedente e (a seconda dell’MVPD) un identificatore univoco globale (&quot;GUID&quot;) che identifica l’utente in modo anonimo.
+**Token di autenticazione di lunga durata**. L’autenticazione viene eseguita correttamente una volta che un cliente utilizza l’autenticazione Adobe Pass per accedere correttamente al proprio account MVPD. L’autenticazione di Adobe Pass genera quindi un token di autenticazione di lunga durata (&quot;authN&quot;) associato al dispositivo richiedente e (a seconda di MVPD) un identificatore univoco globale (&quot;GUID&quot;) che identifica l’utente in modo anonimo.
 
 **Token di autorizzazione di lunga durata**. In caso di esito positivo dell’autorizzazione, Adobe Pass Authentication crea un token di autorizzazione di lunga durata (&quot;authZ&quot;). Questo token non è portatile, in quanto è associato al dispositivo richiedente e a una risorsa protetta specifica (ad esempio un canale, una serie o un episodio). L’Access Enabler utilizza il token authZ di lunga durata per creare i token multimediali di breve durata utilizzati per l’accesso effettivo alla visualizzazione.
 
@@ -148,7 +148,7 @@ Esistono tre tipi di token rilasciati durante i flussi di lavoro di autenticazio
 
 ## Ciclo di vita dell&#39;integrazione MVPD {#lifecycle}
 
-L’illustrazione seguente mostra il ciclo di vita dell’integrazione tra l’autenticazione Adobe Pass e un MVPD.
+L’illustrazione seguente mostra il ciclo di vita dell’integrazione tra l’autenticazione di Adobe Pass e un MVPD.
 
 ![](../assets/mvpd-int-lifecycle.png)
 
@@ -166,13 +166,13 @@ Il seguente diagramma di flusso illustra il processo complessivo di conferma del
 
 I passaggi seguenti presentano un esempio del flusso di autenticazione di Adobe Pass Authentication.  Questa è la parte del processo di adesione in cui un programmatore determina se l&#39;utente è un cliente valido di un MVPD.  In questo caso, l’utente è un abbonato valido a un MVPD.  L’utente sta tentando di visualizzare il contenuto protetto utilizzando un’applicazione di Flash del programmatore:
 
-1. L’utente passa alla pagina web del programmatore, che carica l’applicazione di Flash del programmatore e i componenti Adobe Pass Authentication Access Enabler sul computer dell’utente. L&#39;applicazione di Flash utilizza Access Enabler per impostare l&#39;identificazione del programmatore con l&#39;autenticazione di Adobe Pass e Adobe Pass Authentication prepara l&#39;attivatore di accesso con i dati di configurazione e stato per il programmatore (il &quot;richiedente&quot;). L’Access Enabler deve ricevere questi dati dal server prima di eseguire qualsiasi altra chiamata API.  Nota tecnica: il programmatore ha impostato la propria identità con il metodo `setRequestor()` di Access Enabler. Per ulteriori dettagli, vedere la [Guida all&#39;integrazione dei programmatori](/help/authentication/integration-guide-programmers/programmer-integration-guide-overview.md).
+1. L’utente passa alla pagina web del programmatore, che carica l’applicazione di Flash del programmatore e i componenti Adobe Pass Authentication Access Enabler sul computer dell’utente. L&#39;applicazione di Flash utilizza Access Enabler per impostare l&#39;identificazione del programmatore con l&#39;autenticazione di Adobe Pass e Adobe Pass Authentication prepara l&#39;attivatore di accesso con i dati di configurazione e stato per il programmatore (il &quot;richiedente&quot;). L’Access Enabler deve ricevere questi dati dal server prima di eseguire qualsiasi altra chiamata API.  Nota tecnica: il programmatore ha impostato la propria identità con il metodo `setRequestor()` dell&#39;Access Enabler.
 1. Quando l&#39;utente cerca di visualizzare il contenuto protetto del programmatore, l&#39;applicazione del programmatore presenta all&#39;utente un elenco di MVPD, da cui l&#39;utente seleziona un provider.
-1. L’utente viene reindirizzato a un server di autenticazione Adobe Pass, in cui viene creata una richiesta SAML crittografata per l’MVPD selezionato dall’utente. Questa richiesta viene inviata come richiesta di autenticazione per conto del programmatore a MVPD. A seconda del sistema dell&#39;MVPD, il browser dell&#39;utente viene quindi reindirizzato al sito dell&#39;MVPD per effettuare l&#39;accesso, oppure viene creato un iFrame di accesso nell&#39;app del programmatore.
+1. L’utente viene reindirizzato a un server di autenticazione Adobe Pass, in cui viene creata una richiesta SAML crittografata per il MVPD selezionato dall’utente. Questa richiesta viene inviata al MVPD come richiesta di autenticazione per conto del programmatore. A seconda del sistema del MVPD, il browser dell’utente viene quindi reindirizzato al sito del MVPD per effettuare l’accesso oppure viene creato un iFrame di accesso nell’app del programmatore.
 1. In entrambi i casi (redirect o iFrame), MVPD accetta la richiesta e visualizza la relativa pagina di accesso.
-1. L&#39;utente accede con MVPD, quest&#39;ultimo convalida lo stato dell&#39;utente come cliente pagante e quindi crea la propria sessione HTTP.
-1. Quando l’utente viene convalidato, MVPD crea una risposta (SAML e crittografata) che viene inviata nuovamente all’autenticazione di Adobe Pass.
-1. L&#39;autenticazione di Adobe Pass riceve la risposta MVPD, rileva che è aperta una sessione HTTP di autenticazione di Adobe Pass, convalida la risposta [SAML](https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language) da MVPD e reindirizza al sito del programmatore.
+1. L’utente accede con MVPD, MVPD ne convalida lo stato come cliente pagante e quindi MVPD crea la propria sessione HTTP.
+1. Quando l’utente viene convalidato, MVPD crea una risposta (SAML e crittografata) che MVPD invia nuovamente all’autenticazione di Adobe Pass.
+1. L&#39;autenticazione di Adobe Pass riceve la risposta di MVPD, rileva che è aperta una sessione HTTP di autenticazione di Adobe Pass, convalida la risposta [SAML](https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language) da MVPD e reindirizza al sito del programmatore.
 1. Il sito del programmatore viene ricaricato, l&#39;Access Enabler viene ricaricato e il programmatore chiama nuovamente setRequestor().  La seconda chiamata a setRequestor() è necessaria perché la configurazione corrente è stata modificata. È ora presente un flag che informa Access Enabler che un token AuthN è in attesa di essere generato sul server.
 1. Access Enabler rileva un’autenticazione in sospeso e richiede il token dal server di autenticazione di Adobe Pass. Il token viene recuperato dal server richiamando le funzionalità DRM del Flash Player.
 1. Il token AuthN viene memorizzato nella cache LSO del Flash Player del programmatore; l’autenticazione è ora completa e la sessione viene eliminata sul server di autenticazione di Adobe Pass.
@@ -182,8 +182,8 @@ I passaggi seguenti presentano un esempio del flusso di autenticazione di Adobe 
 I seguenti passaggi continuano dalla sezione precedente ([Passaggi di autenticazione](#authn-steps)):
 
 1. Quando l’utente tenta di accedere al contenuto protetto del Programmatore, l’applicazione del Programmatore verifica innanzitutto la presenza di un token AuthN sul computer o sul dispositivo locale dell’utente.  Se il token non è presente, vengono seguiti i [passaggi di autenticazione](#authn-steps) indicati sopra.  Se il token AuthN è presente, il flusso di autorizzazione procede con l’applicazione del programmatore che avvia una chiamata all’Access Enabler con una richiesta per ottenere i diritti di visualizzazione dell’utente per un elemento specifico di contenuto protetto.
-1. L’elemento specifico di contenuto protetto è rappresentato da un &quot;identificatore di risorsa&quot;.  Potrebbe trattarsi di una stringa semplice o di una struttura più complessa, ma in ogni caso la natura dell’identificatore della risorsa viene concordata in anticipo tra il Programmatore e l’MVPD.  L&#39;applicazione del programmatore passa l&#39;identificatore della risorsa all&#39;Access Enabler.  Access Enabler verifica la presenza di un token AuthZ sul computer o sul dispositivo locale dell&#39;utente.  Se il token AuthZ non è presente, Access Enabler trasmette la richiesta al server di autenticazione Adobe Pass back-end.
-1. Il server di autenticazione di Adobe Pass comunica con l’endpoint di autorizzazione MVPD utilizzando protocolli standardizzati.  Se la risposta dell’MVPD indica che l’utente ha il diritto di visualizzare il contenuto protetto, il server di autenticazione di Adobe Pass crea un token AuthZ e lo trasmette nuovamente all’Access Enabler, che memorizza il token AuthZ sul computer dell’utente.
+1. L’elemento specifico di contenuto protetto è rappresentato da un &quot;identificatore di risorsa&quot;.  Potrebbe trattarsi di una stringa semplice o di una struttura più complessa, ma in ogni caso la natura dell’identificatore della risorsa viene concordata in anticipo tra il Programmatore e MVPD.  L&#39;applicazione del programmatore passa l&#39;identificatore della risorsa all&#39;Access Enabler.  Access Enabler verifica la presenza di un token AuthZ sul computer o sul dispositivo locale dell&#39;utente.  Se il token AuthZ non è presente, Access Enabler trasmette la richiesta al server di autenticazione Adobe Pass back-end.
+1. Il server di autenticazione di Adobe Pass comunica con l’endpoint di autorizzazione MVPD utilizzando protocolli standardizzati.  Se la risposta di MVPD indica che l’utente ha il diritto di visualizzare il contenuto protetto, il server di autenticazione di Adobe Pass crea un token AuthZ e lo trasmette nuovamente all’Access Enabler, che memorizza il token AuthZ sul computer dell’utente.
 1. Con un token AuthZ memorizzato sul computer o sul dispositivo dell’utente, l’applicazione del programmatore chiama l’Access Enabler per ottenere un token multimediale dal server di autenticazione di Adobe Pass e fornisce tale token all’applicazione del programmatore.
 1. Infine, l’applicazione del programmatore utilizza il componente Media Token Verifier per confermare che l’utente giusto sta visualizzando il contenuto corretto e, con il Media Token attivo, può visualizzare il contenuto protetto.
 

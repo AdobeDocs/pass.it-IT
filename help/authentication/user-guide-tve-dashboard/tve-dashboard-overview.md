@@ -2,9 +2,9 @@
 title: Panoramica del dashboard di TVE
 description: Conoscere TVE Dashboard e le risorse.
 exl-id: 91baeb34-a32a-4dc3-94d8-f6cfca59dc4e
-source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
+source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
 workflow-type: tm+mt
-source-wordcount: '303'
+source-wordcount: '305'
 ht-degree: 0%
 
 ---
@@ -52,6 +52,6 @@ Adobe consiglia di utilizzare le risorse seguenti per comprendere in modo approf
 
 * [Documento tecnico TVE](/help/authentication/kickstart/technical-paper.md)
 * [Guida di Kick-Start per programmatori](/help/authentication/kickstart/programmer-kickstart-guide.md)
-* [Flusso diritto](/help/authentication/integration-guide-programmers/entitlement-flow.md)
+* [Panoramica della Guida all’integrazione dei programmatori](/help/authentication/integration-guide-programmers/programmer-integration-guide-overview.md)
 * [Glossario di Dynamic Client Registration (DCR)](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-glossary.md)
 * [Glossario REST API v2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md)

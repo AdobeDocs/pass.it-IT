@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Autenticazione Adobe Pass
 user-guide-description: L’autenticazione Adobe Pass è una soluzione di gestione dei diritti per TV Everywhere, che fornisce un framework modulare per determinare se chi richiede l’accesso a una risorsa ne abbia diritto.
-source-git-commit: ffedb5db269644c8d9c81480d27dff43bd4eb5d6
+source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
 workflow-type: tm+mt
-source-wordcount: '1240'
+source-wordcount: '1231'
 ht-degree: 2%
 
 ---
@@ -46,12 +46,14 @@ ht-degree: 2%
       + [Note sulla versione di Adobe Pass Authentication iOS/tvOS 3.7.0](notes-releases/authn-rn-ios-tvos-370.md)
 + Kick-Start {#kickstart}
    + [Documento tecnico](kickstart/technical-paper.md)
-   + [Panoramica sui programmatori](kickstart/programmer-overview.md)
-   + [Panoramica di MVPD](kickstart/mvpd-overview.md)
    + [Guida introduttiva per programmatori](kickstart/programmer-kickstart-guide.md)
    + [Guida di Kick-Start per MVPD](kickstart/mvpd-kickstart-guide.md)
+   + [Panoramica di MVPD](kickstart/mvpd-overview.md)
    + [Domande frequenti sulle procedure di supporto](kickstart/support-procedures-faqs.md)
 + Guida All&#39;Integrazione Per I Programmatori {#integration-guide-programmers}
+   + [Guida all’integrazione dei programmatori](integration-guide-programmers/programmer-integration-guide-overview.md)
+   + [Requisiti minimi di sistema](integration-guide-programmers/minimum-system-requirements.md)
+   + [Meccanismo di limitazione](integration-guide-programmers/throttling-mechanism.md)
    + API REST {#rest-apis}
       + DCR REST API {#rest-api-dcr}
          + [Panoramica di Registrazione client dinamici](integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)
@@ -120,9 +122,9 @@ ht-degree: 2%
                + [Intestazione - AP-TempPass-Identity](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-temppass-identity.md)
    + Funzioni standard {#standard-features}
       + Diritti {#entitlements}
+         + [Metadati utente](integration-guide-programmers/features-standard/entitlements/user-metadata.md)
          + [Decisioni](integration-guide-programmers/features-standard/entitlements/decisions.md)
          + [Token multimediali](integration-guide-programmers/features-standard/entitlements/media-tokens.md)
-         + [Metadati utente](integration-guide-programmers/features-standard/entitlements/user-metadata.md)
       + Segnalazione errori {#error-reporting}
          + [Codici di errore migliorati](integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md)
       + Accesso Single Sign-On {#sso-access}
@@ -257,11 +259,6 @@ ht-degree: 2%
             + [(Legacy) Utilizzo di Charles Proxy](integration-guide-programmers/legacy/notes-technical/using-charles-proxy.md)
             + [(Legacy) Monitoraggio di Adobe Pass Adobe PayTV Pass](integration-guide-programmers/legacy/notes-technical/monitoring-adobe-pay-tv-pass.md)
             + [(Legacy) Come verificare i flussi di autenticazione e autorizzazione utilizzando il sito di test di Adobe API](integration-guide-programmers/legacy/notes-technical/test-authn-authz-flows-using-adobes-api-test-site.md)
-   + [Panoramica della guida all’integrazione dei programmatori](integration-guide-programmers/programmer-integration-guide-overview.md)
-   + [Flusso adesione programmatore](integration-guide-programmers/entitlement-flow.md)
-   + [Casi di utilizzo dei programmatori](integration-guide-programmers/programmer-use-cases.md)
-   + [Meccanismo di limitazione](integration-guide-programmers/throttling-mechanism.md)
-   + [Requisiti minimi di sistema](integration-guide-programmers/minimum-system-requirements.md)
 + Guida All&#39;Integrazione Per MVPD {#integration-guide-mvpds}
    + [Funzioni di integrazione](integration-guide-mvpds/mvpd-integr-features.md)
    + [Autenticazione](integration-guide-mvpds/authn-usecase.md)

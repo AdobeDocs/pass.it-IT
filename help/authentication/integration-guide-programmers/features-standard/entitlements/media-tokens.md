@@ -2,9 +2,9 @@
 title: Token multimediali
 description: Token multimediali
 exl-id: 7e486d2c-e078-464d-90b1-14e2cfb4d20a
-source-git-commit: e448427ae4a36c4c6cb9f9c1cb4d0cc5c6d564ed
+source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
 workflow-type: tm+mt
-source-wordcount: '653'
+source-wordcount: '667'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,9 @@ ht-degree: 0%
 >
 > Il contenuto di questa pagina viene fornito solo a scopo informativo. L’utilizzo di questa API richiede una licenza corrente da Adobe. Non è consentito alcun uso non autorizzato.
 
-Il token multimediale è un token generato dall&#39;autenticazione Adobe Pass [REST API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md) in seguito a una decisione di autorizzazione destinata a fornire accesso di visualizzazione al contenuto protetto (risorsa). Il token multimediale è valido per un periodo di tempo limitato e breve (pochi minuti) specificato al momento del rilascio, che indica il periodo di tempo in cui deve essere verificato e utilizzato dall’applicazione client.
+Il token multimediale è un token generato dall&#39;autenticazione Adobe Pass [REST API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md) in seguito a una decisione di autorizzazione destinata a fornire accesso di visualizzazione al contenuto protetto (risorsa).
+
+Il token multimediale è valido per un periodo di tempo limitato e breve (predefinito 7 minuti) specificato al momento del rilascio, che indica il limite di tempo prima che debba essere verificato e utilizzato dall’applicazione client. Il token multimediale è limitato all’uso una tantum e non deve mai essere memorizzato nella cache.
 
 Il token multimediale è costituito da una stringa firmata basata su Infrastruttura a chiave pubblica (PKI) inviata in testo non crittografato. Con la protezione basata su PKI, il token viene firmato utilizzando una chiave asimmetrica rilasciata a Adobe da un&#39;Autorità di certificazione (CA).
 
@@ -25,7 +27,7 @@ Il Media Token Verifier è una libreria distribuita da Adobe Pass Authentication
 
 ## Media Token Verifier {#media-token-verifier}
 
-Adobe Pass Authentication consiglia ai programmatori di inviare il token multimediale a un servizio back-end che integri la libreria Media Token Verifier per garantire un accesso sicuro prima di avviare il flusso video. Il valore TTL (time-to-live) del token multimediale è progettato per tenere conto di potenziali problemi di sincronizzazione dell’orologio tra il server che genera il token e il server di convalida.
+Adobe Pass Authentication consiglia ai programmatori di inviare il token multimediale al proprio servizio back-end integrando la libreria Media Token Verifier per garantire un accesso sicuro prima di avviare il flusso video. Il valore TTL (time-to-live) del token multimediale è progettato per tenere conto di potenziali problemi di sincronizzazione dell’orologio tra il server che genera il token e il server di convalida.
 
 L’autenticazione di Adobe Pass consiglia vivamente di non analizzare il token multimediale e di estrarne direttamente i dati, in quanto il formato del token non è garantito e potrebbe cambiare in futuro. La libreria Media Token Verifier deve essere l’unico strumento utilizzato per analizzare il contenuto del token.
 

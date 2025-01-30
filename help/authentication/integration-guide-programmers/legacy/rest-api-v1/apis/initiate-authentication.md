@@ -2,9 +2,9 @@
 title: Avvia autenticazione
 description: Avvia autenticazione
 exl-id: 55dddd29-68d6-4aae-8744-307fea285e29
-source-git-commit: c1f891fabd47954dc6cf76a575c3376ed0f5cd3d
+source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
 workflow-type: tm+mt
-source-wordcount: '314'
+source-wordcount: '306'
 ht-degree: 0%
 
 ---
@@ -95,7 +95,7 @@ Avvia il processo di autenticazione informando di un evento di selezione MVPD. C
 
 ### **Note** {#notes}
 
-* Il valore del parametro `domain_name` deve essere impostato su uno dei nomi di dominio registrati con l&#39;autenticazione Adobe Pass. Per ulteriori dettagli, consultare [Registrazione e inizializzazione](/help/authentication/kickstart/programmer-overview.md).
+* Il valore del parametro `domain_name` deve essere impostato su uno dei nomi di dominio registrati con l&#39;autenticazione Adobe Pass.
 
 * [Evita di usare &#39;&amp;&#39;reg\_code nella richiesta /authenticate (nota tecnica)](/help/authentication/integration-guide-programmers/legacy/notes-technical/clientless-avoid-using-reg-code-in-authenticate-request.md)
 

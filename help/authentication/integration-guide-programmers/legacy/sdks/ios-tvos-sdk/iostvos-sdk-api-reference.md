@@ -2,9 +2,9 @@
 title: Riferimento API per iOS/tvOS
 description: Riferimento API per iOS/tvOS
 exl-id: 017a55a8-0855-4c52-aad0-d3d597996fcb
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
 workflow-type: tm+mt
-source-wordcount: '6956'
+source-wordcount: '6942'
 ht-degree: 0%
 
 ---
@@ -26,7 +26,6 @@ Questa pagina descrive i metodi e le funzioni di callback esposti dal client nat
 
 Documentazione associata:
 
-* Per una descrizione del flusso di adesione all&#39;autenticazione di base di Adobe Pass, vedere [Flusso di adesione](/help/authentication/integration-guide-programmers/entitlement-flow.md).
 * Per una descrizione dettagliata di come implementare Adobe Pass
 flusso di autenticazione dei diritti tramite questa API, consulta il [Manuale dell&#39;integrazione di iOS](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-cookbook.md).
 * Per la versione più recente di iOS AccessEnabler SDK, vedi [Libreria iOS Native Access Enabler](https://tve.zendesk.com/hc/en-us/articles/204963209-iOS-Native-AccessEnabler-Library).

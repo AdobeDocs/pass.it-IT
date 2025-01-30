@@ -2,9 +2,9 @@
 title: Guida utente di Primetime TVE Dashboard
 description: Guida utente di Primetime TVE Dashboard
 exl-id: 6f7f7901-db3a-4c68-ac6a-27082db9240a
-source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
+source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
 workflow-type: tm+mt
-source-wordcount: '5526'
+source-wordcount: '5524'
 ht-degree: 0%
 
 ---
@@ -33,7 +33,6 @@ Prima di approfondire questa guida utente, ti consigliamo di esaminare le seguen
 
 * [Documento tecnico TVE](/help/authentication/kickstart/technical-paper.md)
 * [Guida di Kick-Start per programmatori](/help/authentication/kickstart/programmer-kickstart-guide.md)
-* [Flusso diritto](/help/authentication/integration-guide-programmers/entitlement-flow.md)
 
 Passando alle sezioni successive di questa guida utente, scoprirai come amministrare diverse impostazioni per i canali, i programmatori o le integrazioni tra canali e MVPD (Multichannel Video Program Distributors) della tua azienda.
 
