@@ -2,7 +2,7 @@
 title: Panoramica delle API REST API V2
 description: Panoramica delle API REST API V2
 exl-id: 62b48bf0-d200-4949-b268-8f8ea2daabfa
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 9dcc649b4216cccc9be35cd6553308bfc345b5f4
 workflow-type: tm+mt
 source-wordcount: '149'
 ht-degree: 0%
@@ -13,7 +13,9 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
-> Il contenuto di questa pagina viene fornito solo a scopo informativo. L’utilizzo di questa API richiede una licenza corrente da Adobe. Non è consentito alcun uso non autorizzato.
+> Assicurati di essere sempre informato sugli ultimi annunci di prodotto per l&#39;autenticazione di Adobe Pass e sulle timeline di disattivazione aggregate nella pagina [Annunci di prodotto](/help/authentication/product-announcements.md).
+
+<a href="https://experienceleague.adobe.com/en/docs/pass/authentication/product-announcements">![Serie di webinar live](/help/authentication/assets/rest-api-v2/live-webinar-series-banner.png)</a>
 
 Per iniziare, visita la documentazione pubblica delle API che ti interessano nell’elenco seguente.
 
