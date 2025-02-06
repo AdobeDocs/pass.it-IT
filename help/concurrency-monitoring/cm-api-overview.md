@@ -2,9 +2,9 @@
 title: Panoramica API
 description: Panoramica API del monitoraggio della concorrenza
 exl-id: eb232926-9c68-4874-b76d-4c458d059f0d
-source-git-commit: dd370b231acc08ea0544c0dedaa1bdb0683e378f
+source-git-commit: b30d9217e70f48bf8b8d8b5eaaa98fea257f3fc5
 workflow-type: tm+mt
-source-wordcount: '1556'
+source-wordcount: '2102'
 ht-degree: 0%
 
 ---
@@ -22,7 +22,7 @@ Questo documento aiuta gli sviluppatori di applicazioni a utilizzare le nostre s
 
 Durante il processo di sviluppo, la documentazione pubblica di Swagger rappresenta la linea guida di riferimento per comprendere e testare i flussi API. Questo è un ottimo punto di partenza per avere un approccio pratico e familiarizzare con il modo in cui le applicazioni del mondo reale si comporterebbero in diversi scenari di interazione dell’utente.
 
-Invia un ticket in [Zendesk](mailto:tve-support@adobe.com) per registrare la tua azienda e le tue applicazioni nel monitoraggio della concorrenza. Adobe assegnerà un ID applicazione a ogni entità. In questa guida utilizzeremo due applicazioni di riferimento con ID **demo-app** e **demo-app-2** che saranno inclusi nell&#39;Adobe tenant.
+Invia un ticket in [Zendesk](mailto:tve-support@adobe.com) per registrare la tua azienda e le tue applicazioni nel monitoraggio della concorrenza. Adobe assegnerà un ID applicazione a ogni entità. In questa guida utilizzeremo due applicazioni di riferimento con ID **demo-app** e **demo-app-2** che si troveranno nell&#39;Adobe tenant.
 
 
 ## Casi d’uso {#api-use-case}
@@ -36,7 +36,7 @@ In seguito, premi **Esplora** per impostare l&#39;ID che verrà utilizzato nell&
 
 ### Prima applicazione {#first-app-use-cases}
 
-L&#39;applicazione con ID **demo-app** è stata assegnata dal team di Adobi a un criterio con una regola che limita a 3 il numero di flussi simultanei. Una polizza viene assegnata a una specifica applicazione in base alla richiesta presentata in Zendesk.
+All&#39;applicazione con ID **demo-app** è stato assegnato da Adobe Team un criterio con una regola che limita a 3 il numero di flussi simultanei. Una polizza viene assegnata a una specifica applicazione in base alla richiesta presentata in Zendesk.
 
 
 #### Recupero metadati {#retrieve-metadata-use-case}
@@ -73,12 +73,27 @@ Eseguire la chiamata di inizializzazione della sessione. Riceverai la seguente r
 
 Tutti i dati necessari sono contenuti nelle intestazioni di risposta. L&#39;intestazione **Location** rappresenta l&#39;ID della nuova sessione creata e le intestazioni **Date** e **Expires** rappresentano i valori utilizzati per pianificare l&#39;applicazione in modo che esegua l&#39;heartbeat successivo per mantenere attiva la sessione.
 
+Con ogni chiamata è possibile inviare i metadati necessari, non solo quelli obbligatori per l’applicazione. L’invio di metadati può essere ottenuto in due modi:
+* utilizzo di **query** **parametri**:
+
+  ```sh
+  curl -i -XPOST -u "user:pass" "https://streams-stage.adobeprimetime.com/v2/sessions/some_idp/some_user?metadata1=value1&metadata2=value2"
+  ```
+
+* utilizzo di **richiesta** **corpo**:
+
+  ```sh
+  curl -i -XPOST -u "user:pass" https://streams-stage.adobeprimetime.com/v2/sessions/some_idp/some_user -d "metadata1=value1" -d "metadata2=value2" -H "Content-Type=application/x-www-form-urlencoded"
+  ```
+
 #### Heartbeat {#heartbeat}
 
 Effettuare una chiamata heartbeat. Fornisci l&#39;**ID sessione** ottenuto nella chiamata di inizializzazione della sessione, insieme ai parametri **subject** e **idp** utilizzati.
 
 ![](assets/heartbeat.png)
 
+Per le chiamate heartbeat è consentito inviare metadati nello stesso modo in cui si esegue la sessione iniziale. È possibile aggiungere nuovi metadati in qualsiasi momento e aggiornare i valori inviati in precedenza con alcune **eccezioni**. I seguenti valori, una volta impostati, non possono essere modificati: **pacchetto**, **canale**, **piattaforma**, **assetId**, **idp**, **mvpd**, **hba_status**, **hba**,
+**dispositivo mobile**
 
 Se la sessione è ancora valida (non è scaduta o è stata eliminata manualmente), riceverai un risultato positivo:
 
@@ -111,8 +126,11 @@ Quando effettui la chiamata riceverai la seguente risposta:
 
 ![](assets/get-all-running-streams-success.png)
 
-Nota l&#39;intestazione **Scade**. Questo è il momento in cui la prima sessione deve scadere a meno che non venga inviato un heartbeat. OtherStreams ha il valore 0 perché non ci sono altri flussi in esecuzione per questo utente sulle applicazioni di altri tenant.
+Per ogni sessione si otterrà il **terminationCode** e si completeranno i metadati.
+
+Nota l&#39;intestazione **Scade**. Questo è il momento in cui la prima sessione deve scadere a meno che non venga inviato un heartbeat.
 Nel campo metadati verranno inseriti tutti i metadati inviati all’avvio della sessione. Non lo filtriamo, riceverai tutto quello che hai inviato.
+La risposta include tutti i flussi in esecuzione sulle app di altri tenant, purché le app condividano lo stesso criterio.
 Se non sono presenti sessioni in esecuzione per un utente specifico quando effettui la chiamata, riceverai questa risposta:
 
 ![](assets/get-all-running-streams-empty.png)
@@ -126,8 +144,13 @@ Per simulare il comportamento della nostra applicazione quando il criterio dei 3
 
 ![](assets/breaking-policy-frstapp.png)
 
+Nel payload viene visualizzata una risposta 409 CONFLICT insieme a un oggetto risultato della valutazione. Ciò indica che i criteri lato server non consentono la creazione o la continuazione di questa sessione. Il corpo della risposta conterrà un oggetto EvaluationResult con AssociatedAdvice non vuoto, ovvero l&#39;elenco di oggetti Advice contenenti le spiegazioni per ogni violazione della regola.
 
-Nel payload viene visualizzata una risposta 409 CONFLICT insieme a un oggetto risultato della valutazione. Leggi una descrizione completa del risultato della valutazione nella [specifica API Swagger](http://docs.adobeptime.io/cm-api-v2/#evaluation-result).
+L’applicazione deve richiedere all’utente i messaggi di errore riportati da ogni istanza di Advice. Inoltre, ogni consiglio indica anche i dettagli della regola come i nomi di attributi, soglie, regole e criteri. Inoltre, i valori in conflitto verranno inclusi anche nell’elenco delle sessioni attive per ciascun valore.
+
+Queste informazioni sono destinate alla formattazione avanzata dei messaggi di errore e consentono all’utente di intervenire sulle sessioni in conflitto.
+
+Ogni sessione in conflitto conterrà un **terminationCode** che può essere utilizzato per **uccidere** quel flusso. In questo modo, l’applicazione potrebbe consentire all’utente di scegliere le sessioni da terminare per tentare di accedere alla sessione corrente.
 
 L’applicazione può utilizzare le informazioni del risultato della valutazione per visualizzare un determinato messaggio all’utente quando interrompe il video e per intraprendere ulteriori azioni, se necessario. Un caso d’uso può essere quello di interrompere altri flussi esistenti per avviarne uno nuovo. Questa operazione viene eseguita utilizzando il valore **terminationCode** presente nel campo **conflitti** per uno specifico attributo in conflitto. Il valore viene fornito come intestazione HTTP X-Terminate nella chiamata per una nuova inizializzazione di sessione.
 
@@ -136,6 +159,30 @@ L’applicazione può utilizzare le informazioni del risultato della valutazione
 Quando fornisci uno o più codici di terminazione all’inizializzazione della sessione, la chiamata avrà esito positivo e verrà generata una nuova sessione. Quindi, se proviamo a creare un heartbeat con una delle sessioni che sono state interrotte in remoto, otterremo una risposta 410 GONE con un payload dei risultati della valutazione che descrive il fatto che la sessione è stata terminata in remoto, come nell’esempio:
 
 ![](assets/remote-termination.png)
+
+È possibile restituire 410 con o senza un corpo, in base alla causa dell&#39;interruzione della sessione corrente.
+
+Quando la risposta non ha corpo, 410 significa che si tenta una chiamata heartbeat (o interruzione) per una sessione non più attiva (a causa di un timeout o di un conflitto precedente o di altro tipo). L’unico modo per ripristinare da questo stato è che l’applicazione avvii una nuova sessione. Poiché non è presente alcun corpo, l’applicazione deve gestire questo errore senza che l’utente ne sia a conoscenza.
+
+D&#39;altra parte, quando viene fornito un corpo di risposta, l&#39;applicazione deve cercare nell&#39;attributo **associatedAdvice** per trovare un avviso di **terminazione remota** che indica la sessione remota avviata con l&#39;intenzione esplicita di **uccidere** quella corrente. Questo dovrebbe causare un messaggio di errore come &quot;La sessione è stata annullata da dispositivo/applicazione&quot;.
+
+### Corpo risposta {#response-body}
+
+Per tutte le chiamate API del ciclo di vita della sessione, il corpo della risposta (se presente) sarà un oggetto JSON contenente i campi seguenti:
+
+![](assets/body_small.png)
+
+**Avviso**
+**EvaluationResult** includerà un array di oggetti Advice in **associatedAdvice**. Gli avvisi sono destinati all’applicazione per visualizzare un messaggio di errore completo per l’utente e (potenzialmente) consentire all’utente di intervenire.
+
+Attualmente esistono due tipi di avvisi (specificati dal valore dell&#39;attributo **type**): **rule-law** e **remote-termination**. Il primo fornisce dettagli relativi a una regola interrotta e alle sessioni in conflitto con quella corrente (incluso l&#39;attributo terminate che può essere utilizzato per terminare tale sessione in remoto). La seconda afferma semplicemente che la sessione corrente è stata volutamente terminata da una sessione remota, in modo che gli utenti sapranno chi li ha cacciati quando sono stati raggiunti i limiti.
+
+![](assets/advices.png)
+
+**Obbligo**
+La valutazione può inoltre contenere una o più azioni predefinite che devono essere attivate dall’applicazione in seguito a tale valutazione.
+
+![](assets/obligation.png)
 
 ### Seconda applicazione {#second-application}
 
