@@ -2,9 +2,9 @@
 title: Informazioni sull’autenticazione di Adobe Pass e TV Everywhere
 description: Informazioni sull’autenticazione di Adobe Pass e TV Everywhere
 exl-id: 5edeaccb-f9fa-4395-83b4-706c518d5a03
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 95e750b5c0efe5850a3ff8130f5b4bb6c5b35f57
 workflow-type: tm+mt
-source-wordcount: '6288'
+source-wordcount: '6287'
 ht-degree: 0%
 
 ---
@@ -112,7 +112,11 @@ Il resto di questo documento fornisce un’introduzione tecnica all’autenticaz
 
 ## Elementi di base dell’architettura {#arch-building-blocks}
 
-![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/import-pc7mz3dfnv/check.gif) Di seguito vengono illustrate le transazioni di adesione centralizzate di autenticazione e autorizzazione. Per autenticazione si intende il processo di conferma con un provider di Pay TV che un determinato utente è un cliente noto. L&#39;autorizzazione è il processo in cui un provider di Pay TV conferma che un utente autenticato dispone di un abbonamento valido a una determinata risorsa.
+<!-- BROKEN LINK
+![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/import-pc7mz3dfnv/check.gif) 
+-->
+
+Di seguito vengono descritte le transazioni di autenticazione e autorizzazione centralizzate. Per autenticazione si intende il processo di conferma con un provider di Pay TV che un determinato utente è un cliente noto. L&#39;autorizzazione è il processo in cui un provider di Pay TV conferma che un utente autenticato dispone di un abbonamento valido a una determinata risorsa.
 L’autenticazione di Adobe Pass è costituita dai seguenti componenti di base:
 
 * Componente client (uno dei seguenti):
@@ -352,7 +356,7 @@ I flussi di adesione di base sono Avvio, Autenticazione, Autorizzazione e Discon
 
 * **Metadati utente** - In base agli accordi tra MVPD e programmatori, MVPD possono scambiare in modo sicuro metadati quali codice postale, valutazione massima, ID canale e altro ancora. I metadati consentono diversi casi d’uso, tra cui controllo dei genitori, periodi di blocco regionali per eventi sportivi, ecc.
 * **Accesso gratuito temporaneo** - Consente ai programmatori di offrire accesso gratuito temporaneo al loro contenuto protetto (ad esempio, brevi esempi di programmazione giornaliera o la presentazione gratuita di un evento di grandi dimensioni).
-* **MVPD proxy** - Un MVPD può gestire la propria integrazione con l&#39;autenticazione Adobe Pass e gestire il processo di adesione per conto di un gruppo di &quot;ProxiedMVPDs&quot; associati.
+* **MVPD proxy** - Un MVPD può gestire la propria integrazione con l&#39;autenticazione Adobe Pass, nonché la procedura di adesione per conto di un gruppo di &quot;ProxiedMVPDs&quot; associati.
 
 ## Sicurezza {#security}
 
