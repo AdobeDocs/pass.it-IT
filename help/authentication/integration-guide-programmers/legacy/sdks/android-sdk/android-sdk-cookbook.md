@@ -2,9 +2,9 @@
 title: Manuale di Android SDK
 description: Manuale di Android SDK
 exl-id: 7f66ab92-f52c-4dae-8016-c93464dd5254
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 79b3856e3ab2755cc95c3fcd34121171912a5273
 workflow-type: tm+mt
-source-wordcount: '1704'
+source-wordcount: '1703'
 ht-degree: 0%
 
 ---
@@ -135,7 +135,9 @@ Libreria Android (AccessEnabler)
 
    | NOTA |     |
    | --- | --- |  
-   | ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/icons/1313859077_lightbulb.png) | Non è possibile completare alcuna richiesta di adesione finché non viene stabilita l&#39;identità completa del richiedente. Ciò significa che mentre setRequestor() è ancora in esecuzione, tutte le richieste di adesione successive (ad esempio, `checkAuthentication()`) sono bloccate.<br><br>Sono disponibili due opzioni di implementazione: una volta inviate le informazioni di identificazione del richiedente al server back-end, il livello dell&#39;applicazione dell&#39;interfaccia utente può scegliere uno dei due approcci seguenti:<br><br>1.  Attendere l&#39;attivazione del callback `setRequestorComplete()` (parte del delegato AccessEnabler).  Questa opzione fornisce la massima certezza che `setRequestor()` è stato completato, quindi è consigliata per la maggior parte delle implementazioni.<br>2.  Continuare senza attendere l&#39;attivazione del callback `setRequestorComplete()` e iniziare a emettere richieste di adesione. Queste chiamate (checkAuthentication, checkAuthorization, getAuthentication, getAuthorization, checkPreauthorizedResource, getMetadata, logout) sono in coda dalla libreria AccessEnabler, che effettuerà le chiamate di rete effettive dopo `setRequestor(). `Questa opzione può essere interrotta occasionalmente se, ad esempio, la connessione di rete è instabile. |
+   |  | Non è possibile completare alcuna richiesta di adesione finché non viene stabilita l&#39;identità completa del richiedente. Ciò significa che mentre setRequestor() è ancora in esecuzione, tutte le richieste di adesione successive (ad esempio, `checkAuthentication()`) sono bloccate.<br><br>Sono disponibili due opzioni di implementazione: una volta inviate le informazioni di identificazione del richiedente al server back-end, il livello dell&#39;applicazione dell&#39;interfaccia utente può scegliere uno dei due approcci seguenti:<br><br>1.  Attendere l&#39;attivazione del callback `setRequestorComplete()` (parte del delegato AccessEnabler).  Questa opzione fornisce la massima certezza che `setRequestor()` è stato completato, quindi è consigliata per la maggior parte delle implementazioni.<br>2.  Continuare senza attendere l&#39;attivazione del callback `setRequestorComplete()` e iniziare a emettere richieste di adesione. Queste chiamate (checkAuthentication, checkAuthorization, getAuthentication, getAuthorization, checkPreauthorizedResource, getMetadata, logout) sono in coda dalla libreria AccessEnabler, che effettuerà le chiamate di rete effettive dopo `setRequestor(). `Questa opzione può essere interrotta occasionalmente se, ad esempio, la connessione di rete è instabile. |
+
+   <!--Removed bad image link from first note cell above. ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/icons/1313859077_lightbulb.png) -->
 
 1. Chiamare [checkAuthentication()](#$checkAuthN) per verificare la presenza di un&#39;autenticazione esistente senza avviare il flusso di autenticazione completo.   Se la chiamata ha esito positivo, puoi passare direttamente al flusso di autorizzazione.  In caso contrario, passare al flusso di autenticazione.
 
