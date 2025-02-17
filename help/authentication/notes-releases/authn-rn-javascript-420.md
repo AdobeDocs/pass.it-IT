@@ -2,14 +2,14 @@
 title: Note sulla versione di Adobe Pass Authentication JavaScript 4.2.0
 description: Note sulla versione di Adobe Pass Authentication JavaScript 4.2.0
 exl-id: 2b022d31-a062-4b4e-b2cd-25749ce38f74
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 134a9a13373717ff7772a9d765bbd7b3b4943a85
 workflow-type: tm+mt
 source-wordcount: '99'
 ht-degree: 0%
 
 ---
 
-# Note sulla versione di Adobe Pass Authentication JavaScript 4.2.0 {#javascript-sdk-420-release-notes}
+# Note sulla versione di Adobe Pass Authentication JavaScript 4.2.0 {#javascript-sdk-420-rn}
 
 >[!NOTE]
 >
@@ -17,19 +17,17 @@ ht-degree: 0%
 
 Questa pagina descrive nuove funzioni, modifiche e problemi noti relativi a questa versione:
 
-## Numero build {#build-no-javascript-sdk-420}
+## Numero build {#build-number-420}
 
 Autenticazione Adobe Pass: JavaScript 4.2.0
 
 Data di rilascio: **02/14/2020**
 
-
-## Panoramica sulla versione {#overview-javascript-sdk-420}
+## Panoramica sulla versione {#release-overview-420}
 
 * Aggiornamenti per il supporto del nuovo criterio per i cookie SameSite (dettagliato [qui](https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-cookie-same-site-00)).
 
-
-## Pacchetto di rilascio {#rel-pkg-javascript-sdk-420}
+## Pacchetto di rilascio {#release-package-420}
 
 L’URL di produzione è: https://entitlement.auth.adobe.com/entitlement/v4/AccessEnabler.js
 

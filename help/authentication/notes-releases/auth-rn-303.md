@@ -2,14 +2,14 @@
 title: Note sulla versione di Adobe Pass Authentication 3.0.3
 description: Note sulla versione di Adobe Pass Authentication 3.0.3
 exl-id: f54b7c4a-78c5-4536-bed7-3c5f15640dea
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 134a9a13373717ff7772a9d765bbd7b3b4943a85
 workflow-type: tm+mt
 source-wordcount: '152'
 ht-degree: 0%
 
 ---
 
-# Note sulla versione di Adobe Pass Authentication 3.0.3 {#pt-authn-303-rn}
+# Note sulla versione di Adobe Pass Authentication 3.0.3 {#authn-303-rn}
 
 >[!NOTE]
 >
@@ -22,14 +22,15 @@ Questa pagina descrive nuove funzioni, modifiche e problemi noti relativi a ques
 * [Numero build](#build-number-303)
 * [Panoramica sulla versione](#release-overview-303)
 
-### Numero build {#build-number-2651}
+### Numero build {#build-number-303}
 
 Autenticazione Adobe Pass: adobe-pass-**3.0.3**
+
 Data di rilascio: **10/29/2024 - 10/31/2024**
 
-### Nuove funzioni {#new-features-303}
+### Panoramica sulla versione {#release-overview-303}
 
-#### API REST v2 {#rest-apis}
+#### API REST v2
 
 ##### Codice
 

@@ -2,14 +2,14 @@
 title: Note sulla versione di Adobe Pass Authentication 2.63
 description: Note sulla versione di Adobe Pass Authentication 2.63
 exl-id: 40987328-6d41-4948-aa4a-bab31f98a18a
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 134a9a13373717ff7772a9d765bbd7b3b4943a85
 workflow-type: tm+mt
 source-wordcount: '304'
 ht-degree: 0%
 
 ---
 
-# Note sulla versione di Adobe Pass Authentication 2.63 {#pt-authn-263-rn}
+# Note sulla versione di Adobe Pass Authentication 2.63 {#authn-263-rn}
 
 >[!NOTE]
 >
@@ -19,17 +19,18 @@ Questa pagina descrive nuove funzioni, modifiche e problemi noti relativi a ques
 
 ## Client Web e lato server {#server-side-web-clients-263}
 
-* [Numero build](#build-number)
-* [Nuove funzioni](#new-features)
+* [Numero build](#build-number-263)
+* [Panoramica sulla versione](#release-overview-263)
 
 ### Numero build {#build-number-263}
 
 Autenticazione Adobe Pass: adobe-pass-**2.63**
+
 Data di rilascio: **09/20/2022 - 09/22/2022**
 
-### Nuove funzioni {#new-features-263}
+### Panoramica sulla versione {#release-overview-263}
 
-#### Miglioramento del meccanismo di identificazione delle piattaforme {#pf-identification-mech}
+#### Miglioramento del meccanismo di identificazione delle piattaforme
 
 * A partire da questa versione, è stato migliorato il meccanismo utilizzato per identificare un dispositivo che non dipenderà più dall’implementazione lato client. Questo fornirà una granularità più precisa quando si applicano regole aziendali a livello di piattaforma e una migliore comprensione dei valori del traffico nei rapporti ESM.
 
@@ -37,22 +38,19 @@ Data di rilascio: **09/20/2022 - 09/22/2022**
 
 * Per ulteriori dettagli sulle modifiche pianificate, contatta il tuo TAM.
 
-#### Autodegradazione MVPD {#mvpd-self-degradation}
+#### Auto-degradazione MVPD
 
 Questa funzione consente agli MVPD di ignorare temporaneamente i propri endpoint di autenticazione e autorizzazione per scenari di traffico elevato quando il carico su tali rispettivi endpoint diventa troppo elevato.
 
-
-#### Aggiungi l’ID proxy nell’intestazione delle chiamate di autorizzazione {#add-proxied-id}
+#### Aggiungi l’ID proxy nell’intestazione delle chiamate di autorizzazione
 
 Questa funzione aggiunge l’ID di un MVPD proxy di Synacor nell’intestazione della chiamata di autorizzazione. Ciò consente a Synacor di impostare regole di business per ogni singolo proxy (ad esempio routing a domini diversi per MVPD proxy).
 
+#### Dashboard TVE
 
-#### Dashboard TVE {#tve-dashboard}
+In questa versione è stato risolto un problema a causa del quale il valore TTL authN o authZ impostato a livello di MVPD non veniva calcolato correttamente nei rapporti di configurazione.
 
-In questa versione è stato risolto un problema a causa del quale il TTL authN o authZ impostato a livello di MVPD non veniva calcolato correttamente nei rapporti di configurazione.
+#### JavaScript SDK 4.6.0
 
-
-#### SDK 4.6.0 per JavaScript {#js-sdk}
-
-* È stato rimosso l&#39;utilizzo della funzione `eval`, rendendo l&#39;SDK conforme ai criteri sulla sicurezza dei contenuti.
+* È stato rimosso l&#39;utilizzo della funzione `eval`, rendendo il SDK conforme ai criteri sulla sicurezza dei contenuti.
 * È stato risolto un problema che impediva il completamento corretto del flusso di autenticazione quando l’archiviazione locale del browser veniva esplicitamente cancellata da un’applicazione partner.

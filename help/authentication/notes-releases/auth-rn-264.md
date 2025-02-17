@@ -2,9 +2,9 @@
 title: Note sulla versione di Adobe Pass Authentication 2.64
 description: Note sulla versione di Adobe Pass Authentication 2.64
 exl-id: 4db21026-a0c2-4e33-b01f-4ccae824a110
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 134a9a13373717ff7772a9d765bbd7b3b4943a85
 workflow-type: tm+mt
-source-wordcount: '136'
+source-wordcount: '134'
 ht-degree: 0%
 
 ---
@@ -17,25 +17,24 @@ ht-degree: 0%
 
 Questa pagina descrive nuove funzioni, modifiche e problemi noti relativi a questa versione:
 
-## Client Web e lato server {#ss-web-clients}
+## Client Web e lato server {#server-side-web-clients-264}
 
-* [Numero build](#build-no-264)
-* [Nuove funzioni](#new-featres-264)
-* [Correzioni di bug](#bug-fixes-264)
+* [Numero build](#build-number-264)
+* [Panoramica sulla versione](#release-overview-264)
 
-### Numero build {#build-no-264}
+### Numero build {#build-number-264}
 
 Autenticazione Adobe Pass: adobe-pass-**2.64**
 
 Data di rilascio: **11/08/2022 - 11/10/2022**
 
-### Nuove funzioni {#new-featres-264}
+### Panoramica sulla versione {#release-overview-264}
 
 * Aggiornamenti dell&#39;infrastruttura, con l&#39;obiettivo di ridurre i tempi di risposta dei server e migliorare le prestazioni complessive del sistema.
 * Miglioramenti al nuovo meccanismo di identificazione delle piattaforme.
 * Possibilità di bloccare le risposte di autenticazione non richieste provenienti da MVPD in cui il parametro &quot;in_response_to&quot; non è presente nell’asserzione SAML.
 
-### Correzioni di bug {#bug-fixes-264}
+#### Correzioni di bug
 
 * È stata corretta la formattazione errata di alcuni token TempPass legacy.
 * Sono stati risolti alcuni problemi minori relativi al flusso di autenticazione nella seconda schermata.
