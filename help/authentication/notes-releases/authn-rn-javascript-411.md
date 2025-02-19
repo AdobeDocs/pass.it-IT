@@ -2,18 +2,18 @@
 title: Note sulla versione di Adobe Pass Authentication JavaScript 4.1.1
 description: Note sulla versione di Adobe Pass Authentication JavaScript 4.1.1
 exl-id: 00d017b3-700d-48b6-a43f-c0d7b8b67c3d
-source-git-commit: 134a9a13373717ff7772a9d765bbd7b3b4943a85
+source-git-commit: ecafc3a92f691203d8113a741f0b6cd00a134e80
 workflow-type: tm+mt
-source-wordcount: '110'
+source-wordcount: '106'
 ht-degree: 0%
 
 ---
 
 # Note sulla versione di Adobe Pass Authentication JavaScript 4.1.1 {#javascript-sdk-411-rn}
 
->[!NOTE]
+>[!IMPORTANT]
 >
->Il contenuto di questa pagina viene fornito solo a scopo informativo. L’utilizzo di questa API richiede una licenza corrente da Adobe. Non è consentito alcun uso non autorizzato.
+> Assicurati di essere sempre informato sugli ultimi annunci di prodotto per l&#39;autenticazione di Adobe Pass e sulle timeline di disattivazione aggregate nella pagina [Annunci di prodotto](/help/authentication/product-announcements.md).
 
 Questa pagina descrive nuove funzioni, modifiche e problemi noti relativi a questa versione:
 
