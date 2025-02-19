@@ -2,9 +2,9 @@
 title: Annunci sui prodotti
 description: Annunci sui prodotti
 exl-id: 3c9c66e1-d31d-4af3-8ab2-eb32492f42ca
-source-git-commit: 9dcc649b4216cccc9be35cd6553308bfc345b5f4
+source-git-commit: 4ad5ea619f64a78a72f69228c9ae3c83a7b66f24
 workflow-type: tm+mt
-source-wordcount: '859'
+source-wordcount: '883'
 ht-degree: 1%
 
 ---
@@ -52,6 +52,13 @@ Assicurati di essere sempre informato sulle tempistiche di disattivazione e di p
 ## Rilasci di prodotti {#product-releases}
 
 In questa sezione vengono compilati i riferimenti alla cronologia delle versioni e alle relative note sulla versione per l’autenticazione Adobe Pass.
+
+### 2025 {#product-releases-2025}
+
+| Note sulla versione | Date |
+|-----------------------------------------------------------------------------------------------------------|-------------------------|
+| [Note sulla versione di Adobe Pass Authentication 3.1.0](notes-releases/auth-rn-310.md) | 02/25/2025 - 02/27/2025 |
+| [Note sulla versione di Adobe Pass Authentication JavaScript SDK 4.7.1](notes-releases/authn-rn-javascript-471.md) | 02/25/2025 - 02/27/2025 |
 
 ### 2024 {#product-releases-2024}
 

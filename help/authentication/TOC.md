@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Autenticazione Adobe Pass
 user-guide-description: L’autenticazione Adobe Pass è una soluzione di gestione dei diritti per TV Everywhere, che fornisce un framework modulare per determinare se chi richiede l’accesso a una risorsa ne abbia diritto.
-source-git-commit: 2b9a8ce374f7a73cd815e9735d672e5c9ba285cc
+source-git-commit: 4ad5ea619f64a78a72f69228c9ae3c83a7b66f24
 workflow-type: tm+mt
-source-wordcount: '1230'
+source-wordcount: '1246'
 ht-degree: 2%
 
 ---
@@ -17,6 +17,9 @@ ht-degree: 2%
 + [Autenticazione Adobe Pass](home.md)
 + [Annunci sui prodotti](product-announcements.md)
 + Rilasci di prodotti {#product-releases}
+   + 2025 {#2025}
+      + [Note sulla versione di Adobe Pass Authentication 3.1.0](notes-releases/auth-rn-310.md)
+      + [Note sulla versione di Adobe Pass Authentication JavaScript 4.7.1](notes-releases/authn-rn-javascript-471.md)
    + 2024 {#2024}
       + [Note sulla versione di Adobe Pass Authentication 3.0.3](notes-releases/auth-rn-303.md)
       + [Note sulla versione di Adobe Pass Authentication 3.0](notes-releases/auth-rn-300.md)
@@ -152,7 +155,7 @@ ht-degree: 2%
          + [Metriche lato server](integration-guide-programmers/features-premium/esm/understanding-serverside-metrics.md)
       + Analytics {#analytics}
          + [Integrazione dei dati lato server di autenticazione di Adobe Pass in Adobe Analytics](integration-guide-programmers/features-premium/analytics/integrate-authn-servr-data-analytics.md)
-         + [Utilizzo dell’ID Experience Cloud nell’autenticazione di Adobe Pass](integration-guide-programmers/features-premium/analytics/exp-cloud-id-authn.md)
+         + [Utilizzo dell’ID di Experience Cloud nell’autenticazione di Adobe Pass](integration-guide-programmers/features-premium/analytics/exp-cloud-id-authn.md)
    + Legacy {#legacy}
       + (Legacy) API REST V1 {#rest-api-v1}
          + [(Legacy) Panoramica di REST API V1](integration-guide-programmers/legacy/rest-api-v1/rest-api-overview.md)
@@ -257,7 +260,7 @@ ht-degree: 2%
          + (Legacy) Risoluzione dei problemi {#troubleshooting}
             + [(Legacy) Utilizzo di Charles Proxy](integration-guide-programmers/legacy/notes-technical/using-charles-proxy.md)
             + [(Legacy) Monitoraggio di Adobe Pass Adobe PayTV Pass](integration-guide-programmers/legacy/notes-technical/monitoring-adobe-pay-tv-pass.md)
-            + [(Legacy) Come verificare i flussi di autenticazione e autorizzazione utilizzando il sito di test di Adobe API](integration-guide-programmers/legacy/notes-technical/test-authn-authz-flows-using-adobes-api-test-site.md)
+            + [(Legacy) Come verificare i flussi di autenticazione e autorizzazione utilizzando il sito di test dell’API di Adobe](integration-guide-programmers/legacy/notes-technical/test-authn-authz-flows-using-adobes-api-test-site.md)
 + Guida All&#39;Integrazione Per MVPD {#integration-guide-mvpds}
    + [Guida all’integrazione di MVPD](integration-guide-mvpds/mvpd-integration-guide-overview.md)
    + [Autenticazione](integration-guide-mvpds/authn-usecase.md)
