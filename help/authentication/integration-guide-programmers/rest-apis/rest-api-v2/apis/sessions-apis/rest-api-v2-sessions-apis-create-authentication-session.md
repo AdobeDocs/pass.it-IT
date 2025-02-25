@@ -2,9 +2,9 @@
 title: Crea sessione di autenticazione
 description: REST API V2 - Crea sessione di autenticazione
 exl-id: bb2a6bb4-0778-4748-a674-df9d0e8242c8
-source-git-commit: 5cb14959d6e9af91252316fbdd14ff33d813089b
+source-git-commit: 5e5bb6a52a4629056fd52c7e79a11dba2b9a45db
 workflow-type: tm+mt
-source-wordcount: '1000'
+source-wordcount: '1047'
 ht-degree: 1%
 
 ---
@@ -268,17 +268,15 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">reasonType</td>
                <td>
-                  Tipo di motivo utilizzato per la spiegazione di 'actionName'.
+                  Tipo di motivo che spiega il "actionName".
                   <br/><br/>
                   I valori possibili sono:
                   <ul>
-                    <li><b>nessuno</b></li>
-                    <li><b>autenticato</b></li>
-                    <li><b>temporaneo</b></li>
-                    <li><b>degradato</b></li>
-                    <li><b>authenticatedSSO</b></li>
-                    <li><b>pfs_fallback</b></li>
-                    <li><b>configuration_fallback</b></li>
+                    <li><b>nessuno</b><br/>Per continuare l'autenticazione è necessario che l'applicazione client continui a eseguire l'autenticazione.</li>
+                    <li><b>autenticata</b><br/>L'applicazione client è già autenticata tramite flussi di accesso di base.</li>
+                    <li><b>temporaneo</b><br/>L'applicazione client è già autenticata tramite flussi di accesso temporanei.</li>
+                    <li><b>danneggiata</b><br/>L'applicazione client è già autenticata tramite flussi di accesso danneggiati.</li>
+                    <li><b>authenticatedSSO</b><br/>L'applicazione client è già autenticata tramite flussi di accesso single sign-on.</li>
                   </ul>
                <td><i>obbligatorio</i></td>
             </tr>
@@ -483,6 +481,8 @@ Content-Type: application/json;charset=UTF-8
     "serviceProvider": "REF30"
 }
 ```
+
+>[!ENDTABS]
 
 ### 4. Creare una sessione di autenticazione utilizzando TempPass di base o promozionale (non richiesto)
 

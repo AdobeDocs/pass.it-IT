@@ -2,9 +2,9 @@
 title: Recupera richiesta di autenticazione partner
 description: REST API V2 - Recupera richiesta di autenticazione partner
 exl-id: 52d8a8e9-c176-410f-92bc-e83449278943
-source-git-commit: 5cb14959d6e9af91252316fbdd14ff33d813089b
+source-git-commit: 5e5bb6a52a4629056fd52c7e79a11dba2b9a45db
 workflow-type: tm+mt
-source-wordcount: '1136'
+source-wordcount: '1230'
 ht-degree: 1%
 
 ---
@@ -258,6 +258,23 @@ ht-degree: 1%
                <td><i>obbligatorio</i></td>
             </tr>
             <tr>
+               <td style="background-color: #DEEBFF;">reasonType</td>
+               <td>
+                  Tipo di motivo che spiega il "actionName".
+                  <br/><br/>
+                  I valori possibili sono:
+                  <ul>
+                    <li><b>nessuno</b><br/>Per continuare l'autenticazione è necessario che l'applicazione client continui a eseguire l'autenticazione.</li>
+                    <li><b>autenticata</b><br/>L'applicazione client è già autenticata tramite flussi di accesso di base.</li>
+                    <li><b>temporaneo</b><br/>L'applicazione client è già autenticata tramite flussi di accesso temporanei.</li>
+                    <li><b>danneggiata</b><br/>L'applicazione client è già autenticata tramite flussi di accesso danneggiati.</li>
+                    <li><b>authenticatedSSO</b><br/>L'applicazione client è già autenticata tramite flussi di accesso single sign-on.</li>
+                    <li><b>pfs_fallback</b><br/>L'applicazione client deve eseguire il fallback al flusso di autenticazione di base a causa di un valore di intestazione <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md">AP-Partner-Framework-Status</a> mancante o non valido.</li>
+                    <li><b>configuration_fallback</b><br/>L'applicazione client deve eseguire il fallback al flusso di autenticazione di base a causa della configurazione single sign-on del partner nel backend di Adobe Pass.</li>
+                  </ul>
+               <td><i>obbligatorio</i></td>
+            </tr>
+            <tr>
                <td style="background-color: #DEEBFF;">missingParameters</td>
                <td>
                     Parametri mancanti da fornire per completare il flusso di autenticazione di base.
@@ -379,6 +396,7 @@ Content-Type: application/json;charset=UTF-8
 {
     "actionName": "partner_profile",
     "actionType": "direct",
+    "reasonType": "none",
     "url": "/api/v2/REF30/profiles/sso/Apple",
     "sessionId": "83c046be-ea4b-4581-b5f2-13e56e69dee9",
     "mvpd": "Cablevision",
@@ -435,15 +453,52 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 3. Recupera la richiesta di autenticazione del partner, ma torna al flusso di autenticazione di base senza parametri mancanti
+### 3. Recupera la richiesta di autenticazione del partner, ma torna al flusso di autenticazione di base a causa di un valore di intestazione AP-Partner-Framework-Status mancante o non valido
 
->[!IMPORTANT]
-> 
-> Presupposti
-> 
-> <br/>
->
-> * Fallimento del flusso di autenticazione di base a causa dei parametri single sign-on del partner o della configurazione single sign-on del partner sul backend di Adobe Pass.
+>[!BEGINTABS]
+
+>[!TAB Richiesta]
+
+```HTTPS
+POST /api/v2/REF30/sessions/sso/Apple HTTP/1.1
+ 
+    Authorization: Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJjNGZjM2U3ZS0xMmQ5LTQ5NWQtYjc0Mi02YWVhYzhhNDkwZTciLCJuYmYiOjE3MjQwODc4NjgsImlzcyI6ImF1dGguYWRvYmUuY29tIiwic2NvcGVzIjoiYXBpOmNsaWVudDp2MiIsImV4cCI6MTcyNDEwOTQ2OCwiaWF0IjoxNzI0MDg3ODY4fQ.DJ9GFl_yKAp2Qw-NVcBeRSnxIhqrwxhns5T5jU31N2tiHxCucKLSQ5guBygqkkJx6D0N_93f50meEEyfb7frbHhVHHwmRjHYjkfrWqHCpviwVjVZKKwl8Y3FEMb0bjKIB8p_E3txX9IbzeNGWRufZBRh2sxB5Q9B7XYINpVfh8s_sFvskrbDu5c01neCx5kEagEW5CtE0_EXTgEb5FSr_SfQG3UUu_iwlkOggOh_kOP_5GueElf9jn-bYBMnpObyN5s-FzuHDG5Rtac5rvcWqVW2reEqFTHqLI4rVC7UKQb6DSvPBPV4AgrutAvk30CYgDsOQILVyrjniincp7r9Ww
+    Content-Type: application/x-www-form-urlencoded
+    AP-Device-Identifier: fingerprint YmEyM2QxNDEtZDcxNS01NjFjLTk0ZjQtZTllNGM5NjZiMWVi
+    X-Device-Info: ewoJInByaW1hcnlIYXJkd2FyZVR5cGUiOiAiU2V0VG9wQm94IiwKCSJtb2RlbCI6ICJUViA1dGggR2VuIiwKCSJtYW51ZmFjdHVyZXIiOiAiQXBwbGUiLAoJIm9zTmFtZSI6ICJ0dk9TIgoJIm9zVmVuZG9yIjogIkFwcGxlIiwKCSJvc1ZlcnNpb24iOiAiMTEuMCIKfQ==
+    AP-Partner-Framework-Status: ewogICAgImZyYW1ld29ya1Blcm1pc3Npb25JbmZvIjogewogICAgICAiYWNjZXNzU3RhdHVzIjogImRlbmllZCIKICAgIH0sCiAgICAiZnJhbWV3b3JrUHJvdmlkZXJJbmZvIiA6IHt9Cn0=
+    Accept: application/json
+    User-Agent: Mozilla/5.0 (Apple TV; U; CPU AppleTV5,3 OS 11.0 like Mac OS X; en_US)
+
+Body:
+
+domainName=adobe.com&redirectUrl=https%3A%2F%2Fadobe.com
+```
+
+>[!TAB Risposta]
+
+```HTTPS
+HTTP/1.1 200 OK  
+
+Content-Type: application/json;charset=UTF-8
+
+{
+    "actionName": "authenticate",
+    "actionType": "interactive",
+    "reasonType": "pfs_fallback",
+    "url": "/api/v2/authenticate/REF30/OKTWW2W",
+    "code": "OKTWW2W",
+    "sessionId": "748f0b9e-a2ae-46d5-acd9-4b4e6d71add7",
+    "mvpd": "Cablevision",
+    "serviceProvider": "REF30",
+    "notBefore": "1733735289035",
+    "notAfter": "1733737089035"
+}
+```
+
+>[!ENDTABS]
+
+### 4. Recupera la richiesta di autenticazione del partner, ma torna al flusso di autenticazione di base a causa della configurazione single sign-on del partner sul backend di Adobe Pass
 
 >[!BEGINTABS]
 
@@ -475,7 +530,7 @@ Content-Type: application/json;charset=UTF-8
 {
     "actionName": "authenticate",
     "actionType": "interactive",
-    "reasonType": "none",
+    "reasonType": "configuration_fallback",
     "url": "/api/v2/authenticate/REF30/OKTWW2W",
     "code": "OKTWW2W",
     "sessionId": "748f0b9e-a2ae-46d5-acd9-4b4e6d71add7",
@@ -488,15 +543,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 4. Recupera la richiesta di autenticazione del partner, ma fallback al flusso di autenticazione di base con parametri mancanti
-
->[!IMPORTANT]
->
-> Presupposti
->
-> <br/>
->
-> * Fallimento del flusso di autenticazione di base a causa dei parametri single sign-on del partner o della configurazione single sign-on del partner sul backend di Adobe Pass.
+### 5. Recupera la richiesta di autenticazione del partner, ma torna al flusso di autenticazione di base a causa di parametri mancanti
 
 >[!BEGINTABS]
 
