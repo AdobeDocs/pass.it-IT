@@ -2,9 +2,9 @@
 title: Panoramica API
 description: Panoramica API del monitoraggio della concorrenza
 exl-id: eb232926-9c68-4874-b76d-4c458d059f0d
-source-git-commit: b30d9217e70f48bf8b8d8b5eaaa98fea257f3fc5
+source-git-commit: 0cabb090e3c0282f9bcd097719d52374f2d991dd
 workflow-type: tm+mt
-source-wordcount: '2102'
+source-wordcount: '2155'
 ht-degree: 0%
 
 ---
@@ -22,7 +22,7 @@ Questo documento aiuta gli sviluppatori di applicazioni a utilizzare le nostre s
 
 Durante il processo di sviluppo, la documentazione pubblica di Swagger rappresenta la linea guida di riferimento per comprendere e testare i flussi API. Questo è un ottimo punto di partenza per avere un approccio pratico e familiarizzare con il modo in cui le applicazioni del mondo reale si comporterebbero in diversi scenari di interazione dell’utente.
 
-Invia un ticket in [Zendesk](mailto:tve-support@adobe.com) per registrare la tua azienda e le tue applicazioni nel monitoraggio della concorrenza. Adobe assegnerà un ID applicazione a ogni entità. In questa guida utilizzeremo due applicazioni di riferimento con ID **demo-app** e **demo-app-2** che si troveranno nell&#39;Adobe tenant.
+Invia un ticket in [Zendesk](mailto:tve-support@adobe.com) per registrare la tua azienda e le tue applicazioni nel monitoraggio della concorrenza. Adobe assegnerà un ID applicazione a ogni entità. In questa guida utilizzeremo due applicazioni di riferimento con ID **demo-app** e **demo-app-2** che saranno sotto il tenant Adobe.
 
 
 ## Casi d’uso {#api-use-case}
@@ -36,7 +36,7 @@ In seguito, premi **Esplora** per impostare l&#39;ID che verrà utilizzato nell&
 
 ### Prima applicazione {#first-app-use-cases}
 
-All&#39;applicazione con ID **demo-app** è stato assegnato da Adobe Team un criterio con una regola che limita a 3 il numero di flussi simultanei. Una polizza viene assegnata a una specifica applicazione in base alla richiesta presentata in Zendesk.
+All&#39;applicazione con ID **demo-app** è stato assegnato dal team Adobe un criterio con una regola che limita a 3 il numero di flussi simultanei. Una polizza viene assegnata a una specifica applicazione in base alla richiesta presentata in Zendesk.
 
 
 #### Recupero metadati {#retrieve-metadata-use-case}
@@ -107,7 +107,7 @@ Puoi utilizzare l’opzione &quot;Keep the stream alive&quot; disponibile nell�
 
 #### Terminazione sessione {#session-termination}
 
-Il caso aziendale della tua azienda potrebbe richiedere il monitoraggio della concorrenza per terminare una sessione specifica quando, ad esempio, un utente smette di guardare un video. Per eseguire questa operazione, devi effettuare una chiamata DELETE sulla risorsa Sessioni.
+Il caso aziendale della tua azienda potrebbe richiedere il monitoraggio della concorrenza per terminare una sessione specifica quando, ad esempio, un utente smette di guardare un video. Per eseguire questa operazione, effettua una chiamata DELETE alla risorsa Sessioni.
 
 ![](assets/delete-session.png)
 
@@ -136,6 +136,10 @@ Se non sono presenti sessioni in esecuzione per un utente specifico quando effet
 ![](assets/get-all-running-streams-empty.png)
 
 Inoltre, in questo caso l&#39;intestazione **Scade** non è presente.
+
+Nel caso in cui sia stata creata una sessione che causa la morte di un&#39;altra, utilizzando l&#39;intestazione **X-Terminate**, sotto i metadati troverai il campo **sostituito**. Il suo valore è un indicatore della sessione terminata per fare spazio a quella corrente.
+
+![](assets/get-all-running-streams-superseded.png)
 
 #### Interruzione del criterio {#breaking-policy-app-first}
 
@@ -175,7 +179,7 @@ Per tutte le chiamate API del ciclo di vita della sessione, il corpo della rispo
 **Avviso**
 **EvaluationResult** includerà un array di oggetti Advice in **associatedAdvice**. Gli avvisi sono destinati all’applicazione per visualizzare un messaggio di errore completo per l’utente e (potenzialmente) consentire all’utente di intervenire.
 
-Attualmente esistono due tipi di avvisi (specificati dal valore dell&#39;attributo **type**): **rule-law** e **remote-termination**. Il primo fornisce dettagli relativi a una regola interrotta e alle sessioni in conflitto con quella corrente (incluso l&#39;attributo terminate che può essere utilizzato per terminare tale sessione in remoto). La seconda afferma semplicemente che la sessione corrente è stata volutamente terminata da una sessione remota, in modo che gli utenti sapranno chi li ha cacciati quando sono stati raggiunti i limiti.
+Attualmente esistono due tipi di avvisi (specificati dal valore dell&#39;attributo **type**): **rule-law** e **remote-termination**. Il primo fornisce dettagli relativi a una regola interrotta e alle sessioni in conflitto con quella corrente (incluso l&#39;attributo terminate che può essere utilizzato per terminare tale sessione in remoto). La seconda afferma semplicemente che la sessione corrente è stata volutamente terminata da una sessione remota, in modo che gli utenti sapranno chi li ha cacciati quando sono stati raggiunti i limiti. Se **ha sostituito** è incluso nei metadati, la sessione in questione è stata creata utilizzando l&#39;intestazione **X-Terminate**.
 
 ![](assets/advices.png)
 
