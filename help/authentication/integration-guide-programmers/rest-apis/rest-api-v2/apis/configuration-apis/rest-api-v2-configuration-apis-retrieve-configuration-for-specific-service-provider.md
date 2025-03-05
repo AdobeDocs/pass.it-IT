@@ -2,9 +2,9 @@
 title: Recupera la configurazione per un provider di servizi specifico
 description: 'REST API V2: recupero della configurazione per un provider di servizi specifico'
 exl-id: ad7e4c6d-ed96-4ae7-82a9-3c24e5fc9302
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 871afc4e7ec04d62590dd574bf4e28122afc01b6
 workflow-type: tm+mt
-source-wordcount: '515'
+source-wordcount: '725'
 ht-degree: 2%
 
 ---
@@ -18,6 +18,10 @@ ht-degree: 2%
 >[!IMPORTANT]
 >
 > L&#39;implementazione REST API V2 è limitata dalla documentazione del [meccanismo di limitazione](/help/authentication/integration-guide-programmers/throttling-mechanism.md).
+
+>[!MORELIKETHIS]
+>
+> Visita anche le [Domande frequenti su REST API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#configuration-phase-faqs-general).
 
 ## Richiesta {#request}
 
@@ -210,9 +214,9 @@ ht-degree: 2%
                 <td>
                     Oggetto JSON con i seguenti attributi:
                     <ul>
-                        <li><b>id</b></li>
-                        <li><b>name</b></li>
-                        <li><b>domini</b></li>
+                        <li><b>id</b><br/>Identificatore univoco interno associato al provider di servizi durante il processo di onboarding.</li>
+                        <li><b>nome</b><br/>Nome commerciale (marchio) associato al provider di servizi durante il processo di onboarding.</li>
+                        <li><b>domini</b><br/>L'elenco dei nomi di dominio elencati nell'Autenticazione Adobe Pass per rappresentare il provider di servizi.</li>
                     </ul>
                 </td>
                 <td><i>obbligatorio</i></td>
@@ -222,16 +226,16 @@ ht-degree: 2%
                 <td>
                     Oggetto JSON con i seguenti attributi:
                     <ul>
-                        <li><b>id</b></li>
-                        <li><b>displayName</b></li>
-                        <li><b>logoUrl</b></li>
-                        <li><b>isTempPass</b></li>
-                        <li><b>isProxy</b></li>
-                        <li><b>boardingStatus</b></li>
-                        <li><b>platformMappingId</b></li>
-                        <li><b>enablePlatformServices</b></li>
-                        <li><b>displayInPlatformPicker</b></li>
-                        <li><b>enforcePlatformPermissions</b></li>
+                        <li><b>id</b><br/>Identificatore univoco interno associato al provider di identità durante il processo di onboarding.</li>
+                        <li><b>displayName</b><br/>Nome commerciale (marchio) associato al provider di identità durante il processo di onboarding.</li>
+                        <li><b>logoUrl</b><br>URL da cui scaricare il logo associato al provider di identità.</li>
+                        <li><b>isTempPass</b><br/>Flag che specifica se MVPD è progettato per fornire funzionalità <a href="../../../../features-premium/temporary-access/temp-pass-feature.md">TempPass</a>.</li>
+                        <li><b>isProxy</b><br/>Flag che specifica se MVPD è un MVPD proxy.</li>
+                        <li><b>boardingStatus</b><br/>Stato che specifica se il provider di identità è integrato nella piattaforma del dispositivo di streaming per i flussi Single Sign-On.</li>
+                        <li><b>platformMappingId</b><br/>Identificatore univoco interno associato al provider di identità dalla piattaforma del dispositivo di streaming per i flussi Single Sign-On.</li>
+                        <li><b>enablePlatformServices</b><br/>Flag che specifica se la configurazione del provider di identità è abilitata per la piattaforma del dispositivo di streaming per i flussi Single Sign-On.</li>
+                        <li><b>displayInPlatformPicker</b><br/>Flag che specifica se il provider di identità può essere visualizzato nel selettore della piattaforma del dispositivo di streaming per i flussi Single Sign-On.</li>
+                        <li><b>enforcePlatformPermissions</b><br/>Flag che specifica se il dispositivo di streaming deve applicare le autorizzazioni utente fornite dalla piattaforma per i flussi Single Sign-On.</li>
                     </ul>
                 </td>
                 <td><i>obbligatorio</i></td>
