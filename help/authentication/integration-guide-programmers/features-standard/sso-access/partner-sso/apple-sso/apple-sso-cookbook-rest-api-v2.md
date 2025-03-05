@@ -2,9 +2,9 @@
 title: Manuale Apple SSO (REST API V2)
 description: Manuale Apple SSO (REST API V2)
 exl-id: 81476312-9ba4-47a0-a4f7-9a557608cfd6
-source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
+source-git-commit: d8097b8419aa36140e6ff550714730059555fd14
 workflow-type: tm+mt
-source-wordcount: '3443'
+source-wordcount: '3615'
 ht-degree: 0%
 
 ---
@@ -284,7 +284,7 @@ Segui i passaggi forniti per implementare il Single Sign-On Apple utilizzando i 
    * [Eseguire l&#39;autenticazione nell&#39;applicazione secondaria con mvpd preselezionato](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md)
    * [Eseguire l&#39;autenticazione nell&#39;applicazione secondaria senza mvpd preselezionato](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md)
 
-1. **Procedere con il recupero del profilo utilizzando il flusso di risposta di autenticazione partner:** La risposta dell&#39;endpoint del partner sessioni contiene i dati seguenti:
+1. **Procedere con la creazione e il recupero del profilo utilizzando il flusso di risposta di autenticazione partner:** La risposta dell&#39;endpoint Sessions Partner contiene i dati seguenti:
    * L&#39;attributo `actionName` è impostato su &quot;partner_profile&quot;.
    * L&#39;attributo `actionType` è impostato su &quot;direct&quot;.
    * L&#39;attributo `authenticationRequest - type` include il protocollo di sicurezza utilizzato dal framework partner per l&#39;accesso a MVPD (attualmente impostato solo su SAML).
@@ -316,11 +316,11 @@ Segui i passaggi forniti per implementare il Single Sign-On Apple utilizzando i 
    * La data di scadenza del profilo del provider utente (se disponibile) è valida.
    * La risposta di autenticazione del partner (risposta SAML) è presente e valida.
 
-1. **Recupera profilo utilizzando la risposta di autenticazione partner:** L&#39;applicazione di streaming raccoglie tutti i dati necessari per creare e recuperare un profilo chiamando l&#39;endpoint partner Profili.
+1. **Crea e recupera il profilo utilizzando la risposta di autenticazione del partner:** L&#39;applicazione di streaming raccoglie tutti i dati necessari per creare e recuperare un profilo chiamando l&#39;endpoint del partner Profili.
 
    >[!IMPORTANT]
    >
-   > Per informazioni dettagliate su [Recuperare il profilo utilizzando la risposta di autenticazione partner](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md#Request), consultare la documentazione API:
+   > Per informazioni dettagliate su [Creare e recuperare il profilo utilizzando la risposta di autenticazione partner](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md#Request), consulta la documentazione API per:
    >
    > * Tutti i parametri _required_, come `serviceProvider`, `partner` e `SAMLResponse`
    > * Tutte le intestazioni _required_, come `Authorization`, `AP-Device-Identifier`, `Content-Type`, `X-Device-Info` e `AP-Partner-Framework-Status`
@@ -338,7 +338,7 @@ Segui i passaggi forniti per implementare il Single Sign-On Apple utilizzando i 
 
    >[!IMPORTANT]
    >
-   > Per informazioni dettagliate sulle informazioni fornite in una risposta del profilo, consulta la documentazione API [Recupera profilo tramite risposta di autenticazione partner](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md#Response).
+   > Per informazioni dettagliate sulle informazioni fornite in una risposta del profilo, consulta la documentazione API [Crea e recupera il profilo utilizzando la risposta di autenticazione del partner](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md#Response).
    >
    > <br/>
    >
@@ -371,6 +371,10 @@ Segui i passaggi forniti per implementare il Single Sign-On Apple utilizzando i 
 1. **Recupera stato framework partner:** L&#39;applicazione di streaming chiama il [Framework account sottoscrittore video](https://developer.apple.com/documentation/videosubscriberaccount) sviluppato da Apple per ottenere le autorizzazioni utente e le informazioni sul provider.
 
    >[!IMPORTANT]
+   > 
+   > L’applicazione di streaming può saltare questo passaggio se il tipo di profilo utente selezionato non è &quot;appleSSO&quot;.
+
+   >[!IMPORTANT]
    >
    > Per informazioni dettagliate su [Video Subscriber Account Framework](https://developer.apple.com/documentation/videosubscriberaccount), consulta:
    >
@@ -386,13 +390,17 @@ Segui i passaggi forniti per implementare il Single Sign-On Apple utilizzando i 
    > L&#39;applicazione di streaming deve verificare di specificare un valore booleano uguale a `false` per la proprietà [`isInterruptionAllowed`](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadatarequest/1771708-isinterruptionallowed) nell&#39;oggetto `VSAccountMetadataRequest`, per indicare che l&#39;utente non può essere interrotto in questa fase.
 
    >[!TIP]
-   > 
-   > Suggerimento: l’applicazione di streaming può utilizzare un valore memorizzato nella cache per le informazioni sullo stato del framework del partner, che consigliamo di aggiornare quando l’applicazione passa dallo stato in background a quello in primo piano.
+   >
+   > Suggerimento: l’applicazione di streaming può utilizzare invece un valore memorizzato nella cache per le informazioni sullo stato del framework del partner, che consigliamo di aggiornare quando l’applicazione passa dallo stato in background a quello in primo piano. In tal caso, l’applicazione di streaming deve garantire di memorizzare nella cache e utilizzare solo valori validi per lo stato del framework del partner come descritto nel passaggio &quot;Restituisci informazioni sullo stato del framework del partner&quot;.
 
 1. **Restituisci informazioni sullo stato del framework partner:** L&#39;applicazione di streaming convalida i dati di risposta per verificare che siano soddisfatte le condizioni di base:
    * Lo stato di accesso dell’autorizzazione utente è concesso.
    * Identificatore di mapping del provider utente presente e valido.
-   * La data di scadenza del profilo del provider utente (se disponibile) è valida.
+   * La data di scadenza del profilo del provider utente è valida.
+
+   >[!IMPORTANT]
+   >
+   > L’applicazione di streaming può saltare questo passaggio se il tipo di profilo utente selezionato non è &quot;appleSSO&quot;.
 
 1. **Recupera decisioni di preautorizzazione:** L&#39;applicazione di streaming raccoglie tutti i dati necessari per ottenere le decisioni di preautorizzazione per un elenco di risorse chiamando l&#39;endpoint di preautorizzazione delle decisioni.
 
@@ -406,7 +414,7 @@ Segui i passaggi forniti per implementare il Single Sign-On Apple utilizzando i 
    >
    > <br/>
    >
-   > L’applicazione di streaming deve garantire di includere un valore valido per lo stato del framework del partner prima di effettuare un’ulteriore richiesta, quando il profilo scelto è di tipo &quot;appleSSO&quot;.
+   > L’applicazione di streaming deve garantire di includere un valore valido per lo stato del framework del partner prima di effettuare un’ulteriore richiesta, quando il profilo scelto è di tipo &quot;appleSSO&quot;. Tuttavia, questo passaggio può essere ignorato se il tipo di profilo utente selezionato non è &quot;appleSSO&quot;.
    >
    > <br/>
    >
@@ -435,6 +443,10 @@ Segui i passaggi forniti per implementare il Single Sign-On Apple utilizzando i 
 
    >[!IMPORTANT]
    >
+   > L’applicazione di streaming può saltare questo passaggio se il tipo di profilo utente selezionato non è &quot;appleSSO&quot;.
+
+   >[!IMPORTANT]
+   >
    > Per informazioni dettagliate su [Video Subscriber Account Framework](https://developer.apple.com/documentation/videosubscriberaccount), consulta:
    >
    > <br/>
@@ -450,12 +462,16 @@ Segui i passaggi forniti per implementare il Single Sign-On Apple utilizzando i 
 
    >[!TIP]
    >
-   > Suggerimento: l’applicazione di streaming può utilizzare un valore memorizzato nella cache per le informazioni sullo stato del framework del partner, che consigliamo di aggiornare quando l’applicazione passa dallo stato in background a quello in primo piano.
+   > Suggerimento: l’applicazione di streaming può utilizzare invece un valore memorizzato nella cache per le informazioni sullo stato del framework del partner, che consigliamo di aggiornare quando l’applicazione passa dallo stato in background a quello in primo piano. In tal caso, l’applicazione di streaming deve garantire di memorizzare nella cache e utilizzare solo valori validi per lo stato del framework del partner come descritto nel passaggio &quot;Restituisci informazioni sullo stato del framework del partner&quot;.
 
 1. **Restituisci informazioni sullo stato del framework partner:** L&#39;applicazione di streaming convalida i dati di risposta per verificare che siano soddisfatte le condizioni di base:
    * Lo stato di accesso dell’autorizzazione utente è concesso.
    * Identificatore di mapping del provider utente presente e valido.
-   * La data di scadenza del profilo del provider utente (se disponibile) è valida.
+   * La data di scadenza del profilo del provider utente è valida.
+
+   >[!IMPORTANT]
+   >
+   > L’applicazione di streaming può saltare questo passaggio se il tipo di profilo utente selezionato non è &quot;appleSSO&quot;.
 
 1. **Recupera decisione di autorizzazione:** L&#39;applicazione di streaming raccoglie tutti i dati necessari per ottenere una decisione di autorizzazione per una risorsa specifica chiamando l&#39;endpoint Decisions Authorize.
 
@@ -469,7 +485,7 @@ Segui i passaggi forniti per implementare il Single Sign-On Apple utilizzando i 
    >
    > <br/>
    >
-   > L’applicazione di streaming deve garantire di includere un valore valido per lo stato del framework del partner prima di effettuare un’ulteriore richiesta, quando il profilo scelto è di tipo &quot;appleSSO&quot;.
+   > L’applicazione di streaming deve garantire di includere un valore valido per lo stato del framework del partner prima di effettuare un’ulteriore richiesta, quando il profilo scelto è di tipo &quot;appleSSO&quot;. Tuttavia, questo passaggio può essere ignorato se il tipo di profilo utente selezionato non è &quot;appleSSO&quot;.
    >
    > <br/>
    >
@@ -515,6 +531,10 @@ Segui i passaggi forniti per implementare il Single Sign-On Apple utilizzando i 
 
    >[!IMPORTANT]
    >
+   > L&#39;applicazione di streaming deve richiedere all&#39;utente di completare il processo di disconnessione a livello di partner, come specificato dagli attributi `actionName` e `actionType`, quando il tipo di profilo utente rimosso è &quot;appleSSO&quot;.
+
+   >[!IMPORTANT]
+   >
    > Per informazioni dettagliate sulle informazioni fornite in una risposta di disconnessione, consultare la [Iniziare la disconnessione per la documentazione API mvpd](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md#response) specifica.
    >
    > <br/>
@@ -527,9 +547,5 @@ Segui i passaggi forniti per implementare il Single Sign-On Apple utilizzando i 
    > <br/>
    >
    > Se la convalida non riesce, verrà generata una risposta di errore che fornirà informazioni aggiuntive conformi alla documentazione di [Codici di errore avanzati](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md).
-
-   >[!IMPORTANT]
-   > 
-   > L’applicazione di streaming deve garantire che indichi all’utente di continuare a disconnettersi ulteriormente dal livello partner.
 
 +++

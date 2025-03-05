@@ -1,15 +1,15 @@
 ---
-title: Recupera il profilo utilizzando la risposta di autenticazione partner
-description: REST API V2 - Recuperare il profilo utilizzando la risposta di autenticazione del partner
+title: Crea e recupera il profilo utilizzando la risposta di autenticazione del partner
+description: 'REST API V2: crea e recupera il profilo utilizzando la risposta di autenticazione del partner'
 exl-id: cae260ff-a229-4df7-bbf9-4cdf300c0f9a
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: d8097b8419aa36140e6ff550714730059555fd14
 workflow-type: tm+mt
-source-wordcount: '724'
+source-wordcount: '734'
 ht-degree: 1%
 
 ---
 
-# Recupera il profilo utilizzando la risposta di autenticazione partner {#retrieve-profile-using-partner-authentication-response}
+# Crea e recupera il profilo utilizzando la risposta di autenticazione del partner {#create-and-retrieve-profile-using-partner-authentication-response}
 
 >[!IMPORTANT]
 >
@@ -321,7 +321,7 @@ ht-degree: 1%
 
 ## Esempi {#samples}
 
-### 1. Recuperare il profilo utilizzando la risposta di autenticazione del partner
+### 1. Creare e recuperare il profilo utilizzando la risposta di autenticazione del partner
 
 >[!BEGINTABS]
 
@@ -378,7 +378,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 2. Recupera il profilo utilizzando la risposta di autenticazione del partner, ma viene applicata la riduzione
+### 2. Crea e recupera il profilo utilizzando la risposta di autenticazione del partner, ma viene applicata la riduzione
 
 >[!BEGINTABS]
 

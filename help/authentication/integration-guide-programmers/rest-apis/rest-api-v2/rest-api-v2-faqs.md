@@ -2,9 +2,9 @@
 title: Domande frequenti su REST API V2
 description: Domande frequenti su REST API V2
 exl-id: 2dd74b47-126e-487b-b467-c16fa8cc14c1
-source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
+source-git-commit: d8097b8419aa36140e6ff550714730059555fd14
 workflow-type: tm+mt
-source-wordcount: '8198'
+source-wordcount: '9072'
 ht-degree: 0%
 
 ---
@@ -224,7 +224,7 @@ Tuttavia, per gli MVPD che supportano [l&#39;autenticazione basata su home](/hel
 
 #### 9. Quali sono i casi d’uso per ogni endpoint dei profili disponibile? {#authentication-phase-faq9}
 
-Gli endpoint Profili sono progettati per fornire all’applicazione client la funzionalità di conoscere lo stato di autenticazione dell’utente, accedere alle informazioni sui metadati dell’utente, trovare il metodo utilizzato per l’autenticazione o l’entità utilizzata per fornire l’identità.
+Gli endpoint di base per i profili sono progettati per fornire all’applicazione client la funzionalità di conoscere lo stato di autenticazione dell’utente, accedere alle informazioni sui metadati dell’utente, trovare il metodo utilizzato per l’autenticazione o l’entità utilizzata per fornire l’identità.
 
 Ogni endpoint è adatto a un caso d’uso specifico, come segue:
 
@@ -233,6 +233,18 @@ Ogni endpoint è adatto a un caso d’uso specifico, come segue:
 | [API endpoint profili](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md) | Recupera tutti i profili utente. | **L&#39;utente apre l&#39;applicazione client per la prima volta**<br/><br/> In questo scenario, l&#39;applicazione client non ha l&#39;identificatore MVPD selezionato dell&#39;utente memorizzato nella cache dell&#39;archivio permanente.<br/><br/>Di conseguenza, invierà una singola richiesta per recuperare tutti i profili utente disponibili. |
 | [Endpoint dei profili per API MVPD specifica](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) | Recupera il profilo utente associato a un MVPD specifico. | **L&#39;utente ritorna all&#39;applicazione client dopo l&#39;autenticazione in una visita precedente**<br/><br/> In questo caso, l&#39;applicazione client deve avere l&#39;identificatore MVPD selezionato in precedenza memorizzato nella cache dell&#39;archivio permanente.<br/><br/>Di conseguenza, invierà una singola richiesta per recuperare il profilo dell&#39;utente per quel MVPD specifico. |
 | [Endpoint dei profili per API di codice specifico (autenticazione)](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md) | Recupera il profilo utente associato a un codice di autenticazione specifico. | **L&#39;utente avvia il processo di autenticazione**<br/><br/> In questo caso, l&#39;applicazione client deve determinare se l&#39;utente ha completato correttamente l&#39;autenticazione e recuperare le informazioni sul profilo.<br/><br/>Verrà quindi avviato un meccanismo di polling per recuperare il profilo dell&#39;utente associato al codice di autenticazione. |
+
+Per ulteriori dettagli, fare riferimento al [Flusso dei profili di base eseguito all&#39;interno dell&#39;applicazione principale](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md) e al [Flusso dei profili di base eseguito all&#39;interno dei documenti dell&#39;applicazione secondaria](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md).
+
+L’endpoint SSO Profili ha uno scopo diverso e fornisce all’applicazione client la possibilità di creare un profilo utente utilizzando la risposta di autenticazione del partner e di recuperarlo in un’unica operazione una tantum.
+
+| API | Descrizione | Caso d’uso |
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [Profili API endpoint SSO](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md) | Crea e recupera il profilo utente utilizzando la risposta di autenticazione del partner. | **L&#39;utente consente all&#39;applicazione di utilizzare il Single Sign-On partner per l&#39;autenticazione**<br/><br/> In questo caso, l&#39;applicazione client deve creare un profilo utente dopo aver ricevuto la risposta di autenticazione partner e recuperarla in un&#39;unica operazione. |
+
+Per qualsiasi query successiva, è necessario utilizzare gli endpoint di base Profiles per determinare lo stato di autenticazione dell’utente, accedere alle informazioni sui metadati dell’utente, trovare il metodo utilizzato per l’autenticazione o l’entità utilizzata per fornire l’identità.
+
+Per ulteriori dettagli, fare riferimento ai documenti [Single Sign-On utilizzando i flussi dei partner](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md) e [Apple SSO Cookbook (REST API V2)](/help/authentication/integration-guide-programmers/features-standard/sso-access/partner-sso/apple-sso/apple-sso-cookbook-rest-api-v2.md).
 
 #### 10. Cosa deve fare l’applicazione client se l’utente dispone di più profili MVPD? {#authentication-phase-faq10}
 
@@ -351,11 +363,29 @@ Per ulteriori informazioni, consulta i seguenti documenti:
 * [Recuperare l’API per le decisioni di preautorizzazione](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)
 * [Flusso di pre-autorizzazione di base eseguito nell’applicazione principale](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-preauthorization-primary-application-flow.md)
 
-#### 4. Perché nella decisione di preautorizzazione manca un token multimediale? {#preauthorization-phase-faq4}
+#### 4. L&#39;applicazione client deve memorizzare nella cache le decisioni di preautorizzazione in una memoria persistente? {#preauthorization-phase-faq4}
+
+L&#39;applicazione client non è necessaria per archiviare le decisioni di preautorizzazione nell&#39;archiviazione persistente. Tuttavia, si consiglia di memorizzare nella cache le decisioni sulle autorizzazioni per migliorare l’esperienza utente. Questo consente di evitare inutili chiamate all’endpoint Decisions Preauthorize per le risorse che sono già state preautorizzate, riducendo la latenza e migliorando le prestazioni.
+
+#### 5. In che modo l’applicazione del cliente può determinare il motivo per cui è stata negata una decisione di preautorizzazione? {#preauthorization-phase-faq5}
+
+L&#39;applicazione client può determinare il motivo di una decisione di preautorizzazione negata esaminando il codice di errore [e il messaggio](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md) inclusi nella risposta dall&#39;endpoint di preautorizzazione delle decisioni. Questi dettagli forniscono informazioni sul motivo specifico per cui la richiesta di preautorizzazione è stata negata, aiutando a informare l’esperienza utente o a attivare eventuali operazioni necessarie nell’applicazione.
+
+Assicurati che eventuali meccanismi di esecuzione di nuovi tentativi implementati per recuperare le decisioni di preautorizzazione non generino un ciclo infinito se la decisione di preautorizzazione viene negata.
+
+Valuta la possibilità di limitare i nuovi tentativi a un numero ragionevole e di gestire i rifiuti in modo appropriato fornendo all’utente un feedback chiaro.
+
+#### 6. Perché nella decisione di preautorizzazione manca un token multimediale? {#preauthorization-phase-faq6}
 
 Nella decisione di pre-autorizzazione manca un token multimediale perché la fase di pre-autorizzazione non deve essere utilizzata per riprodurre le risorse, in quanto questo è lo scopo della fase di autorizzazione.
 
-#### 5. Cos’è una risorsa e quali formati sono supportati? {#preauthorization-phase-faq5}
+#### 7. È possibile saltare la fase di autorizzazione se esiste già una decisione di preautorizzazione? {#preauthorization-phase-faq7}
+
+No.
+
+La fase di autorizzazione non può essere ignorata anche se è disponibile una decisione di preautorizzazione. Le decisioni di pre-autorizzazione sono solo informative e non concedono i diritti di riproduzione effettivi. La fase di pre-autorizzazione ha lo scopo di fornire indicazioni preliminari, ma la fase di autorizzazione è ancora necessaria prima di riprodurre qualsiasi contenuto.
+
+#### 8. Cos’è una risorsa e quali formati sono supportati? {#preauthorization-phase-faq8}
 
 La risorsa è un termine definito nella documentazione di [Glossary](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#resource).
 
@@ -368,7 +398,7 @@ L’identificatore univoco della risorsa può avere due formati:
 
 Per ulteriori dettagli, consulta la documentazione di [Risorse protette](/help/authentication/integration-guide-programmers/features-standard/entitlements/decisions.md#protected-resources).
 
-#### 6. Per quante risorse l&#39;applicazione client può ottenere una decisione di preautorizzazione alla volta? {#preauthorization-phase-faq6}
+#### 9. Per quante risorse l&#39;applicazione client può ottenere una decisione di preautorizzazione alla volta? {#preauthorization-phase-faq9}
 
 L’applicazione client può ottenere una decisione di preautorizzazione per un numero limitato di risorse in una singola richiesta API, di solito fino a 5, a causa delle condizioni imposte dagli MVPD.
 
@@ -409,7 +439,19 @@ Questo periodo di tempo limitato, noto come autorizzazione (authZ) [TTL](/help/a
 
 Per ulteriori dettagli, consulta la [Guida utente per l&#39;integrazione del dashboard di TVE](/help/authentication/user-guide-tve-dashboard/tve-dashboard-integrations.md#most-used-flows).
 
-#### 4. Cos’è un token multimediale e per quanto tempo è valido? {#authorization-phase-faq4}
+#### 4. L&#39;applicazione client deve memorizzare nella cache le decisioni di autorizzazione in una memoria persistente? {#authorization-phase-faq4}
+
+L&#39;applicazione client non è necessaria per archiviare le decisioni di autorizzazione nell&#39;archivio permanente.
+
+#### 5. In che modo l’applicazione del cliente può determinare il motivo per cui è stata rifiutata una decisione di autorizzazione? {#authorization-phase-faq5}
+
+L&#39;applicazione client può determinare il motivo di una decisione di autorizzazione negata esaminando il [codice di errore e il messaggio](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md) inclusi nella risposta dall&#39;endpoint Decisions Authorize. Questi dettagli forniscono informazioni sul motivo specifico per cui la richiesta di autorizzazione è stata negata, aiutando a informare l’esperienza utente o a attivare eventuali operazioni necessarie nell’applicazione.
+
+Assicurati che eventuali meccanismi di esecuzione di nuovi tentativi implementati per recuperare le decisioni di autorizzazione non generino un loop infinito se la decisione di autorizzazione viene negata.
+
+Valuta la possibilità di limitare i nuovi tentativi a un numero ragionevole e di gestire i rifiuti in modo appropriato fornendo all’utente un feedback chiaro.
+
+#### 6. Cos’è un token multimediale e per quanto tempo è valido? {#authorization-phase-faq6}
 
 Il token multimediale è un termine definito nella documentazione di [Glossary](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#media-token).
 
@@ -417,7 +459,7 @@ Il token multimediale è costituito da una stringa firmata inviata in testo non 
 
 Per ulteriori informazioni, consulta la documentazione di [Media Token Verifier](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md#media-token-verifier).
 
-Il token multimediale è valido per un periodo di tempo limitato e breve specificato al momento del rilascio, che indica il periodo di tempo che deve essere utilizzato dall’applicazione client prima di richiedere di nuovo la query sull’endpoint Decisions Authorize.
+Il token multimediale è valido per un periodo di tempo limitato e breve specificato al momento del rilascio, che indica il limite di tempo prima che debba essere verificato e utilizzato dall’applicazione client.
 
 L’applicazione client può utilizzare il token multimediale per riprodurre un flusso di risorse nel caso in cui la decisione del fornitore TV (autorevole) consenta all’utente di accedervi.
 
@@ -426,7 +468,41 @@ Per ulteriori informazioni, consulta i seguenti documenti:
 * [Recuperare l’API per le decisioni di autorizzazione](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)
 * [Flusso di autorizzazione di base eseguito nell&#39;applicazione principale](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authorization-primary-application-flow.md)
 
-#### 5. Cos’è una risorsa e quali formati sono supportati? {#authorization-phase-faq5}
+#### 7. L’applicazione client deve convalidare il token multimediale prima di riprodurre il flusso di risorse? {#authorization-phase-faq7}
+
+Sì.
+
+L’applicazione client deve convalidare il token multimediale prima di avviare la riproduzione del flusso di risorse. Questa convalida deve essere eseguita utilizzando [Media Token Verifier](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md#media-token-verifier). Verificando `serializedToken` da `token` restituito, l&#39;applicazione client impedisce l&#39;accesso non autorizzato, ad esempio la copia di flusso, e garantisce che solo gli utenti autorizzati possano riprodurre il contenuto.
+
+#### 8. L’applicazione client deve aggiornare un token multimediale scaduto durante la riproduzione? {#authorization-phase-faq8}
+
+No.
+
+Non è necessario che l’applicazione client aggiorni un token multimediale scaduto mentre il flusso è in riproduzione attiva. Se il token multimediale scade durante la riproduzione, il flusso deve poter continuare senza interruzioni. Tuttavia, il client deve richiedere una nuova decisione di autorizzazione e ottenere un nuovo token multimediale la volta successiva che l’utente tenta di riprodurre la stessa risorsa.
+
+#### 9. Qual è lo scopo di ciascun attributo di marca temporale nella decisione di autorizzazione? {#authorization-phase-faq9}
+
+La decisione di autorizzazione include diversi attributi di marca temporale che forniscono un contesto essenziale sul periodo di validità dell’autorizzazione stessa e del token multimediale associato. Queste marche temporali hanno scopi diversi, a seconda che si riferiscano alla decisione di autorizzazione o al token multimediale.
+
+**Marca temporale a livello di decisione**
+
+Le marche temporali descrivono il periodo di validità della decisione globale di autorizzazione:
+
+| Attributo | Descrizione | Note |
+|-------------|------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `notBefore` | L’ora in cui è stata rilasciata la decisione di autorizzazione. | Indica l&#39;inizio della finestra di validità dell&#39;autorizzazione. |
+| `notAfter` | L’ora in cui scade la decisione di autorizzazione. | Il valore TTL [authorization Time-to-Live](/help/authentication/integration-guide-programmers/features-standard/entitlements/decisions.md#authorization-ttl-management) determina per quanto tempo l&#39;autorizzazione rimane valida prima di richiedere una nuova autorizzazione. Questo TTL viene negoziato con i rappresentanti di MVPD. |
+
+**Marca temporale a livello di token**
+
+Queste marche temporali descrivono il periodo di validità del token multimediale associato alla decisione di autorizzazione:
+
+| Attributo | Descrizione | Note |
+|-------------|-------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `notBefore` | L’ora in cui è stato emesso il token multimediale. | Indica quando il token diventa valido per la riproduzione. |
+| `notAfter` | L’ora in cui scade il token multimediale. | I token multimediali hanno una durata intenzionalmente breve (in genere 7 minuti) per ridurre al minimo i rischi di uso improprio e tenere conto delle potenziali differenze di clock tra il server che genera i token e il server che verifica i token. |
+
+#### 10. Che cos’è una risorsa e quali formati sono supportati? {#authorization-phase-faq10}
 
 La risorsa è un termine definito nella documentazione di [Glossary](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#resource).
 
@@ -439,7 +515,7 @@ L’identificatore univoco della risorsa può avere due formati:
 
 Per ulteriori dettagli, consulta la documentazione di [Risorse protette](/help/authentication/integration-guide-programmers/features-standard/entitlements/decisions.md#protected-resources).
 
-#### 6. Per quante risorse la richiesta del cliente può ottenere una decisione di autorizzazione alla volta? {#authorization-phase-faq6}
+#### 11. Per quante risorse la domanda del cliente può ottenere una decisione di autorizzazione alla volta? {#authorization-phase-faq11}
 
 L’applicazione client può ottenere una decisione di autorizzazione per un numero limitato di risorse in una singola richiesta API, di solito fino a 1, a causa delle condizioni imposte dagli MVPD.
 
@@ -452,6 +528,10 @@ L’applicazione client può ottenere una decisione di autorizzazione per un num
 #### 1. Qual è lo scopo della fase di disconnessione? {#logout-phase-faq1}
 
 Lo scopo della fase di disconnessione è fornire all’applicazione client la funzionalità per terminare il profilo autenticato dell’utente nell’ambito dell’autenticazione di Adobe Pass su richiesta dell’utente.
+
+#### 2. La fase di disconnessione è obbligatoria? {#logout-phase-faq2}
+
+La fase di disconnessione è obbligatoria, l&#39;applicazione client deve fornire all&#39;utente la possibilità di disconnettersi.
 
 +++
 
