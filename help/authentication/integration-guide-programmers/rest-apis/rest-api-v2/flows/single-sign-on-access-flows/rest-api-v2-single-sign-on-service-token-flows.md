@@ -2,9 +2,9 @@
 title: Single Sign-On - Token di servizio - Flussi
 description: REST API V2 - Single Sign-On - Token di servizio - Flussi
 exl-id: b0082d2a-e491-4cb5-bb40-35ba10db6b1a
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
-source-wordcount: '1848'
+source-wordcount: '1858'
 ht-degree: 0%
 
 ---
@@ -18,6 +18,10 @@ ht-degree: 0%
 >[!IMPORTANT]
 >
 > L&#39;implementazione REST API V2 è limitata dalla documentazione del [meccanismo di limitazione](/help/authentication/integration-guide-programmers/throttling-mechanism.md).
+
+>[!MORELIKETHIS]
+>
+> Visita anche le [Domande frequenti su REST API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authentication-phase-faqs-general).
 
 Il metodo Service Token consente a più applicazioni di utilizzare un identificatore utente univoco per ottenere un Single Sign-On (SSO) su più dispositivi e piattaforme quando si utilizzano i servizi Adobe Pass.
 
@@ -39,8 +43,8 @@ Prima di eseguire il flusso di autenticazione tramite Single Sign-On utilizzando
 * Il servizio Identity esterno deve restituire informazioni coerenti come payload `JWS` in tutte le applicazioni su più dispositivi e piattaforme.
 * La prima applicazione di streaming deve recuperare l&#39;identificatore utente univoco e includere il payload `JWS` come parte dell&#39;intestazione [AD-Service-Token](../../appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md) per tutte le richieste che lo specificano.
 * La prima applicazione di streaming deve selezionare un MVPD.
-* La prima applicazione di streaming deve avviare una sessione di autenticazione per accedere con l&#39;MVPD selezionato.
-* La prima applicazione di streaming deve effettuare l’autenticazione con l’MVPD selezionato in un agente utente.
+* La prima applicazione di streaming deve avviare una sessione di autenticazione per accedere con il MVPD selezionato.
+* La prima applicazione di streaming deve eseguire l’autenticazione con il MVPD selezionato in un agente utente.
 * La seconda applicazione di streaming deve recuperare l&#39;identificatore utente univoco e includere il payload `JWS` come parte dell&#39;intestazione [AD-Service-Token](../../appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md) per tutte le richieste che lo specificano.
 
 >[!IMPORTANT]
@@ -50,7 +54,7 @@ Prima di eseguire il flusso di autenticazione tramite Single Sign-On utilizzando
 > <br/>
 > 
 > * La prima applicazione di streaming supporta l’interazione dell’utente per selezionare un MVPD.
-> * La prima applicazione di streaming supporta l’interazione dell’utente per l’autenticazione con l’MVPD selezionato in un agente utente.
+> * La prima applicazione di streaming supporta l’interazione dell’utente per l’autenticazione con il MVPD selezionato in un agente utente.
 
 ### Flusso di lavoro {#workflow-steps-scenario-performing-authentication-flow-using-service-token-single-sign-on-method}
 
@@ -106,9 +110,9 @@ Per implementare il flusso di autenticazione tramite single sign-on, esegui i pa
    * L&#39;attributo `actionName` è impostato per l&#39;autenticazione.
    * L&#39;attributo `actionType` è impostato su &quot;interactive&quot;.
 
-   Se il backend di Adobe Pass non identifica un profilo valido, la prima applicazione di streaming apre un agente utente per caricare l&#39;elemento `url` fornito, effettuando una richiesta all&#39;endpoint Authenticate. Questo flusso può includere diversi reindirizzamenti, che portano l’utente alla pagina di accesso MVPD e forniscono credenziali valide.
+   Se il backend di Adobe Pass non identifica un profilo valido, la prima applicazione di streaming apre un agente utente per caricare l&#39;elemento `url` fornito, effettuando una richiesta all&#39;endpoint Authenticate. Questo flusso può includere diversi reindirizzamenti, che portano l’utente alla pagina di accesso di MVPD e forniscono credenziali valide.
 
-1. **Autenticazione MVPD completa:** Se il flusso di autenticazione ha esito positivo, l&#39;interazione dell&#39;agente utente salva un profilo regolare nel backend di Adobe Pass e raggiunge il `redirectUrl` fornito.
+1. **Autenticazione MVPD completa:** se il flusso di autenticazione ha esito positivo, l&#39;interazione dell&#39;agente utente salva un profilo regolare nel backend di Adobe Pass e raggiunge il `redirectUrl` fornito.
 
 1. **Recupera profilo per codice specifico:** La prima applicazione di streaming raccoglie tutti i dati necessari per recuperare le informazioni sul profilo inviando una richiesta all&#39;endpoint Profili.
 

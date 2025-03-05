@@ -2,7 +2,7 @@
 title: Meccanismo di limitazione
 description: Scopri il meccanismo di limitazione utilizzato nell’autenticazione di Adobe Pass. Per una panoramica di questo meccanismo, consulta questa pagina.
 exl-id: f00f6c8e-2281-45f3-b592-5bbc004897f7
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
 source-wordcount: '1141'
 ht-degree: 0%
@@ -24,7 +24,7 @@ Questo meccanismo è importante per alcuni motivi:
 
 ### Implementazioni client
 
-Pass Authentication fornisce linee guida e SDK per l’interazione con l’API, ma non controlla come il cliente la utilizza. Alcune implementazioni possono avere un’implementazione rudimentale e potrebbero inondare il servizio di richieste API non necessarie, accidentalmente o meno, potrebbe comportare rallentamenti o problemi di capacità per altri utenti.
+Pass Authentication fornisce linee guida e SDK per l’interazione con l’API, ma non controlla il modo in cui il cliente la utilizza. Alcune implementazioni possono avere un’implementazione rudimentale e potrebbero inondare il servizio di richieste API non necessarie, accidentalmente o meno, potrebbe comportare rallentamenti o problemi di capacità per altri utenti.
 
 Il servizio stesso dovrebbe essere in grado di gestire qualsiasi capacità ragionevole. Ma non importa quanto scalabile o performante sia un servizio, ci sono sempre dei limiti. Di conseguenza, il servizio deve disporre di limiti configurati per il numero di chiamate accettate entro un intervallo di tempo specifico.
 
@@ -42,7 +42,7 @@ Le implementazioni server-to-server devono inoltrare gli indirizzi IP dei propri
 
 Ulteriori dettagli su come trasmettere l&#39;intestazione X-Forwarded-For [qui](legacy/rest-api-v1/cookbooks/rest-api-cookbook-servertoserver.md).
 
-### Limiti ed endpoint effettivi
+### Limiti ed endpoint effettivi {#throttling-mechanism-limits}
 
 Attualmente, il limite predefinito consente un massimo di 1 richiesta al secondo, con un burst iniziale di 10 richieste (una tantum per la prima interazione del client identificato, che dovrebbe consentire il completamento dell’inizializzazione). Questo non dovrebbe influenzare nessun caso di business regolare tra tutti i nostri clienti.
 
@@ -71,33 +71,33 @@ Il meccanismo di limitazione verrà attivato sui seguenti endpoint:
 - /reggie/v1/.+/regcode
 - /reggie/v1/.+/regcode/.+
 
-### Disambiguazione nell&#39;implementazione dell&#39;SDK
+### Disambiguazione nell’implementazione di SDK
 
 Poiché i client che utilizzano l’autenticazione di Adobe Pass fornita dagli SDK non interagiscono in modo esplicito con alcun endpoint, questa sezione presenta le funzioni note, il loro comportamento quando incontrano una risposta di limitazione e le azioni da intraprendere.
 
 #### setRequestor
 
-Quando viene raggiunto il limite di velocità utilizzando la funzione `setRequestor` dell&#39;SDK, l&#39;SDK restituirà un codice di errore CFG429 tramite callback `errorHandler`.
+Al raggiungimento del limite di velocità utilizzando la funzione `setRequestor` di SDK, SDK restituirà un codice di errore CFG429 tramite callback `errorHandler`.
 
 #### getAuthorization
 
-Quando viene raggiunto il limite di velocità utilizzando la funzione `getAuthorization` dell&#39;SDK, l&#39;SDK restituirà un codice di errore Z100 tramite callback `errorHandler`.
+Al raggiungimento del limite di velocità utilizzando la funzione `getAuthorization` di SDK, SDK restituirà un codice di errore Z100 tramite callback `errorHandler`.
 
 #### checkPreauthorizedResources
 
-Quando viene raggiunto il limite di velocità utilizzando la funzione `checkPreauthorizedResources` dell&#39;SDK, l&#39;SDK restituirà un codice di errore P100 tramite callback `errorHandler`.
+Al raggiungimento del limite di velocità utilizzando la funzione `checkPreauthorizedResources` di SDK, SDK restituirà un codice di errore P100 tramite callback `errorHandler`.
 
 #### getMetadata
 
-Quando viene raggiunto il limite di velocità utilizzando la funzione `getMetadata` dell&#39;SDK, l&#39;SDK restituirà una risposta vuota tramite il callback `setMetadataStatus`.
+Quando viene raggiunto il limite di velocità utilizzando la funzione `getMetadata` di SDK, SDK restituirà una risposta vuota tramite il callback `setMetadataStatus`.
 
-Per ogni dettaglio di implementazione specifico, consulta la documentazione SDK specifica.
+Per ogni dettaglio di implementazione specifico, consulta la documentazione specifica di SDK.
 
 - [Riferimento API di JavaScript SDK](legacy/sdks/javascript-sdk/javascript-sdk-api-reference.md)
-- [Riferimento API dell&#39;SDK per Android](legacy/sdks/android-sdk/android-sdk-api-reference.md)
+- [Riferimento API di Android SDK](legacy/sdks/android-sdk/android-sdk-api-reference.md)
 - [Riferimento API per iOS/tvOS](legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md)
 
-### Modifiche alla risposta API e risposta
+### Modifiche alla risposta API e risposta {#throttling-mechanism-response}
 
 Quando identifichiamo che il limite è stato superato, contrassegneremo questa richiesta con uno stato di risposta specifico (HTTP 429 Troppe richieste), indicando che hai utilizzato tutti i token assegnati al dispositivo utente (indirizzo IP) per l’intervallo di tempo.
 

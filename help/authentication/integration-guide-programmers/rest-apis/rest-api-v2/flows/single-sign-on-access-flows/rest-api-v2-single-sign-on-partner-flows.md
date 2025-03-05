@@ -2,9 +2,9 @@
 title: Single Sign-On - Partner - Flussi
 description: REST API V2 - Single Sign-On - Partner - Flussi
 exl-id: 5735d67f-a311-4d03-ad48-93c0fcbcace5
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
-source-wordcount: '1444'
+source-wordcount: '1454'
 ht-degree: 0%
 
 ---
@@ -18,6 +18,10 @@ ht-degree: 0%
 >[!IMPORTANT]
 >
 > L&#39;implementazione REST API V2 è limitata dalla documentazione del [meccanismo di limitazione](/help/authentication/integration-guide-programmers/throttling-mechanism.md).
+
+>[!MORELIKETHIS]
+>
+> Visita anche le [Domande frequenti su REST API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authentication-phase-faqs-general).
 
 Il metodo Partner consente a più applicazioni di utilizzare un payload di stato del framework partner per ottenere un Single Sign-On (SSO) a livello di dispositivo quando si utilizzano i servizi Adobe Pass.
 
@@ -48,7 +52,7 @@ Prima di recuperare la richiesta di autenticazione del partner, accertati che si
 > <br/>
 > 
 > * Il framework partner supporta l&#39;interazione dell&#39;utente per selezionare un MVPD.
-> * Il framework partner supporta l’interazione dell’utente per l’autenticazione con l’MVPD selezionato.
+> * Il framework partner supporta l’interazione dell’utente per l’autenticazione con il MVPD selezionato.
 > * Il framework partner fornisce le autorizzazioni utente e le informazioni sul provider.
 
 ### Flusso di lavoro {#workflow-retrieve-partner-authentication-request}
@@ -115,7 +119,7 @@ Effettua i passaggi forniti per recuperare la richiesta di autenticazione del pa
 1. **Procedere con il flusso di recupero del profilo utilizzando la risposta di autenticazione partner:** La risposta dell&#39;endpoint Partner sessioni contiene i dati seguenti:
    * L&#39;attributo `actionName` è impostato su &quot;partner_profile&quot;.
    * L&#39;attributo `actionType` è impostato su &quot;direct&quot;.
-   * L&#39;attributo `authenticationRequest - type` include il protocollo di sicurezza utilizzato dal framework partner per l&#39;accesso MVPD (attualmente impostato solo su SAML).
+   * L&#39;attributo `authenticationRequest - type` include il protocollo di sicurezza utilizzato dal framework partner per l&#39;accesso a MVPD (attualmente impostato solo su SAML).
    * L&#39;attributo `authenticationRequest - request` include la richiesta SAML passata al framework partner.
    * L&#39;attributo `authenticationRequest - attributesNames` include gli attributi SAML passati al framework partner.
 
@@ -138,7 +142,7 @@ Effettua i passaggi forniti per recuperare la richiesta di autenticazione del pa
    * L&#39;attributo `actionName` è impostato su &quot;authorize&quot;.
    * L&#39;attributo `actionType` è impostato su &quot;direct&quot;.
 
-   Se il backend di Adobe Pass identifica un profilo valido, non è necessario che l’applicazione di streaming autentichi nuovamente con l’MVPD selezionato, in quanto esiste già un profilo che può essere utilizzato per i flussi decisionali successivi.
+   Se il backend di Adobe Pass identifica un profilo valido, non è necessario che l’applicazione di streaming autentichi nuovamente con il MVPD selezionato, in quanto esiste già un profilo che può essere utilizzato per i flussi decisionali successivi.
 
    >[!IMPORTANT]
    >
@@ -154,7 +158,7 @@ Effettua i passaggi forniti per recuperare la richiesta di autenticazione del pa
 
 Prima di recuperare il profilo utilizzando una risposta di autenticazione del partner, verifica che siano soddisfatti i seguenti prerequisiti:
 
-* Il framework partner deve eseguire l&#39;autenticazione con l&#39;MVPD selezionato.
+* Il framework partner deve eseguire l&#39;autenticazione con il MVPD selezionato.
 * L’applicazione di streaming deve ottenere la risposta di autenticazione del partner insieme alle informazioni sullo stato del framework del partner dal framework del partner e trasmetterla al server Adobe Pass.
 
 >[!IMPORTANT]
@@ -162,7 +166,7 @@ Prima di recuperare il profilo utilizzando una risposta di autenticazione del pa
 > Presunzione
 >
 > * Il framework partner supporta l&#39;interazione dell&#39;utente per selezionare un MVPD.
-> * Il framework partner supporta l’interazione dell’utente per l’autenticazione con l’MVPD selezionato.
+> * Il framework partner supporta l’interazione dell’utente per l’autenticazione con il MVPD selezionato.
 > * Il framework partner fornisce le autorizzazioni utente e le informazioni sul provider.
 
 ### Flusso di lavoro {#workflow-retrieve-profile-using-partner-authentication-response}
@@ -173,7 +177,7 @@ Esegui i passaggi forniti per implementare il flusso di recupero del profilo uti
 
 *Recupera profilo autenticato tramite risposta di autenticazione partner*
 
-1. **Completare l&#39;autenticazione MVPD con il framework partner:** Se il flusso di autenticazione ha esito positivo, l&#39;interazione del framework partner con MVPD genera una risposta di autenticazione partner (risposta SAML) restituita insieme alle informazioni sullo stato del framework partner.
+1. **Completare l&#39;autenticazione di MVPD con il framework partner:** Se il flusso di autenticazione ha esito positivo, l&#39;interazione del framework partner con MVPD genera una risposta di autenticazione partner (risposta SAML) restituita insieme alle informazioni sullo stato del framework partner.
 
 1. **Risposta di autenticazione partner di ritorno:** L&#39;applicazione di streaming convalida i dati di risposta per verificare che siano soddisfatte le condizioni di base:
    * Lo stato di accesso dell’autorizzazione utente è concesso.

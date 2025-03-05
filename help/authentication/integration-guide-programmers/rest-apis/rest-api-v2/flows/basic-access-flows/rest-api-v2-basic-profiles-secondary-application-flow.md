@@ -2,9 +2,9 @@
 title: Profili di base - Applicazione secondaria - Flusso
 description: REST API V2 - Profili di base - Applicazione secondaria - Flusso
 exl-id: 1fcefcfa-7534-4b85-b3b5-df513685d66b
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
-source-wordcount: '408'
+source-wordcount: '418'
 ht-degree: 0%
 
 ---
@@ -19,6 +19,10 @@ ht-degree: 0%
 >
 > L&#39;implementazione REST API V2 è limitata dalla documentazione del [meccanismo di limitazione](/help/authentication/integration-guide-programmers/throttling-mechanism.md).
 
+>[!MORELIKETHIS]
+>
+> Visita anche le [Domande frequenti su REST API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authentication-phase-faqs-general).
+
 Il flusso **Profili** all&#39;interno del diritto di autenticazione di Adobe Pass consente all&#39;applicazione secondaria di accedere alle informazioni sugli accessi utente attivi.
 
 Il flusso dei profili di base consente di eseguire query per i seguenti scenari:
@@ -31,7 +35,7 @@ Il flusso dei profili di base consente di eseguire query per i seguenti scenari:
 
 Prima di recuperare il profilo per un codice di autenticazione specifico, verifica che siano soddisfatti i seguenti prerequisiti:
 
-* L&#39;applicazione secondaria, che ha un `code` utilizzato per eseguire l&#39;autenticazione interattiva con MVPD, desidera recuperare il profilo per un codice di autenticazione specifico.
+* L&#39;applicazione secondaria, che dispone di un `code` utilizzato per eseguire l&#39;autenticazione interattiva con MVPD, desidera recuperare il profilo per un codice di autenticazione specifico.
 
 ### Flusso di lavoro {#workflow-retrieve-profile-for-specific-code}
 

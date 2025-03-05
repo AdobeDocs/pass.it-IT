@@ -2,9 +2,9 @@
 title: Single Sign-On - Identità piattaforma - Flussi
 description: REST API V2 - Single Sign-On - Identità piattaforma - Flussi
 exl-id: 5200e851-84e8-4cb4-b068-63b91a2a8945
-source-git-commit: 81d3c3835d2e97e28c2ddb9c72d1a048a25ad433
+source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
-source-wordcount: '1836'
+source-wordcount: '1846'
 ht-degree: 0%
 
 ---
@@ -18,6 +18,10 @@ ht-degree: 0%
 >[!IMPORTANT]
 >
 > L&#39;implementazione REST API V2 è limitata dalla documentazione del [meccanismo di limitazione](/help/authentication/integration-guide-programmers/throttling-mechanism.md).
+
+>[!MORELIKETHIS]
+>
+> Visita anche le [Domande frequenti su REST API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authentication-phase-faqs-general).
 
 Il metodo Platform Identity consente a più applicazioni di utilizzare un identificatore univoco della piattaforma per ottenere un Single Sign-On (SSO) a livello di dispositivo o piattaforma quando si utilizzano i servizi Adobe Pass.
 

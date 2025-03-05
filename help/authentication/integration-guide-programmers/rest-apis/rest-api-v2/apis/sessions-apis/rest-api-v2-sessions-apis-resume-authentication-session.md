@@ -2,9 +2,9 @@
 title: Riprendi sessione di autenticazione
 description: REST API V2 - Riprendi sessione di autenticazione
 exl-id: 66c33546-2be0-473f-9623-90499d1c13eb
-source-git-commit: 5e5bb6a52a4629056fd52c7e79a11dba2b9a45db
+source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
-source-wordcount: '876'
+source-wordcount: '886'
 ht-degree: 1%
 
 ---
@@ -18,6 +18,10 @@ ht-degree: 1%
 >[!IMPORTANT]
 >
 > L&#39;implementazione REST API V2 è limitata dalla documentazione del [meccanismo di limitazione](/help/authentication/integration-guide-programmers/throttling-mechanism.md).
+
+>[!MORELIKETHIS]
+>
+> Visita anche le [Domande frequenti su REST API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authentication-phase-faqs-general).
 
 ## Richiesta {#request}
 

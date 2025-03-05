@@ -2,9 +2,9 @@
 title: Flussi di accesso danneggiati
 description: REST API V2 - Flussi di accesso danneggiati
 exl-id: 9276f5d9-8b1a-4282-8458-0c1e1e06bcf5
-source-git-commit: 49a6a75944549dbfb062b1be8a053e6c99c90dc9
+source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
-source-wordcount: '1605'
+source-wordcount: '1615'
 ht-degree: 0%
 
 ---
@@ -18,6 +18,10 @@ ht-degree: 0%
 >[!IMPORTANT]
 >
 > L&#39;implementazione REST API V2 è limitata dalla documentazione del [meccanismo di limitazione](/help/authentication/integration-guide-programmers/throttling-mechanism.md).
+
+>[!MORELIKETHIS]
+>
+> Visita anche le [Domande frequenti su REST API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authentication-phase-faqs-general).
 
 Degradazione consente di bypassare temporaneamente endpoint specifici di autenticazione e autorizzazione di MVPD. Di solito, il programmatore avvia questa azione, ma indipendentemente da chi attiva un evento di degrado, l’azione dipende da accordi precedenti conclusi con gli MVPD interessati.
 

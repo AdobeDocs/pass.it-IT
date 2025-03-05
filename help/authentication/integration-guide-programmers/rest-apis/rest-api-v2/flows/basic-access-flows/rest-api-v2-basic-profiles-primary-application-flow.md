@@ -2,9 +2,9 @@
 title: Profili di base - Applicazione principale - Flusso
 description: REST API V2 - Profili di base - Applicazione principale - Flusso
 exl-id: 19ddf382-9a32-4b94-aa84-7611c0e1780e
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
-source-wordcount: '964'
+source-wordcount: '974'
 ht-degree: 0%
 
 ---
@@ -18,6 +18,10 @@ ht-degree: 0%
 >[!IMPORTANT]
 >
 > L&#39;implementazione REST API V2 è limitata dalla documentazione del [meccanismo di limitazione](/help/authentication/integration-guide-programmers/throttling-mechanism.md).
+
+>[!MORELIKETHIS]
+>
+> Visita anche le [Domande frequenti su REST API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authentication-phase-faqs-general).
 
 Il flusso **Profili** all&#39;interno del diritto Autenticazione di Adobe Pass consente all&#39;applicazione di streaming di accedere alle informazioni sugli accessi utente attivi.
 
@@ -79,19 +83,19 @@ Segui i passaggi forniti per implementare il flusso di recupero dei profili di b
 
 ### Prerequisiti {#prerequisites-retrieve-profile-for-specific-mvpd}
 
-Prima di recuperare il profilo per un MVPD specifico, accertati che siano soddisfatti i seguenti prerequisiti:
+Prima di recuperare il profilo per un MVPD specifico, verifica che siano soddisfatti i seguenti prerequisiti:
 
 * L&#39;applicazione di streaming, che ha un identificatore `mvpd` selezionato o memorizzato nella cache, desidera recuperare il profilo regolare per un MVPD specifico.
 
 ### Flusso di lavoro {#workflow-retrieve-profile-for-specific-mvpd}
 
-Segui i passaggi forniti per implementare il flusso di recupero del profilo di base per uno specifico MVPD eseguito all’interno di un’applicazione primaria, come illustrato nel diagramma seguente.
+Segui i passaggi forniti per implementare il flusso di recupero del profilo di base per un MVPD specifico eseguito all’interno di un’applicazione principale, come illustrato nel diagramma seguente.
 
 ![Recupera profilo per mvpd](../../../../../assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-retrieve-profile-within-primary-application-for-specific-mvpd.png) specifico
 
 *Recupera profilo per mvpd* specifico
 
-1. **Recupera profilo per mvpd specifico:** L&#39;applicazione di streaming raccoglie tutti i dati necessari per recuperare le informazioni sul profilo per MVPD specifico inviando una richiesta all&#39;endpoint Profili.
+1. **Recupera profilo per mvpd specifico:** L&#39;applicazione di streaming raccoglie tutti i dati necessari per recuperare le informazioni sul profilo per tale MVPD specifico inviando una richiesta all&#39;endpoint Profili.
 
    >[!IMPORTANT]
    >

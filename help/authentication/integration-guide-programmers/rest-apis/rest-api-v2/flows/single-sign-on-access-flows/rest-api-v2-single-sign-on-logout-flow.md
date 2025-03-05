@@ -2,9 +2,9 @@
 title: Disconnessione singola - Flusso
 description: REST API V2 - Disconnessione singola - Flusso
 exl-id: d7092ca7-ea7b-4e92-b45f-e373a6d673d6
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
-source-wordcount: '577'
+source-wordcount: '587'
 ht-degree: 0%
 
 ---
@@ -19,11 +19,15 @@ ht-degree: 0%
 >
 > L&#39;implementazione REST API V2 è limitata dalla documentazione del [meccanismo di limitazione](/help/authentication/integration-guide-programmers/throttling-mechanism.md).
 
+>[!MORELIKETHIS]
+>
+> Visita anche le [Domande frequenti su REST API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authentication-phase-faqs-general).
+
 ## Avvia disconnessione singola per mvpd specifico {#initiate-single-logout-for-specific-mvpd}
 
 ### Prerequisiti {#prerequisites-initiate-single-logout-for-specific-mvpd}
 
-Prima di avviare il logout singolo per un MVPD specifico, verificare che siano soddisfatti i seguenti prerequisiti:
+Prima di avviare una disconnessione singola per un MVPD specifico, verificare che siano soddisfatti i seguenti prerequisiti:
 
 * La seconda applicazione di streaming deve disporre di un profilo Single Sign-On valido creato correttamente per MVPD utilizzando uno dei flussi di autenticazione Single Sign-On:
    * [Eseguire l’autenticazione tramite single sign-on utilizzando l’identità della piattaforma](rest-api-v2-single-sign-on-platform-identity-flows.md)
@@ -91,7 +95,7 @@ Eseguire i passaggi forniti per implementare il flusso di logout singolo per un 
 
 1. **Indicare disconnessione completata:** Se MVPD non supporta il flusso di disconnessione, l&#39;applicazione di streaming elabora la risposta e può utilizzarla per visualizzare facoltativamente un messaggio specifico nell&#39;interfaccia utente.
 
-1. **Avvia disconnessione MVPD:** Se MVPD non supporta il flusso di disconnessione, l&#39;applicazione di streaming elabora la risposta e utilizza un agente utente per avviare il flusso di disconnessione con MVPD. Il flusso può includere diversi reindirizzamenti ai sistemi MVPD. Tuttavia, il risultato è che MVPD esegue la pulizia interna e invia la conferma di disconnessione finale al backend di Adobe Pass.
+1. **Avvia disconnessione MVPD:** Se MVPD non supporta il flusso di disconnessione, l&#39;applicazione di streaming elabora la risposta e utilizza un agente utente per avviare il flusso di disconnessione con MVPD. Il flusso può includere diversi reindirizzamenti ai sistemi MVPD. Tuttavia, il risultato è che MVPD esegue la pulizia interna e invia nuovamente la conferma di disconnessione finale al backend di Adobe Pass.
 
 1. **Indicare disconnessione completata:** L&#39;applicazione di streaming può attendere che l&#39;agente utente raggiunga il `redirectUrl` specificato e può utilizzarlo come segnale per visualizzare facoltativamente un messaggio specifico nell&#39;interfaccia utente.
 
