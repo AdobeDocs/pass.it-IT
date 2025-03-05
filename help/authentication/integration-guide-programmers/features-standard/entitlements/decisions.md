@@ -1,9 +1,10 @@
 ---
 title: Decisioni
 description: Decisioni
-source-git-commit: e448427ae4a36c4c6cb9f9c1cb4d0cc5c6d564ed
+exl-id: 1efd70af-8c1d-43c4-87fc-14488d42b23d
+source-git-commit: a19f4fd40c9cd851a00f05f82adbabb85edd8422
 workflow-type: tm+mt
-source-wordcount: '886'
+source-wordcount: '988'
 ht-degree: 0%
 
 ---
@@ -69,6 +70,17 @@ L’utilizzo dell’API di autorizzazione è obbligatorio; l’applicazione clie
 >
 > Il numero massimo di risorse può essere aumentato solo dopo aver raggiunto un accordo con gli MVPD e i rappresentanti di autenticazione di Adobe Pass.
 
+## Gestione TTL (Time-to-Live) delle autorizzazioni {#authorization-ttl-management}
+
+Il valore TTL (Authorization Time-to-Live) definisce per quanto tempo una risorsa rimane autorizzata prima di dover essere nuovamente autorizzata. Questo periodo di tempo è limitato e deve essere concordato con i rappresentanti di MVPD. I valori TTL possono variare in base a:
+
+* Categoria piattaforma (ad esempio desktop, dispositivi mobili, dispositivi collegati alla TV)
+* Piattaforma specifica (ad esempio iOS, Android, tvOS, Roku, FireTV)
+
+Il TTL di autorizzazione (authZ) può essere visualizzato e modificato tramite Adobe Pass [TVE Dashboard](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard) da uno degli amministratori dell&#39;organizzazione o da un rappresentante di Adobe Pass Authentication che agisce per tuo conto.
+
+Per ulteriori dettagli, consulta la [Guida utente per l&#39;integrazione del dashboard di TVE](/help/authentication/user-guide-tve-dashboard/tve-dashboard-integrations.md#most-used-flows).
+
 ## Risorse protette {#protected-resources}
 
 Le risorse protette si riferiscono a contenuti semplificabili, identificati da valori univoci definiti tramite accordi tra MVPD e programmatori partecipanti.
@@ -133,3 +145,8 @@ Per ulteriori dettagli su come e quando integrare le API di cui sopra, consulta 
 
 * [Flusso di pre-autorizzazione di base eseguito nell’applicazione principale](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-preauthorization-primary-application-flow.md)
 * [Flusso di autorizzazione di base eseguito nell&#39;applicazione principale](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authorization-primary-application-flow.md)
+
+>[!MORELIKETHIS]
+>
+> [Domande frequenti sulla fase di preautorizzazione](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#preauthorization-phase-faqs-general)
+> [Domande frequenti sulla fase di autorizzazione](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authorization-phase-faqs-general)

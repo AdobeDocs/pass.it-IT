@@ -2,9 +2,9 @@
 title: Token multimediali
 description: Token multimediali
 exl-id: 7e486d2c-e078-464d-90b1-14e2cfb4d20a
-source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
+source-git-commit: a19f4fd40c9cd851a00f05f82adbabb85edd8422
 workflow-type: tm+mt
-source-wordcount: '667'
+source-wordcount: '682'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ Il token multimediale è un token generato dall&#39;autenticazione Adobe Pass [R
 
 Il token multimediale è valido per un periodo di tempo limitato e breve (predefinito 7 minuti) specificato al momento del rilascio, che indica il limite di tempo prima che debba essere verificato e utilizzato dall’applicazione client. Il token multimediale è limitato all’uso una tantum e non deve mai essere memorizzato nella cache.
 
-Il token multimediale è costituito da una stringa firmata basata su Infrastruttura a chiave pubblica (PKI) inviata in testo non crittografato. Con la protezione basata su PKI, il token viene firmato utilizzando una chiave asimmetrica rilasciata a Adobe da un&#39;Autorità di certificazione (CA).
+Il token multimediale è costituito da una stringa firmata basata su Infrastruttura a chiave pubblica (PKI) inviata in testo non crittografato. Con la protezione basata su PKI, il token viene firmato utilizzando una chiave asimmetrica rilasciata ad Adobe da un’Autorità di certificazione (CA).
 
 Il token multimediale viene passato al programmatore, che può quindi convalidarlo utilizzando il Media Token Verifier prima di avviare il flusso video per garantire la sicurezza dell’accesso a tale risorsa.
 
@@ -198,10 +198,14 @@ Il token multimediale può essere recuperato utilizzando la seguente API:
 
 Consulta le sezioni **Risposta** e **Esempi** dell&#39;API precedente per comprendere la struttura delle decisioni di autorizzazione e dei token multimediali.
 
+>[!IMPORTANT]
+>
+> L&#39;applicazione client non deve eseguire una query su un endpoint separato per recuperare i [token multimediali](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md), in quanto sono già inclusi nelle decisioni di autorizzazione che consentono l&#39;accesso utente.
+
 Per ulteriori dettagli su come e quando integrare la precedente API, consulta il seguente documento:
 
 * [Flusso di autorizzazione di base eseguito nell&#39;applicazione principale](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authorization-primary-application-flow.md)
 
->[!IMPORTANT]
+>[!MORELIKETHIS]
 >
-> L&#39;applicazione client deve passare il valore `serializedToken` da `token` restituito al [Media Token Verifier](#media-token-verifier) per la convalida.
+> [Domande frequenti sulla fase di autorizzazione](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authorization-phase-faqs-general)
