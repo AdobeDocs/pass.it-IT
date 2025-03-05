@@ -2,7 +2,7 @@
 title: Intestazione - Adobe-Subject-Token
 description: REST API V2 - Intestazione - Adobe-Subject-Token
 exl-id: 906d88f4-3b8f-491a-ab58-8e63d3b958d8
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 81d3c3835d2e97e28c2ddb9c72d1a048a25ad433
 workflow-type: tm+mt
 source-wordcount: '166'
 ht-degree: 1%
@@ -25,9 +25,9 @@ Per ulteriori dettagli sui flussi abilitati per il Single Sign-On (SSO) che sfru
 
 ## Sintassi {#syntax}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <td style="background-color: #DEEBFF;" colspan="2"><b>Token-Soggetto-Adobe</b>: &lt;unique_platform_identifier&gt;</td>
+      <td style="background-color: #DEEBFF;" colspan="2"><b>Adobe-Subject-Token</b>: &lt;unique_platform_identifier&gt;</td>
    </tr>
    <tr>
       <td>Tipo di intestazione</td>

@@ -2,9 +2,9 @@
 title: Intestazione - X-Device-Info
 description: REST API V2 - Intestazione - X-Device-Info
 exl-id: 0ef25e06-86de-427a-a938-7ba3817f0d5e
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 81d3c3835d2e97e28c2ddb9c72d1a048a25ad433
 workflow-type: tm+mt
-source-wordcount: '1085'
+source-wordcount: '1122'
 ht-degree: 2%
 
 ---
@@ -21,7 +21,7 @@ L&#39;intestazione della richiesta <b>X-Device-Info</b> contiene le informazioni
 
 ## Sintassi {#syntax}
 
-<table>
+<table style="table-layout:auto">
    <tr>
       <td style="background-color: #DEEBFF;" colspan="2"><b>X-Device-Info</b>: &lt;informazioni_dispositivo&gt;</td>
    </tr>
@@ -41,7 +41,7 @@ L&#39;intestazione della richiesta <b>X-Device-Info</b> contiene le informazioni
 
 Il valore `Base64-encoded` dell&#39;elemento JSON contenente almeno gli attributi contrassegnati come richiesto dalla tabella seguente.
 
-<table>
+<table style="table-layout:auto">
     <tr>
         <th style="background-color: #EFF2F7; width: 15%;">Presenza</th>
         <th style="background-color: #EFF2F7; width: 15%;">Chiave</th>
@@ -721,3 +721,7 @@ Le informazioni sull&#39;applicazione possono essere costruite nel modo seguente
 | Chiave | Source | Valore (esempio) |
 |---------------|-----------|-----------------|
 | applicationId | hardcoded | REF30 |
+
+### Altri {#others}
+
+Per le piattaforme per dispositivi non incluse nella documentazione, le informazioni sul client (dispositivo, connessione e applicazione) devono essere collegate a qualsiasi attributo hardware e sistema operativo disponibile, in genere specificato nei manuali hardware e del sistema operativo del dispositivo.

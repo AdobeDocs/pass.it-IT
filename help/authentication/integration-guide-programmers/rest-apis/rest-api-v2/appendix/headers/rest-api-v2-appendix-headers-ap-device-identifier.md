@@ -2,9 +2,9 @@
 title: Intestazione - AP-Device-Identifier
 description: REST API V2 - Intestazione - AP-Device-Identifier
 exl-id: 90a5882b-2e6d-4e67-994a-050465cac6c6
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 81d3c3835d2e97e28c2ddb9c72d1a048a25ad433
 workflow-type: tm+mt
-source-wordcount: '413'
+source-wordcount: '485'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ L&#39;intestazione della richiesta <b>AP-Device-Identifier</b> contiene l&#39;id
 
 ## Sintassi {#syntax}
 
-<table>
+<table style="table-layout:auto">
    <tr>
       <td style="background-color: #DEEBFF;" colspan="2"><b>AP-Device-Identifier</b>: &lt;tipo&gt; &lt;identificatore&gt;</td>
    </tr>
@@ -43,7 +43,7 @@ Tipo di identificatore del dispositivo.
 
 È disponibile un solo tipo supportato, come illustrato di seguito.
 
-<table>
+<table style="table-layout:auto">
    <tr>
       <th style="background-color: #EFF2F7; width: 15%;">Tipo</th>
       <th style="background-color: #EFF2F7;"></th>
@@ -51,9 +51,9 @@ Tipo di identificatore del dispositivo.
    <tr>
       <td>impronta digitale</td>
       <td>
-            L’identificatore del dispositivo è costituito da un identificatore stabile e univoco creato e gestito dall’applicazione client.
+            L’identificatore del dispositivo è costituito da un identificatore stabile e univoco creato e gestito dall’applicazione client per ciascun dispositivo.
             <br/>
-            L'applicazione client deve impedire le modifiche del valore causate da azioni dell'utente quali la disinstallazione, la reinstallazione o gli aggiornamenti dell'applicazione.
+            L'applicazione client deve memorizzare nella cache l'identificatore del dispositivo nell'archiviazione persistente, poiché la perdita o la modifica di tale identificatore invaliderà l'autenticazione. L'applicazione client deve impedire le modifiche del valore causate da azioni dell'utente quali la disinstallazione, la reinstallazione o gli aggiornamenti dell'applicazione.
       </td>
    </tr>
 </table>
@@ -134,3 +134,9 @@ Per generare l&#39;intestazione `AP-Device-Identifier` per i dispositivi che ese
 * Documentazione per gli sviluppatori Roku per [GetChannelClientId](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md#getchannelclientid-as-string).
 
 _(*) Si consiglia di applicare una funzione hash SHA-256 al valore del sistema operativo specificato._
+
+### Altri {#others}
+
+Per le piattaforme di dispositivi non incluse nella documentazione, l’identificatore del dispositivo deve essere collegato a qualsiasi identificazione hardware disponibile, generalmente specificata nel manuale dell’hardware del dispositivo.
+
+Se non sono disponibili identificatori hardware, è necessario utilizzare un identificatore generato in modo univoco in base agli attributi dell&#39;applicazione client e memorizzarlo nella cache dello storage persistente.

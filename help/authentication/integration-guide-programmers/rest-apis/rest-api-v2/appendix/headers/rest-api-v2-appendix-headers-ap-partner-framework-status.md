@@ -2,7 +2,7 @@
 title: Intestazione - AP-Partner-Framework-Status
 description: REST API V2 - Intestazione - AP-Partner-Framework-Status
 exl-id: f589d948-e23e-43d4-81c2-8db0e7a40e93
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 81d3c3835d2e97e28c2ddb9c72d1a048a25ad433
 workflow-type: tm+mt
 source-wordcount: '388'
 ht-degree: 0%
@@ -21,7 +21,7 @@ L&#39;intestazione della richiesta <b>AP-Partner-Framework-Status</b> contiene i
 
 ## Sintassi {#syntax}
 
-<table>
+<table style="table-layout:auto">
    <tr>
       <td style="background-color: #DEEBFF;" colspan="2"><b>AP-Partner-Framework-Status</b>: &lt;partner_framework_status_information&gt;</td>
    </tr>
@@ -41,7 +41,7 @@ L&#39;intestazione della richiesta <b>AP-Partner-Framework-Status</b> contiene i
 
 Il valore `Base64-encoded` dell&#39;elemento JSON contenente i seguenti attributi:
 
-<table>
+<table style="table-layout:auto">
    <tr>
       <th style="background-color: #EFF2F7; width: 15%;">Attributo</th>
       <th style="background-color: #EFF2F7;"></th>
@@ -68,10 +68,10 @@ Il valore `Base64-encoded` dell&#39;elemento JSON contenente i seguenti attribut
                   Questa è un’enumerazione con i seguenti valori possibili:
                   <br/>
                   <ul>
-                     <li>concesso: l’utente ha consentito all’applicazione di accedere alle informazioni di abbonamento.</li>
-                     <li>negato: l'utente ha negato l'accesso alle informazioni sulla sottoscrizione.</li>
-                     <li>in sospeso: l’utente non ha ancora scelto di consentire all’applicazione di accedere alle informazioni di abbonamento.</li>
-                     <li>notDetermined - L’applicazione non è autorizzata ad accedere alle informazioni di abbonamento.</li>
+                     <li><b>concesso</b><br/>L'utente ha consentito all'applicazione di accedere alle informazioni sulla sottoscrizione.</li>
+                     <li><b>negato</b><br/>L'utente ha negato all'applicazione l'accesso alle informazioni sulla sottoscrizione.</li>
+                     <li><b>in sospeso</b><br/>L'utente non ha ancora consentito all'applicazione di accedere alle informazioni sulla sottoscrizione.</li>
+                     <li><b>notDetermined</b><br/>L'applicazione non può accedere alle informazioni sulla sottoscrizione.</li>
                   </ul>
                </td>
             </tr>
@@ -122,7 +122,7 @@ Il valore `Base64-encoded` dell&#39;elemento JSON contenente i seguenti attribut
                <td>
                   Questo è un attributo obbligatorio.
                   <br/><br/>
-                  MappingId che identifica l'MVPD utilizzato durante il flusso di autenticazione a livello di framework del partner.
+                  MappingId che identifica il MVPD utilizzato durante il flusso di autenticazione a livello di framework del partner.
                </td>
             </tr>
             <tr>
@@ -130,7 +130,7 @@ Il valore `Base64-encoded` dell&#39;elemento JSON contenente i seguenti attribut
                <td>
                   Questo è un attributo obbligatorio.
                   <br/><br/>
-                  Si tratta della data di scadenza del profilo utente autenticato, nel caso in cui l’utente abbia effettuato correttamente l’accesso utilizzando un MVPD supportato a livello di framework del partner.
+                  Si tratta della data di scadenza del profilo utente autenticato, nel caso in cui l’utente abbia effettuato correttamente l’accesso utilizzando un MVPD supportato a livello di framework partner.
                </td>
             </tr>
             <tr>

@@ -2,7 +2,7 @@
 title: Intestazione - AD-Service-Token
 description: REST API V2 - Intestazione - AD-Service-Token
 exl-id: 856f76fc-cde6-4b3f-81f7-deaa0df015dc
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 81d3c3835d2e97e28c2ddb9c72d1a048a25ad433
 workflow-type: tm+mt
 source-wordcount: '252'
 ht-degree: 1%
@@ -25,7 +25,7 @@ Per ulteriori dettagli sui flussi abilitati per il Single Sign-On (SSO) che sfru
 
 ## Sintassi {#syntax}
 
-<table>
+<table style="table-layout:auto">
    <tr>
       <td style="background-color: #DEEBFF;" colspan="2"><b>Token-servizio-Active Directory</b>: &lt;identificatore_utente_univoco&gt;</td>
    </tr>
@@ -47,7 +47,7 @@ La firma Web JSON (`JWS`), che è un token Web JSON firmato (`JWT`) contenente i
 
 `JWT` ha i seguenti attributi:
 
-<table>
+<table style="table-layout:auto">
    <tr>
       <th style="background-color: #EFF2F7; width: 15%;">Attributo</th>
       <th style="background-color: #EFF2F7;">Descrizione</th>

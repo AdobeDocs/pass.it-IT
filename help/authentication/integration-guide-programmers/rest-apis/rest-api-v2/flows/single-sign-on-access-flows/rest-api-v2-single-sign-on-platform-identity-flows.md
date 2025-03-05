@@ -2,9 +2,9 @@
 title: Single Sign-On - Identità piattaforma - Flussi
 description: REST API V2 - Single Sign-On - Identità piattaforma - Flussi
 exl-id: 5200e851-84e8-4cb4-b068-63b91a2a8945
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 81d3c3835d2e97e28c2ddb9c72d1a048a25ad433
 workflow-type: tm+mt
-source-wordcount: '1830'
+source-wordcount: '1836'
 ht-degree: 0%
 
 ---
@@ -27,6 +27,11 @@ Le applicazioni sono responsabili dell&#39;inclusione di questo payload di ident
 
 Per ulteriori dettagli sull&#39;intestazione `Adobe-Subject-Token`, consulta la documentazione [Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md).
 
+>[!MORELIKETHIS]
+> 
+> * [Manuale Amazon SSO](/help/authentication/integration-guide-programmers/features-standard/sso-access/platform-sso/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v2.md)
+> * [Manuale Roku SSO](/help/authentication/integration-guide-programmers/features-standard/sso-access/platform-sso/roku-single-sign-on/roku-sso-overview.md)
+
 ## Eseguire l’autenticazione tramite single sign-on utilizzando l’identità della piattaforma {#perform-authentication-through-single-sign-on-using-platform-identity}
 
 ### Prerequisiti {#prerequisites-perform-authentication-through-single-sign-on-using-platform-identity}
@@ -36,8 +41,8 @@ Prima di eseguire il flusso di autenticazione tramite single sign-on utilizzando
 * La piattaforma deve fornire un servizio o una libreria Identity che restituisca informazioni coerenti come payload `JWS` o `JWE` in tutte le applicazioni sullo stesso dispositivo o piattaforma.
 * La prima applicazione di streaming deve recuperare l&#39;identificatore univoco della piattaforma e includere il payload `JWS` o `JWE` come parte dell&#39;intestazione [Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md) per tutte le richieste che lo specificano.
 * La prima applicazione di streaming deve selezionare un MVPD.
-* La prima applicazione di streaming deve avviare una sessione di autenticazione per accedere con l&#39;MVPD selezionato.
-* La prima applicazione di streaming deve effettuare l’autenticazione con l’MVPD selezionato in un agente utente.
+* La prima applicazione di streaming deve avviare una sessione di autenticazione per accedere con il MVPD selezionato.
+* La prima applicazione di streaming deve eseguire l’autenticazione con il MVPD selezionato in un agente utente.
 * La seconda applicazione di streaming deve recuperare l&#39;identificatore univoco della piattaforma e includere il payload `JWS` o `JWE` come parte dell&#39;intestazione [Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md) per tutte le richieste che lo specificano.
 
 >[!IMPORTANT]
@@ -47,7 +52,7 @@ Prima di eseguire il flusso di autenticazione tramite single sign-on utilizzando
 > <br/>
 > 
 > * La prima applicazione di streaming supporta l’interazione dell’utente per selezionare un MVPD.
-> * La prima applicazione di streaming supporta l’interazione dell’utente per l’autenticazione con l’MVPD selezionato in un agente utente.
+> * La prima applicazione di streaming supporta l’interazione dell’utente per l’autenticazione con il MVPD selezionato in un agente utente.
 
 ### Flusso di lavoro {#workflow-perform-authentication-through-single-sign-on-using-platform-identity}
 
@@ -103,9 +108,9 @@ Per implementare il flusso di autenticazione tramite single sign-on, esegui i pa
    * L&#39;attributo `actionName` è impostato per l&#39;autenticazione.
    * L&#39;attributo `actionType` è impostato su &quot;interactive&quot;.
 
-   Se il backend di Adobe Pass non identifica un profilo valido, la prima applicazione di streaming apre un agente utente per caricare l&#39;elemento `url` fornito, effettuando una richiesta all&#39;endpoint Authenticate. Questo flusso può includere diversi reindirizzamenti, che portano l’utente alla pagina di accesso MVPD e forniscono credenziali valide.
+   Se il backend di Adobe Pass non identifica un profilo valido, la prima applicazione di streaming apre un agente utente per caricare l&#39;elemento `url` fornito, effettuando una richiesta all&#39;endpoint Authenticate. Questo flusso può includere diversi reindirizzamenti, che portano l’utente alla pagina di accesso di MVPD e forniscono credenziali valide.
 
-1. **Autenticazione MVPD completa:** Se il flusso di autenticazione ha esito positivo, l&#39;interazione dell&#39;agente utente salva un profilo regolare nel backend di Adobe Pass e raggiunge il `redirectUrl` fornito.
+1. **Autenticazione MVPD completa:** se il flusso di autenticazione ha esito positivo, l&#39;interazione dell&#39;agente utente salva un profilo regolare nel backend di Adobe Pass e raggiunge il `redirectUrl` fornito.
 
 1. **Recupera profilo per codice specifico:** La prima applicazione di streaming raccoglie tutti i dati necessari per recuperare le informazioni sul profilo inviando una richiesta all&#39;endpoint Profili.
 
