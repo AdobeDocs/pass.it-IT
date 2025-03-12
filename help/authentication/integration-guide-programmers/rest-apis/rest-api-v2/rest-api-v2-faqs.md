@@ -2,7 +2,7 @@
 title: Domande frequenti su REST API V2
 description: Domande frequenti su REST API V2
 exl-id: 2dd74b47-126e-487b-b467-c16fa8cc14c1
-source-git-commit: d8097b8419aa36140e6ff550714730059555fd14
+source-git-commit: 1795b4aba2940879f2dcb575048d553db4f0bf35
 workflow-type: tm+mt
 source-wordcount: '9072'
 ht-degree: 0%
@@ -303,7 +303,7 @@ Per garantire l&#39;efficienza ed evitare richieste non necessarie, l&#39;applic
 
 | **Autenticazione eseguita nell&#39;applicazione primaria (schermata)** | **Autenticazione eseguita all&#39;interno di un&#39;applicazione secondaria (schermo)** |
 |----------------------------------------------------------------------|----------------------------------------------------------------------|
-| L’applicazione principale (streaming) deve eseguire il polling ogni 1-5 secondi. | L’applicazione principale (streaming) deve eseguire il polling ogni 3-5 secondi. |
+| L’applicazione principale (streaming) deve eseguire il polling ogni 3-5 secondi. | L’applicazione principale (streaming) deve eseguire il polling ogni 3-5 secondi. |
 
 #### 16. Qual è il numero massimo di richieste di polling che l&#39;applicazione client può inviare? {#authentication-phase-faq16}
 
