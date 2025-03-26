@@ -2,9 +2,9 @@
 title: Metadati utente
 description: Metadati utente
 exl-id: 9fd68885-7b3a-4af0-a090-6f1f16efd2a1
-source-git-commit: e448427ae4a36c4c6cb9f9c1cb4d0cc5c6d564ed
+source-git-commit: edfde4b463dd8b93dd770bc47353ee8ceb6f39d2
 workflow-type: tm+mt
-source-wordcount: '1793'
+source-wordcount: '1902'
 ht-degree: 0%
 
 ---
@@ -16,6 +16,8 @@ ht-degree: 0%
 > Il contenuto di questa pagina viene fornito solo a scopo informativo. L’utilizzo di questa API richiede una licenza corrente da Adobe. Non è consentito alcun uso non autorizzato.
 
 I metadati utente fanno riferimento a [attributi](#attributes) specifici dell&#39;utente (ad esempio, codici postali, valutazioni dei genitori, ID utente ecc.) gestiti da MVPD e forniti ai programmatori tramite l&#39;autenticazione Adobe Pass [REST API V2](#apis).
+
+I metadati utente diventano disponibili al termine del flusso di autenticazione, ma alcuni attributi di metadati possono essere aggiornati durante il flusso di autorizzazione, a seconda di MVPD e dell’attributo di metadati specifico in questione.
 
 I metadati dell’utente possono essere utilizzati per migliorare la personalizzazione degli utenti, ma possono anche essere utilizzati per l’analisi. Ad esempio, un programmatore può utilizzare il codice postale di un utente per inviare notizie localizzate o aggiornamenti meteo, o per applicare il controllo genitori.
 
@@ -168,7 +170,17 @@ Gli attributi dei metadati utente possono essere recuperati utilizzando le segue
 
 Per informazioni sulla struttura degli attributi dei metadati utente, consulta le sezioni **Response** e **Samples** delle API di cui sopra.
 
+>[!IMPORTANT]
+>
+> I metadati utente diventano disponibili al termine del flusso di autenticazione, pertanto l&#39;applicazione client non deve eseguire una query su un endpoint separato per recuperare le informazioni sui [metadati utente](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md), in quanto sono già inclusi nelle informazioni del profilo.
+
 Per ulteriori dettagli su come e quando integrare le API di cui sopra, consulta i seguenti documenti:
 
 * [Flusso dei profili di base eseguito all’interno dell’applicazione principale](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)
 * [Flusso dei profili di base eseguito all&#39;interno dell&#39;applicazione secondaria](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)
+
+Alcuni attributi di metadati possono essere aggiornati durante il flusso di autorizzazione, a seconda di MVPD e dell’attributo di metadati specifico. Di conseguenza, l’applicazione client potrebbe dover eseguire nuovamente la query sulle API di cui sopra per recuperare i metadati dell’utente più recenti.
+
+>[!MORELIKETHIS]
+>
+> [Domande frequenti sulla fase di autenticazione](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authentication-phase-faqs-general)

@@ -2,9 +2,9 @@
 title: Recuperare i profili
 description: REST API V2 - Recupero profili
 exl-id: 72922aa8-95ca-48dc-8523-e335802fc366
-source-git-commit: 751ebec3372145dda318c8415be5676adb3f13b5
+source-git-commit: edfde4b463dd8b93dd770bc47353ee8ceb6f39d2
 workflow-type: tm+mt
-source-wordcount: '824'
+source-wordcount: '865'
 ht-degree: 1%
 
 ---
@@ -265,9 +265,9 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">attributi</td>
                <td>
-                    L’elenco degli attributi dei metadati utente.
+                    JSON contenente una mappa di coppie chiave-valore.
                     <br/><br/>
-                    Questi attributi possono essere:
+                    L’elemento chiave è definito dagli attributi di metadati dell’utente e può essere:
                     <ul>
                         <li>Obbligatorio, come "userID"</li>
                         <li>Non obbligatorio, come "zip", "familyID", "maxRating", ecc.</li>
@@ -278,6 +278,7 @@ ht-degree: 1%
                         <li>list</li>
                         <li>mappa</li>
                     </ul>
+                    I metadati utente diventano disponibili al termine del flusso di autenticazione, ma alcuni attributi di metadati possono essere aggiornati durante il flusso di autorizzazione, a seconda di MVPD e dell’attributo di metadati specifico in questione.
                </td>
                <td><i>obbligatorio</i></td>
             </tr>

@@ -2,9 +2,9 @@
 title: Crea e recupera il profilo utilizzando la risposta di autenticazione del partner
 description: 'REST API V2: crea e recupera il profilo utilizzando la risposta di autenticazione del partner'
 exl-id: cae260ff-a229-4df7-bbf9-4cdf300c0f9a
-source-git-commit: 7fdfd28e2aba0d201f19dc25757bbe37cebd8ffe
+source-git-commit: edfde4b463dd8b93dd770bc47353ee8ceb6f39d2
 workflow-type: tm+mt
-source-wordcount: '734'
+source-wordcount: '775'
 ht-degree: 1%
 
 ---
@@ -268,9 +268,9 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">attributi</td>
                <td>
-                    L’elenco degli attributi dei metadati utente.
+                    JSON contenente una mappa di coppie chiave-valore.
                     <br/><br/>
-                    Questi attributi possono essere:
+                    L’elemento chiave è definito dagli attributi di metadati dell’utente e può essere:
                     <ul>
                         <li>Obbligatorio, come "userID"</li>
                         <li>Non obbligatorio, come "zip", "familyID", "maxRating", ecc.</li>
@@ -281,6 +281,7 @@ ht-degree: 1%
                         <li>list</li>
                         <li>mappa</li>
                     </ul>
+                    I metadati utente diventano disponibili al termine del flusso di autenticazione, ma alcuni attributi di metadati possono essere aggiornati durante il flusso di autorizzazione, a seconda di MVPD e dell’attributo di metadati specifico in questione.
                </td>
                <td><i>obbligatorio</i></td>
             </tr>
