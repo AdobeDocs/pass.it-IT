@@ -2,9 +2,9 @@
 title: Guida all’integrazione dei programmatori
 description: Guida all’integrazione dei programmatori
 exl-id: 51461caf-08ef-459e-b284-8f317f45e7b1
-source-git-commit: d8097b8419aa36140e6ff550714730059555fd14
+source-git-commit: 07bb12f7983f39b58e1b9795fdaa1bec4f68e674
 workflow-type: tm+mt
-source-wordcount: '2073'
+source-wordcount: '2119'
 ht-degree: 0%
 
 ---
@@ -48,7 +48,9 @@ Per i programmatori, l&#39;autenticazione Adobe Pass fornisce API come parte di 
 
 * API di autenticazione Premium Adobe Pass:
    * [Ripristina API passaggio temporaneo](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
+      * [Funzione TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)
    * [API di degradazione](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md#degradation-api-access)
+      * [Funzione di degradazione](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)
    * [API di monitoraggio del servizio di adesione](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-api.md)
 
 ### Casi d’uso {#use-cases}
@@ -323,4 +325,6 @@ Per ulteriori informazioni sulle adesioni, consulta i seguenti documenti:
 
 * **[Token multimediali](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md)**
 
-  Se l’autorizzazione viene concessa correttamente, Adobe Pass Authentication crea un token multimediale (&quot;di breve durata&quot;) associato a una richiesta di riproduzione riuscita.
+  Dopo aver ottenuto l’autorizzazione, Adobe Pass Authentication crea un token multimediale (&quot;di breve durata&quot;) associato a una richiesta di riproduzione corretta e fornisce supporto per le best practice del settore per mitigare le frodi (ad esempio, la copia in streaming).
+
+I valori TTL (time-to-live) per profili e decisioni sono impostati in base ad accordi tra programmatori e fornitori di servizi di televisione a pagamento, che concordano su un valore che meglio si adatta a tutti gli utenti coinvolti.
