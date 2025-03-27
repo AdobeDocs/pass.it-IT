@@ -2,39 +2,14 @@
 title: Annunci sui prodotti
 description: Annunci sui prodotti
 exl-id: 3c9c66e1-d31d-4af3-8ab2-eb32492f42ca
-source-git-commit: 6b309f66bfe1376bd62ad5e99b4f6383194af6c6
+source-git-commit: fab5964aeb832d419702b41a6d3bc5676cb3354f
 workflow-type: tm+mt
-source-wordcount: '973'
-ht-degree: 1%
+source-wordcount: '784'
+ht-degree: 2%
 
 ---
 
 # Annunci sui prodotti {#product-announcements}
-
-<a href="https://experienceleague.adobe.com/en/docs/pass/authentication/product-announcements">![Serie di webinar live](/help/authentication/assets/rest-api-v2/live-webinar-series-banner.png)</a>
-
-In qualità di partner di autenticazione di Adobe Pass, vorremmo invitarti al nostro prossimo webinar live sulla nuova API REST. La nuova API è stata lanciata l’anno scorso per migliorare l’esperienza dell’utente finale e semplificare l’integrazione con i servizi Adobe Pass. 
-
-Condurremo una serie di due webinar per fornire una panoramica della nuova API, dei vantaggi e dei casi d’uso aggiuntivi che possono essere attivati effettuando la migrazione alla nuova API.
-
-Registrati al webinar più adatto a te e al tuo team.
-
-* [Webinar 1 - 19 febbraio 2025](https://events.teams.microsoft.com/event/83c6ec1e-2522-4918-910f-c529b4fb0574@fa7b1b5a-7b34-4387-94ae-d2c178decee1)
-* [Webinar 2 - 5 marzo 2025](https://events.teams.microsoft.com/event/6f673689-e848-4c00-93d9-4f5d8f108977@fa7b1b5a-7b34-4387-94ae-d2c178decee1)
-
-Durante la sessione, scoprirai:
-
-* Panoramica e vantaggi di REST API v2
-* Procedura dettagliata sui flussi di base
-* Timeline e passaggi successivi
-
-Il webinar sarebbe utile se:
-
-* Un nuovo cliente sta pianificando di avviare una nuova app TVE
-* Clienti esistenti che devono effettuare la migrazione alle nuove API
-* Partner di implementazione che implementerebbero API per i clienti
-
-La documentazione tecnica sulla nuova API [è disponibile qui](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md). Ti invitiamo a rispondere a tutte le domande che vorresti discutere durante la sessione [qui](https://forms.office.com/r/sJea78tUy3).
 
 ## Fine del ciclo di vita (EOL) {#eol}
 
