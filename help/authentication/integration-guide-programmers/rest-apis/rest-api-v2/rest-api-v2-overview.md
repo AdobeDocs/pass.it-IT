@@ -2,9 +2,9 @@
 title: Panoramica di REST API V2
 description: Panoramica di REST API V2
 exl-id: a5595193-82c4-4033-bd98-596b4908b401
-source-git-commit: fab5964aeb832d419702b41a6d3bc5676cb3354f
+source-git-commit: f0001d86f595040f4be74f357c95bd2919dadf15
 workflow-type: tm+mt
-source-wordcount: '492'
+source-wordcount: '493'
 ht-degree: 0%
 
 ---
@@ -73,6 +73,7 @@ Tuttavia, tutti gli sviluppi futuri saranno basati sull’API REST V2. Consiglia
 
 Per iniziare, consulta la nostra documentazione pubblica:
 
+- [Elenco di controllo](rest-api-v2-checklist.md)
 - [Glossario](rest-api-v2-glossary.md)
 - [Domande frequenti](rest-api-v2-faqs.md)
 - [API](apis/rest-api-v2-apis-overview.md)
