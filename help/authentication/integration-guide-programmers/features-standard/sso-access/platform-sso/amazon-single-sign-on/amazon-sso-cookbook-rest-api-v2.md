@@ -2,9 +2,9 @@
 title: Manuale Amazon SSO (REST API V2)
 description: Manuale Amazon SSO (REST API V2)
 exl-id: 63e4fa63-8ca3-40eb-b49a-84dd75c2ca1d
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 640ba7073f7f4639f980f17f1a59c4468bfebcf4
 workflow-type: tm+mt
-source-wordcount: '542'
+source-wordcount: '567'
 ht-degree: 0%
 
 ---
@@ -21,6 +21,8 @@ Questo documento funge da estensione della [Panoramica REST API V2](/help/authen
 
 ## Single sign-on Amazon tramite i flussi di identità della piattaforma {#cookbook}
 
+Adobe Pass Authentication collabora con Amazon per migliorare l’esperienza di accesso degli utenti e facilitare il Single Sign-On (SSO) tra le applicazioni TV Everywhere per gli abbonati TV.
+
 ### Prerequisiti {#prerequisites}
 
 Prima di procedere con il Single Sign-On Amazon utilizzando i flussi di identità della piattaforma, verifica che siano soddisfatti i seguenti prerequisiti.
@@ -29,7 +31,7 @@ Prima di procedere con il Single Sign-On Amazon utilizzando i flussi di identit�
 
 L&#39;applicazione di streaming deve integrare nella propria build la libreria [Amazon SSO SDK](https://tve.zendesk.com/hc/en-us/article_attachments/360064368131/ottSSOTokenLib_v1.jar) per Single Sign-On (SSO).
 
-* Scarica e copia la libreria SDK SSO di Amazon più recente in una cartella `/SSOEnabler` parallela alla directory dell&#39;applicazione.
+* Scaricare e copiare la libreria SDK SSO di Amazon più recente in una cartella `/SSOEnabler` parallela alla directory dell&#39;applicazione.
 
 * Aggiorna i file manifest e Gradle per utilizzare la libreria SDK SSO di Amazon.
 
@@ -55,11 +57,11 @@ L&#39;applicazione di streaming deve integrare nella propria build la libreria [
   provided fileTree(include: ['ottSSOTokenStub.jar'], dir: '../SSOEnabler')
   ```
 
-#### Utilizzare l’SDK SSO di Amazon {#use-amazon-sso-sdk}
+#### Utilizzare Amazon SSO SDK {#use-amazon-sso-sdk}
 
-L’applicazione di streaming deve utilizzare l’SDK SSO di Amazon per ottenere il payload del token SSO (identità della piattaforma).
+L’applicazione di streaming deve utilizzare Amazon SSO SDK per ottenere il payload del token SSO (identità della piattaforma).
 
-L’SDK SSO di Amazon fornisce API sincrone e asincrone per ottenere il payload del token SSO (identità della piattaforma).
+Amazon SSO SDK fornisce API sia sincrone che asincrone per ottenere il payload del token SSO (identità della piattaforma).
 
 L’applicazione di streaming può scegliere una delle due opzioni in base alla propria architettura.
 

@@ -2,9 +2,9 @@
 title: Manuale dell’API REST (da client a server)
 description: Client-to-server del manuale API REST.
 exl-id: f54a1eda-47d5-4f02-b343-8cdbc99a73c0
-source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
+source-git-commit: 640ba7073f7f4639f980f17f1a59c4468bfebcf4
 workflow-type: tm+mt
-source-wordcount: '888'
+source-wordcount: '886'
 ht-degree: 0%
 
 ---
@@ -84,7 +84,7 @@ Adobe Pass utilizza il DCR per proteggere le comunicazioni client tra un’appli
 
 1. L’utente ritorna dalla seconda schermata dell’app e preme il pulsante &quot;Continua&quot; sul dispositivo. In alternativa, è possibile implementare un meccanismo di polling per controllare lo stato di autenticazione, ma l’autenticazione Adobe Pass consiglia il metodo del pulsante Continua sopra il polling. <!--(For information on employing a "Continue" button versus polling the Adobe Pass Authentication backend server, see the Clientless Technical Overview: Managing 2nd-Screen Workflow Transition.)--> Ad esempio: [\&lt;SP\_FQDN\>/api/v1/tokens/authn](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-authentication-token.md)
 
-2. Invia una richiesta di GET al servizio di autorizzazione dell’autenticazione di Adobe Pass per avviare l’autorizzazione. Esempio: `<SP_FQDN>/api/v1/authorize [device ID, Requestor ID, Resource ID]`
+2. Invia una richiesta GET al servizio di autorizzazione dell’autenticazione di Adobe Pass per avviare l’autorizzazione. Esempio: `<SP_FQDN>/api/v1/authorize [device ID, Requestor ID, Resource ID]`
 
 <!-- end list -->
 
@@ -140,7 +140,6 @@ Alcuni dispositivi forniscono supporto dedicato per il Single Sign-On (SSO) dei 
 Alcuni dispositivi forniscono supporto dedicato per l’SSO (Single Sign-On) della piattaforma:
 
 * [SSO AMAZON](../../sso-access/amazon-sso-cookbook-rest-api-v1.md)
-* [SSO Roku](../../../features-standard/sso-access/platform-sso/roku-single-sign-on/roku-sso-overview.md)
 
 ## TempPass e Promotional TempPass per API REST {#temppass}
 

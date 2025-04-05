@@ -2,9 +2,9 @@
 title: Domande frequenti su REST API V2
 description: Domande frequenti su REST API V2
 exl-id: 2dd74b47-126e-487b-b467-c16fa8cc14c1
-source-git-commit: 42df16e34783807e1b5eb1a12ca9db92f4e4c161
+source-git-commit: 640ba7073f7f4639f980f17f1a59c4468bfebcf4
 workflow-type: tm+mt
-source-wordcount: '9537'
+source-wordcount: '9697'
 ht-degree: 0%
 
 ---
@@ -123,7 +123,18 @@ Lo scopo della fase di autenticazione è quello di fornire all&#39;applicazione 
 
 La fase di autenticazione funge da passaggio preliminare per la fase di pre-autorizzazione o di autorizzazione quando l’applicazione client deve riprodurre il contenuto.
 
-#### 2. Cos’è una sessione di autenticazione e per quanto tempo è valida? {#authentication-phase-faq2}
+#### 2. La fase di autenticazione è obbligatoria? {#authentication-phase-faq2}
+
+La fase di autenticazione è obbligatoria; l’applicazione client deve autenticare l’utente quando non dispone di un profilo valido nell’ambito dell’autenticazione di Adobe Pass.
+
+L’applicazione client può saltare questa fase nei seguenti scenari:
+
+* L’utente è già autenticato e il profilo è ancora valido.
+* All&#39;utente viene offerto l&#39;accesso temporaneo tramite la funzionalità [TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md) di base o promozionale.
+
+La gestione degli errori dell&#39;applicazione client richiede la gestione dei codici [error](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md#enhanced-error-codes-lists-rest-api-v2) (ad esempio `authenticated_profile_missing`, `authenticated_profile_expired`, `authenticated_profile_invalidated` e così via), che indicano che l&#39;applicazione client richiede l&#39;autenticazione dell&#39;utente.
+
+#### 3. Cos’è una sessione di autenticazione e per quanto tempo è valida? {#authentication-phase-faq3}
 
 La sessione di autenticazione è un termine definito nella documentazione di [Glossary](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#session).
 
@@ -140,7 +151,7 @@ Per ulteriori informazioni, consulta i seguenti documenti:
 * [Flusso di autenticazione di base eseguito nell&#39;applicazione principale](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-primary-application-flow.md)
 * [Flusso di autenticazione di base eseguito nell&#39;applicazione secondaria](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md)
 
-#### 3. Che cos’è un codice di autenticazione e per quanto tempo è valido? {#authentication-phase-faq3}
+#### 4. Che cos’è un codice di autenticazione e per quanto tempo è valido? {#authentication-phase-faq4}
 
 Il codice di autenticazione è un termine definito nella documentazione di [Glossary](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#code).
 
@@ -159,7 +170,7 @@ Per ulteriori informazioni, consulta i seguenti documenti:
 * [Flusso di autenticazione di base eseguito nell&#39;applicazione principale](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-primary-application-flow.md)
 * [Flusso di autenticazione di base eseguito nell&#39;applicazione secondaria](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md)
 
-#### 4. In che modo l&#39;applicazione client può sapere se l&#39;utente ha digitato un codice di autenticazione valido e se la sessione di autenticazione non è ancora scaduta? {#authentication-phase-faq4}
+#### 5. In che modo l&#39;applicazione client può sapere se l&#39;utente ha digitato un codice di autenticazione valido e se la sessione di autenticazione non è ancora scaduta? {#authentication-phase-faq5}
 
 L’applicazione client può convalidare il codice di autenticazione digitato dall’utente in un’applicazione secondaria (a schermo) inviando una richiesta a uno degli endpoint sessioni responsabili per riprendere la sessione di autenticazione o recuperare le informazioni sulla sessione di autenticazione associate al codice di autenticazione.
 
@@ -167,7 +178,7 @@ L&#39;applicazione client riceverebbe un [errore](/help/authentication/integrati
 
 Per ulteriori informazioni, consultare i documenti [Riprendi sessione di autenticazione](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-resume-authentication-session.md) e [Recupera sessione di autenticazione](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md).
 
-#### 5. In che modo l’applicazione client può sapere se l’utente è già autenticato? {#authentication-phase-faq5}
+#### 6. In che modo l’applicazione client può sapere se l’utente è già autenticato? {#authentication-phase-faq6}
 
 L’applicazione client può eseguire query su uno dei seguenti endpoint in grado di verificare se un utente è già autenticato e restituire informazioni sul profilo:
 
@@ -180,7 +191,7 @@ Per ulteriori informazioni, consulta i seguenti documenti:
 * [Flusso dei profili di base eseguito all’interno dell’applicazione principale](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)
 * [Flusso dei profili di base eseguito all&#39;interno dell&#39;applicazione secondaria](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)
 
-#### 6. Che cos’è un profilo e per quanto tempo è valido? {#authentication-phase-faq6}
+#### 7. Che cos’è un profilo e per quanto tempo è valido? {#authentication-phase-faq7}
 
 Il profilo è un termine definito nella documentazione di [Glossary](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#profile).
 
@@ -202,17 +213,17 @@ Questo intervallo di tempo limitato, noto come autenticazione (authN) [TTL](/hel
 
 Per ulteriori dettagli, consulta la [Guida utente per l&#39;integrazione del dashboard di TVE](/help/authentication/user-guide-tve-dashboard/tve-dashboard-integrations.md#most-used-flows).
 
-#### 7. L&#39;applicazione client deve memorizzare le informazioni sul profilo dell&#39;utente in una memoria persistente? {#authentication-phase-faq7}
+#### 8. L&#39;applicazione client deve memorizzare nella cache le informazioni del profilo dell&#39;utente in una memoria persistente? {#authentication-phase-faq8}
 
-L’applicazione client deve memorizzare nella cache le informazioni del profilo utente in un archivio persistente per evitare richieste non necessarie e migliorare l’esperienza utente, considerando i seguenti aspetti:
+L’applicazione client deve memorizzare in cache parti delle informazioni del profilo utente in un archivio persistente per evitare richieste non necessarie e migliorare l’esperienza utente, considerando i seguenti aspetti:
 
 | Attributo | Esperienza utente |
-|--------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `attributes` | L&#39;applicazione client può utilizzarlo per personalizzare l&#39;esperienza utente in base a [chiavi di metadati utente](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md) diverse (ad esempio, `zip`, `maxRating`, ecc.). |
-| `mvpd` | L&#39;applicazione client può utilizzarlo per tenere traccia del provider TV selezionato dall&#39;utente.<br/><br/>Alla scadenza del profilo utente corrente, l&#39;applicazione client può utilizzare la selezione di MVPD memorizzata e chiedere conferma all&#39;utente. |
-| `notAfter` | L’applicazione client può utilizzarla per tenere traccia della data di scadenza del profilo utente e attivare il processo di riautenticazione alla scadenza, evitando errori durante le fasi di pre-autorizzazione o autorizzazione.<br/><br/>La gestione degli errori dell&#39;applicazione client deve essere in grado di gestire il codice di errore [authenticated_profile_expiry](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md#enhanced-error-codes-lists-rest-api-v2), che indica che l&#39;applicazione client richiede la riautenticazione dell&#39;utente. |
+|--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `mvpd` | L&#39;applicazione client può utilizzarlo per tenere traccia del provider TV selezionato dall&#39;utente e continuare a utilizzarlo ulteriormente durante le fasi di pre-autorizzazione o autorizzazione.<br/><br/>Alla scadenza del profilo utente corrente, l&#39;applicazione client può utilizzare la selezione di MVPD memorizzata e chiedere conferma all&#39;utente. |
+| `attributes` | L&#39;applicazione client può utilizzarlo per personalizzare l&#39;esperienza utente in base a [chiavi di metadati utente](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md) diverse (ad esempio, `zip`, `maxRating`, ecc.).<br/><br/>I metadati utente diventano disponibili al termine del flusso di autenticazione, pertanto l&#39;applicazione client non deve eseguire una query su un endpoint separato per recuperare le informazioni relative a [metadati utente](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md), in quanto sono già inclusi nelle informazioni del profilo.<br/><br/>Alcuni attributi di metadati possono essere aggiornati durante il flusso di autorizzazione, a seconda di MVPD e dell&#39;attributo di metadati specifico. Di conseguenza, l’applicazione client potrebbe dover eseguire nuovamente la query sulle API dei profili per recuperare i metadati dell’utente più recenti. |
+| `notAfter` | L’applicazione client può utilizzarlo per tenere traccia della data di scadenza del profilo utente.<br/><br/>La gestione degli errori dell&#39;applicazione client richiede la gestione dei codici [error](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md#enhanced-error-codes-lists-rest-api-v2) (ad esempio, `authenticated_profile_missing`, `authenticated_profile_expired`, `authenticated_profile_invalidated` e così via), che indicano che l&#39;applicazione client richiede l&#39;autenticazione dell&#39;utente. |
 
-#### 8. L’applicazione client può estendere il profilo dell’utente senza richiedere una nuova autenticazione? {#authentication-phase-faq8}
+#### 9. L&#39;applicazione client può estendere il profilo dell&#39;utente senza richiedere una nuova autenticazione? {#authentication-phase-faq9}
 
 No.
 
@@ -222,7 +233,7 @@ Pertanto, l’applicazione client deve richiedere all’utente di autenticarsi n
 
 Tuttavia, per gli MVPD che supportano [l&#39;autenticazione basata su home](/help/authentication/integration-guide-programmers/features-standard/hba-access/home-based-authentication.md) (HBA), l&#39;utente non dovrà immettere le credenziali.
 
-#### 9. Quali sono i casi d’uso per ogni endpoint dei profili disponibile? {#authentication-phase-faq9}
+#### 10. Quali sono i casi d’uso per ogni endpoint Profili disponibile? {#authentication-phase-faq10}
 
 Gli endpoint di base per i profili sono progettati per fornire all’applicazione client la funzionalità di conoscere lo stato di autenticazione dell’utente, accedere alle informazioni sui metadati dell’utente, trovare il metodo utilizzato per l’autenticazione o l’entità utilizzata per fornire l’identità.
 
@@ -246,7 +257,7 @@ Per qualsiasi query successiva, è necessario utilizzare gli endpoint di base Pr
 
 Per ulteriori dettagli, fare riferimento ai documenti [Single Sign-On utilizzando i flussi dei partner](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md) e [Apple SSO Cookbook (REST API V2)](/help/authentication/integration-guide-programmers/features-standard/sso-access/partner-sso/apple-sso/apple-sso-cookbook-rest-api-v2.md).
 
-#### 10. Cosa deve fare l’applicazione client se l’utente dispone di più profili MVPD? {#authentication-phase-faq10}
+#### 11. Cosa deve fare l’applicazione client se l’utente dispone di più profili MVPD? {#authentication-phase-faq11}
 
 La decisione di supportare più profili dipende dai requisiti di business dell’applicazione client.
 
@@ -261,7 +272,7 @@ REST API v2 supporta più profili per supportare:
 * Utenti con abbonamento a MVPD combinato con servizi Direct-to-Consumer (DTC).
 * Utenti con più abbonamenti MVPD.
 
-#### 11. Cosa succede quando i profili utente scadono? {#authentication-phase-faq11}
+#### 12. Cosa succede quando i profili utente scadono? {#authentication-phase-faq12}
 
 Quando i profili utente scadono, non vengono più inclusi nella risposta dall’endpoint &quot;Profiles&quot;.
 
@@ -269,7 +280,7 @@ Se l’endpoint Profili restituisce una risposta di mappa dei profili vuota, l�
 
 Per ulteriori informazioni, consulta la documentazione [Creare l&#39;API della sessione di autenticazione](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md).
 
-#### 12. Quando i profili utente non sono più validi? {#authentication-phase-faq12}
+#### 13. Quando i profili utente non sono più validi? {#authentication-phase-faq13}
 
 I profili utente non sono più validi nei seguenti scenari:
 
@@ -278,7 +289,7 @@ I profili utente non sono più validi nei seguenti scenari:
 * Quando l&#39;applicazione client aggiorna le credenziali client utilizzate per recuperare il valore dell&#39;intestazione [Authorization](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-authorization.md).
 * Quando l&#39;applicazione client revoca o aggiorna l&#39;istruzione software utilizzata per ottenere le credenziali del client.
 
-#### 13. Quando l’applicazione client deve avviare il meccanismo di polling? {#authentication-phase-faq13}
+#### 14. Quando l’applicazione client deve avviare il meccanismo di polling? {#authentication-phase-faq14}
 
 Per garantire l’efficienza ed evitare richieste non necessarie, l’applicazione client deve avviare il meccanismo di polling nelle seguenti condizioni:
 
@@ -290,7 +301,7 @@ L&#39;applicazione primaria (streaming) deve avviare il polling quando l&#39;ute
 
 L&#39;applicazione principale (streaming) deve avviare il polling non appena l&#39;utente avvia il processo di autenticazione, subito dopo aver ricevuto la risposta dell&#39;endpoint [Sessions](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md) e aver visualizzato il codice di autenticazione per l&#39;utente.
 
-#### 14. Quando arrestare il meccanismo di polling nell&#39;applicazione client? {#authentication-phase-faq14}
+#### 15. Quando arrestare il meccanismo di polling nell&#39;applicazione client? {#authentication-phase-faq15}
 
 Per garantire l’efficienza ed evitare richieste non necessarie, l’applicazione client deve arrestare il meccanismo di polling nelle seguenti condizioni:
 
@@ -306,7 +317,7 @@ La sessione di autenticazione e il codice scadono, come indicato dalla marca tem
 
 Se l’utente richiede un nuovo codice di autenticazione sul dispositivo principale (schermo), la sessione esistente non è più valida e il polling che utilizza il codice di autenticazione precedente deve essere interrotto immediatamente.
 
-#### 15. Quale intervallo tra le chiamate deve essere utilizzato dall&#39;applicazione client per il meccanismo di polling? {#authentication-phase-faq15}
+#### 16. Quale intervallo tra le chiamate deve essere utilizzato dall&#39;applicazione client per il meccanismo di polling? {#authentication-phase-faq16}
 
 Per garantire l&#39;efficienza ed evitare richieste non necessarie, l&#39;applicazione client deve configurare la frequenza del meccanismo di polling nelle seguenti condizioni:
 
@@ -314,7 +325,7 @@ Per garantire l&#39;efficienza ed evitare richieste non necessarie, l&#39;applic
 |----------------------------------------------------------------------|----------------------------------------------------------------------|
 | L’applicazione principale (streaming) deve eseguire il polling ogni 3-5 secondi. | L’applicazione principale (streaming) deve eseguire il polling ogni 3-5 secondi. |
 
-#### 16. Qual è il numero massimo di richieste di polling che l&#39;applicazione client può inviare? {#authentication-phase-faq16}
+#### 17. Qual è il numero massimo di richieste di polling che l&#39;applicazione client può inviare? {#authentication-phase-faq17}
 
 L&#39;applicazione client deve rispettare i limiti correnti definiti dal meccanismo di limitazione dell&#39;autenticazione di Adobe Pass [](/help/authentication/integration-guide-programmers/throttling-mechanism.md#throttling-mechanism-limits).
 
@@ -322,7 +333,7 @@ La gestione degli errori dell&#39;applicazione client deve essere in grado di ge
 
 Per ulteriori dettagli, consulta la documentazione sul [meccanismo di limitazione](/help/authentication/integration-guide-programmers/throttling-mechanism.md).
 
-#### 17. Come può l&#39;applicazione client ottenere le informazioni sui metadati dell&#39;utente? {#authentication-phase-faq17}
+#### 18. Come può l&#39;applicazione client ottenere le informazioni sui metadati dell&#39;utente? {#authentication-phase-faq18}
 
 L&#39;applicazione client può eseguire una query su uno dei seguenti endpoint in grado di restituire [informazioni sui metadati dell&#39;utente](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md) come parte delle informazioni del profilo:
 
@@ -339,7 +350,7 @@ Per ulteriori informazioni, consulta i seguenti documenti:
 
 Alcuni attributi di metadati possono essere aggiornati durante il flusso di autorizzazione, a seconda di MVPD e dell’attributo di metadati specifico. Di conseguenza, l’applicazione client potrebbe dover eseguire nuovamente la query sulle API di cui sopra per recuperare i metadati dell’utente più recenti.
 
-#### 18. In che modo l&#39;applicazione client deve gestire l&#39;accesso danneggiato? {#authentication-phase-faq18}
+#### 19. In che modo l&#39;applicazione client deve gestire l&#39;accesso danneggiato? {#authentication-phase-faq19}
 
 La [funzionalità di degradazione](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md) consente all&#39;applicazione client di mantenere un&#39;esperienza di streaming senza soluzione di continuità per gli utenti, anche quando i servizi di autenticazione o autorizzazione di MVPD incontrano problemi.
 
@@ -349,7 +360,7 @@ Dato che l’organizzazione intende utilizzare la funzione di degradazione premi
 
 Per ulteriori dettagli, consulta la documentazione sui [flussi di accesso danneggiati](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/degraded-access-flows/rest-api-v2-access-degraded-flows.md).
 
-#### 19. In che modo l&#39;applicazione client deve gestire l&#39;accesso temporaneo? {#authentication-phase-faq19}
+#### 20. In che modo l&#39;applicazione client deve gestire l&#39;accesso temporaneo? {#authentication-phase-faq20}
 
 La funzionalità [TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md) consente all&#39;applicazione client di fornire accesso temporaneo all&#39;utente.
 
@@ -363,7 +374,7 @@ Con REST API v2, l’applicazione client può passare facilmente da un normale M
 
 Per ulteriori dettagli, consulta la documentazione [Flussi di accesso temporanei](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/temporary-access-flows/rest-api-v2-access-temporary-flows.md).
 
-#### 20. In che modo l&#39;applicazione client deve gestire l&#39;accesso single sign-on cross-device? {#authentication-phase-faq20}
+#### 21. In che modo l&#39;applicazione client deve gestire l&#39;accesso single sign-on cross-device? {#authentication-phase-faq21}
 
 REST API v2 può abilitare il single sign-on tra dispositivi se l’applicazione client fornisce un identificatore utente univoco coerente tra i dispositivi.
 

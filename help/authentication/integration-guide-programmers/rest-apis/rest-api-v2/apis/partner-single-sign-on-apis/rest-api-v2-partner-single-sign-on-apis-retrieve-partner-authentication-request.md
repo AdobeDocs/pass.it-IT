@@ -2,9 +2,9 @@
 title: Recupera richiesta di autenticazione partner
 description: REST API V2 - Recupera richiesta di autenticazione partner
 exl-id: 52d8a8e9-c176-410f-92bc-e83449278943
-source-git-commit: 5e5bb6a52a4629056fd52c7e79a11dba2b9a45db
+source-git-commit: 640ba7073f7f4639f980f17f1a59c4468bfebcf4
 workflow-type: tm+mt
-source-wordcount: '1230'
+source-wordcount: '1219'
 ht-degree: 1%
 
 ---
@@ -266,7 +266,6 @@ ht-degree: 1%
                   <ul>
                     <li><b>nessuno</b><br/>Per continuare l'autenticazione è necessario che l'applicazione client continui a eseguire l'autenticazione.</li>
                     <li><b>autenticata</b><br/>L'applicazione client è già autenticata tramite flussi di accesso di base.</li>
-                    <li><b>temporaneo</b><br/>L'applicazione client è già autenticata tramite flussi di accesso temporanei.</li>
                     <li><b>danneggiata</b><br/>L'applicazione client è già autenticata tramite flussi di accesso danneggiati.</li>
                     <li><b>authenticatedSSO</b><br/>L'applicazione client è già autenticata tramite flussi di accesso single sign-on.</li>
                     <li><b>pfs_fallback</b><br/>L'applicazione client deve eseguire il fallback al flusso di autenticazione di base a causa di un valore di intestazione <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md">AP-Partner-Framework-Status</a> mancante o non valido.</li>
@@ -364,7 +363,7 @@ ht-degree: 1%
 
 ## Esempi {#samples}
 
-### 1. Recuperare la richiesta di autenticazione del partner
+### 1. Retrieve partner authentication request
 
 >[!BEGINTABS]
 
