@@ -2,9 +2,9 @@
 title: Avvia disconnessione per mvpd specifico
 description: REST API V2 - Avvia disconnessione per mvpd specifico
 exl-id: 2482de87-b3d4-4ea8-bd4a-25bf10017e01
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 32c3176fb4633acb60deb1db8fb5397bbf18e2d0
 workflow-type: tm+mt
-source-wordcount: '1006'
+source-wordcount: '1009'
 ht-degree: 1%
 
 ---
@@ -60,7 +60,7 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">redirectUrl</td>
       <td>
-        L’URL di reindirizzamento finale a cui si sposta l’agente utente al completamento del flusso di logout per MVPD.
+        L’URL di reindirizzamento finale a cui si sposta l’agente utente al termine del flusso di logout per MVPD.
         <br/><br/>
         Il valore deve essere codificato in URL.
       </td>
@@ -106,9 +106,9 @@ ht-degree: 1%
       <td>facoltativo</td>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">Adobe-Subject-Token</td>
+      <td style="background-color: #DEEBFF;">Adobe-Subject-Token<br/>or<br/>X-Roku-Reserved-Roku-Connect-Token</td>
       <td>
-        La generazione del payload Single Sign-On per il metodo Platform Identity è descritta nella documentazione dell'intestazione <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Adobe-Subject-Token</a>.
+        La generazione del payload Single Sign-On per il metodo Platform Identity è descritta nella documentazione dell'intestazione <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Adobe-Subject-Token</a> / <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md">X-Roku-Reserved-Roku-Connect-Token</a>.
         <br/><br/>
         Per ulteriori dettagli sui flussi abilitati per il Single Sign-On che utilizzano un'identità di piattaforma, fare riferimento alla documentazione <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md">Single Sign-On che utilizza flussi di identità di piattaforma</a>.
       </td>
@@ -240,7 +240,7 @@ ht-degree: 1%
                   <ul>
                     <li><b>logout</b><br/>Il dispositivo di streaming deve aprire l'URL specificato in un agente utente.<br/>Questa azione si applica ai seguenti scenari: disconnettersi da MVPD con un endpoint di disconnessione.</li>
                     <li><b>partner_logout</b><br/>Il dispositivo di streaming deve informare l'utente della disconnessione anche dal livello partner (sistema).<br/>Questa azione si applica ai seguenti scenari: disconnettersi da MVPD quando il tipo di profilo è "appleSSO".</li>
-                    <li><b>complete</b><br/>Il dispositivo di streaming non deve eseguire alcuna azione successiva.<br/>Questa azione è valida per i seguenti scenari: disconnettersi da MVPD senza un endpoint di disconnessione (funzionalità di disconnessione fittizia), disconnettersi durante un accesso ridotto, disconnettersi durante un accesso temporaneo.</li>
+                    <li><b>complete</b><br/>Il dispositivo di streaming non deve eseguire alcuna azione successiva.<br/>Questa azione è valida per i seguenti scenari: disconnettersi da MVPD senza un endpoint di disconnessione (funzionalità di disconnessione fittizia), disconnettersi durante un accesso non ottimale, disconnettersi durante un accesso temporaneo.</li>
                     <li><b>non valido</b><br/>Il dispositivo di streaming non deve eseguire alcuna azione successiva.<br/>Questa azione si applica ai seguenti scenari: disconnettersi da MVPD quando non viene trovato alcun profilo valido.</li>
                   </ul>  
                <td><i>obbligatorio</i></td>
