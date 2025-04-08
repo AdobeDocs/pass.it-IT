@@ -4,7 +4,7 @@ audience: end-user
 feature: Authentication
 user-guide-title: Autenticazione Adobe Pass
 user-guide-description: L’autenticazione Adobe Pass è una soluzione di gestione dei diritti per TV Everywhere, che fornisce un framework modulare per determinare se chi richiede l’accesso a una risorsa ne abbia diritto.
-source-git-commit: f054da9a4c35fa0715039e8e06e2d10737b91b57
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
 source-wordcount: '1251'
 ht-degree: 2%
@@ -21,17 +21,17 @@ ht-degree: 2%
       + [Note sulla versione di Adobe Pass Authentication 3.1.0](notes-releases/auth-rn-310.md)
       + [Note sulla versione di Adobe Pass Authentication JavaScript 4.7.1](notes-releases/authn-rn-javascript-471.md)
    + 2024 {#2024}
-      + [Adobe Pass Authentication 3.0.3 note sulla versione](notes-releases/auth-rn-303.md)
+      + [Note sulla versione di Adobe Pass Authentication 3.0.3](notes-releases/auth-rn-303.md)
       + [Note sulla versione di Adobe Pass Authentication 3.0](notes-releases/auth-rn-300.md)
       + [Note sulla versione di Adobe Pass Authentication 2.70](notes-releases/auth-rn-270.md)
       + [Note sulla versione di Adobe Pass Authentication 2.69](notes-releases/auth-rn-269.md)
       + [Note sulla versione di Adobe Pass Authentication JavaScript 4.7.0](notes-releases/authn-rn-javascript-470.md)
       + [Note sulla versione di Adobe Pass Authentication iOS/tvOS 3.9.2](notes-releases/authn-rn-ios-tvos-392.md)
-      + [Adobe Pass Authentication iOS / tvOS 3.8.4 note sulla versione](notes-releases/authn-rn-ios-tvos-384.md)
+      + [Note sulla versione di Adobe Pass Authentication iOS/tvOS 3.8.4](notes-releases/authn-rn-ios-tvos-384.md)
    + 2023 {#2023}
-      + [Adobe Pass Authentication 2,68 note sulla versione](notes-releases/auth-rn-268.md)
-      + [Adobe Pass Authentication 2,67 note sulla versione](notes-releases/auth-rn-267.md)
-      + [Adobe Pass Authentication 2,66 note sulla versione](notes-releases/auth-rn-266.md)
+      + [Note sulla versione di Adobe Pass Authentication 2.68](notes-releases/auth-rn-268.md)
+      + [Note sulla versione di Adobe Pass Authentication 2.67](notes-releases/auth-rn-267.md)
+      + [Note sulla versione di Adobe Pass Authentication 2.66](notes-releases/auth-rn-266.md)
       + [Note sulla versione di Adobe Pass Authentication 2.65.1](notes-releases/auth-rn-2651.md)
       + [Note sulla versione di Adobe Pass Authentication 2.65](notes-releases/auth-rn-265.md)
       + [Note sulla versione di Adobe Pass Authentication 2.64.1](notes-releases/auth-rn-2641.md)
@@ -68,8 +68,8 @@ ht-degree: 2%
             + [Flusso di registrazione client dinamici](integration-guide-programmers/rest-apis/rest-api-dcr/flows/dynamic-client-registration-flow.md)
       + API REST V2 {#rest-api-v2}
          + [Panoramica di REST API V2](integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md)
-         + [Elenco di controllo REST API V2](integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-checklist.md)
          + [Glossario REST API V2](integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md)
+         + [Elenco di controllo REST API V2](integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-checklist.md)
          + [Domande frequenti su REST API V2](integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md)
          + API {#rest-api-v2-apis}
             + [Panoramica delle API REST API V2](integration-guide-programmers/rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md)
@@ -87,11 +87,11 @@ ht-degree: 2%
             + Decisioni {#rest-api-v2-decisions-apis}
                + [Recuperare le decisioni di autorizzazione utilizzando mvpd specifico](integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)
                + [Recuperare le decisioni di pre-autorizzazione utilizzando mvpd specifico](integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)
-            + Logout {#rest-api-v2-logout-apis}
-               + [Avvia logout per mvpd specifico](integration-guide-programmers/rest-apis/rest-api-v2/apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md)
-            + Partner Single Sign-On {#rest-api-v2-partner-single-sign-on-apis}
-               + [Recuperare partner richiesta di autenticazione](integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-partner-authentication-request.md)
-               + [Crea e recuperare il profilo utilizzando partner risposta di autenticazione](integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md)
+            + Disconnetti {#rest-api-v2-logout-apis}
+               + [Avvia disconnessione per mvpd specifico](integration-guide-programmers/rest-apis/rest-api-v2/apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md)
+            + Single Sign-On Partner {#rest-api-v2-partner-single-sign-on-apis}
+               + [Recupera richiesta di autenticazione partner](integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-partner-authentication-request.md)
+               + [Crea e recupera il profilo utilizzando la risposta di autenticazione del partner](integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md)
          + Flussi {#rest-api-v2-flows}
             + [Panoramica dei flussi REST API V2](integration-guide-programmers/rest-apis/rest-api-v2/flows/rest-api-v2-flows-overview.md)
             + Flussi di accesso di base {#rest-api-v2-basic-access-flows}
@@ -136,7 +136,7 @@ ht-degree: 2%
             + Apple Single Sign-On {#apple-sso}
                + [Panoramica di Apple SSO](integration-guide-programmers/features-standard/sso-access/partner-sso/apple-sso/apple-sso-overview.md)
                + [Manuale Apple SSO (REST API V2)](integration-guide-programmers/features-standard/sso-access/partner-sso/apple-sso/apple-sso-cookbook-rest-api-v2.md)
-         + Platform Single Sign-On {#platform-sso}
+         + Single Sign-On piattaforma {#platform-sso}
             + Amazon Single Sign-On {#amazon-sso}
                + [Manuale Amazon SSO (REST API V2)](integration-guide-programmers/features-standard/sso-access/platform-sso/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v2.md)
             + Single Sign-On Roku {#roku-sso}
@@ -149,10 +149,10 @@ ht-degree: 2%
    + Funzionalità Premium {#features-premium}
       + Accesso temporaneo {#temporary-access}
          + [Funzione TempPass](integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)
-      + Accesso degradato {#degraded-access}
-         + [Funzione di degrado](integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)
-      + MES {#esm}
-         + [Panoramica sul monitoraggio del servizio diritti](integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md)
+      + Accesso Danneggiato {#degraded-access}
+         + [Funzione di degradazione](integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)
+      + ESM {#esm}
+         + [Panoramica sul monitoraggio del servizio di adesione](integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md)
          + [API di monitoraggio del servizio di adesione](integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-api.md)
          + [Metriche lato server](integration-guide-programmers/features-premium/esm/understanding-serverside-metrics.md)
       + Analytics {#analytics}
@@ -196,14 +196,14 @@ ht-degree: 2%
             + [(Legacy) Panoramica di iOS/tvOS SDK](integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-overview.md)
             + [(Legacy) Manuale di iOS/tvOS SDK](integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-cookbook.md)
             + [(Legacy) Riferimento API SDK per iOS/tvOS](integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md)
-            + [(Legacy) iOS/tvOS SDK API Preautorizzare](integration-guide-programmers/legacy/sdks/ios-tvos-sdk/preauthorize-api-ios-tvos-sdk.md)
+            + [(Legacy) Preautorizzazione API SDK iOS/tvOS](integration-guide-programmers/legacy/sdks/ios-tvos-sdk/preauthorize-api-ios-tvos-sdk.md)
             + Linee guida (legacy) {#ios-tvos-sdk-guidelines}
                + [(Legacy) Registrazione applicazione iOS/tvOS](integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-application-registration.md)
                + [(Legacy) Guida alla migrazione di iOS/tvOS v3.x](integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-v3x-migration-guide.md)
                + [(Legacy) Controlli di integrità dello storage iOS/tvOS](integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-storage-integrity-checks.md)
          + (Legacy) Android SDK {#android-sdk}
             + [(Legacy) Panoramica di Android SDK](integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-overview.md)
-            + [(Legacy) Guida di riferimento dettagliata dell&#39;SDK per Android](integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-cookbook.md)
+            + [Manuale di Android SDK (legacy)](integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-cookbook.md)
             + [Riferimento API di Android SDK (legacy)](integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-api-reference.md)
             + [(Legacy) Preautorizzazione API di Android SDK](integration-guide-programmers/legacy/sdks/android-sdk/preauthorize-api-android-sdk.md)
             + Linee guida (legacy) {#android-sdk-guidelines}
@@ -257,7 +257,7 @@ ht-degree: 2%
             + [(Legacy) Come migrare la pagina di accesso di MVPD da iFrame a popup](integration-guide-programmers/legacy/notes-technical/migr-mvpd-login-iframe-popup.md)
             + [(Legacy) Funzione di verifica preliminare: come abilitare, risolvere o determinare il problema](integration-guide-programmers/legacy/notes-technical/preflight-feature.md)
             + [(Legacy) Consenti MVPD nella finestra di dialogo di selezione](integration-guide-programmers/legacy/notes-technical/allow-mvpd-selectn-dialog.md)
-            + [(Legacy) Impedisci agli MVPD di apparire nella finestra di dialogo di selezione](integration-guide-programmers/legacy/notes-technical/prevent-mvpd-selectn-dialog.md)
+            + [(Legacy) Impedisci a MVPDs di visualizzare la finestra di dialogo di selezione](integration-guide-programmers/legacy/notes-technical/prevent-mvpd-selectn-dialog.md)
          + (Legacy) Risoluzione dei problemi {#troubleshooting}
             + [(Legacy) Utilizzo di Charles Proxy](integration-guide-programmers/legacy/notes-technical/using-charles-proxy.md)
             + [(Legacy) Monitoraggio di Adobe Pass Adobe PayTV Pass](integration-guide-programmers/legacy/notes-technical/monitoring-adobe-pay-tv-pass.md)

@@ -2,7 +2,7 @@
 title: Guida all’integrazione dei programmatori
 description: Guida all’integrazione dei programmatori
 exl-id: 51461caf-08ef-459e-b284-8f317f45e7b1
-source-git-commit: 07bb12f7983f39b58e1b9795fdaa1bec4f68e674
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
 source-wordcount: '2119'
 ht-degree: 0%
@@ -201,7 +201,7 @@ I passaggi seguenti delineano i passaggi di alto livello in caso di integrazione
 
 **Domande frequenti**
 
-* [Domande frequenti sulla fase di autenticazione](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authentication-phase-faqs-general).
+* [Domande frequenti sulla fase di autenticazione](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authentication-phase-faqs-general)
 
 >[!TIP]
 >
@@ -236,7 +236,7 @@ La fase di preautorizzazione può migliorare l’esperienza utente quando l’ut
 
 **Domande frequenti**
 
-* [Domande frequenti sulla fase di preautorizzazione](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#preauthorization-phase-faqs-general).
+* [Domande frequenti sulla fase di pre-autorizzazione](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#preauthorization-phase-faqs-general)
 
 >[!TIP]
 >
@@ -277,7 +277,7 @@ Le seguenti fasi delineano le fasi di alto livello:
 
 **Domande frequenti**
 
-* [Domande frequenti sulla fase di autorizzazione](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authorization-phase-faqs-general).
+* [Domande frequenti sulla fase di autorizzazione](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authorization-phase-faqs-general)
 
 >[!TIP]
 >
@@ -297,7 +297,7 @@ Lo scopo della fase di disconnessione è fornire all’applicazione client la fu
 
 **Domande frequenti**
 
-* [Domande frequenti sulla fase di disconnessione](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#logout-phase-faqs-general).
+* [Domande frequenti sulla fase di disconnessione](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#logout-phase-faqs-general)
 
 #### Disconnessione singola (SLO) {#single-logout}
 

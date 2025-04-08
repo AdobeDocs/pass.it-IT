@@ -2,9 +2,9 @@
 title: Domande frequenti su REST API V2
 description: Domande frequenti su REST API V2
 exl-id: 2dd74b47-126e-487b-b467-c16fa8cc14c1
-source-git-commit: 640ba7073f7f4639f980f17f1a59c4468bfebcf4
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
-source-wordcount: '9697'
+source-wordcount: '9703'
 ht-degree: 0%
 
 ---
@@ -311,7 +311,7 @@ Le informazioni del profilo dell’utente vengono recuperate correttamente, conf
 
 **Sessione di autenticazione e scadenza del codice**
 
-La sessione di autenticazione e il codice scadono, come indicato dalla marca temporale `notAfter` nella risposta dell&#39;endpoint [Sessions](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md). In questo caso, l’utente deve riavviare il processo di autenticazione e arrestare immediatamente il polling che utilizza il codice di autenticazione precedente.
+La sessione di autenticazione e il codice scadono, come indicato dalla marca temporale `notAfter` (ad esempio, 30 minuti) nella risposta dell&#39;endpoint [Sessions](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md). In questo caso, l’utente deve riavviare il processo di autenticazione e arrestare immediatamente il polling che utilizza il codice di autenticazione precedente.
 
 **Nuovo codice di autenticazione generato**
 
@@ -322,8 +322,8 @@ Se l’utente richiede un nuovo codice di autenticazione sul dispositivo princip
 Per garantire l&#39;efficienza ed evitare richieste non necessarie, l&#39;applicazione client deve configurare la frequenza del meccanismo di polling nelle seguenti condizioni:
 
 | **Autenticazione eseguita nell&#39;applicazione primaria (schermata)** | **Autenticazione eseguita all&#39;interno di un&#39;applicazione secondaria (schermo)** |
-|----------------------------------------------------------------------|----------------------------------------------------------------------|
-| L’applicazione principale (streaming) deve eseguire il polling ogni 3-5 secondi. | L’applicazione principale (streaming) deve eseguire il polling ogni 3-5 secondi. |
+|----------------------------------------------------------------------------|----------------------------------------------------------------------------|
+| L’applicazione principale (streaming) deve eseguire il polling ogni 3-5 secondi o più. | L’applicazione principale (streaming) deve eseguire il polling ogni 3-5 secondi o più. |
 
 #### 17. Qual è il numero massimo di richieste di polling che l&#39;applicazione client può inviare? {#authentication-phase-faq17}
 
@@ -526,7 +526,7 @@ L’applicazione client deve convalidare il token multimediale prima di avviare 
 
 No.
 
-Non è necessario che l’applicazione client aggiorni un token multimediale scaduto mentre il flusso è in riproduzione attiva. Se il token multimediale scade durante la riproduzione, il flusso deve poter continuare senza interruzioni. Tuttavia, il client deve richiedere una nuova decisione di autorizzazione e ottenere un nuovo token multimediale la volta successiva che l’utente tenta di riprodurre la stessa risorsa.
+Non è necessario che l’applicazione client aggiorni un token multimediale scaduto mentre il flusso è in riproduzione attiva. Se il token multimediale scade durante la riproduzione, il flusso deve poter continuare senza interruzioni. Tuttavia, il client deve richiedere una nuova decisione di autorizzazione e ottenere un nuovo token multimediale la volta successiva che l’utente tenta di riprodurre una risorsa.
 
 #### 9. Qual è lo scopo di ciascun attributo di marca temporale nella decisione di autorizzazione? {#authorization-phase-faq9}
 

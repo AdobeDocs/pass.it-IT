@@ -2,9 +2,9 @@
 title: Flussi di accesso temporanei
 description: REST API V2 - Flussi di accesso temporanei
 exl-id: 387fcdb0-3a42-4893-ba83-e809426f92be
-source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
-source-wordcount: '3225'
+source-wordcount: '3223'
 ht-degree: 0%
 
 ---
@@ -355,7 +355,7 @@ Segui i passaggi forniti per implementare il flusso di autorizzazione quando uti
 
    >[!TIP]
    >
-   > Suggerimento: l’applicazione di streaming può informare gli utenti che è stato superato il numero massimo di risorse e consigliarli di avviare un flusso di autenticazione di base utilizzando un normale MVPD per continuare a monitorare.
+   > L’applicazione di streaming può informare gli utenti che il numero massimo di risorse è stato superato e consigliarli di avviare un flusso di autenticazione di base utilizzando un normale MVPD per continuare a monitorare.
 
 ## Recupera le decisioni di autorizzazione alla scadenza del TempPass di base o promozionale {#retrieve-authorization-decisions-when-basic-or-promotional-temppass-expires}
 
@@ -435,7 +435,7 @@ Segui i passaggi forniti per implementare il flusso di autorizzazione quando il 
 
    >[!TIP]
    >
-   > Suggerimento: l’applicazione di streaming può informare gli utenti che l’accesso temporaneo è scaduto e consigliarli di avviare un flusso di autenticazione di base utilizzando un normale MVPD per continuare a guardare.
+   > L’applicazione di streaming può informare gli utenti che l’accesso temporaneo è scaduto e consigliarli di avviare un flusso di autenticazione di base utilizzando un normale MVPD per continuare a monitorare.
 
 ## Recupera profilo per TempPass di base {#retrieve-profile-for-basic-temppass}
 

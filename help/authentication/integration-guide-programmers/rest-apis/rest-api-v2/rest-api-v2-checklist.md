@@ -1,9 +1,10 @@
 ---
 title: Elenco di controllo REST API V2
 description: Elenco di controllo REST API V2
-source-git-commit: f0001d86f595040f4be74f357c95bd2919dadf15
+exl-id: 9095d1dd-a90c-4431-9c58-9a900bfba1cf
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
-source-wordcount: '2535'
+source-wordcount: '2545'
 ht-degree: 0%
 
 ---
@@ -40,7 +41,7 @@ Il seguente documento deve essere considerato parte dei criteri di accettazione 
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"><i>Memorizzazione in cache dei token di accesso</i></td>
-      <td>Memorizza i token di accesso nell’archiviazione persistente e riutilizzali fino alla scadenza; non richiedere un nuovo token per ogni chiamata API REST v2.</td>
+      <td>Memorizza i token di accesso nell’archiviazione persistente e riutilizzali fino alla scadenza.<br/><br/>Non richiedere un nuovo token per ogni chiamata API REST v2, aggiorna i token di accesso solo alla scadenza.</td>
       <td>Rischi di sovraccarico delle risorse di sistema, aumento della latenza e potenziale attivazione delle risposte di errore HTTP 429 "Troppe richieste".</td>
    </tr>
 </table>
@@ -85,7 +86,7 @@ Il seguente documento deve essere considerato parte dei criteri di accettazione 
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"><i>Configurazione meccanismo di polling</i></td>
-      <td>Configura la frequenza del meccanismo di polling nelle seguenti condizioni:<br/><br/><b><a href="/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-primary-application-flow.md">Autenticazione eseguita nell'applicazione primaria (schermata)</a></b><ul><li>L’applicazione principale (streaming) deve eseguire il polling ogni 3-5 secondi.</li></ul><br/><b><a href="/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md">Autenticazione eseguita all'interno di un'applicazione secondaria (schermo)</a></b><ul><li>L’applicazione principale (streaming) deve eseguire il polling ogni 3-5 secondi.</li></ul></td>
+      <td>Configura la frequenza del meccanismo di polling nelle seguenti condizioni:<br/><br/><b><a href="/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-primary-application-flow.md">Autenticazione eseguita nell'applicazione primaria (schermata)</a></b><ul><li>L’applicazione principale (streaming) deve eseguire il polling ogni 3-5 secondi o più.</li></ul><br/><b><a href="/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md">Autenticazione eseguita all'interno di un'applicazione secondaria (schermo)</a></b><ul><li>L’applicazione principale (streaming) deve eseguire il polling ogni 3-5 secondi.</li></ul></td>
       <td>Rischi di sovraccarico delle risorse di sistema, aumento della latenza e potenziale attivazione delle risposte di errore HTTP 429 "Troppe richieste".</td>
    </tr>
    <tr>
@@ -237,7 +238,7 @@ Il seguente documento deve essere considerato parte dei criteri di accettazione 
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"><i>Convalida dei token di accesso</i></td>
-      <td>Verifica in modo proattivo la validità del token di accesso e aggiornalo se scaduto.<br/><br/>Prima di ritentare la richiesta originale, verificare che il token di accesso venga aggiornato in base a eventuali tentativi per la gestione di errori HTTP 401 "Non autorizzati".</td>
+      <td>Verifica in modo proattivo la validità del token di accesso per aggiornarlo quando è scaduto.<br/><br/>Prima di ritentare la richiesta originale, verificare che il token di accesso venga aggiornato in base a eventuali tentativi per la gestione di errori HTTP 401 "Non autorizzati".</td>
       <td>Rischi che scatenano risposte di errore HTTP 401 "Non autorizzato", sovraccarico delle risorse di sistema e aumento della latenza.</td>
    </tr>
 </table>

@@ -2,9 +2,9 @@
 title: Autenticazione di base - Applicazione principale - Flusso
 description: REST API V2 - Autenticazione di base - Applicazione principale - Flusso
 exl-id: 8122108d-e9da-43c5-9abb-ab177cb21eb6
-source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
-source-wordcount: '904'
+source-wordcount: '903'
 ht-degree: 0%
 
 ---
@@ -127,7 +127,7 @@ Segui i passaggi forniti per implementare il flusso di autenticazione di base es
 
    >[!TIP]
    >
-   > Suggerimento: l&#39;applicazione di streaming può attendere che l&#39;agente utente raggiunga il `redirectUrl` fornito per verificare se il profilo regolare è stato generato e salvato correttamente.
+   > L&#39;applicazione di streaming deve attendere che l&#39;agente utente raggiunga `redirectUrl` per verificare se il profilo regolare è stato generato e salvato correttamente.
 
 1. **Restituisci informazioni sul profilo regolare:** La risposta dell&#39;endpoint Profiles contiene informazioni sul profilo regolare associato ai parametri e alle intestazioni ricevuti.
 

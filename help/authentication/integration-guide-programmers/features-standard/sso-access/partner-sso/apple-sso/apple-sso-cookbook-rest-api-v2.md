@@ -2,9 +2,9 @@
 title: Manuale Apple SSO (REST API V2)
 description: Manuale Apple SSO (REST API V2)
 exl-id: 81476312-9ba4-47a0-a4f7-9a557608cfd6
-source-git-commit: d8097b8419aa36140e6ff550714730059555fd14
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
-source-wordcount: '3615'
+source-wordcount: '3609'
 ht-degree: 0%
 
 ---
@@ -79,7 +79,7 @@ Segui i passaggi forniti per implementare il Single Sign-On Apple utilizzando i 
 
    >[!TIP]
    >
-   > Suggerimento: le credenziali del client devono essere memorizzate nella cache e possono essere utilizzate a tempo indefinito.
+   > Le credenziali del client devono essere memorizzate nella cache e utilizzate a tempo indefinito.
 
 1. **Recupera token di accesso:** L&#39;applicazione di streaming raccoglie tutti i dati necessari per recuperare il token di accesso chiamando l&#39;endpoint del token client.
 
@@ -109,7 +109,7 @@ Segui i passaggi forniti per implementare il Single Sign-On Apple utilizzando i 
 
    >[!TIP]
    >
-   > Suggerimento: il token di accesso deve essere memorizzato in cache e utilizzato solo entro la durata specificata (ad esempio, time-to-live di 24 ore). Dopo la scadenza, l’applicazione di streaming deve richiedere un nuovo token di accesso.
+   > Il token di accesso deve essere memorizzato nella cache e utilizzato solo entro la durata specificata (ad esempio, time-to-live di 24 ore). Dopo la scadenza, l’applicazione di streaming deve richiedere un nuovo token di accesso.
 
 +++
 
@@ -391,7 +391,7 @@ Segui i passaggi forniti per implementare il Single Sign-On Apple utilizzando i 
 
    >[!TIP]
    >
-   > Suggerimento: l’applicazione di streaming può utilizzare invece un valore memorizzato nella cache per le informazioni sullo stato del framework del partner, che consigliamo di aggiornare quando l’applicazione passa dallo stato in background a quello in primo piano. In tal caso, l’applicazione di streaming deve garantire di memorizzare nella cache e utilizzare solo valori validi per lo stato del framework del partner come descritto nel passaggio &quot;Restituisci informazioni sullo stato del framework del partner&quot;.
+   > L’applicazione di streaming può invece utilizzare un valore memorizzato nella cache per le informazioni sullo stato del framework del partner, che consigliamo di aggiornare quando l’applicazione passa dallo stato in background a quello in primo piano. In tal caso, l’applicazione di streaming deve garantire di memorizzare nella cache e utilizzare solo valori validi per lo stato del framework del partner come descritto nel passaggio &quot;Restituisci informazioni sullo stato del framework del partner&quot;.
 
 1. **Restituisci informazioni sullo stato del framework partner:** L&#39;applicazione di streaming convalida i dati di risposta per verificare che siano soddisfatte le condizioni di base:
    * Lo stato di accesso dell’autorizzazione utente è concesso.
@@ -462,7 +462,7 @@ Segui i passaggi forniti per implementare il Single Sign-On Apple utilizzando i 
 
    >[!TIP]
    >
-   > Suggerimento: l’applicazione di streaming può utilizzare invece un valore memorizzato nella cache per le informazioni sullo stato del framework del partner, che consigliamo di aggiornare quando l’applicazione passa dallo stato in background a quello in primo piano. In tal caso, l’applicazione di streaming deve garantire di memorizzare nella cache e utilizzare solo valori validi per lo stato del framework del partner come descritto nel passaggio &quot;Restituisci informazioni sullo stato del framework del partner&quot;.
+   > L’applicazione di streaming può invece utilizzare un valore memorizzato nella cache per le informazioni sullo stato del framework del partner, che consigliamo di aggiornare quando l’applicazione passa dallo stato in background a quello in primo piano. In tal caso, l’applicazione di streaming deve garantire di memorizzare nella cache e utilizzare solo valori validi per lo stato del framework del partner come descritto nel passaggio &quot;Restituisci informazioni sullo stato del framework del partner&quot;.
 
 1. **Restituisci informazioni sullo stato del framework partner:** L&#39;applicazione di streaming convalida i dati di risposta per verificare che siano soddisfatte le condizioni di base:
    * Lo stato di accesso dell’autorizzazione utente è concesso.
