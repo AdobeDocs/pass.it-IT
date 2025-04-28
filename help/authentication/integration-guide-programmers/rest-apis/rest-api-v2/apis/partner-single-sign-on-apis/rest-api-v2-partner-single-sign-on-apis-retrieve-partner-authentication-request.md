@@ -2,7 +2,7 @@
 title: Recupera richiesta di autenticazione partner
 description: REST API V2 - Recupera richiesta di autenticazione partner
 exl-id: 52d8a8e9-c176-410f-92bc-e83449278943
-source-git-commit: 640ba7073f7f4639f980f17f1a59c4468bfebcf4
+source-git-commit: e8836c76aec10607717c0a67434b2ba5a78a8954
 workflow-type: tm+mt
 source-wordcount: '1219'
 ht-degree: 1%
@@ -307,7 +307,7 @@ ht-degree: 1%
                     <ul>
                         <li><b>tipo</b><br/>Indica il tipo di protocollo supportato da MVPD (solo SAML).</li>
                         <li><b>richiesta</b><br/>La richiesta SAML.</li>
-                        <li><b>attributi</b><br/>Attributi della richiesta SAML.</li>
+                        <li><b>attributesNames</b><br/>Attributi della richiesta SAML.</li>
                     </ul>
                </td>
                <td>facoltativo</td>
@@ -363,7 +363,7 @@ ht-degree: 1%
 
 ## Esempi {#samples}
 
-### 1. Retrieve partner authentication request
+### 1. Recuperare la richiesta di autenticazione del partner
 
 >[!BEGINTABS]
 
