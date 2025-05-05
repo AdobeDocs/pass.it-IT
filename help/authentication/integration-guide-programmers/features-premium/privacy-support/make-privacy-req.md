@@ -226,7 +226,7 @@ Ci sono 2 opzioni per i clienti per inviare richieste di privacy ad Adobe:
 
 ### Utilizzando l’interfaccia utente di Privacy Service {#privacy-service-ui}
 
-Un [tutorial completo](https://experienceleague.adobe.com/docs/experience-platform/privacy/home.html?lang=en#!api-specification/markdown/narrative/tutorials/privacy_service_tutorial/privacy_service_ui_tutorial.md) su come accedere e utilizzare l&#39;interfaccia utente di Privacy Service è disponibile online tramite i servizi Adobe I/O. Inoltre, i clienti possono utilizzare questo collegamento per accedere alla libreria di video e articoli sulle normative sulla privacy. Fai clic sul menu Adobe Experience Cloud e RGPD. Verranno aperti diversi video - La guida introduttiva all’interfaccia utente RGPD spiega come utilizzarla.
+Un [tutorial completo](https://experienceleague.adobe.com/docs/experience-platform/privacy/home.html?lang=it#!api-specification/markdown/narrative/tutorials/privacy_service_tutorial/privacy_service_ui_tutorial.md) su come accedere e utilizzare l&#39;interfaccia utente di Privacy Service è disponibile online tramite i servizi Adobe I/O. Inoltre, i clienti possono utilizzare questo collegamento per accedere alla libreria di video e articoli sulle normative sulla privacy. Fai clic sul menu Adobe Experience Cloud e RGPD. Verranno aperti diversi video - La guida introduttiva all’interfaccia utente RGPD spiega come utilizzarla.
 
 Nell’interfaccia utente, i clienti devono caricare il proprio IMSOrgID e un JSON contenente i dettagli delle richieste RGPD per ciascun prodotto.
 
@@ -259,7 +259,7 @@ La documentazione dell&#39;**API Privacy Service** descrive in modo approfondito
 
 >[!RELATEDINFORMATION]
 >
->* [Privacy Services Overview](https://experienceleague.adobe.com/docs/experience-platform/privacy/home.html?lang=en#!api-specification/markdown/narrative/tutorials/privacy_service_tutorial/privacy_service_ui_tutorial.md)
+>* [Privacy Services Overview](https://experienceleague.adobe.com/docs/experience-platform/privacy/home.html?lang=it#!api-specification/markdown/narrative/tutorials/privacy_service_tutorial/privacy_service_ui_tutorial.md)
 >* Privacy Service API documentation
 
 -->

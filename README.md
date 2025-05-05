@@ -29,7 +29,7 @@ Se stai contribuendo con un aggiornamento minore:
 1. In &quot;Questo contenuto è stato utile?&quot; banner visualizzato nella parte inferiore della finestra del browser fai clic su **Opzioni di feedback dettagliate**.
 1. Clic **Suggerisci una modifica** e invia una richiesta di pull (PR) con le modifiche apportate all’interfaccia utente di GitHub.
 
-   Consulta la sezione Generale [Guida per i collaboratori per la documentazione di Adobe](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html) per ulteriori informazioni.
+   Consulta la sezione Generale [Guida per i collaboratori per la documentazione di Adobe](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html?lang=it) per ulteriori informazioni.
 
 Le correzioni minori o i chiarimenti inviati per la documentazione e gli esempi di codice in questo archivio sono coperti dalle condizioni d’uso di Adobe.
 
@@ -43,7 +43,7 @@ Se fai parte della community di Adobi e desideri creare un nuovo argomento o inv
 
 I collaboratori della community possono utilizzare l’interfaccia utente di GitHub per apportare modifiche di base o eseguire il fork dell’archivio per apportare contributi principali.
 
-Consulta la [Guida per i collaboratori Adobe Docs](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html) per i dettagli.
+Consulta la [Guida per i collaboratori Adobe Docs](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html?lang=it) per i dettagli.
 
 ## Collaboratori interni
 
