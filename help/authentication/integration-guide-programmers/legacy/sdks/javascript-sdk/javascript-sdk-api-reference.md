@@ -178,7 +178,7 @@ In caso di esito positivo, crea e memorizza un token di autenticazione per l’u
 
 ## checkAuthorization(inResourceID) {#checkauthorization(inresourceid)}
 
-**Descrizione:** Questo metodo viene utilizzato dall&#39;applicazione per controllare lo stato di autorizzazione per il cliente corrente e la risorsa specificata. Viene innanzitutto verificato lo stato di autenticazione. Se non viene autenticato, il callback tokenRequestFailed() viene attivato e il metodo viene chiuso. Se l’utente è autenticato, attiva anche il flusso di autorizzazione. Vedi i dettagli sul metodo [getAuthorization()](#getAuthZ.
+**Descrizione:** Questo metodo viene utilizzato dall&#39;applicazione per controllare lo stato di autorizzazione per il cliente corrente e la risorsa specificata. Viene innanzitutto verificato lo stato di autenticazione. Se non viene autenticato, il callback tokenRequestFailed() viene attivato e il metodo viene chiuso. Se l’utente è autenticato, attiva anche il flusso di autorizzazione. Vedi i dettagli sul metodo [getAuthorization()] (#getAuthZ.
 
 >[!TIP]
 >
@@ -415,7 +415,7 @@ Devi implementare questi callback per gestire le risposte alle chiamate di richi
 
 **Descrizione:** implementa questo callback se l&#39;utente ha selezionato un MVPD che richiede un iFrame in cui visualizzare l&#39;interfaccia utente della pagina di accesso per l&#39;autenticazione.
 
-**Attivato da:**[ setSelectedProvider()](#setselectedproviderproviderid-setselectedprovider)
+**Attivato da:**&#x200B;[ setSelectedProvider()](#setselectedproviderproviderid-setselectedprovider)
 
 </br> [Torna all&#39;inizio](#top)
 

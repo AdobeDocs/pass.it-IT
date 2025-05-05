@@ -80,7 +80,7 @@ Fornisce un punteggio che riflette l’impatto complessivo della condivisione. I
 
 Puoi selezionare le intestazioni di colonna per ordinare i dati in tutte le versioni di Account IQ.
 
-Servizi +++D2C: Regioni nel segmento
++++Servizi D2C: Regioni nel segmento
 
 Quando si effettua l&#39;accesso come servizio D2C, la tabella **Aree nel segmento** fornisce una visualizzazione comparativa dei diversi punteggi di condivisione aggregati per le [categorie video](/help/accountiq/product-concepts.md#video-category-def) nel segmento corrente.
 

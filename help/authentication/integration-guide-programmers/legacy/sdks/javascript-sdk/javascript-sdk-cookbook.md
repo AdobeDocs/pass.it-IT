@@ -86,7 +86,7 @@ Il parametro mvpds è un array di provider disponibili per l&#39;utente.
 
 - `selectedProvider(mvpd)`
 
-  **Trigger:** [`getSelectedProvider()`](#$getSelProv Il parametro `mvpd` fornisce informazioni sul provider selezionato da
+  **Trigger:** [`getSelectedProvider()`] (#$getSelProv Il parametro `mvpd` fornisce informazioni sul provider selezionato da
 utente.
 
 - `setMetadataStatus(metadata, key, arguments)`

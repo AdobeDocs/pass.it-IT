@@ -19,7 +19,7 @@ Come le altre pagine dell&#39;app, l&#39;analisi e i report si basano sul segmen
 
 Il grafico a barre dei cluster mostra il numero e le percentuali di abbonati per ogni comportamento social o pattern di utilizzo.
 
-Servizi +++D2C: modelli di utilizzo distribuzione-Utenti nel segmento
++++Servizi D2C: modelli di utilizzo distribuzione-Utenti nel segmento
 
 Il grafico a barre cluster riportato di seguito confronta la distribuzione del pattern di utilizzo del segmento corrente con un segmento contenente tutti gli account.
 
@@ -61,7 +61,7 @@ Ad esempio, nella visualizzazione precedente:
 
 ## Distribuzione del pattern di utilizzo per categorie video {#usage-pattern-dis-video-categories}
 
-Servizi +++D2C: distribuzione del pattern di utilizzo per le aree geografiche
++++Servizi D2C: distribuzione del pattern di utilizzo per le aree geografiche
 
 La tabella **[!UICONTROL Usage pattern distribution]** fornisce un confronto dei pattern di utilizzo tra [categorie video](product-concepts.md##video-category-def) nel segmento corrente.
 

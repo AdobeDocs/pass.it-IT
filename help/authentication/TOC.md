@@ -226,7 +226,7 @@ ht-degree: 2%
          + [(Legacy) Manuale di Amazon SSO (REST API V1)](integration-guide-programmers/legacy/sso-access/amazon-sso-cookbook-rest-api-v1.md)
          + [(Legacy) Manuale di Apple SSO (REST API V1)](integration-guide-programmers/legacy/sso-access/apple-sso-cookbook-rest-api-v1.md)
          + [(Legacy) Manuale Apple SSO (iOS/tvOS SDK)](integration-guide-programmers/legacy/sso-access/apple-sso-cookbook-iostvos-sdk.md)
-      + Dashboard TVE {#tve-dashboard} (legacy)
+      + Dashboard TVE (legacy) {#tve-dashboard}
          + [Guida utente di (Legacy) TVE Dashboard](integration-guide-programmers/legacy/tve-dashboard/tve-dashboard-user-guide.md)
       + (Legacy) Note tecniche {#tech-notes}
          + (Legacy) API REST V1 {#rest-api-v1}

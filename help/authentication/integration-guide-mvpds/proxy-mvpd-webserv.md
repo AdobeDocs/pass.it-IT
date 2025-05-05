@@ -31,13 +31,13 @@ Un &quot;Proxy MVPD&quot; è un MVPD che, oltre a gestire la propria integrazion
 
 Per implementare la funzione ProxyMVPD, Adobe Pass Authentication fornisce servizi web RESTful, con cui i ProxyMVPD possono inviare e recuperare elenchi di ProxiedMVPD. Il protocollo utilizzato per questa API pubblica è REST HTTP, con i seguenti presupposti:
 
-- Il proxy MVPD utilizza il metodo HTTP GET per recuperare l&#39;elenco degli MVPD integrati correnti.
-- Il Proxy MVPD utilizza il metodo HTTP POST per aggiornare l’elenco degli MVPD supportati.
+&#x200B;- Il proxy MVPD utilizza il metodo HTTP GET per recuperare l&#39;elenco degli MVPD integrati correnti.
+&#x200B;- Il Proxy MVPD utilizza il metodo HTTP POST per aggiornare l’elenco degli MVPD supportati.
 
 ## Servizi MVPD proxy {#proxy-mvpd-services}
 
-- [Recupera MVPD proxy](#retriev-proxied-mvpds)
-- [Invia MVPD proxy](#submit-proxied-mvpds)
+&#x200B;- [Recupera MVPD proxy](#retriev-proxied-mvpds)
+&#x200B;- [Invia MVPD proxy](#submit-proxied-mvpds)
 
 ### Recuperare MVPD proxy {#retriev-proxied-mvpds}
 
@@ -216,24 +216,24 @@ Adobe ha definito il seguente formato accettato per la pubblicazione/il recupero
 
 **Note sugli elementi:**
 
--   `id` (obbligatorio) - L&#39;ID MVPD proxy deve essere una stringa rilevante per il nome dell&#39;MVPD, che utilizza uno dei seguenti caratteri (in quanto verrà esposto ai programmatori a scopo di tracciamento):
--   Qualsiasi carattere alfanumerico, carattere di sottolineatura (&quot;_&quot;) e trattino (&quot;-&quot;).
--   L’idID deve essere conforme alla seguente espressione regolare:
+&#x200B;- `id` (obbligatorio) - L&#39;ID MVPD proxy deve essere una stringa rilevante per il nome dell&#39;MVPD, che utilizza uno dei seguenti caratteri (in quanto verrà esposto ai programmatori a scopo di tracciamento):
+&#x200B;- Qualsiasi carattere alfanumerico, carattere di sottolineatura (&quot;_&quot;) e trattino (&quot;-&quot;).
+&#x200B;- L’idID deve essere conforme alla seguente espressione regolare:
 `(a-zA-Z0-9((-)|_)*)`
 
     Deve quindi contenere almeno un carattere, iniziare con una lettera e continuare con qualsiasi lettera, cifra, trattino o carattere di sottolineatura.
 
--   `iframeSize` (facoltativo) - L&#39;elemento iframeSize è facoltativo e definisce le dimensioni dell&#39;iFrame se la pagina di autenticazione MVPD deve trovarsi in un iFrame. In caso contrario, se l’elemento iframeSize non è presente, l’autenticazione verrà eseguita in una pagina di reindirizzamento del browser completa.
--   `requestorIds` (facoltativo) - I valori requestorIds verranno forniti da Adobe. Un requisito è che un MVPD proxy debba essere integrato con almeno un requestorId. Se il tag &quot;requestorIds&quot; non è presente nell&#39;elemento MVPD proxy, tale MVPD proxy verrà integrato con tutti i richiedenti disponibili integrati nell&#39;MVPD proxy.
--   `ProviderID` (facoltativo) - Quando l&#39;attributo ProviderID è presente nell&#39;elemento id, il valore di ProviderID verrà inviato nella richiesta di autenticazione SAML all&#39;MVPD proxy come ID MVPD/SubMVPD proxy (invece del valore id). In questo caso, il valore di id verrà utilizzato solo nel selettore MVPD presentato nella pagina Programmatore e internamente dall’autenticazione di Adobe Pass. La lunghezza dell&#39;attributo ProviderID deve essere compresa tra 1 e 128 caratteri.
+&#x200B;- `iframeSize` (facoltativo) - L&#39;elemento iframeSize è facoltativo e definisce le dimensioni dell&#39;iFrame se la pagina di autenticazione MVPD deve trovarsi in un iFrame. In caso contrario, se l’elemento iframeSize non è presente, l’autenticazione verrà eseguita in una pagina di reindirizzamento del browser completa.
+&#x200B;- `requestorIds` (facoltativo) - I valori requestorIds verranno forniti da Adobe. Un requisito è che un MVPD proxy debba essere integrato con almeno un requestorId. Se il tag &quot;requestorIds&quot; non è presente nell&#39;elemento MVPD proxy, tale MVPD proxy verrà integrato con tutti i richiedenti disponibili integrati nell&#39;MVPD proxy.
+&#x200B;- `ProviderID` (facoltativo) - Quando l&#39;attributo ProviderID è presente nell&#39;elemento id, il valore di ProviderID verrà inviato nella richiesta di autenticazione SAML all&#39;MVPD proxy come ID MVPD/SubMVPD proxy (invece del valore id). In questo caso, il valore di id verrà utilizzato solo nel selettore MVPD presentato nella pagina Programmatore e internamente dall’autenticazione di Adobe Pass. La lunghezza dell&#39;attributo ProviderID deve essere compresa tra 1 e 128 caratteri.
 
 ## Sicurezza {#security}
 
 Per essere considerata valida, una richiesta deve rispettare le seguenti regole:
 
-- L&#39;intestazione della richiesta deve contenere il token di accesso Oauth2 di sicurezza ottenuto come descritto nella documentazione API [Recupera token di accesso](../integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md).
-- La richiesta deve provenire da un indirizzo IP specifico che è stato consentito.
-- La richiesta deve essere inviata tramite il protocollo SSL.
+&#x200B;- L&#39;intestazione della richiesta deve contenere il token di accesso Oauth2 di sicurezza ottenuto come descritto nella documentazione API [Recupera token di accesso](../integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md).
+&#x200B;- La richiesta deve provenire da un indirizzo IP specifico che è stato consentito.
+&#x200B;- La richiesta deve essere inviata tramite il protocollo SSL.
 
 Eventuali parametri presenti nell’intestazione della richiesta non elencati sopra verranno ignorati.
 
@@ -243,10 +243,10 @@ Esempio di curl:
 
 ## Endpoint del servizio Web MVPD proxy per gli ambienti di autenticazione Adobe Pass {#proxy-mvpd-wevserv-endpoints}
 
-- **URL di produzione:** https://mgmt.auth.adobe.com/control/v3/mvpd-proxies/&lt;proxy-mvpd-identifier>/mvpds
-- **URL di gestione temporanea:** https://mgmt.auth-staging.adobe.com/control/v3/mvpd-proxies/&lt;proxy-mvpd-identifier>/mvpds
-- **URL preQual-produzione:** https://mgmt-prequal.auth.adobe.com/control/v3/mvpd-proxies/&lt;proxy-mvpd-identifier>/mvpds
-- **URL preQual-staging:** https://mgmt-prequal.auth-staging.adobe.com/control/v3/mvpd-proxies/&lt;proxy-mvpd-identifier>/mvpds
+&#x200B;- **URL di produzione:** https://mgmt.auth.adobe.com/control/v3/mvpd-proxies/&lt;proxy-mvpd-identifier>/mvpds
+&#x200B;- **URL di gestione temporanea:** https://mgmt.auth-staging.adobe.com/control/v3/mvpd-proxies/&lt;proxy-mvpd-identifier>/mvpds
+&#x200B;- **URL preQual-produzione:** https://mgmt-prequal.auth.adobe.com/control/v3/mvpd-proxies/&lt;proxy-mvpd-identifier>/mvpds
+&#x200B;- **URL preQual-staging:** https://mgmt-prequal.auth-staging.adobe.com/control/v3/mvpd-proxies/&lt;proxy-mvpd-identifier>/mvpds
 
 <!--
 >[!RELATEDINFORMATION]

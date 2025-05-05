@@ -19,7 +19,7 @@ Le versioni D2C e TV Everywhere di Account IQ forniscono ai provider di streamin
 
 * Attualmente, l&#39;opzione per esportare le statistiche dei conti è limitata all&#39;esportazione di 1000 conti.
 
-* Quando si definiscono le operazioni, l&#39;opzione per selezionare il tipo di segmento [](/help/accountiq/operations.md#segment) è limitata a **numero fisso di account**. L&#39;opzione **Numero variabile di account** sarà disponibile in una versione futura.
+* Quando si definiscono le operazioni, l&#39;opzione per selezionare il tipo di segmento [&#128279;](/help/accountiq/operations.md#segment) è limitata a **numero fisso di account**. L&#39;opzione **Numero variabile di account** sarà disponibile in una versione futura.
 
 * Le sezioni **Benchmarking**, **Modelli di rilevamento**, **Azioni** e **Impostazioni** nella barra di navigazione a sinistra sono attualmente disabilitate e saranno disponibili in una versione futura.
 

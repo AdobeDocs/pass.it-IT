@@ -37,7 +37,7 @@ Con i segmenti puoi eseguire le seguenti funzioni:
 
 Il processo di creazione di un nuovo segmento è simile per i servizi D2C e TV Everywhere. Le categorie video saranno diverse per ogni rispettiva versione di Account IQ.
 
-Servizi +++D2C
++++Servizi D2C
 
 Per creare un segmento e analizzare il comportamento di condivisione del sottoscrittore, selezionare **[!UICONTROL Create new segment]** in alto a destra.
 

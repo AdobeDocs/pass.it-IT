@@ -94,7 +94,7 @@ ht-degree: 0%
 
 ## Oggetto {#subj-defn}
 
-* Il consumatore del contenuto (video) su Internet. Stiamo deliberatamente evitando il termine _**utente**_, in quanto il monitoraggio della concorrenza di solito tratta gli ID account MVPD (che coinvolgono diversi utenti effettivi che condividono lo stesso contratto, ad esempio i membri della famiglia per una famiglia).
+* Il consumatore del contenuto (video) su Internet. Stiamo deliberatamente evitando il termine _&#x200B;**utente**&#x200B;_, in quanto il monitoraggio della concorrenza di solito tratta gli ID account MVPD (che coinvolgono diversi utenti effettivi che condividono lo stesso contratto, ad esempio i membri della famiglia per una famiglia).
 
 * Per ogni flusso, l’oggetto può essere migliorato con gli attributi relativi alla persona che utilizza effettivamente il servizio, al dispositivo connesso alla rete e così via.
 

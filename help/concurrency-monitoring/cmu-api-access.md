@@ -34,6 +34,7 @@ Per ottenere l’accesso, segui i passaggi descritti nelle sezioni seguenti.
    3. Vai alla scheda *Applicazioni registrate*
    4. Seleziona applicazione
    5. Fare clic su Scarica nella riga dell&#39;applicazione registrata per la quale si desidera ottenere un&#39;istruzione software e salvarla come file nel computer locale
+
       <figure>
           <img src="assets/programmer-download-software-statement-button.png"
                alt="Scarica la dichiarazione del software">
@@ -46,6 +47,7 @@ Per ottenere l’accesso, segui i passaggi descritti nelle sezioni seguenti.
 
 3. Ottieni token di accesso
    1. Ottieni le credenziali del client utilizzando l’istruzione software ottenuta in precedenza ed eseguendo la chiamata di seguito. In questo modo verrà ottenuta una coppia client_id - client_secret, che può essere utilizzata per ottenere il token di accesso.
+
       *Questo passaggio non deve essere eseguito ogni volta. Questa operazione deve essere ripetuta solo alla scadenza delle credenziali.*
       <figure>
           <img src="assets/dcr_request_1_get_client_credentials.png"
@@ -53,6 +55,7 @@ Per ottenere l’accesso, segui i passaggi descritti nelle sezioni seguenti.
        </figure>
 
    2. Ottieni il token di accesso utilizzando la chiamata di seguito. Utilizza questo token di accesso per chiamare qualsiasi API CMU fino alla scadenza del token.
+
       *Questo passaggio deve essere eseguito solo se l&#39;ultimo token generato è scaduto.*
       <figure>
           <img src="assets/dcr_get_access_token_call.png"

@@ -466,7 +466,7 @@ Consulta la sezione [Ambienti](#authn-environments) per ulteriori dettagli relat
 
 Tutti i rapporti consentono l’utilizzo di filtri selezionando canali specifici o selezionando MVPD specifici da includere nei rapporti risultanti.
 
-Per selezionare uno o più canali, utilizza l&#39;elenco a discesa **1} inserito dopo l&#39;etichetta &quot;Canali selezionati per il report&quot;.** Vedere la Figura 8./9./10. immagini dal basso.
+Per selezionare uno o più canali, utilizza l&#39;elenco a discesa **1&rbrace; inserito dopo l&#39;etichetta &quot;Canali selezionati per il report&quot;.** Vedere la Figura 8./9./10. immagini dal basso.
 
 Per selezionare uno o più MVPD/s, utilizza l&#39;**elenco a discesa** inserito dopo l&#39;etichetta &quot;MVPD selezionati per il report&quot;. Vedere la Figura 8./9./10. immagini dal basso.
 

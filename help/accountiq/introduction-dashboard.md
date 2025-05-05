@@ -17,7 +17,7 @@ La dashboard riepiloga e aggrega i dati in una raccolta di grafici e rapporti pr
 >
 >La maggior parte dei pannelli dati nei servizi D2C, nei programmatori e nei dashboard MVPD sono identici. Tuttavia, alcuni pannelli dati possono differire per ciascuna versione.
 
-Servizi +++D2C: dashboard
++++Servizi D2C: dashboard
 
 ![dashboard di Account IQ per i servizi D2C](assets/dashboard-d2c.png){align="left"}
 

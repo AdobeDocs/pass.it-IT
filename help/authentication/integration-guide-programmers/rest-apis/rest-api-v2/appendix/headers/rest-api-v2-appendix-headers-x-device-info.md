@@ -53,7 +53,7 @@ Il valore `Base64-encoded` dell&#39;elemento JSON contenente almeno gli attribut
         <td></td>
         <td>primaryHardwareType</td>
         <td>Il tipo di hardware principale del dispositivo.</td>
-        <td>&amp;check;</td>
+        <td>&check;</td>
         <td>
             I valori sono limitati:
             <ul>
@@ -110,7 +110,7 @@ Il valore `Base64-encoded` dell&#39;elemento JSON contenente almeno gli attribut
         <td><i>obbligatorio</i></td>
         <td>osName</td>
         <td>Il nome del sistema operativo del dispositivo.</td>
-        <td>&amp;check;</td>
+        <td>&check;</td>
         <td>
             I valori sono limitati:
             <ul>
@@ -132,7 +132,7 @@ Il valore `Base64-encoded` dell&#39;elemento JSON contenente almeno gli attribut
         <td></td>
         <td>osFamily</td>
         <td>Il nome del gruppo del sistema operativo del dispositivo.</td>
-        <td>&amp;check;</td>
+        <td>&check;</td>
         <td>
             I valori sono limitati:
             <ul>
@@ -155,7 +155,7 @@ Il valore `Base64-encoded` dell&#39;elemento JSON contenente almeno gli attribut
         <td></td>
         <td>osVendor</td>
         <td>Il fornitore del sistema operativo del dispositivo.</td>
-        <td>&amp;check;</td>
+        <td>&check;</td>
         <td>
             I valori sono limitati:
             <ul>
@@ -185,7 +185,7 @@ Il valore `Base64-encoded` dell&#39;elemento JSON contenente almeno gli attribut
         <td></td>
         <td>browserName</td>
         <td>Nome del browser.</td>
-        <td>&amp;check;</td>
+        <td>&check;</td>
         <td>
             I valori sono limitati:
             <ul>
@@ -205,7 +205,7 @@ Il valore `Base64-encoded` dell&#39;elemento JSON contenente almeno gli attribut
         <td></td>
         <td>browserVendor</td>
         <td>La società/organizzazione di costruzione del browser.</td>
-        <td>&amp;check;</td>
+        <td>&check;</td>
         <td>
             I valori sono limitati:
             <ul>
@@ -290,7 +290,7 @@ Il valore `Base64-encoded` dell&#39;elemento JSON contenente almeno gli attribut
         <td></td>
         <td>connectionSecure</td>
         <td>Stato di protezione della connessione di rete.</td>
-        <td>&amp;check;</td>
+        <td>&check;</td>
         <td>
             I valori sono limitati:
             <ul>

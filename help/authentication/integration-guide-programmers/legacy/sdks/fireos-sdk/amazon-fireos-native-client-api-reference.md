@@ -260,7 +260,7 @@ Dopo che l&#39;utente ha selezionato il MVPD desiderato, l&#39;applicazione di l
 | ```public void setSelectedProvider(String mvpdId)``` |
 
 
-**Disponibilità:**v 1.0+
+**Disponibilità:**&#x200B;v 1.0+
 
 **Parametri:** Nessuno
 
@@ -355,7 +355,7 @@ Questo callback segnala anche quando il flusso di logout è completo.
 | --- |
 | ```public void checkPreauthorizedResources(ArrayList<String> resources)``` |
 
-**Disponibilità:**v 1.0+
+**Disponibilità:**&#x200B;v 1.0+
 
 **Parametri:** Il parametro `resources` è un array di risorse per le quali l&#39;utente è già autorizzato a visualizzare.
 
@@ -427,7 +427,7 @@ Questo callback segnala anche quando il flusso di logout è completo.
 | --- |
 | ```public void setToken(String token, String resourceId)``` |
 
-**Disponibilità:**v 1.0+
+**Disponibilità:**&#x200B;v 1.0+
 
 **Parametri:**
 

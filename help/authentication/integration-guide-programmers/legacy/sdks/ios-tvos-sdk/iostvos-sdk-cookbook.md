@@ -136,6 +136,7 @@ I. [Flusso di disconnessione con Apple SSO](#logout_flow_with_AppleSSO) </br>
 per il manager).
 
    * **Trigger:**
+
      [setRequestorComplete()](#$setReqComplete) callback.
 
    >[!NOTE]

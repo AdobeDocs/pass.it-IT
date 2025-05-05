@@ -87,6 +87,7 @@ Ottiene la risposta di autorizzazione.
 * **Caso 1: operazione riuscita**
 </br>
   * **XML:**
+
   </br>
 
     &quot;XML
