@@ -2,9 +2,9 @@
 title: Recupera richiesta di autenticazione partner
 description: REST API V2 - Recupera richiesta di autenticazione partner
 exl-id: 52d8a8e9-c176-410f-92bc-e83449278943
-source-git-commit: e8836c76aec10607717c0a67434b2ba5a78a8954
+source-git-commit: 9f872ad94e0aaa0546c8fcac9f88c50f47e10f6e
 workflow-type: tm+mt
-source-wordcount: '1219'
+source-wordcount: '1236'
 ht-degree: 1%
 
 ---
@@ -270,6 +270,7 @@ ht-degree: 1%
                     <li><b>authenticatedSSO</b><br/>L'applicazione client è già autenticata tramite flussi di accesso single sign-on.</li>
                     <li><b>pfs_fallback</b><br/>L'applicazione client deve eseguire il fallback al flusso di autenticazione di base a causa di un valore di intestazione <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md">AP-Partner-Framework-Status</a> mancante o non valido.</li>
                     <li><b>configuration_fallback</b><br/>L'applicazione client deve eseguire il fallback al flusso di autenticazione di base a causa della configurazione single sign-on del partner nel backend di Adobe Pass.</li>
+                    <li><b>missing_parameters_fallback</b><br />L'applicazione client deve tornare al flusso di ripresa a causa di un parametro mancante o non valido.</li>
                   </ul>
                <td><i>obbligatorio</i></td>
             </tr>
@@ -574,7 +575,7 @@ Content-Type: application/json;charset=UTF-8
 {
     "actionName": "resume",
     "actionType": "direct",
-    "reasonType": "none",
+    "reasonType": "missing_parameters_fallback",
     "missingParameters": [
           "redirectUrl"
     ],
