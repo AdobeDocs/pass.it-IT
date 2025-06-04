@@ -4,10 +4,10 @@ audience: end-user
 feature: Authentication
 user-guide-title: Autenticazione Adobe Pass
 user-guide-description: L’autenticazione Adobe Pass è una soluzione di gestione dei diritti per TV Everywhere, che fornisce un framework modulare per determinare se chi richiede l’accesso a una risorsa ne abbia diritto.
-source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
+source-git-commit: 13b0bb640aa599109e8c2f68d1e16fbdc3840951
 workflow-type: tm+mt
-source-wordcount: '1251'
-ht-degree: 2%
+source-wordcount: '1258'
+ht-degree: 3%
 
 ---
 
@@ -18,6 +18,7 @@ ht-degree: 2%
 + [Annunci sui prodotti](product-announcements.md)
 + Rilasci di prodotti {#product-releases}
    + 2025 {#2025}
+      + [Note sulla versione di Adobe Pass Authentication 3.2.0](notes-releases/auth-rn-320.md)
       + [Note sulla versione di Adobe Pass Authentication 3.1.0](notes-releases/auth-rn-310.md)
       + [Note sulla versione di Adobe Pass Authentication JavaScript 4.7.1](notes-releases/authn-rn-javascript-471.md)
    + 2024 {#2024}
@@ -52,7 +53,7 @@ ht-degree: 2%
    + [Guida introduttiva per programmatori](kickstart/programmer-kickstart-guide.md)
    + [Guida di Kick-Start per MVPD](kickstart/mvpd-kickstart-guide.md)
    + [Domande frequenti sulle procedure di supporto](kickstart/support-procedures-faqs.md)
-+ Guida All&#39;Integrazione Per I Programmatori {#integration-guide-programmers}
++ Guida All&#39;Integrazione Per Programmatori {#integration-guide-programmers}
    + [Guida all’integrazione dei programmatori](integration-guide-programmers/programmer-integration-guide-overview.md)
    + [Requisiti minimi di sistema](integration-guide-programmers/minimum-system-requirements.md)
    + [Meccanismo di limitazione](integration-guide-programmers/throttling-mechanism.md)
@@ -89,7 +90,7 @@ ht-degree: 2%
                + [Recuperare le decisioni di pre-autorizzazione utilizzando mvpd specifico](integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)
             + Disconnetti {#rest-api-v2-logout-apis}
                + [Avvia disconnessione per mvpd specifico](integration-guide-programmers/rest-apis/rest-api-v2/apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md)
-            + Single Sign-On Partner {#rest-api-v2-partner-single-sign-on-apis}
+            + Single Sign-On partner {#rest-api-v2-partner-single-sign-on-apis}
                + [Recupera richiesta di autenticazione partner](integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-partner-authentication-request.md)
                + [Crea e recupera il profilo utilizzando la risposta di autenticazione del partner](integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md)
          + Flussi {#rest-api-v2-flows}
@@ -111,7 +112,7 @@ ht-degree: 2%
                + [Single sign-on con flussi di identità della piattaforma](integration-guide-programmers/rest-apis/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md)
                + [Single sign-on con flussi di token di servizio](integration-guide-programmers/rest-apis/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md)
                + [Flusso disconnessione singola](integration-guide-programmers/rest-apis/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-logout-flow.md)
-         + Manuali di ricerca {#rest-api-v2-cookbooks}
+         + Cookbook {#rest-api-v2-cookbooks}
             + [Manuale dell’API REST V2 (da client a server)](integration-guide-programmers/rest-apis/rest-api-v2/cookbooks/rest-api-v2-cookbook-client-server.md)
             + [Manuale dell’API REST V2 (server-to-server)](integration-guide-programmers/rest-apis/rest-api-v2/cookbooks/rest-api-v2-cookbook-server-server.md)
          + Appendice {#rest-api-v2-appendix}
@@ -132,11 +133,11 @@ ht-degree: 2%
       + Segnalazione errori {#error-reporting}
          + [Codici di errore migliorati](integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md)
       + Accesso Single Sign-On {#sso-access}
-         + Single Sign-On Partner {#partner-sso}
+         + Single Sign-On partner {#partner-sso}
             + Apple Single Sign-On {#apple-sso}
                + [Panoramica di Apple SSO](integration-guide-programmers/features-standard/sso-access/partner-sso/apple-sso/apple-sso-overview.md)
                + [Manuale Apple SSO (REST API V2)](integration-guide-programmers/features-standard/sso-access/partner-sso/apple-sso/apple-sso-cookbook-rest-api-v2.md)
-         + Single Sign-On piattaforma {#platform-sso}
+         + Single Sign-On della piattaforma {#platform-sso}
             + Amazon Single Sign-On {#amazon-sso}
                + [Manuale Amazon SSO (REST API V2)](integration-guide-programmers/features-standard/sso-access/platform-sso/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v2.md)
             + Single Sign-On Roku {#roku-sso}
@@ -146,10 +147,10 @@ ht-degree: 2%
       + Supporto per la privacy {#privacy-support}
          + [Panoramica sul supporto della privacy](integration-guide-programmers/features-premium/privacy-support/privacy-supp-overview.md)
          + [Come effettuare una richiesta di accesso a dati personali](integration-guide-programmers/features-premium/privacy-support/make-privacy-req.md)
-   + Funzionalità Premium {#features-premium}
+   + Funzioni Premium {#features-premium}
       + Accesso temporaneo {#temporary-access}
          + [Funzione TempPass](integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)
-      + Accesso Danneggiato {#degraded-access}
+      + Accesso degradato {#degraded-access}
          + [Funzione di degradazione](integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)
       + ESM {#esm}
          + [Panoramica sul monitoraggio del servizio di adesione](integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md)
@@ -159,10 +160,10 @@ ht-degree: 2%
          + [Integrazione dei dati lato server di autenticazione di Adobe Pass in Adobe Analytics](integration-guide-programmers/features-premium/analytics/integrate-authn-servr-data-analytics.md)
          + [Utilizzo dell’ID di Experience Cloud nell’autenticazione di Adobe Pass](integration-guide-programmers/features-premium/analytics/exp-cloud-id-authn.md)
    + Legacy {#legacy}
-      + (Legacy) API REST V1 {#rest-api-v1}
+      + (Legacy) REST API V1 {#rest-api-v1}
          + [(Legacy) Panoramica di REST API V1](integration-guide-programmers/legacy/rest-api-v1/rest-api-overview.md)
          + [(Legacy) Riferimento API REST V1](integration-guide-programmers/legacy/rest-api-v1/rest-api-reference.md)
-         + (Legacy) API {#rest-api-v1-apis}
+         + API (legacy) {#rest-api-v1-apis}
             + [(Legacy) Richiesta codice di registrazione](integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md)
             + [Record di registrazione restituzione (legacy)](integration-guide-programmers/legacy/rest-api-v1/apis/return-registration-record.md)
             + [(Legacy) Elimina record di registrazione](integration-guide-programmers/legacy/rest-api-v1/apis/delete-registration-record.md)
@@ -184,7 +185,7 @@ ht-degree: 2%
          + (Legacy) Cookbook {#rest-api-v1-cookbooks}
             + [(Legacy) Manuale REST API V1 (Client-to-Server)](integration-guide-programmers/legacy/rest-api-v1/cookbooks/rest-api-cookbook-clienttoserver.md)
             + [(Legacy) Manuale REST API V1 (server-to-server)](integration-guide-programmers/legacy/rest-api-v1/cookbooks/rest-api-cookbook-servertoserver.md)
-      + (Legacy) SDK {#sdks}
+      + SDK (legacy) {#sdks}
          + (Legacy) JavaScript SDK {#javascript-sdk}
             + [(Legacy) Panoramica di JavaScript SDK](integration-guide-programmers/legacy/sdks/javascript-sdk/javascript-sdk-overview.md)
             + [Manuale di JavaScript SDK (legacy)](integration-guide-programmers/legacy/sdks/javascript-sdk/javascript-sdk-cookbook.md)
@@ -229,13 +230,13 @@ ht-degree: 2%
       + Dashboard TVE (legacy) {#tve-dashboard}
          + [Guida utente di (Legacy) TVE Dashboard](integration-guide-programmers/legacy/tve-dashboard/tve-dashboard-user-guide.md)
       + (Legacy) Note tecniche {#tech-notes}
-         + (Legacy) API REST V1 {#rest-api-v1}
+         + (Legacy) REST API V1 {#rest-api-v1}
             + [(Legacy) Implementazione API senza client - Codici di errore/messaggi con motivo/causa probabile](integration-guide-programmers/legacy/notes-technical/clientless-api-implementation-error-codes-messages-with-probable-reason-cause.md)
             + [(Legacy) Flusso API senza client in assenza di ID dispositivo](integration-guide-programmers/legacy/notes-technical/clientless-api-flow-in-the-absence-of-device-id.md)
             + [(Legacy) Clientless: evita di utilizzare &#39;&amp;&#39;reg_code nella richiesta /authenticate](integration-guide-programmers/legacy/notes-technical/clientless-avoid-using-reg-code-in-authenticate-request.md)
             + [(Legacy) Abilitazione dei servizi di adesione Adobe Pass per un programmatore su Xbox 360 e Xbox One Clientless](integration-guide-programmers/legacy/notes-technical/enabling-primetime-entitlement-services-for-a-programmer-on-xbox-360-and-xboxone-clientless-solution.md)
             + [(Legacy) Tipi di dispositivi e metriche senza client](integration-guide-programmers/legacy/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)
-         + (Legacy) SDK {#sdks}
+         + SDK (legacy) {#sdks}
             + [(Legacy) Domande e risposte sui certificati](integration-guide-programmers/legacy/notes-technical/certificates-qa.md)
             + [(Legacy) Informazioni sugli ID utente](integration-guide-programmers/legacy/notes-technical/understanding-user-ids.md)
             + (Legacy) JavaScript SDK {#javascript-sdk}
@@ -253,16 +254,16 @@ ht-degree: 2%
                + [(Legacy) Errore di autenticazione iOS - Impossibile trovare adobepass.ios.app](integration-guide-programmers/legacy/notes-technical/ios-authentication-error-adobepassiosapp-cannot-be-found.md)
                + [(Legacy) Debug di AccessEnabler iOS/tvOS SDK tramite i registri app della console](integration-guide-programmers/legacy/notes-technical/debugging-the-accessenabler-iostvos-sdk-using-console-app-logs.md)
                + [(Legacy) Percorso di aggiornamento ad AccessEnabler iOS/tvOS 3.7.0](integration-guide-programmers/legacy/notes-technical/accessenabler-iostvos-370-upgrade-path.md)
-         + (Legacy) Esperienza utente {#user-experience}
+         + Esperienza utente (legacy) {#user-experience}
             + [(Legacy) Come migrare la pagina di accesso di MVPD da iFrame a popup](integration-guide-programmers/legacy/notes-technical/migr-mvpd-login-iframe-popup.md)
             + [(Legacy) Funzione di verifica preliminare: come abilitare, risolvere o determinare il problema](integration-guide-programmers/legacy/notes-technical/preflight-feature.md)
             + [(Legacy) Consenti MVPD nella finestra di dialogo di selezione](integration-guide-programmers/legacy/notes-technical/allow-mvpd-selectn-dialog.md)
             + [(Legacy) Impedisci a MVPDs di visualizzare la finestra di dialogo di selezione](integration-guide-programmers/legacy/notes-technical/prevent-mvpd-selectn-dialog.md)
-         + (Legacy) Risoluzione dei problemi {#troubleshooting}
+         + Risoluzione dei problemi (legacy) {#troubleshooting}
             + [(Legacy) Utilizzo di Charles Proxy](integration-guide-programmers/legacy/notes-technical/using-charles-proxy.md)
             + [(Legacy) Monitoraggio di Adobe Pass Adobe PayTV Pass](integration-guide-programmers/legacy/notes-technical/monitoring-adobe-pay-tv-pass.md)
             + [(Legacy) Come verificare i flussi di autenticazione e autorizzazione utilizzando il sito di test dell’API di Adobe](integration-guide-programmers/legacy/notes-technical/test-authn-authz-flows-using-adobes-api-test-site.md)
-+ Guida All&#39;Integrazione Per MVPD {#integration-guide-mvpds}
++ Guida all’integrazione per MVPD {#integration-guide-mvpds}
    + [Guida all’integrazione di MVPD](integration-guide-mvpds/mvpd-integration-guide-overview.md)
    + [Autenticazione](integration-guide-mvpds/authn-usecase.md)
    + [Autenticazione tramite il protocollo OAuth 2.0](integration-guide-mvpds/authn-oauth2-protocol.md)
@@ -275,7 +276,7 @@ ht-degree: 2%
    + [Integrazione SAML MVPD proxy](integration-guide-mvpds/proxy-mvpd-saml-int.md)
    + [Ambito provider di servizi](integration-guide-mvpds/serv-provider-scoping.md)
    + [MVPD: indirizzi IP consentiti](integration-guide-mvpds/mvpd-listing-ip-addres.md)
-+ Guida Utente Per Il Dashboard TVE {#user-guide-tve-dashboard}
++ Guida utente per il dashboard di TVE {#user-guide-tve-dashboard}
    + [Panoramica del dashboard di TVE](/help/authentication/user-guide-tve-dashboard/tve-dashboard-overview.md)
    + [Ambienti](/help/authentication/user-guide-tve-dashboard/tve-dashboard-environments.md)
    + [Revisione e invio di modifiche](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md)
