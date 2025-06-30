@@ -12,10 +12,10 @@ ht-degree: 0%
 
 # Elenco MVPD di indirizzi IP
 
-> [!NOTE]
+&#x200B;> [!NOTE]
 >
 >Il contenuto di questa pagina viene fornito solo a scopo informativo. L’utilizzo di questa API richiede una licenza corrente da
->> Adobe. Non è consentito alcun uso non autorizzato.
+>&#x200B;> Adobe. Non è consentito alcun uso non autorizzato.
 
 Per un’integrazione di autenticazione MVPD/Adobe Pass, è necessario consentire alcuni IP all’interno di un firewall di MVPD. Queste sono le
 IP in uscita:
