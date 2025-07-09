@@ -2,9 +2,9 @@
 title: Domande frequenti su REST API V2
 description: Domande frequenti su REST API V2
 exl-id: 2dd74b47-126e-487b-b467-c16fa8cc14c1
-source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
+source-git-commit: ebe0a53e3ba54c2effdef45c1143deea0e6e57d3
 workflow-type: tm+mt
-source-wordcount: '9703'
+source-wordcount: '9566'
 ht-degree: 0%
 
 ---
@@ -37,13 +37,13 @@ Consulta la documentazione [Domande frequenti sulla registrazione client dinamic
 
 +++Domande frequenti sulla fase di configurazione
 
-#### 1. Qual è lo scopo della fase di configurazione? {#configuration-phase-faq1}
+#### &#x200B;1. Qual è lo scopo della fase di configurazione? {#configuration-phase-faq1}
 
 Lo scopo della fase di configurazione è quello di fornire all’applicazione client l’elenco di MVPD con cui è attivamente integrata insieme ai dettagli di configurazione (ad esempio, `id`, `displayName`, `logoUrl`, ecc.) salvati dall’autenticazione di Adobe Pass per ogni MVPD.
 
 La fase di configurazione funge da passaggio preliminare per la fase di autenticazione quando l&#39;applicazione client deve richiedere all&#39;utente di selezionare il proprio provider TV.
 
-#### 2. La fase di configurazione è obbligatoria? {#configuration-phase-faq2}
+#### &#x200B;2. La fase di configurazione è obbligatoria? {#configuration-phase-faq2}
 
 La fase di configurazione non è obbligatoria, l’applicazione client deve recuperare la configurazione solo quando l’utente deve selezionare il proprio MVPD per l’autenticazione o la nuova autenticazione.
 
@@ -53,7 +53,7 @@ L’applicazione client può saltare questa fase nei seguenti scenari:
 * All&#39;utente viene offerto l&#39;accesso temporaneo tramite la funzionalità [TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md) di base o promozionale.
 * L’autenticazione dell’utente è scaduta, ma l’applicazione client ha memorizzato nella cache il MVPD selezionato in precedenza come scelta motivata dall’esperienza utente e richiede all’utente di confermare che è ancora un abbonato di quel MVPD.
 
-#### 3. Che cos’è una configurazione e per quanto tempo è valida? {#configuration-phase-faq3}
+#### &#x200B;3. Che cos’è una configurazione e per quanto tempo è valida? {#configuration-phase-faq3}
 
 La configurazione è un termine definito nella documentazione di [Glossary](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#configuration).
 
@@ -67,7 +67,7 @@ Per procedere con le fasi di autenticazione, preautorizzazione, autorizzazione o
 
 Per ulteriori informazioni, consulta la documentazione di [Recupero configurazione](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md).
 
-#### 4. L&#39;applicazione client deve memorizzare nella cache le informazioni di risposta della configurazione in un archivio persistente? {#configuration-phase-faq4}
+#### &#x200B;4. L&#39;applicazione client deve memorizzare nella cache le informazioni di risposta della configurazione in un archivio persistente? {#configuration-phase-faq4}
 
 L’applicazione client deve recuperare la configurazione solo quando l’utente deve selezionare il proprio MVPD per autenticarsi o autenticarsi di nuovo.
 
@@ -77,19 +77,19 @@ L’applicazione client deve memorizzare nella cache le informazioni sulla rispo
 * All&#39;utente viene offerto l&#39;accesso temporaneo tramite la funzionalità [TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md) di base o promozionale.
 * L’autenticazione dell’utente è scaduta, ma l’applicazione client ha memorizzato nella cache il MVPD selezionato in precedenza come scelta motivata dall’esperienza utente e richiede all’utente di confermare che è ancora un abbonato di quel MVPD.
 
-#### 5. L&#39;applicazione client può gestire il proprio elenco di MVPD? {#configuration-phase-faq5}
+#### &#x200B;5. L&#39;applicazione client può gestire il proprio elenco di MVPD? {#configuration-phase-faq5}
 
 L’applicazione client può gestire il proprio elenco di MVPD, ma è necessario mantenere gli identificatori MVPD sincronizzati con l’autenticazione di Adobe Pass. Pertanto, si consiglia di utilizzare la configurazione fornita dall’autenticazione di Adobe Pass per garantire che l’elenco sia aggiornato e accurato.
 
 L&#39;applicazione client riceverebbe un [errore](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md#enhanced-error-codes-lists-rest-api-v2) dall&#39;API REST di autenticazione di Adobe Pass V2 se l&#39;identificatore MVPD fornito non è valido o se non dispone di un&#39;integrazione attiva con il provider di servizi [specificato](rest-api-v2-glossary.md#service-provider).
 
-#### 6. L&#39;applicazione client è in grado di filtrare l&#39;elenco di MVPD? {#configuration-phase-faq6}
+#### &#x200B;6. L&#39;applicazione client è in grado di filtrare l&#39;elenco di MVPD? {#configuration-phase-faq6}
 
 L’applicazione client può filtrare l’elenco di MVPD forniti nella risposta di configurazione implementando un meccanismo personalizzato in base alla propria logica di business e ai requisiti, ad esempio la posizione dell’utente o la cronologia degli utenti della selezione precedente.
 
 L&#39;applicazione client può filtrare l&#39;elenco di [MVPD TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md) o MVPD con la relativa integrazione ancora in fase di sviluppo o test.
 
-#### 7. Cosa succede se l’integrazione con un MVPD è disabilitata e contrassegnata come inattiva? {#configuration-phase-faq7}
+#### &#x200B;7. Cosa succede se l’integrazione con un MVPD è disabilitata e contrassegnata come inattiva? {#configuration-phase-faq7}
 
 Quando l’integrazione con un MVPD è disabilitata e contrassegnata come inattiva, il MVPD viene rimosso dall’elenco degli MVPD forniti nelle risposte di configurazione successive e ci sono due importanti conseguenze da considerare:
 
@@ -98,14 +98,14 @@ Quando l’integrazione con un MVPD è disabilitata e contrassegnata come inatti
 
 L&#39;applicazione client riceverebbe un [errore](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md#enhanced-error-codes-lists-rest-api-v2) dall&#39;API REST di autenticazione di Adobe Pass V2 se l&#39;utente selezionato per MVPD non dispone più di un&#39;integrazione attiva con il [provider di servizi](rest-api-v2-glossary.md#service-provider) specificato.
 
-#### 8. Cosa succede se l’integrazione con un MVPD è nuovamente abilitata e contrassegnata come attiva? {#configuration-phase-faq8}
+#### &#x200B;8. Cosa succede se l’integrazione con un MVPD è nuovamente abilitata e contrassegnata come attiva? {#configuration-phase-faq8}
 
 Quando l’integrazione con un MVPD viene nuovamente abilitata e contrassegnata come attiva, il MVPD viene incluso nuovamente nell’elenco di MVPD forniti nelle risposte di configurazione successive e ci sono due importanti conseguenze da considerare:
 
 * Gli utenti non autenticati di quel MVPD saranno nuovamente in grado di completare la fase di autenticazione utilizzando quel MVPD.
 * Gli utenti autenticati di tale MVPD potranno nuovamente completare le fasi di pre-autorizzazione, autorizzazione o disconnessione utilizzando tale MVPD.
 
-#### 9. Come abilitare o disabilitare l’integrazione con un MVPD? {#configuration-phase-faq9}
+#### &#x200B;9. Come abilitare o disabilitare l’integrazione con un MVPD? {#configuration-phase-faq9}
 
 Questa operazione può essere completata tramite Adobe Pass [TVE Dashboard](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard) da uno degli amministratori dell&#39;organizzazione o da un rappresentante di Adobe Pass Authentication che agisce per tuo conto.
 
@@ -117,13 +117,13 @@ Per ulteriori dettagli, consulta la [Guida utente per l&#39;integrazione del das
 
 +++Domande frequenti sulla fase di autenticazione
 
-#### 1. Qual è lo scopo della fase di autenticazione? {#authentication-phase-faq1}
+#### &#x200B;1. Qual è lo scopo della fase di autenticazione? {#authentication-phase-faq1}
 
 Lo scopo della fase di autenticazione è quello di fornire all&#39;applicazione client la capacità di verificare l&#39;identità dell&#39;utente e ottenere le informazioni sui metadati dell&#39;utente.
 
 La fase di autenticazione funge da passaggio preliminare per la fase di pre-autorizzazione o di autorizzazione quando l’applicazione client deve riprodurre il contenuto.
 
-#### 2. La fase di autenticazione è obbligatoria? {#authentication-phase-faq2}
+#### &#x200B;2. La fase di autenticazione è obbligatoria? {#authentication-phase-faq2}
 
 La fase di autenticazione è obbligatoria; l’applicazione client deve autenticare l’utente quando non dispone di un profilo valido nell’ambito dell’autenticazione di Adobe Pass.
 
@@ -134,7 +134,7 @@ L’applicazione client può saltare questa fase nei seguenti scenari:
 
 La gestione degli errori dell&#39;applicazione client richiede la gestione dei codici [error](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md#enhanced-error-codes-lists-rest-api-v2) (ad esempio `authenticated_profile_missing`, `authenticated_profile_expired`, `authenticated_profile_invalidated` e così via), che indicano che l&#39;applicazione client richiede l&#39;autenticazione dell&#39;utente.
 
-#### 3. Cos’è una sessione di autenticazione e per quanto tempo è valida? {#authentication-phase-faq3}
+#### &#x200B;3. Cos’è una sessione di autenticazione e per quanto tempo è valida? {#authentication-phase-faq3}
 
 La sessione di autenticazione è un termine definito nella documentazione di [Glossary](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#session).
 
@@ -151,7 +151,7 @@ Per ulteriori informazioni, consulta i seguenti documenti:
 * [Flusso di autenticazione di base eseguito nell&#39;applicazione principale](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-primary-application-flow.md)
 * [Flusso di autenticazione di base eseguito nell&#39;applicazione secondaria](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md)
 
-#### 4. Che cos’è un codice di autenticazione e per quanto tempo è valido? {#authentication-phase-faq4}
+#### &#x200B;4. Che cos’è un codice di autenticazione e per quanto tempo è valido? {#authentication-phase-faq4}
 
 Il codice di autenticazione è un termine definito nella documentazione di [Glossary](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#code).
 
@@ -170,7 +170,7 @@ Per ulteriori informazioni, consulta i seguenti documenti:
 * [Flusso di autenticazione di base eseguito nell&#39;applicazione principale](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-primary-application-flow.md)
 * [Flusso di autenticazione di base eseguito nell&#39;applicazione secondaria](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md)
 
-#### 5. In che modo l&#39;applicazione client può sapere se l&#39;utente ha digitato un codice di autenticazione valido e se la sessione di autenticazione non è ancora scaduta? {#authentication-phase-faq5}
+#### &#x200B;5. In che modo l&#39;applicazione client può sapere se l&#39;utente ha digitato un codice di autenticazione valido e se la sessione di autenticazione non è ancora scaduta? {#authentication-phase-faq5}
 
 L’applicazione client può convalidare il codice di autenticazione digitato dall’utente in un’applicazione secondaria (a schermo) inviando una richiesta a uno degli endpoint sessioni responsabili per riprendere la sessione di autenticazione o recuperare le informazioni sulla sessione di autenticazione associate al codice di autenticazione.
 
@@ -178,7 +178,7 @@ L&#39;applicazione client riceverebbe un [errore](/help/authentication/integrati
 
 Per ulteriori informazioni, consultare i documenti [Riprendi sessione di autenticazione](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-resume-authentication-session.md) e [Recupera sessione di autenticazione](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md).
 
-#### 6. In che modo l’applicazione client può sapere se l’utente è già autenticato? {#authentication-phase-faq6}
+#### &#x200B;6. In che modo l’applicazione client può sapere se l’utente è già autenticato? {#authentication-phase-faq6}
 
 L’applicazione client può eseguire query su uno dei seguenti endpoint in grado di verificare se un utente è già autenticato e restituire informazioni sul profilo:
 
@@ -191,7 +191,7 @@ Per ulteriori informazioni, consulta i seguenti documenti:
 * [Flusso dei profili di base eseguito all’interno dell’applicazione principale](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)
 * [Flusso dei profili di base eseguito all&#39;interno dell&#39;applicazione secondaria](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)
 
-#### 7. Che cos’è un profilo e per quanto tempo è valido? {#authentication-phase-faq7}
+#### &#x200B;7. Che cos’è un profilo e per quanto tempo è valido? {#authentication-phase-faq7}
 
 Il profilo è un termine definito nella documentazione di [Glossary](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#profile).
 
@@ -213,7 +213,7 @@ Questo intervallo di tempo limitato, noto come autenticazione (authN) [TTL](/hel
 
 Per ulteriori dettagli, consulta la [Guida utente per l&#39;integrazione del dashboard di TVE](/help/authentication/user-guide-tve-dashboard/tve-dashboard-integrations.md#most-used-flows).
 
-#### 8. L&#39;applicazione client deve memorizzare nella cache le informazioni del profilo dell&#39;utente in una memoria persistente? {#authentication-phase-faq8}
+#### &#x200B;8. L&#39;applicazione client deve memorizzare nella cache le informazioni del profilo dell&#39;utente in una memoria persistente? {#authentication-phase-faq8}
 
 L’applicazione client deve memorizzare in cache parti delle informazioni del profilo utente in un archivio persistente per evitare richieste non necessarie e migliorare l’esperienza utente, considerando i seguenti aspetti:
 
@@ -223,7 +223,7 @@ L’applicazione client deve memorizzare in cache parti delle informazioni del p
 | `attributes` | L&#39;applicazione client può utilizzarlo per personalizzare l&#39;esperienza utente in base a [chiavi di metadati utente](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md) diverse (ad esempio, `zip`, `maxRating`, ecc.).<br/><br/>I metadati utente diventano disponibili al termine del flusso di autenticazione, pertanto l&#39;applicazione client non deve eseguire una query su un endpoint separato per recuperare le informazioni relative a [metadati utente](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md), in quanto sono già inclusi nelle informazioni del profilo.<br/><br/>Alcuni attributi di metadati possono essere aggiornati durante il flusso di autorizzazione, a seconda di MVPD e dell&#39;attributo di metadati specifico. Di conseguenza, l’applicazione client potrebbe dover eseguire nuovamente la query sulle API dei profili per recuperare i metadati dell’utente più recenti. |
 | `notAfter` | L’applicazione client può utilizzarlo per tenere traccia della data di scadenza del profilo utente.<br/><br/>La gestione degli errori dell&#39;applicazione client richiede la gestione dei codici [error](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md#enhanced-error-codes-lists-rest-api-v2) (ad esempio, `authenticated_profile_missing`, `authenticated_profile_expired`, `authenticated_profile_invalidated` e così via), che indicano che l&#39;applicazione client richiede l&#39;autenticazione dell&#39;utente. |
 
-#### 9. L&#39;applicazione client può estendere il profilo dell&#39;utente senza richiedere una nuova autenticazione? {#authentication-phase-faq9}
+#### &#x200B;9. L&#39;applicazione client può estendere il profilo dell&#39;utente senza richiedere una nuova autenticazione? {#authentication-phase-faq9}
 
 No.
 
@@ -233,7 +233,7 @@ Pertanto, l’applicazione client deve richiedere all’utente di autenticarsi n
 
 Tuttavia, per gli MVPD che supportano [l&#39;autenticazione basata su home](/help/authentication/integration-guide-programmers/features-standard/hba-access/home-based-authentication.md) (HBA), l&#39;utente non dovrà immettere le credenziali.
 
-#### 10. Quali sono i casi d’uso per ogni endpoint Profili disponibile? {#authentication-phase-faq10}
+#### &#x200B;10. Quali sono i casi d’uso per ogni endpoint Profili disponibile? {#authentication-phase-faq10}
 
 Gli endpoint di base per i profili sono progettati per fornire all’applicazione client la funzionalità di conoscere lo stato di autenticazione dell’utente, accedere alle informazioni sui metadati dell’utente, trovare il metodo utilizzato per l’autenticazione o l’entità utilizzata per fornire l’identità.
 
@@ -257,7 +257,7 @@ Per qualsiasi query successiva, è necessario utilizzare gli endpoint di base Pr
 
 Per ulteriori dettagli, fare riferimento ai documenti [Single Sign-On utilizzando i flussi dei partner](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md) e [Apple SSO Cookbook (REST API V2)](/help/authentication/integration-guide-programmers/features-standard/sso-access/partner-sso/apple-sso/apple-sso-cookbook-rest-api-v2.md).
 
-#### 11. Cosa deve fare l’applicazione client se l’utente dispone di più profili MVPD? {#authentication-phase-faq11}
+#### &#x200B;11. Cosa deve fare l’applicazione client se l’utente dispone di più profili MVPD? {#authentication-phase-faq11}
 
 La decisione di supportare più profili dipende dai requisiti di business dell’applicazione client.
 
@@ -272,7 +272,7 @@ REST API v2 supporta più profili per supportare:
 * Utenti con abbonamento a MVPD combinato con servizi Direct-to-Consumer (DTC).
 * Utenti con più abbonamenti MVPD.
 
-#### 12. Cosa succede quando i profili utente scadono? {#authentication-phase-faq12}
+#### &#x200B;12. Cosa succede quando i profili utente scadono? {#authentication-phase-faq12}
 
 Quando i profili utente scadono, non vengono più inclusi nella risposta dall’endpoint &quot;Profiles&quot;.
 
@@ -280,7 +280,7 @@ Se l’endpoint Profili restituisce una risposta di mappa dei profili vuota, l�
 
 Per ulteriori informazioni, consulta la documentazione [Creare l&#39;API della sessione di autenticazione](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md).
 
-#### 13. Quando i profili utente non sono più validi? {#authentication-phase-faq13}
+#### &#x200B;13. Quando i profili utente non sono più validi? {#authentication-phase-faq13}
 
 I profili utente non sono più validi nei seguenti scenari:
 
@@ -289,7 +289,7 @@ I profili utente non sono più validi nei seguenti scenari:
 * Quando l&#39;applicazione client aggiorna le credenziali client utilizzate per recuperare il valore dell&#39;intestazione [Authorization](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-authorization.md).
 * Quando l&#39;applicazione client revoca o aggiorna l&#39;istruzione software utilizzata per ottenere le credenziali del client.
 
-#### 14. Quando l’applicazione client deve avviare il meccanismo di polling? {#authentication-phase-faq14}
+#### &#x200B;14. Quando l’applicazione client deve avviare il meccanismo di polling? {#authentication-phase-faq14}
 
 Per garantire l’efficienza ed evitare richieste non necessarie, l’applicazione client deve avviare il meccanismo di polling nelle seguenti condizioni:
 
@@ -301,7 +301,7 @@ L&#39;applicazione primaria (streaming) deve avviare il polling quando l&#39;ute
 
 L&#39;applicazione principale (streaming) deve avviare il polling non appena l&#39;utente avvia il processo di autenticazione, subito dopo aver ricevuto la risposta dell&#39;endpoint [Sessions](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md) e aver visualizzato il codice di autenticazione per l&#39;utente.
 
-#### 15. Quando arrestare il meccanismo di polling nell&#39;applicazione client? {#authentication-phase-faq15}
+#### &#x200B;15. Quando arrestare il meccanismo di polling nell&#39;applicazione client? {#authentication-phase-faq15}
 
 Per garantire l’efficienza ed evitare richieste non necessarie, l’applicazione client deve arrestare il meccanismo di polling nelle seguenti condizioni:
 
@@ -317,7 +317,7 @@ La sessione di autenticazione e il codice scadono, come indicato dalla marca tem
 
 Se l’utente richiede un nuovo codice di autenticazione sul dispositivo principale (schermo), la sessione esistente non è più valida e il polling che utilizza il codice di autenticazione precedente deve essere interrotto immediatamente.
 
-#### 16. Quale intervallo tra le chiamate deve essere utilizzato dall&#39;applicazione client per il meccanismo di polling? {#authentication-phase-faq16}
+#### &#x200B;16. Quale intervallo tra le chiamate deve essere utilizzato dall&#39;applicazione client per il meccanismo di polling? {#authentication-phase-faq16}
 
 Per garantire l&#39;efficienza ed evitare richieste non necessarie, l&#39;applicazione client deve configurare la frequenza del meccanismo di polling nelle seguenti condizioni:
 
@@ -325,15 +325,15 @@ Per garantire l&#39;efficienza ed evitare richieste non necessarie, l&#39;applic
 |----------------------------------------------------------------------------|----------------------------------------------------------------------------|
 | L’applicazione principale (streaming) deve eseguire il polling ogni 3-5 secondi o più. | L’applicazione principale (streaming) deve eseguire il polling ogni 3-5 secondi o più. |
 
-#### 17. Qual è il numero massimo di richieste di polling che l&#39;applicazione client può inviare? {#authentication-phase-faq17}
+#### &#x200B;17. Qual è il numero massimo di richieste di polling che l&#39;applicazione client può inviare? {#authentication-phase-faq17}
 
-L&#39;applicazione client deve rispettare i limiti correnti definiti dal meccanismo di limitazione dell&#39;autenticazione di Adobe Pass [&#128279;](/help/authentication/integration-guide-programmers/throttling-mechanism.md#throttling-mechanism-limits).
+L&#39;applicazione client deve rispettare i limiti correnti definiti dal meccanismo di limitazione dell&#39;autenticazione di Adobe Pass [](/help/authentication/integration-guide-programmers/throttling-mechanism.md#throttling-mechanism-limits).
 
 La gestione degli errori dell&#39;applicazione client deve essere in grado di gestire il codice di errore [429 Troppe richieste](/help/authentication/integration-guide-programmers/throttling-mechanism.md#throttling-mechanism-response), che indica che l&#39;applicazione client ha superato il numero massimo di richieste consentito.
 
 Per ulteriori dettagli, consulta la documentazione sul [meccanismo di limitazione](/help/authentication/integration-guide-programmers/throttling-mechanism.md).
 
-#### 18. Come può l&#39;applicazione client ottenere le informazioni sui metadati dell&#39;utente? {#authentication-phase-faq18}
+#### &#x200B;18. Come può l&#39;applicazione client ottenere le informazioni sui metadati dell&#39;utente? {#authentication-phase-faq18}
 
 L&#39;applicazione client può eseguire una query su uno dei seguenti endpoint in grado di restituire [informazioni sui metadati dell&#39;utente](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md) come parte delle informazioni del profilo:
 
@@ -350,7 +350,7 @@ Per ulteriori informazioni, consulta i seguenti documenti:
 
 Alcuni attributi di metadati possono essere aggiornati durante il flusso di autorizzazione, a seconda di MVPD e dell’attributo di metadati specifico. Di conseguenza, l’applicazione client potrebbe dover eseguire nuovamente la query sulle API di cui sopra per recuperare i metadati dell’utente più recenti.
 
-#### 19. In che modo l&#39;applicazione client deve gestire l&#39;accesso danneggiato? {#authentication-phase-faq19}
+#### &#x200B;19. In che modo l&#39;applicazione client deve gestire l&#39;accesso danneggiato? {#authentication-phase-faq19}
 
 La [funzionalità di degradazione](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md) consente all&#39;applicazione client di mantenere un&#39;esperienza di streaming senza soluzione di continuità per gli utenti, anche quando i servizi di autenticazione o autorizzazione di MVPD incontrano problemi.
 
@@ -360,7 +360,7 @@ Dato che l’organizzazione intende utilizzare la funzione di degradazione premi
 
 Per ulteriori dettagli, consulta la documentazione sui [flussi di accesso danneggiati](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/degraded-access-flows/rest-api-v2-access-degraded-flows.md).
 
-#### 20. In che modo l&#39;applicazione client deve gestire l&#39;accesso temporaneo? {#authentication-phase-faq20}
+#### &#x200B;20. In che modo l&#39;applicazione client deve gestire l&#39;accesso temporaneo? {#authentication-phase-faq20}
 
 La funzionalità [TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md) consente all&#39;applicazione client di fornire accesso temporaneo all&#39;utente.
 
@@ -374,7 +374,7 @@ Con REST API v2, l’applicazione client può passare facilmente da un normale M
 
 Per ulteriori dettagli, consulta la documentazione [Flussi di accesso temporanei](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/temporary-access-flows/rest-api-v2-access-temporary-flows.md).
 
-#### 21. In che modo l&#39;applicazione client deve gestire l&#39;accesso single sign-on cross-device? {#authentication-phase-faq21}
+#### &#x200B;21. In che modo l&#39;applicazione client deve gestire l&#39;accesso single sign-on cross-device? {#authentication-phase-faq21}
 
 REST API v2 può abilitare il single sign-on tra dispositivi se l’applicazione client fornisce un identificatore utente univoco coerente tra i dispositivi.
 
@@ -388,17 +388,17 @@ Per ulteriori dettagli, consulta la documentazione [Single Sign-On using Service
 
 +++Domande frequenti sulla fase di preautorizzazione
 
-#### 1. Qual è lo scopo della fase di pre-autorizzazione? {#preauthorization-phase-faq1}
+#### &#x200B;1. Qual è lo scopo della fase di pre-autorizzazione? {#preauthorization-phase-faq1}
 
 Lo scopo della fase di pre-autorizzazione è quello di fornire all’applicazione client la capacità di presentare un sottoinsieme di risorse dal suo catalogo a cui l’utente avrebbe diritto di accedere.
 
 La fase di preautorizzazione può migliorare l’esperienza utente quando l’utente apre l’applicazione client per la prima volta o passa a una nuova sezione.
 
-#### 2. La fase di pre-autorizzazione è obbligatoria? {#preauthorization-phase-faq2}
+#### &#x200B;2. La fase di pre-autorizzazione è obbligatoria? {#preauthorization-phase-faq2}
 
 La fase di pre-autorizzazione non è obbligatoria, l’applicazione client può saltare questa fase se desidera presentare un catalogo di risorse senza filtrarle prima in base al diritto dell’utente.
 
-#### 3. Che cos’è una decisione di preautorizzazione? {#preauthorization-phase-faq3}
+#### &#x200B;3. Che cos’è una decisione di preautorizzazione? {#preauthorization-phase-faq3}
 
 La pre-autorizzazione è un termine definito nella documentazione di [Glossary](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#preauthorization), mentre il termine della decisione si trova anche nel [Glossary](rest-api-v2-glossary.md#decision).
 
@@ -411,29 +411,29 @@ Per ulteriori informazioni, consulta i seguenti documenti:
 * [Recuperare l’API per le decisioni di preautorizzazione](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)
 * [Flusso di pre-autorizzazione di base eseguito nell’applicazione principale](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-preauthorization-primary-application-flow.md)
 
-#### 4. L&#39;applicazione client deve memorizzare nella cache le decisioni di preautorizzazione in una memoria persistente? {#preauthorization-phase-faq4}
+#### &#x200B;4. L&#39;applicazione client deve memorizzare nella cache le decisioni di preautorizzazione in una memoria persistente? {#preauthorization-phase-faq4}
 
 L&#39;applicazione client non è necessaria per archiviare le decisioni di preautorizzazione nell&#39;archiviazione persistente. Tuttavia, si consiglia di memorizzare nella cache le decisioni sulle autorizzazioni per migliorare l’esperienza utente. Questo consente di evitare inutili chiamate all’endpoint Decisions Preauthorize per le risorse che sono già state preautorizzate, riducendo la latenza e migliorando le prestazioni.
 
-#### 5. In che modo l’applicazione del cliente può determinare il motivo per cui è stata negata una decisione di preautorizzazione? {#preauthorization-phase-faq5}
+#### &#x200B;5. In che modo l’applicazione del cliente può determinare il motivo per cui è stata negata una decisione di preautorizzazione? {#preauthorization-phase-faq5}
 
-L&#39;applicazione client può determinare il motivo di una decisione di preautorizzazione negata esaminando il codice di errore [e il messaggio](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md) inclusi nella risposta dall&#39;endpoint di preautorizzazione delle decisioni. Questi dettagli forniscono informazioni sul motivo specifico per cui la richiesta di preautorizzazione è stata negata, aiutando a informare l’esperienza utente o a attivare eventuali operazioni necessarie nell’applicazione.
+L&#39;applicazione client può determinare il motivo di una decisione di preautorizzazione negata esaminando il codice di errore [e il messaggio](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md) inclusi nella risposta dall&#39;endpoint di preautorizzazione delle decisioni. Questi dettagli forniscono ad insight il motivo specifico per cui la richiesta di preautorizzazione è stata negata, aiutando a informare l’esperienza utente o a attivare eventuali operazioni necessarie nell’applicazione.
 
 Assicurati che eventuali meccanismi di esecuzione di nuovi tentativi implementati per recuperare le decisioni di preautorizzazione non generino un ciclo infinito se la decisione di preautorizzazione viene negata.
 
 Valuta la possibilità di limitare i nuovi tentativi a un numero ragionevole e di gestire i rifiuti in modo appropriato fornendo all’utente un feedback chiaro.
 
-#### 6. Perché nella decisione di preautorizzazione manca un token multimediale? {#preauthorization-phase-faq6}
+#### &#x200B;6. Perché nella decisione di preautorizzazione manca un token multimediale? {#preauthorization-phase-faq6}
 
 Nella decisione di pre-autorizzazione manca un token multimediale perché la fase di pre-autorizzazione non deve essere utilizzata per riprodurre le risorse, in quanto questo è lo scopo della fase di autorizzazione.
 
-#### 7. È possibile saltare la fase di autorizzazione se esiste già una decisione di preautorizzazione? {#preauthorization-phase-faq7}
+#### &#x200B;7. È possibile saltare la fase di autorizzazione se esiste già una decisione di preautorizzazione? {#preauthorization-phase-faq7}
 
 No.
 
 La fase di autorizzazione non può essere ignorata anche se è disponibile una decisione di preautorizzazione. Le decisioni di pre-autorizzazione sono solo informative e non concedono i diritti di riproduzione effettivi. La fase di pre-autorizzazione ha lo scopo di fornire indicazioni preliminari, ma la fase di autorizzazione è ancora necessaria prima di riprodurre qualsiasi contenuto.
 
-#### 8. Cos’è una risorsa e quali formati sono supportati? {#preauthorization-phase-faq8}
+#### &#x200B;8. Cos’è una risorsa e quali formati sono supportati? {#preauthorization-phase-faq8}
 
 La risorsa è un termine definito nella documentazione di [Glossary](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#resource).
 
@@ -446,7 +446,7 @@ L’identificatore univoco della risorsa può avere due formati:
 
 Per ulteriori dettagli, consulta la documentazione di [Risorse protette](/help/authentication/integration-guide-programmers/features-standard/entitlements/decisions.md#protected-resources).
 
-#### 9. Per quante risorse l&#39;applicazione client può ottenere una decisione di preautorizzazione alla volta? {#preauthorization-phase-faq9}
+#### &#x200B;9. Per quante risorse l&#39;applicazione client può ottenere una decisione di preautorizzazione alla volta? {#preauthorization-phase-faq9}
 
 L’applicazione client può ottenere una decisione di preautorizzazione per un numero limitato di risorse in una singola richiesta API, di solito fino a 5, a causa delle condizioni imposte dagli MVPD.
 
@@ -460,15 +460,15 @@ Per ulteriori dettagli, consulta la [Guida utente per l&#39;integrazione del das
 
 +++Domande frequenti sulla fase di autorizzazione
 
-#### 1. Qual è lo scopo della fase di autorizzazione? {#authorization-phase-faq1}
+#### &#x200B;1. Qual è lo scopo della fase di autorizzazione? {#authorization-phase-faq1}
 
 Lo scopo della fase di autorizzazione è quello di fornire all’applicazione client la capacità di riprodurre le risorse richieste dall’utente dopo aver convalidato i propri diritti con MVPD.
 
-#### 2. La fase di autorizzazione è obbligatoria? {#authorization-phase-faq2}
+#### &#x200B;2. La fase di autorizzazione è obbligatoria? {#authorization-phase-faq2}
 
 La fase di autorizzazione è obbligatoria, l’applicazione client non può saltare questa fase se desidera riprodurre le risorse richieste dall’utente, in quanto richiede la verifica con il MVPD che l’utente abbia diritto prima di rilasciare il flusso.
 
-#### 3. Cos’è una decisione di autorizzazione e per quanto tempo è valida? {#authorization-phase-faq3}
+#### &#x200B;3. Cos’è una decisione di autorizzazione e per quanto tempo è valida? {#authorization-phase-faq3}
 
 L&#39;autorizzazione è un termine definito nella documentazione di [Glossary](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#authorization), mentre il termine della decisione si trova anche nel [Glossary](rest-api-v2-glossary.md#decision).
 
@@ -487,19 +487,19 @@ Questo periodo di tempo limitato, noto come autorizzazione (authZ) [TTL](/help/a
 
 Per ulteriori dettagli, consulta la [Guida utente per l&#39;integrazione del dashboard di TVE](/help/authentication/user-guide-tve-dashboard/tve-dashboard-integrations.md#most-used-flows).
 
-#### 4. L&#39;applicazione client deve memorizzare nella cache le decisioni di autorizzazione in una memoria persistente? {#authorization-phase-faq4}
+#### &#x200B;4. L&#39;applicazione client deve memorizzare nella cache le decisioni di autorizzazione in una memoria persistente? {#authorization-phase-faq4}
 
 L&#39;applicazione client non è necessaria per archiviare le decisioni di autorizzazione nell&#39;archivio permanente.
 
-#### 5. In che modo l’applicazione del cliente può determinare il motivo per cui è stata rifiutata una decisione di autorizzazione? {#authorization-phase-faq5}
+#### &#x200B;5. In che modo l’applicazione del cliente può determinare il motivo per cui è stata rifiutata una decisione di autorizzazione? {#authorization-phase-faq5}
 
-L&#39;applicazione client può determinare il motivo di una decisione di autorizzazione negata esaminando il [codice di errore e il messaggio](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md) inclusi nella risposta dall&#39;endpoint Decisions Authorize. Questi dettagli forniscono informazioni sul motivo specifico per cui la richiesta di autorizzazione è stata negata, aiutando a informare l’esperienza utente o a attivare eventuali operazioni necessarie nell’applicazione.
+L&#39;applicazione client può determinare il motivo di una decisione di autorizzazione negata esaminando il [codice di errore e il messaggio](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md) inclusi nella risposta dall&#39;endpoint Decisions Authorize. Questi dettagli forniscono ad insight il motivo specifico per cui la richiesta di autorizzazione è stata negata, aiutando a informare l’esperienza utente o a attivare eventuali operazioni necessarie nell’applicazione.
 
 Assicurati che eventuali meccanismi di esecuzione di nuovi tentativi implementati per recuperare le decisioni di autorizzazione non generino un loop infinito se la decisione di autorizzazione viene negata.
 
 Valuta la possibilità di limitare i nuovi tentativi a un numero ragionevole e di gestire i rifiuti in modo appropriato fornendo all’utente un feedback chiaro.
 
-#### 6. Cos’è un token multimediale e per quanto tempo è valido? {#authorization-phase-faq6}
+#### &#x200B;6. Cos’è un token multimediale e per quanto tempo è valido? {#authorization-phase-faq6}
 
 Il token multimediale è un termine definito nella documentazione di [Glossary](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#media-token).
 
@@ -516,19 +516,19 @@ Per ulteriori informazioni, consulta i seguenti documenti:
 * [Recuperare l’API per le decisioni di autorizzazione](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)
 * [Flusso di autorizzazione di base eseguito nell&#39;applicazione principale](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authorization-primary-application-flow.md)
 
-#### 7. L’applicazione client deve convalidare il token multimediale prima di riprodurre il flusso di risorse? {#authorization-phase-faq7}
+#### &#x200B;7. L’applicazione client deve convalidare il token multimediale prima di riprodurre il flusso di risorse? {#authorization-phase-faq7}
 
 Sì.
 
 L’applicazione client deve convalidare il token multimediale prima di avviare la riproduzione del flusso di risorse. Questa convalida deve essere eseguita utilizzando [Media Token Verifier](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md#media-token-verifier). Verificando `serializedToken` da `token` restituito, l&#39;applicazione client impedisce l&#39;accesso non autorizzato, ad esempio la copia di flusso, e garantisce che solo gli utenti autorizzati possano riprodurre il contenuto.
 
-#### 8. L’applicazione client deve aggiornare un token multimediale scaduto durante la riproduzione? {#authorization-phase-faq8}
+#### &#x200B;8. L’applicazione client deve aggiornare un token multimediale scaduto durante la riproduzione? {#authorization-phase-faq8}
 
 No.
 
 Non è necessario che l’applicazione client aggiorni un token multimediale scaduto mentre il flusso è in riproduzione attiva. Se il token multimediale scade durante la riproduzione, il flusso deve poter continuare senza interruzioni. Tuttavia, il client deve richiedere una nuova decisione di autorizzazione e ottenere un nuovo token multimediale la volta successiva che l’utente tenta di riprodurre una risorsa.
 
-#### 9. Qual è lo scopo di ciascun attributo di marca temporale nella decisione di autorizzazione? {#authorization-phase-faq9}
+#### &#x200B;9. Qual è lo scopo di ciascun attributo di marca temporale nella decisione di autorizzazione? {#authorization-phase-faq9}
 
 La decisione di autorizzazione include diversi attributi di marca temporale che forniscono un contesto essenziale sul periodo di validità dell’autorizzazione stessa e del token multimediale associato. Queste marche temporali hanno scopi diversi, a seconda che si riferiscano alla decisione di autorizzazione o al token multimediale.
 
@@ -537,20 +537,20 @@ La decisione di autorizzazione include diversi attributi di marca temporale che 
 Le marche temporali descrivono il periodo di validità della decisione globale di autorizzazione:
 
 | Attributo | Descrizione | Note |
-|-------------|------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `notBefore` | L’ora in cui è stata rilasciata la decisione di autorizzazione. | Indica l&#39;inizio della finestra di validità dell&#39;autorizzazione. |
-| `notAfter` | L’ora in cui scade la decisione di autorizzazione. | Il valore TTL [authorization Time-to-Live](/help/authentication/integration-guide-programmers/features-standard/entitlements/decisions.md#authorization-ttl-management) determina per quanto tempo l&#39;autorizzazione rimane valida prima di richiedere una nuova autorizzazione. Questo TTL viene negoziato con i rappresentanti di MVPD. |
+|-------------|----------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `notBefore` | Tempo in millisecondi in cui è stata rilasciata la decisione di autorizzazione. | Indica l&#39;inizio della finestra di validità dell&#39;autorizzazione. |
+| `notAfter` | Tempo in millisecondi in cui scade la decisione di autorizzazione. | Il valore TTL [authorization Time-to-Live](/help/authentication/integration-guide-programmers/features-standard/entitlements/decisions.md#authorization-ttl-management) determina per quanto tempo l&#39;autorizzazione rimane valida prima di richiedere una nuova autorizzazione. Questo TTL viene negoziato con i rappresentanti di MVPD. |
 
 **Marca temporale a livello di token**
 
 Queste marche temporali descrivono il periodo di validità del token multimediale associato alla decisione di autorizzazione:
 
 | Attributo | Descrizione | Note |
-|-------------|-------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `notBefore` | L’ora in cui è stato emesso il token multimediale. | Indica quando il token diventa valido per la riproduzione. |
-| `notAfter` | L’ora in cui scade il token multimediale. | I token multimediali hanno una durata intenzionalmente breve (in genere 7 minuti) per ridurre al minimo i rischi di uso improprio e tenere conto delle potenziali differenze di clock tra il server che genera i token e il server che verifica i token. |
+|-------------|-----------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `notBefore` | Tempo in millisecondi in cui è stato emesso il token multimediale. | Indica quando il token diventa valido per la riproduzione. |
+| `notAfter` | Tempo in millisecondi in cui scade il token multimediale. | I token multimediali hanno una durata intenzionalmente breve (in genere 7 minuti) per ridurre al minimo i rischi di uso improprio e tenere conto delle potenziali differenze di clock tra il server che genera i token e il server che verifica i token. |
 
-#### 10. Che cos’è una risorsa e quali formati sono supportati? {#authorization-phase-faq10}
+#### &#x200B;10. Che cos’è una risorsa e quali formati sono supportati? {#authorization-phase-faq10}
 
 La risorsa è un termine definito nella documentazione di [Glossary](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#resource).
 
@@ -563,7 +563,7 @@ L’identificatore univoco della risorsa può avere due formati:
 
 Per ulteriori dettagli, consulta la documentazione di [Risorse protette](/help/authentication/integration-guide-programmers/features-standard/entitlements/decisions.md#protected-resources).
 
-#### 11. Per quante risorse la domanda del cliente può ottenere una decisione di autorizzazione alla volta? {#authorization-phase-faq11}
+#### &#x200B;11. Per quante risorse la domanda del cliente può ottenere una decisione di autorizzazione alla volta? {#authorization-phase-faq11}
 
 L’applicazione client può ottenere una decisione di autorizzazione per un numero limitato di risorse in una singola richiesta API, di solito fino a 1, a causa delle condizioni imposte dagli MVPD.
 
@@ -573,11 +573,11 @@ L’applicazione client può ottenere una decisione di autorizzazione per un num
 
 +++Domande frequenti sulla fase di disconnessione
 
-#### 1. Qual è lo scopo della fase di disconnessione? {#logout-phase-faq1}
+#### &#x200B;1. Qual è lo scopo della fase di disconnessione? {#logout-phase-faq1}
 
 Lo scopo della fase di disconnessione è fornire all’applicazione client la funzionalità per terminare il profilo autenticato dell’utente nell’ambito dell’autenticazione di Adobe Pass su richiesta dell’utente.
 
-#### 2. La fase di disconnessione è obbligatoria? {#logout-phase-faq2}
+#### &#x200B;2. La fase di disconnessione è obbligatoria? {#logout-phase-faq2}
 
 La fase di disconnessione è obbligatoria, l&#39;applicazione client deve fornire all&#39;utente la possibilità di disconnettersi.
 
@@ -587,7 +587,7 @@ La fase di disconnessione è obbligatoria, l&#39;applicazione client deve fornir
 
 +++Domande frequenti sulle intestazioni
 
-#### 1. Come calcolare il valore per l’intestazione Autorizzazione? {#headers-faq1}
+#### &#x200B;1. Come calcolare il valore per l’intestazione Autorizzazione? {#headers-faq1}
 
 >[!IMPORTANT]
 >
@@ -604,7 +604,7 @@ Per ulteriori informazioni, consulta i seguenti documenti:
 * [Recupera API token di accesso](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md)
 * [Flusso di registrazione client dinamici](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/flows/dynamic-client-registration-flow.md)
 
-#### 2. Come calcolare il valore per l’intestazione AP-Device-Identifier? {#headers-faq2}
+#### &#x200B;2. Come calcolare il valore per l’intestazione AP-Device-Identifier? {#headers-faq2}
 
 >[!IMPORTANT]
 >
@@ -614,7 +614,7 @@ L&#39;intestazione della richiesta [AP-Device-Identifier](/help/authentication/i
 
 La documentazione dell&#39;intestazione [AP-Device-Identifier](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-device-identifier.md) fornisce esempi per le piattaforme principali su come calcolare il valore, ma l&#39;applicazione client può scegliere di utilizzare un metodo diverso in base alla propria logica di business e ai propri requisiti.
 
-#### 3. Come calcolare il valore per l’intestazione X-Device-Info? {#headers-faq3}
+#### &#x200B;3. Come calcolare il valore per l’intestazione X-Device-Info? {#headers-faq3}
 
 >[!IMPORTANT]
 >
@@ -636,7 +636,7 @@ Anche quando la richiesta proviene da un server per conto di un dispositivo, il 
 
 +++Domande frequenti varie
 
-#### 1. Posso esplorare le richieste e le risposte REST API V2 e testare l’API? {#misc-faq1}
+#### &#x200B;1. Posso esplorare le richieste e le risposte REST API V2 e testare l’API? {#misc-faq1}
 
 Sì.
 
@@ -649,7 +649,7 @@ Per interagire con [API REST V2](https://developer.adobe.com/adobe-pass/api/rest
 
 Per utilizzare l&#39;API [DCR](https://developer.adobe.com/adobe-pass/api/dcr_api/interactive/), è necessaria un&#39;istruzione software con ambito REST API V2. Per ulteriori dettagli, consulta il documento [Domande frequenti sulla registrazione client dinamica (DCR)](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-faqs.md).
 
-#### 2. Posso esplorare le richieste e le risposte REST API V2 utilizzando uno strumento di sviluppo API con supporto OpenAPI? {#misc-faq2}
+#### &#x200B;2. Posso esplorare le richieste e le risposte REST API V2 utilizzando uno strumento di sviluppo API con supporto OpenAPI? {#misc-faq2}
 
 Sì.
 
@@ -662,7 +662,7 @@ Per scaricare i file delle specifiche OpenAPI, fare clic sui pulsanti di downloa
 
 Puoi quindi importare questi file nello strumento di sviluppo API preferito per esplorare le richieste e le risposte REST API V2 e testare l’API.
 
-#### 3. Posso continuare a utilizzare lo strumento di test API esistente ospitato su https://sp.auth-staging.adobe.com/apitest/api.html? {#misc-faq3}
+#### &#x200B;3. Posso continuare a utilizzare lo strumento di test API esistente ospitato su https://sp.auth-staging.adobe.com/apitest/api.html? {#misc-faq3}
 
 No.
 
@@ -689,7 +689,7 @@ Continuare con questa sezione se si sta lavorando su un&#39;applicazione che dev
 
 +++Domande frequenti sulla migrazione generali
 
-#### 1. È necessario eseguire il rollout di una nuova applicazione client migrata all’API REST V2 per tutti gli utenti contemporaneamente? {#migration-faq1}
+#### &#x200B;1. È necessario eseguire il rollout di una nuova applicazione client migrata all’API REST V2 per tutti gli utenti contemporaneamente? {#migration-faq1}
 
 No.
 
@@ -697,7 +697,7 @@ Non è necessario che l’applicazione client distribuisca una nuova versione ch
 
 L’autenticazione di Adobe Pass continuerà a supportare le versioni precedenti delle applicazioni client che integrano l’API REST V1 o SDK fino alla fine del 2025.
 
-#### 2. È necessario implementare una nuova applicazione client migrata all’API REST V2 in tutte le API e i flussi contemporaneamente? {#migration-faq2}
+#### &#x200B;2. È necessario implementare una nuova applicazione client migrata all’API REST V2 in tutte le API e i flussi contemporaneamente? {#migration-faq2}
 
 Sì.
 
@@ -707,7 +707,7 @@ Nel caso del flusso di autenticazione della seconda schermata, l&#39;applicazion
 
 L’autenticazione Adobe Pass non supporterà implementazioni &quot;ibride&quot; che integrano sia l’API REST V2 che l’API REST V1/SDK tra API e flussi.
 
-#### 3. L’autenticazione utente verrà mantenuta durante l’aggiornamento a una nuova applicazione client migrata all’API REST V2? {#migration-faq3}
+#### &#x200B;3. L’autenticazione utente verrà mantenuta durante l’aggiornamento a una nuova applicazione client migrata all’API REST V2? {#migration-faq3}
 
 No.
 
@@ -715,7 +715,7 @@ L’autenticazione utente ottenuta nelle versioni precedenti dell’applicazione
 
 Pertanto, all’utente verrà richiesto di autenticare nuovamente all’interno della nuova applicazione client migrata all’API REST V2.
 
-#### 4. I codici di errore avanzati sono abilitati per impostazione predefinita nell’API REST V2? {#migration-faq4}
+#### &#x200B;4. I codici di errore avanzati sono abilitati per impostazione predefinita nell’API REST V2? {#migration-faq4}
 
 Sì.
 
@@ -723,7 +723,7 @@ Per impostazione predefinita, le applicazioni client che eseguono la migrazione 
 
 Per ulteriori dettagli, consulta la documentazione sui [codici di errore avanzati](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md#enhanced-error-codes-lists-rest-api-v2).
 
-#### 5. Le integrazioni esistenti richiedono modifiche alla configurazione durante la migrazione all’API REST V2? {#migration-faq5}
+#### &#x200B;5. Le integrazioni esistenti richiedono modifiche alla configurazione durante la migrazione all’API REST V2? {#migration-faq5}
 
 No.
 
@@ -741,7 +741,7 @@ Continua con questa sottosezione se stai lavorando su un’applicazione che deve
 
 +++Domande frequenti sulla fase di registrazione
 
-##### 1. Quali sono le migrazioni API di alto livello necessarie per la fase di registrazione? {#registration-phase-v1-to-v2-faq1}
+##### &#x200B;1. Quali sono le migrazioni API di alto livello necessarie per la fase di registrazione? {#registration-phase-v1-to-v2-faq1}
 
 Nella migrazione dall’API REST V1 all’API REST V2 non vi sono modifiche di alto livello per quanto riguarda la fase di registrazione.
 
@@ -760,7 +760,7 @@ Per ulteriori informazioni, consulta i seguenti documenti:
 
 +++Domande frequenti sulla fase di configurazione
 
-##### 1. Quali sono le migrazioni API di alto livello necessarie per la fase di configurazione? {#configuration-phase-v1-to-v2-faq1}
+##### &#x200B;1. Quali sono le migrazioni API di alto livello necessarie per la fase di configurazione? {#configuration-phase-v1-to-v2-faq1}
 
 Nella migrazione dall’API REST V1 all’API REST V2 sono presenti modifiche di alto livello da considerare presentate nella tabella seguente:
 
@@ -774,7 +774,7 @@ Nella migrazione dall’API REST V1 all’API REST V2 sono presenti modifiche di
 
 +++Domande frequenti sulla fase di autenticazione
 
-##### 1. Quali sono le migrazioni API di alto livello necessarie per la fase di autenticazione? {#authentication-phase-v1-to-v2-faq1}
+##### &#x200B;1. Quali sono le migrazioni API di alto livello necessarie per la fase di autenticazione? {#authentication-phase-v1-to-v2-faq1}
 
 Nella migrazione dall’API REST V1 all’API REST V2 sono presenti modifiche di alto livello da considerare presentate nella tabella seguente:
 
@@ -794,13 +794,13 @@ Nella migrazione dall’API REST V1 all’API REST V2 sono presenti modifiche di
 
 +++Domande frequenti sulla fase di preautorizzazione
 
-##### 1. Quali sono le migrazioni API di alto livello richieste per la fase di pre-autorizzazione? {#preauthorization-phase-v1-to-v2-faq1}
+##### &#x200B;1. Quali sono le migrazioni API di alto livello richieste per la fase di pre-autorizzazione? {#preauthorization-phase-v1-to-v2-faq1}
 
 Nella migrazione dall’API REST V1 all’API REST V2 sono presenti modifiche di alto livello da considerare presentate nella tabella seguente:
 
 | Ambito | API REST V1 | API REST V2 | Osservazioni |
 |---------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Recuperare risorse autorizzate (decisioni di preautorizzazione) | [GET <br/> /api/v1/preauthorize (prima schermata)](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-list-of-preauthorized-resources.md) <br/> [GET <br/> /api/v1/preauthorize (seconda schermata)](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-list-of-preauthorized-resources-by-second-screen-web-app.md) | [PUBBLICA <br/> /api/v2/{serviceProvider}/decision/preauthorize/{mvpd}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md) | Per ulteriori dettagli, fare riferimento ai seguenti documenti: <br/> <ul><li>[Flusso di pre-autorizzazione di base eseguito nell&#39;applicazione primaria](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-preauthorization-primary-application-flow.md)</li></ul> |
+| Recuperare risorse autorizzate (decisioni di preautorizzazione) | [GET <br/> /api/v1/preauthorize (prima schermata)](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-list-of-preauthorized-resources.md) <br/> [GET <br/> /api/v1/preauthorize (seconda schermata)](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-list-of-preauthorized-resources-by-second-screen-web-app.md) | [POST <br/> /api/v2/{serviceProvider}/decision/preauthorize/{mvpd}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md) | Per ulteriori dettagli, fare riferimento ai seguenti documenti: <br/> <ul><li>[Flusso di pre-autorizzazione di base eseguito nell&#39;applicazione primaria](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-preauthorization-primary-application-flow.md)</li></ul> |
 
 +++
 
@@ -808,7 +808,7 @@ Nella migrazione dall’API REST V1 all’API REST V2 sono presenti modifiche di
 
 +++Domande frequenti sulla fase di autorizzazione
 
-##### 1. Quali sono le migrazioni API di alto livello necessarie per la fase di autorizzazione? {#authorization-phase-v1-to-v2-faq1}
+##### &#x200B;1. Quali sono le migrazioni API di alto livello necessarie per la fase di autorizzazione? {#authorization-phase-v1-to-v2-faq1}
 
 Nella migrazione dall’API REST V1 all’API REST V2 sono presenti modifiche di alto livello da considerare presentate nella tabella seguente:
 
@@ -824,7 +824,7 @@ Nella migrazione dall’API REST V1 all’API REST V2 sono presenti modifiche di
 
 +++Domande frequenti sulla fase di disconnessione
 
-##### 1. Quali sono le migrazioni API di alto livello necessarie per la fase di disconnessione? {#logout-phase-v1-to-v2-faq1}
+##### &#x200B;1. Quali sono le migrazioni API di alto livello necessarie per la fase di disconnessione? {#logout-phase-v1-to-v2-faq1}
 
 Nella migrazione dall’API REST V1 all’API REST V2 sono presenti modifiche di alto livello da considerare presentate nella tabella seguente:
 
@@ -842,7 +842,7 @@ Continua con questa sottosezione se stai lavorando su un’applicazione che deve
 
 +++Domande frequenti sulla fase di registrazione
 
-##### 1. Quali sono le migrazioni API di alto livello necessarie per la fase di registrazione? {#registration-phase-sdk-to-v2-faq1}
+##### &#x200B;1. Quali sono le migrazioni API di alto livello necessarie per la fase di registrazione? {#registration-phase-sdk-to-v2-faq1}
 
 Nella migrazione dagli SDK all’API REST V2 sono presenti modifiche di alto livello da considerare presentate nelle tabelle seguenti:
 
@@ -876,7 +876,7 @@ Nella migrazione dagli SDK all’API REST V2 sono presenti modifiche di alto liv
 
 +++Domande frequenti sulla fase di configurazione
 
-##### 1. Quali sono le migrazioni API di alto livello necessarie per la fase di configurazione? {#configuration-phase-sdk-to-v2-faq1}
+##### &#x200B;1. Quali sono le migrazioni API di alto livello necessarie per la fase di configurazione? {#configuration-phase-sdk-to-v2-faq1}
 
 Nella migrazione dagli SDK all’API REST V2 sono presenti modifiche di alto livello da considerare presentate nelle tabelle seguenti:
 
@@ -910,7 +910,7 @@ Nella migrazione dagli SDK all’API REST V2 sono presenti modifiche di alto liv
 
 +++Domande frequenti sulla fase di autenticazione
 
-##### 1. Quali sono le migrazioni API di alto livello necessarie per la fase di autenticazione? {#authentication-phase-sdk-to-v2-faq1}
+##### &#x200B;1. Quali sono le migrazioni API di alto livello necessarie per la fase di autenticazione? {#authentication-phase-sdk-to-v2-faq1}
 
 Nella migrazione dagli SDK all’API REST V2 sono presenti modifiche di alto livello da considerare presentate nelle tabelle seguenti:
 
@@ -966,7 +966,7 @@ Nella migrazione dagli SDK all’API REST V2 sono presenti modifiche di alto liv
 
 +++Domande frequenti sulla fase di preautorizzazione
 
-##### 1. Quali sono le migrazioni API di alto livello richieste per la fase di pre-autorizzazione? {#preauthorization-phase-sdk-to-v2-faq1}
+##### &#x200B;1. Quali sono le migrazioni API di alto livello richieste per la fase di pre-autorizzazione? {#preauthorization-phase-sdk-to-v2-faq1}
 
 Nella migrazione dagli SDK all’API REST V2 sono presenti modifiche di alto livello da considerare presentate nelle tabelle seguenti:
 
@@ -974,23 +974,23 @@ Nella migrazione dagli SDK all’API REST V2 sono presenti modifiche di alto liv
 
 | Ambito | SDK | API REST V2 | Osservazioni |
 |---------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Recuperare risorse autorizzate (decisioni di preautorizzazione) | [AccessEnabler.checkPreauthorizedResources](/help/authentication/integration-guide-programmers/legacy/sdks/javascript-sdk/javascript-sdk-api-reference.md#checkPreauthRes) <br/> [AccessEnabler.preauthorize](/help/authentication/integration-guide-programmers/legacy/sdks/javascript-sdk/preauthorize-api-javascript-sdk.md) | [PUBBLICA <br/> /api/v2/{serviceProvider}/decision/preauthorize/{mvpd}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md) | Per ulteriori dettagli, fare riferimento ai seguenti documenti: <br/> <ul><li>[Flusso di pre-autorizzazione di base eseguito nell&#39;applicazione primaria](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-preauthorization-primary-application-flow.md)</li></ul> |
+| Recuperare risorse autorizzate (decisioni di preautorizzazione) | [AccessEnabler.checkPreauthorizedResources](/help/authentication/integration-guide-programmers/legacy/sdks/javascript-sdk/javascript-sdk-api-reference.md#checkPreauthRes) <br/> [AccessEnabler.preauthorize](/help/authentication/integration-guide-programmers/legacy/sdks/javascript-sdk/preauthorize-api-javascript-sdk.md) | [POST <br/> /api/v2/{serviceProvider}/decision/preauthorize/{mvpd}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md) | Per ulteriori dettagli, fare riferimento ai seguenti documenti: <br/> <ul><li>[Flusso di pre-autorizzazione di base eseguito nell&#39;applicazione primaria](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-preauthorization-primary-application-flow.md)</li></ul> |
 
 ###### SDK di AccessEnabler iOS/tvOS
 
 | Ambito | SDK | API REST V2 | Osservazioni |
 |---------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Recuperare risorse autorizzate (decisioni di preautorizzazione) | [AccessEnabler.checkPreauthorizedResources](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#checkPreauth) <br/> [AccessEnabler.preauthorize](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/preauthorize-api-ios-tvos-sdk.md) | [PUBBLICA <br/> /api/v2/{serviceProvider}/decision/preauthorize/{mvpd}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md) | Per ulteriori dettagli, fare riferimento ai seguenti documenti: <br/> <ul><li>[Flusso di pre-autorizzazione di base eseguito nell&#39;applicazione primaria](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-preauthorization-primary-application-flow.md)</li></ul> |
+| Recuperare risorse autorizzate (decisioni di preautorizzazione) | [AccessEnabler.checkPreauthorizedResources](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#checkPreauth) <br/> [AccessEnabler.preauthorize](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/preauthorize-api-ios-tvos-sdk.md) | [POST <br/> /api/v2/{serviceProvider}/decision/preauthorize/{mvpd}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md) | Per ulteriori dettagli, fare riferimento ai seguenti documenti: <br/> <ul><li>[Flusso di pre-autorizzazione di base eseguito nell&#39;applicazione primaria](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-preauthorization-primary-application-flow.md)</li></ul> |
 
 ###### SDK di AccessEnabler Android
 
 | Ambito | SDK | API REST V2 | Osservazioni |
 |---------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Recuperare risorse autorizzate (decisioni di preautorizzazione) | [AccessEnabler.checkPreauthorizedResources](/help/authentication/integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-api-reference.md#checkPreauth) <br/> [AccessEnabler.preauthorize](/help/authentication/integration-guide-programmers/legacy/sdks/android-sdk/preauthorize-api-android-sdk.md) | [PUBBLICA <br/> /api/v2/{serviceProvider}/decision/preauthorize/{mvpd}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md) | Per ulteriori dettagli, fare riferimento ai seguenti documenti: <br/> <ul><li>[Flusso di pre-autorizzazione di base eseguito nell&#39;applicazione primaria](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-preauthorization-primary-application-flow.md)</li></ul> |
+| Recuperare risorse autorizzate (decisioni di preautorizzazione) | [AccessEnabler.checkPreauthorizedResources](/help/authentication/integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-api-reference.md#checkPreauth) <br/> [AccessEnabler.preauthorize](/help/authentication/integration-guide-programmers/legacy/sdks/android-sdk/preauthorize-api-android-sdk.md) | [POST <br/> /api/v2/{serviceProvider}/decision/preauthorize/{mvpd}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md) | Per ulteriori dettagli, fare riferimento ai seguenti documenti: <br/> <ul><li>[Flusso di pre-autorizzazione di base eseguito nell&#39;applicazione primaria](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-preauthorization-primary-application-flow.md)</li></ul> |
 
 | Ambito | SDK | API REST V2 | Osservazioni |
 |---------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Recuperare risorse autorizzate (decisioni di preautorizzazione) | [AccessEnabler.checkPreauthorizedResources](/help/authentication/integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-native-client-api-reference.md#checkPreauth) | [PUBBLICA <br/> /api/v2/{serviceProvider}/decision/preauthorize/{mvpd}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md) | Per ulteriori dettagli, fare riferimento ai seguenti documenti: <br/> <ul><li>[Flusso di pre-autorizzazione di base eseguito nell&#39;applicazione primaria](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-preauthorization-primary-application-flow.md)</li></ul> |
+| Recuperare risorse autorizzate (decisioni di preautorizzazione) | [AccessEnabler.checkPreauthorizedResources](/help/authentication/integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-native-client-api-reference.md#checkPreauth) | [POST <br/> /api/v2/{serviceProvider}/decision/preauthorize/{mvpd}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md) | Per ulteriori dettagli, fare riferimento ai seguenti documenti: <br/> <ul><li>[Flusso di pre-autorizzazione di base eseguito nell&#39;applicazione primaria](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-preauthorization-primary-application-flow.md)</li></ul> |
 
 +++
 
@@ -998,7 +998,7 @@ Nella migrazione dagli SDK all’API REST V2 sono presenti modifiche di alto liv
 
 +++Domande frequenti sulla fase di autorizzazione
 
-##### 1. Quali sono le migrazioni API di alto livello necessarie per la fase di autorizzazione? {#authorization-phase-sdk-to-v2-faq1}
+##### &#x200B;1. Quali sono le migrazioni API di alto livello necessarie per la fase di autorizzazione? {#authorization-phase-sdk-to-v2-faq1}
 
 Nella migrazione dagli SDK all’API REST V2 sono presenti modifiche di alto livello da considerare presentate nelle tabelle seguenti:
 
@@ -1032,7 +1032,7 @@ Nella migrazione dagli SDK all’API REST V2 sono presenti modifiche di alto liv
 
 +++Domande frequenti sulla fase di disconnessione
 
-##### 1. Quali sono le migrazioni API di alto livello necessarie per la fase di disconnessione? {#logout-phase-sdk-to-v2-faq1}
+##### &#x200B;1. Quali sono le migrazioni API di alto livello necessarie per la fase di disconnessione? {#logout-phase-sdk-to-v2-faq1}
 
 Nella migrazione dagli SDK all’API REST V2 sono presenti modifiche di alto livello da considerare presentate nelle tabelle seguenti:
 

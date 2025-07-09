@@ -2,9 +2,9 @@
 title: Recupera token di accesso
 description: API Dynamic Client Registration - Recupera token di accesso
 exl-id: 23287acf-5d56-46f0-b65e-79bf7d667708
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: ebe0a53e3ba54c2effdef45c1143deea0e6e57d3
 workflow-type: tm+mt
-source-wordcount: '454'
+source-wordcount: '456'
 ht-degree: 1%
 
 ---
@@ -159,7 +159,7 @@ ht-degree: 1%
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">created_at</td>
-               <td>L’ora in cui è stato emesso il token di accesso.</td>
+               <td>Tempo in millisecondi in cui è stato emesso il token di accesso.</td>
                <td><i>obbligatorio</i></td>
             </tr>
             <tr>

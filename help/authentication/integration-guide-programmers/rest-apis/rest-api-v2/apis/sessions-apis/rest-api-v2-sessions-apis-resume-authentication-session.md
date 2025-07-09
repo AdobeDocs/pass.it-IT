@@ -2,9 +2,9 @@
 title: Riprendi sessione di autenticazione
 description: REST API V2 - Riprendi sessione di autenticazione
 exl-id: 66c33546-2be0-473f-9623-90499d1c13eb
-source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
+source-git-commit: ebe0a53e3ba54c2effdef45c1143deea0e6e57d3
 workflow-type: tm+mt
-source-wordcount: '886'
+source-wordcount: '890'
 ht-degree: 1%
 
 ---
@@ -280,12 +280,12 @@ ht-degree: 1%
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notBefore</td>
-               <td>Il timestamp prima del quale il codice di autenticazione non è valido.</td>
+               <td>Il timestamp in millisecondi prima del quale il codice di autenticazione non è valido.</td>
                <td>facoltativo</td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notAfter</td>
-               <td>Il timestamp dopo il quale il codice di autenticazione non è valido.</td>
+               <td>Il timestamp in millisecondi dopo il quale il codice di autenticazione non è valido.</td>
                <td>facoltativo</td>
             </tr>
          </table>
@@ -325,7 +325,7 @@ ht-degree: 1%
 
 ## Esempi {#samples}
 
-### 1. Riprendere la sessione di autenticazione senza parametri mancanti
+### &#x200B;1. Riprendere la sessione di autenticazione senza parametri mancanti
 
 >[!BEGINTABS]
 
@@ -367,7 +367,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 2. Riprendere la sessione di autenticazione con parametri mancanti
+### &#x200B;2. Riprendere la sessione di autenticazione con parametri mancanti
 
 >[!BEGINTABS]
 
@@ -410,7 +410,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 3. Riprendere la sessione di autenticazione se esiste già un profilo valido
+### &#x200B;3. Riprendere la sessione di autenticazione se esiste già un profilo valido
 
 >[!BEGINTABS]
 
@@ -449,7 +449,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 4. Riprendi la sessione di autenticazione utilizzando TempPass di base o promozionale (non richiesto)
+### &#x200B;4. Riprendi la sessione di autenticazione utilizzando TempPass di base o promozionale (non richiesto)
 
 >[!BEGINTABS]
 
@@ -488,7 +488,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 5. Riprendere la sessione di autenticazione durante l&#39;applicazione della riduzione di livello
+### &#x200B;5. Riprendere la sessione di autenticazione durante l&#39;applicazione della riduzione di livello
 
 >[!BEGINTABS]
 

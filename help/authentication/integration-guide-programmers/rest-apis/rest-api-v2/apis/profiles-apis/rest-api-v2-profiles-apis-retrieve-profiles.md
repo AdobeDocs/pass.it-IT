@@ -2,9 +2,9 @@
 title: Recuperare i profili
 description: REST API V2 - Recupero profili
 exl-id: 72922aa8-95ca-48dc-8523-e335802fc366
-source-git-commit: 32c3176fb4633acb60deb1db8fb5397bbf18e2d0
+source-git-commit: ebe0a53e3ba54c2effdef45c1143deea0e6e57d3
 workflow-type: tm+mt
-source-wordcount: '868'
+source-wordcount: '872'
 ht-degree: 1%
 
 ---
@@ -227,12 +227,12 @@ ht-degree: 1%
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notBefore</td>
-               <td>Il timestamp prima del quale il profilo non è valido.</td>
+               <td>La marca temporale in millisecondi prima della quale il profilo non è valido.</td>
                <td><i>obbligatorio</i></td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notAfter</td>
-               <td>Il timestamp dopo il quale il profilo non è valido.</td>
+               <td>La marca temporale in millisecondi dopo la quale il profilo non è valido.</td>
                <td><i>obbligatorio</i></td>
             </tr>
             <tr>
@@ -319,7 +319,7 @@ ht-degree: 1%
 
 ## Esempi {#samples}
 
-### 1. Recuperare i profili ottenuti tramite autenticazione di base
+### &#x200B;1. Recuperare i profili ottenuti tramite autenticazione di base
 
 >[!BEGINTABS]
 
@@ -382,7 +382,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 2. Recuperare i profili ottenuti tramite autenticazione di base o Single Sign-On utilizzando il metodo Service Token
+### &#x200B;2. Recuperare i profili ottenuti tramite autenticazione di base o Single Sign-On utilizzando il metodo Service Token
 
 >[!BEGINTABS]
 
@@ -446,7 +446,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 3. Recuperare i profili ottenuti tramite l’autenticazione di base o il single sign-on utilizzando il metodo Platform Identity
+### &#x200B;3. Recuperare i profili ottenuti tramite l’autenticazione di base o il single sign-on utilizzando il metodo Platform Identity
 
 >[!BEGINTABS]
 
