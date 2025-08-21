@@ -2,9 +2,9 @@
 title: Crea sessione di autenticazione
 description: REST API V2 - Crea sessione di autenticazione
 exl-id: bb2a6bb4-0778-4748-a674-df9d0e8242c8
-source-git-commit: ebe0a53e3ba54c2effdef45c1143deea0e6e57d3
+source-git-commit: 26245e019afac2c0844ed64b222208cc821f9c6c
 workflow-type: tm+mt
-source-wordcount: '1064'
+source-wordcount: '1080'
 ht-degree: 1%
 
 ---
@@ -148,6 +148,12 @@ ht-degree: 1%
         La generazione del payload Single Sign-On per il metodo Service Token è descritta nella documentazione dell'intestazione <a href="../../appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md">AD-Service-Token</a>.
         <br/><br/>
         Per ulteriori dettagli sui flussi abilitati per il Single Sign-On tramite un token di servizio, fare riferimento alla documentazione <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md">Single Sign-On tramite flussi di token di servizio</a>.
+      <td>facoltativo</td>
+   </tr>
+   <tr>
+      <td style="background-color: #DEEBFF;">AP-Visitor-Identifier</td>
+      <td>
+        La generazione del payload dell'identificatore del visitatore è descritta nella documentazione dell'intestazione <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-visitor-identifier.md">AP-Visitor-Identifier</a>.
       <td>facoltativo</td>
    </tr>
    <tr>

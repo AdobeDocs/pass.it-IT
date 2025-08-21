@@ -2,9 +2,9 @@
 title: Recupera richiesta di autenticazione partner
 description: REST API V2 - Recupera richiesta di autenticazione partner
 exl-id: 52d8a8e9-c176-410f-92bc-e83449278943
-source-git-commit: 9f872ad94e0aaa0546c8fcac9f88c50f47e10f6e
+source-git-commit: 26245e019afac2c0844ed64b222208cc821f9c6c
 workflow-type: tm+mt
-source-wordcount: '1236'
+source-wordcount: '1252'
 ht-degree: 1%
 
 ---
@@ -135,6 +135,12 @@ ht-degree: 1%
          <br/><br/>
          Per le implementazioni client-server, l’indirizzo IP del dispositivo di streaming viene inviato in modo implicito.
       </td>
+      <td>facoltativo</td>
+   </tr>
+   <tr>
+      <td style="background-color: #DEEBFF;">AP-Visitor-Identifier</td>
+      <td>
+        La generazione del payload dell'identificatore del visitatore è descritta nella documentazione dell'intestazione <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-visitor-identifier.md">AP-Visitor-Identifier</a>.
       <td>facoltativo</td>
    </tr>
    <tr>
@@ -364,7 +370,7 @@ ht-degree: 1%
 
 ## Esempi {#samples}
 
-### 1. Recuperare la richiesta di autenticazione del partner
+### &#x200B;1. Recuperare la richiesta di autenticazione del partner
 
 >[!BEGINTABS]
 
@@ -411,7 +417,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 2. Recuperare la richiesta di autenticazione partner, ma viene applicata la riduzione del livello di protezione
+### &#x200B;2. Recuperare la richiesta di autenticazione partner, ma viene applicata la riduzione del livello di protezione
 
 >[!BEGINTABS]
 
@@ -453,7 +459,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 3. Recupera la richiesta di autenticazione del partner, ma torna al flusso di autenticazione di base a causa di un valore di intestazione AP-Partner-Framework-Status mancante o non valido
+### &#x200B;3. Recupera la richiesta di autenticazione del partner, ma torna al flusso di autenticazione di base a causa di un valore di intestazione AP-Partner-Framework-Status mancante o non valido
 
 >[!BEGINTABS]
 
@@ -498,7 +504,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 4. Recupera la richiesta di autenticazione del partner, ma torna al flusso di autenticazione di base a causa della configurazione single sign-on del partner sul backend di Adobe Pass
+### &#x200B;4. Recupera la richiesta di autenticazione del partner, ma torna al flusso di autenticazione di base a causa della configurazione single sign-on del partner sul backend di Adobe Pass
 
 >[!BEGINTABS]
 
@@ -543,7 +549,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 5. Recupera la richiesta di autenticazione del partner, ma torna al flusso di autenticazione di base a causa di parametri mancanti
+### &#x200B;5. Recupera la richiesta di autenticazione del partner, ma torna al flusso di autenticazione di base a causa di parametri mancanti
 
 >[!BEGINTABS]
 

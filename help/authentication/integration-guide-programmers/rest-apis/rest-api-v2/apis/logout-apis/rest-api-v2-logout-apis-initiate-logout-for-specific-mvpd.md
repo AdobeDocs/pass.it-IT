@@ -2,9 +2,9 @@
 title: Avvia disconnessione per mvpd specifico
 description: REST API V2 - Avvia disconnessione per mvpd specifico
 exl-id: 2482de87-b3d4-4ea8-bd4a-25bf10017e01
-source-git-commit: 32c3176fb4633acb60deb1db8fb5397bbf18e2d0
+source-git-commit: 26245e019afac2c0844ed64b222208cc821f9c6c
 workflow-type: tm+mt
-source-wordcount: '1009'
+source-wordcount: '1025'
 ht-degree: 1%
 
 ---
@@ -121,6 +121,12 @@ ht-degree: 1%
         <br/><br/>
         Per ulteriori dettagli sui flussi abilitati per il Single Sign-On tramite un token di servizio, fare riferimento alla documentazione <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md">Single Sign-On tramite flussi di token di servizio</a>.
       </td>
+      <td>facoltativo</td>
+   </tr>
+   <tr>
+      <td style="background-color: #DEEBFF;">AP-Visitor-Identifier</td>
+      <td>
+        La generazione del payload dell'identificatore del visitatore è descritta nella documentazione dell'intestazione <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-visitor-identifier.md">AP-Visitor-Identifier</a>.
       <td>facoltativo</td>
    </tr>
    <tr>
@@ -313,7 +319,7 @@ ht-degree: 1%
 
 ## Esempi {#samples}
 
-### 1. Avvia la disconnessione per mvpd specifico con endpoint di disconnessione
+### &#x200B;1. Avvia la disconnessione per mvpd specifico con endpoint di disconnessione
 
 >[!BEGINTABS]
 
@@ -350,7 +356,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 2. Avvia la disconnessione per mvpd specifico senza endpoint di disconnessione
+### &#x200B;2. Avvia la disconnessione per mvpd specifico senza endpoint di disconnessione
 
 >[!BEGINTABS]
 
@@ -386,7 +392,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 3. Avvia disconnessione singola per mvpd specifici, inclusi i profili ottenuti tramite single sign-on utilizzando il metodo Service Token
+### &#x200B;3. Avvia disconnessione singola per mvpd specifici, inclusi i profili ottenuti tramite single sign-on utilizzando il metodo Service Token
 
 >[!IMPORTANT]
 >
@@ -432,7 +438,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 4. Avviare la disconnessione singola per mvpd specifici, inclusi i profili ottenuti tramite il single sign-on utilizzando il metodo Platform Identity
+### &#x200B;4. Avviare la disconnessione singola per mvpd specifici, inclusi i profili ottenuti tramite il single sign-on utilizzando il metodo Platform Identity
 
 >[!IMPORTANT]
 >
@@ -478,7 +484,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 5. Avvia la disconnessione per mvpd specifici, inclusi i profili ottenuti tramite il single sign-on tramite Partner (Apple)
+### &#x200B;5. Avvia la disconnessione per mvpd specifici, inclusi i profili ottenuti tramite il single sign-on tramite Partner (Apple)
 
 >[!BEGINTABS]
 
@@ -514,7 +520,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 6. Avviare la disconnessione per mvpd specifico durante l&#39;applicazione della degradazione
+### &#x200B;6. Avviare la disconnessione per mvpd specifico durante l&#39;applicazione della degradazione
 
 >[!BEGINTABS]
 
@@ -550,7 +556,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 7. Avvia la disconnessione per TempPass di base o promozionale (non richiesto)
+### &#x200B;7. Avvia la disconnessione per TempPass di base o promozionale (non richiesto)
 
 >[!BEGINTABS]
 

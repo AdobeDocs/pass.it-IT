@@ -2,9 +2,9 @@
 title: Crea e recupera il profilo utilizzando la risposta di autenticazione del partner
 description: 'REST API V2: crea e recupera il profilo utilizzando la risposta di autenticazione del partner'
 exl-id: cae260ff-a229-4df7-bbf9-4cdf300c0f9a
-source-git-commit: be2b75d3dcde92c0b83700705892403291dcab2e
+source-git-commit: 26245e019afac2c0844ed64b222208cc821f9c6c
 workflow-type: tm+mt
-source-wordcount: '779'
+source-wordcount: '795'
 ht-degree: 1%
 
 ---
@@ -120,6 +120,12 @@ ht-degree: 1%
          <br/><br/>
          Per le implementazioni client-server, l’indirizzo IP del dispositivo di streaming viene inviato in modo implicito.
       </td>
+      <td>facoltativo</td>
+   </tr>
+   <tr>
+      <td style="background-color: #DEEBFF;">AP-Visitor-Identifier</td>
+      <td>
+        La generazione del payload dell'identificatore del visitatore è descritta nella documentazione dell'intestazione <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-visitor-identifier.md">AP-Visitor-Identifier</a>.
       <td>facoltativo</td>
    </tr>
    <tr>

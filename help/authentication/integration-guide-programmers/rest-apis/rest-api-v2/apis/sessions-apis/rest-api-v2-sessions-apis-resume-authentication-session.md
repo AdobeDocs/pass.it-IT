@@ -2,9 +2,9 @@
 title: Riprendi sessione di autenticazione
 description: REST API V2 - Riprendi sessione di autenticazione
 exl-id: 66c33546-2be0-473f-9623-90499d1c13eb
-source-git-commit: ebe0a53e3ba54c2effdef45c1143deea0e6e57d3
+source-git-commit: 26245e019afac2c0844ed64b222208cc821f9c6c
 workflow-type: tm+mt
-source-wordcount: '890'
+source-wordcount: '906'
 ht-degree: 1%
 
 ---
@@ -118,6 +118,12 @@ ht-degree: 1%
          <br/><br/>
          Per le implementazioni client-server, l’indirizzo IP del dispositivo di streaming viene inviato in modo implicito.
       </td>
+      <td>facoltativo</td>
+   </tr>
+   <tr>
+      <td style="background-color: #DEEBFF;">AP-Visitor-Identifier</td>
+      <td>
+        La generazione del payload dell'identificatore del visitatore è descritta nella documentazione dell'intestazione <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-visitor-identifier.md">AP-Visitor-Identifier</a>.
       <td>facoltativo</td>
    </tr>
    <tr>

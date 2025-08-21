@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Autenticazione Adobe Pass
 user-guide-description: L’autenticazione Adobe Pass è una soluzione di gestione dei diritti per TV Everywhere, che fornisce un framework modulare per determinare se chi richiede l’accesso a una risorsa ne abbia diritto.
-source-git-commit: bbbd3331c8c71aaf7e3ac4a102a5d8182722a271
+source-git-commit: 26245e019afac2c0844ed64b222208cc821f9c6c
 workflow-type: tm+mt
-source-wordcount: '1257'
+source-wordcount: '1259'
 ht-degree: 3%
 
 ---
@@ -126,6 +126,7 @@ ht-degree: 3%
                - [Intestazione - X-Roku-Reserved-Roku-Connect-Token](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md)
                - [Intestazione - AP-Partner-Framework-Status](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md)
                - [Intestazione - AP-TempPass-Identity](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-temppass-identity.md)
+               - [Intestazione - AP-Visitor-Identifier](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-visitor-identifier.md)
    - Funzioni standard {#standard-features}
       - Diritti {#entitlements}
          - [Metadati utente](integration-guide-programmers/features-standard/entitlements/user-metadata.md)

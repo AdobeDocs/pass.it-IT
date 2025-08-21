@@ -2,10 +2,10 @@
 title: Recupera sessione di autenticazione tramite codice
 description: REST API V2 - Recupera la sessione di autenticazione tramite il codice
 exl-id: 5cc209eb-ee6b-4bb9-9c04-3444408844b7
-source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
+source-git-commit: 26245e019afac2c0844ed64b222208cc821f9c6c
 workflow-type: tm+mt
-source-wordcount: '425'
-ht-degree: 3%
+source-wordcount: '441'
+ht-degree: 2%
 
 ---
 
@@ -75,6 +75,12 @@ ht-degree: 3%
          <br/><br/>
          Per le implementazioni client-server, l’indirizzo IP del dispositivo di streaming viene inviato in modo implicito.
       </td> 
+      <td>facoltativo</td>
+   </tr>
+   <tr>
+      <td style="background-color: #DEEBFF;">AP-Visitor-Identifier</td>
+      <td>
+        La generazione del payload dell'identificatore del visitatore è descritta nella documentazione dell'intestazione <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-visitor-identifier.md">AP-Visitor-Identifier</a>.
       <td>facoltativo</td>
    </tr>
    <tr>
@@ -200,7 +206,7 @@ ht-degree: 3%
 
 ## Esempi {#samples}
 
-### 1. Recuperare la sessione di autenticazione senza parametri mancanti
+### &#x200B;1. Recuperare la sessione di autenticazione senza parametri mancanti
 
 >[!BEGINTABS]
 
@@ -233,7 +239,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 1. Recuperare la sessione di autenticazione con parametri mancanti
+### &#x200B;1. Recuperare la sessione di autenticazione con parametri mancanti
 
 >[!BEGINTABS]
 
