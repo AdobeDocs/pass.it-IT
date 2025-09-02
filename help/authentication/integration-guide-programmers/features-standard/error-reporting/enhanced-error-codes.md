@@ -2,9 +2,9 @@
 title: Codici di errore migliorati
 description: Codici di errore migliorati
 exl-id: 2b0a9095-206b-4dc7-ab9e-e34abf4d359c
-source-git-commit: 27aaa0d3351577e60970a4035b02d814f0a17e2f
+source-git-commit: 7ac04991289c95ebb803d1fd804e9b497f821cda
 workflow-type: tm+mt
-source-wordcount: '2649'
+source-wordcount: '2696'
 ht-degree: 3%
 
 ---
@@ -45,9 +45,9 @@ I codici di errore avanzati possono essere rappresentati nel formato `JSON` o `X
 
 | API di autenticazione di Adobe Pass | JSON | XML |
 |-------------------------------|---------|---------|
-| API REST v2 | &check; |         |
-| API REST v1 | &check; | &check; |
-| API di pre-autorizzazione SDK | &check; |         |
+| API REST v2 | &amp;check; |         |
+| API REST v1 | &amp;check; | &amp;check; |
+| API di pre-autorizzazione SDK | &amp;check; |         |
 
 >[!IMPORTANT]
 >
@@ -101,7 +101,7 @@ Content-Type: application/json
         "code": "authorization_denied_by_mvpd",
         "message": "The MVPD has returned a \"Deny\" decision when requesting authorization for the specified resource",
         "details": "Your subscription package does not include the \"Live\" channel",
-        "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=it",
+        "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
         "trace": "12f6fef9-d2e0-422b-a9d7-60d799abe353"
       }
     }
@@ -120,7 +120,7 @@ Content-Type: application/json
   "status": 400,
   "code": "invalid_parameter_service_provider",
   "message": "The service provider parameter value is missing or invalid.",
-  "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=it",
+  "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
   "trace": "12f6fef9-d2e0-422b-a9d7-60d799abe353"
 }
 ```
@@ -154,7 +154,7 @@ Content-Type: application/json
         "code": "authorization_denied_by_mvpd",
         "message": "The MVPD has returned a \"Deny\" decision when requesting authorization for the specified resource",
         "details": "Your subscription package does not include the \"Live\" channel",
-        "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=it",
+        "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
         "trace": "12f6fef9-d2e0-422b-a9d7-60d799abe353"
       }
     }
@@ -173,7 +173,7 @@ Content-Type: application/json
   "status": 400,
   "code": "invalid_requestor",
   "message": "The requestor parameter is missing or invalid.",
-  "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=it",
+  "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
   "trace": "8bcb17f9-b172-47d2-86d9-3eb146eba85e"
 }
 ```
@@ -189,7 +189,7 @@ Content-Type: application/xml
   <status>400</status>
   <code>invalid_requestor</code>
   <message>The requestor parameter is missing or invalid.</message>
-  <helpUrl>https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=it</helpUrl>
+  <helpUrl>https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html</helpUrl>
   <trace>8bcb17f9-b172-47d2-86d9-3eb146eba85e</trace>
 </error>
 ```
@@ -202,12 +202,12 @@ I codici di errore avanzati includono i seguenti campi `JSON` o attributi `XML` 
 
 | Nome | Tipo | Esempio | Limitato | Descrizione |
 |-----------|-----------|---------------------------------------------------------------------------------------------------------------------|:----------:|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| *azione* | *stringa* | *nessuno* | &check; | L’autenticazione di Adobe Pass ha consigliato un’azione che potrebbe risolvere la situazione come definito in questo documento. <br/><br/> Per ulteriori dettagli, consulta la sezione [Azione](#enhanced-error-codes-action). |
-| *stato* | *numero intero* | *403* | &check; | Il codice di stato della risposta HTTP come definito nel documento [RFC 7231](https://tools.ietf.org/html/rfc7231#section-6). <br/><br/> Per ulteriori dettagli, consulta la sezione [Stato](#enhanced-error-codes-status). |
-| *codice* | *stringa* | *autorizzazione_negata_da_mvpd* | &check; | Il codice identificativo univoco dell’autenticazione Adobe Pass associato all’errore come definito in questo documento. <br/><br/> Per ulteriori dettagli, consulta la sezione [Codice](#enhanced-error-codes-code). |
+| *azione* | *stringa* | *nessuno* | &amp;check; | L’autenticazione di Adobe Pass ha consigliato un’azione che potrebbe risolvere la situazione come definito in questo documento. <br/><br/> Per ulteriori dettagli, consulta la sezione [Azione](#enhanced-error-codes-action). |
+| *stato* | *numero intero* | *403* | &amp;check; | Il codice di stato della risposta HTTP come definito nel documento [RFC 7231](https://tools.ietf.org/html/rfc7231#section-6). <br/><br/> Per ulteriori dettagli, consulta la sezione [Stato](#enhanced-error-codes-status). |
+| *codice* | *stringa* | *autorizzazione_negata_da_mvpd* | &amp;check; | Il codice identificativo univoco dell’autenticazione Adobe Pass associato all’errore come definito in questo documento. <br/><br/> Per ulteriori dettagli, consulta la sezione [Codice](#enhanced-error-codes-code). |
 | *messaggio* | *stringa* | *Il MVPD ha restituito una decisione di rifiuto durante la richiesta di autorizzazione per la risorsa specificata* |            | Il messaggio leggibile che in alcuni casi può essere visualizzato all’utente finale. <br/><br/> Per ulteriori dettagli, consulta la sezione [Gestione delle risposte](#enhanced-error-codes-response-handling). |
 | *dettagli* | *stringa* | *Il pacchetto di abbonamento non include il canale &quot;Live&quot;* |            | Messaggio dettagliato che potrebbe essere fornito da un partner di servizi in alcuni casi, <br/><br/> Questo campo potrebbe non essere presente nel caso in cui il partner di servizi non fornisca alcun messaggio personalizzato. |
-| *helpUrl* | *url* | *https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=it* |            | L’URL della documentazione pubblica di Autenticazione di Adobe Pass che rimanda a ulteriori informazioni sul motivo di questo errore e sulle possibili soluzioni. <br/><br/> Questo campo contiene un URL assoluto e non deve essere dedotto dal codice di errore, a seconda del contesto di errore è possibile fornire un URL diverso. |
+| *helpUrl* | *url* | *https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html* |            | L’URL della documentazione pubblica di Autenticazione di Adobe Pass che rimanda a ulteriori informazioni sul motivo di questo errore e sulle possibili soluzioni. <br/><br/> Questo campo contiene un URL assoluto e non deve essere dedotto dal codice di errore, a seconda del contesto di errore è possibile fornire un URL diverso. |
 | *traccia* | *stringa* | *12f6fef9-d2e0-422b-a9d7-60d799abe353* |            | Identificatore univoco della risposta che può essere utilizzato quando si contatta il supporto per l’autenticazione di Adobe Pass per la risoluzione di problemi specifici. |
 
 >[!IMPORTANT]
@@ -322,7 +322,7 @@ La tabella seguente elenca i possibili codici di errore avanzati che un’applic
 |                              | *connessione di rete_timeout* | 403 | Timeout di connessione con il servizio partner associato. Un nuovo tentativo di richiesta potrebbe risolvere il problema. |
 |                              | *tempo_esecuzione_massimo_superato* | 403 | La richiesta non è stata completata entro il tempo massimo consentito. Un nuovo tentativo di richiesta potrebbe risolvere il problema. |
 
-### API REST v1 {#enhanced-error-codes-lists-rest-api-v1}
+### (Legacy) API REST v1 {#enhanced-error-codes-lists-rest-api-v1}
 
 La tabella seguente elenca i possibili codici di errore avanzati che un’applicazione client potrebbe incontrare quando integrata con l’API REST di autenticazione di Adobe Pass v1.
 
@@ -354,7 +354,7 @@ La tabella seguente elenca i possibili codici di errore avanzati che un’applic
 |                    | *connessione di rete_timeout* | 403 | Timeout di connessione con il servizio partner associato. Un nuovo tentativo di richiesta potrebbe risolvere il problema. |
 |                    | *tempo_esecuzione_massimo_superato* | 403 | La richiesta non è stata completata entro il tempo massimo consentito. Un nuovo tentativo di richiesta potrebbe risolvere il problema. |
 
-### API di pre-autorizzazione SDK {#enhanced-error-codes-lists-sdks-preauthorize-api}
+### API di pre-autorizzazione SDK (legacy) {#enhanced-error-codes-lists-sdks-preauthorize-api}
 
 Consulta la [sezione](#enhanced-error-codes-list-rest-api-v1) precedente per informazioni sui possibili codici di errore avanzati che un&#39;applicazione client potrebbe incontrare quando integrata con l&#39;API di preautorizzazione degli SDK di autenticazione di Adobe Pass.
 
@@ -370,11 +370,13 @@ Consulta la [sezione](#enhanced-error-codes-list-rest-api-v1) precedente per inf
 
 In sintesi, quando gestisci le risposte contenenti codici di errore avanzati, prendi in considerazione quanto segue:
 
-1. **Verifica entrambi i valori di stato**: controlla sempre sia il codice di stato della risposta HTTP che il campo &quot;stato&quot; del codice di errore avanzato. Potrebbero essere diversi ed entrambi forniscono informazioni preziose.
+1. **Agnostico all&#39;API che restituisce l&#39;errore**: implementa una logica di gestione degli errori centralizzata che supporta l&#39;intero catalogo di codici di errore avanzati, indipendentemente dall&#39;API che li genera. Diversi codici di errore avanzati sono condivisi tra le API e devono essere gestiti in modo coerente.
 
 1. **Informazioni di errore di livello principale e di livello elemento**: gestire le informazioni di errore di livello principale e di livello elemento indipendentemente dal modo in cui vengono comunicate, assicurarsi di poter gestire entrambe le forme di trasmissione dei codici di errore avanzati.
 
-1. **Logica tentativi**: per gli errori che richiedono un nuovo tentativo, assicurati che i nuovi tentativi vengano eseguiti con un backoff esponenziale per evitare di sopraffare il server. Inoltre, nel caso di API di autenticazione di Adobe Pass che gestiscono più elementi contemporaneamente (ad esempio, API di preautorizzazione), devi includere nella richiesta ripetuta solo gli elementi contrassegnati con &quot;riprova&quot; e non l’intero elenco.
+1. **Verifica entrambi i valori di stato**: controlla sempre sia il codice di stato della risposta HTTP che il campo &quot;stato&quot; del codice di errore avanzato. Potrebbero essere diversi ed entrambi forniscono informazioni preziose.
+
+1. **Logica tentativi**: per gli errori che richiedono un nuovo tentativo, accertati che i nuovi tentativi siano limitati (ad esempio 2-3) o vengano eseguiti con un backoff esponenziale per evitare di sovraccaricare il server. Inoltre, nel caso di API di autenticazione di Adobe Pass che gestiscono più elementi contemporaneamente (ad esempio, API di preautorizzazione), devi includere nella richiesta ripetuta solo gli elementi contrassegnati con &quot;riprova&quot; e non l’intero elenco.
 
 1. **Modifiche alla configurazione**: per gli errori che richiedono modifiche alla configurazione, verificare che le modifiche necessarie siano state apportate prima di avviare la nuova applicazione o la nuova funzionalità.
 

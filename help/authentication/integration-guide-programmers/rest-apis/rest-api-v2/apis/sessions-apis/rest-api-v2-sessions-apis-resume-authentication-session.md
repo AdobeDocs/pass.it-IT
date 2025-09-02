@@ -2,9 +2,9 @@
 title: Riprendi sessione di autenticazione
 description: REST API V2 - Riprendi sessione di autenticazione
 exl-id: 66c33546-2be0-473f-9623-90499d1c13eb
-source-git-commit: 26245e019afac2c0844ed64b222208cc821f9c6c
+source-git-commit: 7ac04991289c95ebb803d1fd804e9b497f821cda
 workflow-type: tm+mt
-source-wordcount: '906'
+source-wordcount: '953'
 ht-degree: 1%
 
 ---
@@ -324,7 +324,17 @@ ht-degree: 1%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"></td>
-      <td>Il corpo della risposta può fornire informazioni di errore aggiuntive conformi alla documentazione di <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Codici di errore avanzati</a>.</td>
+      <td>
+            Il corpo della risposta può fornire informazioni di errore aggiuntive conformi alla documentazione di <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Codici di errore avanzati</a>.
+            <br/><br/>
+            L’applicazione client deve implementare un meccanismo di gestione degli errori in grado di elaborare correttamente i codici di errore più comunemente restituiti da questa API:
+            <ul>
+                <li>invalid_authentication_session</li>
+                <li>invalid_parameter_code</li>
+                <li>ecc.</li>
+            </ul>
+            L’elenco di cui sopra non è esaustivo. L'applicazione client deve essere in grado di gestire tutti i codici di errore avanzati definiti nella <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">documentazione pubblica</a>.
+      </td>
       <td><i>obbligatorio</i></td>
    </tr>
 </table>

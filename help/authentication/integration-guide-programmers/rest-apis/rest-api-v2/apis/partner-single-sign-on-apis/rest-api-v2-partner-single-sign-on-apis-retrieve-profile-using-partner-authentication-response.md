@@ -2,9 +2,9 @@
 title: Crea e recupera il profilo utilizzando la risposta di autenticazione del partner
 description: 'REST API V2: crea e recupera il profilo utilizzando la risposta di autenticazione del partner'
 exl-id: cae260ff-a229-4df7-bbf9-4cdf300c0f9a
-source-git-commit: 26245e019afac2c0844ed64b222208cc821f9c6c
+source-git-commit: 7ac04991289c95ebb803d1fd804e9b497f821cda
 workflow-type: tm+mt
-source-wordcount: '795'
+source-wordcount: '847'
 ht-degree: 1%
 
 ---
@@ -321,7 +321,22 @@ ht-degree: 1%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"></td>
-      <td>Il corpo della risposta può fornire informazioni di errore aggiuntive conformi alla documentazione di <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Codici di errore avanzati</a>.</td>
+      <td>
+            Il corpo della risposta può fornire informazioni di errore aggiuntive conformi alla documentazione di <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Codici di errore avanzati</a>.
+            <br/><br/>
+            L’applicazione client deve implementare un meccanismo di gestione degli errori in grado di elaborare correttamente i codici di errore più comunemente restituiti da questa API:
+            <ul>
+                <li>invalid_header_pfs_permission_access_not_present</li>
+                <li>invalid_header_pfs_permission_access_not_determinate</li>
+                <li>invalid_header_pfs_permission_access_not_allowed</li>
+                <li>invalid_header_pfs_provider_id_not_determinate</li>
+                <li>invalid_header_pfs_provider_id_mismatch</li>
+                <li>invalid_header_pfs_provider_info_scaduto</li>
+                <li>invalid_parameter_saml_response</li>
+                <li>ecc.</li>
+            </ul>
+            L’elenco di cui sopra non è esaustivo. L'applicazione client deve essere in grado di gestire tutti i codici di errore avanzati definiti nella <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">documentazione pubblica</a>.
+      </td>
       <td><i>obbligatorio</i></td>
    </tr>
 </table>
