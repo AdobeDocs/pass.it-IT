@@ -2,9 +2,9 @@
 title: Intestazione - AP-Partner-Framework-Status
 description: REST API V2 - Intestazione - AP-Partner-Framework-Status
 exl-id: f589d948-e23e-43d4-81c2-8db0e7a40e93
-source-git-commit: 81d3c3835d2e97e28c2ddb9c72d1a048a25ad433
+source-git-commit: 5c912bbbe97fff65d38dbade32cd4554ad8c2fac
 workflow-type: tm+mt
-source-wordcount: '388'
+source-wordcount: '404'
 ht-degree: 0%
 
 ---
@@ -131,6 +131,8 @@ Il valore `Base64-encoded` dell&#39;elemento JSON contenente i seguenti attribut
                   Questo è un attributo obbligatorio.
                   <br/><br/>
                   Si tratta della data di scadenza del profilo utente autenticato, nel caso in cui l’utente abbia effettuato correttamente l’accesso utilizzando un MVPD supportato a livello di framework partner.
+                  <br/><br/>
+                  Deve essere una marca temporale in millisecondi dall’epoca di Unix (ad esempio, "1735689600000"), espressa come stringa.
                </td>
             </tr>
             <tr>
