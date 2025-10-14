@@ -716,7 +716,7 @@ Poiché il controller UIWebView/WKWebView` ` viene sottoposto a diversi reindiri
 
 Simile al callback `navigateToUrl:`, il `navigateToUrl:useSVC:` viene attivato da AccessEnabler per richiedere all&#39;applicazione di creare un&#39;istanza di un controller `SFSafariViewController` e caricare l&#39;URL fornito nel parametro **`url`** del callback. Il callback passa il parametro **`url`** che rappresenta l&#39;URL dell&#39;endpoint di autenticazione o l&#39;URL dell&#39;endpoint di disconnessione e il parametro **`useSVC`** che specifica che l&#39;applicazione deve utilizzare un `SFSafariViewController`.
 
-Poiché il controller `SFSafariViewController` viene sottoposto a diversi reindirizzamenti, l&#39;applicazione deve monitorare l&#39;attività del controller e rilevare il momento in cui carica un URL personalizzato specifico definito dal `application's custom scheme` (ad esempio **&#x200B; **`adbe.u-XFXJeTSDuJiIQs0HVRAg://adobe.com`). Questo URL personalizzato specifico non è valido e non è destinato al controller per caricarlo effettivamente. Deve essere interpretato solo dall&#39;applicazione come un segnale che il flusso di autenticazione o disconnessione è stato completato e che è sicuro chiudere il controller. Quando il controller carica questo URL personalizzato specifico, l&#39;applicazione deve chiudere `SFSafariViewController` e chiamare il metodo API `handleExternalURL:url ` di AccessEnabler.
+Poiché il controller `SFSafariViewController` viene sottoposto a diversi reindirizzamenti, l&#39;applicazione deve monitorare l&#39;attività del controller e rilevare il momento in cui carica un URL personalizzato specifico definito dal `application's custom scheme` (ad esempio **&#x200B; &#x200B;**`adbe.u-XFXJeTSDuJiIQs0HVRAg://adobe.com`). Questo URL personalizzato specifico non è valido e non è destinato al controller per caricarlo effettivamente. Deve essere interpretato solo dall&#39;applicazione come un segnale che il flusso di autenticazione o disconnessione è stato completato e che è sicuro chiudere il controller. Quando il controller carica questo URL personalizzato specifico, l&#39;applicazione deve chiudere `SFSafariViewController` e chiamare il metodo API `handleExternalURL:url ` di AccessEnabler.
 
 **Nota:** Tieni presente che nel caso del flusso di autenticazione si tratta di un punto in cui l&#39;utente può premere il pulsante &quot;Indietro&quot;, che equivale all&#39;interruzione del flusso di autenticazione. In questo caso, è necessario che l&#39;applicazione chiami il metodo [setSelectedProvider:](#setSelProv) passando **`nil`** come parametro e dando la possibilità ad AccessEnabler di reimpostare il computer dello stato di autenticazione.
 
@@ -744,7 +744,7 @@ Poiché il controller `SFSafariViewController` viene sottoposto a diversi reindi
 * *url:* l&#39;URL che punta alla pagina di accesso di MVPD
 * *useSVC:* se l&#39;URL deve essere caricato in SFSafariViewController.
 
-**Attivato da:**&#x200B;[ setOptions:](#setOptions) prima di [setSelectedProvider:](#setSelProv)
+**Attivato da:**&#x200B;[&#x200B; setOptions:](#setOptions) prima di [setSelectedProvider:](#setSelProv)
 
 [Torna all&#39;inizio...](#apis)
 
