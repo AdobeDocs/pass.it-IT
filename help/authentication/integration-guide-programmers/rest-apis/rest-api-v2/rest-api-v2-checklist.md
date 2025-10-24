@@ -2,9 +2,9 @@
 title: Elenco di controllo REST API V2
 description: Elenco di controllo REST API V2
 exl-id: 9095d1dd-a90c-4431-9c58-9a900bfba1cf
-source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
+source-git-commit: 63dc9636f74f8eee1af6205c4d31a01df4503050
 workflow-type: tm+mt
-source-wordcount: '2545'
+source-wordcount: '2563'
 ht-degree: 0%
 
 ---
@@ -19,9 +19,13 @@ Questo documento aggrega in un&#39;unica posizione i requisiti obbligatori e le 
 
 Il seguente documento deve essere considerato parte dei criteri di accettazione durante l’implementazione dell’API REST V2 e deve essere utilizzato come elenco di controllo per garantire che siano stati eseguiti tutti i passaggi necessari per ottenere una corretta integrazione.
 
+>[!TIP]
+>
+> Per lo sviluppo basato sull&#39;intelligenza artificiale, consulta le [regole di intelligenza artificiale](rest-api-v2-ai-rules.md) che trasformano questi requisiti in regole strutturate per gli assistenti alla codifica basata sull&#39;intelligenza artificiale.
+
 ## Requisiti obbligatori {#mandatory-requirements}
 
-### 1. Fase di registrazione {#mandatory-requirements-registration-phase}
+### &#x200B;1. Fase di registrazione {#mandatory-requirements-registration-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -46,7 +50,7 @@ Il seguente documento deve essere considerato parte dei criteri di accettazione 
    </tr>
 </table>
 
-### 2. Fase di configurazione {#mandatory-requirements-configuration-phase}
+### &#x200B;2. Fase di configurazione {#mandatory-requirements-configuration-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -66,7 +70,7 @@ Il seguente documento deve essere considerato parte dei criteri di accettazione 
    </tr>
 </table>
 
-### 3. Fase di autenticazione {#mandatory-requirements-authentication-phase}
+### &#x200B;3. Fase di autenticazione {#mandatory-requirements-authentication-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -96,7 +100,7 @@ Il seguente documento deve essere considerato parte dei criteri di accettazione 
    </tr>
 </table>
 
-### 4. (Facoltativo) Fase di pre-autorizzazione {#mandatory-requirements-preauthorization-phase}
+### &#x200B;4. (Facoltativo) Fase di pre-autorizzazione {#mandatory-requirements-preauthorization-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -121,7 +125,7 @@ Il seguente documento deve essere considerato parte dei criteri di accettazione 
    </tr>
 </table>
 
-### 5. Fase di autorizzazione {#mandatory-requirements-authorization-phase}
+### &#x200B;5. Fase di autorizzazione {#mandatory-requirements-authorization-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -141,7 +145,7 @@ Il seguente documento deve essere considerato parte dei criteri di accettazione 
    </tr>
 </table>
 
-### 6. Fase di disconnessione {#mandatory-requirements-logout-phase}
+### &#x200B;6. Fase di disconnessione {#mandatory-requirements-logout-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -156,7 +160,7 @@ Il seguente documento deve essere considerato parte dei criteri di accettazione 
    </tr>
 </table>
 
-### 7. Parametri e intestazioni {#mandatory-requirements-parameters-headers}
+### &#x200B;7. Parametri e intestazioni {#mandatory-requirements-parameters-headers}
 
 <table style="table-layout:auto">
    <tr>
@@ -191,7 +195,7 @@ Il seguente documento deve essere considerato parte dei criteri di accettazione 
    </tr>
 </table>
 
-### 8. Gestione degli errori {#mandatory-requirements-error-handling}
+### &#x200B;8. Gestione degli errori {#mandatory-requirements-error-handling}
 
 <table style="table-layout:auto">
    <tr>
@@ -211,7 +215,7 @@ Il seguente documento deve essere considerato parte dei criteri di accettazione 
    </tr>
 </table>
 
-### 9. Prove {#mandatory-requirements-testing}
+### &#x200B;9. Prove {#mandatory-requirements-testing}
 
 <table style="table-layout:auto">
    <tr>
@@ -228,7 +232,7 @@ Il seguente documento deve essere considerato parte dei criteri di accettazione 
 
 ## Procedure consigliate {#recommended-practices}
 
-### 1. Fase di registrazione {#recommended-practices-registration-phase}
+### &#x200B;1. Fase di registrazione {#recommended-practices-registration-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -243,7 +247,7 @@ Il seguente documento deve essere considerato parte dei criteri di accettazione 
    </tr>
 </table>
 
-### 2. Fase di configurazione {#recommended-practices-configuration-phase}
+### &#x200B;2. Fase di configurazione {#recommended-practices-configuration-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -258,7 +262,7 @@ Il seguente documento deve essere considerato parte dei criteri di accettazione 
    </tr>
 </table>
 
-### 3. Fase di autenticazione {#recommended-practices-authentication-phase}
+### &#x200B;3. Fase di autenticazione {#recommended-practices-authentication-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -283,7 +287,7 @@ Il seguente documento deve essere considerato parte dei criteri di accettazione 
    </tr>
 </table>
 
-### 4. (Facoltativo) Fase di pre-autorizzazione {#recommended-practices-preauthorization-phase}
+### &#x200B;4. (Facoltativo) Fase di pre-autorizzazione {#recommended-practices-preauthorization-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -298,7 +302,7 @@ Il seguente documento deve essere considerato parte dei criteri di accettazione 
    </tr>
 </table>
 
-### 5. Fase di autorizzazione {#recommended-practices-authorization-phase}
+### &#x200B;5. Fase di autorizzazione {#recommended-practices-authorization-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -318,7 +322,7 @@ Il seguente documento deve essere considerato parte dei criteri di accettazione 
    </tr>
 </table>
 
-### 6. Fase di disconnessione {#recommended-practices-logout-phase}
+### &#x200B;6. Fase di disconnessione {#recommended-practices-logout-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -333,7 +337,7 @@ Il seguente documento deve essere considerato parte dei criteri di accettazione 
    </tr>
 </table>
 
-### 7. Parametri e intestazioni {#recommended-practices-parameters-headers}
+### &#x200B;7. Parametri e intestazioni {#recommended-practices-parameters-headers}
 
 <table style="table-layout:auto">
    <tr>
@@ -348,7 +352,7 @@ Il seguente documento deve essere considerato parte dei criteri di accettazione 
    </tr>
 </table>
 
-### 8. Prove {#recommended-practices-testing}
+### &#x200B;8. Prove {#recommended-practices-testing}
 
 <table style="table-layout:auto">
    <tr>
