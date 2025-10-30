@@ -2,9 +2,9 @@
 title: Crea e recupera il profilo utilizzando la risposta di autenticazione del partner
 description: 'REST API V2: crea e recupera il profilo utilizzando la risposta di autenticazione del partner'
 exl-id: cae260ff-a229-4df7-bbf9-4cdf300c0f9a
-source-git-commit: 7ac04991289c95ebb803d1fd804e9b497f821cda
+source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
 workflow-type: tm+mt
-source-wordcount: '847'
+source-wordcount: '850'
 ht-degree: 1%
 
 ---
@@ -133,7 +133,7 @@ ht-degree: 1%
       <td>
          Tipo di supporto accettato dall'applicazione client.
          <br/><br/>
-         Se specificato, deve essere application/json.
+         Se specificato, deve essere application/json;charset=utf-8.
       </td>
       <td>facoltativo</td>
    </tr>

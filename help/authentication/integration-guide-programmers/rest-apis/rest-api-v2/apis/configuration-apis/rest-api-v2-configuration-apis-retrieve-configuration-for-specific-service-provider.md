@@ -2,9 +2,9 @@
 title: Recupera la configurazione per un provider di servizi specifico
 description: 'REST API V2: recupero della configurazione per un provider di servizi specifico'
 exl-id: ad7e4c6d-ed96-4ae7-82a9-3c24e5fc9302
-source-git-commit: 8952283ccce38f70f4f504f07714c583fcb7e272
+source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
 workflow-type: tm+mt
-source-wordcount: '725'
+source-wordcount: '728'
 ht-degree: 2%
 
 ---
@@ -105,7 +105,7 @@ ht-degree: 2%
       <td>
          Tipo di supporto accettato dall'applicazione client.
          <br/><br/>
-         Se specificato, deve essere application/json.
+         Se specificato, deve essere application/json;charset=utf-8.
       </td>
       <td>facoltativo</td>
    </tr>

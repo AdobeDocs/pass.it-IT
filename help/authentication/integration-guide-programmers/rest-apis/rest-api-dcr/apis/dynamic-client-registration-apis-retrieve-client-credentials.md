@@ -2,9 +2,9 @@
 title: Recupera credenziali client
 description: API di registrazione client dinamico - Recupero credenziali client
 exl-id: 0b39768b-25b8-47b9-8080-59c56fb829fb
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
 workflow-type: tm+mt
-source-wordcount: '431'
+source-wordcount: '437'
 ht-degree: 1%
 
 ---
@@ -66,7 +66,7 @@ ht-degree: 1%
       <td>
          Tipo di file multimediale accettato per le risorse inviate.
          <br/><br/>
-         Deve essere application/json.
+         Deve essere application/json;charset=utf-8.
       </td>
       <td><i>obbligatorio</i></td>
    </tr>
@@ -88,7 +88,7 @@ ht-degree: 1%
       <td>
          Tipo di supporto accettato dall'applicazione client.
          <br/><br/>
-         Se specificato, deve essere application/json.
+         Se specificato, deve essere application/json;charset=utf-8.
       </td>
       <td>facoltativo</td>
    </tr>
