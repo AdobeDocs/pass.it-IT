@@ -2,7 +2,7 @@
 title: Autenticazione di base - Applicazione secondaria - Flusso
 description: REST API V2 - Autenticazione di base - Applicazione secondaria - Flusso
 exl-id: 83bf592e-c679-4cfe-984d-710a9598c620
-source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
+source-git-commit: 92417dd4161be8ba97535404e262fd26d67383e4
 workflow-type: tm+mt
 source-wordcount: '2006'
 ht-degree: 0%
@@ -65,7 +65,7 @@ Prima di avviare il flusso di autenticazione all’interno di un’applicazione 
 
 Segui i passaggi forniti per implementare il flusso di autenticazione di base eseguito all’interno di un’applicazione secondaria con un MVPD preselezionato, come illustrato nel diagramma seguente.
 
-![Eseguire l&#39;autenticazione nell&#39;applicazione secondaria con mvpd preselezionato](../../../../../assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-perform-authentication-within-secondary-application-with-preselected-mvpd.png)
+![Eseguire l&#39;autenticazione nell&#39;applicazione secondaria con mvpd preselezionato](/help/authentication/assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-perform-authentication-within-secondary-application-with-preselected-mvpd.png)
 
 *Eseguire l&#39;autenticazione nell&#39;applicazione secondaria con mvpd preselezionato*
 
@@ -209,7 +209,7 @@ Prima di avviare il flusso di autenticazione all’interno di un’applicazione 
 
 Segui i passaggi forniti per implementare il flusso di autenticazione di base eseguito all’interno di un’applicazione secondaria senza un MVPD preselezionato, come illustrato nel diagramma seguente.
 
-![Eseguire l&#39;autenticazione nell&#39;applicazione secondaria senza mvpd preselezionato](../../../../../assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-perform-authentication-within-secondary-application-without-preselected-mvpd.png)
+![Eseguire l&#39;autenticazione nell&#39;applicazione secondaria senza mvpd preselezionato](/help/authentication/assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-perform-authentication-within-secondary-application-without-preselected-mvpd.png)
 
 *Eseguire l&#39;autenticazione nell&#39;applicazione secondaria senza mvpd preselezionato*
 

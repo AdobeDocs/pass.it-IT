@@ -2,7 +2,7 @@
 title: Glossario REST API V2
 description: Glossario REST API V2
 exl-id: 8b3bd2de-1ff8-4c57-b18d-27ecdf2b0de2
-source-git-commit: e448427ae4a36c4c6cb9f9c1cb4d0cc5c6d564ed
+source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
 workflow-type: tm+mt
 source-wordcount: '1742'
 ht-degree: 0%
@@ -63,7 +63,7 @@ La decisione è un concetto di autenticazione Adobe Pass che memorizza informazi
 
 La degradazione è una funzionalità di autenticazione di Adobe Pass che consente a un utente di accedere a contenuto protetto anche quando il relativo [MVPD](#mvpd) subisce un&#39;interruzione del servizio.
 
-Per ulteriori informazioni, consulta la documentazione sulla [funzionalità di degradazione](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md).
+Per ulteriori informazioni, consulta la documentazione sulla [funzionalità di degradazione](/help/premium-workflow/degraded-access/degradation-feature.md).
 
 #### ID dispositivo {#device-id}
 
@@ -151,7 +151,7 @@ L&#39;applicazione primaria fa riferimento a un&#39;applicazione [Programmer](#p
 
 #### Profilo {#profile}
 
-Il profilo è un concetto di autenticazione di Adobe Pass che memorizza informazioni sulla data di inizio e di fine dell&#39;autenticazione dell&#39;utente, i metadati dell&#39;utente [&#128279;](#user-metadata) insieme ad altri campi che indicano il metodo per ottenere l&#39;autenticazione (ad esempio, &quot;regolare&quot;, &quot;degradato&quot;, &quot;temporaneo&quot;, &quot;single sign-on&quot;, ecc.).
+Il profilo è un concetto di autenticazione di Adobe Pass che memorizza informazioni sulla data di inizio e di fine dell&#39;autenticazione dell&#39;utente, i metadati dell&#39;utente [](#user-metadata) insieme ad altri campi che indicano il metodo per ottenere l&#39;autenticazione (ad esempio, &quot;regolare&quot;, &quot;degradato&quot;, &quot;temporaneo&quot;, &quot;single sign-on&quot;, ecc.).
 
 Sinonimo del precedente termine utilizzato come token di autenticazione.
 
@@ -229,13 +229,13 @@ Il Single Sign-On (SSO) è un processo che consente a un utente di eseguire l&#3
 
 TempPass di base è una funzionalità di autenticazione di Adobe Pass che consente a un utente di accedere a contenuti protetti per un periodo di tempo limitato senza dover eseguire l&#39;autenticazione con un [MVPD](#mvpd).
 
-Per ulteriori informazioni, consulta la documentazione di [Basic TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#basic-temp-pass).
+Per ulteriori informazioni, consulta la documentazione di [Basic TempPass](/help/premium-workflow/temporary-access/temp-pass-feature.md#basic-temp-pass).
 
 #### TempPass promozionale {#temp-pass-promotional}
 
 Il TempPass promozionale è una funzionalità di autenticazione di Adobe Pass che consente a un utente di accedere a contenuti protetti per un numero massimo di risorse e un tempo limitato senza dover eseguire l&#39;autenticazione con un [MVPD](#mvpd).
 
-Per ulteriori informazioni, consulta la documentazione di [Promotional TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#promotional-temp-pass).
+Per ulteriori informazioni, consulta la documentazione di [Promotional TempPass](/help/premium-workflow/temporary-access/temp-pass-feature.md#promotional-temp-pass).
 
 #### TTL {#ttl}
 
@@ -257,7 +257,7 @@ Per ulteriori informazioni, consulta la [Guida utente di TVE Dashboard](/help/au
 
 Il fornitore di servizi televisivi è una società che fornisce servizi televisivi ai consumatori via cavo, via satellite o via Internet.
 
-Il fornitore del televisore è identificato da un valore univoco definito durante la procedura di onboarding tra il fornitore del televisore e l’Adobe.
+Il fornitore TV è identificato da un valore univoco definito durante il processo di onboarding tra il fornitore TV e Adobe.
 
 Sinonimo di [MVPD](#mvpd) e [Identity Provider](#identity-provider).
 

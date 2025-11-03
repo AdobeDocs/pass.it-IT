@@ -2,7 +2,7 @@
 title: Logout di base - Applicazione principale - Flusso
 description: REST API V2 - Logout di base - Applicazione principale - Flusso
 exl-id: 21dbff4a-0d69-4f81-b04f-e99d743c35b3
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 92417dd4161be8ba97535404e262fd26d67383e4
 workflow-type: tm+mt
 source-wordcount: '948'
 ht-degree: 0%
@@ -22,7 +22,7 @@ ht-degree: 0%
 Il **Flusso di disconnessione** all&#39;interno del diritto di autenticazione di Adobe Pass consente all&#39;applicazione di streaming di eseguire due passaggi principali:
 
 * Elimina i profili normali salvati nel backend di Adobe Pass.
-* Utilizza un agente utente (browser) per passare all’endpoint di disconnessione MVPD, attivando una pulizia nel backend MVPD.
+* Utilizza un agente utente (browser) per passare all’endpoint di disconnessione di MVPD, avviando una pulizia nel backend di MVPD.
 
 Flusso di logout di base consente di eseguire query per i seguenti scenari:
 
@@ -51,9 +51,9 @@ Prima di avviare la disconnessione per un MVPD specifico con un endpoint di disc
 
 ### Flusso di lavoro {#workflow-initiate-logout-for-specific-mvpd-with-logout-endpoint}
 
-Seguire i passaggi forniti per implementare il flusso di logout di base per un MVPD specifico con un endpoint di logout eseguito all&#39;interno di un&#39;applicazione primaria, come illustrato nel diagramma seguente.
+Segui i passaggi forniti per implementare il flusso di logout di base per un MVPD specifico con un endpoint di logout eseguito all’interno di un’applicazione primaria, come illustrato nel diagramma seguente.
 
-![Avvia disconnessione per mvpd specifico con endpoint di disconnessione](../../../../../assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-initiate-logout-within-primary-application-for-specific-mvpd-with-logout-endpoint.png)
+![Avvia disconnessione per mvpd specifico con endpoint di disconnessione](/help/authentication/assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-initiate-logout-within-primary-application-for-specific-mvpd-with-logout-endpoint.png)
 
 *Avvia disconnessione per mvpd specifico con endpoint di disconnessione*
 
@@ -91,7 +91,7 @@ Seguire i passaggi forniti per implementare il flusso di logout di base per un M
    > 
    > Se la convalida non riesce, verrà generata una risposta di errore che fornirà informazioni aggiuntive conformi alla documentazione di [Codici di errore avanzati](../../../../features-standard/error-reporting/enhanced-error-codes.md).
 
-1. **Avvia disconnessione MVPD:** L&#39;applicazione di streaming legge `url` e utilizza un agente utente per avviare il flusso di disconnessione con MVPD. Il flusso può includere diversi reindirizzamenti ai sistemi MVPD. Tuttavia, il risultato è che MVPD esegue la pulizia interna e invia la conferma di disconnessione finale al backend di Adobe Pass.
+1. **Avvia disconnessione MVPD:** L&#39;applicazione di streaming legge `url` e utilizza un agente utente per avviare il flusso di disconnessione con MVPD. Il flusso può includere diversi reindirizzamenti ai sistemi MVPD. Tuttavia, il risultato è che MVPD esegue la pulizia interna e invia nuovamente la conferma di disconnessione finale al backend di Adobe Pass.
 
 1. **Indicare disconnessione completata:** L&#39;applicazione di streaming può attendere che l&#39;agente utente raggiunga il `redirectUrl` specificato e può utilizzarlo come segnale per visualizzare facoltativamente un messaggio specifico nell&#39;interfaccia utente.
 
@@ -119,7 +119,7 @@ Prima di avviare la disconnessione per un MVPD specifico senza un endpoint di di
 
 Segui i passaggi forniti per implementare il flusso di logout di base per un MVPD specifico senza un endpoint di logout eseguito all’interno di un’applicazione primaria, come illustrato nel diagramma seguente.
 
-![Avvia disconnessione per mvpd specifico senza endpoint di disconnessione](../../../../../assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-initiate-logout-within-primary-application-for-specific-mvpd-without-logout-endpoint.png)
+![Avvia disconnessione per mvpd specifico senza endpoint di disconnessione](/help/authentication/assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-initiate-logout-within-primary-application-for-specific-mvpd-without-logout-endpoint.png)
 
 *Avvia disconnessione per mvpd specifico senza endpoint di disconnessione*
 

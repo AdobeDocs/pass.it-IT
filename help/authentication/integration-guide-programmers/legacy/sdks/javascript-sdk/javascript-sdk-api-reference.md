@@ -2,7 +2,7 @@
 title: Riferimento API di JavaScript SDK
 description: Riferimento API di JavaScript SDK
 exl-id: 48d48327-14e6-46f3-9e80-557f161acd8a
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
 workflow-type: tm+mt
 source-wordcount: '2883'
 ht-degree: 0%
@@ -40,7 +40,7 @@ Queste funzioni avviano richieste di interazione con un MVPD. Tutte le chiamate 
 
 **Parametri:**
 
-- Adobe *inRequestorID* - Identificatore univoco assegnato al sito di origine durante la registrazione.
+- *inRequestorID* - Identificatore univoco assegnato da Adobe al sito di origine durante la registrazione.
 
 - *endpoint* - Questo parametro è facoltativo. Può corrispondere a uno dei seguenti valori:
 
@@ -50,8 +50,8 @@ Queste funzioni avviano richieste di interazione con un MVPD. Tutte le chiamate 
    - `setRequestor("IFC", ["http://sp.auth-dev.adobe.com/adobe-services"])`
 
 - *opzioni* - Oggetto JSON contenente il valore ID applicazione, le impostazioni senza aggiornamento del valore ID visitatore (disconnessione in background) e le impostazioni MVPD (iFrame). Tutti i valori sono facoltativi.
-   1. Se specificato, l’ID visitatore Experience Cloud viene riportato su tutte le chiamate di rete eseguite dalla libreria. Il valore può essere successivamente utilizzato per i rapporti di analisi avanzati.
-   2. Se l&#39;identificatore univoco dell&#39;applicazione è specificato -`applicationId` - il valore verrà aggiunto a tutte le chiamate successive effettuate dall&#39;applicazione come parte dell&#39;intestazione HTTP X-Device-Info. Questo valore può essere recuperato in seguito dai report [ESM](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md) utilizzando la query corretta.
+   1. Se specificato, l’ID visitatore di Experience Cloud viene segnalato su tutte le chiamate di rete eseguite dalla libreria. Il valore può essere successivamente utilizzato per i rapporti di analisi avanzati.
+   2. Se l&#39;identificatore univoco dell&#39;applicazione è specificato -`applicationId` - il valore verrà aggiunto a tutte le chiamate successive effettuate dall&#39;applicazione come parte dell&#39;intestazione HTTP X-Device-Info. Questo valore può essere recuperato in seguito dai report [ESM](/help/premium-workflow/esm/entitlement-service-monitoring-overview.md) utilizzando la query corretta.
 
   **Nota:** tutte le chiavi JSON fanno distinzione tra maiuscole e minuscole.
 
@@ -178,7 +178,7 @@ In caso di esito positivo, crea e memorizza un token di autenticazione per l’u
 
 ## checkAuthorization(inResourceID) {#checkauthorization(inresourceid)}
 
-**Descrizione:** Questo metodo viene utilizzato dall&#39;applicazione per controllare lo stato di autorizzazione per il cliente corrente e la risorsa specificata. Viene innanzitutto verificato lo stato di autenticazione. Se non viene autenticato, il callback tokenRequestFailed() viene attivato e il metodo viene chiuso. Se l’utente è autenticato, attiva anche il flusso di autorizzazione. Vedi i dettagli sul metodo [getAuthorization()] (#getAuthZ.
+**Descrizione:** Questo metodo viene utilizzato dall&#39;applicazione per controllare lo stato di autorizzazione per il cliente corrente e la risorsa specificata. Viene innanzitutto verificato lo stato di autenticazione. Se non viene autenticato, il callback tokenRequestFailed() viene attivato e il metodo viene chiuso. Se l’utente è autenticato, attiva anche il flusso di autorizzazione. Vedi i dettagli sul metodo [getAuthorization()]&#x200B;(#getAuthZ.
 
 >[!TIP]
 >
@@ -241,7 +241,7 @@ Esistono due tipi di metadati:
 
    - Se la chiave è `"TTL_AUTHZ"` e i parametri sono una matrice contenente l&#39;ID risorsa come stringa, la query viene eseguita per ottenere la scadenza del token di autorizzazione associato alla risorsa specificata.
 
-   - Se la chiave è `"DEVICEID"`, viene eseguita la query per ottenere l&#39;ID dispositivo corrente. Tieni presente che questa funzione è disabilitata per impostazione predefinita e i programmatori devono contattare Adobe per informazioni sull’abilitazione e le tariffe.
+   - Se la chiave è `"DEVICEID"`, viene eseguita la query per ottenere l&#39;ID dispositivo corrente. Questa funzione è disabilitata per impostazione predefinita e i programmatori devono contattare Adobe per informazioni sull’abilitazione e le tariffe.
 
    - Se key è incluso nel seguente elenco di tipi di metadati utente, un oggetto JSON contenente i metadati utente corrispondenti viene inviato alla funzione di callback [`setMetadataStatus()`](#setmetadatastatuskey-encrypted-data-setmetadatastatuskeyencrypteddata):
 
@@ -309,7 +309,7 @@ Ad esempio:
 **Descrizione:** Chiama questa funzione quando l&#39;utente ha selezionato un MVPD dall&#39;interfaccia utente di selezione del provider per inviare la selezione del provider all&#39;Access Enabler o chiama questa funzione con un parametro null nel caso in cui l&#39;utente abbia rifiutato l&#39;interfaccia utente di selezione del provider senza selezionare un provider.
 
 **Callback
-attivato:**[&#x200B; setAuthenticationStatus()](#setauthenticationstatusisauthenticated-errorcode), [sendTrackingData()](#sendtrackingdatatrackingeventtype-trackingdata-sendtrackingdatatrackingeventtypetrackingdata)
+attivato:**[ setAuthenticationStatus()](#setauthenticationstatusisauthenticated-errorcode), [sendTrackingData()](#sendtrackingdatatrackingeventtype-trackingdata-sendtrackingdatatrackingeventtypetrackingdata)
 
 </br>
 
@@ -415,7 +415,7 @@ Devi implementare questi callback per gestire le risposte alle chiamate di richi
 
 **Descrizione:** implementa questo callback se l&#39;utente ha selezionato un MVPD che richiede un iFrame in cui visualizzare l&#39;interfaccia utente della pagina di accesso per l&#39;autenticazione.
 
-**Attivato da:**&#x200B;[&#x200B; setSelectedProvider()](#setselectedproviderproviderid-setselectedprovider)
+**Attivato da:**[ setSelectedProvider()](#setselectedproviderproviderid-setselectedprovider)
 
 </br> [Torna all&#39;inizio](#top)
 
@@ -558,7 +558,7 @@ I dati sono specifici per ogni tipo di evento:
 
 </br>
 
-## setMetadataStatus(chiave, crittografata, dati) {#setMetadataStatus(key,encrypted,data)}
+## setMetadataStatus(chiave, crittografato, dati) {#setMetadataStatus(key,encrypted,data)}
 
 **Descrizione:** callback attivato dall&#39;Access Enabler che distribuisce i metadati richiesti tramite una chiamata `getMetadata()`.
 

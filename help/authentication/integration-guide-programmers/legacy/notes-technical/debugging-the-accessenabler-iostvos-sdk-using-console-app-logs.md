@@ -2,7 +2,7 @@
 title: Debug di AccessEnabler iOS/tvOS SDK tramite i registri app della console
 description: Debug di AccessEnabler iOS/tvOS SDK tramite i registri app della console
 exl-id: 0dad325e-db15-4ea0-a87a-75409eaf8d46
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
 workflow-type: tm+mt
 source-wordcount: '576'
 ht-degree: 0%
@@ -50,19 +50,19 @@ A seconda dei problemi esaminati, potrebbe essere utile includere o escludere i 
 
 Prima di tutto, per poter visualizzare i messaggi di registrazione emessi dal framework AccessEnabler, **è necessario** selezionare &quot;Include Info Messages&quot; (Includi messaggi di informazioni) e &quot;Include Debug Messages&quot; (Includi messaggi di debug) nella sezione Azione dell&#39;app Console, come illustrato nell&#39;immagine seguente.
 
-![](../../../assets/include-info-debug-msg.png)
+![](/help/authentication/assets/include-info-debug-msg.png)
 
 
 Per poter eseguire il debug della funzionalità di AccessEnabler iOS/tvOS SDK e **vedere** i registri del framework di AccessEnabler, è possibile:
 
 * Cerca nell&#39;app della console utilizzando l&#39;opzione **Sottosistema** che è uguale al valore com.adobe.pass.AccessEnabler come nell&#39;immagine seguente.
 
-![](../../../assets/subsys-console-app.png)
+![](/help/authentication/assets/subsys-console-app.png)
 
 * Cerca nell&#39;app della console utilizzando l&#39;opzione **Any** che contiene
   [Valore AccessEnabler] come nell&#39;immagine seguente.
 
-![](../../../assets/any-optn-console-app.png)
+![](/help/authentication/assets/any-optn-console-app.png)
 
 Oltre ai due criteri di cui sopra, è anche possibile utilizzare l&#39;opzione **Categoria** in combinazione con **Sottosistema** o **Qualsiasi (prefisso)** per cercare in modo esplicito i messaggi di livello **debug** o **errore** emessi dal SDK AccessEnabler iOS/tvOS.
 

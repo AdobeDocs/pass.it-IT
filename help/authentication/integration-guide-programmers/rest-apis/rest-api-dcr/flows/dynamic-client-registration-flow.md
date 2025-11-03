@@ -2,7 +2,7 @@
 title: Flusso di registrazione client dinamici
 description: Flusso di registrazione client dinamici
 exl-id: d881cf0a-de09-4b1d-a094-d5490f944796
-source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
+source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
 workflow-type: tm+mt
 source-wordcount: '564'
 ht-degree: 0%
@@ -25,8 +25,8 @@ ht-degree: 0%
 
 Prima di accedere alle API protette di Adobe Pass, assicurati di soddisfare i seguenti prerequisiti:
 
-* Un rappresentante del client deve creare un&#39;applicazione registrata come descritto nella sezione [Gestione applicazioni registrate](../dynamic-client-registration-overview.md#manage-registered-applications).
-* Un rappresentante del client deve scaricare e incorporare un&#39;istruzione software come descritto nella sezione [Gestione istruzioni software](../dynamic-client-registration-overview.md#manage-software-statements).
+* Un rappresentante del client deve creare un&#39;applicazione registrata come descritto nella sezione [Gestione applicazioni registrate](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md#manage-registered-applications).
+* Un rappresentante del client deve scaricare e incorporare un&#39;istruzione software come descritto nella sezione [Gestione istruzioni software](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md#manage-software-statements).
 
 >[!IMPORTANT]
 >
@@ -38,7 +38,7 @@ Prima di accedere alle API protette di Adobe Pass, assicurati di soddisfare i se
 
 Segui i passaggi forniti per accedere alle API protette da Adobe Pass, come illustrato nel diagramma seguente.
 
-![Accesso alle API protette di Adobe Pass](../../../../assets/dcr-api/dcr-api-access-adobe-pass-protected-apis.png)
+![Accesso alle API protette di Adobe Pass](/help//authentication/assets/dcr-api/dcr-api-access-adobe-pass-protected-apis.png)
 
 *Accesso alle API protette di Adobe Pass*
 
@@ -76,7 +76,7 @@ Segui i passaggi forniti per accedere alle API protette da Adobe Pass, come illu
 
    >[!IMPORTANT]
    >
-   > Per informazioni dettagliate su [Recupera token di accesso](../apis/dynamic-client-registration-apis-retrieve-access-token.md#request), consulta la documentazione API di:
+   > Per informazioni dettagliate su [Recupera token di accesso](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md#request), consulta la documentazione API di:
    >
    > * Tutti i parametri _required_, come `client_id`, `client_secret` e `grant_type`
    > * Tutte le intestazioni _required_, come `Content-Type`, `X-Device-Info`
@@ -86,7 +86,7 @@ Segui i passaggi forniti per accedere alle API protette da Adobe Pass, come illu
 
    >[!IMPORTANT]
    >
-   > Per informazioni dettagliate sulle informazioni fornite in una risposta del token di accesso, consulta la documentazione API [Recupera token di accesso](../apis/dynamic-client-registration-apis-retrieve-access-token.md#success).
+   > Per informazioni dettagliate sulle informazioni fornite in una risposta del token di accesso, consulta la documentazione API [Recupera token di accesso](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md#success).
    >
    > <br/>
    >
@@ -96,7 +96,7 @@ Segui i passaggi forniti per accedere alle API protette da Adobe Pass, come illu
    >
    > <br/>
    >
-   > Se la convalida non riesce, verrà generata una risposta di errore che fornirà informazioni aggiuntive conformi alla documentazione API [Recupera token di accesso](../apis/dynamic-client-registration-apis-retrieve-access-token.md#error).
+   > Se la convalida non riesce, verrà generata una risposta di errore che fornirà informazioni aggiuntive conformi alla documentazione API [Recupera token di accesso](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md#error).
 
    >[!TIP]
    >

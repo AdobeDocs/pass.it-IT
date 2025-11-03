@@ -2,7 +2,7 @@
 title: Registrazione applicazione Amazon FireOS
 description: Registrazione applicazione Amazon FireOS
 exl-id: 650fd4a2-dfc3-4c74-9b5b-6bea832a28ca
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
 workflow-type: tm+mt
 source-wordcount: '538'
 ht-degree: 0%
@@ -25,11 +25,11 @@ ht-degree: 0%
 
 A partire dalla versione 3.0 di FireOS AccessEnabler SDK, stiamo modificando il meccanismo di autenticazione con i server di Adobe. Invece di utilizzare una chiave pubblica e un sistema segreto per firmare l’ID richiedente, introduciamo il concetto di stringa di informativa software che può essere utilizzata per ottenere un token di accesso che viene successivamente utilizzato per tutte le chiamate effettuate da SDK ai nostri server. Oltre a una dichiarazione software, è necessario creare un collegamento profondo per l&#39;applicazione.
 
-Per ulteriori informazioni, vedere [Panoramica sulla registrazione client dinamica](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
+Per ulteriori informazioni, vedere [Panoramica sulla registrazione client dinamica](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
 
 ## Che cos&#39;è una dichiarazione software? {#what}
 
-Un rendiconto software è un token JWT che contiene informazioni sull’applicazione. Ogni applicazione deve disporre di una dichiarazione software univoca utilizzata dai nostri server per identificare l&#39;applicazione nel sistema Adobe. L&#39;istruzione software deve essere passata quando si inizializza AccessEnabler SDK e verrà utilizzata per registrare l&#39;applicazione con Adobe. Al momento della registrazione, SDK riceverà un ID client e un segreto client che verranno utilizzati per ottenere un token di accesso. Qualsiasi chiamata effettuata da SDK ai nostri server richiederà un token di accesso valido. SDK è responsabile della registrazione dell’applicazione, del recupero e dell’aggiornamento del token di accesso.
+Un rendiconto software è un token JWT che contiene informazioni sull’applicazione. Ogni applicazione deve disporre di una dichiarazione software univoca utilizzata dai nostri server per identificare l&#39;applicazione nel sistema Adobe. Quando si inizializza AccessEnabler SDK, è necessario trasmettere l&#39;istruzione software che verrà utilizzata per registrare l&#39;applicazione in Adobe. Al momento della registrazione, SDK riceverà un ID client e un segreto client che verranno utilizzati per ottenere un token di accesso. Qualsiasi chiamata effettuata da SDK ai nostri server richiederà un token di accesso valido. SDK è responsabile della registrazione dell’applicazione, del recupero e dell’aggiornamento del token di accesso.
 
 **Nota:** le istruzioni software sono specifiche per l&#39;app e non è possibile utilizzare una singola istruzione software per più applicazioni. Tieni presente che questo vale anche per le applicazioni che offrono accesso a più canali.
 
@@ -59,7 +59,7 @@ Un rendiconto software è un token JWT che contiene informazioni sull’applicaz
 
    Viene scaricato un file di testo. Utilizzarne il contenuto come informativa software.
 
-Per ulteriori informazioni, vedere [Dynamic Client Registration Management](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md#dynamic-client-registration-management).
+Per ulteriori informazioni, vedere [Dynamic Client Registration Management](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md#dynamic-client-registration-management).
 
 ### Se non hai accesso a Adobe TVE Dashboard:
 

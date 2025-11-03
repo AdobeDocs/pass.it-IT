@@ -2,9 +2,9 @@
 title: Domande frequenti su REST API V2
 description: Domande frequenti su REST API V2
 exl-id: 2dd74b47-126e-487b-b467-c16fa8cc14c1
-source-git-commit: 0b8ef6c6b326d1a9de52b24823886c708c2aad33
+source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
 workflow-type: tm+mt
-source-wordcount: '9682'
+source-wordcount: '9611'
 ht-degree: 0%
 
 ---
@@ -50,7 +50,7 @@ La fase di configurazione non è obbligatoria, l’applicazione client deve recu
 L’applicazione client può saltare questa fase nei seguenti scenari:
 
 * Utente già autenticato.
-* All&#39;utente viene offerto l&#39;accesso temporaneo tramite la funzionalità [TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md) di base o promozionale.
+* All&#39;utente viene offerto l&#39;accesso temporaneo tramite la funzionalità [TempPass](/help/premium-workflow/temporary-access/temp-pass-feature.md) di base o promozionale.
 * L’autenticazione dell’utente è scaduta, ma l’applicazione client ha memorizzato nella cache il MVPD selezionato in precedenza come scelta motivata dall’esperienza utente e richiede all’utente di confermare che è ancora un abbonato di quel MVPD.
 
 #### &#x200B;3. Che cos’è una configurazione e per quanto tempo è valida? {#configuration-phase-faq3}
@@ -88,7 +88,7 @@ L’applicazione client deve recuperare la configurazione solo quando l’utente
 L’applicazione client deve memorizzare nella cache le informazioni sulla risposta di configurazione in un archivio di memoria per evitare richieste non necessarie e migliorare l’esperienza utente nei seguenti casi:
 
 * Utente già autenticato.
-* All&#39;utente viene offerto l&#39;accesso temporaneo tramite la funzionalità [TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md) di base o promozionale.
+* All&#39;utente viene offerto l&#39;accesso temporaneo tramite la funzionalità [TempPass](/help/premium-workflow/temporary-access/temp-pass-feature.md) di base o promozionale.
 * L’autenticazione dell’utente è scaduta, ma l’applicazione client ha memorizzato nella cache il MVPD selezionato in precedenza come scelta motivata dall’esperienza utente e richiede all’utente di confermare che è ancora un abbonato di quel MVPD.
 
 #### &#x200B;6. L&#39;applicazione client può gestire il proprio elenco di MVPD? {#configuration-phase-faq6}
@@ -101,7 +101,7 @@ L&#39;applicazione client riceverebbe un [errore](/help/authentication/integrati
 
 L’applicazione client può filtrare l’elenco di MVPD forniti nella risposta di configurazione implementando un meccanismo personalizzato in base alla propria logica di business e ai requisiti, ad esempio la posizione dell’utente o la cronologia degli utenti della selezione precedente.
 
-L&#39;applicazione client può filtrare l&#39;elenco di [MVPD TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md) o MVPD con la relativa integrazione ancora in fase di sviluppo o test.
+L&#39;applicazione client può filtrare l&#39;elenco di [MVPD TempPass](/help/premium-workflow/temporary-access/temp-pass-feature.md) o MVPD con la relativa integrazione ancora in fase di sviluppo o test.
 
 #### &#x200B;8. Cosa succede se l’integrazione con un MVPD è disabilitata e contrassegnata come inattiva? {#configuration-phase-faq8}
 
@@ -144,7 +144,7 @@ La fase di autenticazione è obbligatoria; l’applicazione client deve autentic
 L’applicazione client può saltare questa fase nei seguenti scenari:
 
 * L’utente è già autenticato e il profilo è ancora valido.
-* All&#39;utente viene offerto l&#39;accesso temporaneo tramite la funzionalità [TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md) di base o promozionale.
+* All&#39;utente viene offerto l&#39;accesso temporaneo tramite la funzionalità [TempPass](/help/premium-workflow/temporary-access/temp-pass-feature.md) di base o promozionale.
 
 La gestione degli errori dell&#39;applicazione client richiede la gestione dei codici [error](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md#enhanced-error-codes-lists-rest-api-v2) (ad esempio `authenticated_profile_missing`, `authenticated_profile_expired`, `authenticated_profile_invalidated` e così via), che indicano che l&#39;applicazione client richiede l&#39;autenticazione dell&#39;utente.
 
@@ -245,7 +245,7 @@ Il profilo utente non può essere esteso oltre la sua validità senza l’intera
 
 Pertanto, l’applicazione client deve richiedere all’utente di autenticarsi nuovamente e interagire con la pagina di accesso di MVPD per aggiornare il proprio profilo sul sistema.
 
-Tuttavia, per gli MVPD che supportano [l&#39;autenticazione basata su home](/help/authentication/integration-guide-programmers/features-standard/hba-access/home-based-authentication.md) (HBA), l&#39;utente non dovrà immettere le credenziali.
+Tuttavia, per gli MVPD che supportano [l&#39;autenticazione basata su home](/help/premium-workflow/hba-access/home-based-authentication.md) (HBA), l&#39;utente non dovrà immettere le credenziali.
 
 #### &#x200B;10. Quali sono i casi d’uso per ogni endpoint Profili disponibile? {#authentication-phase-faq10}
 
@@ -269,7 +269,7 @@ L’endpoint SSO Profili ha uno scopo diverso e fornisce all’applicazione clie
 
 Per qualsiasi query successiva, è necessario utilizzare gli endpoint di base Profiles per determinare lo stato di autenticazione dell’utente, accedere alle informazioni sui metadati dell’utente, trovare il metodo utilizzato per l’autenticazione o l’entità utilizzata per fornire l’identità.
 
-Per ulteriori dettagli, fare riferimento ai documenti [Single Sign-On utilizzando i flussi dei partner](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md) e [Apple SSO Cookbook (REST API V2)](/help/authentication/integration-guide-programmers/features-standard/sso-access/partner-sso/apple-sso/apple-sso-cookbook-rest-api-v2.md).
+Per ulteriori dettagli, fare riferimento ai documenti [Single Sign-On utilizzando i flussi dei partner](/help/premium-workflow/sso-access/partner-sso/apple-sso/apple-sso-cookbook-rest-api-v2.md).
 
 #### &#x200B;11. Cosa deve fare l’applicazione client se l’utente dispone di più profili MVPD? {#authentication-phase-faq11}
 
@@ -341,7 +341,7 @@ Per garantire l&#39;efficienza ed evitare richieste non necessarie, l&#39;applic
 
 #### &#x200B;17. Qual è il numero massimo di richieste di polling che l&#39;applicazione client può inviare? {#authentication-phase-faq17}
 
-L&#39;applicazione client deve rispettare i limiti correnti definiti dal meccanismo di limitazione dell&#39;autenticazione di Adobe Pass [&#128279;](/help/authentication/integration-guide-programmers/throttling-mechanism.md#throttling-mechanism-limits).
+L&#39;applicazione client deve rispettare i limiti correnti definiti dal meccanismo di limitazione dell&#39;autenticazione di Adobe Pass [](/help/authentication/integration-guide-programmers/throttling-mechanism.md#throttling-mechanism-limits).
 
 La gestione degli errori dell&#39;applicazione client deve essere in grado di gestire il codice di errore [429 Troppe richieste](/help/authentication/integration-guide-programmers/throttling-mechanism.md#throttling-mechanism-response), che indica che l&#39;applicazione client ha superato il numero massimo di richieste consentito.
 
@@ -366,7 +366,7 @@ Alcuni attributi di metadati possono essere aggiornati durante il flusso di auto
 
 #### &#x200B;19. In che modo l&#39;applicazione client deve gestire l&#39;accesso danneggiato? {#authentication-phase-faq19}
 
-La [funzionalità di degradazione](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md) consente all&#39;applicazione client di mantenere un&#39;esperienza di streaming senza soluzione di continuità per gli utenti, anche quando i servizi di autenticazione o autorizzazione di MVPD incontrano problemi.
+La [funzionalità di degradazione](/help/premium-workflow/degraded-access/degradation-feature.md) consente all&#39;applicazione client di mantenere un&#39;esperienza di streaming senza soluzione di continuità per gli utenti, anche quando i servizi di autenticazione o autorizzazione di MVPD incontrano problemi.
 
 In sintesi, questo può garantire un accesso ininterrotto ai contenuti nonostante interruzioni temporanee del servizio MVPD.
 
@@ -376,7 +376,7 @@ Per ulteriori dettagli, consulta la documentazione sui [flussi di accesso danneg
 
 #### &#x200B;20. In che modo l&#39;applicazione client deve gestire l&#39;accesso temporaneo? {#authentication-phase-faq20}
 
-La funzionalità [TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md) consente all&#39;applicazione client di fornire accesso temporaneo all&#39;utente.
+La funzionalità [TempPass](/help/premium-workflow/temporary-access/temp-pass-feature.md) consente all&#39;applicazione client di fornire accesso temporaneo all&#39;utente.
 
 In sintesi, questo approccio può coinvolgere gli utenti fornendo un accesso limitato nel tempo ai contenuti o a un numero predefinito di titoli VOD per un periodo di tempo specificato.
 
@@ -640,7 +640,7 @@ La documentazione dell&#39;intestazione [X-Device-Info](/help/authentication/int
 
 Se l&#39;intestazione [X-Device-Info](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md) è mancante o contiene valori non corretti, la richiesta potrebbe essere classificata come proveniente da una piattaforma `unknown`.
 
-Questo può comportare che la richiesta venga trattata come non sicura e soggetta a regole più restrittive, ad esempio TTL di autenticazione più brevi. Inoltre, alcuni campi, ad esempio il dispositivo di streaming `connectionIp` e `connectionPort`, sono obbligatori per funzionalità quali [Autenticazione di base di base di Spectrum](/help/authentication/integration-guide-programmers/features-standard/hba-access/home-based-authentication.md).
+Questo può comportare che la richiesta venga trattata come non sicura e soggetta a regole più restrittive, ad esempio TTL di autenticazione più brevi. Inoltre, alcuni campi, ad esempio il dispositivo di streaming `connectionIp` e `connectionPort`, sono obbligatori per funzionalità quali [Autenticazione di base di base di Spectrum](/help/premium-workflow/hba-access/home-based-authentication.md).
 
 Anche quando la richiesta proviene da un server per conto di un dispositivo, il valore dell&#39;intestazione [X-Device-Info](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md) deve riflettere le informazioni effettive sul dispositivo di streaming.
 
@@ -864,25 +864,25 @@ Nella migrazione dagli SDK all’API REST V2 sono presenti modifiche di alto liv
 
 | Ambito | SDK | API REST V2 | Osservazioni |
 |--------------------------------------------|---------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Registrazione client dinamica (DCR) completa | Fornitura di istruzioni software al costruttore | [POST <br/> /o/client/register](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-client-credentials.md) <br/> [GET <br/> /o/client/token](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md) | Per ulteriori dettagli, fare riferimento ai seguenti documenti: <br/> <ul><li>[Panoramica sulla registrazione client dinamica](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)</li><li>[Flusso di registrazione client dinamico](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/flows/dynamic-client-registration-flow.md)</li></ul> |
+| Registrazione client dinamica (DCR) completa | Fornitura di istruzioni software al costruttore | [POST <br/> /o/client/register](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)</li><li>[Flusso di registrazione client dinamico](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/flows/dynamic-client-registration-flow.md)</li></ul> |
 
 ###### SDK di AccessEnabler iOS/tvOS
 
 | Ambito | SDK | API REST V2 | Osservazioni |
 |--------------------------------------------|---------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Registrazione client dinamica (DCR) completa | Fornitura di istruzioni software al costruttore | [POST <br/> /o/client/register](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-client-credentials.md) <br/> [GET <br/> /o/client/token](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md) | Per ulteriori dettagli, fare riferimento ai seguenti documenti: <br/> <ul><li>[Panoramica sulla registrazione client dinamica](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)</li><li>[Flusso di registrazione client dinamico](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/flows/dynamic-client-registration-flow.md)</li></ul> |
+| Registrazione client dinamica (DCR) completa | Fornitura di istruzioni software al costruttore | [POST <br/> /o/client/register](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)</li><li>[Flusso di registrazione client dinamico](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/flows/dynamic-client-registration-flow.md)</li></ul> |
 
 ###### SDK di AccessEnabler Android
 
 | Ambito | SDK | API REST V2 | Osservazioni |
 |--------------------------------------------|---------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Registrazione client dinamica (DCR) completa | Fornitura di istruzioni software al costruttore | [POST <br/> /o/client/register](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-client-credentials.md) <br/> [GET <br/> /o/client/token](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md) | Per ulteriori dettagli, fare riferimento ai seguenti documenti: <br/> <ul><li>[Panoramica sulla registrazione client dinamica](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)</li><li>[Flusso di registrazione client dinamico](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/flows/dynamic-client-registration-flow.md)</li></ul> |
+| Registrazione client dinamica (DCR) completa | Fornitura di istruzioni software al costruttore | [POST <br/> /o/client/register](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)</li><li>[Flusso di registrazione client dinamico](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/flows/dynamic-client-registration-flow.md)</li></ul> |
 
 ###### SDK di AccessEnabler FireOS
 
 | Ambito | SDK | API REST V2 | Osservazioni |
 |--------------------------------------------|---------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Registrazione client dinamica (DCR) completa | Fornitura di istruzioni software al costruttore | [POST <br/> /o/client/register](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-client-credentials.md) <br/> [GET <br/> /o/client/token](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md) | Per ulteriori dettagli, fare riferimento ai seguenti documenti: <br/> <ul><li>[Panoramica sulla registrazione client dinamica](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)</li><li>[Flusso di registrazione client dinamico](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/flows/dynamic-client-registration-flow.md)</li></ul> |
+| Registrazione client dinamica (DCR) completa | Fornitura di istruzioni software al costruttore | [POST <br/> /o/client/register](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)</li><li>[Flusso di registrazione client dinamico](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/flows/dynamic-client-registration-flow.md)</li></ul> |
 
 +++
 

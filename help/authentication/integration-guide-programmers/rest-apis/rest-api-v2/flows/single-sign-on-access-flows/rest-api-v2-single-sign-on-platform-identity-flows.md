@@ -2,7 +2,7 @@
 title: Single Sign-On - Identità piattaforma - Flussi
 description: REST API V2 - Single Sign-On - Identità piattaforma - Flussi
 exl-id: 5200e851-84e8-4cb4-b068-63b91a2a8945
-source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
+source-git-commit: 2afe9ea2a814817757f1ab28484a84466da68d62
 workflow-type: tm+mt
 source-wordcount: '1855'
 ht-degree: 0%
@@ -33,8 +33,8 @@ Per ulteriori dettagli sull&#39;intestazione `Adobe-Subject-Token` / `X-Roku-Res
 
 >[!MORELIKETHIS]
 > 
-> * [Manuale Amazon SSO](/help/authentication/integration-guide-programmers/features-standard/sso-access/platform-sso/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v2.md)
-> * [Manuale Roku SSO](/help/authentication/integration-guide-programmers/features-standard/sso-access/platform-sso/roku-single-sign-on/roku-sso-cookbook-rest-api-v2.md)
+> * [Manuale Amazon SSO](/help/premium-workflow/sso-access/platform-sso/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v2.md)
+> * [Manuale Roku SSO](/help/premium-workflow/sso-access/platform-sso/roku-single-sign-on/roku-sso-cookbook-rest-api-v2.md)
 
 ## Eseguire l’autenticazione tramite single sign-on utilizzando l’identità della piattaforma {#perform-authentication-through-single-sign-on-using-platform-identity}
 
@@ -62,7 +62,7 @@ Prima di eseguire il flusso di autenticazione tramite single sign-on utilizzando
 
 Per implementare il flusso di autenticazione tramite single sign-on, esegui i passaggi forniti utilizzando un’identità di piattaforma, come illustrato nel diagramma seguente.
 
-![Eseguire l&#39;autenticazione tramite Single Sign-On utilizzando l&#39;identità della piattaforma](../../../../../assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-perform-authentication-through-single-sign-on-using-platform-identity-flow.png)
+![Eseguire l&#39;autenticazione tramite Single Sign-On utilizzando l&#39;identità della piattaforma](/help/authentication/assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-perform-authentication-through-single-sign-on-using-platform-identity-flow.png)
 
 *Eseguire l&#39;autenticazione tramite Single Sign-On utilizzando l&#39;identità della piattaforma*
 
@@ -232,7 +232,7 @@ Prima di eseguire il flusso di autorizzazione tramite single sign-on utilizzando
 
 Eseguire i passaggi forniti per implementare il flusso di autorizzazione tramite single sign-on utilizzando un&#39;identità di piattaforma, come illustrato nel diagramma seguente.
 
-![Recuperare le decisioni di autorizzazione tramite Single Sign-On utilizzando l&#39;identità della piattaforma](../../../../../assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-retrieve-authorization-decisions-through-single-sign-on-using-platform-identity-flow.png)
+![Recuperare le decisioni di autorizzazione tramite Single Sign-On utilizzando l&#39;identità della piattaforma](/help/authentication/assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-retrieve-authorization-decisions-through-single-sign-on-using-platform-identity-flow.png)
 
 *Recuperare le decisioni di autorizzazione tramite Single Sign-On utilizzando l&#39;identità della piattaforma*
 

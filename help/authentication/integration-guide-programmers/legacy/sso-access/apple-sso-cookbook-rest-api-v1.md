@@ -2,7 +2,7 @@
 title: Manuale Apple SSO (REST API V1)
 description: Manuale Apple SSO (REST API V1)
 exl-id: 072a011f-e1bb-4d3e-bcb5-697f2d1739cc
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
 workflow-type: tm+mt
 source-wordcount: '1496'
 ht-degree: 0%
@@ -45,17 +45,17 @@ Per beneficiare dell&#39;esperienza utente SSO di Apple, l&#39;applicazione deve
 
 * [Esiste un token di autenticazione Adobe valido?](#step1)
 * [L’utente ha effettuato l’accesso tramite Partner SSO?](#step2)
-* [Recupera configurazione Adobe](#step3)
-* [Avvia flusso di lavoro SSO partner con Adobe config](#step4)
+* [Recupera la configurazione di Adobe](#step3)
+* [Avvia flusso di lavoro SSO partner con configurazione Adobe](#step4)
 * [L’accesso dell’utente è riuscito?](#step5)
 * [Ottieni una richiesta di profilo da Adobe per il MVPD selezionato](#step6)
-* [Inoltra la richiesta Adobe all’SSO partner per ottenere il profilo](#step7)
+* [Inoltrare la richiesta Adobe all’SSO partner per ottenere il profilo](#step7)
 * [Scambia il profilo SSO Partner con un token di autenticazione Adobe](#step8)
 * [Il token Adobe è stato generato correttamente?](#step9)
 * [Avvia flusso di lavoro di autenticazione regolare](#step10)
 * [Procedi con i flussi di autorizzazione](#step11)
 
-![](../../../assets/rest-api-v1/apple-sso-cookbook-rest-api-v1.png)
+![](/help/authentication/assets/rest-api-v1/apple-sso-cookbook-rest-api-v1.png)
 
 #### Passaggio: &quot;Esiste un token di autenticazione Adobe valido?&quot; {#step1}
 
@@ -141,7 +141,7 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 >
 > **<u>Suggerimento pro:</u>** Tieni presente le proprietà di MVPD: *`enablePlatformServices`*, *`boardingStatus`*, *`displayInPlatformPicker`*, *`platformMappingId`*, *`requiredMetadataFields`* e presta particolare attenzione ai commenti presentati nei frammenti di codice di altri passaggi.
 
-#### Passaggio &quot;Avviare il flusso di lavoro SSO del partner con Adobe config&quot; {#step4}
+#### Passaggio &quot;Avviare il flusso di lavoro SSO dei partner con la configurazione di Adobe&quot; {#step4}
 
 >[!TIP]
 >
@@ -255,7 +255,7 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 
 >[!TIP]
 >
-> **<u>Suggerimento pro:</u>** Tieni presente lo snippet di codice del passaggio [&quot;Avvia SSO partner con Adobe config&quot;](#step4). L&#39;accesso utente ha esito positivo nel caso in cui *`vsaMetadata!.accountProviderIdentifier`* contenga un valore valido e la data corrente non abbia superato il valore *`vsaMetadata!.authenticationExpirationDate`*.
+> **<u>Suggerimento pro:</u>** Tieni presente lo snippet di codice del passaggio [&quot;Avvia il flusso di lavoro SSO del partner con la configurazione di Adobe&quot;](#step4). L&#39;accesso utente ha esito positivo nel caso in cui *`vsaMetadata!.accountProviderIdentifier`* contenga un valore valido e la data corrente non abbia superato il valore *`vsaMetadata!.authenticationExpirationDate`*.
 
 #### Passaggio &quot;Ottenere una richiesta di profilo da Adobe per il MVPD selezionato&quot; {#step6}
 
@@ -352,7 +352,7 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 
 >[!TIP]
 >
-> **<u>Suggerimento pro:</u>** Tieni presente il frammento di codice dal passaggio [&quot;Inoltra la richiesta Adobe all&#39;SSO partner per ottenere il profilo&quot;](#step7). *`vsaMetadata!.samlAttributeQueryResponse!`* rappresenta *`SAMLResponse`*, che deve essere passato a [Token Exchange](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/token-exchange.md) e richiede la manipolazione delle stringhe e la codifica (*Base64* codificata e *URL* codificata successivamente) prima di effettuare la chiamata.
+> **<u>Suggerimento pro:</u>** Tieni presente il frammento di codice del passaggio [&quot;Inoltra la richiesta Adobe all&#39;SSO partner per ottenere il profilo&quot;](#step7). *`vsaMetadata!.samlAttributeQueryResponse!`* rappresenta *`SAMLResponse`*, che deve essere passato a [Token Exchange](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/token-exchange.md) e richiede la manipolazione delle stringhe e la codifica (*Base64* codificata e *URL* codificata successivamente) prima di effettuare la chiamata.
 
 #### Passaggio: &quot;Il token Adobe è stato generato correttamente?&quot; {#step9}
 
@@ -392,7 +392,7 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 
 ### Disconnetti {#apple-sso-cookbook-rest-api-v1-logout}
 
-Il framework dell&#39;account del sottoscrittore video [1&rbrace; non fornisce un&#39;API per disconnettere a livello di programmazione gli utenti che hanno effettuato l&#39;accesso al proprio account del provider TV a livello di sistema del dispositivo. &#x200B;](https://developer.apple.com/documentation/videosubscriberaccount) Pertanto, affinché la disconnessione diventi effettiva, l&#39;utente finale dovrà disconnettersi esplicitamente da *`Settings -> TV Provider`* su iOS/iPadOS o da *`Settings -> Accounts -> TV Provider`* su tvOS. L&#39;altra opzione che l&#39;utente avrebbe è quella di revocare l&#39;autorizzazione per accedere alle informazioni sull&#39;abbonamento dell&#39;utente dalla sezione delle impostazioni specifiche dell&#39;applicazione (accesso al provider TV).
+Il framework dell&#39;account del sottoscrittore video [1} non fornisce un&#39;API per disconnettere a livello di programmazione gli utenti che hanno effettuato l&#39;accesso al proprio account del provider TV a livello di sistema del dispositivo. ](https://developer.apple.com/documentation/videosubscriberaccount) Pertanto, affinché la disconnessione diventi effettiva, l&#39;utente finale dovrà disconnettersi esplicitamente da *`Settings -> TV Provider`* su iOS/iPadOS o da *`Settings -> Accounts -> TV Provider`* su tvOS. L&#39;altra opzione che l&#39;utente avrebbe è quella di revocare l&#39;autorizzazione per accedere alle informazioni sull&#39;abbonamento dell&#39;utente dalla sezione delle impostazioni specifiche dell&#39;applicazione (accesso al provider TV).
 
 >[!TIP]
 >

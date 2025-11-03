@@ -2,7 +2,7 @@
 title: Dashboard
 description: Scopri la home page di TVE Dashboard.
 exl-id: 3073cd86-89f8-4c65-996b-24edda24f25b
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
 workflow-type: tm+mt
 source-wordcount: '276'
 ht-degree: 0%
@@ -31,7 +31,7 @@ In questa sezione puoi accedere alla documentazione pubblica direttamente dal me
 * **Aggiornamenti del database**: numero di modifiche di configurazione apportate all&#39;ambiente corrente. Selezionare **Visualizza altro nella sezione Registro modifiche** per accedere alle informazioni dettagliate nella sezione [Registro modifiche](tve-dashboard-changes-log.md).
 * **Dashboard ESM**: tieni d&#39;occhio la prossima dashboard ESM, che offre metriche approfondite sull&#39;utilizzo delle proprietà nell&#39;ambiente corrente. Questa funzionalità sarà accessibile in aggiornamenti futuri.
 
-![Schermata introduttiva](../assets/tve-dashboard/new-tve-dashboard/dashboard/dashboard-welcome-panel-view.png)
+![Schermata introduttiva](/help/authentication/assets/tve-dashboard/new-tve-dashboard/dashboard/dashboard-welcome-panel-view.png)
 
 *Schermata introduttiva*
 
@@ -43,7 +43,7 @@ Questa sezione presenta le 10 modifiche di configurazione più recenti, tra cui:
 * **Inviato da**: account responsabile della modifica.
 * **Data push**: la data in cui è stata apportata la modifica.
 
-![Stato configurazione di un registro modifiche](../assets/tve-dashboard/new-tve-dashboard/dashboard/dashboard-configuration-status-panel-view.png)
+![Stato configurazione di un registro modifiche](/help/authentication/assets/tve-dashboard/new-tve-dashboard/dashboard/dashboard-configuration-status-panel-view.png)
 
 *Stato configurazione di un registro modifiche*
 

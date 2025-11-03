@@ -2,7 +2,7 @@
 title: Ambienti dashboard TVE
 description: Comprendi l’utilizzo e il funzionamento dei diversi ambienti nel dashboard TVE.
 exl-id: 591becb8-2f6c-46e0-b108-c64e6df69f89
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
 workflow-type: tm+mt
 source-wordcount: '346'
 ht-degree: 0%
@@ -25,7 +25,7 @@ All’interno di ogni ambiente, sono disponibili due profili diversi:
 
 * **Gestione temporanea**: il profilo di gestione temporanea si connette al server di gestione temporanea di MVPD per il test e la convalida delle integrazioni prima della pubblicazione.
 
-* **Produzione**: il profilo di produzione si connette al profilo di produzione MVPD per le attività di produzione effettive.
+* **Produzione**: il profilo di produzione si connette al profilo di produzione di MVPD per le attività di produzione effettive.
 
 ## Casi d’uso
 
@@ -60,7 +60,7 @@ Segui i passaggi per passare da un ambiente dashboard TVE di autenticazione Adob
 
 1. Seleziona l&#39;ambiente di staging o produzione richiesto dal menu a discesa **Ambiente** nella parte superiore del pannello a sinistra.
 
-   ![Menu a discesa degli ambienti del dashboard TVE](../assets/tve-dashboard/new-tve-dashboard/dashboard/dashboard-environment-menu.png)
+   ![Menu a discesa degli ambienti del dashboard TVE](/help/authentication/assets/tve-dashboard/new-tve-dashboard/dashboard/dashboard-environment-menu.png)
 
    *Menu a discesa dell&#39;ambiente del dashboard TVE di autenticazione di Adobe Pass*
 

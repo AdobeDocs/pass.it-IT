@@ -2,7 +2,7 @@
 title: Rapporti
 description: Scopri come i dati vengono aggregati nei rapporti della dashboard TVE.
 exl-id: d8ba48de-d743-4dc2-866c-7d6e3ff94773
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
 workflow-type: tm+mt
 source-wordcount: '976'
 ht-degree: 0%
@@ -19,7 +19,7 @@ La sezione **Report** del dashboard TVE fornisce l&#39;accesso ai dati aggregati
 
 I report ti consentono di filtrare i dati e raccogliere informazioni tra [canali o MVPD specifici](#selecting-specific-channels-mvpds). Puoi anche esportare i rapporti in un file CSV per ulteriori analisi.
 
-## Visualizzare i rapporti {#view-reports}
+## Visualizzazione dei rapporti {#view-reports}
 
 Per visualizzare un rapporto specifico, segui la procedura riportata di seguito.
 
@@ -29,7 +29,7 @@ Per visualizzare un rapporto specifico, segui la procedura riportata di seguito.
    * [Rapporti TTL AuthZ](#authz-ttl-reports)
    * [Rapporti SSO](#sso-reports)
 
-   ![Tipo di report](../assets/tve-dashboard/new-tve-dashboard/reports/reports-tabs-view.png)
+   ![Tipo di report](/help/authentication/assets/tve-dashboard/new-tve-dashboard/reports/reports-tabs-view.png)
 
    *Tipo di report*
 
@@ -39,7 +39,7 @@ I rapporti TTL di autenticazione, denominati anche TTL (Authentication Time-To-L
 
 È inoltre possibile visualizzare e scaricare dati per [canali specifici o MVPD](#selecting-specific-channels-mvpds).
 
-![Esporta rapporti TTL AuthN](../assets/tve-dashboard/new-tve-dashboard/reports/reports-authn-ttl-export-button.png)
+![Esporta rapporti TTL AuthN](/help/authentication/assets/tve-dashboard/new-tve-dashboard/reports/reports-authn-ttl-export-button.png)
 
 *Esporta rapporti TTL AuthN*
 
@@ -55,7 +55,7 @@ Nei rapporti TTL di AuthZ, denominati anche TTL (Authorization Time-To-Live), vi
 
 Puoi anche visualizzare e scaricare i dati per [canali specifici o MVPD](#selecting-specific-channels-mvpds).
 
-![Esporta rapporti TTL AuthZ](../assets/tve-dashboard/new-tve-dashboard/reports/reports-authz-ttl-export-button.png)
+![Esporta rapporti TTL AuthZ](/help/authentication/assets/tve-dashboard/new-tve-dashboard/reports/reports-authz-ttl-export-button.png)
 
 *Esporta rapporti TTL AuthZ*
 
@@ -71,7 +71,7 @@ I report SSO, denominati anche single sign-on, visualizzano lo stato di single s
 
 È inoltre possibile visualizzare e scaricare dati per [canali specifici o MVPD](#selecting-specific-channels-mvpds).
 
-![Esporta report SSO](../assets/tve-dashboard/new-tve-dashboard/reports/reports-sso-export-button.png)
+![Esporta report SSO](/help/authentication/assets/tve-dashboard/new-tve-dashboard/reports/reports-sso-export-button.png)
 
 *Esporta report SSO*
 
@@ -129,7 +129,7 @@ Per generare un rapporto per canali specifici:
 
 1. Selezionare il menu a discesa **Canali inclusi** nella parte superiore del report selezionato.
 
-   ![Menu a discesa Canali inclusi](../assets/tve-dashboard/new-tve-dashboard/reports/reports-included-channels-menu.png)
+   ![Menu a discesa Canali inclusi](/help/authentication/assets/tve-dashboard/new-tve-dashboard/reports/reports-included-channels-menu.png)
 
    *Menu a discesa Canali inclusi*
 
@@ -145,7 +145,7 @@ Per generare un rapporto per MVPD specifici:
 
 1. Selezionare il menu a discesa **MVPDs** inclusi nella parte superiore del report selezionato.
 
-   ![Menu a discesa MVPD incluso](../assets/tve-dashboard/new-tve-dashboard/reports/reports-included-mvpds-menu.png)
+   ![Menu a discesa MVPD incluso](/help/authentication/assets/tve-dashboard/new-tve-dashboard/reports/reports-included-mvpds-menu.png)
 
    *Menu a discesa MVPD incluso*
 

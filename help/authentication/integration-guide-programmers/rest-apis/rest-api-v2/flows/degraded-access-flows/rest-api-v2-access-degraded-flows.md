@@ -2,7 +2,7 @@
 title: Flussi di accesso danneggiati
 description: REST API V2 - Flussi di accesso danneggiati
 exl-id: 9276f5d9-8b1a-4282-8458-0c1e1e06bcf5
-source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
+source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
 workflow-type: tm+mt
 source-wordcount: '1615'
 ht-degree: 0%
@@ -25,7 +25,7 @@ ht-degree: 0%
 
 Degradazione consente di bypassare temporaneamente endpoint specifici di autenticazione e autorizzazione di MVPD. Di solito, il programmatore avvia questa azione, ma indipendentemente da chi attiva un evento di degrado, l’azione dipende da accordi precedenti conclusi con gli MVPD interessati.
 
-Per ulteriori dettagli sulla funzione di degradazione, consulta la documentazione di [degradazione](../../../../features-premium/degraded-access/degradation-feature.md).
+Per ulteriori dettagli sulla funzione di degradazione, consulta la documentazione di [degradazione](/help/premium-workflow/degraded-access/degradation-feature.md).
 
 I flussi di accesso danneggiati consentono di eseguire query per i seguenti scenari:
 
@@ -55,7 +55,7 @@ Prima di eseguire il flusso di autenticazione durante l’applicazione della deg
 
 Segui i passaggi forniti per implementare il flusso di autenticazione mentre viene applicata la degradazione, come illustrato nel diagramma seguente.
 
-![Eseguire l&#39;autenticazione durante l&#39;applicazione della degradazione](../../../../../assets/rest-api-v2/flows/degraded-access-flows/rest-api-v2-perform-authentication-while-degradation-is-applied-flow.png)
+![Eseguire l&#39;autenticazione durante l&#39;applicazione della degradazione](/help/authentication/assets/rest-api-v2/flows/degraded-access-flows/rest-api-v2-perform-authentication-while-degradation-is-applied-flow.png)
 
 *Eseguire l&#39;autenticazione durante l&#39;applicazione della degradazione*
 
@@ -123,7 +123,7 @@ Prima di recuperare le decisioni di autorizzazione durante l’applicazione dell
 
 Segui i passaggi forniti per implementare il flusso di autorizzazione durante l’applicazione della degradazione, come illustrato nel diagramma seguente.
 
-![Recuperare le decisioni di autorizzazione durante l&#39;applicazione della riduzione di livello](../../../../../assets/rest-api-v2/flows/degraded-access-flows/rest-api-v2-retrieve-authorization-decisions-while-degradation-is-applied-flow.png)
+![Recuperare le decisioni di autorizzazione durante l&#39;applicazione della riduzione di livello](/help/authentication/assets/rest-api-v2/flows/degraded-access-flows/rest-api-v2-retrieve-authorization-decisions-while-degradation-is-applied-flow.png)
 
 *Recuperare le decisioni di autorizzazione durante l&#39;applicazione della riduzione di livello*
 
@@ -189,7 +189,7 @@ Prima di recuperare le decisioni di preautorizzazione durante l’applicazione d
 
 Segui i passaggi forniti per implementare il flusso di preautorizzazione mentre viene applicata la degradazione, come mostrato nel diagramma seguente.
 
-![Recupera le decisioni di preautorizzazione durante l&#39;applicazione della degradazione](../../../../../assets/rest-api-v2/flows/degraded-access-flows/rest-api-v2-retrieve-preauthorization-decisions-while-degradation-is-applied-flow.png)
+![Recupera le decisioni di preautorizzazione durante l&#39;applicazione della degradazione](/help/authentication/assets/rest-api-v2/flows/degraded-access-flows/rest-api-v2-retrieve-preauthorization-decisions-while-degradation-is-applied-flow.png)
 
 *Recupera le decisioni di preautorizzazione durante l&#39;applicazione della degradazione*
 
@@ -263,7 +263,7 @@ Prima di recuperare il profilo per un MVPD specifico durante l’applicazione de
 
 Segui i passaggi forniti per implementare il flusso di recupero del profilo per un MVPD specifico mentre viene applicata la degradazione, come illustrato nel diagramma seguente.
 
-![Recupera il profilo durante l&#39;applicazione della degradazione](../../../../../assets/rest-api-v2/flows/degraded-access-flows/rest-api-v2-retrieve-profile-while-degradation-is-applied-flow.png)
+![Recupera il profilo durante l&#39;applicazione della degradazione](/help/authentication/assets/rest-api-v2/flows/degraded-access-flows/rest-api-v2-retrieve-profile-while-degradation-is-applied-flow.png)
 
 *Recupera il profilo durante l&#39;applicazione della degradazione*
 

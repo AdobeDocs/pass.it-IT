@@ -2,7 +2,7 @@
 title: Autorizzazione di base - Applicazione principale - Flusso
 description: REST API V2 - Autorizzazione di base - Applicazione principale - Flusso
 exl-id: 46bc9326-966e-44fc-8546-2f58be01b7bc
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 92417dd4161be8ba97535404e262fd26d67383e4
 workflow-type: tm+mt
 source-wordcount: '603'
 ht-degree: 0%
@@ -19,7 +19,7 @@ ht-degree: 0%
 >
 > L&#39;implementazione REST API V2 è limitata dalla documentazione del [meccanismo di limitazione](/help/authentication/integration-guide-programmers/throttling-mechanism.md).
 
-Il **flusso di autorizzazione** all&#39;interno del diritto di autenticazione di Adobe Pass consente all&#39;applicazione di streaming di determinare se un MVPD consente o nega la richiesta dell&#39;utente di inviare contenuti in streaming. Se la decisione è `Permit`, la risposta include un token multimediale. Il server di Adobe Pass firma il token multimediale e consente all’applicazione di streaming di utilizzare la libreria di verificatori del token multimediale per verificarne l’autenticità prima che il flusso venga rilasciato.
+Il **flusso di autorizzazione** nell&#39;ambito del diritto di autenticazione di Adobe Pass consente all&#39;applicazione di streaming di determinare se un MVPD consente o nega la richiesta dell&#39;utente di inviare contenuti in streaming. Se la decisione è `Permit`, la risposta include un token multimediale. Il server di Adobe Pass firma il token multimediale e consente all’applicazione di streaming di utilizzare la libreria di verificatori del token multimediale per verificarne l’autenticità prima che il flusso venga rilasciato.
 
 La verifica con la libreria Media Token Verifier deve avvenire sul servizio back-end dell’applicazione di streaming collegato nella catena di autorizzazioni per il rilascio di un flusso dalla rete CDN.
 
@@ -37,9 +37,9 @@ Prima di recuperare le decisioni di autorizzazione utilizzando un MVPD specifico
 
 ### Flusso di lavoro {#workflow-retrieve-authorization-decisions-using-specific-mvpd}
 
-Segui i passaggi forniti per implementare il flusso di autorizzazione di base utilizzando un MVPD specifico eseguito all’interno di un’applicazione primaria, come illustrato nel diagramma seguente.
+Segui i passaggi forniti per implementare il flusso di autorizzazione di base utilizzando un MVPD specifico eseguito all’interno di un’applicazione principale, come illustrato nel diagramma seguente.
 
-![Recupera le decisioni di autorizzazione utilizzando mvpd](../../../../../assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-retrieve-authorization-decisions-within-primary-application-using-specific-mvpd.png) specifico
+![Recupera le decisioni di autorizzazione utilizzando mvpd](/help/authentication/assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-retrieve-authorization-decisions-within-primary-application-using-specific-mvpd.png) specifico
 
 *Recupera le decisioni di autorizzazione utilizzando mvpd* specifico
 
