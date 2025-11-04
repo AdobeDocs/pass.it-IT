@@ -239,7 +239,7 @@ La **documentazione API di Privacy Service** descrive in modo approfondito come 
 **Visualizza chiamate API con Postman (un software gratuito di terze parti):**
 
 * [Raccolta Postman API Privacy Service su GitHub](https://github.com/adobe/experience-platform-postman-samples/blob/master/apis/experience-platform/Privacy%20Service%20API.postman_collection.json)
-* [Guida video per la creazione dell&#39;ambiente Postman](https://video.tv.adobe.com/v/28832)
+* [Guida video per la creazione dell&#39;ambiente Postman](https://video.tv.adobe.com/v/36258?captions=ita)
 * [Passaggi per importare ambienti e raccolte in Postman](https://learning.postman.com/docs/running-collections/intro-to-collection-runs/)
 
 
