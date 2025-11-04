@@ -309,7 +309,7 @@ Ad esempio:
 **Descrizione:** Chiama questa funzione quando l&#39;utente ha selezionato un MVPD dall&#39;interfaccia utente di selezione del provider per inviare la selezione del provider all&#39;Access Enabler o chiama questa funzione con un parametro null nel caso in cui l&#39;utente abbia rifiutato l&#39;interfaccia utente di selezione del provider senza selezionare un provider.
 
 **Callback
-attivato:**[&#x200B; setAuthenticationStatus()](#setauthenticationstatusisauthenticated-errorcode), [sendTrackingData()](#sendtrackingdatatrackingeventtype-trackingdata-sendtrackingdatatrackingeventtypetrackingdata)
+attivato:**[ setAuthenticationStatus()](#setauthenticationstatusisauthenticated-errorcode), [sendTrackingData()](#sendtrackingdatatrackingeventtype-trackingdata-sendtrackingdatatrackingeventtypetrackingdata)
 
 </br>
 
@@ -415,7 +415,7 @@ Devi implementare questi callback per gestire le risposte alle chiamate di richi
 
 **Descrizione:** implementa questo callback se l&#39;utente ha selezionato un MVPD che richiede un iFrame in cui visualizzare l&#39;interfaccia utente della pagina di accesso per l&#39;autenticazione.
 
-**Attivato da:**&#x200B;[&#x200B; setSelectedProvider()](#setselectedproviderproviderid-setselectedprovider)
+**Attivato da:**[ setSelectedProvider()](#setselectedproviderproviderid-setselectedprovider)
 
 </br> [Torna all&#39;inizio](#top)
 

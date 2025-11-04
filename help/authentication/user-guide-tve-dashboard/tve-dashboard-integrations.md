@@ -305,7 +305,7 @@ Per creare una nuova integrazione con un nuovo MVPD nella configurazione corrent
    >
    >Non modificare gli endpoint predefiniti in alcun flusso, a meno che non sia espressamente indicato da MVPD.
 
-   ![Seleziona endpoint &#x200B;](/help/authentication/assets/tve-dashboard/new-tve-dashboard/integrations/integration-new-integration-select-endpoints-panel-view.png)
+   ![Seleziona endpoint ](/help/authentication/assets/tve-dashboard/new-tve-dashboard/integrations/integration-new-integration-select-endpoints-panel-view.png)
 
    *Seleziona endpoint*
 

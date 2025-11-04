@@ -63,7 +63,7 @@ Per aggiungere un nuovo canale per il programmatore selezionato, selezionare **A
 
 In questa scheda viene visualizzato un elenco di [certificati disponibili](#available-certificates) utilizzati nei flussi di crittografia dei metadati utente. Vengono visualizzati i dettagli di ogni certificato, tra cui:
 
-* Lo stato (se abilitato o meno per la crittografia dei metadati dell&#39;utente **&#x200B;**)
+* Lo stato (se abilitato o meno per la crittografia dei metadati dell&#39;utente ****)
 * Numero di serie
 * Nome dell&#39;organizzazione emittente
 * Nome dell&#39;organizzazione soggetto
