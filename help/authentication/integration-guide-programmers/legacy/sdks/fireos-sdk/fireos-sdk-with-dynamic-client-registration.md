@@ -152,7 +152,7 @@ Obsoleto:
    - accesso annullato: reimpostare la selezione di MVPD
    - Lo schema URL viene impostato come &quot;adobepass://android.app&quot; da acquisire al termine dell’autenticazione
 
-- e. get/checkAuthorization : SDK includerà **access\_token **nell&#39;intestazione come Authorization: Bearer **access\_token**
+- e. get/checkAuthorization : SDK includerà **access\_token &#x200B;** nell&#39;intestazione come Authorization: Bearer **access\_token**
 
 - se l’autorizzazione viene rilasciata, verrà effettuata una chiamata per ottenere il token multimediale
 
