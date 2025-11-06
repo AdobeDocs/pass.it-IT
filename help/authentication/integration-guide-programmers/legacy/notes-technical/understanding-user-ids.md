@@ -34,7 +34,7 @@ Di seguito sono riportati i diversi modi in cui l’ID utente viene rappresentat
 
 **In conclusione**
 
-* In generale, MVPD fornisce un ID univoco persistente <u> e lo trasmette ad Adobe in caso di autenticazione riuscita</u>. Generalmente è coerente su tutte le reti. L’eccezione è Comcast MVPD, che fornisce un ID utente diverso per ciascun canale.
+* In generale, MVPD fornisce un ID univoco permanente <u> e lo trasmette ad Adobe in caso di autenticazione corretta</u>. Generalmente è coerente su tutte le reti. L’eccezione è Comcast MVPD, che fornisce un ID utente diverso per ciascun canale.
 
 * L’ID utente di MVPD non contiene dati PII e NON è un numero di account. Non è necessario esporlo in forma crittografata poiché abbiamo verificato con tutti gli MVPD che non viene inviato alcun PII.
 
@@ -42,4 +42,4 @@ La modalità di utilizzo dell’ID utente dipende dal caso d’uso:
 
 * Se ne hai bisogno per il tracciamento/analisi, il modo più pratico è ottenerlo da `sendTrackingData()`.
 * Se ne hai bisogno sul lato server per la versione di flusso, la frode o i dati operativi, puoi ottenerli dalla convalida Media Token.
-* Se ne hai bisogno per il collegamento dell’account e per frodi più profonde, verifica la disponibilità con il tuo contatto di Adobe.
+* Se ne hai bisogno per il collegamento dell’account e per frodi più profonde, verifica la disponibilità con il tuo contatto Adobe.

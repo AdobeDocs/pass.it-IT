@@ -27,7 +27,7 @@ In questo documento vengono descritte le informazioni necessarie per integrare i
 
 ## Architettura di alto livello e integrazione a livello di sistema operativo {#high}
 
-Per ottenere il Single Sign On tra le applicazioni TV Everywhere sulla piattaforma Amazon fireTV e migliorare l’esperienza complessiva su questa piattaforma abbiamo deciso di integrare il nostro SDK principale a livello di sistema operativo fireTV. I programmatori dovranno eseguire la compilazione in base a una libreria stub fornita da Adobe. Le funzionalità effettive verranno fornite dalla libreria di Adobe presente nel sistema operativo FireTV di Amazon.
+Per ottenere il Single Sign On tra le applicazioni TV Everywhere sulla piattaforma Amazon fireTV e migliorare l’esperienza complessiva su questa piattaforma abbiamo deciso di integrare il nostro SDK principale a livello di sistema operativo fireTV. I programmatori dovranno effettuare la compilazione in base a una libreria stub fornita da Adobe. Le funzionalità effettive verranno fornite dalla libreria di Adobe presente nel sistema operativo FireTV di Amazon.
 
 Finché Amazon non fornirà un simulatore fireTV che incorpori la nostra libreria a livello di sistema operativo, lo sviluppo sarà possibile solo utilizzando veri dispositivi fireTV.
 

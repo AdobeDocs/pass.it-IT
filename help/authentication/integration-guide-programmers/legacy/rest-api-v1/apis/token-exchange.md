@@ -1,6 +1,6 @@
 ---
-title: Scambio di un token SSO di Platform con un token di Adobe
-description: Scambio di un token SSO di Platform con un token di Adobe
+title: Scambio di un token SSO di Platform con un token Adobe
+description: Scambio di un token SSO di Platform con un token Adobe
 exl-id: 5ab60268-8f97-4755-8281-be45e812ed7f
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
@@ -9,7 +9,7 @@ ht-degree: 0%
 
 ---
 
-# (Legacy) Sostituire un token SSO di Platform con un token di Adobe {#exchange-a-platform-sso-token-for-an-adobe-token}
+# (Legacy) Scambia un token SSO di Platform con un token Adobe {#exchange-a-platform-sso-token-for-an-adobe-token}
 
 >[!NOTE]
 >
@@ -39,11 +39,11 @@ ht-degree: 0%
 
 ## Descrizione {#description}
 
-Consente lo &quot;scambio&quot; di un profilo SSO di Platform con un token di Adobe.
+Consente lo &quot;scambio&quot; di un profilo SSO di Platform con un token Adobe.
 
 | Endpoint | Chiamato </br> da | Input   </br>Parametri | Metodo HTTP </br> | Risposta | HTTP </br>Risposta |
 | --- | --- | --- | --- | --- | --- |
-| &lt;SP_FQDN>/api/v1/token/author | Servizio programmatore </br></br>o</br></br>app in streaming | 1. richiedente (obbligatorio)</br>    </br>2.  deviceId (obbligatorio)</br>    </br>3.  mvpd (obbligatorio)</br>    </br>4.  deviceType (obbligatorio)</br>    </br>5.  SAMLResponse (obbligatorio)</br>    </br>6.  deviceUser (obsoleto)</br>    </br>7.  appId (obsoleto) | POST | In caso di esito positivo, la risposta sarà No Content (Nessun contenuto) 204, che indica che il token è stato creato correttamente ed è pronto per l’utilizzo per i flussi di autenticazione. | 204 - Nessun contenuto   </br>400 - Richiesta non valida |
+| &lt;SP_FQDN>/api/v1/token/author | Servizio programmatore </br></br>o</br></br>app in streaming | &#x200B;1. richiedente (obbligatorio)</br>    </br>2.  deviceId (obbligatorio)</br>    </br>3.  mvpd (obbligatorio)</br>    </br>4.  deviceType (obbligatorio)</br>    </br>5.  SAMLResponse (obbligatorio)</br>    </br>6.  deviceUser (obsoleto)</br>    </br>7.  appId (obsoleto) | POST | In caso di esito positivo, la risposta sarà No Content (Nessun contenuto) 204, che indica che il token è stato creato correttamente ed è pronto per l’utilizzo per i flussi di autenticazione. | 204 - Nessun contenuto   </br>400 - Richiesta non valida |
 
 
 | Parametro di input | Descrizione |

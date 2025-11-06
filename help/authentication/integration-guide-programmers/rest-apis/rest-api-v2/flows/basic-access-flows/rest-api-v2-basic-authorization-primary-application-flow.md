@@ -2,7 +2,7 @@
 title: Autorizzazione di base - Applicazione principale - Flusso
 description: REST API V2 - Autorizzazione di base - Applicazione principale - Flusso
 exl-id: 46bc9326-966e-44fc-8546-2f58be01b7bc
-source-git-commit: 92417dd4161be8ba97535404e262fd26d67383e4
+source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
 workflow-type: tm+mt
 source-wordcount: '603'
 ht-degree: 0%
@@ -39,7 +39,7 @@ Prima di recuperare le decisioni di autorizzazione utilizzando un MVPD specifico
 
 Segui i passaggi forniti per implementare il flusso di autorizzazione di base utilizzando un MVPD specifico eseguito all’interno di un’applicazione principale, come illustrato nel diagramma seguente.
 
-![Recupera le decisioni di autorizzazione utilizzando mvpd](/help/authentication/assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-retrieve-authorization-decisions-within-primary-application-using-specific-mvpd.png) specifico
+![Recupera le decisioni di autorizzazione utilizzando mvpd](../../../../../assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-retrieve-authorization-decisions-within-primary-application-using-specific-mvpd.png) specifico
 
 *Recupera le decisioni di autorizzazione utilizzando mvpd* specifico
 

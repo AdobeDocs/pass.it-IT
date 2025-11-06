@@ -43,7 +43,7 @@ Al termine di questi passaggi, l’autenticazione Adobe Pass utilizzerà l’UUI
 
 ## Soluzione permanente
 
-Adobe cambierà questo in una versione futura, rendendo `deviceId` un payload facoltativo durante la creazione del codice reg e utilizzando UUID come chiave del token invece di `deviceId`, quando `deviceId` non è presente.
+Adobe cambierà questa impostazione in una versione futura, rendendo `deviceId` un payload facoltativo durante la creazione del codice reg e utilizzando UUID come chiave del token invece di `deviceId`, quando `deviceId` non è presente.
 
 <!--
 ## Related Information

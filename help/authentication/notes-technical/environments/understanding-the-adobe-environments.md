@@ -17,7 +17,7 @@ ht-degree: 0%
 
 La documentazione ufficiale che descrive gli ambienti Adobe è disponibile [Configurazione dell&#39;ambiente e test in Pre-qual](/help/authentication/notes-technical/environments/setting-up-your-environment-and-testing-in-prequal.md):
 
-Gli ambienti di Adobe, riassunti in poche parole:
+Gli ambienti Adobe, riassunti in poche parole:
 
 Adobe dispone di due ambienti: **Pre-qualificazione** e **Versione**.
 

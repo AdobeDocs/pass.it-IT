@@ -97,7 +97,7 @@ Con map remote puoi reindirizzare una richiesta &quot;in arrivo&quot; a un endpo
 
 ## Dispositivi mobili {#mobile}
 
-### Usa Charles su un dispositivo iOS (iPhone / iPad) {#use-charles-on-an-ios-device-(iphone-/-ipad)}
+### Utilizzare Charles su un dispositivo iOS (iPhone/iPad) {#use-charles-on-an-ios-device-(iphone-/-ipad)}
 
 #### Connessione SSL da iPhone {#ssl-connection-from-iphone}
 

@@ -4,7 +4,7 @@ description: Fornisci elenco MVPD
 exl-id: db2d8f19-d0b9-4195-bf0b-f9de0d96062b
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '255'
+source-wordcount: '254'
 ht-degree: 2%
 
 ---
@@ -43,7 +43,7 @@ Restituisce l&#39;elenco di MVPD configurati per il richiedente.
 
 | Endpoint | Chiamato </br> da | Input   </br>Parametri | Metodo HTTP </br> | Risposta | HTTP </br>Risposta |
 | --- | --- | --- | --- | --- | --- |
-| &lt;SP_FQDN>/api/v1/config/{requestorId}</br></br>Esempio:</br></br>&lt;SP_FQDN>/api/v1/config/sampleRequestorId | Autenticazione Adobe Pass | 1. Richiedente</br>    (componente percorso)</br>_2.  deviceType (obsoleto)_ | GET | XML o JSON contenente l’elenco degli MVPD. | 200 |
+| &lt;SP_FQDN>/api/v1/config/{requestorId}</br></br>Esempio:</br></br>&lt;SP_FQDN>/api/v1/config/sampleRequestorId | Autenticazione Adobe Pass | &#x200B;1. Richiedente</br>    (componente percorso)</br>_2.  deviceType (obsoleto)_ | GET | XML o JSON contenente l’elenco degli MVPD. | 200 |
 
 {style="table-layout:auto"}
 

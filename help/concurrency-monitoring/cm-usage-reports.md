@@ -13,13 +13,13 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Il contenuto di questa pagina viene fornito solo a scopo informativo. L’utilizzo di questa API richiede una licenza corrente di Adobe. Non è consentito alcun uso non autorizzato.
+>Il contenuto di questa pagina viene fornito solo a scopo informativo. L’utilizzo di questa API richiede una licenza corrente da Adobe. Non è consentito alcun uso non autorizzato.
 
 
 
 ## Panoramica {#usage-rep-overview}
 
-Il servizio **Report sull&#39;utilizzo del monitoraggio della concorrenza** è disponibile tramite un&#39;API REST che fornisce informazioni approfondite sull&#39;utilizzo concorrente, come riportato dalle applicazioni del cliente.
+Il servizio **Report sull&#39;utilizzo del monitoraggio della concorrenza** è disponibile tramite un&#39;API REST che fornisce ad insight l&#39;utilizzo concorrente, come segnalato dalle applicazioni del cliente.
 
 ## Prerequisiti {#usage-rep-prerequisites}
 
@@ -63,7 +63,7 @@ Per accedere al prodotto Report sull&#39;utilizzo del monitoraggio della concorr
 | applicazione | Nome dell&#39;applicazione registrato in Monitoraggio concorrenza utilizzato per gestire le sessioni |
 | application-id | ID applicazione registrato in Monitoraggio concorrenza utilizzato per gestire le sessioni |
 | channel | Metadati del canale inviati durante l’inizializzazione della sessione (contrassegnati come Sconosciuti se non vengono inviati metadati) |
-| mvpd | MVPD fornito durante la gestione della sessione |
+| mvpd | Il MVPD fornito nella gestione delle sessioni |
 | piattaforma | Metadati della piattaforma forniti all&#39;inizializzazione della sessione o predefiniti per un&#39;applicazione a livello di configurazione |
 
 ## Metriche e raggruppamenti dei rapporti sulla concorrenza {#concurrency-reports-metrics-breakdown}
@@ -87,7 +87,7 @@ Lo scopo principale di questo rapporto è quello di aiutarti a comprendere l’i
 | giorno | Il giorno del mese (1-31) |
 | a livello di concorrenza | Rappresenta qualsiasi attività di flusso **distinta approvata durante la fase di inizializzazione della sessione** per un utente per poter osservare quanti flussi simultanei **sono stati aperti** da un utente e capire l&#39;impatto dell&#39;applicazione di un determinato limite di concorrenza |
 | livello di attività | Rappresenta qualsiasi **attività di flusso distinta (indipendentemente dal suo stato: avviato, attivo, arrestato, rifiutato)** per un utente per poter osservare quanti flussi simultanei sono stati tentati di essere aperti da un utente e capire l&#39;impatto dell&#39;applicazione di un determinato limite di concorrenza |
-| mvpd | MVPD fornito durante la gestione della sessione |
+| mvpd | Il MVPD fornito nella gestione delle sessioni |
 
 ### Esempi di rapporti
 

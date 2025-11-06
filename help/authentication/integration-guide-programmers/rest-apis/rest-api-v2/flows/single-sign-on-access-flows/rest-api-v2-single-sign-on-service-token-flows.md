@@ -2,7 +2,7 @@
 title: Single Sign-On - Token di servizio - Flussi
 description: REST API V2 - Single Sign-On - Token di servizio - Flussi
 exl-id: b0082d2a-e491-4cb5-bb40-35ba10db6b1a
-source-git-commit: 92417dd4161be8ba97535404e262fd26d67383e4
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
 source-wordcount: '1857'
 ht-degree: 0%
@@ -60,7 +60,7 @@ Prima di eseguire il flusso di autenticazione tramite Single Sign-On utilizzando
 
 Per implementare il flusso di autenticazione tramite single sign-on, esegui i passaggi indicati utilizzando un token di servizio, come illustrato nel diagramma seguente.
 
-![Eseguire l&#39;autenticazione tramite Single Sign-On utilizzando il token di servizio](/help/authentication/assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-perform-authentication-through-single-sign-on-using-service-token-flow.png)
+![Eseguire l&#39;autenticazione tramite Single Sign-On utilizzando il token di servizio](../../../../../assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-perform-authentication-through-single-sign-on-using-service-token-flow.png)
 
 *Eseguire l&#39;autenticazione tramite Single Sign-On utilizzando il token di servizio*
 
@@ -230,7 +230,7 @@ Prima di eseguire il flusso di autorizzazione tramite Single Sign-On utilizzando
 
 Eseguire i passaggi specificati per implementare il flusso di autorizzazione tramite Single Sign-On utilizzando un token di servizio come illustrato nel diagramma seguente.
 
-![Recuperare le decisioni di autorizzazione tramite Single Sign-On utilizzando il token di servizio](/help/authentication/assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-retrieve-authorization-decisions-through-single-sign-on-using-service-token-flow.png)
+![Recuperare le decisioni di autorizzazione tramite Single Sign-On utilizzando il token di servizio](../../../../../assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-retrieve-authorization-decisions-through-single-sign-on-using-service-token-flow.png)
 
 *Recuperare le decisioni di autorizzazione tramite Single Sign-On utilizzando il token di servizio*
 

@@ -2,7 +2,7 @@
 title: Intestazione - AP-Visitor-Identifier
 description: REST API V2 - Intestazione - AP-Visitor-Identifier
 exl-id: 216f398b-1cfa-4453-a81d-963675b33ec2
-source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
+source-git-commit: 7d19319d83af0122624ab3b80b1f31fc0cbbf182
 workflow-type: tm+mt
 source-wordcount: '91'
 ht-degree: 2%
@@ -19,7 +19,7 @@ ht-degree: 2%
 
 L&#39;intestazione della richiesta <b>AP-Visitor-Identifier</b> contiene il `ECID` richiesto dall&#39;applicazione client per identificare in modo univoco un visitatore nelle soluzioni Adobe Experience Cloud.
 
-Per ulteriori dettagli sull&#39;utilizzo di ECID nell&#39;autenticazione di Adobe Pass, consulta [Utilizzo di Experience Cloud ID nella documentazione di Adobe Pass Authentication](/help/authentication/integration-guide-programmers/features-standard/analytics/exp-cloud-id-authn.md).
+Per ulteriori dettagli sull&#39;utilizzo di ECID nell&#39;autenticazione di Adobe Pass, consulta [Utilizzo di Experience Cloud ID nella documentazione di Adobe Pass Authentication](../../../../features-premium/analytics/exp-cloud-id-authn.md).
 
 ## Sintassi {#syntax}
 

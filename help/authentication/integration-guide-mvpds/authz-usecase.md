@@ -17,15 +17,15 @@ ht-degree: 0%
 
 ## Panoramica {#mvpd-authz-overview}
 
-L&#39;autorizzazione (AuthZ) viene eseguita tramite comunicazioni back-channel (server-to-server) tra un server back-end ospitato da Adobe e l&#39;endpoint AuthZ di MVPD.
+L’autorizzazione (AuthZ) viene eseguita tramite comunicazioni back-channel (server-to-server) tra un server back-end ospitato da Adobe e l’endpoint AuthZ di MVPD.
 
 Per le richieste AuthZ, l’endpoint di autorizzazione deve essere in grado di elaborare almeno i seguenti parametri:
 
 * **Uid**. L’ID utente ricevuto dal passaggio di autenticazione.
 
-* **ID risorsa**. Stringa che identifica una determinata risorsa di contenuto. Questo ID risorsa è specificato dal programmatore e l’MVPD deve rafforzare le regole di business su queste risorse (ad esempio, verificando che l’utente sia abbonato a un determinato canale).
+* **ID risorsa**. Stringa che identifica una determinata risorsa di contenuto. Questo ID risorsa è specificato dal programmatore e MVPD deve rafforzare le regole di business su queste risorse (ad esempio, verificando che l’utente sia abbonato a un determinato canale).
 
-Oltre a determinare se l’utente è autorizzato, la risposta deve includere il valore TTL (time-to-live) di questa autorizzazione, ovvero il momento in cui l’autorizzazione scade. Se il TTL non è impostato, la richiesta AuthZ avrà esito negativo.  Per questo motivo, **il TTL è un&#39;impostazione di configurazione obbligatoria sul lato Autenticazione di Adobe Pass**, per coprire il caso in cui un MVPD non includa il TTL nella sua richiesta.
+Oltre a determinare se l’utente è autorizzato, la risposta deve includere il valore TTL (time-to-live) di questa autorizzazione, ovvero il momento in cui l’autorizzazione scade. Se il TTL non è impostato, la richiesta AuthZ avrà esito negativo.  Per questo motivo, **il TTL è un&#39;impostazione di configurazione obbligatoria sul lato Autenticazione di Adobe Pass**, per coprire il caso in cui un MVPD non includa il TTL nella richiesta.
 
 ## La richiesta di autorizzazione {#authz-req}
 
@@ -80,11 +80,11 @@ http://docs.oasis-open.org/xacml/access_control-xacml-2.0-context-schema-os.xsd"
 ```
 
 
-Dopo aver ricevuto la richiesta AuthZ, il PDP dell&#39;MVPD valuta la richiesta e determina se al soggetto deve essere consentito di eseguire l&#39;azione richiesta sulla risorsa. L’MVPD restituisce quindi una risposta con una decisione, un codice di stato e un messaggio, come descritto nella Risposta all’autorizzazione di seguito.
+Dopo aver ricevuto la richiesta AuthZ, il PDP di MVPD valuta la richiesta e determina se al soggetto deve essere consentito di eseguire l&#39;azione richiesta sulla risorsa. MVPD restituisce quindi una risposta con una decisione, un codice di stato e un messaggio, come descritto in Risposta all’autorizzazione di seguito.
 
 ## La risposta di autorizzazione {#authz-response}
 
-La risposta alla richiesta AuthZ viene fornita dopo che MVPD valuta la richiesta e applica le regole business richieste per determinare se al soggetto è consentito eseguire l&#39;azione richiesta sulla risorsa. La risposta restituita all&#39;autenticazione di Adobe Pass viene nuovamente espressa seguendo le specifiche XACML di base con una decisione, un codice di stato, un messaggio e gli obblighi che l&#39;SP ha come punto di applicazione dei criteri (PEP). Di seguito è riportato un esempio di risposta:
+La risposta alla richiesta AuthZ viene fornita dopo che MVPD ha valutato la richiesta e applica le regole business richieste per determinare se al soggetto è consentito eseguire l&#39;azione richiesta sulla risorsa. La risposta restituita all&#39;autenticazione di Adobe Pass viene nuovamente espressa seguendo le specifiche XACML di base con una decisione, un codice di stato, un messaggio e gli obblighi che l&#39;SP ha come punto di applicazione dei criteri (PEP). Di seguito è riportato un esempio di risposta:
 
 ```XML
 <Response xmlns="urn:oasis:names:tc:xacml:2.0:context:schema:os">

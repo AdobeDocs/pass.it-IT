@@ -31,11 +31,11 @@ Utilizzando questa funzione, MVPD e programmatori possono implementare casi d&#3
 
 Punti chiave metadati utente:
 
-* MVPD trasmette i metadati utente all&#39;applicazione del programmatore durante i flussi di autenticazione e autorizzazione
+* MVPD trasmette i metadati dell&#39;utente all&#39;applicazione del programmatore durante i flussi di autenticazione e autorizzazione
 * L’autenticazione di Adobe Pass salva i valori dei metadati nei token AuthN e AuthZ
 * L’autenticazione Adobe Pass può normalizzare i valori per MVPD che forniscono metadati utente in formati diversi
 * Alcuni parametri possono essere crittografati utilizzando la chiave del programmatore
-* Valori specifici sono resi disponibili da Adobe tramite una modifica alla configurazione
+* Adobe rende disponibili valori specifici tramite una modifica alla configurazione
 
 >[!NOTE]
 >
@@ -47,13 +47,13 @@ Punti chiave metadati utente:
 
 Questo esempio mostra lo scambio dei seguenti elementi:
 
-* [Da programmatore a MVPD Metadata Exchange](#progr-mvpd-metadata-exch)
+* [Programmatore di MVPD Metadata Exchange](#progr-mvpd-metadata-exch)
 
 * [Flusso di scambio metadati da MVPD a programmatore](#mvpd-progr-exchange-flow)
 
-### Da programmatore a MVPD Metadata Exchange {#progr-mvpd-metadata-exch}
+### Programmatore di MVPD Metadata Exchange {#progr-mvpd-metadata-exch}
 
-Attualmente l’API del programmatore, l’autenticazione di Adobe Pass e gli autorizzatori MVPD supportano solo l’autorizzazione a livello di canale. Il canale viene specificato come stringa di testo normale nella chiamata API getAuthorization() del programmatore. Questa stringa viene propagata fino al backend di autorizzazione MVPD:
+Attualmente l’API del programmatore, l’autenticazione di Adobe Pass e gli autorizzatori MVPD supportano solo l’autorizzazione a livello di canale. Il canale viene specificato come stringa di testo normale nella chiamata API getAuthorization() del programmatore. Questa stringa viene propagata fino al backend di autorizzazione di MVPD:
 
 Dall&#39;app o dal sito del programmatore, l&#39;utente sceglie un MVPD compatibile con XACML (in questo esempio, &quot;TNT&quot;). Per informazioni su XACML, vedere [eXtensible Access Control Markup Language](https://en.wikipedia.org/wiki/XACML){target=_blank}.
 L’app del programmatore forma una richiesta AuthZ che include la risorsa e i relativi metadati.  Questo esempio include una valutazione MPAA di &quot;pg&quot; nell’attributo media dell’elemento channel:
@@ -68,17 +68,17 @@ var resource = '<rss version="2.0" xmlns:media="http://video.search.yahoo.com/mr
 getAuthorization(resource);
 ```
 
-L’autenticazione di Adobe Pass supporta di fatto un’autorizzazione più granulare, fino al livello della risorsa, se supportata sia da MVPD che dal programmatore. La risorsa e i relativi metadati sono opachi per Adobe; l’obiettivo è quello di stabilire un formato standard per specificare l’ID della risorsa e i metadati in modo normalizzato, per inviare gli ID delle risorse a diversi MVPD.
+L’autenticazione di Adobe Pass supporta effettivamente un’autorizzazione più granulare, fino al livello della risorsa, se supportata sia da MVPD che dal programmatore. La risorsa e i relativi metadati sono opachi per Adobe; l’obiettivo è quello di stabilire un formato standard per specificare l’ID della risorsa e i metadati in modo normalizzato, per inviare gli ID delle risorse a diversi MVPD.
 
 >[!NOTE]
 >
->Se l’utente sceglie un MVPD compatibile solo con il canale, Adobe Pass Authentication estrae SOLO il titolo del canale (&quot;TNT&quot; nell’esempio precedente) e passa solo il titolo all’MVPD.
+>Se l’utente sceglie un MVPD che supporta solo il canale, Adobe Pass Authentication estrae SOLO il titolo del canale (&quot;TNT&quot; nell’esempio precedente) e passa solo il titolo a MVPD.
 
 ### Flusso di scambio metadati da MVPD a programmatore {#mvpd-progr-exchange-flow}
 
 L’autenticazione di Adobe Pass si basa sui seguenti presupposti:
 
-* MVPD invia la valutazione massima come parte della risposta SAML
+* Il MVPD invia la valutazione massima come parte della risposta SAML
 * Informazioni salvate come parte del token di autenticazione
 * L’autenticazione Adobe Pass fornisce un’API per consentire ai programmatori di recuperare tali informazioni
 * I programmatori implementano questa funzione sul sito o sull’app (ad esempio, per nascondere i video che superano la valutazione massima per l’utente)
@@ -105,13 +105,13 @@ L’autenticazione di Adobe Pass si basa sui seguenti presupposti:
 
 ### Note {#notes-mvpd-progr-metadata-exch-flow}
 
-**Normalizzazione e convalida delle risorse.** ID risorsa possono essere passati come stringa semplice o come stringa MRSS. Un programmatore può decidere di utilizzare il formato di stringa semplice o il MRSS, ma avrà bisogno di un accordo preventivo con il MVPD in modo che il MVPD sappia come trattare tale risorsa.
+**Normalizzazione e convalida delle risorse.** ID risorsa possono essere passati come stringa semplice o come stringa MRSS. Un programmatore può decidere di utilizzare il formato di stringa semplice o il sistema MRSS, ma avrà bisogno di un accordo preventivo con MVPD in modo che MVPD sappia come trattare tale risorsa.
 
 **ID risorsa e specifica metadati.L&#39;autenticazione Adobe Pass** utilizza lo standard RSS con l&#39;estensione Media RSS per specificare una risorsa e i relativi metadati. Insieme all&#39;estensione Media RSS, l&#39;autenticazione Adobe Pass supporta un&#39;ampia gamma di metadati, ad esempio il controllo genitori (tramite `<media:rating>`) o la geolocalizzazione (`<media:location>`).
 
 L’autenticazione Adobe Pass può inoltre supportare la conversione trasparente dalla stringa di canale legacy alla risorsa RSS corrispondente per gli MVPD che richiedono RSS. Nell’altra direzione, l’autenticazione di Adobe Pass supporta la conversione da RSS+MRSS a titolo di canale semplice, per gli MVPD solo canale.
 
-**L&#39;autenticazione Adobe Pass garantisce la piena compatibilità con le integrazioni esistenti.** In altre parole, per i programmatori che utilizzano l&#39;autenticazione a livello di canale, l&#39;autenticazione Adobe Pass si preoccupa di creare un pacchetto dell&#39;ID di canale nel formato necessario prima di inviarlo a un MVPD che conosca tale formato. Si applica anche il contrario: se un programmatore specifica tutte le sue risorse in un nuovo formato, Adobe Pass Authentication traduce il nuovo formato in una semplice stringa di canale se autorizza per un MVPD che esegue solo l&#39;autorizzazione a livello di canale.
+**L&#39;autenticazione Adobe Pass garantisce la piena compatibilità con le integrazioni esistenti.** In altre parole, per i programmatori che utilizzano l&#39;autenticazione a livello di canale, l&#39;autenticazione Adobe Pass si preoccupa di creare un pacchetto dell&#39;ID di canale nel formato necessario prima di inviarlo a un MVPD che lo conosca. Si applica anche il contrario: se un programmatore specifica tutte le sue risorse in un nuovo formato, l’autenticazione Adobe Pass converte il nuovo formato in una semplice stringa di canale se si autorizza su un MVPD che esegue solo l’autorizzazione a livello di canale.
 
 ## Casi di utilizzo dei metadati utente {#user-metadata-use-cases}
 
@@ -125,8 +125,8 @@ I casi d&#39;uso sono in continua evoluzione e in continua espansione, in quanto
 
 ### ID utente MVPD {#mvpd-user-id}
 
-* Come previsto dall&#39;MVPD
-* Non le informazioni di accesso effettive dell’utente, poiché viene eseguito l’hashing da MVPD
+* Fornito da MVPD
+* Non le informazioni di accesso effettive dell’utente, poiché viene aggiunto l’hash da MVPD
 * Può essere utilizzato per indicare problemi con o per utenti specifici
 * Crittografato
 * Supporto MVPD: tutti gli MVPD

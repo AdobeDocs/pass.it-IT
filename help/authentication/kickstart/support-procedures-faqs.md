@@ -27,7 +27,7 @@ Esempi di incidenti con GRAVITÀ 1
 
 * Durante il processo di autenticazione, l’utente non viene reindirizzato alla pagina di accesso dopo aver selezionato il MVPD in qualsiasi browser supportato.
 
-* Durante il processo di autenticazione, l’utente si blocca su una pagina di errore Adobe senza la possibilità di riavviare il flusso di autenticazione.
+* Durante il processo di autenticazione, l’utente si blocca su una pagina di errore di Adobe senza la possibilità di riavviare il flusso di autenticazione.
 
 * Il partner riceve numerosi rapporti che gli utenti non possono autenticare o autorizzare con un MVPD specifico.
 
@@ -61,7 +61,7 @@ Un caso di livello SEVERITY 1 può essere avviato da Adobe o da un partner di au
    * Registri HTTP Trace o Device che illustrano il problema
    * (facoltativo) Eventuali schermate o acquisizioni video che dimostrino il problema
 
-1. Se Adobe non risponde al ticket entro un periodo, il partner può chiamare il seguente numero: **1-657-312-4623**.
+1. Se Adobe non risponde al ticket entro un periodo di tempo, il partner può chiamare il seguente numero: **1-657-312-4623**.
 
 >[!IMPORTANT]
 >
@@ -73,7 +73,7 @@ Per un problema di autenticazione Adobe Pass:
 
 1. Adobe identifica un problema interno e apre un ticket nel nostro sistema di tracciamento.
 
-1. Adobe notifica il responsabile del programma del partner e il contatto tecnico, specificando il numero del ticket e l’impatto stimato del problema.
+1. Adobe invia una notifica al responsabile del programma e al contatto tecnico del partner, specificando il numero del ticket e l’impatto stimato del problema.
 
 1. Adobe si impegna a risolvere il problema e tiene informati tutti i partner interessati.
 
@@ -83,7 +83,7 @@ Per un problema del partner (Programmatore/MVPD):
 
 1. Adobe avvisa il partner interessato seguendo le procedure di supporto in atto con tale partner e apre un ticket presso l’organizzazione di supporto del partner.
 
-1. Se, durante l’analisi dell’impatto, l’Adobe rileva che la questione rientra in una delle decisioni concordate in precedenza sugli scenari di incidente, agirà di conseguenza senza attendere il contributo del partner.
+1. Se, durante l’analisi di impatto, Adobe rileva che il problema rientra in una delle decisioni concordate in precedenza sugli scenari di incidente, agirà di conseguenza senza attendere il contributo del partner.
 
 1. Adobe attenderà gli aggiornamenti dal partner e una notifica quando il servizio sarà stato ripristinato.
 
@@ -93,6 +93,6 @@ Alcune situazioni con azioni predefinite che verranno eseguite se si verifica lo
 
 |    | Scenario | Descrizione | Azioni |
 |----|--------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| S1 | Adobe identifica un problema di integrazione di un MVPD durante le normali operazioni di produzione. | Durante le normali operazioni di produzione, Adobe identifica un problema con uno degli MVPD che rende impossibile l’esecuzione dei flussi di autenticazione/autorizzazione (ad esempio certificati scaduti, risposte SAML scadute, porte chiuse, parametri modificati, ecc.) | Adobe invierà una notifica a MVPD e Programmer interessati.  L&#39;Adobe </br></br> disattiverà questo MVPD per tutti i programmatori interessati. </br></br> Adobe aprirà un ticket con MVPD seguendo la procedura di supporto concordata con tale MVPD |
+| S1 | Adobe identifica un problema di integrazione di un MVPD durante le normali operazioni di produzione. | Durante le normali operazioni di produzione, Adobe identifica un problema con uno degli MVPD che rende impossibile l’esecuzione dei flussi di autenticazione/autorizzazione (ad esempio certificati scaduti, risposte SAML scadute, porte chiuse, parametri modificati, ecc.) | Adobe invierà una notifica a MVPD e Programmer interessati.  </br></br> Adobe disattiverà questo MVPD per tutti i programmatori interessati. </br></br> Adobe aprirà un ticket con MVPD seguendo la procedura di supporto concordata con tale MVPD |
 | S2 | Adobe attiva un nuovo MVPD per un programmatore e il programmatore consente il MVPD prima della data di avvio. | Adobe sta attivando un nuovo MVPD per il sito di un programmatore e il sito sta già visualizzando il nuovo MVPD nel selettore, anche se non era previsto. | Adobe informerà il programmatore del nuovo MVPD visualizzato nel selettore prima della data pianificata. Il programmatore </br></br> eseguirà un&#39;azione per rimuoverlo dal selettore, se necessario. |
 | S3 | Adobe attiva un nuovo MVPD per un programmatore anche se il MVPD non è pronto per la produzione | Adobe sta attivando un nuovo MVPD per un programmatore, ma MVPD non ha ancora implementato il supporto per l’integrazione, pertanto non è possibile eseguire i flussi di autenticazione/autorizzazione | Adobe eseguirà la distribuzione solo se richiesto dal programmatore </br></br> Il programmatore sarà responsabile di garantire l&#39;autorizzazione di MVPD una volta eseguiti tutti i test. |

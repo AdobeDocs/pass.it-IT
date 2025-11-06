@@ -24,9 +24,9 @@ L’interfaccia esterna per l’API di pre-autorizzazione non è stata modificat
 
 Esistono tre modi per calcolare le risorse Verifica preliminare:
 
-* **Effettua il forking e unisci il metodo a MVPD Adobe**: questo comporta l&#39;esecuzione di più chiamate di autorizzazione a MVPD (il client dovrà comunque effettuare una chiamata di verifica preliminare).
-* **Linea di canali**: MVPD espone la linea di canali per l&#39;utente connesso nella risposta di autenticazione SAML e l&#39;Adobe restituisce le risorse autorizzate in base a tale risposta. La risposta SAML authN nel tracciatore SAML deve esporre tale elenco.
-* **Autorizzazione multicanale**: il client e l&#39;autenticazione Adobe effettuano una singola chiamata a MVPD per un set di risorse.
+* **Effettua il forking e unisci il metodo a MVPD**: ciò comporta che Adobe effettui più chiamate di autorizzazione a MVPD (il client dovrà comunque effettuare una chiamata di verifica preliminare).
+* **Linea di canali**: MVPD espone la linea di canali per l&#39;utente connesso nella risposta di autenticazione SAML e Adobe restituisce le risorse autorizzate in base a tale risposta. La risposta SAML authN nel tracciatore SAML deve esporre tale elenco.
+* **Autorizzazione multicanale**: l&#39;autenticazione client e Adobe effettuano una singola chiamata a MVPD per un set di risorse.
 
 Indipendentemente da MVPD, l’applicazione client effettuerà una singola chiamata all’endpoint di verifica preliminare (checkPreauthorizedResources API), trasmettendo un set di resourceID. In base a uno dei modi precedenti supportati da MVPD, Adobe restituirà quindi gli ID risorsa preautorizzati.
 

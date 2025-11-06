@@ -23,7 +23,7 @@ ht-degree: 0%
 
 Adobe consiglia vivamente di migrare alla versione più recente di JS v4.x della libreria AccessEnabler.
 
-L’integrazione Adobe Pass Authentication JavaScript offre ai programmatori una soluzione TV-Everywhere nel familiare ambiente di sviluppo delle applicazioni web JS. I componenti principali dell’integrazione sono l’applicazione di &quot;alto livello&quot; (interazione dell’utente, presentazione video) e la libreria AccessEnabler di &quot;basso livello&quot; fornita dall’Adobe, che fornisce l’accesso ai flussi di adesione e gestisce le comunicazioni con i server di autenticazione di Adobe Pass.
+L’integrazione Adobe Pass Authentication JavaScript offre ai programmatori una soluzione TV-Everywhere nel familiare ambiente di sviluppo delle applicazioni web JS. I componenti principali dell’integrazione sono l’applicazione di &quot;alto livello&quot; (interazione dell’utente, presentazione video) e la libreria AccessEnabler di &quot;basso livello&quot; fornita da Adobe che fornisce l’accesso ai flussi di adesione e gestisce le comunicazioni con i server di autenticazione di Adobe Pass.
 
 Nelle sezioni seguenti vengono fornite descrizioni ed esempi specifici dell&#39;integrazione di JavaScript AccessEnabler.
 
@@ -41,7 +41,7 @@ Se sai già chi è il provider del cliente, puoi [impostare MVPD a livello di pr
 
 Nell&#39;esempio di codice riportato di seguito viene illustrato come individuare e visualizzare il provider di servizi per il cliente corrente:
 
-**HTML** - Questa pagina aggiunge una sezione alla pagina in cui viene visualizzato il provider scelto dal cliente, se questi ha già effettuato l&#39;accesso:
+**HTML** - In questa pagina viene aggiunta una sezione che visualizza il provider scelto dal cliente, se è già stato eseguito l&#39;accesso:
 
 ```HTML
     <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
@@ -55,7 +55,7 @@ Nell&#39;esempio di codice riportato di seguito viene illustrato come individuar
     </head>
     <body>
         <div id="alternative">
-        <a href="http://www.adobe.com/go/getflashplayer_it"> 
+        <a href="http://www.adobe.com/go/getflashplayer"> 
             <img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" 
                  alt="Get Adobe Flash player"/> </a>
         </div> 

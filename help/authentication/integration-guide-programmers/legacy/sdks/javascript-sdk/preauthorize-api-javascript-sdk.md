@@ -255,22 +255,22 @@ accessEnablerApi.preauthorize(request, callback);
 
     &quot;JavaScript
     
-    &lbrace;
-    &quot;Decisions&quot;: &lbrack;
-    &lbrace;
+    {
+    &quot;Decisions&quot;: [
+    {
     &quot;id&quot;: &quot;RES01&quot;,
     &quot;authorized&quot;: true
-    &rbrace;,
-    &lbrace;
+    },
+    {
     &quot;id&quot;: &quot;RES02&quot;,
     &quot;authorized&quot;: false
-    &rbrace;,
-    &lbrace;
+    },
+    {
     &quot;id&quot;: &quot;RES03&quot;,
     &quot;authorized&quot;: true
-    &rbrace;
-    &rbrack;
-    &rbrace;
+    }
+    ]
+    }
     
     &quot;
 
@@ -282,29 +282,29 @@ accessEnablerApi.preauthorize(request, callback);
     <td>
 
     &quot;JavaScript
-    &lbrace;
-    &quot;Decisions&quot;: &lbrack;
-    &lbrace;
+    {
+    &quot;Decisions&quot;: [
+    {
     &quot;id&quot;: &quot;RES01&quot;,
     &quot;authorized&quot;: true
-    &rbrace;,
-    &lbrace;
+    },
+    {
     &quot;id&quot;: &quot;RES02&quot;,
     &quot;authorized&quot;: false,
-    &quot;error&quot;: &lbrace;
+    &quot;error&quot;: {
     &quot;status&quot;: 403,
     &quot;code&quot;: &quot;preauthorization_rejected_by_mvpd&quot;,
     &quot;message&quot;: &quot;Il MVPD ha restituito una decisione \&quot;Deny\&quot; pre-autorizzazione per la risorsa specificata.&quot;,
     &quot;helpUrl&quot;: &quot;https://experienceleague.adobe.com/docs/primetime/authentication/home.html&quot;,
     &quot;action&quot;: &quot;none&quot;
-    &rbrace;
-    &rbrace;,
-    &lbrace;
+    }
+    },
+    {
     &quot;id&quot;: &quot;RES03&quot;,
     &quot;authorized&quot;: true
-    &rbrace;,
-    &rbrack;
-    &rbrace;
+    },
+    ]
+    }
     
     &quot;
 
@@ -329,22 +329,22 @@ accessEnablerApi.preauthorize(request, callback);
 
     &quot;JavaScript
     
-    &lbrace;
-    &quot;Decisions&quot;: &lbrack;
-    &lbrace;
+    {
+    &quot;Decisions&quot;: [
+    {
     &quot;id&quot;: &quot;RES01&quot;,
     &quot;authorized&quot;: false
-    &rbrace;,
-    &lbrace;
+    },
+    {
     &quot;id&quot;: &quot;RES02&quot;,
     &quot;authorized&quot;: false
-    &rbrace;,
-    &lbrace;
+    },
+    {
     &quot;id&quot;: &quot;RES03&quot;,
     &quot;authorized&quot;: false
-    &rbrace;
-    &rbrack;
-    &rbrace;
+    }
+    ]
+    }
     
     &quot;
 
@@ -357,43 +357,43 @@ accessEnablerApi.preauthorize(request, callback);
 
     &quot;JavaScript
     
-    &lbrace;
-    &quot;Decisions&quot;: &lbrack;
-    &lbrace;
+    {
+    &quot;Decisions&quot;: [
+    {
     &quot;id&quot;: &quot;RES01&quot;,
     &quot;authorized&quot;: false,
-    &quot;error&quot;: &lbrace;
+    &quot;error&quot;: {
     &quot;status&quot;: 403,
     &quot;code&quot;: &quot;preauthorization_rejected_by_mvpd&quot;,
     &quot;message&quot;: &quot;MVPD ha restituito una decisione \&quot;Deny\&quot; quando si richiede la pre-autorizzazione per la risorsa specificata.&quot;,
     &quot;helpUrl&quot;: &quot;https://experienceleague.adobe.com/docs/primetime/authentication/home.html&quot;,
     &quot;action&quot;: &quot;none&quot;
-    &rbrace;
-    &rbrace;,
-    &lbrace;
+    }
+    },
+    {
     &quot;id&quot;: &quot;RES02&quot;,
     &quot;authorized&quot;: false,
-    &quot;error&quot;: &lbrace;
+    &quot;error&quot;: {
     &quot;status&quot;: 403,
     &quot;code&quot;: &quot;preauthorization_deny_by_mvpd&quot;,
     &quot;message&quot;: &quot;MVPD ha restituito una decisione \&quot;Deny\&quot; durante la richiesta di pre-autorizzazione per la risorsa specificata.&quot;,
     &quot;helpUrl&quot;: &quot;https://experienceleague.adobe.com/docs/primetime/authentication/home.html&quot;,
     &quot;action&quot;: &quot;none&quot;
-    &rbrace;
-    &rbrace;,
-    &lbrace;
+    }
+    },
+    {
     &quot;id&quot;: &quot;RES03&quot;,
     &quot;authorized&quot;: false,
-    &quot;error&quot;: &lbrace;
+    &quot;error&quot;: {
     &quot;status&quot;: 403,
     &quot;code&quot;: &quot;maximum_execution_time_exceeded&quot;,
     &quot;message&quot;: &quot;La richiesta non è stata completata entro il tempo massimo consentito. Un nuovo tentativo della richiesta potrebbe risolvere il problema.&quot;,
     &quot;helpUrl&quot;: &quot;https://experienceleague.adobe.com/docs/primetime/authentication/home.html&quot;,
     &quot;action&quot;: &quot;retry&quot;
-    &rbrace;
-    &rbrace;
-    &rbrack;
-    &rbrace;
+    }
+    }
+    ]
+    }
     
     &quot;
 
@@ -417,17 +417,17 @@ accessEnablerApi.preauthorize(request, callback);
     <td>
 
     &quot;JavaScript
-    &lbrace;
-    &quot;status&quot;: &lbrace;
+    {
+    &quot;status&quot;: {
     &quot;status&quot;: 400,
     &quot;code&quot;: &quot;internal_error&quot;,
     &quot;message&quot;: &quot;Richiesta non riuscita a causa di un errore interno.&quot;,
     &quot;details&quot;: &quot;Parametro stringa[] obbligatorio &#39;resource&#39; non presente&quot;,
     &quot;helpUrl&quot;: &quot;https://experienceleague.adobe.com/docs/primetime/authentication/home.html&quot;,
     &quot;action&quot;: &quot;none&quot;
-    &rbrace;,
+    },
     &quot;Decisions&quot;: []
-    &rbrace;
+    }
     &quot;
 
 </td>
@@ -450,16 +450,16 @@ accessEnablerApi.preauthorize(request, callback);
     <td>
 
     &quot;JavaScript
-    &lbrace;
-    &quot;status&quot;: &lbrace;
+    {
+    &quot;status&quot;: {
     &quot;status&quot;: 412,
     &quot;code&quot;: &quot;missing_resource&quot;,
     &quot;message&quot;: &quot;Parametro della risorsa mancante&quot;,
     &quot;helpUrl&quot;: &quot;https://experienceleague.adobe.com/docs/primetime/authentication/home.html&quot;,
     &quot;action&quot;: &quot;none&quot;
-    &rbrace;,
+    },
     &quot;Decisions&quot;: []
-    &rbrace;
+    }
     &quot;
 
 </td>
@@ -482,32 +482,32 @@ accessEnablerApi.preauthorize(request, callback);
     <td>
 
     &quot;JavaScript
-    &lbrace;
-    &quot;Decisions&quot;: &lbrack;
-    &lbrace;
+    {
+    &quot;Decisions&quot;: [
+    {
     &quot;id&quot;: &quot;RES01&quot;,
     &quot;authorized&quot;: false,
-    &quot;error&quot;: &lbrace;
+    &quot;error&quot;: {
     &quot;status&quot;: 403,
     &quot;code&quot;: &quot;network_received_error&quot;,
     &quot;message&quot;: &quot;Errore di lettura durante il recupero della risposta dal servizio partner associato. Un nuovo tentativo di richiesta potrebbe risolvere il problema.&quot;,
     &quot;helpUrl&quot;: &quot;https://experienceleague.adobe.com/docs/primetime/authentication/home.html&quot;,
     &quot;action&quot;: &quot;retry&quot;
-    &rbrace;
-    &rbrace;,
-    &lbrace;
+    }
+    },
+    {
     &quot;id&quot;: &quot;RES02&quot;,
     &quot;authorized&quot;: false,
-    &quot;error&quot;: &lbrace;
+    &quot;error&quot;: {
     &quot;status&quot;: 403,
     &quot;code&quot;: &quot;network_received_error&quot;,
     &quot;message&quot;: &quot;Errore di lettura durante il recupero della risposta dal servizio partner associato. Un nuovo tentativo della richiesta potrebbe risolvere il problema.&quot;,
     &quot;helpUrl&quot;: &quot;https://experienceleague.adobe.com/docs/primetime/authentication/home.html&quot;,
     &quot;action&quot;: &quot;retry&quot;
-    &rbrace;
-    &rbrace;
-    &rbrack;
-    &rbrace;
+    }
+    }
+    ]
+    }
     &quot;
 
 </td>
@@ -530,15 +530,15 @@ accessEnablerApi.preauthorize(request, callback);
     <td>
 
     &quot;JavaScript
-    &lbrace;
-    &quot;status&quot;: &lbrace;
+    {
+    &quot;status&quot;: {
     &quot;status&quot;: 0,
     &quot;code&quot;: &quot;authentication_session_missing&quot;,
     &quot;message&quot;: &quot;Impossibile recuperare la sessione di autenticazione associata a questa richiesta. Per continuare, l&#39;utente deve ripetere l&#39;autenticazione con un MVPD supportato.&quot;,
     &quot;action&quot;: &quot;authentication&quot;
-    &rbrace;,
+    },
     &quot;Decisions&quot;: []
-    &rbrace;
+    }
     
     &quot;
 
@@ -564,13 +564,13 @@ accessEnablerApi.preauthorize(request, callback);
     <td>
 
     &quot;JavaScript
-    &lbrace;
-    &quot;status&quot;: &lbrace;
+    {
+    &quot;status&quot;: {
     &quot;status&quot;: 0,
     &quot;code&quot;: &quot;requestor_not_configured&quot;,
     &quot;message&quot;: &quot;Il richiedente non è ancora configurato, il che è un prerequisito per l&#39;utilizzo di qualsiasi API a parte l&#39;API setRequestor.&quot;,
     &quot;action&quot;: &quot;retry&quot;
-    &rbrace;,
+    },
     &quot;Decisions&quot;: []
     
     &quot;

@@ -13,7 +13,7 @@ ht-degree: 0%
 
 Il caso d’uso principale del servizio di conteggio dei flussi sta conteggiando il numero di flussi video simultanei guardati da un utente e fornisce una decisione relativa al suo utilizzo simultaneo per lo stesso ID account.
 
-Per monitorare l&#39;utilizzo da parte dell&#39;abbonato, è necessario un servizio centralizzato che possa aggregare l&#39;attività dell&#39;utente indipendentemente dal fatto che avvenga sul sito web o sull&#39;applicazione del programmatore, sul portale dei contenuti MVPD o su una proprietà sindacata.
+Per monitorare l’utilizzo da parte dell’abbonato, è necessario un servizio centralizzato in grado di aggregare l’attività dell’utente indipendentemente dal fatto che avvenga sul sito web o sull’applicazione del programmatore, sul portale dei contenuti di MVPD o su una proprietà sindacata.
 
 I principali casi d’uso supportati da questo servizio centralizzato dovrebbero essere:
 

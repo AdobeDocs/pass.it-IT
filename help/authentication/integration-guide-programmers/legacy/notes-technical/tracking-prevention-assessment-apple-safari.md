@@ -2,7 +2,7 @@
 title: Valutazione della prevenzione del tracciamento Apple Safari
 description: Valutazione della prevenzione del tracciamento Apple Safari
 exl-id: a3362020-92ff-4232-b923-e462868730d5
-source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
+source-git-commit: c1f891fabd47954dc6cf76a575c3376ed0f5cd3d
 workflow-type: tm+mt
 source-wordcount: '1849'
 ht-degree: 0%
@@ -33,7 +33,7 @@ per le seguenti versioni di AccessEnabler JavaScript SDK: v2 (versioni 2.x), v3 
 
 Per attenuare queste limitazioni, puoi chiedere all&#39;utente di modificare le impostazioni di privacy del browser Safari 10 e di utilizzare l&#39;opzione &quot;**Consenti sempre**&quot; per la voce &quot;**Cookie e dati del sito Web**&quot; nella scheda Privacy del browser da Preferenze, come illustrato nell&#39;immagine seguente.
 
-![](/help/authentication/assets/always-allow-safari10.png)
+![](../../../assets/always-allow-safari10.png)
 
 
 ## Safari 11 {#safari11}
@@ -64,12 +64,12 @@ Quando viene ricevuto il callback di errore [N130](/help/authentication/integrat
 
 * In caso di Mac OS X High Sierra e versioni successive: deselezionare l&#39;opzione &quot;**Impedisci il rilevamento intersito**&quot; per la voce &quot;**Tracciamento del sito Web**&quot; nella scheda Privacy del browser da Preferenze, come illustrato nell&#39;immagine seguente.
 
-  ![](/help/authentication/assets/uncheck-prvnt-cr-st-tr-safari11.png)
+  ![](../../../assets/uncheck-prvnt-cr-st-tr-safari11.png)
 
 
 * In caso di Mac OS X Sierra e versioni precedenti: controllo dell&#39;opzione &quot;**Consenti sempre**&quot; per la voce &quot;**Cookie e dati del sito Web**&quot; nella scheda Privacy del browser da Preferenze, come illustrato nell&#39;immagine seguente.
 
-  ![](/help/authentication/assets/always-allow-safari11.png)
+  ![](../../../assets/always-allow-safari11.png)
 
 ## Safari 12 {#safari12}
 
@@ -126,14 +126,14 @@ Casi d’uso interessati da questo problema:
 
 Al momento della stesura di queste note non è disponibile o possibile alcuna mitigazione nota. Apple ha introdotto un&#39;&quot;API di accesso all&#39;archiviazione&quot; in Safari 12 (`https://webkit.org/blog/8124/introducing-storage-access-api`), ma l&#39;implementazione corrente non si applica a localStorage ma solo ai cookie. Inoltre, per utilizzare l’API è necessaria l’interazione dell’utente e, una volta utilizzata, all’utente viene richiesta anche una finestra di dialogo per l’autorizzazione simile a quella riportata di seguito.
 
-![](/help/authentication/assets/permission-dialog-apple.png)
+![](../../../assets/permission-dialog-apple.png)
 
 
 A questo punto questi requisiti/prompt di Safari non si allineano con i nostri requisiti UX e non abbiamo un comportamento coerente come su altri browser, dove SSO &quot;funziona solo&quot; una volta salvato un token in un dominio comune localStorage.
 
 **Passaggio temporaneo**
 
-Per mitigare i problemi di individualizzazione e consentire l&#39;interazione con l&#39;utente, si consiglia di utilizzare **[Passaggio temporaneo promozionale](/help/premium-workflow/temporary-access/temp-pass-feature.md#promotional-temp-pass)** in modo interattivo e di fornire almeno un&#39;informazione aggiuntiva sull&#39;utente (ad esempio, l&#39;indirizzo e-mail).
+Per mitigare i problemi di individualizzazione e consentire l&#39;interazione con l&#39;utente, si consiglia di utilizzare **[Passaggio temporaneo promozionale](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#promotional-temp-pass)** in modo interattivo e di fornire almeno un&#39;informazione aggiuntiva sull&#39;utente (ad esempio, l&#39;indirizzo e-mail).
 
 ## Safari 13 {#safari13}
 
@@ -164,8 +164,8 @@ Quando viene ricevuto il callback di errore [N130](/help/authentication/integrat
 
 * In caso di Mac OS X High Sierra e versioni successive: deselezionare l&#39;opzione &quot;**Impedisci il rilevamento intersito**&quot; per la voce &quot;**Tracciamento del sito Web**&quot; nella scheda Privacy del browser da Preferenze, come illustrato nell&#39;immagine seguente.
 
-  ![](/help/authentication/assets/prvnt-cross-site-tr-safari13.png)
+  ![](../../../assets/prvnt-cross-site-tr-safari13.png)
 
 * In caso di Mac OS X Sierra e versioni precedenti: controllo di t</span>he opzione &quot;**Consenti sempre**&quot; per la voce &quot;**Cookie e dati del sito Web**&quot; nella scheda Privacy del browser da Preferenze, come illustrato nell&#39;immagine seguente.
 
-  ![](/help/authentication/assets/always-allow-safari13.png)
+  ![](../../../assets/always-allow-safari13.png)

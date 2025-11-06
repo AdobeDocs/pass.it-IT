@@ -22,13 +22,13 @@ In questo documento vengono descritte le procedure di supporto per gli incidenti
 
 ## Definizione del livello di gravità della riassegnazione 1 {#defn-escl-sevrityone-level}
 
-Un evento imprevisto di livello **SEVERITY 1** è una situazione **LIVE**, **che si verifica nell&#39;ambiente di produzione**, che non consente il completamento dei flussi di autenticazione e/o autorizzazione per un canale e un MVPD, e interessa un numero elevato di sottoscrittori dell&#39;MVPD che eseguono il flusso.
+Un evento imprevisto di livello **SEVERITY 1** è una situazione **LIVE**, **che si verifica nell&#39;ambiente di produzione**, che non consente il completamento dei flussi di autenticazione e/o autorizzazione per un canale e un MVPD e che interessa un numero elevato di abbonati al MVPD che eseguono il flusso.
 
 ## Esempi di incidenti con gravità 1 {#exampl-sevone-incident}
 
 * L&#39;attivatore dell&#39;accesso alla produzione ospitato in <http://entitlement.auth.adobe.com/entitlement/AccessEnabler.js> non è disponibile.
 
-* Per un MVPD specifico, Adobe non reindirizza più / visualizza la pagina di accesso, dopo che l’utente seleziona l’MVPD (in nessuno dei browser supportati).
+* Per un MVPD specifico, Adobe non reindirizza più / visualizza la pagina di accesso, dopo che l’utente seleziona il MVPD (in uno dei browser supportati).
 
 * Il partner riceve un numero elevato di rapporti che gli utenti non possono autenticare/autorizzare con un MVPD specifico.
 
@@ -39,8 +39,8 @@ Un evento imprevisto di livello **SEVERITY 1** è una situazione **LIVE**, **che
 
 *Per problemi di questo tipo, Adobe fornirà supporto per le indagini, ma non si tratta di incidenti di gravità 1:*
 
-* Uno o più abbonati non sono in grado di eseguire il flusso a causa di un problema di versione del Flash (Flash mancante, blocchi del Flash, versione del Flash errata).
-* Uno o più abbonati non sono in grado di eseguire l&#39;autenticazione e rimangono nella pagina di accesso MVPD.
+* Uno o più abbonati non sono in grado di eseguire il flusso a causa di un problema di versione di Flash (Flash mancante, Flash bloccanti, versione Flash errata).
+* Uno o più abbonati non sono in grado di eseguire l’autenticazione e rimangono nella pagina di accesso di MVPD.
 * Uno o più abbonati sono autenticati ma non sono in grado di riprodurre video.
 * Uno/pochi/tutti gli abbonati incontrano un errore JavaScript sul sito Programmatore.
 
@@ -50,7 +50,7 @@ Gli incidenti di gravità 1 possono essere avviati da Adobe o da un partner di a
 
 ### Flusso avviato dal partner {#partner-initiated-flow}
 
-1. Il partner identifica un incidente di Gravità 1 (come descritto sopra) che richiede l’attenzione immediata di Adobe.
+1. Il partner identifica un caso di gravità 1 (come descritto sopra) che richiede l’attenzione immediata di Adobe.
 
 1. Il partner invia un&#39;e-mail a tve-support@adobe.com includendo &quot;URGENT - INCIDENT&quot; (URGENTE - INCIDENTE) nella riga dell&#39;oggetto e aggiungendo le seguenti informazioni:
 
@@ -61,7 +61,7 @@ Gli incidenti di gravità 1 possono essere avviati da Adobe o da un partner di a
    * Versione Flash
    * (facoltativo) Eventuali schermate o acquisizioni video che dimostrino il problema
 
-1. Se l’Adobe non risponde al ticket entro 30 minuti, il partner chiama il numero seguente:
+1. Se Adobe non risponde al ticket entro 30 minuti, il partner chiama il numero seguente:
 
    * **1-205-693-9813**
 
@@ -72,22 +72,22 @@ Gli incidenti di gravità 1 possono essere avviati da Adobe o da un partner di a
 
 **...per un problema di autenticazione Adobe Pass**
 
-1. L’Adobe identifica un problema interno e apre un ticket con il nostro sistema di tracciamento.
+1. Adobe identifica un problema interno e apre un ticket con il nostro sistema di tracciamento.
 
-1. L&#39;Adobe avvisa il responsabile del programma e il contatto tecnico del partner, specificando il numero del ticket e l&#39;impatto stimato del problema.
+1. Adobe invia una notifica al responsabile del programma e al contatto tecnico del partner, specificando il numero del ticket e l’impatto stimato del problema.
 
-1. Adobe si impegna a risolvere l&#39;incidente e tiene informati tutti i partner interessati.
+1. Adobe si impegna a risolvere l’incidente e tiene informati tutti i partner interessati.
 
 
 **...per un problema del partner (Programmatore/MVPD)**
 
-1. L&#39;Adobe identifica un problema relativo all&#39;integrazione con un MVPD o su uno dei siti del programmatore.
+1. Adobe identifica un problema relativo all’integrazione con un MVPD o in uno dei siti del programmatore.
 
 1. Adobe invia una notifica al partner interessato **seguendo le procedure di supporto in vigore con tale partner** e apre un ticket con l&#39;organizzazione di supporto del partner.
 
-1. Se, durante l’analisi dell’impatto, l’Adobe rileva che la questione appartiene a una delle decisioni concordate in precedenza sugli scenari di incidente (vedi la sezione &quot;Decisioni concordate in precedenza sugli scenari di incidente&quot; di seguito), agirà di conseguenza senza attendere il partner1. dell&#39;input.
+1. Se, durante l’analisi di impatto, Adobe identifica che il problema appartiene a una delle decisioni concordate in precedenza sugli scenari di incidente (vedi la sezione &quot;Decisioni concordate in anticipo sugli scenari di incidente&quot; di seguito), agirà di conseguenza senza attendere il partner1. dell&#39;input.
 
-1. Adobe attende gli aggiornamenti dal partner e una notifica dal partner quando il servizio è stato ripristinato.
+1. Adobe attenderà gli aggiornamenti dal partner e una notifica dal partner quando il servizio sarà stato ripristinato.
 
 ### Decisioni concordate in anticipo sugli scenari di incidente {#pre-agreed-decisions}
 
@@ -95,9 +95,9 @@ Esistono alcune situazioni in cui verrà eseguita un’azione predefinita nel ca
 
 |    | Scenario | Descrizione | Azioni |
 |:---:|:---|:---|:---|
-| S1 | L&#39;Adobe identifica un problema di integrazione di un MVPD durante le normali operazioni di produzione. | Durante le normali operazioni di produzione, Adobe identifica un problema con uno degli MVPD che rende impossibile l’esecuzione dei flussi di autenticazione/autorizzazione (ad esempio certificati scaduti, risposte SAML scadute, porte chiuse, parametri modificati, ecc.) | Adobe invierà una notifica all’MVPD e ai programmatori interessati. Adobe disattiverà questo MVPD per tutti i programmatori interessati. L’Adobe aprirà un ticket con l’MVPD seguendo la procedura di assistenza concordata con tale MVPD |
-| S2 | Adobe attiva un nuovo MVPD per un programmatore e il programmatore inserisce il MVPD nella whitelist prima della data di lancio. | Adobe sta attivando un nuovo MVPD per un sito di Programmatori, e il sito sta già visualizzando il nuovo MVPD nel selettore, anche se non era previsto. | L’Adobe invierà una notifica al programmatore relativamente al nuovo MVPD visualizzato nel selettore prima della data pianificata. Il programmatore eseguirà un&#39;azione per rimuoverlo dal selettore, se necessario. |
-| S3 | L&#39;Adobe attiva un nuovo MVPD per un programmatore anche se il MVPD non è pronto per la produzione | L’Adobe sta attivando un nuovo MVPD per un programmatore, ma MVPD non ha ancora implementato il supporto per l’integrazione, pertanto non è possibile eseguire i flussi di autenticazione/autorizzazione | Adobe farà la distribuzione solo se richiesto dal programmatore Il programmatore sarà responsabile di garantire la whitelist del MVPD una volta che tutti i test sono stati eseguiti. |
+| S1 | Adobe identifica un problema di integrazione di un MVPD durante le normali operazioni di produzione. | Durante le normali operazioni di produzione, Adobe identifica un problema con uno degli MVPD che rende impossibile l’esecuzione dei flussi di autenticazione/autorizzazione (ad esempio certificati scaduti, risposte SAML scadute, porte chiuse, parametri modificati, ecc.) | Adobe invierà una notifica a MVPD e Programmer interessati. Adobe disattiverà questo MVPD per tutti i programmatori interessati. Adobe aprirà un ticket con MVPD seguendo la procedura di supporto concordata con tale MVPD |
+| S2 | Adobe attiva un nuovo MVPD per un programmatore e il programmatore inserisce nella whitelist il MVPD prima della data di lancio. | Adobe sta attivando un nuovo MVPD per il sito di un programmatore e il sito sta già visualizzando il nuovo MVPD nel selettore, anche se non era previsto. | Adobe informerà il programmatore del nuovo MVPD visualizzato nel selettore prima della data pianificata. Il programmatore eseguirà un&#39;azione per rimuoverlo dal selettore, se necessario. |
+| S3 | Adobe attiva un nuovo MVPD per un programmatore anche se il MVPD non è pronto per la produzione | Adobe sta attivando un nuovo MVPD per un programmatore, ma MVPD non ha ancora implementato il supporto per l’integrazione, pertanto non è possibile eseguire i flussi di autenticazione/autorizzazione | Adobe eseguirà l’implementazione solo se richiesto dal programmatore. Il programmatore sarà responsabile di garantire l’inserimento nella whitelist di MVPD una volta eseguiti tutti i test. |
 
 ### Aspettative Di Risposta Per Gli Incidenti Di Gravità 1 {#response-expectations}
 

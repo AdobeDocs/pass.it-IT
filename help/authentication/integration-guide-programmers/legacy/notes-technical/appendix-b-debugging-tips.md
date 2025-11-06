@@ -34,7 +34,7 @@ L’autenticazione di Adobe Pass memorizza dati temporanei come la cache del bro
 
 ## Cancellazione cache LSO {#clearing-lsos-cache}
 
-Accedi alla [Guida del Flash Player](http://www.macromedia.com/support/documentation/en/flashplayer/help/settings_manager07.html).
+Accedere alla [Guida di Flash Player](http://www.macromedia.com/support/documentation/en/flashplayer/help/settings_manager07.html).
 
 Selezionare ```entitlement.\*``` (a seconda di ciò che è stato testato) e fare clic su &quot;Elimina sito Web&quot;.
 

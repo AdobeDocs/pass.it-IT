@@ -4,7 +4,7 @@ description: Trasmissione delle informazioni del client (dispositivo, connession
 exl-id: 0b21ef0e-c169-48ff-ac01-25411cfece1e
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '1666'
+source-wordcount: '1665'
 ht-degree: 1%
 
 ---
@@ -65,7 +65,7 @@ Le informazioni client sono un oggetto JSON creato con le chiavi presentate nell
 |            | displayHeight | No | L’altezza fisica dello schermo del dispositivo. |                                                                                                                                                                                                                                                                                                                                                           |
 |            | displayPpi | No | Densità fisica dei pixel dello schermo del dispositivo. | Esempio: 294 |
 |            | diagonalScreenSize | No | La dimensione diagonale dello schermo fisico del dispositivo in pollici. | ad es. 5.5, 10.1 |
-|            | connectionIp | No | L’IP del dispositivo utilizzato per inviare richieste HTTP. | es. 8.8.4.4 |
+|            | connectionIp | No | L’IP del dispositivo utilizzato per inviare richieste HTTP. | Esempio: 8.8.4.4 |
 |            | connectionPort | No | Porta del dispositivo utilizzata per l’invio di richieste HTTP. | ad es. 53124 |
 |            | connectionType | No | Tipo di connessione di rete. | ad esempio WiFi, LAN, 3G, 4G, 5G |
 |            | connectionSecure | # Sì | Stato di protezione della connessione di rete. | # I valori sono limitati:                                                   true - nel caso di una rete sicura                   false - nel caso di un hotspot pubblico |
@@ -93,7 +93,7 @@ I servizi di autenticazione di Adobe Pass supportano la ricezione delle informaz
 
 AccessEnabler JavaScript SDK crea per impostazione predefinita un oggetto JSON di informazioni client, che verrà passato ai servizi di autenticazione di Adobe Pass, a meno che non venga sostituito.
 
-AccessEnabler JavaScript SDK supporta **l&#39;override solo** della chiave &quot;applicationId&quot; dall&#39;oggetto JSON delle informazioni client tramite il parametro *applicationId* delle opzioni [setRequestor](/help/authentication/integration-guide-programmers/legacy/sdks/javascript-sdk/javascript-sdk-api-reference.md#setrequestor(inRequestorID,endpoints,options)).
+AccessEnabler JavaScript SDK supporta **l&#39;override solo** della chiave &quot;applicationId&quot; dall&#39;oggetto JSON delle informazioni client tramite il parametro [applicationId](/help/authentication/integration-guide-programmers/legacy/sdks/javascript-sdk/javascript-sdk-api-reference.md#setrequestor(inRequestorID,endpoints,options)) delle opzioni *setRequestor*.
 
 >[!CAUTION]
 >
@@ -116,7 +116,7 @@ Il SDK AccessEnabler iOS/tvOS supporta **l&#39;override dell&#39;intero oggetto 
 
 Il SDK Android/FireOS `AccessEnabler` crea per impostazione predefinita un oggetto JSON di informazioni client, che verrà passato ai servizi di autenticazione di Adobe Pass, a meno che non venga sostituito.
 
-Il SDK di Android/FireOS `AccessEnabler` supporta **l&#39;override dell&#39;intero oggetto JSON delle informazioni client** tramite il parametro `device_info` di [setOptions](/help/authentication/integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-api-reference.md#setOptions)&#39;s/[setOptions](/help/authentication/integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-native-client-api-reference.md#fire_setOption).
+Il SDK di Android/FireOS `AccessEnabler` supporta **l&#39;override dell&#39;intero oggetto JSON delle informazioni client** tramite il parametro [ di ](/help/authentication/integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-api-reference.md#setOptions)setOptions[&#39;s/](/help/authentication/integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-native-client-api-reference.md#fire_setOption)setOptions`device_info`.
 
 >[!NOTE]
 >

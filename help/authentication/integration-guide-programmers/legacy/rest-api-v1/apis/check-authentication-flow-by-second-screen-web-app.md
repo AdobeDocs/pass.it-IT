@@ -4,7 +4,7 @@ description: Controlla il flusso di autenticazione tramite l’app web Second Sc
 exl-id: 5807f372-a520-4069-b837-67ae41b7f79b
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '234'
+source-wordcount: '232'
 ht-degree: 0%
 
 ---
@@ -44,7 +44,7 @@ Questa API deve essere utilizzata dalla seconda app web di accesso schermata per
 
 | Endpoint | Chiamato </br> da | Input   </br>Parametri | Metodo HTTP </br> | Risposta | HTTP </br>Risposta |
 | --- | --- | --- | --- | --- | --- |
-| SP_FQDN/api/v1/checkauthn/{codice di registrazione} | Accedi all’app web | 1. codice di registrazione </br>    (componente percorso)</br>2.  richiedente </br>    (Obbligatorio) | GET | XML o JSON contenente i dettagli dell’errore in caso di esito negativo. | 200 - Operazione completata   </br>403 - Non consentito |
+| SP_FQDN/api/v1/checkauthn/{registration code} | Accedi all’app web | &#x200B;1. codice di registrazione </br>    (componente percorso)</br>2.  richiedente </br>    (Obbligatorio) | GET | XML o JSON contenente i dettagli dell’errore in caso di esito negativo. | 200 - Operazione completata   </br>403 - Non consentito |
 
 </br>
 

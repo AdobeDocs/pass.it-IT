@@ -2,9 +2,9 @@
 title: Vantaggi dell’utilizzo del parametro deviceType senza client nelle metriche di autenticazione di Adobe Pass
 description: Vantaggi dell’utilizzo del parametro deviceType senza client nelle metriche di autenticazione di Adobe Pass
 exl-id: a5004887-d5fa-468e-971b-10806519175b
-source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '368'
+source-wordcount: '372'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ ht-degree: 0%
 
 ## Contesto
 
-Anche se facoltativo, il parametro `deviceType` dell&#39;API senza client, se presente, viene utilizzato nelle metriche di autenticazione di Adobe Pass esposte tramite il monitoraggio del [Servizio diritti](/help/premium-workflow/esm/entitlement-service-monitoring-overview.md).
+Anche se facoltativo, il parametro `deviceType` dell&#39;API senza client, se presente, viene utilizzato nelle metriche di autenticazione di Adobe Pass esposte tramite il monitoraggio del [Servizio diritti](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md).
 
 Considerando che la connessione tra il parametro `deviceType` e i relativi **vantaggi** sulle metriche di autenticazione di Adobe Pass non è stata inizialmente dichiarata, l&#39;obiettivo di questa nota tecnica è quello di aggiungere ulteriori informazioni su di essi.
 
@@ -35,10 +35,10 @@ Il parametro `deviceType` era presente nell&#39;API senza client dalla prima ver
 
 >[!IMPORTANT]
 >
->Se il parametro `deviceType` è impostato correttamente, avrà il seguente **beneficio** nel monitoraggio del servizio di adesione: offre metriche [suddivise per tipo di dispositivo](/help/premium-workflow/esm/entitlement-service-monitoring-overview.md#clientless_device_type) quando si utilizza Clientless, in modo che diversi tipi di analisi possano essere eseguiti per esempio per Roku, AppleTV, Xbox ecc.
+>Se il parametro `deviceType` è impostato correttamente, avrà il seguente **beneficio** nel monitoraggio del servizio di adesione: offre metriche [suddivise per tipo di dispositivo](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#clientless_device_type) quando si utilizza Clientless, in modo che diversi tipi di analisi possano essere eseguiti per esempio per Roku, AppleTV, Xbox ecc.
 
 
-Per ulteriori informazioni sull&#39;API di monitoraggio del servizio di adesione, fare riferimento alla [struttura di espansione,](/help/premium-workflow/esm/entitlement-service-monitoring-overview.md#esm_dimensions) (risorse) disponibile in ESM 2.0.
+Per ulteriori informazioni sull&#39;API di monitoraggio del servizio di adesione, fare riferimento alla [struttura di espansione,](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-api.md#drill-down_tree) che illustra le [dimensioni](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#esm_dimensions) (risorse) disponibili in ESM 2.0.
 
 >[!NOTE]
 >

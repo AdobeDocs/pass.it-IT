@@ -14,7 +14,7 @@ ht-degree: 1%
 
 ## Descrizione del caso d’uso
 
-MVPD M dispone di un&#39;applicazione iPhone, un&#39;applicazione iPad e un sito Web. Deve essere integrato con Adobe Concurrency Monitoring (CM) su richiesta del programmatore P. Il programmatore P ha definito in CM un set di criteri con regole che limitano l’utilizzo simultaneo. Il CM prenderà decisioni su quali flussi è consentito riprodurre in base alle regole e ai criteri definiti. Ciò significa che anche se a un flusso è stato consentito di avviarsi e riprodurre, durante la riproduzione, CM può decidere di interromperlo.
+MVPD M dispone di un’applicazione iPhone, un’applicazione iPad e un sito web. Deve essere integrato con Adobe Concurrency Monitoring (CM) su richiesta del programmatore P. Il programmatore P ha definito in CM un set di criteri con regole che limitano l’utilizzo simultaneo. Il CM prenderà decisioni su quali flussi è consentito riprodurre in base alle regole e ai criteri definiti. Ciò significa che anche se a un flusso è stato consentito di avviarsi e riprodurre, durante la riproduzione, CM può decidere di interromperlo.
 
 
 
@@ -38,12 +38,12 @@ Dopo aver creato il ticket, verranno rilasciate le seguenti informazioni:
 
 | tipo | descrizione | valore di esempio | valore predefinito |
 | --- | --- | --- | --- |
-| endpoint | l&#39;endpoint per l&#39;Adobe del monitoraggio della concorrenza | http://streams.adobeprimetime.com/v1/ | http://streams.adobeprimetime.com/v1/ |
+| endpoint | endpoint per il monitoraggio della concorrenza Adobe | http://streams.adobeprimetime.com/v1/ | http://streams.adobeprimetime.com/v1/ |
 | applicationId | ID app iPhone | iphone54-75b4-431b-adb2-eb6b9e546013 | - |
 | applicationId | ID app iPad | ipad5d54-75b4-431b-adb2-eb6b9e546013 | - |
 | applicationId | ID app del sito web | website4-75b4-431b-adb2-eb6b9e546013 | - |
-| intervallo per heartbeat | Intervallo in secondi per l’invio di chiamate heartbeat ad Adobe Concurrency Monitoring | 60 | 60 |
-| intervallo per la conformità del flusso | Intervallo in secondi per verificare la conformità del flusso al monitoraggio della concorrenza Adobe | 180 | 180 |
+| intervallo per heartbeat | Intervallo in secondi per l’invio di chiamate heartbeat al monitoraggio della concorrenza di Adobe | 60 | 60 |
+| intervallo per la conformità del flusso | Intervallo in secondi per verificare la conformità del flusso al monitoraggio simultaneo di Adobe | 180 | 180 |
 
 
 ## Linee guida per l’implementazione

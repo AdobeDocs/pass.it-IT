@@ -2,7 +2,7 @@
 title: Manuale dell’API REST (server-to-server)
 description: Rest API cookbook server to server.
 exl-id: 36ad4a64-dde8-4a5f-b0fe-64b6c0ddcbee
-source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
+source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
 workflow-type: tm+mt
 source-wordcount: '1856'
 ht-degree: 0%
@@ -48,7 +48,7 @@ In una soluzione server-to-server funzionante sono coinvolti i seguenti componen
 ### Registrazione Dynamic Client (DCR)
 
 
-Adobe Pass utilizza il DCR per proteggere le comunicazioni client tra un’applicazione o un server di programmazione e i servizi Adobe Pass. Il flusso DCR è separato e descritto nella documentazione [Panoramica registrazione client dinamica](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
+Adobe Pass utilizza il DCR per proteggere le comunicazioni client tra un’applicazione o un server di programmazione e i servizi Adobe Pass. Il flusso DCR è separato e descritto nella documentazione [Panoramica registrazione client dinamica](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
 
 
 ### Autenticazione (authN)
@@ -73,7 +73,7 @@ al proprio MVPD per determinare se l’utente dispone di un account valido.
 
 Il diagramma seguente illustra il flusso di autenticazione:
 
-![](/help//authentication/assets/authn-flow.png)
+![](../../../../assets/authn-flow.png)
 
 ### Autorizzazione (authZ)
 
@@ -86,7 +86,7 @@ Il flusso di autorizzazione viene utilizzato per determinare se un utente ha il 
 
 Il diagramma seguente illustra il flusso di autorizzazione:
 
-![](/help//authentication/assets/authz-flow.png)
+![](../../../../assets/authz-flow.png)
 
 ### Disconnetti
 
@@ -98,7 +98,7 @@ associato all’applicazione.
 
 Il diagramma seguente illustra il flusso di logout:
 
-![](/help//authentication/assets/logout-flow.png)
+![](../../../../assets/logout-flow.png)
 
 ### \[Facoltativo\] Preautorizzazione (ovvero Pre-volo)
 
@@ -114,7 +114,7 @@ La pre-autorizzazione può essere utilizzata per determinare rapidamente da un s
 
 Il diagramma seguente illustra il flusso di preautorizzazione:
 
-![](/help//authentication/assets/preauthz-flow.png)
+![](../../../../assets/preauthz-flow.png)
 
 
 ### \[Facoltativo\] Metadati
@@ -130,7 +130,7 @@ Il diagramma seguente illustra il flusso di preautorizzazione:
 
 
 
-![](/help//authentication/assets/user-metadata-api-preauthz.png)
+![](../../../../assets/user-metadata-api-preauthz.png)
 
 
 

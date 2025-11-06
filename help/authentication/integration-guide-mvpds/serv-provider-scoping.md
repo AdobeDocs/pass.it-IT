@@ -19,7 +19,7 @@ ht-degree: 0%
 
 L&#39;implementazione predefinita di un&#39;integrazione di autenticazione Adobe Pass con un MVPD si basa sulla **specifica OLCA**. Nella sezione Requisiti di autenticazione della specifica OLCA (6.5, Subject Identifier) è indicato che è possibile indicare l&#39;ambito del provider di servizi (SP) per l&#39;identificativo del soggetto. L&#39;identificatore del soggetto è l&#39;ID utente offuscato che MVPD restituisce all&#39;SP.  In un’integrazione di autenticazione Adobe Pass, gli MVPD devono abilitare l’ambito delle richieste di autenticazione SP.
 
-Con l’autenticazione di Adobe Pass che assume il ruolo di SP per il programmatore, è necessario implementare una personalizzazione che consenta l’ambito SP della richiesta di autenticazione.  Questa operazione deve essere eseguita in modo che MVPD possa identificare il brand di rete passato nell’asserzione SAML al provider di identità (IdP) di MVPD.  L&#39;ambito può essere implementato in uno dei due modi descritti nella sezione successiva.
+Con l’autenticazione di Adobe Pass che assume il ruolo di SP per il programmatore, è necessario implementare una personalizzazione che consenta l’ambito SP della richiesta di autenticazione.  Questa operazione deve essere eseguita in modo che MVPD possa identificare il brand di rete trasmesso nell’asserzione SAML al provider di identità (IdP) di MVPD.  L&#39;ambito può essere implementato in uno dei due modi descritti nella sezione successiva.
 
 ## Ambito provider di servizi {#service-provider-scoping}
 

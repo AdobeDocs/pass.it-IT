@@ -15,7 +15,7 @@ ht-degree: 0%
 
 
 
-**A:** Il monitoraggio della concorrenza non è in grado di distinguere direttamente tra contenuti live e video on-demand (VOD). Il lettore video deve conoscere il tipo di contenuto in riproduzione e inviare queste informazioni durante la [chiamata di inizializzazione della sessione](/help/concurrency-monitoring/cm-api-overview.md#session-initial) (richiesta per il monitoraggio della concorrenza). Il flusso di lavoro normale si presenta così:
+**A:** Il monitoraggio della concorrenza non è in grado di distinguere direttamente tra contenuto live e video on-demand (VOD). Il lettore video deve conoscere il tipo di contenuto in riproduzione e inviare queste informazioni durante la [chiamata di inizializzazione della sessione](/help/concurrency-monitoring/cm-api-overview.md#session-initial) (richiesta per il monitoraggio della concorrenza). Il flusso di lavoro normale si presenta così:
 
 1. I clienti di Monitoraggio della concorrenza definiscono un set di metadati su cui desiderano implementare le regole (ad esempio content-type=live|vod, device-type=mobile|console|desktop).
 1. Il team di monitoraggio della concorrenza implementa i criteri desiderati. Esempio:

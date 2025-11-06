@@ -4,7 +4,7 @@ description: Accesso a Android SDK Single Sign-On (SSO) con attivatore su app An
 exl-id: dedade15-c451-4757-b684-d3728e11dd87
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '402'
+source-wordcount: '401'
 ht-degree: 0%
 
 ---
@@ -29,7 +29,7 @@ Come conseguenza di queste modifiche, l&#39;SSO (Single Sign-On) offerto da Acce
 
 ## Comportamento
 
-A seconda dell&#39;attributo del manifesto **[!UICONTROL target SDK level]** dell&#39;app o dell&#39;utilizzo di **android:requestLegacyExternalStorage**, l&#39;SSO (Single Sign-On) offerto da Access Enabler Android versione 3.2.1 SDK (più recente) e dalle versioni precedenti si comporterà attualmente come segue:
+A seconda dell&#39;app **[!UICONTROL target SDK level]** o dell&#39;utilizzo dell&#39;attributo manifesto **android:requestLegacyExternalStorage**, l&#39;SSO (Single Sign-On) offerto da Access Enabler Android versione 3.2.1 SDK (più recente) e dalle versioni precedenti si comporterà come segue:
 
 - L&#39;app è destinata a **Android 9 (livello API 28)** o a **-\>** Single Sign-On (SSO) **funzionerà**
 - L&#39;app è destinata a **Android 10** **(livello API 29)** e **imposta** il valore di **requestLegacyExternalStorage su true** nel file manifesto dell&#39;app **-\>** Single Sign-On (SSO) **funzionerà**

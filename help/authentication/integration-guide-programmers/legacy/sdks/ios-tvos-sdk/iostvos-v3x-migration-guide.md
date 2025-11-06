@@ -4,7 +4,7 @@ description: Guida alla migrazione ad iOS/tvOS v3.x
 exl-id: 4c43013c-40af-48b7-af26-0bd7f8df2bdb
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '582'
+source-wordcount: '581'
 ht-degree: 0%
 
 ---
@@ -72,7 +72,7 @@ Dopo aver ottenuto lo schema URL personalizzato, devi aggiungerlo al file info.p
 
 ## Intercettazione delle chiamate sullo schema URL personalizzato {#intercept}
 
-Ciò si applica solo nel caso in cui l&#39;applicazione abbia precedentemente abilitato la gestione manuale di Safari View Controller (SVC) tramite la chiamata [setOptions(\[&quot;handleSVC&quot;:true&quot;\])](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md) e per MVPD specifici che richiedono Safari View Controller (SVC), richiedendo pertanto il caricamento degli URL degli endpoint di autenticazione e disconnessione da un controller SFSafariViewController anziché da un controller UIWebView/WKWebView.
+Questo vale solo nel caso in cui l&#39;applicazione abbia precedentemente abilitato la gestione manuale di Safari View Controller (SVC) tramite la chiamata [setOptions(\[&quot;handleSVC&quot;:true&quot;\])](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md) e per MVPD specifici che richiedono Safari View Controller (SVC), richiedendo pertanto il caricamento degli URL degli endpoint di autenticazione e disconnessione da un controller SFSafariViewController anziché da un controller UIWebView/WKWebView.
 
 Durante i flussi di autenticazione e disconnessione, l&#39;applicazione deve monitorare l&#39;attività del controller `SFSafariViewController ` mentre viene eseguita una serie di reindirizzamenti. L&#39;applicazione deve rilevare il momento in cui carica un URL personalizzato specifico definito da `application's custom URL scheme` (ad esempio `adbe.u-XFXJeTSDuJiIQs0HVRAg://adobe.com)`. Quando il controller carica questo URL personalizzato specifico, l&#39;applicazione deve chiudere `SFSafariViewController` e chiamare il metodo API `handleExternalURL:url ` di AccessEnabler.
 

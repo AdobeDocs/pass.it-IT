@@ -2,7 +2,7 @@
 title: Guida di Kick-Start per MVPD
 description: Guida di Kick-Start per MVPD
 exl-id: 6423cc9a-a45a-4cde-b562-4cb72c98e505
-source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
+source-git-commit: 2b9a8ce374f7a73cd815e9735d672e5c9ba285cc
 workflow-type: tm+mt
 source-wordcount: '934'
 ht-degree: 0%
@@ -33,7 +33,7 @@ Adobe fornisce una serie di risorse per aiutarti a integrarti con l’autenticaz
 
 Il processo di configurazione prevede, tra l&#39;altro, i seguenti passaggi:
 
-![Processo di integrazione dell&#39;autenticazione pass Adobe®](/help/authentication/assets/mvpd-int-lifecycle.png)
+![Processo di integrazione dell&#39;autenticazione pass Adobe®](../assets/mvpd-int-lifecycle.png)
 
 *Processo di integrazione dell&#39;autenticazione pass Adobe®*
 
@@ -135,7 +135,7 @@ Il team di autenticazione di Adobe Pass è disponibile per rispondere a qualsias
 
 ## Accesso alla documentazione {#access-documentation}
 
-**Adobe fornirà** accesso alla nostra documentazione pubblica tramite [Adobe Experience League](https://experienceleague.adobe.com/it/docs/pass/authentication/home).
+**Adobe fornirà** accesso alla nostra documentazione pubblica tramite [Adobe Experience League](https://experienceleague.adobe.com/en/docs/pass/authentication/home).
 
 Il team di autenticazione di Adobe Pass fornisce una documentazione completa sulle funzioni e i flussi di lavoro disponibili nella sezione [Guida all&#39;integrazione per MVPDs](/help/authentication/integration-guide-mvpds/mvpd-integration-guide-overview.md). Fare riferimento al sommario di questa sezione per collegamenti a informazioni dettagliate su ciascun argomento.
 

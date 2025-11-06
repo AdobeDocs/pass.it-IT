@@ -2,7 +2,7 @@
 title: Revisione e invio di modifiche
 description: Scopri come rivedere e inviare le modifiche nel dashboard TVE.
 exl-id: 2f29712e-7b3f-472a-a36f-32780bec1508
-source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
+source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
 workflow-type: tm+mt
 source-wordcount: '250'
 ht-degree: 0%
@@ -21,7 +21,7 @@ Segui questi passaggi per rivedere e inviare le modifiche.
 
 1. Nella parte inferiore della schermata, individua la notifica delle modifiche di revisione e push.
 
-   ![Rivedi e invia notifica modifiche](/help/authentication/assets/tve-dashboard/new-tve-dashboard/review/review-and-push-changes-banner-view.png)
+   ![Rivedi e invia notifica modifiche](../assets/tve-dashboard/new-tve-dashboard/review/review-and-push-changes-banner-view.png)
 
    *Casella di notifica delle modifiche revisione e push*
 
@@ -29,7 +29,7 @@ Segui questi passaggi per rivedere e inviare le modifiche.
 
 1. Digitare una breve descrizione della modifica in **Descrizione configurazione** per tenere traccia e comprendere lo scopo di ogni modifica.
 
-   ![Aggiungi una descrizione della configurazione](/help/authentication/assets/tve-dashboard/new-tve-dashboard/review/review-and-push-configuration-details-panel-view.png)
+   ![Aggiungi una descrizione della configurazione](../assets/tve-dashboard/new-tve-dashboard/review/review-and-push-configuration-details-panel-view.png)
 
    *Aggiungi una descrizione della configurazione*
 
@@ -39,7 +39,7 @@ Segui questi passaggi per rivedere e inviare le modifiche.
 
 1. Seleziona **Visualizza** per rivedere i valori precedenti e nuovi associati a una modifica alla configurazione.
 
-   ![Visualizza modifiche alla configurazione](/help/authentication/assets/tve-dashboard/new-tve-dashboard/review/review-and-push-changes-view-button.png)
+   ![Visualizza modifiche alla configurazione](../assets/tve-dashboard/new-tve-dashboard/review/review-and-push-changes-view-button.png)
 
    *Visualizza modifiche alla configurazione*
 
@@ -49,7 +49,7 @@ Segui questi passaggi per rivedere e inviare le modifiche.
    >
    >Il pulsante **Push changes** diventa attivo solo dopo l&#39;aggiunta di una **descrizione della configurazione**.
 
-   ![Modifiche push](/help/authentication/assets/tve-dashboard/new-tve-dashboard/review/review-and-push-push-changes-button.png)
+   ![Modifiche push](../assets/tve-dashboard/new-tve-dashboard/review/review-and-push-push-changes-button.png)
 
    *Modifiche push*
 

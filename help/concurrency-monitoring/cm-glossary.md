@@ -13,7 +13,7 @@ ht-degree: 0%
 
 ## ID account {#accid-defn}
 
-* Account MVPD di un abbonato, in genere corrispondente all’account di fatturazione effettivo. Tale conto deve essere identificabile dall&#39;MVPD nel proprio sistema.
+* Account MVPD di un abbonato, in genere corrispondente all’account di fatturazione effettivo. Questo account deve essere identificabile da MVPD nel proprio sistema.
 
 ## Azione {#action-defn}
 
@@ -73,7 +73,7 @@ ht-degree: 0%
 
 * Funge da provider di servizi e contenuti.
 * Si basa sull&#39;applicazione client distribuita che si integra con il servizio di monitoraggio della concorrenza per applicare i criteri di sicurezza definiti in base ai dati del servizio sopra menzionati.
-* Deve supportare l’MVPD nella raccolta delle attività degli abbonati e nell’applicazione delle regole di limitazione quando sulle loro proprietà.
+* Deve supportare MVPD nella raccolta delle attività degli abbonati e nell’applicazione delle regole di limitazione quando presente sulle loro proprietà.
 * Potrebbe anche essere interessato a limitare l’accesso simultaneo ai propri contenuti su tutti i portali di destinazione, come regola separata.
 
   *Q: perché il programmatore e non l&#39;ID richiedente come nel resto dell&#39;autenticazione Adobe Pass?*
@@ -94,13 +94,13 @@ ht-degree: 0%
 
 ## Oggetto {#subj-defn}
 
-* Il consumatore del contenuto (video) su Internet. Stiamo deliberatamente evitando il termine _&#x200B;**utente**&#x200B;_, in quanto il monitoraggio della concorrenza di solito tratta gli ID account MVPD (che coinvolgono diversi utenti effettivi che condividono lo stesso contratto, ad esempio i membri della famiglia per una famiglia).
+* Il consumatore del contenuto (video) su Internet. Stiamo deliberatamente evitando il termine _**utente**_, in quanto il monitoraggio della concorrenza di solito tratta gli ID account di MVPD (che coinvolgono diversi utenti effettivi che condividono lo stesso contratto, ad esempio i membri della famiglia per una famiglia).
 
 * Per ogni flusso, l’oggetto può essere migliorato con gli attributi relativi alla persona che utilizza effettivamente il servizio, al dispositivo connesso alla rete e così via.
 
 ## Abbonato {#subscriber-defn}
 
-* Il cliente pagante di un MVPD o una persona che condivide le credenziali di un cliente pagante
+* Cliente pagante di un MVPD o persona che condivide le credenziali di un cliente pagante
 * Il servizio di monitoraggio della concorrenza può interrompere la visualizzazione dei contenuti da parte dell’applicazione client che utilizza il servizio sopra indicato.
 * Nel migliore dei casi, non nota mai l’esistenza del servizio di monitoraggio della concorrenza
 

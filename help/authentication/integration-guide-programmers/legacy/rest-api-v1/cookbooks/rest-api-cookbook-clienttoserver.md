@@ -2,7 +2,7 @@
 title: Manuale dell’API REST (da client a server)
 description: Client-to-server del manuale API REST.
 exl-id: f54a1eda-47d5-4f02-b343-8cdbc99a73c0
-source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
+source-git-commit: 640ba7073f7f4639f980f17f1a59c4468bfebcf4
 workflow-type: tm+mt
 source-wordcount: '886'
 ht-degree: 0%
@@ -49,12 +49,12 @@ In una soluzione client-to-server funzionante sono coinvolti i seguenti componen
 
 ### Registrazione Dynamic Client (DCR)
 
-Adobe Pass utilizza il DCR per proteggere le comunicazioni client tra un’applicazione o un server di programmazione e i servizi Adobe Pass. Il flusso DCR è separato ed è descritto nella documentazione [Panoramica registrazione client dinamica](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
+Adobe Pass utilizza il DCR per proteggere le comunicazioni client tra un’applicazione o un server di programmazione e i servizi Adobe Pass. Il flusso DCR è separato ed è descritto nella documentazione [Panoramica registrazione client dinamica](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
 
 
 ### Flussi di app in streaming (per dispositivi avanzati)
 
-![](/help//authentication/assets/smart-device-app-flow.png)
+![](../../../../assets/smart-device-app-flow.png)
 
 #### Flusso di avvio
 
@@ -119,7 +119,7 @@ utente.
 
 ### Flusso app AuthN (seconda schermata)
 
-![](/help//authentication/assets/secnd-screen-authn-flow.png)
+![](../../../../assets/secnd-screen-authn-flow.png)
 
 1. Ottieni un elenco di MVPD per questo utente. Esempio: [`<SP_FQDN>/api/v1/config/[requestorID]`](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/provide-mvpd-list.md)
 
@@ -148,4 +148,4 @@ Per le implementazioni TempPass e Promotional TempPass in cui l’utente non è 
 **Per utilizzare questa API, l&#39;app di streaming deve verificare l&#39;univocità dell&#39;ID dispositivo, in quanto viene utilizzata per identificare il token, insieme ai dati aggiuntivi facoltativi.**
 
 
-![](/help//authentication/assets/temp-pass-promo-temppass.png)
+![](../../../../assets/temp-pass-promo-temppass.png)

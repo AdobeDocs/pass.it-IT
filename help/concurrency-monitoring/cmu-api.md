@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->Il contenuto di questa pagina viene fornito solo a scopo informativo. L’utilizzo di questa API richiede una licenza corrente di Adobe. Non è consentito alcun uso non autorizzato.
+>Il contenuto di questa pagina viene fornito solo a scopo informativo. L’utilizzo di questa API richiede una licenza corrente da Adobe. Non è consentito alcun uso non autorizzato.
 
 ## Panoramica API {#api-overview}
 
@@ -22,7 +22,7 @@ L&#39;utilizzo del monitoraggio della concorrenza (CMU) è implementato come pro
 
 >[!NOTE]
 >
->L’API della CMU non è generalmente disponibile. Per domande sulla disponibilità, contatta il rappresentante di Adobe.
+>L’API della CMU non è generalmente disponibile. Per domande sulla disponibilità, contatta il rappresentante Adobe.
 
 L&#39;API CMU fornisce una visualizzazione gerarchica dei cubi OLAP sottostanti. Ogni risorsa ([dimensione](/help/concurrency-monitoring/cm-usage-reports.md#dimensions-2-filter-metrics) nella gerarchia delle dimensioni, mappata come segmento di percorso URL) genera rapporti con [metriche](/help/concurrency-monitoring/cm-usage-reports.md#monitor-metrics) (aggregate) per la selezione corrente. Ogni risorsa punta alla relativa risorsa padre (per l’aggregazione) e alle relative risorse secondarie (per l’espansione). Le operazioni di suddivisione in porzioni e dicing vengono eseguite tramite parametri di stringa di query che fissano dimensioni a valori o intervalli specifici.
 
@@ -36,7 +36,7 @@ I percorsi URL disponibili sono individuabili tramite i collegamenti contenuti n
 
 Le seguenti strutture di espansione illustrano le dimensioni (risorse) disponibili in CMU 2.0:
 
-**Dimension disponibili per i tenant CM**
+**Dimensioni disponibili per i tenant CM**
 
 ![](assets/new_breakdown.png)
 
@@ -112,7 +112,7 @@ Al momento l’unico metodo HTTP disponibile è GET. Il supporto per i metodi OP
 | 401 | Non autorizzato | Causata da una richiesta che non contiene le intestazioni OAuth appropriate per l’autenticazione dell’utente |
 | 403 | Non consentito | Indica che la richiesta non è consentita nel contesto di sicurezza corrente; ciò si verifica quando l’utente è autenticato ma non è autorizzato ad accedere alle informazioni richieste |
 | 404 | Non trovato | Si verifica nel caso in cui con la richiesta venga fornito un percorso URL non valido. Ciò non dovrebbe mai verificarsi se il client segue i collegamenti &quot;drill-down&quot;/&quot;roll-up&quot; forniti con 200 risposte |
-| 405 | Metodo non consentito | Segnala che nella richiesta è stato utilizzato un metodo non supportato. Anche se attualmente è supportato solo il metodo GET, le versioni future potrebbero consentire HEAD o OPTIONS |
+| 405 | Metodo non consentito | Segnala che nella richiesta è stato utilizzato un metodo non supportato. Sebbene attualmente sia supportato solo il metodo GET, le versioni future potrebbero consentire HEAD o OPTIONS |
 | 406 | Non accettabile | Segnala che il client ha richiesto un tipo di file multimediale non supportato |
 | 500 | Errore interno del server | &quot;Questo non dovrebbe mai accadere&quot; |
 | 503 | Servizio non disponibile | Segnala un errore all’interno dell’applicazione o nelle sue dipendenze |
@@ -252,7 +252,7 @@ I report **livello attività** e **livello concorrenza** vengono aggiornati ogni
 
 ## Compressione GZIP {#gzip-compression}
 
-L’Adobe consiglia vivamente di abilitare il supporto gzip nei client che recuperano i rapporti CMU. In questo modo si riduce notevolmente la dimensione della risposta, con conseguente riduzione dei tempi di risposta. Il rapporto di compressione per i dati CMU è compreso nell&#39;intervallo 20-30.
+Adobe consiglia vivamente di abilitare il supporto gzip nei client che recuperano i rapporti CMU. In questo modo si riduce notevolmente la dimensione della risposta, con conseguente riduzione dei tempi di risposta. Il rapporto di compressione per i dati CMU è compreso nell&#39;intervallo 20-30.
 
 Per abilitare la compressione gzip nel client, imposta l’intestazione Accept-Encoding: come segue:
 

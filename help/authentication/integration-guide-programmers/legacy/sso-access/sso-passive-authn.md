@@ -105,7 +105,7 @@ Di seguito è riportato un esempio di richiesta SAML per il flusso di autenticaz
 </saml2p:AuthnRequest>
 ```
 
-## Regole aziendali
+## Regole di business
 
 Gli MVPD hanno restrizioni di dominio con ambito SSO specifiche. Ad esempio, alcuni MVPD potrebbero consentire solo alcuni domini (SSO per la stessa società di media ma non tra società).
 Alcuni MVPD potrebbero richiedere l&#39;applicazione di regole di autenticazione diverse. Ad esempio, gli MVPD potrebbero avere TTL di autenticazione diversi per reti diverse. Inoltre, gli MVPD potrebbero abilitare l&#39;autenticazione basata su home per alcune reti ma non per altre (qui sono fortemente rappresentati i casi di utilizzo del controllo genitori).

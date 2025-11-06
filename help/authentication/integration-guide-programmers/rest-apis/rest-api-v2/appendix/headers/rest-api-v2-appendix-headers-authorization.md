@@ -2,7 +2,7 @@
 title: Intestazione - Authorization
 description: REST API V2 - Intestazione - Autorizzazione
 exl-id: 86917d7e-ffd9-4d34-8f9c-5a50083f85e6
-source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
+source-git-commit: 81d3c3835d2e97e28c2ddb9c72d1a048a25ad433
 workflow-type: tm+mt
 source-wordcount: '118'
 ht-degree: 1%
@@ -20,7 +20,7 @@ ht-degree: 1%
 
 L&#39;intestazione della richiesta <b>Authorization</b> contiene il token di accesso `Bearer` richiesto dall&#39;applicazione client per accedere alle API protette di Adobe Pass.
 
-Per ulteriori dettagli sul meccanismo di accesso alle API protette di Adobe Pass, consulta la documentazione [Panoramica sulla registrazione dei client dinamici](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md).
+Per ulteriori dettagli sul meccanismo di accesso alle API protette di Adobe Pass, consulta la documentazione [Panoramica sulla registrazione dei client dinamici](../../../rest-api-dcr/dynamic-client-registration-overview.md).
 
 ## Sintassi {#syntax}
 
@@ -42,7 +42,7 @@ Per ulteriori dettagli sul meccanismo di accesso alle API protette di Adobe Pass
 
 <b>&lt;token_di_accesso></b>
 
-Il valore del token di accesso è un valore opaco con durata limitata (ad esempio, 24 ore) che deve essere ottenuto da Adobe Pass come descritto nella documentazione dell&#39;API [Recupera token di accesso](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md).
+Il valore del token di accesso è un valore opaco con durata limitata (ad esempio, 24 ore) che deve essere ottenuto da Adobe Pass come descritto nella documentazione dell&#39;API [Recupera token di accesso](../../../rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md).
 
 ## Esempi {#examples}
 

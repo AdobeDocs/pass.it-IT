@@ -2,7 +2,7 @@
 title: Recupera la configurazione per un provider di servizi specifico
 description: 'REST API V2: recupero della configurazione per un provider di servizi specifico'
 exl-id: ad7e4c6d-ed96-4ae7-82a9-3c24e5fc9302
-source-git-commit: 1c96904f67507ad127c29628963d74a9fb010e99
+source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
 workflow-type: tm+mt
 source-wordcount: '728'
 ht-degree: 2%
@@ -229,7 +229,7 @@ ht-degree: 2%
                         <li><b>id</b><br/>Identificatore univoco interno associato al provider di identità durante il processo di onboarding.</li>
                         <li><b>displayName</b><br/>Nome commerciale (marchio) associato al provider di identità durante il processo di onboarding.</li>
                         <li><b>logoUrl</b><br>URL da cui scaricare il logo associato al provider di identità.</li>
-                        <li><b>isTempPass</b><br/>Flag che specifica se MVPD è progettato per fornire funzionalità <a href="/help/premium-workflow/temporary-access/temp-pass-feature.md">TempPass</a>.</li>
+                        <li><b>isTempPass</b><br/>Flag che specifica se MVPD è progettato per fornire funzionalità <a href="../../../../features-premium/temporary-access/temp-pass-feature.md">TempPass</a>.</li>
                         <li><b>isProxy</b><br/>Flag che specifica se MVPD è un MVPD proxy.</li>
                         <li><b>boardingStatus</b><br/>Stato che specifica se il provider di identità è integrato nella piattaforma del dispositivo di streaming per i flussi Single Sign-On.</li>
                         <li><b>platformMappingId</b><br/>Identificatore univoco interno associato al provider di identità dalla piattaforma del dispositivo di streaming per i flussi Single Sign-On.</li>

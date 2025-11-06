@@ -4,7 +4,7 @@ description: Pagina di registrazione
 exl-id: 581b8e2e-7420-4511-88b9-f2cd43a41e10
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '516'
+source-wordcount: '509'
 ht-degree: 0%
 
 ---
@@ -43,7 +43,7 @@ Restituisce l&#39;URI del codice di registrazione e della pagina di accesso gene
 
 | Endpoint | Chiamato <br> da | Input   <br>Parametro | Metodo HTTP <br> | Risposta | HTTP <br>Risposta |
 | --- | --- | --- | --- | --- | --- |
-| &lt;REGGIE_FQDN>/reggie/v1/{requestor}/regcode<br>Esempio:<br>REGGIE_FQDN/reggie/v1/sampleRequestorId/regcode | Servizio programmatore <br>o<br>app in streaming | 1. richiedente <br>    (componente percorso)<br>2.  deviceId (Hashed)   <br>    (obbligatorio)<br>3.  device_info/X-Device-Info (obbligatorio)<br>4.  mvpd (facoltativo)<br>5.  ttl (facoltativo)<br> | POST | XML o JSON contenente un codice di registrazione e informazioni o dettagli sull’errore in caso di esito negativo. Vedi gli esempi di seguito. | 201 |
+| &lt;REGGIE_FQDN>/reggie/v1/{requestor}/regcode<br>Esempio:<br>REGGIE_FQDN/reggie/v1/sampleRequestorId/regcode | Servizio programmatore <br>o<br>app in streaming | &#x200B;1. richiedente <br>    (componente percorso)<br>2.  deviceId (Hashed)   <br>    (obbligatorio)<br>3.  device_info/X-Device-Info (obbligatorio)<br>4.  mvpd (facoltativo)<br>5.  ttl (facoltativo)<br> | POST | XML o JSON contenente un codice di registrazione e informazioni o dettagli sull’errore in caso di esito negativo. Vedi gli esempi di seguito. | 201 |
 
 {style="table-layout:auto"}
 
@@ -53,7 +53,7 @@ Restituisce l&#39;URI del codice di registrazione e della pagina di accesso gene
 | Accetta | Valore intestazione <br>: application/json | indica il tipo di contenuto che il client deve essere in grado di comprendere |
 | richiedente | Parametro query | ID richiedente del programmatore per il quale è valida questa operazione. |
 | deviceId | Parametro query | Byte ID dispositivo. |
-| device_info/<br>X-Device-Info | device_info: Body <br> X-Device-Info: Header | Informazioni sul dispositivo di streaming.<br>**Nota**: questo parametro POTREBBE essere trasmesso come parametro URL_device, ma a causa delle dimensioni potenziali del parametro e delle limitazioni alla lunghezza di un URL di GET, DOVREBBE essere trasmesso come X-Device-Info nell&#39;intestazione http. <br>Visualizza tutti i dettagli in [Trasmissione delle informazioni sul dispositivo e sulla connessione](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md). |
+| device_info/<br>X-Device-Info | device_info: Body <br> X-Device-Info: Header | Informazioni sul dispositivo di streaming.<br>**Nota**: questo parametro POTREBBE essere trasmesso come parametro URL_device, ma a causa delle dimensioni potenziali del parametro e delle limitazioni alla lunghezza di un URL GET, DOVREBBE essere trasmesso come X-Device-Info nell&#39;intestazione http. <br>Visualizza tutti i dettagli in [Trasmissione delle informazioni sul dispositivo e sulla connessione](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md). |
 | mvpd | Parametro query | ID MVPD per il quale è valida questa operazione. |
 | ttl | Parametro query | Durata di questo codice regcode in secondi.<br>**Nota**: il valore massimo consentito per ttl è di 36000 secondi (10 ore). Valori più alti determinano una risposta HTTP 400 (richiesta non valida). Se `ttl` viene lasciato vuoto, Adobe Pass Authentication imposta il valore predefinito di 30 minuti. |
 | _tipoDispositivo_ | Parametro query | Obsoleto, non deve essere utilizzato. |
@@ -81,7 +81,7 @@ Restituisce l&#39;URI del codice di registrazione e della pagina di accesso gene
 >POST /reggie/v1/{req_id}/regcode HTTP/1.1<br>X-Forwarded-For:203.45.101.20
 >```
 >
-><br>
+<br>
 
 ### JSON di risposta
 

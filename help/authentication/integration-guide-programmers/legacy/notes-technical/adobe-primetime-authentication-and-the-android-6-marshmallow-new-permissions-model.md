@@ -2,7 +2,7 @@
 title: Autenticazione di Adobe Pass e il nuovo modello di autorizzazioni "Marshmallow" di Android 6
 description: Autenticazione di Adobe Pass e il nuovo modello di autorizzazioni "Marshmallow" di Android 6
 exl-id: 3c96769e-b25b-48ab-bb74-40f13d4e5a84
-source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
 source-wordcount: '503'
 ht-degree: 0%
@@ -77,7 +77,7 @@ if (ContextCompat.checkSelfPermission(thisActivity,
 >Una funzione che introduce la resilienza dello storage è attualmente in fase di sviluppo per Adobe Pass Authentication SDK 1.9. Il nuovo SDK verrà rilasciato **nell&#39;ultima settimana di ottobre**. L’applicazione eseguirà il fallback alla scrittura nell’archiviazione sandbox dell’applicazione ogni volta che non è possibile utilizzare l’archiviazione generale. In questo caso, per le applicazioni sviluppate in API di livello 23, gli utenti NON accettano le autorizzazioni di lettura/scrittura nell’archiviazione globale. I token vengono memorizzati singolarmente per app, il che significa che il Single Sign-On tra le app che utilizzano l’autenticazione Adobe Pass verrà disabilitato.
 
 
-![](/help/authentication/assets/android-permissions-request.png)
+![](../../../assets/android-permissions-request.png)
 
 *Figura: finestra di dialogo della richiesta di autorizzazione per le app scritte nel targeting API livello 23*
 

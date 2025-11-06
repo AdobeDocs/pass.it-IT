@@ -91,7 +91,7 @@ Fare riferimento a <https://tve.zendesk.com/hc/en-us/articles/115005561623-fire-
 
 ### setRequestor {#setRequestor}
 
-**Descrizione:** stabilisce l&#39;identità del programmatore. A ciascun programmatore viene assegnato un ID univoco al momento della registrazione a Adobe per il sistema di autenticazione di Adobe Pass. Questa impostazione deve essere eseguita una sola volta durante il ciclo di vita dell&#39;applicazione.
+**Descrizione:** stabilisce l&#39;identità del programmatore. A ciascun programmatore viene assegnato un ID univoco al momento della registrazione ad Adobe per il sistema di autenticazione di Adobe Pass. Questa impostazione deve essere eseguita una sola volta durante il ciclo di vita dell&#39;applicazione.
 
 La risposta del server contiene un elenco di MVPD insieme ad alcune informazioni di configurazione collegate all&#39;identità del programmatore. La risposta del server viene utilizzata internamente dal codice di Access Enabler. Solo lo stato dell’operazione (ovvero SUCCESS/FAIL) viene presentato all’applicazione tramite il callback setRequestorComplete().
 
@@ -175,7 +175,7 @@ I valori vengono passati al server indipendentemente dal flusso corrente (autent
 
 - *options*: una mappa\&lt;String, String\> contenente le opzioni globali di SDK. Attualmente sono disponibili le seguenti opzioni:
    - **applicationProfile** - Può essere utilizzato per creare configurazioni server basate su questo valore.
-   - **ap\_vi** - Servizio ID Experience Cloud. Questo valore può essere utilizzato in seguito per i rapporti di analisi avanzata.
+   - **ap\_vi** - Servizio Experience Cloud ID. Questo valore può essere utilizzato in seguito per i rapporti di analisi avanzata.
    - **dispositivo\_info** - Informazioni sul dispositivo come descritto in **Passaggio del manuale di informazioni sul dispositivo**
 
 </br>
@@ -260,7 +260,7 @@ Dopo che l&#39;utente ha selezionato il MVPD desiderato, l&#39;applicazione di l
 | ```public void setSelectedProvider(String mvpdId)``` |
 
 
-**Disponibilità:**&#x200B;v 1.0+
+**Disponibilità:**v 1.0+
 
 **Parametri:** Nessuno
 
@@ -355,7 +355,7 @@ Questo callback segnala anche quando il flusso di logout è completo.
 | --- |
 | ```public void checkPreauthorizedResources(ArrayList<String> resources)``` |
 
-**Disponibilità:**&#x200B;v 1.0+
+**Disponibilità:**v 1.0+
 
 **Parametri:** Il parametro `resources` è un array di risorse per le quali l&#39;utente è già autorizzato a visualizzare.
 
@@ -427,7 +427,7 @@ Questo callback segnala anche quando il flusso di logout è completo.
 | --- |
 | ```public void setToken(String token, String resourceId)``` |
 
-**Disponibilità:**&#x200B;v 1.0+
+**Disponibilità:**v 1.0+
 
 **Parametri:**
 
@@ -529,7 +529,7 @@ Esistono due tipi di metadati disponibili per i programmatori:
 - *metadataKey*: struttura di dati che incapsula una variabile chiave e args, con il seguente significato:
    - Se la chiave è `METADATA_KEY_TTL_AUTHN`, viene eseguita la query per ottenere l&#39;ora di scadenza del token di autenticazione.
    - Se la chiave è `METADATA_KEY_TTL_AUTHZ` e l&#39;argomento contiene un oggetto SerializableNameValuePair con nome = `METADATA_ARG_RESOURCE_ID` e valore = `[resource_id]`, viene eseguita la query per ottenere la scadenza del token di autorizzazione associato alla risorsa specificata.
-   - Se la chiave è `METADATA_KEY_DEVICE_ID`, viene eseguita la query per ottenere l&#39;ID dispositivo corrente. Tieni presente che questa funzione è disabilitata per impostazione predefinita e i programmatori devono contattare Adobe per informazioni sull’abilitazione e le tariffe.
+   - Se la chiave è `METADATA_KEY_DEVICE_ID`, viene eseguita la query per ottenere l&#39;ID dispositivo corrente. Questa funzione è disabilitata per impostazione predefinita e i programmatori devono contattare Adobe per informazioni sull’abilitazione e le tariffe.
    - Se la chiave è `METADATA_KEY_USER_META` e l&#39;argomento contiene un oggetto SerializableNameValuePair con nome = `METADATA_KEY_USER_META` e valore = `[metadata_name]`, viene eseguita la query per i metadati utente. L’elenco corrente dei tipi di metadati utente disponibili:
       - `zip` - Codice postale
       - `householdID` - Identificatore famiglia. Se un MVPD non supporta gli account secondari, sarà identico a `userID`.

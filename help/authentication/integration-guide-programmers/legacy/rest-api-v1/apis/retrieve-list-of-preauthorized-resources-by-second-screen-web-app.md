@@ -4,7 +4,7 @@ description: Recupera elenco di risorse preautorizzate tramite l’app web Secon
 exl-id: 78eeaf24-4cc1-4523-8298-999c9effdb7a
 source-git-commit: 1c357b918fa4f6d4b92a9055de018c55ee5861e0
 workflow-type: tm+mt
-source-wordcount: '275'
+source-wordcount: '273'
 ht-degree: 0%
 
 ---
@@ -46,7 +46,7 @@ Esistono due set di API: un set per Streaming App o Programmer Service e uno per
 
 | Endpoint | Chiamato </br> da | Input   </br>Parametri | Metodo HTTP </br> | Risposta | HTTP </br>Risposta |
 | --- | --- | --- | --- | --- | --- |
-| &lt;SP_FQDN>/api/v1/preauthorize/{codice di registrazione} | Modulo AuthN | 1. codice di registrazione </br>    (componente percorso)</br>2.  richiedente (obbligatorio)</br>3.  resource (obbligatorio) | GET | XML o JSON contenente singole decisioni di pre-autorizzazione o dettagli sull’errore. Vedi gli esempi di seguito. | 200 - Operazione completata</br></br>400 - Richiesta non valida</br></br>401 - Non autorizzato</br></br>405 - Metodo non consentito </br></br>412 - Precondizione non riuscita</br></br>500 - Errore interno del server |
+| &lt;SP_FQDN>/api/v1/preauthorize/{registration code} | Modulo AuthN | &#x200B;1. codice di registrazione </br>    (componente percorso)</br>2.  richiedente (obbligatorio)</br>3.  resource (obbligatorio) | GET | XML o JSON contenente singole decisioni di pre-autorizzazione o dettagli sull’errore. Vedi gli esempi di seguito. | 200 - Operazione completata</br></br>400 - Richiesta non valida</br></br>401 - Non autorizzato</br></br>405 - Metodo non consentito </br></br>412 - Precondizione non riuscita</br></br>500 - Errore interno del server |
 
 
 

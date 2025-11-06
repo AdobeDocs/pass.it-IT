@@ -90,7 +90,7 @@ Per i client nativi, la disconnessione viene gestita in modo simile al processo 
 
 1. Alla fine AccessEnabler chiamerà il callback [`setAuthenticationStatus()`](#setAuthNStatus) con il codice di stato 0, che indica il completamento del flusso di logout.
 
-Il flusso di disconnessione è diverso dal flusso di autenticazione in quanto l&#39;utente non è tenuto a interagire in alcun modo con il controller `UIWebView/WKWebView or SFSafariViewController`. Pertanto, Adobe consiglia di rendere il controllo invisibile (ovvero nascosto) durante la procedura di disconnessione.
+Il flusso di disconnessione è diverso dal flusso di autenticazione in quanto l&#39;utente non è tenuto a interagire in alcun modo con il controller `UIWebView/WKWebView or SFSafariViewController`. Adobe consiglia pertanto di rendere il controllo invisibile (ovvero nascosto) durante il processo di disconnessione.
 
 ## Token {#tokens}
 

@@ -27,7 +27,7 @@ Data di rilascio: **03/26/2024**
 
 * Aggiorna il Manifesto sulla privacy di SDK in conformità ai requisiti sulla privacy di iOS 17.
 * È stato risolto un problema che in alcune situazioni causava la visualizzazione di una schermata vuota durante il flusso di autenticazione.
-* Aggiunge la registrazione del dispositivo e quella del server per ottenere informazioni approfondite sullo stato del portachiavi.
+* Aggiunge la registrazione del dispositivo e la registrazione del server per ottenere informazioni insight sullo stato del portachiavi.
 
 ## Pacchetto di rilascio {#release-package-392}
 

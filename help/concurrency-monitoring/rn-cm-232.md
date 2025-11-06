@@ -19,7 +19,7 @@ Data di rilascio: 12/11/2015
 
 * Sono disponibili nuove suddivisioni nei Rapporti sull’utilizzo. I nuovi raggruppamenti sono disponibili se l’applicazione integrata con Monitoraggio concorrenza invia metadati personalizzati.
    * application: l’ID applicazione riportato nell’URL della chiamata
-   * mvpd: MVPD segnalato nell’URL della chiamata
+   * mvpd: il MVPD segnalato nell’URL della chiamata
    * channel: il canale metadati personalizzato
    * Platform: l’applicazione di metadati personalizzata Platform
 * Nuove metriche relative alla **durata flusso** disponibili nei report sull&#39;utilizzo. Le nuove metriche possono essere utilizzate per creare un istogramma della durata del flusso. Sono attualmente disponibili i seguenti intervalli in minuti:

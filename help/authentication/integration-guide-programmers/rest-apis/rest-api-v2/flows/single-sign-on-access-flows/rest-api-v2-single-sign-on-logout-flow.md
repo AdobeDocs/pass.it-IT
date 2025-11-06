@@ -2,7 +2,7 @@
 title: Disconnessione singola - Flusso
 description: REST API V2 - Disconnessione singola - Flusso
 exl-id: d7092ca7-ea7b-4e92-b45f-e373a6d673d6
-source-git-commit: 92417dd4161be8ba97535404e262fd26d67383e4
+source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
 source-wordcount: '587'
 ht-degree: 0%
@@ -46,7 +46,7 @@ Prima di avviare una disconnessione singola per un MVPD specifico, verificare ch
 
 Eseguire i passaggi forniti per implementare il flusso di logout singolo per un MVPD specifico, come illustrato nel diagramma seguente.
 
-![Avvia disconnessione singola per mvpd](/help/authentication/assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-initiate-single-logout-for-specific-mvpd-flow.png) specifico
+![Avvia disconnessione singola per mvpd](../../../../../assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-initiate-single-logout-for-specific-mvpd-flow.png) specifico
 
 *Avvia disconnessione singola per mvpd* specifico
 

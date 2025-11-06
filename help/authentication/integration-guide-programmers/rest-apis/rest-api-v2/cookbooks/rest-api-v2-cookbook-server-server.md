@@ -2,7 +2,7 @@
 title: Manuale dell’API REST V2 (server-to-server)
 description: Manuale dell’API REST V2 (server-to-server)
 exl-id: 3160c03c-849d-4d39-95e5-9a9cbb46174d
-source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
 source-wordcount: '2497'
 ht-degree: 0%
@@ -183,7 +183,7 @@ Domande frequenti
 * **Scenario 2:** Non sono presenti profili. Il servizio Programmatore può procedere al passaggio successivo per [Autenticare l&#39;utente](#step-3-authenticate-the-user).
 
 
-* **Scenario 3:** Non sono presenti profili. Il servizio Programmatore potrebbe continuare a fornire all&#39;utente l&#39;accesso temporaneo tramite la funzionalità [TempPass](/help/premium-workflow/temporary-access/temp-pass-feature.md).
+* **Scenario 3:** Non sono presenti profili. Il servizio Programmatore potrebbe continuare a fornire all&#39;utente l&#39;accesso temporaneo tramite la funzionalità [TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md).
 
    * Questo scenario non rientra nell&#39;ambito di questo documento. Per ulteriori informazioni, fare riferimento alla documentazione [Flussi di accesso temporanei](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/temporary-access-flows/rest-api-v2-access-temporary-flows.md).
 

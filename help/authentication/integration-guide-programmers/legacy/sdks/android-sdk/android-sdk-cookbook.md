@@ -2,7 +2,7 @@
 title: Manuale di Android SDK
 description: Manuale di Android SDK
 exl-id: 7f66ab92-f52c-4dae-8016-c93464dd5254
-source-git-commit: 92417dd4161be8ba97535404e262fd26d67383e4
+source-git-commit: 79b3856e3ab2755cc95c3fcd34121171912a5273
 workflow-type: tm+mt
 source-wordcount: '1703'
 ht-degree: 0%
@@ -113,7 +113,7 @@ L&#39;attività di rete di AccessEnabler si svolge in un thread diverso, pertant
      Il parametro `authorizedResources` presenta le risorse che l&#39;utente è autorizzato a visualizzare.
 
 
-![](/help//authentication/assets/android-entitlement-flows.png)
+![](../../../../assets/android-entitlement-flows.png)
 
 
 ### B. Flusso di avvio {#startup_flow}

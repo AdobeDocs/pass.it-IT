@@ -36,7 +36,7 @@ Alcune limitazioni, descritte di seguito, potrebbero essere riscontrate dagli im
    >
    >* L’SSO a livello di sistema (Apple) non subirà modifiche.
    >
-   >* L&#39;SSO regolare (Adobe) continuerà a funzionare se entrambe le applicazioni sono sviluppate dallo stesso fornitore e utilizzano una o più versioni di AccessEnabler inferiori alla 3.7.0.
+   >* L’SSO regolare (Adobe) continuerà a funzionare se entrambe le applicazioni sono sviluppate dallo stesso fornitore e utilizzano una o più versioni di AccessEnabler inferiori alla 3.7.0.
    >
    >* L&#39;SSO regolare (Adobe) funziona se entrambe le applicazioni sono sviluppate dallo stesso fornitore e utilizzano AccessEnabler versione 3.7.0.
 

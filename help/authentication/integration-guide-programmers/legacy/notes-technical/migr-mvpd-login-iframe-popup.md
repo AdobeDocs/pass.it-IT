@@ -4,7 +4,7 @@ description: Migrazione della pagina di accesso a MVPD da iFrame a Popup
 exl-id: 389ea0ea-4e18-4c2e-a527-c84bffd808b4
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '709'
+source-wordcount: '708'
 ht-degree: 0%
 
 ---
@@ -36,7 +36,7 @@ Considerando che esiste già un’implementazione iFrame, la prima parte della n
 
 ## Selettore MVPD con pagina di accesso in un iFrame {#mvpd-pickr-iframe}
 
-Gli esempi di codice precedenti mostravano una pagina HTML contenente il tag &lt;div> in cui deve essere creato l’iFrame insieme al pulsante chiudi iFrame:
+Gli esempi di codice precedenti mostravano una pagina HTML contenente il tag &lt;div> in cui creare l’iFrame e il pulsante chiudi iFrame:
 
 ```HTML
 <body> 
@@ -183,7 +183,7 @@ function displayProviderDialog(providers) {
 }
 ```
 
-Dopo che l’utente ha selezionato un MVPD dal selettore, è necessario creare il pop-up. Alcuni browser possono bloccare la finestra a comparsa se viene creata con about:blank o con una pagina presente in un altro dominio, pertanto si consiglia di aprirla con il nome host da cui è caricato AccessEnabler.
+Dopo che l’utente ha selezionato un MVPD dal selettore, è necessario creare il pop-up. Alcuni browser possono bloccare la finestra a comparsa se è stata creata con circa:blank o con una pagina presente in un altro dominio. È pertanto consigliabile aprirla con il nome host da cui è caricato AccessEnabler.
 
 Nell’implementazione di iFrame, il ripristino del flusso di autenticazione veniva eseguito dal pulsante btnCloseIframe e dalla funzione di JavaScript closeIframeAction(), ma ora la decorazione dell’iFrame non è più possibile. Quindi, lo stesso comportamento si ottiene osservando quando la finestra a comparsa viene chiusa (dall’utente o completando il flusso di autenticazione). È stato aggiunto uno snippet di codice che aiuta anche nel caso in cui l’utente perda lo stato attivo della finestra a comparsa:
 

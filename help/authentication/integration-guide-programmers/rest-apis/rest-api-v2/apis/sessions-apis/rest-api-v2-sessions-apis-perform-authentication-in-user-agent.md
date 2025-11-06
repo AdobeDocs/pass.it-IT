@@ -142,7 +142,7 @@ In caso di esito positivo, la risposta consiste in una serie di uno o più reind
 
 ## Esempi {#samples}
 
-### 1. Eseguire l’autenticazione nell’agente utente
+### &#x200B;1. Eseguire l’autenticazione nell’agente utente
 
 >[!BEGINTABS]
 

@@ -2,7 +2,7 @@
 title: Profili di base - Applicazione principale - Flusso
 description: REST API V2 - Profili di base - Applicazione principale - Flusso
 exl-id: 19ddf382-9a32-4b94-aa84-7611c0e1780e
-source-git-commit: 92417dd4161be8ba97535404e262fd26d67383e4
+source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
 source-wordcount: '974'
 ht-degree: 0%
@@ -43,7 +43,7 @@ Prima di recuperare i profili, verifica che siano soddisfatti i seguenti prerequ
 
 Segui i passaggi forniti per implementare il flusso di recupero dei profili di base eseguito all’interno di un’applicazione principale, come illustrato nel diagramma seguente.
 
-![Recupera profili](/help/authentication/assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-retrieve-profiles-within-primary-application.png)
+![Recupera profili](../../../../../assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-retrieve-profiles-within-primary-application.png)
 
 *Recupera profili*
 
@@ -91,7 +91,7 @@ Prima di recuperare il profilo per un MVPD specifico, verifica che siano soddisf
 
 Segui i passaggi forniti per implementare il flusso di recupero del profilo di base per un MVPD specifico eseguito all’interno di un’applicazione principale, come illustrato nel diagramma seguente.
 
-![Recupera profilo per mvpd](/help/authentication/assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-retrieve-profile-within-primary-application-for-specific-mvpd.png) specifico
+![Recupera profilo per mvpd](../../../../../assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-retrieve-profile-within-primary-application-for-specific-mvpd.png) specifico
 
 *Recupera profilo per mvpd* specifico
 
@@ -140,7 +140,7 @@ Prima di recuperare il profilo per un codice di autenticazione specifico, verifi
 
 Segui i passaggi forniti per implementare il flusso di recupero del profilo di base per un codice di autenticazione specifico eseguito all’interno di un’applicazione primaria, come illustrato nel diagramma seguente.
 
-![Recupera profilo per codice specifico](/help/authentication/assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-retrieve-profile-within-primary-application-for-specific-code.png)
+![Recupera profilo per codice specifico](../../../../../assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-retrieve-profile-within-primary-application-for-specific-code.png)
 
 *Recupera profilo per codice specifico*
 

@@ -4,12 +4,12 @@ description: Supporto di SFSafariViewController in iOS SDK 3.2+
 exl-id: 6691550f-c36f-4fae-aa77-082ca7d8a60a
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '436'
+source-wordcount: '432'
 ht-degree: 0%
 
 ---
 
-# (Legacy) Supporto di SFSafariViewController in iOS SDK 3.2+ {#sfsafariviewcontroller-support-on-ios-sdk-3.2}
+# (Legacy) Supporto di SFSafariViewController su iOS SDK 3.2+ {#sfsafariviewcontroller-support-on-ios-sdk-3.2}
 
 >[!NOTE]
 >

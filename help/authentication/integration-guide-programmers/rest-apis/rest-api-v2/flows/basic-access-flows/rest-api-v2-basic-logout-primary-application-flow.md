@@ -2,7 +2,7 @@
 title: Logout di base - Applicazione principale - Flusso
 description: REST API V2 - Logout di base - Applicazione principale - Flusso
 exl-id: 21dbff4a-0d69-4f81-b04f-e99d743c35b3
-source-git-commit: 92417dd4161be8ba97535404e262fd26d67383e4
+source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
 workflow-type: tm+mt
 source-wordcount: '948'
 ht-degree: 0%
@@ -53,7 +53,7 @@ Prima di avviare la disconnessione per un MVPD specifico con un endpoint di disc
 
 Segui i passaggi forniti per implementare il flusso di logout di base per un MVPD specifico con un endpoint di logout eseguito all’interno di un’applicazione primaria, come illustrato nel diagramma seguente.
 
-![Avvia disconnessione per mvpd specifico con endpoint di disconnessione](/help/authentication/assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-initiate-logout-within-primary-application-for-specific-mvpd-with-logout-endpoint.png)
+![Avvia disconnessione per mvpd specifico con endpoint di disconnessione](../../../../../assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-initiate-logout-within-primary-application-for-specific-mvpd-with-logout-endpoint.png)
 
 *Avvia disconnessione per mvpd specifico con endpoint di disconnessione*
 
@@ -119,7 +119,7 @@ Prima di avviare la disconnessione per un MVPD specifico senza un endpoint di di
 
 Segui i passaggi forniti per implementare il flusso di logout di base per un MVPD specifico senza un endpoint di logout eseguito all’interno di un’applicazione primaria, come illustrato nel diagramma seguente.
 
-![Avvia disconnessione per mvpd specifico senza endpoint di disconnessione](/help/authentication/assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-initiate-logout-within-primary-application-for-specific-mvpd-without-logout-endpoint.png)
+![Avvia disconnessione per mvpd specifico senza endpoint di disconnessione](../../../../../assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-initiate-logout-within-primary-application-for-specific-mvpd-without-logout-endpoint.png)
 
 *Avvia disconnessione per mvpd specifico senza endpoint di disconnessione*
 

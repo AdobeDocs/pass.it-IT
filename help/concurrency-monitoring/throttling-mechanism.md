@@ -4,7 +4,7 @@ description: Meccanismo di limitazione
 exl-id: 15236570-1a75-42fb-9bba-0e2d7a59c9f6
 source-git-commit: 8552a62f4d6d80ba91543390bf0689d942b3a6f4
 workflow-type: tm+mt
-source-wordcount: '624'
+source-wordcount: '614'
 ht-degree: 1%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 1%
 
 ## Introduzione {#introduction}
 
-Ad Adobe, in qualità di responsabile del trattamento dei dati, deve adottare misure adeguate per garantire che gli utenti dei nostri clienti utilizzino equamente le risorse e che il servizio non sia inondato da richieste API non necessarie. Per questo abbiamo messo in atto un meccanismo di limitazione.
+Adobe, in qualità di titolare del trattamento dei dati, deve adottare misure adeguate per garantire che gli utenti dei nostri clienti utilizzino equamente le risorse e che il servizio non sia inondato da richieste API non necessarie. Per questo abbiamo messo in atto un meccanismo di limitazione.
 Un&#39;applicazione di monitoraggio della concorrenza può essere utilizzata da più utenti e un utente può avere più sessioni. Pertanto, il servizio avrà limiti configurati per il numero di chiamate accettate per utente/sessione entro un intervallo di tempo specifico.
 Una volta raggiunto il limite, le richieste verranno contrassegnate con uno stato di risposta specifico (HTTP 429 - Troppe richieste). Qualsiasi chiamata successiva effettuata dopo aver ricevuto una risposta &quot;429 Troppe richieste&quot; deve essere effettuata con un periodo di raffreddamento di almeno un minuto per garantire che venga ricevuta una risposta aziendale valida.
 
@@ -39,19 +39,19 @@ Entrambi questi limiti (limitazione a livello di sessione e limitazione a livell
 
 | Ora | Invio richiesta a CM | Numero di richieste | Risposta ricevuta da CM | Spiegazione |
 |-----------|-----------------------------------------|--------------------|------------------------------------------------------------------------------|---------------------------------------------------------------------------------|
-| Secondo 10 | POST/session/idp1/subject1/session1 | 50 | Tutte le chiamate ricevono ‘202 Accepted’ | 50 chiamate consumate dal limite |
-| Secondo 50 | POST/session/idp1/subject1/session1 | 151 | 150 chiamate ricevono &quot;202 Accettate&quot; e 1 chiamata riceve &quot;429 Troppe richieste&quot; | 200 chiamate consumate dal limite e 1 chiamata riceverà una risposta di 429 |
-| Secondo 61 | DELETE/session/idp1/subject1/session1 | 1 | 1 chiamata riceve ‘429 Troppe richieste’ | Nessuna chiamata nel limite ancora disponibile |
-| Secondo 70 | DELETE/session/idp1/subject1/session1 | 1 | 1 chiamata riceve &quot;202 Accepted&quot; (Accettato) | Limite impostato su 200 chiamate disponibili perché sono trascorsi 60 secondi dal secondo 10 |
+| Secondo 10 | POST /session/idp1/subject1/session1 | 50 | Tutte le chiamate ricevono ‘202 Accepted’ | 50 chiamate consumate dal limite |
+| Secondo 50 | POST /session/idp1/subject1/session1 | 151 | 150 chiamate ricevono &quot;202 Accettate&quot; e 1 chiamata riceve &quot;429 Troppe richieste&quot; | 200 chiamate consumate dal limite e 1 chiamata riceverà una risposta di 429 |
+| Secondo 61 | DELETE /session/idp1/subject1/session1 | 1 | 1 chiamata riceve ‘429 Troppe richieste’ | Nessuna chiamata nel limite ancora disponibile |
+| Secondo 70 | DELETE /session/idp1/subject1/session1 | 1 | 1 chiamata riceve &quot;202 Accepted&quot; (Accettato) | Limite impostato su 200 chiamate disponibili perché sono trascorsi 60 secondi dal secondo 10 |
 
 **Scenario per limitazione a livello utente:**
 
 | Ora | Invio richiesta a CM | Numero di richieste | Risposta ricevuta da CM | Spiegazione |
 |-----------|------------------------------|--------------------|------------------------------------------------------------------------------|---------------------------------------------------------------------------------|
-| Secondo 10 | POST/session/idp1/subject1 | 50 | 50 chiamate ricevono &quot;202 Accettato&quot; | 50 chiamate consumate dal limite |
-| Secondo 50 | POST/session/idp1/subject1 | 151 | 150 chiamate ricevono &quot;202 Accettate&quot; e 1 chiamata riceve &quot;429 Troppe richieste&quot; | 200 chiamate consumate dal limite e 1 chiamata riceverà una risposta di 429 |
-| Secondo 61 | POST/session/idp1/subject1 | 1 | 1 chiamata riceve ‘429 Troppe richieste’ | Nessuna chiamata nel limite ancora disponibile |
-| Secondo 70 | POST/session/idp1/subject1 | 1 | 1 chiamata riceve &quot;202 Accepted&quot; (Accettato) | Limite impostato su 200 chiamate disponibili perché sono trascorsi 60 secondi dal secondo 10 |
+| Secondo 10 | POST /session/idp1/subject1 | 50 | 50 chiamate ricevono &quot;202 Accettato&quot; | 50 chiamate consumate dal limite |
+| Secondo 50 | POST /session/idp1/subject1 | 151 | 150 chiamate ricevono &quot;202 Accettate&quot; e 1 chiamata riceve &quot;429 Troppe richieste&quot; | 200 chiamate consumate dal limite e 1 chiamata riceverà una risposta di 429 |
+| Secondo 61 | POST /session/idp1/subject1 | 1 | 1 chiamata riceve ‘429 Troppe richieste’ | Nessuna chiamata nel limite ancora disponibile |
+| Secondo 70 | POST /session/idp1/subject1 | 1 | 1 chiamata riceve &quot;202 Accepted&quot; (Accettato) | Limite impostato su 200 chiamate disponibili perché sono trascorsi 60 secondi dal secondo 10 |
 
 **429 Esempio di risposta:**
 
