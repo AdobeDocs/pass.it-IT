@@ -55,7 +55,7 @@ Nell&#39;esempio di codice riportato di seguito viene illustrato come individuar
     </head>
     <body>
         <div id="alternative">
-        <a href="http://www.adobe.com/go/getflashplayer"> 
+        <a href="http://www.adobe.com/go/getflashplayer_it"> 
             <img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" 
                  alt="Get Adobe Flash player"/> </a>
         </div> 

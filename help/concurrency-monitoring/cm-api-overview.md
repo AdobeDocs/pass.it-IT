@@ -60,7 +60,7 @@ La chiamata di inizializzazione della sessione viene eseguita da un’applicazio
 
 Non è necessario fornire codice di terminazione alla prima chiamata perché non sono presenti altri flussi attivi. E nessun attributo di metadati perché non ne è stato restituito alcuno dalla chiamata di recupero dei metadati.
 
-I parametri **subject** e **idp** sono obbligatori e verranno specificati come variabili di percorso URI. Puoi ottenere i parametri **subject** e **idp** effettuando una chiamata per i campi di metadati **mvpd** e **upstreamUserID** dall&#39;autenticazione di Adobe Pass. Vedi anche la [panoramica delle API dei metadati](https://experienceleague.adobe.com/docs/primetime/authentication/auth-features/user-metadat/user-metadata-feature.html?lang=en#). In questo esempio forniremo il valore &quot;12345&quot; come soggetto e &quot;adobe&quot; come idp.
+I parametri **subject** e **idp** sono obbligatori e verranno specificati come variabili di percorso URI. Puoi ottenere i parametri **subject** e **idp** effettuando una chiamata per i campi di metadati **mvpd** e **upstreamUserID** dall&#39;autenticazione di Adobe Pass. Vedi anche la [panoramica delle API dei metadati](https://experienceleague.adobe.com/docs/primetime/authentication/auth-features/user-metadat/user-metadata-feature.html?lang=it#). In questo esempio forniremo il valore &quot;12345&quot; come soggetto e &quot;adobe&quot; come idp.
 
 
 ![](assets/session-init-params-frstapp.png)
