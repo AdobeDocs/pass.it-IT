@@ -392,7 +392,7 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 
 ### Disconnetti {#apple-sso-cookbook-rest-api-v1-logout}
 
-Il framework dell&#39;account del sottoscrittore video [1} non fornisce un&#39;API per disconnettere a livello di programmazione gli utenti che hanno effettuato l&#39;accesso al proprio account del provider TV a livello di sistema del dispositivo. ](https://developer.apple.com/documentation/videosubscriberaccount) Pertanto, affinché la disconnessione diventi effettiva, l&#39;utente finale dovrà disconnettersi esplicitamente da *`Settings -> TV Provider`* su iOS/iPadOS o da *`Settings -> Accounts -> TV Provider`* su tvOS. L&#39;altra opzione che l&#39;utente avrebbe è quella di revocare l&#39;autorizzazione per accedere alle informazioni sull&#39;abbonamento dell&#39;utente dalla sezione delle impostazioni specifiche dell&#39;applicazione (accesso al provider TV).
+Il framework dell&#39;account del sottoscrittore video [1&rbrace; non fornisce un&#39;API per disconnettere a livello di programmazione gli utenti che hanno effettuato l&#39;accesso al proprio account del provider TV a livello di sistema del dispositivo. &#x200B;](https://developer.apple.com/documentation/videosubscriberaccount) Pertanto, affinché la disconnessione diventi effettiva, l&#39;utente finale dovrà disconnettersi esplicitamente da *`Settings -> TV Provider`* su iOS/iPadOS o da *`Settings -> Accounts -> TV Provider`* su tvOS. L&#39;altra opzione che l&#39;utente avrebbe è quella di revocare l&#39;autorizzazione per accedere alle informazioni sull&#39;abbonamento dell&#39;utente dalla sezione delle impostazioni specifiche dell&#39;applicazione (accesso al provider TV).
 
 >[!TIP]
 >

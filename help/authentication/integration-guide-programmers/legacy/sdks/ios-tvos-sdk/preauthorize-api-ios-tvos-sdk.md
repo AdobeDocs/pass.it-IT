@@ -23,7 +23,7 @@ L’API di preautorizzazione può essere utilizzata per ottenere una decisione d
 
 >[!IMPORTANT]
 >
->Prima di concedere all&#39;utente l&#39;accesso alle risorse specificate, è necessario utilizzare l&#39;API di autorizzazione **1}.**
+>Prima di concedere all&#39;utente l&#39;accesso alle risorse specificate, è necessario utilizzare l&#39;API di autorizzazione **1&rbrace;.**
 
 Nel caso in cui il risultato della risposta API di preautorizzazione contenga una o più risorse con una decisione di preautorizzazione negata, è possibile includere ulteriori informazioni sull&#39;errore **(vedi la nota seguente)** per ciascuna risorsa interessata.
 
