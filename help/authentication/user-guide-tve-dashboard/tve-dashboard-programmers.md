@@ -2,7 +2,7 @@
 title: Programmatori
 description: Scopri i programmatori e le relative configurazioni nel dashboard di TVE.
 exl-id: b450d7cc-d5b5-4454-8f95-8047856bfb98
-source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '1139'
 ht-degree: 0%
@@ -63,7 +63,7 @@ Per aggiungere un nuovo canale per il programmatore selezionato, selezionare **A
 
 In questa scheda viene visualizzato un elenco di [certificati disponibili](#available-certificates) utilizzati nei flussi di crittografia dei metadati utente. Vengono visualizzati i dettagli di ogni certificato, tra cui:
 
-* Lo stato (se abilitato o meno per la crittografia dei metadati dell&#39;utente **&#x200B;**)
+* Lo stato (se abilitato o meno per la crittografia dei metadati dell&#39;utente ****)
 * Numero di serie
 * Nome dell&#39;organizzazione emittente
 * Nome dell&#39;organizzazione soggetto

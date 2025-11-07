@@ -2,7 +2,7 @@
 title: Guida introduttiva per programmatori
 description: Guida introduttiva per programmatori
 exl-id: 0aecdb81-9b97-4475-b0b0-654d916b2374
-source-git-commit: 37858fa83aecbdf443a4a6058c78e4f9246eee42
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '758'
 ht-degree: 0%
@@ -75,7 +75,7 @@ Il team di autenticazione di Adobe Pass è a tua disposizione per aiutarti a ris
 
 ## Accesso alla documentazione {#access-documentation}
 
-**Adobe fornirà** accesso alla nostra documentazione pubblica tramite [Adobe Experience League](https://experienceleague.adobe.com/it/docs/pass/authentication/home).
+**Adobe fornirà** accesso alla nostra documentazione pubblica tramite [Adobe Experience League](https://experienceleague.adobe.com/en/docs/pass/authentication/home).
 
 Il team di autenticazione di Adobe Pass fornisce una documentazione completa sulle funzioni e API disponibili nella sezione [Guida all&#39;integrazione per programmatori](/help/authentication/integration-guide-programmers/programmer-integration-guide-overview.md). Fare riferimento al sommario di questa sezione per collegamenti a informazioni dettagliate su ciascun argomento.
 

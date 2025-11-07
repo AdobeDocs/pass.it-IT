@@ -2,7 +2,7 @@
 title: Glossario REST API V2
 description: Glossario REST API V2
 exl-id: 8b3bd2de-1ff8-4c57-b18d-27ecdf2b0de2
-source-git-commit: e448427ae4a36c4c6cb9f9c1cb4d0cc5c6d564ed
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '1742'
 ht-degree: 0%
@@ -151,7 +151,7 @@ L&#39;applicazione primaria fa riferimento a un&#39;applicazione [Programmer](#p
 
 #### Profilo {#profile}
 
-Il profilo è un concetto di autenticazione di Adobe Pass che memorizza informazioni sulla data di inizio e di fine dell&#39;autenticazione dell&#39;utente, i metadati dell&#39;utente [&#128279;](#user-metadata) insieme ad altri campi che indicano il metodo per ottenere l&#39;autenticazione (ad esempio, &quot;regolare&quot;, &quot;degradato&quot;, &quot;temporaneo&quot;, &quot;single sign-on&quot;, ecc.).
+Il profilo è un concetto di autenticazione di Adobe Pass che memorizza informazioni sulla data di inizio e di fine dell&#39;autenticazione dell&#39;utente, i metadati dell&#39;utente [](#user-metadata) insieme ad altri campi che indicano il metodo per ottenere l&#39;autenticazione (ad esempio, &quot;regolare&quot;, &quot;degradato&quot;, &quot;temporaneo&quot;, &quot;single sign-on&quot;, ecc.).
 
 Sinonimo del precedente termine utilizzato come token di autenticazione.
 

@@ -2,7 +2,7 @@
 title: Manuale dell’API REST V2 (server-to-server)
 description: Manuale dell’API REST V2 (server-to-server)
 exl-id: 3160c03c-849d-4d39-95e5-9a9cbb46174d
-source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '2497'
 ht-degree: 0%
