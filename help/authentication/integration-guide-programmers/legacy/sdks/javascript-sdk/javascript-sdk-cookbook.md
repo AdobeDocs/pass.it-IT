@@ -186,7 +186,7 @@ libreria AccessEnabler)
 
 ## Configurazione dell’ID visitatore {#visitorID}
 
-La configurazione di un valore [Experience Cloud visitorID](https://experienceleague.adobe.com/docs/id-service/using/home.html) è molto importante dal punto di vista analitico. Una volta impostato il valore EC visitorID, SDK invierà queste informazioni insieme a ogni chiamata di rete e il servizio di autenticazione di Adobe Pass le raccoglierà. In questo modo potrai correlare i dati di analisi del servizio di autenticazione di Adobe Pass con qualsiasi altro rapporto di analisi disponibile in altre applicazioni o siti Web. Le informazioni su come impostare EC visitorID sono disponibili [qui](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=en).
+La configurazione di un valore [Experience Cloud visitorID](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=it) è molto importante dal punto di vista analitico. Una volta impostato il valore EC visitorID, SDK invierà queste informazioni insieme a ogni chiamata di rete e il servizio di autenticazione di Adobe Pass le raccoglierà. In questo modo potrai correlare i dati di analisi del servizio di autenticazione di Adobe Pass con qualsiasi altro rapporto di analisi disponibile in altre applicazioni o siti Web. Le informazioni su come impostare EC visitorID sono disponibili [qui](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=it).
 
 
 >[!NOTE]
