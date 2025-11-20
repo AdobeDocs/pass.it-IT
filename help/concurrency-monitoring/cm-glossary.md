@@ -2,7 +2,7 @@
 title: Glossario
 description: Glossario dei termini nel monitoraggio della concorrenza
 exl-id: 3b3b36fe-9f04-4de9-bd84-9f8d766bbc71
-source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
+source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
 workflow-type: tm+mt
 source-wordcount: '762'
 ht-degree: 0%
@@ -28,7 +28,7 @@ ht-degree: 0%
 ## Applicazione {#application-defn}
 
 * Sviluppato dal tenant per l’accesso ai contenuti video
-* Prende e applica decisioni sull&#39;accesso ai contenuti in base alle informazioni fornite dal servizio di monitoraggio della concorrenza (valido nel caso [Punto informazioni criteri](/help/concurrency-monitoring/policy-info-pt-versionone.md))
+* Prende e applica decisioni sull&#39;accesso ai contenuti in base alle informazioni fornite dal servizio di monitoraggio della concorrenza (valido nel caso [Punto informazioni criteri](/help/concurrency-monitoring/technical/policy-info-pt-versionone.md))
 * Avrà un **ID applicazione** univoco fornito da Adobe.
 
 ## Servizio di monitoraggio della concorrenza {#cm-service-defn}
@@ -94,7 +94,7 @@ ht-degree: 0%
 
 ## Oggetto {#subj-defn}
 
-* Il consumatore del contenuto (video) su Internet. Stiamo deliberatamente evitando il termine _&#x200B;**utente**&#x200B;_, in quanto il monitoraggio della concorrenza di solito tratta gli ID account di MVPD (che coinvolgono diversi utenti effettivi che condividono lo stesso contratto, ad esempio i membri della famiglia per una famiglia).
+* Il consumatore del contenuto (video) su Internet. Stiamo deliberatamente evitando il termine _**utente**_, in quanto il monitoraggio della concorrenza di solito tratta gli ID account di MVPD (che coinvolgono diversi utenti effettivi che condividono lo stesso contratto, ad esempio i membri della famiglia per una famiglia).
 
 * Per ogni flusso, l’oggetto può essere migliorato con gli attributi relativi alla persona che utilizza effettivamente il servizio, al dispositivo connesso alla rete e così via.
 
