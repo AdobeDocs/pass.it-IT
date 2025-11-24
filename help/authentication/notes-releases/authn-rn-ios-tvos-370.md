@@ -2,9 +2,9 @@
 title: Note sulla versione di iOS/tvOS 3.7.0 per l’autenticazione
 description: Note sulla versione di iOS/tvOS 3.7.0 per l’autenticazione
 exl-id: 19c1179e-16b1-4608-954f-25b0980d7ad9
-source-git-commit: ecafc3a92f691203d8113a741f0b6cd00a134e80
+source-git-commit: ca2cda44b1dd8b907235053eff07f314b09249a2
 workflow-type: tm+mt
-source-wordcount: '122'
+source-wordcount: '123'
 ht-degree: 0%
 
 ---
@@ -32,3 +32,5 @@ Aggiunge miglioramenti all&#39;utilizzo del framework AccessEnabler consentendo 
 Puoi scaricare iOS/tvOS SDK v3.7.0 da qui.
 
 Prima di eseguire l&#39;aggiornamento a questa versione, controllare questa nota tecnica.
+
+DEMO
