@@ -18,7 +18,7 @@ Ultimo aggiornamento: martedì 9 dicembre 2025 00:00:00 GMT+0000 (Coordinated Un
 
 >[!IMPORTANT]
 >
-> Assicurati di essere sempre informato sugli ultimi annunci di prodotto per l&#39;autenticazione di Adobe Pass e sulle timeline di disattivazione aggregate nella pagina [Annunci di prodotto](https://experienceleague.adobe.com/en/docs/pass/authentication/product-announcements).
+> Assicurati di essere sempre informato sugli ultimi annunci di prodotto per l&#39;autenticazione di Adobe Pass e sulle timeline di disattivazione aggregate nella pagina [Annunci di prodotto](https://experienceleague.adobe.com/it/docs/pass/authentication/product-announcements).
 
 Questa pagina descrive nuove funzioni, modifiche e problemi noti relativi a questa versione:
 
