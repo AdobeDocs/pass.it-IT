@@ -2,9 +2,9 @@
 title: Canali
 description: Scopri i canali e le loro varie configurazioni all’interno della dashboard TVE.
 exl-id: bbddeccb-6b6f-4a8f-87ab-d4af538eee1d
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+source-git-commit: b4276ee12d57bc061d26afc0a192b799fe1681ae
 workflow-type: tm+mt
-source-wordcount: '1556'
+source-wordcount: '1637'
 ht-degree: 0%
 
 ---
@@ -98,7 +98,7 @@ In questa scheda viene visualizzato un elenco delle integrazioni disponibili tra
 
 In questa scheda viene visualizzato un elenco di [certificati disponibili](#available-certificates) e [certificati disponibili ereditati](#inherited-avail-certificates) utilizzati nei flussi di crittografia dei metadati utente. Vengono visualizzati i dettagli di ogni certificato, tra cui:
 
-* Lo stato (se abilitato o meno per la crittografia dei metadati dell&#39;utente **&#x200B;**)
+* Lo stato (se abilitato o meno per la crittografia dei metadati dell&#39;utente ****)
 * Numero di serie
 * Nome dell&#39;organizzazione emittente
 * Nome dell&#39;organizzazione soggetto
@@ -268,7 +268,8 @@ Per scaricare un&#39;istruzione software, eseguire la procedura seguente.
 
 ### Schemi personalizzati {#custom-schemes}
 
-In questa scheda viene visualizzato un elenco di schemi personalizzati. Per ulteriori dettagli relativi all&#39;utilizzo di schemi personalizzati, consulta la [registrazione dell&#39;applicazione iOS/tvOS](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-application-registration.md).
+In questa scheda viene visualizzato un elenco di schemi personalizzati.
+Gli schemi personalizzati possono essere utilizzati per i dispositivi Android e iOS.
 
 È possibile apportare le seguenti modifiche agli schemi personalizzati:
 
@@ -286,7 +287,38 @@ Per generare un nuovo schema personalizzato, segui la procedura riportata di seg
 
 È stata creata una nuova modifica alla configurazione ed è pronto per l’aggiornamento del server. Per utilizzare il nuovo schema personalizzato elencato nella sezione **Schemi personalizzati**, procedere con il flusso [revisione e push modifiche](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md).
 
-#### Schemi personalizzati ereditati {#inherited-custom-schemes}
+#### Se non hai accesso a Adobe TVE Dashboard:
+
+Invia un ticket a <tve-support@adobe.com>. Includi l’ID canale: verrà creato uno schema personalizzato dal nostro team di supporto.
+
+#### ANDROID {#Android}
+
+1. Schema personalizzato: lo schema personalizzato creato nel dashboard TVE può essere utilizzato per le applicazioni per dispositivi Android.
+
+1. Nel file di risorse dell&#39;applicazione `strings.xml` aggiungere il codice seguente:
+
+```XML
+       <string name="software_statement">softwarestatement value</string>
+       <string name="redirect_uri">adbe.TTIFAaWuR-CmxXv1Di8PlQ://</string>
+```
+
+#### iOS {#iOS}
+
+È possibile utilizzare la combinazione personalizzata nel file `info.plist` dell&#39;applicazione. Nell’esempio seguente puoi aggiungere l’URL generato nel dashboard TVE:
+
+```plist
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>adbe.u-XFXJeTSDuJiIQs0HVRAg</string> // replace this with your custom scheme
+            </array>
+        </dict>
+    </array>
+```
+
+### Schemi personalizzati ereditati {#inherited-custom-schemes}
 
 Le società di media definiscono questi schemi personalizzati al proprio livello. Tutti i canali associati alla stessa media company possono utilizzare questi schemi personalizzati.
 
