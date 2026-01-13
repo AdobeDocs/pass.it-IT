@@ -2,9 +2,9 @@
 title: Intestazione - AP-Partner-Framework-Status
 description: REST API V2 - Intestazione - AP-Partner-Framework-Status
 exl-id: f589d948-e23e-43d4-81c2-8db0e7a40e93
-source-git-commit: 5c912bbbe97fff65d38dbade32cd4554ad8c2fac
+source-git-commit: 22529618db679f7dbfb493906e1aeb4a0443a40c
 workflow-type: tm+mt
-source-wordcount: '404'
+source-wordcount: '415'
 ht-degree: 0%
 
 ---
@@ -70,8 +70,8 @@ Il valore `Base64-encoded` dell&#39;elemento JSON contenente i seguenti attribut
                   <ul>
                      <li><b>concesso</b><br/>L'utente ha consentito all'applicazione di accedere alle informazioni sulla sottoscrizione.</li>
                      <li><b>negato</b><br/>L'utente ha negato all'applicazione l'accesso alle informazioni sulla sottoscrizione.</li>
-                     <li><b>in sospeso</b><br/>L'utente non ha ancora consentito all'applicazione di accedere alle informazioni sulla sottoscrizione.</li>
-                     <li><b>notDetermined</b><br/>L'applicazione non può accedere alle informazioni sulla sottoscrizione.</li>
+                     <li><b>limitato</b><br/>L'applicazione non può accedere alle informazioni sulla sottoscrizione.</li>
+                     <li><b>nonDeterminato</b><br/>L'utente non ha scelto se consentire all'applicazione di accedere alle informazioni sulla sottoscrizione.</li>
                   </ul>
                </td>
             </tr>
