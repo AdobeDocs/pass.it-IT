@@ -341,7 +341,7 @@ Per garantire l&#39;efficienza ed evitare richieste non necessarie, l&#39;applic
 
 #### &#x200B;17. Qual è il numero massimo di richieste di polling che l&#39;applicazione client può inviare? {#authentication-phase-faq17}
 
-L&#39;applicazione client deve rispettare i limiti correnti definiti dal meccanismo di limitazione dell&#39;autenticazione di Adobe Pass [&#128279;](/help/authentication/integration-guide-programmers/throttling-mechanism.md#throttling-mechanism-limits).
+L&#39;applicazione client deve rispettare i limiti correnti definiti dal meccanismo di limitazione dell&#39;autenticazione di Adobe Pass [](/help/authentication/integration-guide-programmers/throttling-mechanism.md#throttling-mechanism-limits).
 
 La gestione degli errori dell&#39;applicazione client deve essere in grado di gestire il codice di errore [429 Troppe richieste](/help/authentication/integration-guide-programmers/throttling-mechanism.md#throttling-mechanism-response), che indica che l&#39;applicazione client ha superato il numero massimo di richieste consentito.
 
@@ -713,7 +713,7 @@ Prima di implementare Apple SSO, verifica che siano soddisfatti i seguenti prere
 
 **Requisiti dell&#39;applicazione di streaming:**
 
-* Contatta Apple per abilitare il framework dell&#39;account dell&#39;utente con sottoscrizione video [1&rbrace; come parte del tuo ID team Apple.](https://developer.apple.com/documentation/videosubscriberaccount)
+* Contatta Apple per abilitare il framework dell&#39;account dell&#39;utente con sottoscrizione video [1} come parte del tuo ID team Apple.](https://developer.apple.com/documentation/videosubscriberaccount)
 * Configura l&#39;adesione Single Sign-On del sottoscrittore video come parte dell&#39;account Apple Developer.
 * Utilizza Xcode versione 8 o successiva e iOS/tvOS versione 10 o successiva.
 * Richiedi l’autorizzazione dell’utente per accedere alle informazioni di abbonamento a livello di dispositivo.
