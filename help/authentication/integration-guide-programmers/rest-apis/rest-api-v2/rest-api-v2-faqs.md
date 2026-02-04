@@ -2,7 +2,7 @@
 title: Domande frequenti su REST API V2
 description: Domande frequenti su REST API V2
 exl-id: 2dd74b47-126e-487b-b467-c16fa8cc14c1
-source-git-commit: 44fa75eb7b19ff44a41809d44c171baff6853b52
+source-git-commit: eaadf0aa7ddc58250e23715b7068d3497a30d258
 workflow-type: tm+mt
 source-wordcount: '11089'
 ht-degree: 1%
@@ -254,7 +254,7 @@ Gli endpoint di base per i profili sono progettati per fornire all’applicazion
 Ogni endpoint è adatto a un caso d’uso specifico, come segue:
 
 | API | Descrizione | Caso d’uso |
-|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|--- |--- |--- |
 | [API endpoint profili](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md) | Recupera tutti i profili utente. | **L&#39;utente apre l&#39;applicazione client per la prima volta**<br/><br/> In questo scenario, l&#39;applicazione client non ha l&#39;identificatore MVPD selezionato dell&#39;utente memorizzato nella cache dell&#39;archivio permanente.<br/><br/>Di conseguenza, invierà una singola richiesta per recuperare tutti i profili utente disponibili. |
 | [Endpoint dei profili per API MVPD specifica](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) | Recupera il profilo utente associato a un MVPD specifico. | **L&#39;utente ritorna all&#39;applicazione client dopo l&#39;autenticazione in una visita precedente**<br/><br/> In questo caso, l&#39;applicazione client deve avere l&#39;identificatore MVPD selezionato in precedenza nella cache dell&#39;archivio permanente.<br/><br/>Di conseguenza, invierà una singola richiesta per recuperare il profilo dell&#39;utente per quel MVPD specifico. |
 | [Endpoint dei profili per API di codice specifico (autenticazione)](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md) | Recupera il profilo utente associato a un codice di autenticazione specifico. | **L&#39;utente avvia il processo di autenticazione**<br/><br/> In questo caso, l&#39;applicazione client deve determinare se l&#39;utente ha completato correttamente l&#39;autenticazione e recuperare le informazioni sul profilo.<br/><br/>Verrà quindi avviato un meccanismo di polling per recuperare il profilo dell&#39;utente associato al codice di autenticazione. |
@@ -264,7 +264,7 @@ Per ulteriori dettagli, fare riferimento al [Flusso dei profili di base eseguito
 L’endpoint SSO Profili ha uno scopo diverso e fornisce all’applicazione client la possibilità di creare un profilo utente utilizzando la risposta di autenticazione del partner e di recuperarlo in un’unica operazione una tantum.
 
 | API | Descrizione | Caso d’uso |
-|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| --- | --- | --- |
 | [Profili API endpoint SSO](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md) | Crea e recupera il profilo utente utilizzando la risposta di autenticazione del partner. | **L&#39;utente consente all&#39;applicazione di utilizzare il Single Sign-On partner per l&#39;autenticazione**<br/><br/> In questo caso, l&#39;applicazione client deve creare un profilo utente dopo aver ricevuto la risposta di autenticazione partner e recuperarla in un&#39;unica operazione. |
 
 Per qualsiasi query successiva, è necessario utilizzare gli endpoint di base Profiles per determinare lo stato di autenticazione dell’utente, accedere alle informazioni sui metadati dell’utente, trovare il metodo utilizzato per l’autenticazione o l’entità utilizzata per fornire l’identità.
@@ -273,7 +273,7 @@ Per ulteriori dettagli, fare riferimento ai documenti [Single Sign-On utilizzand
 
 #### &#x200B;11. Cosa deve fare l’applicazione client se l’utente dispone di più profili MVPD? {#authentication-phase-faq11}
 
-La decisione di supportare più profili dipende dai requisiti di business dell’applicazione client.
+La decisione di supportare più profili dipende dai requisiti aziendali dell’applicazione client.
 
 La maggior parte degli utenti avrà un solo profilo. Tuttavia, nei casi in cui esistono più profili (come descritto di seguito), l’applicazione client è responsabile di determinare la migliore esperienza utente per la selezione del profilo.
 
@@ -341,7 +341,7 @@ Per garantire l&#39;efficienza ed evitare richieste non necessarie, l&#39;applic
 
 #### &#x200B;17. Qual è il numero massimo di richieste di polling che l&#39;applicazione client può inviare? {#authentication-phase-faq17}
 
-L&#39;applicazione client deve rispettare i limiti correnti definiti dal meccanismo di limitazione dell&#39;autenticazione di Adobe Pass [&#128279;](/help/authentication/integration-guide-programmers/throttling-mechanism.md#throttling-mechanism-limits).
+L&#39;applicazione client deve rispettare i limiti correnti definiti dal meccanismo di limitazione dell&#39;autenticazione di Adobe Pass [](/help/authentication/integration-guide-programmers/throttling-mechanism.md#throttling-mechanism-limits).
 
 La gestione degli errori dell&#39;applicazione client deve essere in grado di gestire il codice di errore [429 Troppe richieste](/help/authentication/integration-guide-programmers/throttling-mechanism.md#throttling-mechanism-response), che indica che l&#39;applicazione client ha superato il numero massimo di richieste consentito.
 
@@ -551,7 +551,7 @@ La decisione di autorizzazione include diversi attributi di marca temporale che 
 Le marche temporali descrivono il periodo di validità della decisione globale di autorizzazione:
 
 | Attributo | Descrizione | Note |
-|-------------|----------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|-------------|-------------|---------|
 | `notBefore` | Tempo in millisecondi in cui è stata rilasciata la decisione di autorizzazione. | Indica l&#39;inizio della finestra di validità dell&#39;autorizzazione. |
 | `notAfter` | Tempo in millisecondi in cui scade la decisione di autorizzazione. | Il valore TTL [authorization Time-to-Live](/help/authentication/integration-guide-programmers/features-standard/entitlements/decisions.md#authorization-ttl-management) determina per quanto tempo l&#39;autorizzazione rimane valida prima di richiedere una nuova autorizzazione. Questo TTL viene negoziato con i rappresentanti di MVPD. |
 
@@ -713,7 +713,7 @@ Prima di implementare Apple SSO, verifica che siano soddisfatti i seguenti prere
 
 **Requisiti dell&#39;applicazione di streaming:**
 
-* Contatta Apple per abilitare il framework dell&#39;account dell&#39;utente con sottoscrizione video [1&rbrace; come parte del tuo ID team Apple.](https://developer.apple.com/documentation/videosubscriberaccount)
+* Contatta Apple per abilitare il framework dell&#39;account dell&#39;utente con sottoscrizione video [1} come parte del tuo ID team Apple.](https://developer.apple.com/documentation/videosubscriberaccount)
 * Configura l&#39;adesione Single Sign-On del sottoscrittore video come parte dell&#39;account Apple Developer.
 * Utilizza Xcode versione 8 o successiva e iOS/tvOS versione 10 o successiva.
 * Richiedi l’autorizzazione dell’utente per accedere alle informazioni di abbonamento a livello di dispositivo.
