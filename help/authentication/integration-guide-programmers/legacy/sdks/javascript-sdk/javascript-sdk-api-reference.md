@@ -2,9 +2,9 @@
 title: Riferimento API di JavaScript SDK
 description: Riferimento API di JavaScript SDK
 exl-id: 48d48327-14e6-46f3-9e80-557f161acd8a
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
 workflow-type: tm+mt
-source-wordcount: '2883'
+source-wordcount: '2902'
 ht-degree: 0%
 
 ---
@@ -309,7 +309,7 @@ Ad esempio:
 **Descrizione:** Chiama questa funzione quando l&#39;utente ha selezionato un MVPD dall&#39;interfaccia utente di selezione del provider per inviare la selezione del provider all&#39;Access Enabler o chiama questa funzione con un parametro null nel caso in cui l&#39;utente abbia rifiutato l&#39;interfaccia utente di selezione del provider senza selezionare un provider.
 
 **Callback
-attivato:**[&#x200B; setAuthenticationStatus()](#setauthenticationstatusisauthenticated-errorcode), [sendTrackingData()](#sendtrackingdatatrackingeventtype-trackingdata-sendtrackingdatatrackingeventtypetrackingdata)
+attivato:**[ setAuthenticationStatus()](#setauthenticationstatusisauthenticated-errorcode), [sendTrackingData()](#sendtrackingdatatrackingeventtype-trackingdata-sendtrackingdatatrackingeventtypetrackingdata)
 
 </br>
 
@@ -415,7 +415,7 @@ Devi implementare questi callback per gestire le risposte alle chiamate di richi
 
 **Descrizione:** implementa questo callback se l&#39;utente ha selezionato un MVPD che richiede un iFrame in cui visualizzare l&#39;interfaccia utente della pagina di accesso per l&#39;autenticazione.
 
-**Attivato da:**&#x200B;[&#x200B; setSelectedProvider()](#setselectedproviderproviderid-setselectedprovider)
+**Attivato da:**[ setSelectedProvider()](#setselectedproviderproviderid-setselectedprovider)
 
 </br> [Torna all&#39;inizio](#top)
 
@@ -531,7 +531,7 @@ I dati sono specifici per ogni tipo di evento:
 
 - *inRequestedResourceID* - Stringa che fornisce l&#39;ID risorsa utilizzato nella richiesta di autorizzazione.
 - *inRequestErrorCode* - Stringa che visualizza il codice di errore di autenticazione di Adobe Pass, che indica il motivo dell&#39;errore. I valori possibili sono &quot;Errore utente non autenticato&quot; e &quot;Errore utente non autorizzato&quot;. Per ulteriori dettagli, vedere &quot;Codici di errore di callback&quot; di seguito.
-- *inRequestDetailedErrorMessage* - Stringa descrittiva aggiuntiva adatta alla visualizzazione. Se questa stringa descrittiva non è disponibile per alcun motivo, Adobe Pass Authentication invia una stringa vuota **(&quot;)**.  Questo può essere utilizzato da un MVPD per trasmettere messaggi di errore personalizzati o messaggi relativi alle vendite. Se ad esempio a un sottoscrittore viene negata l&#39;autorizzazione per una risorsa, MVPD potrebbe rispondere con un `*inRequestDetailedErrorMessage*`, ad esempio: **&quot;Attualmente non si dispone dell&#39;accesso a questo canale nel pacchetto. Se desideri aggiornare il pacchetto, fai clic su \*qui\*.&quot;** Il messaggio viene passato dall&#39;autenticazione di Adobe Pass tramite questo callback al sito del programmatore. Il programmatore ha quindi la possibilità di visualizzarlo o ignorarlo. L&#39;autenticazione di Adobe Pass può inoltre utilizzare `*inRequestDetailedErrorMessage*` per notificare al programmatore la condizione che potrebbe aver causato un errore. Ad esempio, **&quot;Errore di rete durante la comunicazione con il servizio di autorizzazione del provider&quot;.**
+- *inRequestDetailedErrorMessage* - Stringa descrittiva aggiuntiva adatta alla visualizzazione. Se questa stringa descrittiva non è disponibile per alcun motivo, Adobe Pass Authentication invia una stringa vuota **(&quot;)**.  Questo può essere utilizzato da un MVPD per trasmettere messaggi di errore personalizzati o messaggi relativi alle vendite. Se ad esempio a un sottoscrittore viene negata l&#39;autorizzazione per una risorsa, MVPD potrebbe rispondere con un `*inRequestDetailedErrorMessage*`, ad esempio: **&quot;Attualmente non si dispone dell&#39;accesso a questo canale nel pacchetto. Se desideri aggiornare il pacchetto, fai clic su \*qui\*.&quot;** Il messaggio viene passato dall’autenticazione di Adobe Pass tramite questo callback al sito del programmatore. Il programmatore ha quindi la possibilità di visualizzarlo o ignorarlo. L&#39;autenticazione di Adobe Pass può inoltre utilizzare `*inRequestDetailedErrorMessage*` per notificare al programmatore la condizione che potrebbe aver causato un errore. Ad esempio, **&quot;Errore di rete durante la comunicazione con il servizio di autorizzazione del provider&quot;.**
 
 
 
@@ -627,20 +627,20 @@ Ad esempio:
 ### Codici di errore di callback {#callback-error-codes}
 
 | Errori generici | |
-|:--- | :--- | 
+|:--- | :--- |
 | Errore interno | Si è verificato un errore di sistema durante il tentativo di elaborare la richiesta. |
 | Errore provider non selezionato | Si verifica all&#39;annullamento del cliente nella finestra di dialogo di selezione del provider |
 | Errore provider non disponibile | Si verifica quando non è disponibile alcun provider. |
 
 | Errori di autenticazione | |
-|:--- | :--- | 
+|:--- | :--- |
 | Errore di autenticazione generica | Restituito quando il motivo non è noto o non può essere pubblicato. |
 | Errore di autenticazione interna | Si è verificato un errore di sistema durante il tentativo di autenticazione. |
 | Errore utente non autenticato | Utente non autenticato. |
 | Errore di più richieste di autenticazione | Sono state ricevute ulteriori richieste di autenticazione prima del completamento della prima. |
 
 | Errori di autorizzazione | |
-|:--- | :--- | 
+|:--- | :--- |
 | Errore di autorizzazione generica | Restituito quando il motivo non è noto o non può essere pubblicato. |
 | Errore di autorizzazione interna | Si è verificato un errore di sistema durante il tentativo di autorizzazione. |
 | Errore utente non autorizzato | Il cliente non è autorizzato a visualizzare il contenuto richiesto. |

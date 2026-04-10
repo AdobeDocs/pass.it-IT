@@ -2,9 +2,9 @@
 title: Panoramica sul monitoraggio dei servizi di adesione
 description: Panoramica sul monitoraggio dei servizi di adesione
 exl-id: ebd5d650-0a32-4583-9045-5156356494e2
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
 workflow-type: tm+mt
-source-wordcount: '1303'
+source-wordcount: '1349'
 ht-degree: 0%
 
 ---
@@ -44,8 +44,8 @@ L’API ESM non è generalmente disponibile.  Per domande sulla disponibilità, 
 | Autore-rifiutato | Numero di tentativi di autorizzazione considerati dannosi da Adobe Service Provider e rifiutati in seguito alla prevenzione di attacchi DoS |
 | autentz-latenza | Numero totale di millisecondi trascorsi sull’endpoint di MVPD |
 | media-token | Numero di token multimediali brevi generati (assimilati al numero di richieste di riproduzione) |
-| account univoci | Numero di utenti univoci che hanno eseguito azioni di adesione (AuthN/AuthZ) nell’intervallo di tempo selezionato. Questa metrica verrà visualizzata solo se sono richiesti valori giornalieri. </br> Questo valore viene calcolato per ogni singolo datacenter. Quando non è richiesta la dimensione &quot;dc&quot;, questa metrica non viene visualizzata. |
-| sessioni univoche | Numero di sessioni univoche che hanno eseguito chiamate del flusso di autenticazione al servizio di autenticazione di Adobe Pass entro l’intervallo di tempo selezionato. Questa metrica verrà visualizzata solo se sono richiesti valori giornalieri. </br> Questo valore viene calcolato per ogni singolo datacenter. Quando non è richiesta la dimensione &quot;dc&quot;, questa metrica non viene visualizzata. |
+| account univoci | Numero di utenti univoci che hanno eseguito azioni di adesione (AuthN/AuthZ) nell’intervallo di tempo selezionato. Questa metrica verrà visualizzata solo se sono richiesti valori giornalieri. </br> Questo viene calcolato per ogni singolo centro dati. Quando non è richiesta la dimensione &quot;dc&quot;, questa metrica non viene visualizzata. |
+| sessioni univoche | Numero di sessioni univoche che hanno eseguito chiamate del flusso di autenticazione al servizio di autenticazione di Adobe Pass entro l’intervallo di tempo selezionato. Questa metrica verrà visualizzata solo se sono richiesti valori giornalieri. </br> Questo viene calcolato per ogni singolo centro dati. Quando non è richiesta la dimensione &quot;dc&quot;, questa metrica non viene visualizzata. |
 | count | Contatore semplice utilizzato nei rapporti orientati agli eventi |
 
 </br>
@@ -68,10 +68,10 @@ L’API ESM non è generalmente disponibile.  Per domande sulla disponibilità, 
 | channel | Il sito web del canale, estratto dal campo della risorsa (estratto dal payload MRSS come canale/titolo, se fornito, o mappato al valore della risorsa, se non in formato RSS). |
 | resource-id | Titolo effettivo della risorsa coinvolto nella richiesta di autorizzazione (estratto dal payload MRSS come articolo/titolo se fornito) |
 | dispositivo | La piattaforma del dispositivo (PC, dispositivi mobili, console, ecc.) |
-| eap | Il provider di autenticazione esterno quando il flusso di autenticazione viene eseguito tramite un sistema esterno. </br> I valori possono essere: </br> - N/D - Autenticazione Adobe Pass </br> - Apple - Sistema esterno che ha fornito l&#39;autenticazione Apple |
+| eap | Il provider di autenticazione esterno quando il flusso di autenticazione viene eseguito tramite un sistema esterno. </br> I valori possono essere: </br> - N/D - Autenticazione Adobe Pass </br> - Apple - Il sistema esterno che ha fornito l&#39;autenticazione è Apple |
 | famiglia di sistemi operativi | Sistema operativo in esecuzione sul dispositivo |
 | famiglia di browser | Agente utente utilizzato per accedere all’autenticazione di Adobe Pass |
-| cdt | La piattaforma del dispositivo (alternativa), attualmente utilizzata per Clientless. </br> I valori possono essere: </br> - N/D - l&#39;evento non ha avuto origine da un SDK senza client </br> - Sconosciuto - Poiché il parametro deviceType di un&#39;API senza client è facoltativo, esistono chiamate che non contengono alcun valore. </br> - qualsiasi altro valore inviato tramite l&#39;API senza client, ad esempio xbox, appletv, roku ecc. </br> |
+| cdt | La piattaforma del dispositivo (alternativa), attualmente utilizzata per Clientless. </br>  I valori possono essere: </br> - N/D - l&#39;evento non ha avuto origine da un SDK senza client </br> - Sconosciuto - Poiché il parametro deviceType di un&#39;API senza client è facoltativo, sono presenti chiamate che non contengono alcun valore. </br> - qualsiasi altro valore inviato tramite l&#39;API senza client, ad esempio xbox, appletv, roku ecc. </br> |
 | platform-version | Versione di Clientless SDK |
 | tipo di sistema operativo | Sistema operativo in esecuzione sul dispositivo, alternativo (non attualmente utilizzato) |
 | versione browser | Versione agente utente |
@@ -113,8 +113,8 @@ L’API ESM non è generalmente disponibile.  Per domande sulla disponibilità, 
 | minuto | Il minuto dell&#39;ora |
 | mvpd | ID mvpd utilizzato per eseguire la richiesta di adesione |
 | requestor-id | ID richiedente utilizzato per eseguire la richiesta di adesione |
-| eap | Il provider di autenticazione esterno quando il flusso di autenticazione viene eseguito tramite un sistema esterno. </br> I valori possono essere: </br> - N/D - Autenticazione Adobe Pass </br> - Apple - Sistema esterno che ha fornito l&#39;autenticazione Apple |
-| cdt | La piattaforma del dispositivo (alternativa), attualmente utilizzata per Clientless. </br> I valori possono essere: </br> - N/D - l&#39;evento non ha avuto origine da un SDK senza client </br> - Sconosciuto - Poiché il parametro deviceType di un&#39;API senza client è facoltativo, esistono chiamate che non contengono alcun valore. </br> - qualsiasi altro valore inviato tramite l&#39;API senza client, ad esempio xbox, appletv, roku ecc. </br> |
+| eap | Il provider di autenticazione esterno quando il flusso di autenticazione viene eseguito tramite un sistema esterno. </br> I valori possono essere: </br> - N/D - Autenticazione Adobe Pass </br> - Apple - Il sistema esterno che ha fornito l&#39;autenticazione è Apple |
+| cdt | La piattaforma del dispositivo (alternativa), attualmente utilizzata per Clientless. </br>  I valori possono essere: </br> - N/D - l&#39;evento non ha avuto origine da un SDK senza client </br> - Sconosciuto - Poiché il parametro deviceType di un&#39;API senza client è facoltativo, sono presenti chiamate che non contengono alcun valore. </br> - qualsiasi altro valore inviato tramite l&#39;API senza client, ad esempio xbox, appletv, roku ecc. </br> |
 | tipo sdk | Il SDK client utilizzato (Flash, HTML5, Android nativo, iOS, Clientless, ecc.) |
 | piattaforma | La piattaforma identificata dal dispositivo. Valori possibili: </br> - Android </br> - FireTV </br> - Roku </br> - iOS </br> - tvOS </br> - ecc |
 | nsdk | Il SDK client utilizzato (android, fireTV, js, iOS, tvOS, non sdk) |

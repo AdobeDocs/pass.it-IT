@@ -2,9 +2,9 @@
 title: Manuale dell’API REST (da client a server)
 description: Client-to-server del manuale API REST.
 exl-id: f54a1eda-47d5-4f02-b343-8cdbc99a73c0
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
 workflow-type: tm+mt
-source-wordcount: '886'
+source-wordcount: '906'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 0%
 
 ## Panoramica {#overview}
 
-Questo documento fornisce istruzioni dettagliate per il team tecnico di un programmatore per integrare uno &quot;smart device&quot; (console giochi, app di smart TV, set top box, ecc.) con l’autenticazione di Adobe Pass utilizzando i servizi API REST. Questo approccio client-to-server, che utilizza le API REST anziché un SDK client, consente un supporto più ampio di piattaforme diverse per le quali non sarebbe possibile sviluppare un numero significativo di SDK univoci. Per un&#39;ampia panoramica tecnica sul funzionamento della soluzione Clientless, vedere [Panoramica tecnica Clientless](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/rest-api-overview.md).
+Questo documento fornisce istruzioni dettagliate per il team tecnico di un programmatore per integrare uno &quot;smart device&quot; (console giochi, app per smart TV, set top box, ecc.) con l’autenticazione di Adobe Pass tramite i servizi API REST. Questo approccio client-to-server, che utilizza le API REST anziché un SDK client, consente un supporto più ampio di piattaforme diverse per le quali non sarebbe possibile sviluppare un numero significativo di SDK univoci. Per un&#39;ampia panoramica tecnica sul funzionamento della soluzione Clientless, vedere [Panoramica tecnica Clientless](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/rest-api-overview.md).
 
 
 Questo approccio richiede due componenti (streaming app e AuthN app) per completare i flussi richiesti: avvio, registrazione, autorizzazione e flussi view-media nell’app di streaming e il flusso di autenticazione nell’app AuthN.
@@ -72,11 +72,11 @@ Adobe Pass utilizza il DCR per proteggere le comunicazioni client tra un’appli
 
 1. Ottieni un codice di registrazione e un URL da utilizzare per accedere all’app di accesso alla seconda schermata e presentali all’utente:
 
-   a. Invia una richiesta POST al servizio Codice di registrazione di Adobe, trasmettendo un ID dispositivo con hash e un &quot;URL di registrazione&quot;.  Esempio: [`<REGGIE_FQDN>/reggie/v1/[requestorId]/regcode [device ID]`](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md)
+   a.  Invia una richiesta POST al servizio Codice di registrazione di Adobe, trasmettendo un ID dispositivo con hash e un &quot;URL di registrazione&quot;.  Esempio: [`<REGGIE_FQDN>/reggie/v1/[requestorId]/regcode [device ID]`](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md)
 
-   b. Presenta all’utente il codice di registrazione e l’URL restituiti.
+   b.  Presenta all’utente il codice di registrazione e l’URL restituiti.
 
-   c. Chiedere all&#39;utente di passare a un dispositivo compatibile con il Web, passare all&#39;URL e quindi immettere il codice di registrazione.
+   c.  Indicare all&#39;utente di passare a un dispositivo compatibile con il Web, passare all&#39;URL e quindi immettere il codice di registrazione.
 
 
 
@@ -96,7 +96,7 @@ Adobe Pass utilizza il DCR per proteggere le comunicazioni client tra un’appli
 
    * Se si è verificato un errore AuthZ, l’utente non è autorizzato a guardare il contenuto multimediale richiesto e deve visualizzare all’utente un qualche tipo di messaggio di errore.
 
-   * Se si è verificato un altro errore (errore di connessione, errore di rete, ecc.), visualizza un messaggio di errore appropriato.
+   * In caso di altri errori (errore di connessione, errore di rete, ecc.) quindi visualizza un messaggio di errore appropriato.
 
 
 
@@ -106,12 +106,12 @@ Adobe Pass utilizza il DCR per proteggere le comunicazioni client tra un’appli
 
 2. Il supporto è protetto?
 
-   a. L’app controlla se il supporto è protetto.
+   a.  L’app controlla se il contenuto multimediale è protetto.
 
-   b. Se il supporto è protetto, l’app avvia l’autorizzazione
+   b.  Se il supporto è protetto, l’app avvia l’autorizzazione.
 (AuthZ) Flusso sopra.
 
-   c. Se il supporto non è protetto, riprodurlo per
+   c.  Se il supporto non è protetto, riprodurlo per
 utente.
 
 3. Riprodurre il contenuto multimediale.

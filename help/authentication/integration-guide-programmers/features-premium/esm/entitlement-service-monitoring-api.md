@@ -2,9 +2,9 @@
 title: API di monitoraggio del servizio di adesione
 description: API di monitoraggio del servizio di adesione
 exl-id: a9572372-14a6-4caa-9ab6-4a6baababaa1
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
 workflow-type: tm+mt
-source-wordcount: '2027'
+source-wordcount: '2098'
 ht-degree: 0%
 
 ---
@@ -94,9 +94,9 @@ Sono disponibili le seguenti opzioni di filtro:
 
 * È possibile specificare **IN** filtri aggiungendo più volte lo stesso parametro del nome dimensione con valori diversi: dimension=value1\&amp;dimension=value2
 
-* **Diverso** i filtri devono utilizzare &#39;\!&#39; dopo il nome della quota, risultante in &quot;\!=&#39; &quot;operator&quot;: dimension\!=valore
+* **Not equals** i filtri devono utilizzare il simbolo &#39;\!&#39; dopo il nome della dimensione risultante in &#39;\!=&#39; &quot;operator&quot;: dimension\!=value
 
-* I filtri **NOT IN** richiedono &#39;\!Operatore =&#39; da utilizzare più volte, una volta per ogni valore nel set: dimension\!=valore1\&amp;dimensione\!=valore2&amp;...
+* I filtri **NOT IN** richiedono l&#39;utilizzo dell&#39;operatore &#39;\!=&#39; più volte, una volta per ogni valore nel set: dimension\!=value1\&amp;dimension\!=value2&amp;...
 
 Esiste anche un utilizzo speciale per i nomi delle dimensioni nella stringa di query: se il nome della dimensione viene utilizzato come parametro della stringa di query senza valore, questo indicherà all’API di restituire una proiezione che include tale dimensione nel rapporto.
 
@@ -106,8 +106,8 @@ Esiste anche un utilizzo speciale per i nomi delle dimensioni nella stringa di q
 |---|---|
 | /dimension1/dimension2/dimension3?dimension1=value1 | SELECT * from projection WHERE dimensione1 = &#39;valore1&#39; </br> GROUP BY dimensione1, dimensione2, dimensione3 |
 | /dimension1/dimension2/dimension3?dimension1=value1&amp;dimension1=value2 | SELECT * from projection WHERE dimensione1 IN (&#39;valore1&#39;, &#39;valore2&#39;) </br> GROUP BY dimensione1, dimensione2, dimensione3 |
-| /dimension1/dimension2/dimension3?dimension1!=valore1 | SELECT * from proiezione WHERE dimensione1 &lt;> &#39;valore1&#39; | </br> GROUP BY dimensione1, dimensione2, dimensione3 |
-| /dimension1/dimension2/dimension3?dimension1!=valore1&amp;dimensione2!=valore2 | SELECT * from projection WHERE dimensione1 NOT IN (&#39;valore1&#39;, &#39;valore2&#39;) | </br> GROUP BY dimensione1, dimensione2, dimensione3 |
+| /dimension1/dimension2/dimension3?dimension1!=value1 | SELECT * from projection WHERE dimensione1 &lt;> &#39;valore1&#39; \| </br> GROUP BY dimensione1, dimensione2, dimensione3 |
+| /dimension1/dimension2/dimension3?dimension1!=value1&amp;dimension2!=value2 | SELECT * from projection WHERE dimensione1 NOT IN (&#39;valore1&#39;, &#39;valore2&#39;) \| </br> GROUP BY dimensione1, dimensione2, dimensione3 |
 | Si supponga che non esista un percorso diretto: /dimension1/dimension3 </br> ma che esista un percorso: /dimension1/dimension2/dimension3 </br> </br> /dimension1?dimension3 | SELECT * from proiezione GROUP BY dimensione1, dimensione3 |
 
 >[!NOTE]

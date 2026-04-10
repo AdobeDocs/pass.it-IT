@@ -4,11 +4,13 @@ type: Documentation
 product: adobe primetime
 solution: Pass
 feature-set: Pass
-git-repo: https://github.com/AdobeDocs/pass.it-IT
+landing-page-name: pass
+landing-page-breadcrumb-title: Pass
+git-repo: https://github.com/AdobeDocs/pass.en
 index: true
-source-git-commit: bf172d5bcce6c298c5f2548cbdcfbda01aaa1723
+source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
 workflow-type: tm+mt
-source-wordcount: '53'
+source-wordcount: '68'
 ht-degree: 0%
 
 ---
@@ -18,4 +20,4 @@ ht-degree: 0%
 
 Il file metadata.md include metadati a livello di repository che passano attraverso i file TOC.md della guida utente nel repository. Se desideri modificare il contenuto di metadata.md per qualsiasi guida utente, effettua questa operazione in qualsiasi file TOC.md.
 
-Per un elenco di valori validi per [soluzione](https://experienceleague.adobe.com/docs/authoring-guide-exl/using/editing/user-guide-setup/metadata.html), **prodotto** e **tipo**, vedere **metadati**.
+Per un elenco di valori validi per **soluzione**, **prodotto** e **tipo**, vedere [metadati](https://experienceleague.adobe.com/docs/authoring-guide-exl/using/editing/user-guide-setup/metadata.html).

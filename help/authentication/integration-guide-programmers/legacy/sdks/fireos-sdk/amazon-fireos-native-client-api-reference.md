@@ -2,9 +2,9 @@
 title: Riferimento API client nativo Amazon FireOS
 description: Riferimento API client nativo Amazon FireOS
 exl-id: 8ac9f976-fd6b-4b19-a80d-49bfe57134b5
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
 workflow-type: tm+mt
-source-wordcount: '3451'
+source-wordcount: '3498'
 ht-degree: 0%
 
 ---
@@ -68,8 +68,7 @@ Fare riferimento a <https://tve.zendesk.com/hc/en-us/articles/115005561623-fire-
 
 | Chiamata API: costruttore |
 | --- |
-| ```public static AccessEnabler getInstance(Context appContext, String softwareStatement, String redirectUrl)<br>        throws AccessEnablerException```<br><br> |
-| ```public static AccessEnabler getInstance(Context appContext, String env_url, String softwareStatement, String redirectUrl) throws AccessEnablerException``` |
+| ```public static AccessEnabler getInstance(Context appContext, String softwareStatement, String redirectUrl)<br>        throws AccessEnablerException```<br><br>  <code> getInstance(Context appContext, String env_url, String softwareStatement, String redirectUrl) statico pubblico di AccessEnabler genera AccessEnablerException </code> |
 
 **Disponibilità:** v3.0+
 
@@ -260,7 +259,7 @@ Dopo che l&#39;utente ha selezionato il MVPD desiderato, l&#39;applicazione di l
 | ```public void setSelectedProvider(String mvpdId)``` |
 
 
-**Disponibilità:**&#x200B;v 1.0+
+**Disponibilità:**v 1.0+
 
 **Parametri:** Nessuno
 
@@ -341,7 +340,7 @@ Questo callback segnala anche quando il flusso di logout è completo.
 
 **Disponibilità:** v1.0+
 
-**&lt;Parametri:** Il parametro `resources` è una matrice di risorse per le quali deve essere controllata l&#39;autorizzazione. Ogni elemento dell’elenco deve essere una stringa che rappresenta l’ID della risorsa. L&#39;ID risorsa è soggetto alle stesse limitazioni dell&#39;ID risorsa nella chiamata `getAuthorization()`, ovvero deve essere un valore concordato tra il Programmatore e MVPD o un frammento RSS multimediale.
+**&lt;Parametri:** Il parametro `resources` è un array di risorse per cui controllare l&#39;autorizzazione. Ogni elemento dell’elenco deve essere una stringa che rappresenta l’ID della risorsa. L&#39;ID risorsa è soggetto alle stesse limitazioni dell&#39;ID risorsa nella chiamata `getAuthorization()`, ovvero deve essere un valore concordato tra il Programmatore e MVPD o un frammento RSS multimediale.
 
 **Callback attivato:** `preauthorizedResources()`
 
@@ -355,7 +354,7 @@ Questo callback segnala anche quando il flusso di logout è completo.
 | --- |
 | ```public void checkPreauthorizedResources(ArrayList<String> resources)``` |
 
-**Disponibilità:**&#x200B;v 1.0+
+**Disponibilità:**v 1.0+
 
 **Parametri:** Il parametro `resources` è un array di risorse per le quali l&#39;utente è già autorizzato a visualizzare.
 
@@ -427,7 +426,7 @@ Questo callback segnala anche quando il flusso di logout è completo.
 | --- |
 | ```public void setToken(String token, String resourceId)``` |
 
-**Disponibilità:**&#x200B;v 1.0+
+**Disponibilità:**v 1.0+
 
 **Parametri:**
 

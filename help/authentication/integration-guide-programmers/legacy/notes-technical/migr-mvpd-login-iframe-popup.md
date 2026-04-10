@@ -2,9 +2,9 @@
 title: Migrazione della pagina di accesso a MVPD da iFrame a Popup
 description: Migrazione della pagina di accesso a MVPD da iFrame a Popup
 exl-id: 389ea0ea-4e18-4c2e-a527-c84bffd808b4
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
 workflow-type: tm+mt
-source-wordcount: '708'
+source-wordcount: '712'
 ht-degree: 0%
 
 ---
@@ -22,10 +22,12 @@ ht-degree: 0%
 ## Popup e iFrame {#popup-vs-iframe}
 
 Alcuni utenti hanno riscontrato problemi con i cookie di terze parti nell’implementazione iFrame di una pagina di accesso di MVPD.
-<!--These issues are described in the tech notes linked below:
+<!--
+These issues are described in the tech notes linked below:
 
 * [Adobe Pass Authentication and Safari login issues](https://tve.helpdocsonline.com/adobe-pass)
-* [MVPD iFrame login and 3rd party cookies](https://tve.helpdocsonline.com/mvpd)-->
+* [MVPD iFrame login and 3rd party cookies](https://tve.helpdocsonline.com/mvpd)
+-->
 
 Il team di autenticazione di Adobe Pass **consiglia di implementare la pagina di accesso a comparsa o la nuova pagina di accesso alla finestra**, anziché la versione iFrame su Firefox e Safari.  Tuttavia, se implementi una pagina di accesso per Internet Explorer, potrebbero verificarsi problemi con l’implementazione della finestra a comparsa. I problemi di Internet Explorer sono causati dal fatto che, dopo che l’utente si autentica con il proprio MVPD nella finestra popup, l’autenticazione di Adobe Pass forza un reindirizzamento della pagina padre, che viene visto come un blocco popup da Internet Explorer. Il team di autenticazione di Adobe Pass **consiglia di implementare l&#39;accesso iFrame per Internet Explorer**.
 

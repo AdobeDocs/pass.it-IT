@@ -4,17 +4,17 @@ feature: Concurrency Monitoring
 audience: end-user
 user-guide-title: Monitoraggio della concorrenza Adobe Pass
 user-guide-description: Scopri come definire e applicare limiti all’utilizzo simultaneo in più applicazioni.
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
 workflow-type: tm+mt
-source-wordcount: '276'
-ht-degree: 5%
+source-wordcount: '252'
+ht-degree: 6%
 
 ---
 
 
 # Aiuto per il monitoraggio della concorrenza di Adobe Pass {#cm}
 
-- [Introduzione CM](cm-home.md) {#cm-intro}
+- [Introduzione a CM](cm-home.md)
 - Guida introduttiva {#getting-started}
    - [Introduzione al monitoraggio della concorrenza](getting-started/getting-started-overview.md)
    - [Concetti chiave](getting-started/key-concepts.md)
@@ -34,7 +34,7 @@ ht-degree: 5%
    - [Modelli di implementazione](technical/implementation-models.md)
    - [Più app per criteri tenant singolo](technical/single-tenant-policy-mult-app.md)
    - [Limita l&#39;uso simultaneo di più app](technical/restrict-concurr-usage-mult-apps.md)
-- [Report utilizzo CM](reports/cm-usage-reports.md) {#cm-usage-reports}
+- [Report utilizzo CM](reports/cm-usage-reports.md)
 - Note tecniche {#tech-notes}
    - [Attributi metadati standard](technical/standard-metadata-attributes.md)
    - [Metadati personalizzati](technical/custom-metadata.md)
@@ -72,4 +72,4 @@ ht-degree: 5%
    - [Monitoraggio della concorrenza - Note sulla versione 2.5.0](releases/rn-cm-250.md)
    - [Monitoraggio della concorrenza - Note sulla versione 2.3.2](releases/rn-cm-232.md)
    - [Monitoraggio della concorrenza - Note sulla versione 2.2.2](releases/rn-cm-222.md)
-- [Procedure di supporto](support/cm-escalation-procedures.md) {#support-procedures}
+- [Procedure di supporto](support/cm-escalation-procedures.md)

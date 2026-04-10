@@ -2,10 +2,10 @@
 title: Segnalazione errori
 description: Segnalazione errori
 exl-id: a52bd2cf-c712-40a2-a25e-7d9560b46ba6
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
 workflow-type: tm+mt
-source-wordcount: '3011'
-ht-degree: 0%
+source-wordcount: '3034'
+ht-degree: 1%
 
 ---
 
@@ -62,7 +62,7 @@ La funzione di callback del gestore degli errori riceverà un singolo oggetto (u
     }
 ```
 
-### &#x200B;1. Legare {#bind}
+### 1. Bind {#bind}
 
 **`.bind(eventType:String, handlerName:String):void`**
 
@@ -85,7 +85,7 @@ accessEnabler.bind('errorEvent', 'errorLogger');
 A causa di limitazioni tecniche, non è possibile associare una chiusura o una funzione anonima. È necessario specificare il nome del metodo nel secondo parametro.
 
 
-### &#x200B;2. Separa {#unbind}
+### &#x200B;2. Annulla associazione {#unbind}
 
 **`.unbind(eventType:String, handlerName:String=null):void`**
 
@@ -238,7 +238,7 @@ La tabella seguente elenca e descrive i codici di errore esposti dalla nuova API
 | ID | Livello | Descrizione | Azioni sviluppatore | Azioni utente | JavaScript | iOS/tvOS | Android |
 |---|-------------|------------|----------------|---|---|---|---|
 | AAPL&amp; AAPL_ERROR | Errore | Errore SSO Apple generico | L’errore contiene un campo dei dettagli con l’errore VSA originale. | n/d | n/d | Sì | n/d |
-| VSA203 | Info | L’utente ha deciso di uscire dall’applicazione mentre si verificava l’autenticazione a seguito di un accesso tramite l’SSO della piattaforma. | Indica/richiedi all&#39;utente di disconnettersi esplicitamente da Impostazioni -> Account -> Provider TV su tvOS. <br><br> Indica/richiede all&#39;utente di disconnettersi esplicitamente da Impostazioni -> Provider TV su iOS/iPadOS. | Disconnettersi in modo esplicito da Impostazioni -> Account -> Provider TV in tvOS. <br> <br> Esci esplicitamente da Impostazioni -> Provider TV su iOS/iPadOS | n/d | Sì | n/d |
+| VSA203 | Info | L’utente ha deciso di uscire dall’applicazione mentre si verificava l’autenticazione a seguito di un accesso tramite l’SSO della piattaforma. | Chiedere/richiedere all&#39;utente di disconnettersi in modo esplicito da Impostazioni -> Account -> Provider TV in tvOS. <br><br> Indica/richiede all’utente di disconnettersi esplicitamente da Impostazioni -> Provider TV su iOS/iPadOS. | Disconnettersi in modo esplicito da Impostazioni -> Account -> Provider TV in tvOS. <br> <br> Esci esplicitamente da Impostazioni -> Provider TV su iOS/iPadOS | n/d | Sì | n/d |
 | VSA404 | Info | L&#39;autorizzazione per l&#39;account sottoscrittore video dell&#39;applicazione non è determinata. | Incentivare gli utenti che rifiutano di concedere l&#39;autorizzazione per accedere alle informazioni sull&#39;abbonamento spiegando i vantaggi dell&#39;esperienza utente Single Sign-On (SSO). | L’utente può modificare la propria decisione andando nelle impostazioni dell’applicazione (accesso al provider TV) o nella sezione da Impostazioni -> Provider TV su iOS/iPadOS o Impostazioni -> Account -> Provider TV su tvOS. | n/d | Sì | n/d |
 | VSA503 | Info | Richiesta metadati dell&#39;account del sottoscrittore video dell&#39;applicazione non riuscita. | L’endpoint MVPD non risponde. L’applicazione potrebbe eseguire il fallback a un flusso di autenticazione regolare. | n/d | n/d | Sì | n/d |
 | 500 | Errore | Errore interno | Utilizza AccessEnablerDebug ed esamina i registri di debug (output console.log) per determinare cosa è andato storto. | n/d | Sì | Sì | n/d |
@@ -247,7 +247,7 @@ La tabella seguente elenca e descrive i codici di errore esposti dalla nuova API
 | SEC420 | Errore | Errore di sicurezza HTTP durante la comunicazione con i server di autenticazione Adobe Pass. Questo errore si verifica in genere quando sono presenti spoofing o proxy. | - Carica `[https://]{SP_FQDN\}` nel browser e accetta manualmente i certificati SSL, ad esempio **https://api.auth.adobe.com** o **https://api.auth-staging.adobe.com** <br> <br>- Contrassegna i certificati proxy come attendibili | Se questo accade per un utente normale, è un&#39;indicazione di un possibile attacco man-in-the-middle! | Sì | Sì | Sì da 3.2 |
 | CFG100 | Avvertenza | Data/ora/fuso orario del computer client non impostato correttamente. Questo potrebbe causare errori di autenticazione/autorizzazione. | - Informa l&#39;utente per impostare l&#39;ora corretta. <br> <br> Consente di eseguire azioni per impedire i flussi di adesione, poiché probabilmente non riusciranno. | Impostare la data/ora corretta. | Sì | Sì | Sì da 3.2 |
 | CFG400 | Errore | È stato fornito un ID richiedente non valido. | Lo sviluppatore DEVE specificare un ID richiedente valido. | n/d | Sì | Sì | Sì da 3.2 |
-| CFG404 | Errore | Server di autenticazione Adobe Pass non trovati. Ciò può accadere in 3 istanze: <br><br> - Lo sviluppatore dispone di uno spoofing non valido. <br><br> - L&#39;utente ha problemi di rete e non può raggiungere i domini di autenticazione di Adobe Pass. <br><br> - Configurazione errata dei server di autenticazione Adobe Pass. <br><br>  **Nota:** su Firefox, CFG400 verrà visualizzato al posto di CFG404 (limitazione del browser) | - Controllare la falsificazione. <br><br> - Controllare le impostazioni di rete/DNS. <br><br> - Informa Adobe. | Verificare le impostazioni di rete/DNS. | Sì | Sì | Sì da 3.2 |
+| CFG404 | Errore | Server di autenticazione Adobe Pass non trovati. Ciò può accadere in 3 istanze: <br><br> - Lo sviluppatore dispone di uno spoofing non valido. <br><br> - L&#39;utente ha problemi di rete e non può raggiungere i domini di autenticazione di Adobe Pass. <br><br> - I server di autenticazione Adobe Pass non sono configurati correttamente. <br><br>  **Nota:** su Firefox, CFG400 verrà visualizzato al posto di CFG404 (limitazione del browser) | - Controllare la falsificazione. <br><br> - Controllare le impostazioni di rete/DNS. <br><br> - Informa Adobe. | Verificare le impostazioni di rete/DNS. | Sì | Sì | Sì da 3.2 |
 | CFG410 | Errore | AccessEnabler è troppo vecchio. | Informa l’utente per cancellare le cache. | Cancella la cache del browser. | Sì | n/d | Sì da 3.2 |
 | CFG5xx | Errore | Si sono verificati errori interni nei server di autenticazione di Adobe Pass. xx può essere un numero qualsiasi. | - Informa l’utente dell’indisponibilità dell’autenticazione Adobe Pass. <br><br> - Ignora l&#39;autenticazione Adobe Pass. <br> <br> - Informa Adobe. | Riprova più tardi. | Sì | Sì | Sì da 3.2 |
 | N000 | Info | Utente non autenticato. | n/d | Accedi. | Sì | Sì | Sì da 3.2 |
@@ -258,7 +258,7 @@ La tabella seguente elenca e descrive i codici di errore esposti dalla nuova API
 | N010 | Avvertenza | L&#39;utente è stato autenticato mentre era attiva la regola di degradazione autentica-tutto per il MVPD selezionato. | Facoltativamente, informa l’utente che sta ottenendo un accesso gratuito &quot;gratuito&quot; a causa di difficoltà di MVPD. | n/d | Sì | Sì | Sì da 3.2 |
 | N011 | Info | L&#39;utente è stato autenticato tramite TempPass. | - Informare l&#39;utente. <br> <br> - Facoltativamente presentare un elenco di MVPD regolari. | Facoltativamente, accedi con il MVPD normale. | Sì | Sì | Sì da 3.2 |
 | N111 | Avvertenza | TempPass scaduto. | - Informare l&#39;utente. <br> <br> - Presenta un elenco di MVPD regolari. <br> <br> - Nasconde l&#39;opzione TempPass. | Accedi con il tuo normale MVPD. | Sì | Sì | Sì da 3.2 |
-| N130 | Errore | **Token di autenticazione non trovato nella sessione.** Il problema può essere dovuto a uno dei seguenti motivi: <br> <br> 1 Il browser ha i cookie (di terze parti) disabilitati (non applicabile per AccessEnabler JavaScript SDK versione 4.x) <br> <br> 2. Il browser ha abilitato la funzione Impedisci il rilevamento intersito (Safari 11+) <br> <br> 3. La sessione è scaduta <br> <br> 4. Il programmatore chiama le API di autenticazione con una successione errata <br> <br> NOTA: questo codice di errore non è disponibile per i flussi di autenticazione di reindirizzamento a pagina intera. | &#x200B;1. Richiedere all&#39;utente di abilitare i cookie (di terze parti) <br> <br> 2. Richiede all&#39;utente di disabilitare il rilevamento intersito <br> <br> 3. Richiedi all&#39;utente di riautenticare <br> <br> 4. Chiamare le API nell’ordine corretto | &#x200B;1. Abilitare i cookie di terze parti <br> <br> 2. Disattiva il rilevamento intersito <br> <br> 3. Autentica di nuovo <br> <br> 4. N/D | Sì | Sì | Sì da 3.2 |
+| N130 | Errore | **Token di autenticazione non trovato nella sessione.**  La causa potrebbe essere uno dei seguenti: <br> <br> 1. Il browser ha i cookie (di terze parti) disabilitati (non applicabile per AccessEnabler JavaScript SDK versione 4.x) <br> <br> 2. Il browser ha abilitato la funzione Impedisci il rilevamento intersito (Safari 11+) <br> <br> 3. La sessione è scaduta <br> <br> 4. Il programmatore chiama le API di autenticazione con una successione errata <br> <br> NOTA: questo codice di errore non è disponibile per i flussi di autenticazione di reindirizzamento a pagina intera. | &#x200B;1. Richiedi all&#39;utente di abilitare i cookie di terze parti <br> <br> 2. Richiede all&#39;utente di disabilitare il rilevamento intersito <br> <br> 3. Richiedi all&#39;utente di riautenticare <br> <br> 4. Chiamare le API nell’ordine corretto | &#x200B;1. Abilita cookie (di terze parti) <br> <br> 2. Disattiva il rilevamento intersito <br> <br> 3. Autentica di nuovo <br> <br> 4. N/D | Sì | Sì | Sì da 3.2 |
 | N500 | Errore | Errore interno. <br> <br> Nota: questo è l&#39;errore originale del sistema &quot;Errore di autenticazione generico&quot; e &quot;Errore di autenticazione interna&quot;. Questo errore verrà gradualmente eliminato. | Utilizza AccessEnablerDebug ed esamina i registri di debug (output console.log) per determinare cosa è andato storto. | n/d | Sì | Sì | n/d |
 | R401 | Errore | Errore durante il tentativo di ottenere un token di accesso. <br> <br> Nota: errore irreversibile. Informare l&#39;utente che l&#39;applicazione non è disponibile. | - iOS: controlla l’informativa software e gli schemi personalizzati nell’applicazione. <br> <br> - JavaScript: controllare l&#39;istruzione software nell&#39;applicazione del sito Web. <br> <br> Aprire un ticket utilizzando Zendesk e informare l&#39;utente che il sistema è temporaneamente non disponibile | n/d | Sì dalla versione 4.0 | Sì dalla versione 3.0 | Sì da 3.2 |
 | R400 | Errore | Applicazione non registrata. Dichiarazione software non valida o revocata. <br> <br> Nota: errore irreversibile. Informare l&#39;utente che l&#39;applicazione non è disponibile. | - iOS: controlla l’informativa software e gli schemi personalizzati nell’applicazione. <br> <br> - JavaScript: controllare l&#39;istruzione software nell&#39;applicazione del sito Web. <br> <br> Aprire un ticket utilizzando Zendesk e informare l&#39;utente che il sistema è temporaneamente non disponibile | n/d | Sì dalla versione 4.0 | Sì dalla versione 3.0 | Sì da 3.2 |
