@@ -1,5 +1,5 @@
 ---
-source-git-commit: e1fcfc03f1084e9159a73ad4e18b864d796bff3c
+source-git-commit: 8d0633f64edecfacc3569d91931a204fac2d5e44
 workflow-type: tm+mt
 source-wordcount: '521'
 ht-degree: 0%
@@ -8,6 +8,7 @@ ht-degree: 0%
 # Contribuisci articolo
 
 Apprezziamo i contributi della nostra community e dei dipendenti Adobe esterni ai team di documentazione.
+
 
 ## Codice di condotta di Adobe Open Source
 
@@ -29,7 +30,7 @@ Se stai contribuendo con un aggiornamento minore:
 1. In &quot;Questo contenuto è stato utile?&quot; banner visualizzato nella parte inferiore della finestra del browser, fai clic su **Opzioni di feedback dettagliate**.
 1. Fai clic su **Suggerisci una modifica** e invia una richiesta di pull (PR) con le modifiche nell&#39;interfaccia utente di GitHub.
 
-   Per ulteriori informazioni, consulta la [Guida per i collaboratori per la documentazione di Adobe](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html?lang=it).
+   Per ulteriori informazioni, consulta la [Guida per i collaboratori per la documentazione di Adobe](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html).
 
 Le correzioni minori o i chiarimenti inviati per la documentazione e gli esempi di codice in questo archivio sono coperti dalle condizioni d’uso di Adobe.
 
@@ -43,7 +44,7 @@ Se fai parte della community Adobe e desideri creare un nuovo argomento o inviar
 
 I collaboratori della community possono utilizzare l’interfaccia utente di GitHub per apportare modifiche di base o eseguire il fork dell’archivio per apportare contributi principali.
 
-Per informazioni dettagliate, consulta la [Guida per i collaboratori per la documentazione di Adobe](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html?lang=it).
+Per informazioni dettagliate, consulta la [Guida per i collaboratori per la documentazione di Adobe](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html).
 
 ## Collaboratori interni
 
