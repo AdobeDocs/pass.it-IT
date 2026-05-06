@@ -5,9 +5,9 @@ audience: end-user
 user-guide-title: Monitoraggio della concorrenza Adobe Pass
 user-guide-description: Scopri come definire e applicare limiti all’utilizzo simultaneo in più applicazioni.
 nudge: true
-source-git-commit: e02007a3ec5bd581f84c887ac50249009a2121fd
+source-git-commit: 80ffef1e8e0cfb3752c01e155854f7d87dfa134c
 workflow-type: tm+mt
-source-wordcount: '252'
+source-wordcount: '257'
 ht-degree: 6%
 
 ---
@@ -45,6 +45,7 @@ ht-degree: 6%
    - [Procedura: Distinguere tra VOD e contenuti live nel monitoraggio della concorrenza](technical/vod-live-dist.md)
    - [Criteri di conservazione dei dati](technical/data-retention-policy.md)
 - Versioni {#cm-release-notes}
+   - [Monitoraggio della concorrenza - Note sulla versione 4.0.1](releases/rn-cm-services-401.md)
    - [Monitoraggio della concorrenza - Note sulla versione 3.6.2](releases/rn-cm-services-362.md)
    - [Monitoraggio della concorrenza - Note sulla versione 3.6.1](releases/rn-cm-services-361.md)
    - [Monitoraggio della concorrenza - Note sulla versione 3.6.0](releases/rn-cm-services-360.md)
