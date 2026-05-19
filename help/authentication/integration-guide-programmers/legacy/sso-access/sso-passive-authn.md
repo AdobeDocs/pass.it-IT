@@ -4,7 +4,7 @@ description: SSO tramite autenticazione passiva
 exl-id: ce45899f-6e94-4bb0-a2c1-51f03bd66d8d
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '801'
+source-wordcount: '809'
 ht-degree: 0%
 
 ---
@@ -105,7 +105,7 @@ Di seguito è riportato un esempio di richiesta SAML per il flusso di autenticaz
 </saml2p:AuthnRequest>
 ```
 
-## Regole di business
+## Regole aziendali
 
 Gli MVPD hanno restrizioni di dominio con ambito SSO specifiche. Ad esempio, alcuni MVPD potrebbero consentire solo alcuni domini (SSO per la stessa società di media ma non tra società).
 Alcuni MVPD potrebbero richiedere l&#39;applicazione di regole di autenticazione diverse. Ad esempio, gli MVPD potrebbero avere TTL di autenticazione diversi per reti diverse. Inoltre, gli MVPD potrebbero abilitare l&#39;autenticazione basata su home per alcune reti ma non per altre (qui sono fortemente rappresentati i casi di utilizzo del controllo genitori).
