@@ -2,9 +2,9 @@
 title: Panoramica API
 description: Panoramica API
 exl-id: 3fe6f6d8-5b2f-47e5-a8da-06fb18a5d46b
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+source-git-commit: c2a5591cd8fea44f66fc25beb1fb40532e18d8a6
 workflow-type: tm+mt
-source-wordcount: '2043'
+source-wordcount: '2102'
 ht-degree: 0%
 
 ---
@@ -64,8 +64,8 @@ Sono disponibili le seguenti opzioni di filtro:
 
 * I filtri **Equals** vengono forniti impostando il nome della dimensione su un valore particolare nella stringa di query.
 * È possibile specificare **IN** filtri aggiungendo più volte lo stesso parametro del nome dimensione con valori diversi: dimension=value1&amp;dimension=value2
-* **Not equals** i filtri devono utilizzare &#39;!&#39; dopo il nome della quota, risultante in &quot;!=&#39; &quot;operator&quot;: dimension!=valore
-* I filtri **NOT IN** richiedono &#39;!operatore =&#39; da utilizzare più volte, una volta per ogni valore nel set: dimension!=valore1&amp;dimensione!=valore2&amp;...
+* **Not equals** i filtri devono utilizzare il simbolo &quot;!&quot; dopo il nome della dimensione, risultante in &quot;!=&quot; &quot;operator&quot;: dimension!=value
+* I filtri **NOT IN** richiedono l&#39;utilizzo dell&#39;operatore &#39;!=&#39; più volte, una volta per ogni valore del set: dimension!=value1&amp;dimension!=value2&amp;...
 
 
 Esiste anche un utilizzo speciale per i nomi delle dimensioni nella stringa di query: se il nome della dimensione viene utilizzato come parametro della stringa di query senza valore, questo indicherà all’API di restituire una proiezione che include tale dimensione nel rapporto.
@@ -76,8 +76,8 @@ Esempio di query CMU:
 |:---|:---|
 | /dimension1/dimension2/dimension3?dimension1=value1 | SELECT * from projection WHERE dimensione1 = &#39;valore1&#39; GROUP BY dimensione1, dimensione2, dimensione3 |
 | /dimension1/dimension2/dimension3?dimension1=value1&amp;dimension1=value2 | SELECT * from projection WHERE dimensione1 IN (&#39;valore1&#39;, &#39;valore2&#39;) GROUP BY dimensione1, dimensione2, dimensione3 |
-| /dimension1/dimension2/dimension3?dimension1!=valore1 | SELECT * from proiezione WHERE dimensione1 &lt;> &#39;valore1&#39; GROUP BY dimensione1, dimensione2, dimensione3 |
-| /dimension1/dimension2/dimension3?dimension1!=valore1&amp;dimensione2!=valore2 | SELECT * from projection WHERE dimensione1 NOT IN (&#39;valore1&#39;, &#39;valore2&#39;) GROUP BY dimensione1, dimensione2, dimensione3 |
+| /dimension1/dimension2/dimension3?dimension1!=value1 | SELECT * from proiezione WHERE dimensione1 &lt;> &#39;valore1&#39; GROUP BY dimensione1, dimensione2, dimensione3 |
+| /dimension1/dimension2/dimension3?dimension1!=value1&amp;dimension2!=value2 | SELECT * from projection WHERE dimensione1 NOT IN (&#39;valore1&#39;, &#39;valore2&#39;) GROUP BY dimensione1, dimensione2, dimensione3 |
 | Supponendo che non esista un percorso diretto: /dimension1/dimension3 ma esista un percorso: /dimension1/dimension2/dimension3 </br></br> /dimension1?dimension3 | SELECT * da proiezione GROUP BY dimensione1,dimensione3 |
 
 >[!NOTE]
@@ -112,7 +112,7 @@ Al momento l’unico metodo HTTP disponibile è GET. Il supporto per i metodi OP
 | 401 | Non autorizzato | Causata da una richiesta che non contiene le intestazioni OAuth appropriate per l’autenticazione dell’utente |
 | 403 | Non consentito | Indica che la richiesta non è consentita nel contesto di sicurezza corrente; ciò si verifica quando l’utente è autenticato ma non è autorizzato ad accedere alle informazioni richieste |
 | 404 | Non trovato | Si verifica nel caso in cui con la richiesta venga fornito un percorso URL non valido. Ciò non dovrebbe mai verificarsi se il client segue i collegamenti &quot;drill-down&quot;/&quot;roll-up&quot; forniti con 200 risposte |
-| 405 | Metodo non consentito | Segnala che nella richiesta è stato utilizzato un metodo non supportato. Sebbene attualmente sia supportato solo il metodo GET, le versioni future potrebbero consentire HEAD o OPTIONS |
+| 405 | Metodo non consentito | Segnala che nella richiesta è stato utilizzato un metodo non supportato. Sebbene attualmente sia supportato solo il metodo GET, le versioni future potrebbero consentire l’utilizzo di HEAD o OPTIONS |
 | 406 | Non accettabile | Segnala che il client ha richiesto un tipo di file multimediale non supportato |
 | 500 | Errore interno del server | &quot;Questo non dovrebbe mai accadere&quot; |
 | 503 | Servizio non disponibile | Segnala un errore all’interno dell’applicazione o nelle sue dipendenze |
@@ -232,7 +232,7 @@ Il file CSV conterrà una riga di intestazione e quindi i dati del rapporto come
 
 L’ordine dei campi nella riga di intestazione rifletterà l’ordinamento dei dati della tabella.
 
-Esempio: https://mgmt.auth.adobe.com/cmu/v2/year/month.csv produrrà un file denominato ```report__2012-07-20_2012-08-20_1000.csv``` con il seguente contenuto:
+Esempio: https://mgmt.auth.adobe.com/cmu/v2/year/month.csv produrrà un file denominato `report__2012-07-20_2012-08-20_1000.csv` con il seguente contenuto:
 
 | Anno | Mese | Client |
 |:----:|:-----:|:-------:|

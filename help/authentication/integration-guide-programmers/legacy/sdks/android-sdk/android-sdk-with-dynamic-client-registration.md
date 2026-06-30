@@ -2,10 +2,10 @@
 title: Android SDK con registrazione client dinamica
 description: Android SDK con registrazione client dinamica
 exl-id: 8d0c1507-8e80-40a4-8698-fb795240f618
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+source-git-commit: c2a5591cd8fea44f66fc25beb1fb40532e18d8a6
 workflow-type: tm+mt
-source-wordcount: '1301'
-ht-degree: 0%
+source-wordcount: '1321'
+ht-degree: 1%
 
 ---
 
@@ -53,7 +53,7 @@ Guarda [questo webinar](https://my.adobeconnect.com/pzkp8ujrigg1/) che fornisce 
 
 | Chiamata API: costruttore |
 | --- |
-| getInstance(Context appContext, String softwareStatement, String redirectUrl)<br> statico pubblico di AccessEnabler        genera AccessEnablerException |
+| getInstance(Context appContext, String softwareStatement, String redirectUrl)<br> di AccessEnablerException statica pubblica |
 
 
 **Disponibilità:** v3.0+
@@ -64,8 +64,7 @@ Guarda [questo webinar](https://my.adobeconnect.com/pzkp8ujrigg1/) che fornisce 
 - softwareStatement: valore ottenuto da TVE Dashboard o *null* se &quot;software\_statement&quot; è impostato in strings.xml
 - redirectUrl : URL univoco, uno dei domini in ordine inverso aggiunto in modo esplicito nel dashboard TVE oppure *null* se &quot;redirect\_uri&quot; è impostato in stringhe.xml
 
-Nota: un softwareStatement o redirectUrl non valido impedirà all&#39;applicazione di inizializzare AccessEnabler o di registrare l&#39;applicazione per l&#39;autenticazione e l&#39;autorizzazione di Adobe Pass
-</br>
+Nota: un softwareStatement o redirectUrl non valido impedirà all&#39;applicazione di inizializzare AccessEnabler o di registrare l&#39;applicazione per l&#39;autenticazione e l&#39;autorizzazione di Adobe Pass</br>
 Nota: il parametro redirectUrl o redirect\_uri in strings.xml deve essere il valore del dominio aggiunto nel dashboard TVE per l’applicazione in ordine inverso ( per esempio, per il dominio &quot;adobe.com&quot; aggiunto nel dashboard TVE, il redirectUrl deve essere &quot;com.adobe&quot;.
 
 
@@ -81,13 +80,13 @@ Se viene fornito un valore per il parametro *urls*, la chiamata di rete risultan
 
 | Chiamata API: configurazione richiedente |
 | --- |
-| ```public void setRequestor(String requestorId)``` |
+| `public void setRequestor(String requestorId)` |
 
 **Disponibilità:** v3.0+
 
 | Chiamata API: configurazione richiedente |
 | --- |
-| ```public void setRequestor(String requestorId, ArrayList<String> urls)``` |
+| `public void setRequestor(String requestorId, ArrayList<String> urls)` |
 
 **Disponibilità:** v3.0+
 
@@ -114,8 +113,8 @@ Obsoleto:
 
 **Parametri:** Nessuno
 
-**Callback attivati:** `setAuthenticationStatus()`
-</br></br>
+**Callback attivati:** 
+
 
 ## Flusso di implementazione del programmatore {#Progr}
 
@@ -136,7 +135,7 @@ Chiama AccessEnabler.getInstance(appContext,softwareStatement,
 redirectUrl)
 
 
-### &#x200B;2. Configurare l’applicazione
+### &#x200B;2. Configura applicazione
 
 a. setRequestor(requestor\_id)
 

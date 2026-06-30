@@ -2,9 +2,9 @@
 title: Riferimento API per iOS/tvOS
 description: Riferimento API per iOS/tvOS
 exl-id: 017a55a8-0855-4c52-aad0-d3d597996fcb
-source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
+source-git-commit: c2a5591cd8fea44f66fc25beb1fb40532e18d8a6
 workflow-type: tm+mt
-source-wordcount: '6935'
+source-wordcount: '7035'
 ht-degree: 0%
 
 ---
@@ -137,7 +137,7 @@ flusso di autenticazione dei diritti tramite questa API, consulta il [Manuale de
 
 | Chiamata API: costruttore iOS AccessEnabler |
 | --- |
-| ```- (id) init;``` |
+| `- (id) init;` |
 
 **Disponibilità:** v1.0+ **Fino a:** v3.0
 
@@ -157,7 +157,7 @@ flusso di autenticazione dei diritti tramite questa API, consulta il [Manuale de
 
 | Chiamata API: setOptions |
 | --- |
-| ```- (void) setOptions:(NSDictionary *)options;``` |
+| `- (void) setOptions:(NSDictionary *)options;` |
 
 **Disponibilità:** v2.3.0+
 
@@ -189,7 +189,7 @@ Se viene fornito un valore per il parametro `urls`, la chiamata di rete risultan
 
 | Chiamata API: configurazione richiedente |
 | --- |
-| ```- (void) setRequestor:(NSString *)requestorID``` |
+| `- (void) setRequestor:(NSString *)requestorID` |
 
 
 **Disponibilità:** v3.0+
@@ -243,7 +243,7 @@ Se viene fornito un valore per il parametro `urls`, la chiamata di rete risultan
 **Parametri:**
 
 * *requestorID*: ID univoco associato al programmatore. Passa l’ID univoco assegnato da Adobe al sito alla prima registrazione al servizio di autenticazione di Adobe Pass.
-* *signedRequestorID*: **Questo parametro esiste in iOS AccessEnabler versioni 1.2 e successive.** Copia dell&#39;ID richiedente con firma digitale della chiave privata. <!--For more details, see [Registering Native Clients](https://tve.helpdocsonline.com/registering-native-clients)-->.
+* *signedRequestorID*: **Questo parametro esiste in iOS AccessEnabler versioni 1.2 e successive.** Una copia dell&#39;ID richiedente con firma digitale della chiave privata. <!--For more details, see [Registering Native Clients](https://tve.helpdocsonline.com/registering-native-clients)-->.
 * *url*: parametro facoltativo; per impostazione predefinita, viene utilizzato il provider di servizi Adobe (http://sp.auth.adobe.com/). Questo array consente di specificare gli endpoint per i servizi di autenticazione e autorizzazione forniti da Adobe (a scopo di debug possono essere utilizzate istanze diverse). È possibile utilizzare questa opzione per specificare più istanze del provider di servizi di autenticazione di Adobe Pass. In questo caso, l’elenco MVPD è composto dagli endpoint di tutti i provider di servizi. Ogni MVPD è associato al provider di servizi più veloce, ovvero il provider che ha risposto per primo e che supporta tale MVPD.
 
 **Note:** Se chiamata senza il parametro `serviceProviders`, la libreria recupererà la configurazione dal provider di servizi predefinito, ovvero `https://sp.auth.adobe.com` per il profilo di produzione o `https://sp.auth-staging.adobe.com` per il profilo di gestione temporanea. Se viene fornito il parametro `serviceProviders`, deve essere una matrice di URL. Le informazioni di configurazione vengono recuperate da tutti gli endpoint specificati e unite. Se esistono informazioni duplicate in risposte diverse del provider di servizi, il conflitto viene risolto a favore del server con la risposta più rapida (ovvero, il server con il tempo di risposta più breve ha la precedenza).
@@ -313,9 +313,9 @@ Se viene fornito un valore per il parametro `urls`, la chiamata di rete risultan
 
 **Parametri:**
 
-* *requestorID*: ID univoco associato al programmatore. La prima volta che trasmetti l’ID univoco assegnato da Adobe al tuo sito   registrati con il servizio di autenticazione di Adobe Pass.
-* *signedRequestorID*: **Questo parametro esiste in iOS AccessEnabler   versioni 1.2 e successive.** Copia dell&#39;ID richiedente con firma digitale della chiave privata. <!--For more details, see [Registering Native Clients](https://tve.helpdocsonline.com/registering-native-clients)-->.
-* *url*: parametro facoltativo; per impostazione predefinita, il provider di servizi Adobe   (http://sp.auth.adobe.com/). Questo array consente di specificare gli endpoint per i servizi di autenticazione e autorizzazione forniti da Adobe (a scopo di debug possono essere utilizzate istanze diverse). È possibile utilizzare questa opzione per specificare più istanze del provider di servizi di autenticazione di Adobe Pass. In questo caso, l’elenco MVPD è composto dagli endpoint di tutti i provider di servizi. Ogni MVPD è associato al provider di servizi più veloce, ovvero il provider che ha risposto per primo e che supporta tale MVPD.
+* *requestorID*: ID univoco associato al programmatore. Passa l’ID univoco assegnato da Adobe al sito alla prima registrazione al servizio di autenticazione di Adobe Pass.
+* *signedRequestorID*: **Questo parametro esiste in iOS AccessEnabler versioni 1.2 e successive.** Una copia dell&#39;ID richiedente con firma digitale della chiave privata. <!--For more details, see [Registering Native Clients](https://tve.helpdocsonline.com/registering-native-clients)-->.
+* *url*: parametro facoltativo; per impostazione predefinita, viene utilizzato il provider di servizi Adobe (http://sp.auth.adobe.com/). Questo array consente di specificare gli endpoint per i servizi di autenticazione e autorizzazione forniti da Adobe (a scopo di debug possono essere utilizzate istanze diverse). È possibile utilizzare questa opzione per specificare più istanze del provider di servizi di autenticazione di Adobe Pass. In questo caso, l’elenco MVPD è composto dagli endpoint di tutti i provider di servizi. Ogni MVPD è associato al provider di servizi più veloce, ovvero il provider che ha risposto per primo e che supporta tale MVPD.
 * secret and publicKey: il segreto e la chiave pubblica utilizzati per firmare le chiamate della seconda schermata. Per ulteriori informazioni, consulta la [documentazione senza client](#create_dev).
 
 Se chiamata senza il parametro `serviceProviders`, la libreria recupererà la configurazione dal provider di servizi predefinito (ovvero `https://sp.auth.adobe.com` per il profilo di produzione o https://sp.auth-staging.adobe.com per il profilo di staging). Se viene fornito il parametro `serviceProviders`, deve essere una matrice di URL. Le informazioni di configurazione vengono recuperate da tutti gli endpoint specificati e unite. Se esistono informazioni duplicate in risposte diverse del provider di servizi, il conflitto viene risolto a favore del server con la risposta più rapida (ovvero, il server con il tempo di risposta più breve ha la precedenza).
@@ -369,10 +369,8 @@ Se chiamata senza il parametro `serviceProviders`, la libreria recupererà la co
 
 **File:** AccessEnabler/headers/AccessEnabler.h
 
-**Descrizione:** verifica lo stato di autenticazione dell&#39;utente corrente.
-A tale scopo, cerca un token di autenticazione valido nella directory locale
-spazio di archiviazione dei token. Questo metodo non esegue chiamate di rete e si consiglia di chiamarlo sul thread principale.
-Viene utilizzato dall’applicazione per eseguire una query sullo stato di autenticazione dell’utente e
+**Descrizione:** verifica lo stato di autenticazione dell&#39;utente corrente.A tale scopo, cerca un token di autenticazione valido nella directory locale
+spazio di archiviazione dei token. Questo metodo non esegue chiamate di rete e si consiglia di chiamarlo sul thread principale.Viene utilizzato dall’applicazione per eseguire una query sullo stato di autenticazione dell’utente e
 aggiorna di conseguenza l’interfaccia utente (ad esempio, aggiorna l’interfaccia utente di accesso/disconnessione). Il
 lo stato di autenticazione viene comunicato all’applicazione tramite
 il callback [`setAuthenticationStatus:errorCode:`](#setAuthNStatus).
@@ -398,8 +396,8 @@ il callback [`setAuthenticationStatus:errorCode:`](#setAuthNStatus).
 
 **Parametri:** Nessuno
 
-**Callback attivati:**
-[`setAuthenticationStatus:errorCode:`](#setAuthNStatus)
+**Callback attivati:
+
 
 [Torna all&#39;inizio...](#apis)
 
@@ -411,8 +409,8 @@ il callback [`setAuthenticationStatus:errorCode:`](#setAuthNStatus).
 
 **Descrizione:** avvia il flusso di lavoro di autenticazione completo. Viene avviato controllando lo stato di autenticazione. Se non è già autenticato, viene avviato il computer dello stato del flusso di autenticazione:
 
-* se l&#39;ultimo tentativo di autenticazione ha avuto esito positivo, MVPD   la fase di selezione viene saltata e   il callback [`navigateToUrl:`](#nav2url) è attivato. Il   L&#39;applicazione utilizza questo callback per creare un&#39;istanza del controllo WebView che presenta all&#39;utente la pagina di accesso di MVPD. **[NOTA: a partire da Access Enabler 1.5, questa funzionalità non è disponibile a causa di una limitazione in SDK].**
-* se l&#39;ultimo tentativo di autenticazione non è riuscito o se l&#39;utente si è disconnesso in modo esplicito, il callback [`displayProviderDialog:`](#dispProvDialog) è   attivato. L&#39;applicazione utilizza questo callback per visualizzare l&#39;interfaccia utente di selezione di MVPD. Anche l&#39;app deve riprendere il flusso di autenticazione informando la libreria AccessEnabler della selezione MVPD dell&#39;utente tramite il metodo [`setSelectedProvider:`](#setSelProv).
+* se l&#39;ultimo tentativo di autenticazione ha avuto esito positivo, la fase di selezione di MVPD viene ignorata e il callback [`navigateToUrl:`](#nav2url) viene attivato. L&#39;applicazione utilizza questo callback per creare un&#39;istanza del controllo WebView che presenta all&#39;utente la pagina di accesso di MVPD. **[NOTA: a partire da Access Enabler 1.5, questa funzionalità non è disponibile a causa di una limitazione in SDK].**
+* se l&#39;ultimo tentativo di autenticazione non è riuscito o se l&#39;utente si è disconnesso in modo esplicito, viene attivato il callback [`displayProviderDialog:`](#dispProvDialog). L&#39;applicazione utilizza questo callback per visualizzare l&#39;interfaccia utente di selezione di MVPD. Anche l&#39;app deve riprendere il flusso di autenticazione informando la libreria AccessEnabler della selezione MVPD dell&#39;utente tramite il metodo [`setSelectedProvider:`](#setSelProv).
 
 Man mano che le credenziali dell’utente vengono verificate nella pagina di accesso di MVPD, l’applicazione deve monitorare le diverse operazioni di reindirizzamento che si verificano durante l’autenticazione dell’utente nella pagina di accesso di MVPD. Quando vengono immesse le credenziali corrette, il controllo WebView viene reindirizzato a un URL personalizzato definito dalla costante `ADOBEPASS_REDIRECT_URL`. Questo URL non deve essere caricato da WebView. L’applicazione deve intercettare questo URL e interpretare questo evento come un segnale del completamento della fase di accesso. Deve quindi passare il controllo ad AccessEnabler per completare il flusso di autenticazione chiamando il metodo [handleExternalURL](#handleExternalURL).
 
@@ -712,11 +710,11 @@ Poiché il controller UIWebView/WKWebView` ` viene sottoposto a diversi reindiri
 
 **File:** AccessEnabler/headers/EntitlementDelegate.h
 
-**Descrizione:** callback attivato da AccessEnabler anziché dal callback `navigateToUrl:` nel caso in cui l&#39;applicazione abbia precedentemente abilitato la gestione manuale di Safari View Controller (SVC) tramite la chiamata [setOptions(\[&quot;handleSVC&quot;:true&quot;\])](#setOptions) e solo nel caso di MVPD che richiedono Safari View Controller (SVC). Per tutti gli altri MVPD verrà chiamato il callback `navigateToUrl:`. Per informazioni dettagliate sulla gestione di SVC (Safari View Controller), vedere il supporto di SFSafariViewController in iOS SDK 3.2+[.](/help/authentication/integration-guide-programmers/legacy/notes-technical/sfsafariviewcontroller-support-on-ios-sdk-32.md)
+**Descrizione:** callback attivato da AccessEnabler anziché dal callback `navigateToUrl:` nel caso in cui l&#39;applicazione abbia precedentemente abilitato la gestione manuale di Safari View Controller (SVC) tramite la chiamata [setOptions(\[&quot;handleSVC&quot;:true&quot;\])](#setOptions) e solo nel caso di MVPD che richiedono Safari View Controller (SVC). Per tutti gli altri MVPD verrà chiamato il callback `navigateToUrl:`. Per informazioni dettagliate sulla gestione di SVC (Safari View Controller), vedere il supporto di SFSafariViewController in iOS SDK 3.2+[&#128279;](/help/authentication/integration-guide-programmers/legacy/notes-technical/sfsafariviewcontroller-support-on-ios-sdk-32.md).
 
 Simile al callback `navigateToUrl:`, il `navigateToUrl:useSVC:` viene attivato da AccessEnabler per richiedere all&#39;applicazione di creare un&#39;istanza di un controller `SFSafariViewController` e caricare l&#39;URL fornito nel parametro **`url`** del callback. Il callback passa il parametro **`url`** che rappresenta l&#39;URL dell&#39;endpoint di autenticazione o l&#39;URL dell&#39;endpoint di disconnessione e il parametro **`useSVC`** che specifica che l&#39;applicazione deve utilizzare un `SFSafariViewController`.
 
-Poiché il controller `SFSafariViewController` viene sottoposto a diversi reindirizzamenti, l&#39;applicazione deve monitorare l&#39;attività del controller e rilevare il momento in cui carica un URL personalizzato specifico definito dal `application's custom scheme` (ad esempio **&#x200B; &#x200B;**`adbe.u-XFXJeTSDuJiIQs0HVRAg://adobe.com`). Questo URL personalizzato specifico non è valido e non è destinato al controller per caricarlo effettivamente. Deve essere interpretato solo dall&#39;applicazione come un segnale che il flusso di autenticazione o disconnessione è stato completato e che è sicuro chiudere il controller. Quando il controller carica questo URL personalizzato specifico, l&#39;applicazione deve chiudere `SFSafariViewController` e chiamare il metodo API `handleExternalURL:url ` di AccessEnabler.
+Poiché il controller `SFSafariViewController` viene sottoposto a diversi reindirizzamenti, l&#39;applicazione deve monitorare l&#39;attività del controller e rilevare il momento in cui carica un URL personalizzato specifico definito dal `application's custom scheme` (ad esempio **&#x200B; **`adbe.u-XFXJeTSDuJiIQs0HVRAg://adobe.com`). Questo URL personalizzato specifico non è valido e non è destinato al controller per caricarlo effettivamente. Deve essere interpretato solo dall&#39;applicazione come un segnale che il flusso di autenticazione o disconnessione è stato completato e che è sicuro chiudere il controller. Quando il controller carica questo URL personalizzato specifico, l&#39;applicazione deve chiudere `SFSafariViewController` e chiamare il metodo API `handleExternalURL:url ` di AccessEnabler.
 
 **Nota:** Tieni presente che nel caso del flusso di autenticazione si tratta di un punto in cui l&#39;utente può premere il pulsante &quot;Indietro&quot;, che equivale all&#39;interruzione del flusso di autenticazione. In questo caso, è necessario che l&#39;applicazione chiami il metodo [setSelectedProvider:](#setSelProv) passando **`nil`** come parametro e dando la possibilità ad AccessEnabler di reimpostare il computer dello stato di autenticazione.
 
@@ -853,7 +851,7 @@ Nel caso del flusso di autenticazione, AccessEnabler completa il flusso recupera
    * `ACCESS_ENABLER_STATUS_ERROR` - flusso di autenticazione non riuscito
 * *codice*: motivo errore. Se *status* è `ACCESS_ENABLER_STATUS_SUCCESS`, *code* è una stringa vuota, ovvero definita dalla costante `USER_AUTHENTICATED`. In caso di errore, questo parametro può assumere uno dei seguenti valori:
    * `USER_NOT_AUTHENTICATED_ERROR` - Utente non autenticato. In risposta alla chiamata al metodo [checkAuthentication:](#checkAuthN) quando non è presente alcun token di autenticazione valido nella cache dei token locale.
-   * `PROVIDER_NOT_SELECTED_ERROR` - AccessEnabler ha reimpostato       macchina dello stato di autenticazione dopo l&#39;applicazione di livello superiore       ha passato *null* a [`setSelectedProvider:`](#setSelProv) per interrompere il flusso di autenticazione.  Presumibilmente l’utente ha annullato il flusso di autenticazione (ovvero ha premuto il pulsante &quot;Indietro&quot;).
+   * `PROVIDER_NOT_SELECTED_ERROR` - AccessEnabler ha reimpostato il computer dello stato di autenticazione dopo che l&#39;applicazione del livello superiore ha passato *null* a [`setSelectedProvider:`](#setSelProv) per interrompere il flusso di autenticazione.  Presumibilmente l’utente ha annullato il flusso di autenticazione (ovvero ha premuto il pulsante &quot;Indietro&quot;).
    * `GENERIC_AUTHENTICATION_ERROR` - Flusso di autenticazione non riuscito per motivi quali la non disponibilità della rete o l&#39;annullamento esplicito del flusso di autenticazione da parte dell&#39;utente.
 
 **Attivato da:** `checkAuthentication`, `getAuthentication`, [`getAuthentication:withData:`](#getAuthN), `checkAuthorization:`, [`checkAuthorization:withData:`](#checkAuthZ)
@@ -889,7 +887,7 @@ Nel caso del flusso di autenticazione, AccessEnabler completa il flusso recupera
 
 **Parametri:**
 
-* *risorse:* array di risorse per cui controllare l&#39;autorizzazione. Ogni elemento dell’elenco deve essere una stringa che rappresenta l’ID della risorsa. Il     l’ID risorsa è soggetto alle stesse limitazioni dell’ID risorsa nella chiamata, ovvero deve essere un valore concordato tra il Programmatore e MVPD o un frammento RSS per contenuti multimediali.
+* *risorse:* array di risorse per cui controllare l&#39;autorizzazione. Ogni elemento dell’elenco deve essere una stringa che rappresenta l’ID della risorsa. L’ID della risorsa è soggetto alle stesse limitazioni dell’ID della risorsa nella chiamata, ovvero deve essere un valore concordato tra il Programmatore e MVPD o un frammento RSS per contenuti multimediali.
 
 **Callback attivato:** [`preauthorizedResources:`](#preauthResources)
 
