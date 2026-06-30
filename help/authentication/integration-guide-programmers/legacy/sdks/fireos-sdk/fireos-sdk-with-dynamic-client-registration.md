@@ -2,10 +2,10 @@
 title: Amazon FireOS SDK con registrazione client dinamica
 description: Amazon FireOS SDK con registrazione client dinamica
 exl-id: 27acf3f5-8b7e-4299-b0f0-33dd6782aeda
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+source-git-commit: c2a5591cd8fea44f66fc25beb1fb40532e18d8a6
 workflow-type: tm+mt
-source-wordcount: '1169'
-ht-degree: 0%
+source-wordcount: '1185'
+ht-degree: 1%
 
 ---
 
@@ -37,7 +37,7 @@ FireOS AccessEnabler SDK per FireTV è stato modificato per abilitare l’autent
 
 | Chiamata API: costruttore |
 | --- |
-| getInstance(Context appContext, String softwareStatement, String redirectUrl)<br> statico pubblico di AccessEnabler        genera AccessEnablerException |
+| getInstance(Context appContext, String softwareStatement, String redirectUrl)<br> di AccessEnablerException statica pubblica |
 
 **Disponibilità:** v3.0+
 
@@ -70,7 +70,7 @@ Se viene fornito un valore per il parametro *urls*, la chiamata di rete risultan
 
 | Chiamata API: configurazione richiedente |
 | --- |
-| ```public void setRequestor(String requestorId, ArrayList<String> urls)``` |
+| `public void setRequestor(String requestorId, ArrayList<String> urls)` |
 
 **Disponibilità:** v3.0+
 
@@ -119,7 +119,7 @@ Obsoleto:
 
 ### **2. Configura applicazione**
 
-- a. setRequestor(requestor\_id)
+- a.  setRequestor(requestor\_id)
 
   SDK eseguirà le seguenti operazioni:
 
@@ -152,7 +152,7 @@ Obsoleto:
    - accesso annullato: reimpostare la selezione di MVPD
    - Lo schema URL viene impostato come &quot;adobepass://android.app&quot; da acquisire al termine dell’autenticazione
 
-- e. get/checkAuthorization : SDK includerà **access\_token &#x200B;** nell&#39;intestazione come Authorization: Bearer **access\_token**
+- e. get/checkAuthorization : SDK includerà **access\_token** nell&#39;intestazione come Authorization: Bearer **access\_token**
 
 - se l’autorizzazione viene rilasciata, verrà effettuata una chiamata per ottenere il token multimediale
 

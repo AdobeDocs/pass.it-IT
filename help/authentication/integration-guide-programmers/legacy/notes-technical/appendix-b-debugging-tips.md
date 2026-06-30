@@ -2,9 +2,9 @@
 title: Appendice B "Suggerimenti per il debug"
 description: Appendice B "Suggerimenti per il debug"
 exl-id: ea024797-315e-47c0-99ea-1ac49c8c9697
-source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
+source-git-commit: c2a5591cd8fea44f66fc25beb1fb40532e18d8a6
 workflow-type: tm+mt
-source-wordcount: '184'
+source-wordcount: '194'
 ht-degree: 0%
 
 ---
@@ -36,7 +36,7 @@ L’autenticazione di Adobe Pass memorizza dati temporanei come la cache del bro
 
 Accedere alla [Guida di Flash Player](http://www.macromedia.com/support/documentation/en/flashplayer/help/settings_manager07.html).
 
-Selezionare ```entitlement.\*``` (a seconda di ciò che è stato testato) e fare clic su &quot;Elimina sito Web&quot;.
+Selezionare `entitlement.\*` (a seconda di ciò che è stato testato) e fare clic su &quot;Elimina sito Web&quot;.
 
 
 ## Strumenti di debug {#tools}

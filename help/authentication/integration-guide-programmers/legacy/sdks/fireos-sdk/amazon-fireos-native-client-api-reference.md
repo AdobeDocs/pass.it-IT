@@ -2,9 +2,9 @@
 title: Riferimento API client nativo Amazon FireOS
 description: Riferimento API client nativo Amazon FireOS
 exl-id: 8ac9f976-fd6b-4b19-a80d-49bfe57134b5
-source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
+source-git-commit: c2a5591cd8fea44f66fc25beb1fb40532e18d8a6
 workflow-type: tm+mt
-source-wordcount: '3498'
+source-wordcount: '3519'
 ht-degree: 0%
 
 ---
@@ -68,7 +68,7 @@ Fare riferimento a <https://tve.zendesk.com/hc/en-us/articles/115005561623-fire-
 
 | Chiamata API: costruttore |
 | --- |
-| ```public static AccessEnabler getInstance(Context appContext, String softwareStatement, String redirectUrl)<br>        throws AccessEnablerException```<br><br>  <code> getInstance(Context appContext, String env_url, String softwareStatement, String redirectUrl) statico pubblico di AccessEnabler genera AccessEnablerException </code> |
+| <code>public static AccessEnabler getInstance(Context appContext, String softwareStatement, String redirectUrl)<br> genera AccessEnablerException<br><br> public static AccessEnabler getInstance(Context appContext, String env_url, String softwareStatement, String redirectUrl) genera AccessEnablerException </code> |
 
 **Disponibilità:** v3.0+
 
@@ -100,7 +100,7 @@ Se viene fornito un valore per il parametro *urls*, la chiamata di rete risultan
 
 | Chiamata API: configurazione richiedente |
 | --- |
-| ```public void setRequestor(String requestorId)``` |
+| `public void setRequestor(String requestorId)` |
 
 
 **Disponibilità:** v3.0+
@@ -108,7 +108,7 @@ Se viene fornito un valore per il parametro *urls*, la chiamata di rete risultan
 
 | Chiamata API: configurazione richiedente |
 | --- |
-| ```public void setRequestor(String requestorId, ArrayList<String> urls)``` |
+| `public void setRequestor(String requestorId, ArrayList<String> urls)` |
 
 **Disponibilità:** v3.0+
 
@@ -139,7 +139,7 @@ Se viene fornito un valore per il parametro *urls*, la chiamata di rete risultan
 
 | Callback: configurazione richiedente completata |
 | --- |
-| ```public void setRequestorComplete(int status)``` |
+| `public void setRequestorComplete(int status)` |
 
 **Disponibilità:** v1.0+
 
@@ -166,7 +166,7 @@ I valori vengono passati al server indipendentemente dal flusso corrente (autent
 
 | Chiamata API: setOptions |
 | --- |
-| ```public void setOptions(HashMap<String,String> options)``` |
+| `public void setOptions(HashMap<String,String> options)` |
 
 **Disponibilità:** v3.0+
 
@@ -187,7 +187,7 @@ Se un MVPD supporta la funzione &quot;Autenticazione per richiedente&quot;, è p
 
 | Chiamata API: controlla lo stato di autenticazione |
 | --- |
-| ```public void checkAuthentication()``` |
+| `public void checkAuthentication()` |
 
 **Disponibilità:** v1.0+
 
@@ -210,13 +210,13 @@ Infine, lo stato di autenticazione viene comunicato all&#39;applicazione tramite
 
 | Chiamata API: avvia il flusso di autenticazione |
 | --- |
-| ```public void getAuthentication()``` |
+| `public void getAuthentication()` |
 
 **Disponibilità:** v1.0+
 
 | Chiamata API: avvia il flusso di autenticazione |
 | --- |
-| ```public void getAuthentication(boolean forceAuthN, Map<String, Object> genericData)``` |
+| `public void getAuthentication(boolean forceAuthN, Map<String, Object> genericData)` |
 
 **Disponibilità:** v1.0+
 
@@ -238,7 +238,7 @@ Dopo che l&#39;utente ha selezionato il MVPD desiderato, l&#39;applicazione di l
 
 | **Callback: visualizzazione dell&#39;interfaccia utente di selezione di MVPD** |
 | --- |
-| ```public void displayProviderDialog(ArrayList<Mvpd> mvpds)``` |
+| `public void displayProviderDialog(ArrayList<Mvpd> mvpds)` |
 
 **Disponibilità:** v1.0+
 
@@ -256,15 +256,15 @@ Dopo che l&#39;utente ha selezionato il MVPD desiderato, l&#39;applicazione di l
 
 | **Chiamata API: imposta il provider attualmente selezionato** |
 | --- |
-| ```public void setSelectedProvider(String mvpdId)``` |
+| `public void setSelectedProvider(String mvpdId)` |
 
 
-**Disponibilità:**&#x200B;v 1.0+
+**Disponibilità:**v 1.0+
 
 **Parametri:** Nessuno
 
-**Callback attivati:** `setAuthenticationStatus(), sendTrackingData()`
-</br>
+**Callback attivati:** 
+
 
 ### navigateToUrl {#navigagteToUrl}
 
@@ -272,7 +272,7 @@ Dopo che l&#39;utente ha selezionato il MVPD desiderato, l&#39;applicazione di l
 
 | **Callback: visualizzazione della pagina di accesso di MVPD** |
 | --- |
-| ```public void navigateToUrl(String url)``` |
+| `public void navigateToUrl(String url)` |
 
 **Disponibilità:** v1.0+
 
@@ -290,7 +290,7 @@ Dopo che l&#39;utente ha selezionato il MVPD desiderato, l&#39;applicazione di l
 
 | **Chiamata API: recupera il token di autenticazione** |
 | --- |
-| ```public void getAuthenticationToken(String cookies)``` |
+| `public void getAuthenticationToken(String cookies)` |
 
 **Disponibilità:** v1.0+
 
@@ -310,7 +310,7 @@ Questo callback segnala anche quando il flusso di logout è completo.
 
 | **Callback: segnalare lo stato del flusso di autenticazione** |
 | --- |
-| ```public void setAuthenticationStatus(int status, String errorCode)``` |
+| `public void setAuthenticationStatus(int status, String errorCode)` |
 
 **Disponibilità:** v1.0+
 
@@ -336,7 +336,7 @@ Questo callback segnala anche quando il flusso di logout è completo.
 
 | **Chiamata API: imposta il provider attualmente selezionato** |
 | --- |
-| ```public void checkPreauthorizedResources(ArrayList<String> resources)``` |
+| `public void checkPreauthorizedResources(ArrayList<String> resources)` |
 
 **Disponibilità:** v1.0+
 
@@ -352,9 +352,9 @@ Questo callback segnala anche quando il flusso di logout è completo.
 
 | **Chiamata API: imposta il provider attualmente selezionato** |
 | --- |
-| ```public void checkPreauthorizedResources(ArrayList<String> resources)``` |
+| `public void checkPreauthorizedResources(ArrayList<String> resources)` |
 
-**Disponibilità:**&#x200B;v 1.0+
+**Disponibilità:**v 1.0+
 
 **Parametri:** Il parametro `resources` è un array di risorse per le quali l&#39;utente è già autorizzato a visualizzare.
 
@@ -368,13 +368,13 @@ Questo callback segnala anche quando il flusso di logout è completo.
 
 | **Chiamata API: verifica stato autorizzazione** |
 | --- |
-| ```public void checkAuthorization(String resourceId)``` |
+| `public void checkAuthorization(String resourceId)` |
 
 **Disponibilità:** v1.0+
 
 | **Chiamata API: verifica stato autorizzazione** |
 | --- |
-| ```public void checkAuthorization(String resourceId, Map<String, Object> genericData)``` |
+| `public void checkAuthorization(String resourceId, Map<String, Object> genericData)` |
 
 **Disponibilità:** v1.0+
 
@@ -393,13 +393,13 @@ Questo callback segnala anche quando il flusso di logout è completo.
 
 | **Chiamata API: avvia il flusso di autorizzazione** |
 | --- |
-| ```public void getAuthorization(String resourceId)``` |
+| `public void getAuthorization(String resourceId)` |
 
 **Disponibilità:** v1.0+
 
 | **Chiamata API: avvia il flusso di autorizzazione** |
 | --- |
-| ```public void getAuthorization(String resourceId, Map<String, Object> genericData)``` |
+| `public void getAuthorization(String resourceId, Map<String, Object> genericData)` |
 
 **Disponibilità:** v1.0+
 
@@ -424,9 +424,9 @@ Questo callback segnala anche quando il flusso di logout è completo.
 
 | **Callback: flusso di autorizzazione completato** |
 | --- |
-| ```public void setToken(String token, String resourceId)``` |
+| `public void setToken(String token, String resourceId)` |
 
-**Disponibilità:**&#x200B;v 1.0+
+**Disponibilità:**v 1.0+
 
 **Parametri:**
 
@@ -443,7 +443,7 @@ Questo callback segnala anche quando il flusso di logout è completo.
 
 | **Callback: flusso di autorizzazione non riuscito** |
 | --- |
-| ```public void tokenRequestFailed(String resourceId, <br>        String errorCode, String errorDescription)``` |
+| <code>public void tokenRequestFailed(String resourceId, <br> String errorCode, String errorDescription)</code> |
 
 **Disponibilità:** v1.0+
 
@@ -464,7 +464,7 @@ Questo callback segnala anche quando il flusso di logout è completo.
 
 | **Chiamata API: avvia il flusso di disconnessione** |
 | --- |
-| ```public void logout()``` |
+| `public void logout()` |
 
 **Disponibilità:** v1.0+
 
@@ -480,7 +480,7 @@ Questo callback segnala anche quando il flusso di logout è completo.
 
 | **Chiamata API: determina il MVPD attualmente selezionato** |
 | --- |
-| ```public void getSelectedProvider()``` |
+| `public void getSelectedProvider()` |
 
 **Disponibilità:** v1.0+
 
@@ -496,7 +496,7 @@ Questo callback segnala anche quando il flusso di logout è completo.
 
 | **Callback: informazioni sul MVPD attualmente selezionato** |
 | --- |
-| ```public void selectedProvider(Mvpd mvpd)``` |
+| `public void selectedProvider(Mvpd mvpd)` |
 
 **Disponibilità:** v1.0+
 
@@ -514,7 +514,7 @@ Questo callback segnala anche quando il flusso di logout è completo.
 
 | **Chiamata API: eseguire una query sull&#39;AccessEnabler per i metadati** |
 | --- |
-| ```public void getMetadata(MetadataKey metadataKey)``` |
+| `public void getMetadata(MetadataKey metadataKey)` |
 
 **Disponibilità:** v1.0+
 
@@ -550,7 +550,7 @@ I metadati utente effettivi disponibili per un programmatore dipendono da ciò c
 
 | **Callback: risultato della richiesta di recupero dei metadati** |
 | --- |
-| ```public void setMetadataStatus(MetadataKey key, MetadataStatus result)``` |
+| `public void setMetadataStatus(MetadataKey key, MetadataStatus result)` |
 
 **Disponibilità:** v1.0+
 
@@ -612,7 +612,7 @@ Questo valore è nullo quando la richiesta è stata effettuata per metadati semp
 
 | **Chiamata API: versione di AccessEnabler** |
 | --- |
-| ```public static String getVersion()``` |
+| `public static String getVersion()` |
 
 ## Tracciamento degli eventi {#tracking}
 
@@ -643,7 +643,7 @@ L’Access Enabler attiva un callback aggiuntivo che non è necessariamente corr
 
 | Callback: eventi di tracciamento |
 | --- |
-| ```public void sendTrackingData(Event event, ArrayList<String> data)``` |
+| `public void sendTrackingData(Event event, ArrayList<String> data)` |
 
 **Disponibilità:** v1.0+
 
