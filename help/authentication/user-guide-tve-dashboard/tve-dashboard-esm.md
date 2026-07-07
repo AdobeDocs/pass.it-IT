@@ -25,7 +25,7 @@ Il dashboard ESM fornisce una visualizzazione unificata dei dati di adesione ed 
 - Confrontare le prestazioni di MVPD
 - Comprendere l’utilizzo dei clienti per applicazione
 
-Ulteriori dettagli sui dati e sugli eventi ESM sono disponibili all&#39;indirizzo [Panoramica sul monitoraggio dei servizi di adesione](https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview).
+Ulteriori dettagli sui dati e sugli eventi ESM sono disponibili all&#39;indirizzo [Panoramica sul monitoraggio dei servizi di adesione](https://experienceleague.adobe.com/it/docs/pass/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview).
 
 ## Rapporti {#reports}
 
