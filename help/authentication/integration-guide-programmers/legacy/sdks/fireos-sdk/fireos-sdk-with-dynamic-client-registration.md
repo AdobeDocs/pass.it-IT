@@ -2,7 +2,7 @@
 title: Amazon FireOS SDK con registrazione client dinamica
 description: Amazon FireOS SDK con registrazione client dinamica
 exl-id: 27acf3f5-8b7e-4299-b0f0-33dd6782aeda
-source-git-commit: c2a5591cd8fea44f66fc25beb1fb40532e18d8a6
+source-git-commit: b6ba687240799d1889302019613f426259f147ad
 workflow-type: tm+mt
 source-wordcount: '1185'
 ht-degree: 1%
@@ -172,3 +172,4 @@ Obsoleto:
 | invalid_request | 400 | Richiesta non valida. Il SDK dovrebbe interrompere l’esecuzione delle chiamate al server. |
 | invalid_client | 403 | L’ID client non è più autorizzato a eseguire richieste. L&#39;SDK DEVE eseguire nuovamente la registrazione client. |
 | accesso negato | 401 | Access_token non valido. L’sdk DEVE richiedere un nuovo access_token. |
+

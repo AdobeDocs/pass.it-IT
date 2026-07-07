@@ -2,7 +2,7 @@
 title: Android SDK con registrazione client dinamica
 description: Android SDK con registrazione client dinamica
 exl-id: 8d0c1507-8e80-40a4-8698-fb795240f618
-source-git-commit: c2a5591cd8fea44f66fc25beb1fb40532e18d8a6
+source-git-commit: b6ba687240799d1889302019613f426259f147ad
 workflow-type: tm+mt
 source-wordcount: '1321'
 ht-degree: 1%
@@ -193,3 +193,4 @@ f. logout:
 | invalid_request | 400 | Richiesta non valida. Il SDK dovrebbe interrompere l’esecuzione delle chiamate al server. |
 | invalid_client | 403 | L’ID client non è più autorizzato a eseguire richieste. L&#39;SDK DEVE eseguire nuovamente la registrazione client. |
 | accesso negato | 401 | Accesso\_token non valido. L’sdk DEVE richiedere un nuovo access_token. |
+
