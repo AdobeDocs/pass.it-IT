@@ -2,7 +2,7 @@
 title: Configurazione dell’ambiente e test in Pre-Qual
 description: Configurazione dell’ambiente e test in Pre-Qual
 exl-id: f822c0a1-045a-401f-a44f-742ed25bfcdc
-source-git-commit: c2a5591cd8fea44f66fc25beb1fb40532e18d8a6
+source-git-commit: b6ba687240799d1889302019613f426259f147ad
 workflow-type: tm+mt
 source-wordcount: '492'
 ht-degree: 0%
@@ -118,3 +118,4 @@ Addresses:  52.26.79.43
 * Se si desidera approfondire la verifica dell&#39;autenticazione di Adobe Pass, si consiglia di utilizzare il [sito di test API](http://entitlement-prequal.auth.adobe.com/apitest/api.html).
 
 Per ulteriori dettagli sul sito di test API, visita il sito [How to test Authentication and Authorization flows using Adobe&#39;s API test site](/help/authentication/integration-guide-programmers/legacy/notes-technical/test-authn-authz-flows-using-adobes-api-test-site.md) (Come verificare i flussi di autenticazione e autorizzazione tramite il sito di test API di).
+

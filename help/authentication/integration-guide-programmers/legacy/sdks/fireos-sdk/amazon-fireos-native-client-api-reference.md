@@ -2,7 +2,7 @@
 title: Riferimento API client nativo Amazon FireOS
 description: Riferimento API client nativo Amazon FireOS
 exl-id: 8ac9f976-fd6b-4b19-a80d-49bfe57134b5
-source-git-commit: c2a5591cd8fea44f66fc25beb1fb40532e18d8a6
+source-git-commit: b6ba687240799d1889302019613f426259f147ad
 workflow-type: tm+mt
 source-wordcount: '3519'
 ht-degree: 0%
@@ -259,7 +259,7 @@ Dopo che l&#39;utente ha selezionato il MVPD desiderato, l&#39;applicazione di l
 | `public void setSelectedProvider(String mvpdId)` |
 
 
-**Disponibilità:**&#x200B;v 1.0+
+**Disponibilità:**v 1.0+
 
 **Parametri:** Nessuno
 
@@ -354,7 +354,7 @@ Questo callback segnala anche quando il flusso di logout è completo.
 | --- |
 | `public void checkPreauthorizedResources(ArrayList<String> resources)` |
 
-**Disponibilità:**&#x200B;v 1.0+
+**Disponibilità:**v 1.0+
 
 **Parametri:** Il parametro `resources` è un array di risorse per le quali l&#39;utente è già autorizzato a visualizzare.
 
@@ -426,7 +426,7 @@ Questo callback segnala anche quando il flusso di logout è completo.
 | --- |
 | `public void setToken(String token, String resourceId)` |
 
-**Disponibilità:**&#x200B;v 1.0+
+**Disponibilità:**v 1.0+
 
 **Parametri:**
 
@@ -684,3 +684,4 @@ Di seguito sono riportate le istruzioni per l&#39;interpretazione dei valori nel
    - **3** - Tipo di sistema operativo
 
 **Attivato da:** `checkAuthentication(), getAuthentication(), checkAuthorization(), getAuthorization(), setSelectedProvider()`
+
