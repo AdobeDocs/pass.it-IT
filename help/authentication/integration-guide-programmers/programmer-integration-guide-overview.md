@@ -4,7 +4,7 @@ description: Guida all’integrazione dei programmatori
 exl-id: 51461caf-08ef-459e-b284-8f317f45e7b1
 source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
-source-wordcount: '2119'
+source-wordcount: '2152'
 ht-degree: 0%
 
 ---
@@ -110,7 +110,7 @@ Per un’esplorazione dettagliata del flusso di adesione e delle sue fasi, conti
 
 >[!NOTE]
 >
-> L’applicazione Programmatore (TVE) viene utilizzata in questo documento per fare riferimento collettivamente ai tipi di applicazioni in esecuzione su piattaforme diverse (browser, dispositivi mobili, dispositivi collegati alla TV, ecc.) supportate dall’autenticazione di Adobe Pass.
+> L&#39;applicazione Programmatore (TVE) viene utilizzata in questo documento per fare riferimento collettivamente ai tipi di applicazioni in esecuzione su piattaforme diverse (browser, dispositivi mobili, dispositivi collegati alla TV, ecc.) supportato dall’autenticazione di Adobe Pass.
 
 ### Fase di registrazione {#registration-phase}
 

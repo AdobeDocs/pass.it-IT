@@ -4,8 +4,8 @@ description: REST API V2 - Intestazione - X-Device-Info
 exl-id: 0ef25e06-86de-427a-a938-7ba3817f0d5e
 source-git-commit: 42df16e34783807e1b5eb1a12ca9db92f4e4c161
 workflow-type: tm+mt
-source-wordcount: '1133'
-ht-degree: 2%
+source-wordcount: '1234'
+ht-degree: 3%
 
 ---
 
@@ -53,7 +53,7 @@ Il valore `Base64-encoded` dell&#39;elemento JSON contenente almeno gli attribut
         <td></td>
         <td>primaryHardwareType</td>
         <td>Il tipo di hardware principale del dispositivo.</td>
-        <td>&check;</td>
+        <td>&amp;verifica;</td>
         <td>
             I valori sono limitati:
             <ul>
@@ -110,7 +110,7 @@ Il valore `Base64-encoded` dell&#39;elemento JSON contenente almeno gli attribut
         <td><i>obbligatorio</i></td>
         <td>osName</td>
         <td>Il nome del sistema operativo del dispositivo.</td>
-        <td>&check;</td>
+        <td>&amp;verifica;</td>
         <td>
             I valori sono limitati:
             <ul>
@@ -132,7 +132,7 @@ Il valore `Base64-encoded` dell&#39;elemento JSON contenente almeno gli attribut
         <td></td>
         <td>osFamily</td>
         <td>Il nome del gruppo del sistema operativo del dispositivo.</td>
-        <td>&check;</td>
+        <td>&amp;verifica;</td>
         <td>
             I valori sono limitati:
             <ul>
@@ -155,7 +155,7 @@ Il valore `Base64-encoded` dell&#39;elemento JSON contenente almeno gli attribut
         <td></td>
         <td>osVendor</td>
         <td>Il fornitore del sistema operativo del dispositivo.</td>
-        <td>&check;</td>
+        <td>&amp;verifica;</td>
         <td>
             I valori sono limitati:
             <ul>
@@ -185,7 +185,7 @@ Il valore `Base64-encoded` dell&#39;elemento JSON contenente almeno gli attribut
         <td></td>
         <td>browserName</td>
         <td>Nome del browser.</td>
-        <td>&check;</td>
+        <td>&amp;verifica;</td>
         <td>
             I valori sono limitati:
             <ul>
@@ -205,7 +205,7 @@ Il valore `Base64-encoded` dell&#39;elemento JSON contenente almeno gli attribut
         <td></td>
         <td>browserVendor</td>
         <td>La società/organizzazione di costruzione del browser.</td>
-        <td>&check;</td>
+        <td>&amp;verifica;</td>
         <td>
             I valori sono limitati:
             <ul>
@@ -228,7 +228,7 @@ Il valore `Base64-encoded` dell&#39;elemento JSON contenente almeno gli attribut
         <td>browserVersion</td>
         <td>Versione del browser del dispositivo.</td>
         <td></td>
-        <td>esempio: 60.0.3112</td>
+        <td>e.g. 60.0.3112</td>
     </tr>
     <tr>
         <td></td>
@@ -256,28 +256,28 @@ Il valore `Base64-encoded` dell&#39;elemento JSON contenente almeno gli attribut
         <td>displayPpi</td>
         <td>Densità fisica dei pixel dello schermo del dispositivo.</td>
         <td></td>
-        <td>Esempio: 294</td>
+        <td>e.g. 294</td>
     </tr>
     <tr>
         <td></td>
         <td>diagonalScreenSize</td>
         <td>La dimensione diagonale dello schermo fisico del dispositivo, espressa in pollici.</td>
         <td></td>
-        <td>ad es. 5.5, 10.1</td>
+        <td>e.g. 5.5, 10.1</td>
     </tr>
     <tr>
         <td></td>
         <td>connectionIp</td>
         <td>L’IP del dispositivo utilizzato per inviare richieste HTTP.</td>
         <td></td>
-        <td>es. 8.8.4.4</td>
+        <td>e.g. 8.8.4.4</td>
     </tr>
     <tr>
         <td></td>
         <td>connectionPort</td>
         <td>Porta del dispositivo utilizzata per l’invio di richieste HTTP.</td>
         <td></td>
-        <td>ad es. 53124</td>
+        <td>e.g. 53124</td>
     </tr>
     <tr>
         <td><i>obbligatorio</i></td>
@@ -290,7 +290,7 @@ Il valore `Base64-encoded` dell&#39;elemento JSON contenente almeno gli attribut
         <td></td>
         <td>connectionSecure</td>
         <td>Stato di protezione della connessione di rete.</td>
-        <td>&check;</td>
+        <td>&amp;verifica;</td>
         <td>
             I valori sono limitati:
             <ul>
@@ -434,7 +434,7 @@ Le informazioni sul dispositivo possono essere costruite nel modo seguente:
 | displayWidth | UIScreen.mainScreen | 320 |
 | displayHeight | UIScreen.mainScreen | 568 |
 | osName | UIDevice.systemName | iOS |
-| osVersion | UIDevice.systemVersion | 10,2 |
+| osVersion | UIDevice.systemVersion | 10.2 |
 
 Le informazioni di connessione possono essere costruite nel modo seguente:
 
@@ -540,7 +540,7 @@ Le informazioni sul dispositivo possono essere costruite nel modo seguente:
 | displayWidth | DisplayMetrics.widthPixels | 600 |
 | displayHeight | DisplayMetrics.heightPixels | 800 |
 | osName | hardcoded | Android |
-| osVersion | Build.VERSION.RELEASE | 5.0.1. |
+| osVersion | Build.VERSION.RELEASE | 5.0.1 |
 
 Le informazioni di connessione possono essere costruite nel modo seguente:
 
@@ -642,7 +642,7 @@ Le informazioni sul dispositivo possono essere costruite nel modo seguente:
 | displayWidth | UIScreen.mainScreen | 1920 |
 | displayHeight | UIScreen.mainScreen | 1080 |
 | osName | UIDevice.systemName | tvOS |
-| osVersion | UIDevice.systemVersion | 10,2 |
+| osVersion | UIDevice.systemVersion | 10.2 |
 
 Le informazioni di connessione possono essere costruite nel modo seguente:
 
@@ -675,7 +675,7 @@ Le informazioni sul dispositivo possono essere costruite nel modo seguente:
 | displayWidth | DisplayMetrics.widthPixels |                 |
 | displayHeight | DisplayMetrics.heightPixels |                 |
 | osName | hardcoded | Android |
-| osVersion | Build.VERSION.RELEASE | 5.1.1. |
+| osVersion | Build.VERSION.RELEASE | 5.1.1 |
 
 Le informazioni di connessione possono essere costruite nel modo seguente:
 

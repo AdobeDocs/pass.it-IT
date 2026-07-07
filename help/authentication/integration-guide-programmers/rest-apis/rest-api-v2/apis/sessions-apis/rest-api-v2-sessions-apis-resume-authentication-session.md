@@ -4,8 +4,8 @@ description: REST API V2 - Riprendi sessione di autenticazione
 exl-id: 66c33546-2be0-473f-9623-90499d1c13eb
 source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
 workflow-type: tm+mt
-source-wordcount: '956'
-ht-degree: 1%
+source-wordcount: '985'
+ht-degree: 2%
 
 ---
 
@@ -33,7 +33,7 @@ ht-degree: 1%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">percorso</td>
-      <td>/api/v2/{serviceProvider}/session/{code}</td>
+      <td>/api/v2/{serviceProvider}/essions/{code}</td>
       <td></td>
    </tr>
    <tr>
@@ -64,30 +64,23 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">mvpd</td>
       <td>
-        Identificatore univoco interno associato al provider di identità durante il processo di onboarding.
-        <br/><br/>
-        Se la piattaforma del dispositivo di streaming presenta limitazioni nell’offerta di un valore, un’applicazione dovrà riprendere la sessione di autenticazione e fornire un valore valido.
-      </td>
+        Identificatore univoco interno associato al provider di identità durante il processo di onboarding.<br/><br/>
+        Se la piattaforma del dispositivo di streaming presenta limitazioni nell’offerta di un valore, un’applicazione dovrà riprendere la sessione di autenticazione e fornire un valore valido.</td>
       <td><i>obbligatorio</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">domainName</td>
       <td>
-        Dominio di origine dell’applicazione che esegue l’accesso a MVPD.
-        <br/><br/>
-        Se la piattaforma del dispositivo di streaming presenta limitazioni nell’offerta di un valore, un’applicazione dovrà riprendere la sessione di autenticazione e fornire un valore valido.
-      </td>
+        Dominio di origine dell’applicazione che esegue l’accesso a MVPD.<br/><br/>
+        Se la piattaforma del dispositivo di streaming presenta limitazioni nell’offerta di un valore, un’applicazione dovrà riprendere la sessione di autenticazione e fornire un valore valido.</td>
       <td><i>obbligatorio</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">redirectUrl</td>
       <td>
-        L’URL di reindirizzamento finale a cui si sposta l’agente utente al termine del flusso di autenticazione per MVPD.
-        <br/><br/>
-        Il valore deve essere codificato in URL.
-        <br/><br/>
-        Se la piattaforma del dispositivo di streaming presenta limitazioni nell’offerta di un valore, un’applicazione dovrà riprendere la sessione di autenticazione e fornire un valore valido.
-        </td>
+        L’URL di reindirizzamento finale a cui si sposta l’agente utente al termine del flusso di autenticazione per MVPD.<br/><br/>
+        Il valore deve essere codificato in URL.<br/><br/>
+        Se la piattaforma del dispositivo di streaming presenta limitazioni nell’offerta di un valore, un’applicazione dovrà riprendere la sessione di autenticazione e fornire un valore valido.</td>
       <td><i>obbligatorio</i></td>
    </tr>
    <tr>
@@ -103,21 +96,16 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">Content-Type</td>
       <td>
-         Tipo di file multimediale accettato per le risorse inviate.
-         <br/><br/>
-         Deve essere codificata in application/x-www-form-urlencoded.
-      </td>
+         Tipo di file multimediale accettato per le risorse inviate.<br/><br/>
+         Deve essere codificata in application/x-www-form-urlencoded.</td>
       <td><i>obbligatorio</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">X-Forwarded-For</td>
       <td>
-         Indirizzo IP del dispositivo di streaming.
-         <br/><br/>
-         Si consiglia vivamente di utilizzarlo sempre per le implementazioni server-to-server, in particolare quando la chiamata viene effettuata dal servizio del programmatore anziché dal dispositivo di streaming.
-         <br/><br/>
-         Per le implementazioni client-server, l’indirizzo IP del dispositivo di streaming viene inviato in modo implicito.
-      </td>
+         Indirizzo IP del dispositivo di streaming.<br/><br/>
+         Si consiglia vivamente di utilizzarlo sempre per le implementazioni server-to-server, in particolare quando la chiamata viene effettuata dal servizio del programmatore anziché dal dispositivo di streaming.<br/><br/>
+         Per le implementazioni client-server, l’indirizzo IP del dispositivo di streaming viene inviato in modo implicito.</td>
       <td>facoltativo</td>
    </tr>
    <tr>
@@ -129,10 +117,8 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">Accetta</td>
       <td>
-         Tipo di supporto accettato dall'applicazione client.
-         <br/><br/>
-         Se specificato, deve essere application/json;charset=utf-8.
-      </td>
+         Tipo di supporto accettato dall'applicazione client.<br/><br/>
+         Se specificato, deve essere application/json;charset=utf-8.</td>
       <td>facoltativo</td>
    </tr>
    <tr>
@@ -161,29 +147,25 @@ ht-degree: 1%
       <td>400</td>
       <td>Richiesta non valida</td>
       <td>
-        Richiesta non valida. Il client deve correggere la richiesta e riprovare. Il corpo della risposta può contenere informazioni di errore conformi alla documentazione di <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Codici di errore avanzati</a>.
-      </td>
+        Richiesta non valida. Il client deve correggere la richiesta e riprovare. Il corpo della risposta può contenere informazioni di errore conformi alla documentazione di <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Codici di errore avanzati</a>.</td>
    </tr>
    <tr>
       <td>401</td>
       <td>Non autorizzato</td>
       <td>
-        Il token di accesso non è valido, il client deve ottenere un nuovo token di accesso e riprovare. Per ulteriori dettagli, consulta la documentazione <a href="../../../rest-api-dcr/dynamic-client-registration-overview.md">Panoramica registrazione client dinamico</a>.
-      </td>
+        Il token di accesso non è valido, il client deve ottenere un nuovo token di accesso e riprovare. Per ulteriori dettagli, consulta la documentazione <a href="../../../rest-api-dcr/dynamic-client-registration-overview.md">Panoramica registrazione client dinamico</a>.</td>
    </tr>
    <tr>
       <td>405</td>
       <td>Metodo non consentito</td>
       <td>
-        Metodo HTTP non valido. Il client deve utilizzare un metodo HTTP consentito per la risorsa richiesta e riprovare. Per ulteriori dettagli, consulta la sezione <a href="#request">Richiesta</a>.
-      </td>
+        Metodo HTTP non valido. Il client deve utilizzare un metodo HTTP consentito per la risorsa richiesta e riprovare. Per ulteriori dettagli, consulta la sezione <a href="#request">Richiesta</a>.</td>
    </tr>
    <tr>
       <td>500</td>
       <td>Errore interno del server</td>
       <td>
-        Si è verificato un problema sul lato server. Il corpo della risposta può contenere informazioni di errore conformi alla documentazione di <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Codici di errore avanzati</a>.
-      </td>
+        Si è verificato un problema sul lato server. Il corpo della risposta può contenere informazioni di errore conformi alla documentazione di <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Codici di errore avanzati</a>.</td>
    </tr>
 </table>
 
@@ -218,10 +200,8 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">actionName</td>
                <td>
-                  Azione che il dispositivo di streaming deve eseguire per completare il flusso di autenticazione.
-                  <br/><br/>
-                  I valori possibili sono:
-                  <ul>
+                  Azione che il dispositivo di streaming deve eseguire per completare il flusso di autenticazione.<br/><br/>
+                  I valori possibili sono:<ul>
                     <li><b>autentica</b><br/>Il dispositivo di streaming o un altro dispositivo deve aprire l'URL specificato in un agente utente.</li>
                     <li><b>riprova</b><br/>Il dispositivo di streaming o un altro dispositivo deve fornire i parametri mancanti e riprovare a riprendere la sessione di autenticazione utilizzando il codice.</li>
                     <li><b>autorizza</b><br/>Il dispositivo di streaming può procedere direttamente con i flussi decisionali.</li>
@@ -231,10 +211,8 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">actionType</td>
                <td>
-                  Tipo di interazione che il dispositivo di streaming deve eseguire per continuare il flusso con l’azione specificata dall’attributo "actionName".
-                  <br/><br/>
-                  I valori possibili sono:
-                  <ul>
+                  Tipo di interazione che il dispositivo di streaming deve eseguire per continuare il flusso con l’azione specificata dall’attributo "actionName".<br/><br/>
+                  I valori possibili sono:<ul>
                     <li><b>interattivo</b><br/>Il flusso continua con la navigazione all'URL specificato tramite un agente utente.</li>
                     <li><b>diretto</b><br/>Il flusso continua con una chiamata diretta all'URL fornito tramite un client HTTP disponibile per l'implementazione del client.</li>
                   </ul>
@@ -243,10 +221,8 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">reasonType</td>
                <td>
-                  Tipo di motivo che spiega il "actionName".
-                  <br/><br/>
-                  I valori possibili sono:
-                  <ul>
+                  Tipo di motivo che spiega il "actionName".<br/><br/>
+                  I valori possibili sono:<ul>
                     <li><b>nessuno</b><br/>Per continuare l'autenticazione è necessario che l'applicazione client continui a eseguire l'autenticazione.</li>
                     <li><b>autenticata</b><br/>L'applicazione client è già autenticata tramite flussi di accesso di base.</li>
                     <li><b>temporaneo</b><br/>L'applicazione client è già autenticata tramite flussi di accesso temporanei.</li>
@@ -325,23 +301,20 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;"></td>
       <td>
-            Il corpo della risposta può fornire informazioni di errore aggiuntive conformi alla documentazione di <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Codici di errore avanzati</a>.
-            <br/><br/>
-            L’applicazione client deve implementare un meccanismo di gestione degli errori in grado di elaborare correttamente i codici di errore più comunemente restituiti da questa API:
-            <ul>
+            Il corpo della risposta può fornire informazioni di errore aggiuntive conformi alla documentazione di <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Codici di errore avanzati</a>.<br/><br/>
+            L’applicazione client deve implementare un meccanismo di gestione degli errori in grado di elaborare correttamente i codici di errore più comunemente restituiti da questa API:<ul>
                 <li>invalid_authentication_session</li>
                 <li>invalid_parameter_code</li>
                 <li>ecc.</li>
             </ul>
-            L’elenco di cui sopra non è esaustivo. L'applicazione client deve essere in grado di gestire tutti i codici di errore avanzati definiti nella <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">documentazione pubblica</a>.
-      </td>
+            L’elenco di cui sopra non è esaustivo. L'applicazione client deve essere in grado di gestire tutti i codici di errore avanzati definiti nella <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">documentazione pubblica</a>.</td>
       <td><i>obbligatorio</i></td>
    </tr>
 </table>
 
 ## Esempi {#samples}
 
-### &#x200B;1. Riprendere la sessione di autenticazione senza parametri mancanti
+### &#x200B;1. Riprendi sessione di autenticazione senza parametri mancanti
 
 >[!BEGINTABS]
 
@@ -383,7 +356,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### &#x200B;2. Riprendere la sessione di autenticazione con parametri mancanti
+### &#x200B;2. Riprendi sessione di autenticazione con parametri mancanti
 
 >[!BEGINTABS]
 
@@ -426,7 +399,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### &#x200B;3. Riprendere la sessione di autenticazione se esiste già un profilo valido
+### &#x200B;3. Riprendi sessione di autenticazione se esiste già un profilo valido
 
 >[!BEGINTABS]
 
@@ -465,7 +438,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### &#x200B;4. Riprendi la sessione di autenticazione utilizzando TempPass di base o promozionale (non richiesto)
+### &#x200B;4. Riprendi sessione di autenticazione tramite TempPass di base o promozionale (non richiesto)
 
 >[!BEGINTABS]
 
@@ -504,7 +477,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### &#x200B;5. Riprendere la sessione di autenticazione durante l&#39;applicazione della riduzione di livello
+### &#x200B;5. Riprendi sessione di autenticazione durante l&#39;applicazione della riduzione di livello
 
 >[!BEGINTABS]
 

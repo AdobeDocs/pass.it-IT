@@ -1,13 +1,13 @@
 ---
 title: Dashboard ESM
 description: Scopri come utilizzare la dashboard ESM per monitorare i dati di adesione ed eventi tra i partner MVPD.
-source-git-commit: 53ebbd82fc160f68fccdddb18cf98e249ad6ecce
+exl-id: ac5f289a-c26d-4156-bc56-7968c49c100f
+source-git-commit: 39384d753e7808fa433f30d8dafabd531dbf3acf
 workflow-type: tm+mt
-source-wordcount: '472'
+source-wordcount: '487'
 ht-degree: 1%
 
 ---
-
 
 # Dashboard ESM {#esm-dashboard}
 
@@ -25,7 +25,7 @@ Il dashboard ESM fornisce una visualizzazione unificata dei dati di adesione ed 
 - Confrontare le prestazioni di MVPD
 - Comprendere l’utilizzo dei clienti per applicazione
 
-Ulteriori dettagli sui dati e sugli eventi ESM sono disponibili all&#39;indirizzo [Panoramica sul monitoraggio dei servizi di adesione](https://experienceleague.adobe.com/it/docs/pass/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview).
+Ulteriori dettagli sui dati e sugli eventi ESM sono disponibili all&#39;indirizzo [Panoramica sul monitoraggio dei servizi di adesione](https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview).
 
 ## Rapporti {#reports}
 

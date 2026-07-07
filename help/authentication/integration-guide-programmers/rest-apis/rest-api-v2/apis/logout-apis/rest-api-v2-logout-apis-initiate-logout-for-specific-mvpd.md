@@ -4,8 +4,8 @@ description: REST API V2 - Avvia disconnessione per mvpd specifico
 exl-id: 2482de87-b3d4-4ea8-bd4a-25bf10017e01
 source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
 workflow-type: tm+mt
-source-wordcount: '1028'
-ht-degree: 1%
+source-wordcount: '1130'
+ht-degree: 2%
 
 ---
 
@@ -60,10 +60,8 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">redirectUrl</td>
       <td>
-        L’URL di reindirizzamento finale a cui si sposta l’agente utente al termine del flusso di logout per MVPD.
-        <br/><br/>
-        Il valore deve essere codificato in URL.
-      </td>
+        L’URL di reindirizzamento finale a cui si sposta l’agente utente al termine del flusso di logout per MVPD.<br/><br/>
+        Il valore deve essere codificato in URL.</td>
       <td><i>obbligatorio</i></td>
    </tr>
    <tr>
@@ -84,43 +82,32 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">X-Device-Info</td>
       <td>
-         La generazione del payload di informazioni sul dispositivo è descritta nella documentazione dell'intestazione <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a>.
-         <br/><br/>
-         Si consiglia vivamente di utilizzarlo sempre quando la piattaforma del dispositivo dell’applicazione consente di fornire esplicitamente valori validi.
-         <br/><br/>
-         Se fornito, il backend di autenticazione di Adobe Pass unirà in modo esplicito i valori con quelli estratti in modo implicito (per impostazione predefinita).
-         <br/><br/>
-         Se non viene fornito, il backend di autenticazione Adobe Pass utilizzerà i valori estratti in modo implicito (per impostazione predefinita).
-      </td>
+         La generazione del payload di informazioni sul dispositivo è descritta nella documentazione dell'intestazione <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a>.<br/><br/>
+         Si consiglia vivamente di utilizzarlo sempre quando la piattaforma del dispositivo dell’applicazione consente di fornire esplicitamente valori validi.<br/><br/>
+         Se fornito, il backend di autenticazione di Adobe Pass unirà in modo esplicito i valori con quelli estratti in modo implicito (per impostazione predefinita).<br/><br/>
+         Se non viene fornito, il backend di autenticazione Adobe Pass utilizzerà i valori estratti in modo implicito (per impostazione predefinita).</td>
       <td><i>obbligatorio</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">X-Forwarded-For</td>
       <td>
-         Indirizzo IP del dispositivo di streaming.
-         <br/><br/>
-         Si consiglia vivamente di utilizzarlo sempre per le implementazioni server-to-server, in particolare quando la chiamata viene effettuata dal servizio del programmatore anziché dal dispositivo di streaming.
-         <br/><br/>
-         Per le implementazioni client-server, l’indirizzo IP del dispositivo di streaming viene inviato in modo implicito.
-      </td>
+         Indirizzo IP del dispositivo di streaming.<br/><br/>
+         Si consiglia vivamente di utilizzarlo sempre per le implementazioni server-to-server, in particolare quando la chiamata viene effettuata dal servizio del programmatore anziché dal dispositivo di streaming.<br/><br/>
+         Per le implementazioni client-server, l’indirizzo IP del dispositivo di streaming viene inviato in modo implicito.</td>
       <td>facoltativo</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Adobe-Subject-Token<br/>or<br/>X-Roku-Reserved-Roku-Connect-Token</td>
       <td>
-        La generazione del payload Single Sign-On per il metodo Platform Identity è descritta nella documentazione dell'intestazione <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Adobe-Subject-Token</a> / <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md">X-Roku-Reserved-Roku-Connect-Token</a>.
-        <br/><br/>
-        Per ulteriori dettagli sui flussi abilitati per il Single Sign-On che utilizzano un'identità di piattaforma, fare riferimento alla documentazione <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md">Single Sign-On che utilizza flussi di identità di piattaforma</a>.
-      </td>
+        La generazione del payload Single Sign-On per il metodo Platform Identity è descritta nella documentazione dell'intestazione <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Adobe-Subject-Token</a> / <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md">X-Roku-Reserved-Roku-Connect-Token</a>.<br/><br/>
+        Per ulteriori dettagli sui flussi abilitati per il Single Sign-On che utilizzano un'identità di piattaforma, fare riferimento alla documentazione <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md">Single Sign-On che utilizza flussi di identità di piattaforma</a>.</td>
       <td>facoltativo</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">AD-Service-Token</td>
       <td>
-        La generazione del payload Single Sign-On per il metodo Service Token è descritta nella documentazione dell'intestazione <a href="../../appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md">AD-Service-Token</a>.
-        <br/><br/>
-        Per ulteriori dettagli sui flussi abilitati per il Single Sign-On tramite un token di servizio, fare riferimento alla documentazione <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md">Single Sign-On tramite flussi di token di servizio</a>.
-      </td>
+        La generazione del payload Single Sign-On per il metodo Service Token è descritta nella documentazione dell'intestazione <a href="../../appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md">AD-Service-Token</a>.<br/><br/>
+        Per ulteriori dettagli sui flussi abilitati per il Single Sign-On tramite un token di servizio, fare riferimento alla documentazione <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md">Single Sign-On tramite flussi di token di servizio</a>.</td>
       <td>facoltativo</td>
    </tr>
    <tr>
@@ -132,10 +119,8 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">Accetta</td>
       <td>
-         Tipo di supporto accettato dall'applicazione client.
-         <br/><br/>
-         Se specificato, deve essere application/json;charset=utf-8.
-      </td>
+         Tipo di supporto accettato dall'applicazione client.<br/><br/>
+         Se specificato, deve essere application/json;charset=utf-8.</td>
       <td>facoltativo</td>
    </tr>
    <tr>
@@ -164,29 +149,25 @@ ht-degree: 1%
       <td>400</td>
       <td>Richiesta non valida</td>
       <td>
-        Richiesta non valida. Il client deve correggere la richiesta e riprovare. Il corpo della risposta può contenere informazioni di errore conformi alla documentazione di <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Codici di errore avanzati</a>.
-      </td>
+        Richiesta non valida. Il client deve correggere la richiesta e riprovare. Il corpo della risposta può contenere informazioni di errore conformi alla documentazione di <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Codici di errore avanzati</a>.</td>
    </tr>
    <tr>
       <td>401</td>
       <td>Non autorizzato</td>
       <td>
-        Il token di accesso non è valido, il client deve ottenere un nuovo token di accesso e riprovare. Per ulteriori dettagli, consulta la documentazione <a href="../../../rest-api-dcr/dynamic-client-registration-overview.md">Panoramica registrazione client dinamico</a>.
-      </td>
+        Il token di accesso non è valido, il client deve ottenere un nuovo token di accesso e riprovare. Per ulteriori dettagli, consulta la documentazione <a href="../../../rest-api-dcr/dynamic-client-registration-overview.md">Panoramica registrazione client dinamico</a>.</td>
    </tr>
    <tr>
       <td>405</td>
       <td>Metodo non consentito</td>
       <td>
-        Metodo HTTP non valido. Il client deve utilizzare un metodo HTTP consentito per la risorsa richiesta e riprovare. Per ulteriori dettagli, consulta la sezione <a href="#request">Richiesta</a>.
-      </td>
+        Metodo HTTP non valido. Il client deve utilizzare un metodo HTTP consentito per la risorsa richiesta e riprovare. Per ulteriori dettagli, consulta la sezione <a href="#request">Richiesta</a>.</td>
    </tr>
    <tr>
       <td>500</td>
       <td>Errore interno del server</td>
       <td>
-        Si è verificato un problema sul lato server. Il corpo della risposta può contenere informazioni di errore conformi alla documentazione di <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Codici di errore avanzati</a>.
-      </td>
+        Si è verificato un problema sul lato server. Il corpo della risposta può contenere informazioni di errore conformi alla documentazione di <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Codici di errore avanzati</a>.</td>
    </tr>
 </table>
 
@@ -216,10 +197,8 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">logoout</td>
       <td>
-         JSON contenente una mappa di coppie chiave-valore.
-         <br/><br/>
-         L’elemento chiave è definito dal seguente valore:
-         <table style="table-layout:auto">
+         JSON contenente una mappa di coppie chiave-valore.<br/><br/>
+         L’elemento chiave è definito dal seguente valore:<table style="table-layout:auto">
             <tr>
                <th style="background-color: #EFF2F7;">Valore</th>
                <th style="background-color: #EFF2F7"></th>
@@ -240,10 +219,8 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">actionName</td>
                <td>
-                  Azione che il dispositivo di streaming deve eseguire per completare il flusso di logout.
-                  <br/><br/>
-                  I valori possibili sono:
-                  <ul>
+                  Azione che il dispositivo di streaming deve eseguire per completare il flusso di logout.<br/><br/>
+                  I valori possibili sono:<ul>
                     <li><b>logout</b><br/>Il dispositivo di streaming deve aprire l'URL specificato in un agente utente.<br/>Questa azione si applica ai seguenti scenari: disconnettersi da MVPD con un endpoint di disconnessione.</li>
                     <li><b>partner_logout</b><br/>Il dispositivo di streaming deve informare l'utente della disconnessione anche dal livello partner (sistema).<br/>Questa azione si applica ai seguenti scenari: disconnettersi da MVPD quando il tipo di profilo è "appleSSO".</li>
                     <li><b>complete</b><br/>Il dispositivo di streaming non deve eseguire alcuna azione successiva.<br/>Questa azione è valida per i seguenti scenari: disconnettersi da MVPD senza un endpoint di disconnessione (funzionalità di disconnessione fittizia), disconnettersi durante un accesso non ottimale, disconnettersi durante un accesso temporaneo.</li>
@@ -254,10 +231,8 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">actionType</td>
                <td>
-                  Tipo di interazione che il dispositivo di streaming deve eseguire per continuare il flusso con l’azione specificata dall’attributo "actionName".
-                  <br/><br/>
-                  I valori possibili sono:
-                  <ul>
+                  Tipo di interazione che il dispositivo di streaming deve eseguire per continuare il flusso con l’azione specificata dall’attributo "actionName".<br/><br/>
+                  I valori possibili sono:<ul>
                     <li><b>interactive</b><br/>Questo tipo si applica ai seguenti valori dell'attributo "actionName": <b>logout</b>.</li>
                     <li><b>partner_interactive</b><br/>Questo tipo si applica ai seguenti valori dell'attributo "actionName": <b>partner_logout</b>.</li>
                     <li><b>none</b><br/>Questo tipo si applica ai seguenti valori dell'attributo "actionName": <b>complete</b>, <b>invalid</b>.</li>
@@ -272,10 +247,8 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">url</td>
                <td>
-                  URL utilizzato per eseguire il flusso di logout con l’endpoint MVPD.
-                  <br/><br/>
-                  Ciò non è presente per i seguenti valori dell’attributo "actionName":
-                  <ul>
+                  URL utilizzato per eseguire il flusso di logout con l’endpoint MVPD.<br/><br/>
+                  Ciò non è presente per i seguenti valori dell’attributo "actionName":<ul>
                     <li><b>completo</b></li>
                     <li><b>non valido</b></li>
                   </ul>
@@ -319,7 +292,7 @@ ht-degree: 1%
 
 ## Esempi {#samples}
 
-### &#x200B;1. Avvia la disconnessione per mvpd specifico con endpoint di disconnessione
+### &#x200B;1. Avvia disconnessione per mvpd specifico con endpoint di disconnessione
 
 >[!BEGINTABS]
 
@@ -356,7 +329,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### &#x200B;2. Avvia la disconnessione per mvpd specifico senza endpoint di disconnessione
+### &#x200B;2. Avvia disconnessione per mvpd specifico senza endpoint di disconnessione
 
 >[!BEGINTABS]
 
@@ -438,7 +411,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### &#x200B;4. Avviare la disconnessione singola per mvpd specifici, inclusi i profili ottenuti tramite il single sign-on utilizzando il metodo Platform Identity
+### &#x200B;4. Avvia disconnessione singola per mvpd specifici, inclusi i profili ottenuti tramite il Single Sign-On utilizzando il metodo Platform Identity
 
 >[!IMPORTANT]
 >
@@ -484,7 +457,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### &#x200B;5. Avvia la disconnessione per mvpd specifici, inclusi i profili ottenuti tramite il single sign-on tramite Partner (Apple)
+### &#x200B;5. Avvia la disconnessione per mvpd specifici, inclusi i profili ottenuti tramite il Single Sign-On tramite Partner (Apple)
 
 >[!BEGINTABS]
 
@@ -520,7 +493,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### &#x200B;6. Avviare la disconnessione per mvpd specifico durante l&#39;applicazione della degradazione
+### &#x200B;6. Avvia disconnessione per mvpd specifico durante l&#39;applicazione della degradazione
 
 >[!BEGINTABS]
 
@@ -556,7 +529,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### &#x200B;7. Avvia la disconnessione per TempPass di base o promozionale (non richiesto)
+### &#x200B;7. Avvia disconnessione per TempPass di base o promozionale (non richiesto)
 
 >[!BEGINTABS]
 

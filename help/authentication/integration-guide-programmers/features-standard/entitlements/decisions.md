@@ -4,7 +4,7 @@ description: Decisioni
 exl-id: 1efd70af-8c1d-43c4-87fc-14488d42b23d
 source-git-commit: a19f4fd40c9cd851a00f05f82adbabb85edd8422
 workflow-type: tm+mt
-source-wordcount: '988'
+source-wordcount: '1014'
 ht-degree: 0%
 
 ---
@@ -148,5 +148,4 @@ Per ulteriori dettagli su come e quando integrare le API di cui sopra, consulta 
 
 >[!MORELIKETHIS]
 >
-> [Domande frequenti sulla fase di preautorizzazione](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#preauthorization-phase-faqs-general)
-> [Domande frequenti sulla fase di autorizzazione](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authorization-phase-faqs-general)
+> [Domande frequenti sulla fase di preautorizzazioneDomande frequenti sulla fase di autorizzazione](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authorization-phase-faqs-general)
