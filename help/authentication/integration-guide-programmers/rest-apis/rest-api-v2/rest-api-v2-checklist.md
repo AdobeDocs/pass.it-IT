@@ -4,7 +4,7 @@ description: Elenco di controllo REST API V2
 exl-id: 9095d1dd-a90c-4431-9c58-9a900bfba1cf
 source-git-commit: 63dc9636f74f8eee1af6205c4d31a01df4503050
 workflow-type: tm+mt
-source-wordcount: '2563'
+source-wordcount: '2578'
 ht-degree: 0%
 
 ---
@@ -60,7 +60,7 @@ Il seguente documento deve essere considerato parte dei criteri di accettazione 
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"><i>Recupero configurazione</i></td>
-      <td>Recupera la risposta di configurazione solo quando viene richiesto di richiedere all’utente di selezionare il proprio MVPD (provider TV) prima della fase di autenticazione.<br/><br/>Non è necessario recuperare la risposta di configurazione quando:<ul><li>Utente già autenticato.</li><li>All’utente viene offerto l’accesso temporaneo.</li><li>L’autenticazione dell’utente è scaduta, ma è possibile richiedere all’utente di confermare che è ancora un abbonato del MVPD selezionato in precedenza.</li></ul></td>
+      <td>Recupera la risposta di configurazione solo quando viene richiesto di richiedere all'utente di selezionare il proprio MVPD (provider TV) prima della fase di autenticazione.<br/><br/>Non è necessario recuperare la risposta di configurazione quando:<ul><li>Utente già autenticato.</li><li>All’utente viene offerto l’accesso temporaneo.</li><li>L’autenticazione dell’utente è scaduta, ma è possibile richiedere all’utente di confermare che è ancora un abbonato del MVPD selezionato in precedenza.</li></ul></td>
       <td>Rischi di sovraccarico delle risorse di sistema e aumento della latenza.</td>
    </tr>
    <tr>
@@ -111,7 +111,7 @@ Il seguente documento deve essere considerato parte dei criteri di accettazione 
    <tr>
       <td style="background-color: #DEEBFF;"><i>Recupero decisioni di pre-autorizzazione</i></td>
       <td>Utilizza le decisioni di preautorizzazione per il filtro dei contenuti e mai per le decisioni di riproduzione.</td>
-      <td>Rischi che violano gli accordi contrattuali tra programmatore, MVPD e Adobe.<br/><br/>Rischio di aggirare i sistemi di monitoraggio e di avviso.</td>
+      <td>Rischi che violano gli accordi contrattuali tra Programmatore, MVPD e Adobe.<br/><br/>Rischi che aggirano i nostri sistemi di monitoraggio e di avviso.</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"><i>Recupero decisioni di pre-autorizzazione - Nuovo tentativo</i></td>
@@ -136,7 +136,7 @@ Il seguente documento deve essere considerato parte dei criteri di accettazione 
    <tr>
       <td style="background-color: #DEEBFF;"><i>Recupero decisioni di autorizzazione</i></td>
       <td>Ottenere decisioni di autorizzazione prima della riproduzione, indipendentemente dall'esistenza di una decisione di preautorizzazione.<br/><br/>Consenti ai flussi di continuare senza interruzioni anche se il token multimediale scade durante la riproduzione e richiedi una nuova decisione di autorizzazione contenente un token multimediale (nuovo) quando l'utente effettua la richiesta di riproduzione successiva, indipendentemente dal fatto che si tratti della stessa risorsa o di una risorsa diversa.<br/><br/>I flussi attivi in esecuzione per periodi di tempo prolungati possono scegliere di richiedere una nuova decisione di autorizzazione in seguito a operazioni video quali la sospensione del contenuto, l'avvio di interruzioni commerciali o la modifica di configurazioni a livello di risorsa quando il sistema MRSS subisce modifiche.</td>
-      <td>Rischi che violano gli accordi contrattuali tra programmatore, MVPD e Adobe.<br/><br/>Rischio di aggirare i sistemi di monitoraggio e di avviso.</td>
+      <td>Rischi che violano gli accordi contrattuali tra Programmatore, MVPD e Adobe.<br/><br/>Rischi che aggirano i nostri sistemi di monitoraggio e di avviso.</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"><i>Nuovo tentativo di recupero decisioni di autorizzazione</i></td>
@@ -145,7 +145,7 @@ Il seguente documento deve essere considerato parte dei criteri di accettazione 
    </tr>
 </table>
 
-### &#x200B;6. Fase di disconnessione {#mandatory-requirements-logout-phase}
+### &#x200B;6. Fase disconnessione {#mandatory-requirements-logout-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -181,7 +181,7 @@ Il seguente documento deve essere considerato parte dei criteri di accettazione 
    <tr>
       <td style="background-color: #DEEBFF;"><i>Intestazione Send X-Device-Info</i></td>
       <td>Invia l'intestazione <a href="/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a> per ogni richiesta REST API v2.<br/><br/>Anche quando la richiesta proviene da un server per conto di un dispositivo, il valore dell'intestazione X-Device-Info deve riflettere le informazioni effettive sul dispositivo di streaming.</td>
-      <td>Rischi classificati come provenienti da una piattaforma sconosciuta e trattati come insicuri, soggetti a norme più restrittive, come TTL di autenticazione più brevi.<br/><br/>Inoltre, alcuni campi, come connectionIp e connectionPort del dispositivo di streaming, sono obbligatori per funzionalità quali l'autenticazione di base di Spectrum.</td>
+      <td>Rischi classificati come provenienti da una piattaforma sconosciuta e trattati come non sicuri, soggetti a regole più restrittive, ad esempio TTL di autenticazione più brevi.<br/><br/>Inoltre, alcuni campi, come connectionIp e connectionPort del dispositivo di streaming, sono obbligatori per funzionalità come Autenticazione di base dello spettro.</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"><i>Identificatore dispositivo stabile</i></td>
@@ -215,7 +215,7 @@ Il seguente documento deve essere considerato parte dei criteri di accettazione 
    </tr>
 </table>
 
-### &#x200B;9. Prove {#mandatory-requirements-testing}
+### &#x200B;9. Test {#mandatory-requirements-testing}
 
 <table style="table-layout:auto">
    <tr>
@@ -225,7 +225,7 @@ Il seguente documento deve essere considerato parte dei criteri di accettazione 
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"><i>Test del ciclo di vita</i></td>
-      <td>Sviluppa e testa l’applicazione utilizzando gli ambienti ufficiali non di produzione per l’autenticazione di Adobe Pass:<ul><li>Prequal-Produzione</li><li>Release-Staging</li></ul><br/>Esegui un controllo qualità completo in questi ambienti prima di lanciare la versione di produzione.<br/><br/>Le applicazioni client non devono passare alla fase Release-Production senza aver prima completato la convalida end-to-end in ambienti non di produzione.</td>
+      <td>Sviluppa e testa l’applicazione utilizzando gli ambienti ufficiali non di produzione per l’autenticazione di Adobe Pass:<ul><li>Prequal-Produzione</li><li>Release-Staging</li></ul><br/>Eseguire un controllo qualità completo in questi ambienti prima di avviare Release-Production.<br/><br/>Le applicazioni client non devono passare a Release-Production senza prima completare la convalida end-to-end in ambienti non di produzione.</td>
       <td>Rischi di lancio con difetti critici e gravi.<br/><br/>La mancanza di un percorso di debug breve ed efficiente può impedire al supporto e al team tecnico di Adobe di intervenire rapidamente.</td>
    </tr>
 </table>
@@ -272,7 +272,7 @@ Il seguente documento deve essere considerato parte dei criteri di accettazione 
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"><i>Convalida del codice di autenticazione (seconda schermata)</i></td>
-      <td>Convalida il codice di autenticazione inviato tramite l'input dell'utente nell'applicazione secondaria (seconda) (schermata) prima di chiamare l'API /api/v2/authenticate nelle seguenti condizioni:<br/><br/><b><a href="/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md#perform-authentication-within-secondary-application-with-preselected-mvpd">Autenticazione eseguita nell'applicazione secondaria (schermata) con mvpd preselezionato</a></b><ul><li>Utilizza <a href="/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-resume-authentication-session.md">Riprendi sessione di autenticazione</a> - POST /api/v2/{serviceProvider}/session/{code}</li></ul><br/><b><a href="/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md#perform-authentication-within-secondary-application-without-preselected-mvpd">Autenticazione eseguita nell'applicazione secondaria (schermo) senza mvpd preselezionato</a></b><ul><li>Utilizza <a href="/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md">Recupera sessione di autenticazione</a> - GET /api/v2/{serviceProvider}/session/{code}</li></ul><br/>L’applicazione client riceverebbe un errore se il codice di autenticazione fornito fosse stato digitato in modo errato o nel caso in cui la sessione di autenticazione fosse scaduta.</td>
+      <td>Convalida il codice di autenticazione inviato tramite l'input dell'utente nell'applicazione secondaria (seconda) (schermata) prima di chiamare l'API /api/v2/authenticate nelle seguenti condizioni:<br/><br/><b><a href="/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md#perform-authentication-within-secondary-application-with-preselected-mvpd">Autenticazione eseguita nell'applicazione secondaria (schermata) con mvpd preselezionato</a></b><ul><li>Utilizza <a href="/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-resume-authentication-session.md">Riprendi sessione di autenticazione</a> - POST /api/v2/{serviceProvider}/essions/{code}</li></ul><br/><b><a href="/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md#perform-authentication-within-secondary-application-without-preselected-mvpd">Autenticazione eseguita nell'applicazione secondaria (schermo) senza mvpd preselezionato</a></b><ul><li>Utilizza <a href="/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md">Recupera sessione di autenticazione</a> - GET /api/v2/{serviceProvider}/essions/{code}</li></ul><br/>L’applicazione client riceverebbe un errore se il codice di autenticazione fornito fosse stato digitato in modo errato o nel caso in cui la sessione di autenticazione fosse scaduta.</td>
       <td>Rischia varie risposte di errore e problemi del flusso di lavoro durante l’autenticazione.</td>
    </tr>
    <tr>
@@ -322,7 +322,7 @@ Il seguente documento deve essere considerato parte dei criteri di accettazione 
    </tr>
 </table>
 
-### &#x200B;6. Fase di disconnessione {#recommended-practices-logout-phase}
+### &#x200B;6. Fase disconnessione {#recommended-practices-logout-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -352,7 +352,7 @@ Il seguente documento deve essere considerato parte dei criteri di accettazione 
    </tr>
 </table>
 
-### &#x200B;8. Prove {#recommended-practices-testing}
+### &#x200B;8. Test {#recommended-practices-testing}
 
 <table style="table-layout:auto">
    <tr>

@@ -4,7 +4,7 @@ description: REST API V2 - Recupera richiesta di autenticazione partner
 exl-id: 52d8a8e9-c176-410f-92bc-e83449278943
 source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
 workflow-type: tm+mt
-source-wordcount: '1283'
+source-wordcount: '1354'
 ht-degree: 1%
 
 ---
@@ -29,7 +29,7 @@ ht-degree: 1%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">percorso</td>
-      <td>/api/v2/{serviceProvider}/session/sso/{partner}</td>
+      <td>/api/v2/{serviceProvider}/essions/sso/{partner}</td>
       <td></td>
    </tr>
    <tr>
@@ -60,25 +60,18 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">domainName</td>
       <td>
-        Dominio di origine dell’applicazione che esegue l’accesso a MVPD.
-        <br/><br/>
-        Se la piattaforma del dispositivo di streaming presenta limitazioni nell’offerta di un valore, un’applicazione dovrà riprendere la sessione di autenticazione e fornire un valore valido.
-        <br/><br/>
-        Questo verrà utilizzato in caso di scenari di fallback in cui la risposta indica che l’applicazione di streaming deve procedere con il flusso di autenticazione di base.
-      </td>
+        Dominio di origine dell’applicazione che esegue l’accesso a MVPD.<br/><br/>
+        Se la piattaforma del dispositivo di streaming presenta limitazioni nell’offerta di un valore, un’applicazione dovrà riprendere la sessione di autenticazione e fornire un valore valido.<br/><br/>
+        Questo verrà utilizzato in caso di scenari di fallback in cui la risposta indica che l’applicazione di streaming deve procedere con il flusso di autenticazione di base.</td>
       <td><i>obbligatorio</i></td>
    </tr>
     <tr>
       <td style="background-color: #DEEBFF;">redirectUrl</td>
       <td>
-        L’URL di reindirizzamento finale a cui si sposta l’agente utente al termine del flusso di autenticazione per MVPD.
-        <br/><br/>
-        Il valore deve essere codificato in URL.
-        <br/><br/>
-        Se la piattaforma del dispositivo di streaming presenta limitazioni nell’offerta di un valore, un’applicazione dovrà riprendere la sessione di autenticazione e fornire un valore valido.
-        <br/><br/>
-        Questo verrà utilizzato in caso di scenari di fallback in cui la risposta indica che l’applicazione di streaming deve procedere con il flusso di autenticazione di base.
-      </td>
+        L’URL di reindirizzamento finale a cui si sposta l’agente utente al termine del flusso di autenticazione per MVPD.<br/><br/>
+        Il valore deve essere codificato in URL.<br/><br/>
+        Se la piattaforma del dispositivo di streaming presenta limitazioni nell’offerta di un valore, un’applicazione dovrà riprendere la sessione di autenticazione e fornire un valore valido.<br/><br/>
+        Questo verrà utilizzato in caso di scenari di fallback in cui la risposta indica che l’applicazione di streaming deve procedere con il flusso di autenticazione di base.</td>
       <td><i>obbligatorio</i></td>
    </tr>
    <tr>
@@ -94,10 +87,8 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">Content-Type</td>
       <td>
-         Tipo di file multimediale accettato per le risorse inviate.
-         <br/><br/>
-         Deve essere codificata in application/x-www-form-urlencoded.
-      </td>
+         Tipo di file multimediale accettato per le risorse inviate.<br/><br/>
+         Deve essere codificata in application/x-www-form-urlencoded.</td>
       <td><i>obbligatorio</i></td>
    </tr>
    <tr>
@@ -108,33 +99,25 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">X-Device-Info</td>
       <td>
-         La generazione del payload di informazioni sul dispositivo è descritta nella documentazione dell'intestazione <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a>.
-         <br/><br/>
-         Si consiglia vivamente di utilizzarlo sempre quando la piattaforma del dispositivo dell’applicazione consente di fornire esplicitamente valori validi.
-         <br/><br/>
-         Se fornito, il backend di autenticazione di Adobe Pass unirà in modo esplicito i valori con quelli estratti in modo implicito (per impostazione predefinita).
-         <br/><br/>
-         Se non viene fornito, il backend di autenticazione Adobe Pass utilizzerà i valori estratti in modo implicito (per impostazione predefinita).
-      </td>
+         La generazione del payload di informazioni sul dispositivo è descritta nella documentazione dell'intestazione <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a>.<br/><br/>
+         Si consiglia vivamente di utilizzarlo sempre quando la piattaforma del dispositivo dell’applicazione consente di fornire esplicitamente valori validi.<br/><br/>
+         Se fornito, il backend di autenticazione di Adobe Pass unirà in modo esplicito i valori con quelli estratti in modo implicito (per impostazione predefinita).<br/><br/>
+         Se non viene fornito, il backend di autenticazione Adobe Pass utilizzerà i valori estratti in modo implicito (per impostazione predefinita).</td>
       <td><i>obbligatorio</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">AP-Partner-Framework-Status</td>
       <td>
-        La generazione del payload Single Sign-On per il metodo Partner è descritta nella documentazione dell'intestazione <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md">AP-Partner-Framework-Status</a>.
-        <br/><br/>
+        La generazione del payload Single Sign-On per il metodo Partner è descritta nella documentazione dell'intestazione <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md">AP-Partner-Framework-Status</a>.<br/><br/>
         Per ulteriori dettagli sui flussi abilitati per il Single Sign-On tramite un partner, fare riferimento alla documentazione <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md">Single Sign-On tramite flussi partner</a>.</td>
       <td>facoltativo</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">X-Forwarded-For</td>
       <td>
-         Indirizzo IP del dispositivo di streaming.
-         <br/><br/>
-         Si consiglia vivamente di utilizzarlo sempre per le implementazioni server-to-server, in particolare quando la chiamata viene effettuata dal servizio del programmatore anziché dal dispositivo di streaming.
-         <br/><br/>
-         Per le implementazioni client-server, l’indirizzo IP del dispositivo di streaming viene inviato in modo implicito.
-      </td>
+         Indirizzo IP del dispositivo di streaming.<br/><br/>
+         Si consiglia vivamente di utilizzarlo sempre per le implementazioni server-to-server, in particolare quando la chiamata viene effettuata dal servizio del programmatore anziché dal dispositivo di streaming.<br/><br/>
+         Per le implementazioni client-server, l’indirizzo IP del dispositivo di streaming viene inviato in modo implicito.</td>
       <td>facoltativo</td>
    </tr>
    <tr>
@@ -146,10 +129,8 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">Accetta</td>
       <td>
-         Tipo di supporto accettato dall'applicazione client.
-         <br/><br/>
-         Se specificato, deve essere application/json;charset=utf-8.
-      </td>
+         Tipo di supporto accettato dall'applicazione client.<br/><br/>
+         Se specificato, deve essere application/json;charset=utf-8.</td>
       <td>facoltativo</td>
    </tr>
    <tr>
@@ -178,29 +159,25 @@ ht-degree: 1%
       <td>400</td>
       <td>Richiesta non valida</td>
       <td>
-        Richiesta non valida. Il client deve correggere la richiesta e riprovare. Il corpo della risposta può contenere informazioni di errore conformi alla documentazione di <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Codici di errore avanzati</a>.
-      </td>
+        Richiesta non valida. Il client deve correggere la richiesta e riprovare. Il corpo della risposta può contenere informazioni di errore conformi alla documentazione di <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Codici di errore avanzati</a>.</td>
    </tr>
    <tr>
       <td>401</td>
       <td>Non autorizzato</td>
       <td>
-        Il token di accesso non è valido, il client deve ottenere un nuovo token di accesso e riprovare. Per ulteriori dettagli, consulta la documentazione <a href="../../../rest-api-dcr/dynamic-client-registration-overview.md">Panoramica registrazione client dinamico</a>.
-      </td>
+        Il token di accesso non è valido, il client deve ottenere un nuovo token di accesso e riprovare. Per ulteriori dettagli, consulta la documentazione <a href="../../../rest-api-dcr/dynamic-client-registration-overview.md">Panoramica registrazione client dinamico</a>.</td>
    </tr>
    <tr>
       <td>405</td>
       <td>Metodo non consentito</td>
       <td>
-        Metodo HTTP non valido. Il client deve utilizzare un metodo HTTP consentito per la risorsa richiesta e riprovare. Per ulteriori dettagli, consulta la sezione <a href="#request">Richiesta</a>.
-      </td>
+        Metodo HTTP non valido. Il client deve utilizzare un metodo HTTP consentito per la risorsa richiesta e riprovare. Per ulteriori dettagli, consulta la sezione <a href="#request">Richiesta</a>.</td>
    </tr>
    <tr>
       <td>500</td>
       <td>Errore interno del server</td>
       <td>
-        Si è verificato un problema sul lato server. Il corpo della risposta può contenere informazioni di errore conformi alla documentazione di <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Codici di errore avanzati</a>.
-      </td>
+        Si è verificato un problema sul lato server. Il corpo della risposta può contenere informazioni di errore conformi alla documentazione di <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Codici di errore avanzati</a>.</td>
    </tr>
 </table>
 
@@ -240,10 +217,8 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">actionName</td>
                <td>
-                  Azione che il dispositivo di streaming deve eseguire per completare il flusso di autenticazione.
-                  <br/><br/>
-                  I valori possibili sono:
-                  <ul>
+                  Azione che il dispositivo di streaming deve eseguire per completare il flusso di autenticazione.<br/><br/>
+                  I valori possibili sono:<ul>
                     <li><b>partner_profile</b><br/>Il dispositivo di streaming può utilizzare la richiesta di autenticazione partner fornita per ottenere una risposta di autenticazione partner che può essere utilizzata per recuperare un profilo.</li>
                     <li><b>autentica</b><br/>Quando il flusso Single Sign-On del partner non riesce a procedere, il dispositivo di streaming può tornare al flusso di autenticazione di base.<br/>Il dispositivo di streaming o un altro dispositivo deve aprire l'URL specificato in un agente utente.</li>
                     <li><b>riprendi</b><br/>Quando il flusso Single Sign-On del partner non riesce a continuare, il dispositivo di streaming può tornare al flusso di autenticazione di base.<br/>Il dispositivo di streaming o un altro dispositivo deve fornire i parametri mancanti e riprendere la sessione di autenticazione utilizzando il codice.</li>
@@ -254,10 +229,8 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">actionType</td>
                <td>
-                  Tipo di interazione che il dispositivo di streaming deve eseguire per continuare il flusso con l’azione specificata dall’attributo "actionName".
-                  <br/><br/>
-                  I valori possibili sono:
-                  <ul>
+                  Tipo di interazione che il dispositivo di streaming deve eseguire per continuare il flusso con l’azione specificata dall’attributo "actionName".<br/><br/>
+                  I valori possibili sono:<ul>
                     <li><b>interattivo</b><br/>Il flusso continua con la navigazione all'URL specificato tramite un agente utente.</li>
                     <li><b>diretto</b><br/>Il flusso continua con una chiamata diretta all'URL fornito tramite un client HTTP disponibile per l'implementazione del client.</li>
                   </ul>
@@ -266,10 +239,8 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">reasonType</td>
                <td>
-                  Tipo di motivo che spiega il "actionName".
-                  <br/><br/>
-                  I valori possibili sono:
-                  <ul>
+                  Tipo di motivo che spiega il "actionName".<br/><br/>
+                  I valori possibili sono:<ul>
                     <li><b>nessuno</b><br/>Per continuare l'autenticazione è necessario che l'applicazione client continui a eseguire l'autenticazione.</li>
                     <li><b>autenticata</b><br/>L'applicazione client è già autenticata tramite flussi di accesso di base.</li>
                     <li><b>danneggiata</b><br/>L'applicazione client è già autenticata tramite flussi di accesso danneggiati.</li>
@@ -283,10 +254,8 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">missingParameters</td>
                <td>
-                    Parametri mancanti da fornire per completare il flusso di autenticazione di base.
-                    <br/><br/>
-                    Questo campo è presente quando il flusso Single Sign-On del partner non può procedere.
-               </td>
+                    Parametri mancanti da fornire per completare il flusso di autenticazione di base.<br/><br/>
+                    Questo campo è presente quando il flusso Single Sign-On del partner non può procedere.</td>
                <td>facoltativo</td>
             </tr>
             <tr>
@@ -297,21 +266,16 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">codice</td>
                <td>
-                    Codice di autenticazione che può essere utilizzato in un'applicazione secondaria per riprendere la sessione di autenticazione.
-                    <br/><br/>
-                    Questo campo è presente quando il flusso Single Sign-On del partner non può procedere.
-               </td>
+                    Codice di autenticazione che può essere utilizzato in un'applicazione secondaria per riprendere la sessione di autenticazione.<br/><br/>
+                    Questo campo è presente quando il flusso Single Sign-On del partner non può procedere.</td>
                <td>facoltativo</td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">authenticationRequest</td>
                <td>
-                    La richiesta di autenticazione del partner da utilizzare nel flusso di autenticazione con il partner al di fuori del sistema di autenticazione di Adobe Pass.
-                    <br/><br/>
-                    Questo campo è presente quando il flusso Single Sign-On del partner può procedere.
-                    <br/><br/>
-                    Oggetto JSON con i seguenti attributi:
-                    <ul>
+                    La richiesta di autenticazione del partner da utilizzare nel flusso di autenticazione con il partner al di fuori del sistema di autenticazione di Adobe Pass.<br/><br/>
+                    Questo campo è presente quando il flusso Single Sign-On del partner può procedere.<br/><br/>
+                    Oggetto JSON con i seguenti attributi:<ul>
                         <li><b>tipo</b><br/>Indica il tipo di protocollo supportato da MVPD (solo SAML).</li>
                         <li><b>richiesta</b><br/>La richiesta SAML.</li>
                         <li><b>attributesNames</b><br/>Attributi della richiesta SAML.</li>
@@ -380,7 +344,7 @@ ht-degree: 1%
 
 ## Esempi {#samples}
 
-### &#x200B;1. Recuperare la richiesta di autenticazione del partner
+### &#x200B;1. Recupera richiesta di autenticazione partner
 
 >[!BEGINTABS]
 
@@ -427,7 +391,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### &#x200B;2. Recuperare la richiesta di autenticazione partner, ma viene applicata la riduzione del livello di protezione
+### &#x200B;2. Recupera la richiesta di autenticazione del partner, ma viene applicata una riduzione del livello di servizio
 
 >[!BEGINTABS]
 

@@ -4,7 +4,7 @@ description: Manuale dell’API REST V2 (server-to-server)
 exl-id: 3160c03c-849d-4d39-95e5-9a9cbb46174d
 source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
-source-wordcount: '2497'
+source-wordcount: '2524'
 ht-degree: 0%
 
 ---
@@ -79,7 +79,7 @@ L’ambiente di produzione deve essere altamente disponibile e scalato in modo a
 
 * Il programmatore deve fornire l&#39;intervallo IP pubblico del proprio ambiente di produzione.
 
-   * Questi IP verranno aggiunti a un inserisco nell&#39;elenco Consentiti di all’interno dell’infrastruttura Adobe Pass.
+   * Questi IP verranno aggiunti a un inserisco nell&#39;elenco Consentiti di infrastruttura Adobe Pass all’interno del sistema di gestione dell’infrastruttura.
 
 * Il servizio Programmer deve limitare il caching DNS a un massimo di 30 secondi per consentire il reindirizzamento dinamico nel caso in cui Adobe debba reindirizzare il traffico a causa di un centro dati non disponibile.
 
@@ -234,7 +234,7 @@ Domande frequenti
 
    * Il servizio Programmatore deve memorizzare in cache parti delle informazioni del profilo dell’utente in un archivio persistente per evitare richieste inutili e migliorare l’esperienza utente.
 
-## C. Fase di pre-autorizzazione (facoltativa) {#preauthorization-phase}
+## C. (Facoltativo) Fase di pre-autorizzazione {#preauthorization-phase}
 
 Lo scopo della fase di pre-autorizzazione è quello di fornire all’applicazione di streaming la capacità di presentare un sottoinsieme di risorse dal suo catalogo a cui l’utente avrebbe diritto di accedere.
 

@@ -4,8 +4,8 @@ description: Rest API cookbook server to server.
 exl-id: 36ad4a64-dde8-4a5f-b0fe-64b6c0ddcbee
 source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
-source-wordcount: '1856'
-ht-degree: 0%
+source-wordcount: '1891'
+ht-degree: 1%
 
 ---
 
@@ -119,8 +119,7 @@ Il diagramma seguente illustra il flusso di preautorizzazione:
 
 ### \[Facoltativo\] Metadati
 
-I metadati possono essere utilizzati per recuperare le informazioni utente condivise da MVPD.
-Alcuni esempi includono ID utente, codice postale, ecc.
+I metadati possono essere utilizzati per recuperare le informazioni utente condivise da MVPD.Alcuni esempi includono ID utente, codice postale, ecc.
 
 1. Una volta autenticato l&#39;utente, il servizio Programmer può chiamare l&#39;API Adobe Pass **usermetadata** per richiedere informazioni sull&#39;utente autenticato.
 
@@ -187,7 +186,7 @@ Il servizio Programmatore deve trasmettere informazioni accurate sull’identifi
 
 
 
-Il servizio Programmer deve inviare i dati e la formattazione richiesti dai singoli MVPD o dalle app integrate (ad esempio, IP dispositivo, porta di origine, informazioni dispositivo, MRSS, dati opzionali come ECID). <!--Please see the documentation for [Passing Device and Connection Information Cookbook](http://tve.helpdocsonline.com/passing-device-information-cookbook)-->.
+Il servizio Programmer deve inviare i dati e la formattazione richiesti dai singoli MVPD o dalle app integrate (ad esempio, IP dispositivo, porta sorgente, informazioni sul dispositivo, MRSS, dati opzionali come ECID). <!--Please see the documentation for [Passing Device and Connection Information Cookbook](http://tve.helpdocsonline.com/passing-device-information-cookbook)-->.
 
 
 Il servizio Programmer deve rispettare i TTL authN e authZ durante il caching e annullare la validità delle sessioni authN o authZ quando riceve la notifica.

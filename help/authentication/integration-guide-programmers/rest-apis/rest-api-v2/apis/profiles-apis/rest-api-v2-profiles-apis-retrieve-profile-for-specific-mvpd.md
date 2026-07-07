@@ -4,8 +4,8 @@ description: REST API V2 - Recupera profilo per mvpd specifico
 exl-id: ed1abc33-c279-4465-b5a0-b4e5b892076e
 source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
 workflow-type: tm+mt
-source-wordcount: '1083'
-ht-degree: 1%
+source-wordcount: '1221'
+ht-degree: 2%
 
 ---
 
@@ -74,50 +74,38 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">X-Device-Info</td>
       <td>
-         La generazione del payload di informazioni sul dispositivo è descritta nella documentazione dell'intestazione <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a>.
-         <br/><br/>
-         Si consiglia vivamente di utilizzarlo sempre quando la piattaforma del dispositivo dell’applicazione consente di fornire esplicitamente valori validi.
-         <br/><br/>
-         Se fornito, il backend di autenticazione di Adobe Pass unirà in modo esplicito i valori con quelli estratti in modo implicito (per impostazione predefinita).
-         <br/><br/>
-         Se non viene fornito, il backend di autenticazione Adobe Pass utilizzerà i valori estratti in modo implicito (per impostazione predefinita).
-      </td>
+         La generazione del payload di informazioni sul dispositivo è descritta nella documentazione dell'intestazione <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a>.<br/><br/>
+         Si consiglia vivamente di utilizzarlo sempre quando la piattaforma del dispositivo dell’applicazione consente di fornire esplicitamente valori validi.<br/><br/>
+         Se fornito, il backend di autenticazione di Adobe Pass unirà in modo esplicito i valori con quelli estratti in modo implicito (per impostazione predefinita).<br/><br/>
+         Se non viene fornito, il backend di autenticazione Adobe Pass utilizzerà i valori estratti in modo implicito (per impostazione predefinita).</td>
       <td><i>obbligatorio</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">X-Forwarded-For</td>
       <td>
-         Indirizzo IP del dispositivo di streaming.
-         <br/><br/>
-         Si consiglia vivamente di utilizzarlo sempre per le implementazioni server-to-server, in particolare quando la chiamata viene effettuata dal servizio del programmatore anziché dal dispositivo di streaming.
-         <br/><br/>
-         Per le implementazioni client-server, l’indirizzo IP del dispositivo di streaming viene inviato in modo implicito.
-      </td>
+         Indirizzo IP del dispositivo di streaming.<br/><br/>
+         Si consiglia vivamente di utilizzarlo sempre per le implementazioni server-to-server, in particolare quando la chiamata viene effettuata dal servizio del programmatore anziché dal dispositivo di streaming.<br/><br/>
+         Per le implementazioni client-server, l’indirizzo IP del dispositivo di streaming viene inviato in modo implicito.</td>
       <td>facoltativo</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Adobe-Subject-Token<br/>or<br/>X-Roku-Reserved-Roku-Connect-Token</td>
       <td>
-        La generazione del payload Single Sign-On per il metodo Platform Identity è descritta nella documentazione dell'intestazione <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Adobe-Subject-Token</a> / <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md">X-Roku-Reserved-Roku-Connect-Token</a>.
-        <br/><br/>
-        Per ulteriori dettagli sui flussi abilitati per il Single Sign-On che utilizzano un'identità di piattaforma, fare riferimento alla documentazione <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md">Single Sign-On che utilizza flussi di identità di piattaforma</a>.
-      </td>
+        La generazione del payload Single Sign-On per il metodo Platform Identity è descritta nella documentazione dell'intestazione <a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Adobe-Subject-Token</a> / <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md">X-Roku-Reserved-Roku-Connect-Token</a>.<br/><br/>
+        Per ulteriori dettagli sui flussi abilitati per il Single Sign-On che utilizzano un'identità di piattaforma, fare riferimento alla documentazione <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md">Single Sign-On che utilizza flussi di identità di piattaforma</a>.</td>
       <td>facoltativo</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">AD-Service-Token</td>
       <td>
-        La generazione del payload Single Sign-On per il metodo Service Token è descritta nella documentazione dell'intestazione <a href="../../appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md">AD-Service-Token</a>.
-        <br/><br/>
-        Per ulteriori dettagli sui flussi abilitati per il Single Sign-On tramite un token di servizio, fare riferimento alla documentazione <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md">Single Sign-On tramite flussi di token di servizio</a>.
-      </td>
+        La generazione del payload Single Sign-On per il metodo Service Token è descritta nella documentazione dell'intestazione <a href="../../appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md">AD-Service-Token</a>.<br/><br/>
+        Per ulteriori dettagli sui flussi abilitati per il Single Sign-On tramite un token di servizio, fare riferimento alla documentazione <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md">Single Sign-On tramite flussi di token di servizio</a>.</td>
       <td>facoltativo</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">AP-Partner-Framework-Status</td>
       <td>
-        La generazione del payload Single Sign-On per il metodo Partner è descritta nella documentazione dell'intestazione <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md">AP-Partner-Framework-Status</a>.
-        <br/><br/>
+        La generazione del payload Single Sign-On per il metodo Partner è descritta nella documentazione dell'intestazione <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md">AP-Partner-Framework-Status</a>.<br/><br/>
         Per ulteriori dettagli sui flussi abilitati per il Single Sign-On tramite un partner, fare riferimento alla documentazione <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md">Single Sign-On tramite flussi partner</a>.</td>
       <td>facoltativo</td>
     </tr>
@@ -135,10 +123,8 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">Accetta</td>
       <td>
-         Tipo di supporto accettato dall'applicazione client.
-         <br/><br/>
-         Se specificato, deve essere application/json;charset=utf-8.
-      </td>
+         Tipo di supporto accettato dall'applicazione client.<br/><br/>
+         Se specificato, deve essere application/json;charset=utf-8.</td>
       <td>facoltativo</td>
    </tr>
    <tr>
@@ -167,36 +153,31 @@ ht-degree: 1%
       <td>400</td>
       <td>Richiesta non valida</td>
       <td>
-        Richiesta non valida. Il client deve correggere la richiesta e riprovare. Il corpo della risposta può contenere informazioni di errore conformi alla documentazione di <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Codici di errore avanzati</a>.
-      </td>
+        Richiesta non valida. Il client deve correggere la richiesta e riprovare. Il corpo della risposta può contenere informazioni di errore conformi alla documentazione di <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Codici di errore avanzati</a>.</td>
    </tr>
    <tr>
       <td>401</td>
       <td>Non autorizzato</td>
       <td>
-        Il token di accesso non è valido, il client deve ottenere un nuovo token di accesso e riprovare. Per ulteriori dettagli, consulta la documentazione <a href="../../../rest-api-dcr/dynamic-client-registration-overview.md">Panoramica registrazione client dinamico</a>.
-      </td>
+        Il token di accesso non è valido, il client deve ottenere un nuovo token di accesso e riprovare. Per ulteriori dettagli, consulta la documentazione <a href="../../../rest-api-dcr/dynamic-client-registration-overview.md">Panoramica registrazione client dinamico</a>.</td>
    </tr>
    <tr>
       <td>403</td>
       <td>Non consentito</td>
       <td>
-        Il TTL (Temporary Access Time-to-Live) è scaduto o il numero massimo di risorse è stato superato. Il client deve indicare all’utente di avviare un flusso di autenticazione di base utilizzando un normale MVPD. Il corpo della risposta può contenere informazioni di errore conformi alla documentazione di <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Codici di errore avanzati</a>.
-      </td>
+        Il TTL (Temporary Access Time-to-Live) è scaduto o il numero massimo di risorse è stato superato. Il client deve indicare all’utente di avviare un flusso di autenticazione di base utilizzando un normale MVPD. Il corpo della risposta può contenere informazioni di errore conformi alla documentazione di <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Codici di errore avanzati</a>.</td>
    </tr>
    <tr>
       <td>405</td>
       <td>Metodo non consentito</td>
       <td>
-        Metodo HTTP non valido. Il client deve utilizzare un metodo HTTP consentito per la risorsa richiesta e riprovare. Per ulteriori dettagli, consulta la sezione <a href="#request">Richiesta</a>.
-      </td>
+        Metodo HTTP non valido. Il client deve utilizzare un metodo HTTP consentito per la risorsa richiesta e riprovare. Per ulteriori dettagli, consulta la sezione <a href="#request">Richiesta</a>.</td>
    </tr>
    <tr>
       <td>500</td>
       <td>Errore interno del server</td>
       <td>
-        Si è verificato un problema sul lato server. Il corpo della risposta può contenere informazioni di errore conformi alla documentazione di <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Codici di errore avanzati</a>.
-      </td>
+        Si è verificato un problema sul lato server. Il corpo della risposta può contenere informazioni di errore conformi alla documentazione di <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Codici di errore avanzati</a>.</td>
    </tr>
 </table>
 
@@ -226,10 +207,8 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">profili</td>
       <td>
-        JSON contenente una mappa di coppie chiave-valore.
-        <br/><br/>
-        L’elemento chiave è definito dal seguente valore:
-        <table style="table-layout:auto">
+        JSON contenente una mappa di coppie chiave-valore.<br/><br/>
+        L’elemento chiave è definito dal seguente valore:<table style="table-layout:auto">
             <tr>
                <th style="background-color: #EFF2F7;">Valore</th>
                <th style="background-color: #EFF2F7"></th>
@@ -261,11 +240,9 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">emittente</td>
                <td>
-                  Entità a cui appartiene il profilo.
-                  <br/><br/>
-                  I valori possibili sono:
-                  <ul>
-                    <li><b>mvpd (ad esempio, Spectrum, Cablevision e così via)</b><br/>Il profilo è stato creato in seguito a: autenticazione di base, Single Sign-On tramite l'identità della piattaforma o Single Sign-On tramite il token di servizio.</li>
+                  Entità a cui appartiene il profilo.<br/><br/>
+                  I valori possibili sono:<ul>
+                    <li><b>mvpd (ad esempio, Spectrum, Cablevision e così via)</b><br/>Il profilo è stato creato come risultato di: autenticazione di base, Single Sign-On tramite l'identità della piattaforma o Single Sign-On tramite il token di servizio.</li>
                     <li><b>Adobe</b><br/>Il profilo è stato creato in seguito a: accesso danneggiato, accesso temporaneo.</li>
                     <li><b>Apple</b><br/>Il profilo è stato creato in seguito a: single sign-on con il partner Apple.</li>
                   </ul>
@@ -274,10 +251,8 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">tipo</td>
                <td>
-                  Tipo del profilo.
-                  <br/><br/>
-                  I valori possibili sono:
-                  <ul>
+                  Tipo del profilo.<br/><br/>
+                  I valori possibili sono:<ul>
                     <li><b>regolare</b><br/>Il profilo è stato creato come risultato di: autenticazione di base.</li>
                     <li><b>danneggiato</b><br/>Il profilo è stato creato in seguito a: accesso danneggiato.</li>
                     <li><b>temporaneo</b><br/>Il profilo è stato creato in seguito a: accesso temporaneo.</li>
@@ -290,10 +265,8 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">attributi</td>
                <td>
-                    JSON contenente una mappa di coppie chiave-valore.
-                    <br/><br/>
-                    L’elemento chiave è definito dagli attributi di metadati dell’utente e può essere:
-                    <ul>
+                    JSON contenente una mappa di coppie chiave-valore.<br/><br/>
+                    L’elemento chiave è definito dagli attributi di metadati dell’utente e può essere:<ul>
                         <li>Obbligatorio, come "userID"</li>
                         <li>Non obbligatorio, come "zip", "familyID", "maxRating", ecc.</li>
                     </ul>
@@ -344,7 +317,7 @@ ht-degree: 1%
 
 ## Esempi {#samples}
 
-### &#x200B;1. Recuperare il profilo per mvpd specifico ottenuto tramite autenticazione di base
+### &#x200B;1. Recupera profilo per mvpd specifico ottenuto tramite autenticazione di base
 
 >[!BEGINTABS]
 
@@ -395,7 +368,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### &#x200B;2. Recuperare il profilo per mvpd specifici ottenuti tramite autenticazione di base o single sign-on utilizzando il metodo Service Token
+### &#x200B;2. Recupera profilo per mvpd specifico ottenuto tramite autenticazione di base o single sign-on utilizzando il metodo Service Token
 
 >[!BEGINTABS]
 
@@ -499,7 +472,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### &#x200B;4. Recuperare il profilo per TempPass di base
+### &#x200B;4. Recupera profilo per TempPass di base
 
 >[!BEGINTABS]
 
@@ -578,7 +551,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### &#x200B;5. Recuperare il profilo per TempPass promozionale
+### &#x200B;5. Recupera profilo per TempPass promozionale
 
 >[!BEGINTABS]
 
@@ -703,7 +676,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### &#x200B;6. Recuperare il profilo per mvpd specifico durante l&#39;applicazione della degradazione
+### &#x200B;6. Recupera profilo per mvpd specifico durante l&#39;applicazione della degradazione
 
 >[!BEGINTABS]
 
