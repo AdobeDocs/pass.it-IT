@@ -4,7 +4,7 @@ description: Manuale di JavaScript SDK
 exl-id: d57f7a4a-ac77-4f3c-8008-0cccf8839f7c
 source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
-source-wordcount: '957'
+source-wordcount: '972'
 ht-degree: 0%
 
 ---
@@ -97,7 +97,7 @@ utente.
 
 ## &#x200B;2. Flusso di avvio
 
-**I. Caricare AccessEnabler JavaScript:**
+**I.  Carica AccessEnabler JavaScript:**
 
 **Per Il Profilo Di Staging**
 
@@ -122,7 +122,7 @@ l&#39;autenticazione chiama la funzione di callback `entitlementLoaded()`. Quest
 
 
 **II.** Chiama `setRequestor()` per stabilire
-identità del programmatore; passare il `requestorID` del programmatore e
+identità del programmatore; passare `requestorID` del programmatore e
 (facoltativamente) un array di endpoint di autenticazione Adobe Pass.
 
 **Trigger:** Nessuno, ma consente di chiamare `displayProviderDialog()` quando necessario.
@@ -164,7 +164,7 @@ Chiamare `getAuthorization()` e passare ResourceID per il supporto richiesto. In
 - Se la chiamata non riesce: esamina l’eccezione generata per determinarne il tipo (AuthN, AuthZ o altro):
 - Se la chiamata era un errore AuthN, riavvia il flusso AuthN.
 - Se la chiamata era un errore AuthZ, l’utente non è autorizzato a guardare il contenuto multimediale richiesto e deve visualizzare un qualche tipo di messaggio di errore.
-- Se si è verificato un altro errore (errore di connessione, errore di rete, ecc.), visualizza un messaggio di errore appropriato.
+- In caso di altri errori (errore di connessione, errore di rete, ecc.) quindi visualizza un messaggio di errore appropriato.
 
 Utilizza Media Token Verifier per convalidare il shortMediaToken restituito da una chiamata `getAuthorization()` riuscita.
 
@@ -186,7 +186,7 @@ libreria AccessEnabler)
 
 ## Configurazione dell’ID visitatore {#visitorID}
 
-La configurazione di un valore [Experience Cloud visitorID](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=it) è molto importante dal punto di vista analitico. Una volta impostato il valore EC visitorID, SDK invierà queste informazioni insieme a ogni chiamata di rete e il servizio di autenticazione di Adobe Pass le raccoglierà. In questo modo potrai correlare i dati di analisi del servizio di autenticazione di Adobe Pass con qualsiasi altro rapporto di analisi disponibile in altre applicazioni o siti Web. Le informazioni su come impostare EC visitorID sono disponibili [qui](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=it).
+La configurazione di un valore [ID visitatore](https://experienceleague.adobe.com/docs/id-service/using/home.html) di Experience Cloud è molto importante dal punto di vista analitico. Una volta impostato il valore EC visitorID, SDK invierà queste informazioni insieme a ogni chiamata di rete e il servizio di autenticazione di Adobe Pass le raccoglierà. In questo modo potrai correlare i dati di analisi del servizio di autenticazione di Adobe Pass con qualsiasi altro rapporto di analisi disponibile in altre applicazioni o siti Web. Le informazioni su come impostare EC visitorID sono disponibili [qui](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=en).
 
 
 >[!NOTE]

@@ -4,7 +4,7 @@ description: Manuale di iOS/tvOS
 exl-id: 4743521e-d323-4d1d-ad24-773127cfbe42
 source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
-source-wordcount: '2424'
+source-wordcount: '2436'
 ht-degree: 0%
 
 ---
@@ -48,19 +48,19 @@ L&#39;attività di rete di AccessEnabler si svolge nel proprio thread, pertanto 
 
 ## Configurazione del servizio Experience Cloud ID (ID visitatore) {#visitorIDSetup}
 
-La configurazione del valore [Experience Cloud ID](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=it) è importante dal punto di vista di [!DNL Analytics]. Una volta impostato il valore `visitorID`, SDK invia queste informazioni insieme a ogni chiamata di rete e il server di autenticazione [!DNL Adobe Pass] le raccoglie. Puoi correlare le analisi del servizio di autenticazione di Adobe Pass con qualsiasi altro rapporto di analisi disponibile in altre applicazioni o siti web. Le informazioni su come configurare visitorID sono disponibili [qui](#setOptions).
+La configurazione del valore [Experience Cloud ID](https://experienceleague.adobe.com/docs/id-service/using/home.html) è importante dal punto di vista di [!DNL Analytics]. Una volta impostato il valore `visitorID`, SDK invia queste informazioni insieme a ogni chiamata di rete e il server di autenticazione [!DNL Adobe Pass] le raccoglie. Puoi correlare le analisi del servizio di autenticazione di Adobe Pass con qualsiasi altro rapporto di analisi disponibile in altre applicazioni o siti web. Le informazioni su come configurare visitorID sono disponibili [qui](#setOptions).
 
 ## Flussi di diritti {#entitlement}
 
-A. [Prerequisiti](#prereqs) </br>
-B. [Flusso di avvio](#startup_flow) </br>
-C. [Flusso di autenticazione senza Apple SSO](#authn_flow_wo_applesso) </br>
-D. [Flusso di autenticazione con SSO Apple su iOS](#authn_flow_with_applesso) </br>
-E. [Flusso di autenticazione con SSO Apple su tvOS](#authn_flow_with_applesso_tvOS) </br>
-F. [Flusso di autorizzazione](#authz_flow) </br>
-G. [Visualizza flusso multimediale](#media_flow) </br>
-H. [Flusso di disconnessione senza Apple SSO](#logout_flow_wo_AppleSSO) </br>
-I. [Flusso di disconnessione con Apple SSO](#logout_flow_with_AppleSSO) </br>
+R.  [Prerequisiti](#prereqs) </br>
+B.  [Flusso di avvio](#startup_flow) </br>
+C.  [Flusso di autenticazione senza Apple SSO](#authn_flow_wo_applesso)  </br>
+D.  [Flusso di autenticazione con Apple SSO su iOS](#authn_flow_with_applesso) </br>
+E.  [Flusso di autenticazione con Apple SSO su tvOS](#authn_flow_with_applesso_tvOS) </br>
+F.  [Flusso di autorizzazione](#authz_flow) </br>
+G.  [Visualizza flusso multimediale](#media_flow) </br>
+H.  [Flusso di disconnessione senza Apple SSO](#logout_flow_wo_AppleSSO) </br>
+I.  [Flusso di disconnessione con Apple SSO](#logout_flow_with_AppleSSO) </br>
 
 
 ### A. Prerequisiti {#prereqs}
@@ -103,19 +103,19 @@ I. [Flusso di disconnessione con Apple SSO](#logout_flow_with_AppleSSO) </br>
       * Attivato da `getMetadata().`
       * Il parametro `metadata` fornisce i dati specifici richiesti; il parametro `key` è la chiave utilizzata nella richiesta [getMetadata()](#getMeta) e il parametro `arguments` è lo stesso dizionario passato a [getMetadata()](#getMeta).
 
-   * [&quot;preauthorizedResources(authorizedResources)&quot;](#preauthResources)
+   * [`preauthorizedResources(authorizedResources)`](#preauthResources)
 
       * Attivato da [`checkPreauthorizedResources()`](#checkPreauth).
 
       * Il parametro `authorizedResources` presenta le risorse che l&#39;utente
 è autorizzato a visualizzare.
 
-   * [&quot;presentTvProviderDialog(viewController)&quot;](#presentTvDialog)
+   * [`presentTvProviderDialog(viewController)`](#presentTvDialog)
 
       * Attivazione eseguita da [getAuthentication()](#getAuthN) quando il richiedente corrente supporta almeno in MVPD con supporto SSO.
       * Il parametro viewController è la finestra di dialogo SSO di Apple e deve essere presentato sul controller della visualizzazione principale.
 
-   * [&quot;dismissTvProviderDialog(viewController)&quot;](#dismissTvDialog)
+   * [`dismissTvProviderDialog(viewController)`](#dismissTvDialog)
 
       * Attivato da un’azione dell’utente (selezionando &quot;Annulla&quot; o &quot;Altri provider TV&quot; dalla finestra di dialogo SSO di Apple).
       * Il parametro viewController è la finestra di dialogo SSO di Apple e deve essere chiuso dal controller della visualizzazione principale.
@@ -127,10 +127,10 @@ I. [Flusso di disconnessione con Apple SSO](#logout_flow_with_AppleSSO) </br>
 1. Avviare l&#39;applicazione di livello superiore.</br>
 1. Avvia autenticazione Adobe Pass </br>
 
-   a. Chiamare [`init`](#$init) per creare una singola istanza di Adobe Pass Authentication AccessEnabler.
+   a.  Chiamare [`init`](#$init) per creare una singola istanza di Adobe Pass Authentication AccessEnabler.
    * **Dipendenza:** Adobe Pass Authentication Native iOS/tvOS Library (AccessEnabler)
 
-   b. Chiamare `setRequestor()` per stabilire l&#39;identità del programmatore; passare `requestorID` del programmatore e (facoltativamente) un array di endpoint di autenticazione Adobe Pass. Per tvOS dovrai anche fornire la chiave pubblica e il segreto. Per informazioni dettagliate, consulta la [documentazione senza client](#create_dev).
+   b.  Chiamare `setRequestor()` per stabilire l&#39;identità del programmatore; passare `requestorID` del programmatore e (facoltativamente) un array di endpoint di autenticazione Adobe Pass. Per tvOS dovrai anche fornire la chiave pubblica e il segreto. Per informazioni dettagliate, consulta la [documentazione senza client](#create_dev).
 
    * **Dipendenza:** ID richiedente autenticazione Adobe Pass valido (utilizzare l&#39;account di autenticazione Adobe Pass)
 per il manager).
@@ -238,7 +238,7 @@ autenticato.
    * Se [getAuthorization()](#$getAuthZ) non riesce: esaminare l&#39;eccezione generata per determinarne il tipo (AuthN, AuthZ o altro):
       * In caso di errore di autenticazione (AuthN), riavvia il flusso di autenticazione.
       * Se si trattava di un errore di autorizzazione (AuthZ), l’utente non è autorizzato a guardare il contenuto multimediale richiesto e deve visualizzare all’utente un qualche tipo di messaggio di errore.
-      * Se si è verificato un altro tipo di errore (errore di connessione, errore di rete, ecc.), visualizza un messaggio di errore appropriato.
+      * Se si è verificato un altro tipo di errore (errore di connessione, errore di rete, ecc.) quindi visualizza un messaggio di errore appropriato.
 
 1. Convalida il token multimediale breve.\
    Utilizza la libreria Adobe Pass Authentication Media Token Verifier per verificare il token multimediale di breve durata restituito dalla chiamata [getAuthorization()](#$getAuthZ) precedente:
@@ -263,9 +263,9 @@ utente.
 
 1. Chiamare [`logout()`](#$logout) per disconnettersi. AccessEnabler cancella tutti i valori e i token memorizzati nella cache. Dopo aver cancellato la cache, AccessEnabler effettua una chiamata al server per pulire le sessioni lato server. Poiché la chiamata al server potrebbe causare un reindirizzamento SAML all’IdP (consentendo la pulizia della sessione sul lato IdP), questa chiamata deve seguire tutti i reindirizzamenti. Per questo motivo, questa chiamata deve essere gestita all&#39;interno di un controller UIWebView/WKWebView o SFSafariViewController.
 
-   a. Seguendo lo stesso modello del flusso di lavoro di autenticazione, il dominio AccessEnabler invia una richiesta al livello dell&#39;applicazione dell&#39;interfaccia utente, tramite il callback `navigateToUrl:` o `navigateToUrl:useSVC:`, per creare un controller UIWebView/WKWebView o SFSafariViewController e istruire tale utente a caricare l&#39;URL fornito nel parametro `url` del callback. Questo è l&#39;URL dell&#39;endpoint di disconnessione sul server back-end.
+   a.  Seguendo lo stesso pattern del flusso di lavoro di autenticazione, il dominio AccessEnabler invia una richiesta al livello dell&#39;applicazione dell&#39;interfaccia utente, tramite il callback `navigateToUrl:` o `navigateToUrl:useSVC:`, per creare un controller UIWebView/WKWebView o SFSafariViewController e istruirlo a caricare l&#39;URL fornito nel parametro `url` del callback. Questo è l&#39;URL dell&#39;endpoint di disconnessione sul server back-end.
 
-   b. L&#39;applicazione deve monitorare l&#39;attività del controller `UIWebView/WKWebView or SFSafariViewController` e rilevare il momento in cui viene caricato un URL personalizzato specifico, mentre viene eseguito diversi reindirizzamenti. Questo URL personalizzato specifico non è valido e non è destinato al controller per caricarlo effettivamente. Deve essere interpretato solo dall&#39;applicazione come un segnale del completamento del flusso di disconnessione e della sicurezza della chiusura del controller `UIWebView/WKWebView` o `SFSafariViewController`. Quando il controller carica questo URL personalizzato specifico, l&#39;applicazione deve chiudere il controller `UIWebView/WKWebView or SFSafariViewController` e chiamare il metodo API `handleExternalURL:url` di AccessEnabler. Nel caso in cui sia necessario utilizzare un controller `SFSafariViewController`, l&#39;URL personalizzato specifico è definito da **`application's custom scheme`** (ad esempio, `adbe.u-XFXJeTSDuJiIQs0HVRAg://adobe.com`), altrimenti questo URL personalizzato specifico è definito dalla costante **`ADOBEPASS_REDIRECT_URL`** (ovvero `adobepass://ios.app`).
+   b.  L&#39;applicazione deve monitorare l&#39;attività del controller `UIWebView/WKWebView or SFSafariViewController` e rilevare il momento in cui viene caricato un URL personalizzato specifico, mentre viene eseguito diversi reindirizzamenti. Questo URL personalizzato specifico non è valido e non è destinato al controller per caricarlo effettivamente. Deve essere interpretato solo dall&#39;applicazione come un segnale del completamento del flusso di disconnessione e della sicurezza della chiusura del controller `UIWebView/WKWebView` o `SFSafariViewController`. Quando il controller carica questo URL personalizzato specifico, l&#39;applicazione deve chiudere il controller `UIWebView/WKWebView or SFSafariViewController` e chiamare il metodo API `handleExternalURL:url` di AccessEnabler. Nel caso in cui sia necessario utilizzare un controller `SFSafariViewController`, l&#39;URL personalizzato specifico è definito da **`application's custom scheme`** (ad esempio, `adbe.u-XFXJeTSDuJiIQs0HVRAg://adobe.com`), altrimenti questo URL personalizzato specifico è definito dalla costante **`ADOBEPASS_REDIRECT_URL`** (ovvero `adobepass://ios.app`).
 
    >[!NOTE]
    >

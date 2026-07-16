@@ -4,7 +4,7 @@ description: Informazioni sulle metriche lato server
 exl-id: 516884e9-6b0b-451a-b84a-6514f571aa44
 source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
-source-wordcount: '2232'
+source-wordcount: '2262'
 ht-degree: 0%
 
 ---
@@ -27,7 +27,7 @@ Dal punto di vista del lato server di autenticazione di Adobe Pass vengono gener
 * **Eventi generati nel flusso di autenticazione**(un accesso effettivo con MVPD)
 
    * Notifica del tentativo di autenticazione: viene generato quando l’utente viene inviato al sito di accesso di MVPD.
-   * Notifica di AuthN in sospeso: se l’utente riesce ad accedere con il proprio MVPD, questo viene generato quando l’utente        è stato reindirizzato all’autenticazione Adobe Pass.
+   * Notifica di AuthN in sospeso: se l’utente riesce ad accedere con il proprio MVPD, questo viene generato quando l’utente viene reindirizzato all’autenticazione di Adobe Pass.
    * Notifica di autenticazione concessa: viene generata quando l’utente torna sul sito del programmatore e ha recuperato correttamente il token di autenticazione dall’autenticazione di Adobe Pass.
 * **Flusso di autorizzazione** (solo un controllo per l&#39;autorizzazione con un
 MVPD)\
