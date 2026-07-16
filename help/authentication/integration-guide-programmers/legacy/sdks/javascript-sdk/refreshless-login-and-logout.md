@@ -4,7 +4,7 @@ description: Accesso e disconnessione senza aggiornamento
 exl-id: 3ce8dfec-279a-4d10-93b4-1fbb18276543
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '1784'
+source-wordcount: '1817'
 ht-degree: 0%
 
 ---
@@ -48,7 +48,7 @@ Iniziamo con un riepilogo dei flussi di autenticazione e disconnessione original
 
 I client web di Adobe Pass Authentication possono autenticarsi in due modi, a seconda dei requisiti degli MVPD:
 
-1. **Reindirizzamento a pagina intera -** dopo che l&#39;utente ha selezionato un provider    (configurato con reindirizzamento a pagina intera) dal selettore MVPD sulla    Il sito Web del programmatore `setSelectedProvider(<mvpd>)` viene richiamato in AccessEnabler e l&#39;utente viene reindirizzato alla pagina di accesso di MVPD. Dopo che l&#39;utente ha fornito credenziali valide, viene reindirizzato al sito Web del programmatore. AccessEnabler è inizializzato e il token di autenticazione viene recuperato dall&#39;autenticazione di Adobe Pass durante `setRequestor`.
+1. **Reindirizzamento a pagina intera -** Dopo che l&#39;utente ha selezionato un provider (configurato con reindirizzamento a pagina intera) dal selettore di MVPD nel sito Web del programmatore, `setSelectedProvider(<mvpd>)` viene richiamato in AccessEnabler e l&#39;utente viene reindirizzato alla pagina di accesso di MVPD. Dopo che l&#39;utente ha fornito credenziali valide, viene reindirizzato al sito Web del programmatore. AccessEnabler è inizializzato e il token di autenticazione viene recuperato dall&#39;autenticazione di Adobe Pass durante `setRequestor`.
 1. **Finestra iFrame/Popup -** Dopo che l&#39;utente ha selezionato un provider (configurato con iFrame), `setSelectedProvider(<mvpd>)` viene richiamato in AccessEnabler. Questa azione attiverà il callback `createIFrame(width, height)`, avvisando il programmatore di creare un iFrame (o pop-up - a seconda del browser/preferenze) con il nome `"mvpdframe"` e le dimensioni fornite. Dopo aver creato l’iFrame/popup, AccessEnabler carica la pagina di accesso di MVPD nell’iFrame/popup. L’utente fornisce credenziali valide e l’iFrame/popup viene reindirizzato all’autenticazione Adobe Pass, che restituisce uno snippet JS che chiude l’iFrame/popup e ricarica la pagina padre (sito web Programmatore). Analogamente al flusso 1, il token di autenticazione viene recuperato durante `setRequestor`.
 
 Il callback `displayProviderDialog` (attivato da `getAuthentication`/`getAuthorization`) restituisce un elenco di MVPD e le relative impostazioni appropriate. La proprietà `iFrameRequired` di un MVPD consente al programmatore di sapere se deve attivare il flusso 1 o il flusso 2. Si noti che il programmatore è tenuto a intraprendere azioni aggiuntive (creazione di un iFrame/popup) solo per il flusso 2.

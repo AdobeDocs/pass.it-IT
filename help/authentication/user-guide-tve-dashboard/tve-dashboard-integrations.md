@@ -4,7 +4,7 @@ description: Scopri le integrazioni tra i canali e gli MVPD e come gestire le in
 exl-id: 0add340b-120c-4e82-8e3c-6c190d77cf7e
 source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
-source-wordcount: '2093'
+source-wordcount: '2105'
 ht-degree: 0%
 
 ---
@@ -175,7 +175,7 @@ Segui questi passaggi per abilitare o disabilitare l’autenticazione basata su 
 
    *Abilitare l&#39;autenticazione basata su Home per una piattaforma specifica*
 
-   **A.** Tentativo proprietà HBA **B.** proprietà TTL AuthN HBA
+   **A.** Tentativo proprietà HBA **B.** Proprietà TTL AuthN HBA
 
 1. Selezionare **Sì** da abilitare e **No** da disabilitare dal menu a discesa **Tentativo HBA**.
 

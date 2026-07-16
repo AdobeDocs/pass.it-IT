@@ -4,7 +4,7 @@ description: Valutazione della prevenzione del tracciamento Apple Safari
 exl-id: a3362020-92ff-4232-b923-e462868730d5
 source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
-source-wordcount: '1849'
+source-wordcount: '1887'
 ht-degree: 0%
 
 ---

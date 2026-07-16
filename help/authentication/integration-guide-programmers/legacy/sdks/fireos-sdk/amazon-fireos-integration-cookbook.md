@@ -4,7 +4,7 @@ description: Manuale dell’integrazione di Amazon FireOS
 exl-id: 1982c485-f0ed-4df3-9a20-9c6a928500c2
 source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
-source-wordcount: '1447'
+source-wordcount: '1430'
 ht-degree: 0%
 
 ---
@@ -58,7 +58,7 @@ L&#39;attività di rete di `AccessEnabler` viene eseguita in un thread diverso, 
 ### A. Prerequisiti {#prereqs}
 
 1. Creare le funzioni di callback:
-   - [&quot;setRequestorComplete()&quot;](#$setRequestorComplete)
+   - [`setRequestorComplete()`](#$setRequestorComplete)
 
       - Attivato da `setRequestor()`, restituisce esito positivo o negativo.     Il successo indica che puoi procedere con le chiamate di adesione.
 
@@ -66,7 +66,7 @@ L&#39;attività di rete di `AccessEnabler` viene eseguita in un thread diverso, 
 
       - Attivato da `getAuthentication()` solo se l&#39;utente non ha selezionato un provider (MVPD) e non è ancora autenticato. Il parametro `mvpds` è un array di provider disponibili per l&#39;utente.
 
-   - [&quot;setAuthenticationStatus(status, reason)&quot;](#$setAuthNStatus)
+   - [`setAuthenticationStatus(status, reason)`](#$setAuthNStatus)
 
       - Attivato da `checkAuthentication()` ogni volta. Attivato da `getAuthentication()` solo se l&#39;utente è già autenticato e ha selezionato un provider.
 
@@ -81,27 +81,27 @@ L&#39;attività di rete di `AccessEnabler` viene eseguita in un thread diverso, 
       - Attivato da `checkAuthentication(), getAuthentication(), checkAuthorization(), getAuthorization(), setSelectedProvider()`.
 Il parametro `event` indica quale evento di adesione si è verificato; il parametro `data` è un elenco di valori relativi all&#39;evento.
 
-   - [&quot;setToken(token, resource)&quot;](#$setToken)
+   - [`setToken(token, resource)`](#$setToken)
 
       - Attivazione eseguita da `checkAuthorization()` e `getAuthorization()` dopo un&#39;autorizzazione di visualizzazione di una risorsa completata.
       - Il parametro `token` è il token multimediale di breve durata; il parametro `resource` è il contenuto che l&#39;utente è autorizzato a visualizzare.
 
-   - [&quot;tokenRequestFailed(resource, code, description)&quot;](#$tokenRequestFailed)
+   - [`tokenRequestFailed(resource, code, description)`](#$tokenRequestFailed)
 
       - Attivato da `checkAuthorization()` e `getAuthorization()` dopo un&#39;autorizzazione non riuscita.
       - Il parametro `resource` è il contenuto che l&#39;utente stava tentando di visualizzare. Il parametro `code` è il codice di errore che indica il tipo di errore che si è verificato. Il parametro `description` descrive l&#39;errore associato al codice di errore.
 
-   - [&quot;selectedProvider(mvpd)&quot;](#$selectedProvider)
+   - [`selectedProvider(mvpd)`](#$selectedProvider)
 
       - Attivato da `getSelectedProvider()`.
       - Il parametro `mvpd` fornisce informazioni sul provider selezionato dall&#39;utente.
 
-   - [&quot;setMetadataStatus(metadata, key, arguments)&quot;](#$setMetadataStatus)
+   - [`setMetadataStatus(metadata, key, arguments)`](#$setMetadataStatus)
 
       - Attivato da `getMetadata().`
       - Il parametro `metadata` fornisce i dati specifici richiesti; il parametro `key` è la chiave utilizzata nella richiesta `getMetadata()` e il parametro `arguments` è lo stesso dizionario passato a `getMetadata()`.
 
-   - [&quot;preauthorizedResources(resources)&quot;](#$preauthResources)
+   - [`preauthorizedResources(resources)`](#$preauthResources)
 
       - Attivato da `checkPreauthorizedResources()`.
       - Il parametro `authorizedResources` presenta le risorse che l&#39;utente è autorizzato a visualizzare.
@@ -178,7 +178,7 @@ Il parametro `event` indica quale evento di adesione si è verificato; il parame
    - Se `getAuthorization()` ha esito negativo: esaminare l&#39;eccezione generata per determinarne il tipo (AuthN, AuthZ o altro):
       - In caso di errore di autenticazione (AuthN), riavvia il flusso di autenticazione.
       - Se si trattava di un errore di autorizzazione (AuthZ), l’utente non è autorizzato a guardare il contenuto multimediale richiesto e deve visualizzare all’utente un qualche tipo di messaggio di errore.
-      - Se si è verificato un altro tipo di errore (errore di connessione, errore di rete, ecc.), visualizza un messaggio di errore appropriato.
+      - Se si è verificato un altro tipo di errore (errore di connessione, errore di rete, ecc.) quindi visualizza un messaggio di errore appropriato.
 
 1. Convalida il token multimediale breve.
 
