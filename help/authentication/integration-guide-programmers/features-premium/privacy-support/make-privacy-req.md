@@ -4,7 +4,7 @@ description: Come effettuare una richiesta di accesso a dati personali
 exl-id: abb21306-98d6-4899-914a-bdfa85cbd204
 source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
-source-wordcount: '558'
+source-wordcount: '603'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ Quando si invia una richiesta di accesso o di eliminazione dei dati personali, l
 
 * **mvpdID** - Identificatore univoco di MVPD.
 * **userID** - Identifica in modo univoco l&#39;utente dell&#39;app di un programmatore, ma ha origine da MVPD. Consulta Informazioni sugli ID utente nella Panoramica dei programmatori.
-* **IMSOrgID** - L&#39;ID organizzazione del servizio Adobe Experience Cloud Identity Management, che identifica in modo univoco il cliente in Adobe Experience Cloud
+* **IMSOrgID** - ID organizzazione del servizio Adobe Experience Cloud Identity Management, che identifica in modo univoco il cliente in Adobe Experience Cloud
 
 
 Verifica l’esempio seguente:
@@ -238,8 +238,8 @@ La **documentazione API di Privacy Service** descrive in modo approfondito come 
 
 **Visualizza chiamate API con Postman (un software gratuito di terze parti):**
 
-* [Raccolta Postman API Privacy Service su GitHub](https://github.com/adobe/experience-platform-postman-samples/blob/master/apis/experience-platform/Privacy%20Service%20API.postman_collection.json)
-* [Guida video per la creazione dell&#39;ambiente Postman](https://video.tv.adobe.com/v/36258?captions=ita)
+* [Raccolta Postman API di Privacy Service su GitHub](https://github.com/adobe/experience-platform-postman-samples/blob/master/apis/experience-platform/Privacy%20Service%20API.postman_collection.json)
+* [Guida video per la creazione dell’ambiente Postman](https://video.tv.adobe.com/v/36258?captions=ita)
 * [Passaggi per importare ambienti e raccolte in Postman](https://learning.postman.com/docs/running-collections/intro-to-collection-runs/)
 
 
@@ -253,7 +253,7 @@ La **documentazione API di Privacy Service** descrive in modo approfondito come 
 **Intestazioni richieste:**
 
 * Tutte le chiamate richiedono le intestazioni `Authorization`, `x-gw-ims-org-id` e `x-api-key`. Per ulteriori informazioni su come ottenere questi valori, consulta l&#39;**esercitazione sull&#39;autenticazione**.
-* Tutte le richieste con un payload nel corpo della richiesta (ad esempio chiamate POST, PUT e PATCH) devono includere l&#39;intestazione `Content-Type` con valore `application/json`.
+* Tutte le richieste con un payload nel corpo della richiesta (ad esempio chiamate POST, PUT e PATCH) devono includere l&#39;intestazione `Content-Type` con un valore di `application/json`.
 
 <!--
 

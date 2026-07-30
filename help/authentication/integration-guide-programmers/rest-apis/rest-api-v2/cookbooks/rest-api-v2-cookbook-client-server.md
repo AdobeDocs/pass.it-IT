@@ -4,7 +4,7 @@ description: Manuale dell’API REST V2 (da client a server)
 exl-id: 6a5a89d2-ea54-4f9c-9505-e575ced4301c
 source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
-source-wordcount: '1833'
+source-wordcount: '1842'
 ht-degree: 0%
 
 ---
@@ -58,12 +58,12 @@ La fase di registrazione è obbligatoria, ma l’applicazione di streaming può 
 
 * **Recupera credenziali client:** L&#39;applicazione di streaming recupera le credenziali client chiamando l&#39;endpoint [**/o/client/register**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-client-credentials.md).
 
-   * L’applicazione di streaming deve memorizzare le credenziali del client e utilizzarle a tempo indefinito quando è necessario recuperare un token di accesso.
+  * L’applicazione di streaming deve memorizzare le credenziali del client e utilizzarle a tempo indefinito quando è necessario recuperare un token di accesso.
 
 
 * **Recupera token di accesso:** L&#39;applicazione di streaming recupera il token di accesso chiamando l&#39;endpoint [**/o/client/token**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md).
 
-   * L’applicazione di streaming deve archiviare e utilizzare il token di accesso fino alla scadenza, quindi eliminarlo e ottenerne uno nuovo.
+  * L’applicazione di streaming deve archiviare e utilizzare il token di accesso fino alla scadenza, quindi eliminarlo e ottenerne uno nuovo.
 
 ## B. Fase di autenticazione {#authentication-phase}
 
@@ -109,13 +109,13 @@ La fase di autenticazione funge da passaggio preliminare per la fase di pre-auto
 
 * **Scenario 3:** Non sono presenti profili, l&#39;applicazione di streaming potrebbe continuare a fornire all&#39;utente l&#39;accesso temporaneo tramite la funzionalità [TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md).
 
-   * Questo scenario non rientra nell&#39;ambito di questo documento. Per ulteriori informazioni, fare riferimento alla documentazione [Flussi di accesso temporanei](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/temporary-access-flows/rest-api-v2-access-temporary-flows.md).
+  * Questo scenario non rientra nell&#39;ambito di questo documento. Per ulteriori informazioni, fare riferimento alla documentazione [Flussi di accesso temporanei](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/temporary-access-flows/rest-api-v2-access-temporary-flows.md).
 
 ### Passaggio 3: autenticare l’utente {#step-3-authenticate-the-user}
 
 * **Recupera configurazione:** L&#39;applicazione di streaming recupera l&#39;elenco degli MVPD disponibili chiamando l&#39;endpoint [**/api/v2/{serviceProvider}/configuration**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md).
 
-   * L’applicazione di streaming può implementare un meccanismo di filtro personalizzato per perfezionare l’elenco degli MVPD dalla risposta di configurazione, visualizzando solo i fornitori previsti e nascondendo altri (ad esempio, MVPD in fase di sviluppo, test MVPD, TempPass). In questo modo gli utenti ricevono una selezione accurata al momento di scegliere il proprio provider TV.
+  * L’applicazione di streaming può implementare un meccanismo di filtro personalizzato per perfezionare l’elenco degli MVPD dalla risposta di configurazione, visualizzando solo i fornitori previsti e nascondendo altri (ad esempio, MVPD in fase di sviluppo, test MVPD, TempPass). In questo modo gli utenti ricevono una selezione accurata al momento di scegliere il proprio provider TV.
 
 
 * **Crea sessione di autenticazione:** L&#39;applicazione di streaming avvia una sessione di autenticazione chiamando l&#39;endpoint [**/api/v2/{serviceProvider}/essions**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md).
@@ -123,40 +123,40 @@ La fase di autenticazione funge da passaggio preliminare per la fase di pre-auto
 
 * **Scenario 1:** L&#39;applicazione di streaming può aprire un browser o una visualizzazione Web, pertanto deve caricare l&#39;autenticazione `url`.
 
-   * L’utente invia il proprio nome utente e password all’interno della pagina di accesso di MVPD. Dopo l’autenticazione corretta, il reindirizzamento finale mostra una pagina di successo.
+  * L’utente invia il proprio nome utente e password all’interno della pagina di accesso di MVPD. Dopo l’autenticazione corretta, il reindirizzamento finale mostra una pagina di successo.
 
 
 * **Scenario 2:** L&#39;applicazione di streaming non può aprire un browser, pertanto deve visualizzare l&#39;autenticazione `code`. È necessaria un&#39;applicazione Web separata per richiedere all&#39;utente di immettere `code`, creare l&#39;autenticazione `url` e aprire: [**/api/v2/authenticate/{serviceProvider}/{code}**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-perform-authentication-in-user-agent.md).
 
-   * L’utente invia il proprio nome utente e password all’interno della pagina di accesso di MVPD. Dopo l’autenticazione corretta, il reindirizzamento finale mostra una pagina di successo.
+  * L’utente invia il proprio nome utente e password all’interno della pagina di accesso di MVPD. Dopo l’autenticazione corretta, il reindirizzamento finale mostra una pagina di successo.
 
 ### Passaggio 4: verificare la presenza di profili autenticati {#step-4-check-for-authenticated-profiles}
 
 * **Recupera profilo per codice specifico:** L&#39;applicazione di streaming deve implementare un meccanismo di polling utilizzando `code` per verificare se il profilo è stato generato e salvato correttamente chiamando l&#39;endpoint [**/api/v2/{serviceProvider}/profiles/code/{code}**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md).
 
-   * L&#39;applicazione di streaming deve **avviare il meccanismo di polling** nelle seguenti condizioni:
+  * L&#39;applicazione di streaming deve **avviare il meccanismo di polling** nelle seguenti condizioni:
 
-      * **Autenticazione eseguita all&#39;interno dell&#39;applicazione primaria (schermo):** L&#39;applicazione primaria (streaming) deve avviare il polling quando l&#39;utente raggiunge la pagina di destinazione finale, dopo che il componente del browser carica l&#39;URL specificato per il parametro `redirectUrl` nella richiesta dell&#39;endpoint [Sessions](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md).
+    * **Autenticazione eseguita all&#39;interno dell&#39;applicazione primaria (schermo):** L&#39;applicazione primaria (streaming) deve avviare il polling quando l&#39;utente raggiunge la pagina di destinazione finale, dopo che il componente del browser carica l&#39;URL specificato per il parametro `redirectUrl` nella richiesta dell&#39;endpoint [Sessions](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md).
 
-      * **Autenticazione eseguita all&#39;interno di un&#39;applicazione secondaria (a schermo):** L&#39;applicazione primaria (in streaming) deve avviare il polling non appena l&#39;utente avvia il processo di autenticazione, subito dopo aver ricevuto la risposta dell&#39;endpoint [Sessions](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md) e aver visualizzato il codice di autenticazione per l&#39;utente.
+    * **Autenticazione eseguita all&#39;interno di un&#39;applicazione secondaria (a schermo):** L&#39;applicazione primaria (in streaming) deve avviare il polling non appena l&#39;utente avvia il processo di autenticazione, subito dopo aver ricevuto la risposta dell&#39;endpoint [Sessions](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md) e aver visualizzato il codice di autenticazione per l&#39;utente.
 
-   * L&#39;applicazione di streaming deve **interrompere il meccanismo di polling** nelle seguenti condizioni:
+  * L&#39;applicazione di streaming deve **interrompere il meccanismo di polling** nelle seguenti condizioni:
 
-      * **Autenticazione riuscita:** Le informazioni del profilo dell&#39;utente sono state recuperate correttamente, confermando il relativo stato di autenticazione. A questo punto, il polling non è più necessario.
+    * **Autenticazione riuscita:** Le informazioni del profilo dell&#39;utente sono state recuperate correttamente, confermando il relativo stato di autenticazione. A questo punto, il polling non è più necessario.
 
-      * **Sessione di autenticazione e scadenza codice:** La sessione di autenticazione e il codice scadono, come indicato dalla marca temporale `notAfter` (ad esempio, 30 minuti) nella risposta dell&#39;endpoint [Sessions](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md). In questo caso, l’utente deve riavviare il processo di autenticazione e arrestare immediatamente il polling che utilizza il codice di autenticazione precedente.
+    * **Sessione di autenticazione e scadenza codice:** La sessione di autenticazione e il codice scadono, come indicato dalla marca temporale `notAfter` (ad esempio, 30 minuti) nella risposta dell&#39;endpoint [Sessions](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md). In questo caso, l’utente deve riavviare il processo di autenticazione e arrestare immediatamente il polling che utilizza il codice di autenticazione precedente.
 
-      * **È stato generato un nuovo codice di autenticazione:** Se l&#39;utente richiede un nuovo codice di autenticazione sul dispositivo principale (schermo), la sessione esistente non è più valida e il polling che utilizza il codice di autenticazione precedente deve essere interrotto immediatamente.
+    * **È stato generato un nuovo codice di autenticazione:** Se l&#39;utente richiede un nuovo codice di autenticazione sul dispositivo principale (schermo), la sessione esistente non è più valida e il polling che utilizza il codice di autenticazione precedente deve essere interrotto immediatamente.
 
-   * L&#39;applicazione di streaming deve **configurare la frequenza del meccanismo di polling** nelle seguenti condizioni:
+  * L&#39;applicazione di streaming deve **configurare la frequenza del meccanismo di polling** nelle seguenti condizioni:
 
-      * **Autenticazione eseguita all&#39;interno dell&#39;applicazione principale (schermo):** L&#39;applicazione principale (streaming) deve eseguire il polling ogni 3-5 secondi o più.
+    * **Autenticazione eseguita all&#39;interno dell&#39;applicazione principale (schermo):** L&#39;applicazione principale (streaming) deve eseguire il polling ogni 3-5 secondi o più.
 
-      * **Autenticazione eseguita all&#39;interno di un&#39;applicazione secondaria (schermo):** L&#39;applicazione primaria (streaming) deve eseguire il polling ogni 3-5 secondi o più.
+    * **Autenticazione eseguita all&#39;interno di un&#39;applicazione secondaria (schermo):** L&#39;applicazione primaria (streaming) deve eseguire il polling ogni 3-5 secondi o più.
 
-   * L’applicazione di streaming deve memorizzare in cache parti delle informazioni del profilo dell’utente in un archivio persistente per evitare richieste non necessarie e migliorare l’esperienza utente.
+  * L’applicazione di streaming deve memorizzare in cache parti delle informazioni del profilo dell’utente in un archivio persistente per evitare richieste non necessarie e migliorare l’esperienza utente.
 
-## C. Fase di pre-autorizzazione (facoltativa) {#preauthorization-phase}
+## C. (Facoltativo) Fase di pre-autorizzazione {#preauthorization-phase}
 
 Lo scopo della fase di pre-autorizzazione è quello di fornire all’applicazione di streaming la capacità di presentare un sottoinsieme di risorse dal suo catalogo a cui l’utente avrebbe diritto di accedere.
 
@@ -184,11 +184,11 @@ La fase di pre-autorizzazione non è obbligatoria, l’applicazione di streaming
 
 * **Recupera decisioni di preautorizzazione:** L&#39;applicazione di streaming recupera le decisioni di preautorizzazione per un elenco di risorse chiamando l&#39;endpoint [**/api/v2/{serviceProvider}/Decisions/preauthorize/{mvpd}**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md).
 
-   * L’applicazione di streaming non è necessaria per archiviare le decisioni di preautorizzazione nell’archiviazione persistente. Tuttavia, si consiglia di memorizzare nella cache le decisioni sulle autorizzazioni per migliorare l’esperienza utente. Questo consente di evitare inutili chiamate per risorse già preautorizzate, riducendo la latenza e migliorando le prestazioni.
+  * L’applicazione di streaming non è necessaria per archiviare le decisioni di preautorizzazione nell’archiviazione persistente. Tuttavia, si consiglia di memorizzare nella cache le decisioni sulle autorizzazioni per migliorare l’esperienza utente. Questo consente di evitare inutili chiamate per risorse già preautorizzate, riducendo la latenza e migliorando le prestazioni.
 
-   * L&#39;applicazione di streaming può determinare il motivo di una decisione di preautorizzazione negata esaminando il [codice di errore e il messaggio](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md) inclusi nella risposta dall&#39;endpoint di preautorizzazione delle decisioni. Questi dettagli forniscono ad insight il motivo specifico per cui la richiesta di preautorizzazione è stata negata, aiutando a informare l’esperienza utente o a attivare eventuali operazioni necessarie nell’applicazione. Assicurati che eventuali meccanismi di esecuzione di nuovi tentativi implementati per recuperare le decisioni di preautorizzazione non generino un ciclo infinito se la decisione di preautorizzazione viene negata. Valuta la possibilità di limitare i nuovi tentativi a un numero ragionevole e di gestire i rifiuti in modo appropriato fornendo all’utente un feedback chiaro.
+  * L&#39;applicazione di streaming può determinare il motivo di una decisione di preautorizzazione negata esaminando il [codice di errore e il messaggio](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md) inclusi nella risposta dall&#39;endpoint di preautorizzazione delle decisioni. Questi dettagli forniscono ad insight il motivo specifico per cui la richiesta di preautorizzazione è stata negata, aiutando a informare l’esperienza utente o a attivare eventuali operazioni necessarie nell’applicazione. Assicurati che eventuali meccanismi di esecuzione di nuovi tentativi implementati per recuperare le decisioni di preautorizzazione non generino un ciclo infinito se la decisione di preautorizzazione viene negata. Valuta la possibilità di limitare i nuovi tentativi a un numero ragionevole e di gestire i rifiuti in modo appropriato fornendo all’utente un feedback chiaro.
 
-   * L’applicazione di streaming può ottenere una decisione di preautorizzazione per un numero limitato di risorse in una singola richiesta API, di solito fino a 5, a causa delle condizioni imposte dagli MVPD. Questo numero massimo di risorse può essere visualizzato e modificato dopo aver concordato con gli MVPD tramite Adobe Pass [TVE Dashboard](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard) da uno degli amministratori dell&#39;organizzazione o da un rappresentante di autenticazione Adobe Pass che agisce per tuo conto.
+  * L’applicazione di streaming può ottenere una decisione di preautorizzazione per un numero limitato di risorse in una singola richiesta API, di solito fino a 5, a causa delle condizioni imposte dagli MVPD. Questo numero massimo di risorse può essere visualizzato e modificato dopo aver concordato con gli MVPD tramite Adobe Pass [TVE Dashboard](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard) da uno degli amministratori dell&#39;organizzazione o da un rappresentante di autenticazione Adobe Pass che agisce per tuo conto.
 
 
 ## D. Fase di autorizzazione {#authorization-phase}
@@ -217,13 +217,13 @@ La fase di autorizzazione è obbligatoria, l’applicazione di streaming non pu�
 
 * **Recupera decisione di autorizzazione:** L&#39;applicazione di streaming recupera la decisione di autorizzazione per una risorsa specifica chiamando l&#39;endpoint [**/api/v2/{serviceProvider}/decision/authorize/{mvpd}**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md).
 
-   * L&#39;applicazione di streaming non è necessaria per archiviare le decisioni di autorizzazione nell&#39;archiviazione persistente.
+  * L&#39;applicazione di streaming non è necessaria per archiviare le decisioni di autorizzazione nell&#39;archiviazione persistente.
 
-   * L&#39;applicazione di streaming può determinare il motivo di una decisione di autorizzazione negata esaminando il [codice di errore e il messaggio](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md) inclusi nella risposta dall&#39;endpoint Decisions Authorize. Questi dettagli forniscono ad insight il motivo specifico per cui la richiesta di autorizzazione è stata negata, aiutando a informare l’esperienza utente o a attivare eventuali operazioni necessarie nell’applicazione. Assicurati che eventuali meccanismi di esecuzione di nuovi tentativi implementati per recuperare le decisioni di autorizzazione non generino un loop infinito se la decisione di autorizzazione viene negata. Valuta la possibilità di limitare i nuovi tentativi a un numero ragionevole e di gestire i rifiuti in modo appropriato fornendo all’utente un feedback chiaro.
+  * L&#39;applicazione di streaming può determinare il motivo di una decisione di autorizzazione negata esaminando il [codice di errore e il messaggio](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md) inclusi nella risposta dall&#39;endpoint Decisions Authorize. Questi dettagli forniscono ad insight il motivo specifico per cui la richiesta di autorizzazione è stata negata, aiutando a informare l’esperienza utente o a attivare eventuali operazioni necessarie nell’applicazione. Assicurati che eventuali meccanismi di esecuzione di nuovi tentativi implementati per recuperare le decisioni di autorizzazione non generino un loop infinito se la decisione di autorizzazione viene negata. Valuta la possibilità di limitare i nuovi tentativi a un numero ragionevole e di gestire i rifiuti in modo appropriato fornendo all’utente un feedback chiaro.
 
-   * Non è necessario che l’applicazione di streaming aggiorni un token multimediale scaduto mentre il flusso è in riproduzione attiva. Se il token multimediale scade durante la riproduzione, il flusso deve poter continuare senza interruzioni. Tuttavia, il client deve richiedere una nuova decisione di autorizzazione e ottenere un nuovo token multimediale la volta successiva che l’utente tenta di riprodurre una risorsa.
+  * Non è necessario che l’applicazione di streaming aggiorni un token multimediale scaduto mentre il flusso è in riproduzione attiva. Se il token multimediale scade durante la riproduzione, il flusso deve poter continuare senza interruzioni. Tuttavia, il client deve richiedere una nuova decisione di autorizzazione e ottenere un nuovo token multimediale la volta successiva che l’utente tenta di riprodurre una risorsa.
 
-   * L’applicazione di streaming può ottenere una decisione di autorizzazione per un numero limitato di risorse in una singola richiesta API, di solito fino a 1, a causa delle condizioni imposte dagli MVPD.
+  * L’applicazione di streaming può ottenere una decisione di autorizzazione per un numero limitato di risorse in una singola richiesta API, di solito fino a 1, a causa delle condizioni imposte dagli MVPD.
 
 ## E. Fase di disconnessione {#logout-phase}
 
@@ -251,10 +251,10 @@ La fase di disconnessione è obbligatoria, l&#39;applicazione di streaming deve 
 
 * **Avvia disconnessione Adobe Pass:** L&#39;applicazione di streaming avvia il flusso di disconnessione chiamando l&#39;endpoint [**/api/v2/{serviceProvider}/logout/{mvpd}**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md).
 
-   * L&#39;applicazione di streaming deve seguire le istruzioni fornite negli attributi `actionName` e `actionType` della risposta dell&#39;endpoint di disconnessione per garantire il completamento corretto del processo di disconnessione.
+  * L&#39;applicazione di streaming deve seguire le istruzioni fornite negli attributi `actionName` e `actionType` della risposta dell&#39;endpoint di disconnessione per garantire il completamento corretto del processo di disconnessione.
 
-      * Se l&#39;attributo `actionType` nella risposta è impostato su &quot;interattivo&quot;:
+    * Se l&#39;attributo `actionType` nella risposta è impostato su &quot;interattivo&quot;:
 
-         * **Scenario 1:** L&#39;applicazione di streaming può aprire un browser o una visualizzazione Web, pertanto deve caricare la disconnessione `url`.
+      * **Scenario 1:** L&#39;applicazione di streaming può aprire un browser o una visualizzazione Web, pertanto deve caricare la disconnessione `url`.
 
-         * **Scenario 2:** L&#39;applicazione di streaming non è in grado di aprire un browser, pertanto il processo di disconnessione può essere interrotto in quanto la sessione di MVPD non è persistita in una cache del browser del dispositivo di streaming.
+      * **Scenario 2:** L&#39;applicazione di streaming non è in grado di aprire un browser, pertanto il processo di disconnessione può essere interrotto in quanto la sessione di MVPD non è persistita in una cache del browser del dispositivo di streaming.
