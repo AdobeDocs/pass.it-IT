@@ -2,10 +2,10 @@
 title: Controlla il flusso di autenticazione tramite l’app web Second Screen
 description: Controlla il flusso di autenticazione tramite l’app web Second Screen
 exl-id: 5807f372-a520-4069-b837-67ae41b7f79b
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 689e2f86550d9fa59337c15dd38767975a1d6d30
 workflow-type: tm+mt
-source-wordcount: '232'
-ht-degree: 0%
+source-wordcount: '240'
+ht-degree: 1%
 
 ---
 
@@ -42,9 +42,9 @@ ht-degree: 0%
 Questa API deve essere utilizzata dalla seconda app web di accesso schermata per confermare che l’autenticazione Adobe Pass ha confermato il corretto accesso da MVPD. È consigliabile chiamare questa API prima di mostrare un messaggio di successo all’utente finale che gli indica di passare alla console del dispositivo per continuare con i flussi di lavoro.
 
 
-| Endpoint | Chiamato </br> da | Input   </br>Parametri | Metodo HTTP </br> | Risposta | HTTP </br>Risposta |
+| Endpoint | Chiamato </br> da | Immetti </br> parametri | Metodo HTTP </br> | Risposta | HTTP </br>Risposta |
 | --- | --- | --- | --- | --- | --- |
-| SP_FQDN/api/v1/checkauthn/{registration code} | Accedi all’app web | &#x200B;1. codice di registrazione </br>    (componente percorso)</br>2.  richiedente </br>    (Obbligatorio) | GET | XML o JSON contenente i dettagli dell’errore in caso di esito negativo. | 200 - Operazione completata   </br>403 - Non consentito |
+| SP_FQDN/api/v1/checkauthn/{registration code} | Accedi all’app web | &#x200B;1.  codice di registrazione </br> (componente percorso)</br>2.  richiedente </br> (obbligatorio) | GET | XML o JSON contenente i dettagli dell’errore in caso di esito negativo. | 200 - Operazione riuscita </br>403 - Non consentita |
 
 </br>
 
@@ -63,4 +63,4 @@ Questa API deve essere utilizzata dalla seconda app web di accesso schermata per
     }
 ```
 
-### [Torna al riferimento API REST](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/rest-api-reference.md)
+**[Torna al riferimento API REST](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/rest-api-reference.md)**
