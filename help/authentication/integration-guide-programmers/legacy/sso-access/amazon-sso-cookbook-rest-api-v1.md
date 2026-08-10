@@ -4,7 +4,7 @@ description: Manuale Amazon SSO (REST API V1)
 exl-id: 4c65eae7-81c1-4926-9202-a36fd13af6ec
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '613'
+source-wordcount: '629'
 ht-degree: 0%
 
 ---
@@ -89,13 +89,13 @@ L’applicazione di streaming può scegliere una delle due opzioni in base alla 
   ```
 
   Il bundle di risposta di successo del token SSO conterrà:
-   * Un token SSO come `string` con chiave &quot;SSOToken&quot;.
+  * Un token SSO come `string` con chiave &quot;SSOToken&quot;.
 
   <br/>
 
   Il bundle di risposta in caso di errore del token SSO conterrà:
-   * Codice di errore come `int` con chiave &quot;ErrorCode&quot;.
-   * Descrizione di errore come `string` con chiave &quot;ErrorDescription&quot;.
+  * Codice di errore come `int` con chiave &quot;ErrorCode&quot;.
+  * Descrizione di errore come `string` con chiave &quot;ErrorDescription&quot;.
 
   <br/>
 
@@ -136,10 +136,10 @@ L’applicazione di streaming deve gestire gli scenari di fallback dal flusso SS
 Assicurati che l’applicazione di streaming gestisca:
 
 * L’assenza dell’applicazione ausiliaria Amazon che deve essere in esecuzione sul dispositivo Amazon.
-   * L&#39;applicazione di streaming potrebbe incontrare un `ClassNotFoundException` in fase di runtime nella seguente classe `com.amazon.ottssotokenlib.SSOEnabler`.
+  * L&#39;applicazione di streaming potrebbe incontrare un `ClassNotFoundException` in fase di runtime nella seguente classe `com.amazon.ottssotokenlib.SSOEnabler`.
 
 * L’assenza del payload del token SSO (identità della piattaforma) che deve essere restituito dalle API precedenti.
-   * L’applicazione di streaming può contattare i rappresentanti di Amazon e Adobe per effettuare un’indagine.
+  * L’applicazione di streaming può contattare i rappresentanti di Amazon e Adobe per effettuare un’indagine.
 
 ### Flusso di lavoro {#workflow}
 
