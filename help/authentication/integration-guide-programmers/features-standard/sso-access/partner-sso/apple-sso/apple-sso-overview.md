@@ -4,7 +4,7 @@ description: Panoramica di Apple SSO
 exl-id: 7cf47d01-a35a-4c85-b562-e5ebb6945693
 source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
-source-wordcount: '1260'
+source-wordcount: '1311'
 ht-degree: 0%
 
 ---
@@ -36,7 +36,7 @@ Per beneficiare dell&#39;esperienza utente Single Sign-On (SSO), un programmator
 
 * Contatta Apple per abilitare il [framework dell&#39;account del sottoscrittore video](https://developer.apple.com/documentation/videosubscriberaccount) come parte del tuo ID team Apple e configura il [diritto Single Sign-On del sottoscrittore video](https://developer.apple.com/documentation/bundleresources/entitlements/com_apple_developer_video-subscriber-single-sign-on) come parte dell&#39;account sviluppatore Apple.
 
-   * Utilizza Xcode versione 8 o successiva e iOS/tvOS versione 10 o successiva.
+  * Utilizza Xcode versione 8 o successiva e iOS/tvOS versione 10 o successiva.
 
 * Abilitare il Single Sign-On (SSO) per ogni integrazione e piattaforma desiderata (iOS/tvOS) tramite il [dashboard TVE di Adobe Pass](https://experience.adobe.com/#/pass/authentication) impostando la proprietà `Enable Single Sign On` su `Yes`.
 
@@ -47,17 +47,17 @@ Per beneficiare dell&#39;esperienza utente Single Sign-On (SSO), un programmator
 
 * Integra i flussi di utenti Single Sign-On (SSO) utilizzando una delle seguenti soluzioni offerte da Adobe Pass Authentication per gli utenti finali delle applicazioni client in esecuzione su iOS, iPadOS o tvOS.
 
-   * L’API REST per l’autenticazione di Adobe Pass V2 supporta il Single Sign-On (SSO) dei partner.
+  * L’API REST per l’autenticazione di Adobe Pass V2 supporta il Single Sign-On (SSO) dei partner.
 
-     Consulta la documentazione [Apple SSO Cookbook (REST API V2)](apple-sso-cookbook-rest-api-v2.md).
+    Consulta la documentazione [Apple SSO Cookbook (REST API V2)](apple-sso-cookbook-rest-api-v2.md).
 
-   * L’API REST per l’autenticazione Adobe Pass versione precedente v1 supporta l’SSO (Single Sign-On) dei partner.
+  * L’API REST per l’autenticazione Adobe Pass versione precedente v1 supporta l’SSO (Single Sign-On) dei partner.
 
-     Consulta la documentazione [(Legacy) Apple SSO Cookbook (REST API V1)](../../../../legacy/sso-access/apple-sso-cookbook-rest-api-v1.md).
+    Consulta la documentazione [(Legacy) Apple SSO Cookbook (REST API V1)](../../../../legacy/sso-access/apple-sso-cookbook-rest-api-v1.md).
 
-   * Il SDK legacy Adobe Pass Authentication AccessEnabler iOS/tvOS supporta il Single Sign-On (SSO) dei partner.
+  * Il SDK legacy Adobe Pass Authentication AccessEnabler iOS/tvOS supporta il Single Sign-On (SSO) dei partner.
 
-     Consulta la documentazione [(Legacy) Apple SSO Cookbook (iOS/tvOS SDK)](../../../../legacy/sso-access/apple-sso-cookbook-iostvos-sdk.md).
+    Consulta la documentazione [(Legacy) Apple SSO Cookbook (iOS/tvOS SDK)](../../../../legacy/sso-access/apple-sso-cookbook-iostvos-sdk.md).
 
 ### MVPD {#apple-sso-prerequisites-mvpd}
 
@@ -65,11 +65,11 @@ Per poter usufruire dell’esperienza utente Single Sign-On (SSO), un MVPD deve:
 
 * Contatta Apple per avviare il processo di onboarding lato Apple.
 
-   * Richiedi la documentazione tecnica su come integrare e sviluppare un’applicazione TVML di JavaScript in grado di gestire il modulo di accesso utente.
+  * Richiedi la documentazione tecnica su come integrare e sviluppare un’applicazione TVML di JavaScript in grado di gestire il modulo di accesso utente.
 
 * Per avviare il processo di onboarding sul lato Adobe, contatta l’autenticazione di Adobe Pass.
 
-   * Immetti il valore stringa che rappresenta l’identificatore del fornitore TV assegnato da Apple durante il processo di onboarding.
+  * Immetti il valore stringa che rappresenta l’identificatore del fornitore TV assegnato da Apple durante il processo di onboarding.
 
 ## Domande frequenti {#FAQ}
 

@@ -4,7 +4,7 @@ description: Conoscere TVE Dashboard e le risorse.
 exl-id: 91baeb34-a32a-4dc3-94d8-f6cfca59dc4e
 source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
 workflow-type: tm+mt
-source-wordcount: '305'
+source-wordcount: '314'
 ht-degree: 0%
 
 ---
@@ -22,8 +22,8 @@ Il [[!DNL Adobe] Pass TVE Dashboard](https://experience.adobe.com/pass/authentic
 * **Configurazione delle proprietà**: configurare più proprietà per ogni integrazione per implementare regole business granulari personalizzate in base alle esigenze specifiche della piattaforma.
 
 * **Generazione report**: accedere ed esportare report dettagliati sulla configurazione in MVPDs. Tali rapporti includono:
-   * Categorie di piattaforme come *Dispositivi connessi a desktop, dispositivi mobili e TV*
-   * Piattaforme come *iOS, Android™, tvOS, Roku e FireTV*
+  * Categorie di piattaforme come *Dispositivi connessi a desktop, dispositivi mobili e TV*
+  * Piattaforme come *iOS, Android™, tvOS, Roku e FireTV*
 
   I rapporti forniscono informazioni sul supporto del Single Sign-On (SSO) e sulla durata delle sessioni di autenticazione o autorizzazione degli abbonati a livello di MVPD e piattaforma.
 
