@@ -48,17 +48,17 @@ Affinché l’autenticazione Adobe Pass possa essere integrata con un MVPD proxy
 * (Consigliato) - Il MVPD proxy gestisce il reindirizzamento aggiuntivo all&#39;URL della pagina di accesso del MVPD proxy
 
 * Il proxy MVPD deve aprire le porte 443 e 80 per i seguenti IP:
-   * 192.150.4.5
-   * 192.150.10.200
-   * 192.150.11.4
-   * 4.53.93.130
-   * 193.105.140.131
-   * 193.105.140.132
-   * 76.74.170.204
-   * 63.140.39.4
-   * 66.235.132.38
-   * 66.235.139.38
-   * 66.235.139.168
+  * 192.150.4.5
+  * 192.150.10.200
+  * 192.150.11.4
+  * 4.53.93.130
+  * 193.105.140.131
+  * 193.105.140.132
+  * 76.74.170.204
+  * 63.140.39.4
+  * 66.235.132.38
+  * 66.235.139.38
+  * 66.235.139.168
 
 
 #### Richiesta e risposta SAML di autenticazione {#authn-saml-req-resp}

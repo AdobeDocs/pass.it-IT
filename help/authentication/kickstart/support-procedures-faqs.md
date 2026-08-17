@@ -4,7 +4,7 @@ description: Domande frequenti sulle procedure di supporto
 exl-id: 1d754e5a-d5fa-4411-8932-2a36294da6eb
 source-git-commit: 0ab1fc212752dd4a4d6e12a4ab1287ef74e4a282
 workflow-type: tm+mt
-source-wordcount: '777'
+source-wordcount: '790'
 ht-degree: 0%
 
 ---
@@ -94,5 +94,5 @@ Alcune situazioni con azioni predefinite che verranno eseguite se si verifica lo
 |    | Scenario | Descrizione | Azioni |
 |----|--------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | S1 | Adobe identifica un problema di integrazione di un MVPD durante le normali operazioni di produzione. | Durante le normali operazioni di produzione, Adobe identifica un problema con uno degli MVPD che rende impossibile l’esecuzione dei flussi di autenticazione/autorizzazione (ad esempio certificati scaduti, risposte SAML scadute, porte chiuse, parametri modificati, ecc.) | Adobe invierà una notifica a MVPD e Programmer interessati.  </br></br> Adobe disattiverà questo MVPD per tutti i programmatori interessati. </br></br> Adobe aprirà un ticket con MVPD seguendo la procedura di supporto concordata con tale MVPD |
-| S2 | Adobe attiva un nuovo MVPD per un programmatore e il programmatore consente il MVPD prima della data di avvio. | Adobe sta attivando un nuovo MVPD per il sito di un programmatore e il sito sta già visualizzando il nuovo MVPD nel selettore, anche se non era previsto. | Adobe informerà il programmatore del nuovo MVPD visualizzato nel selettore prima della data pianificata. Il programmatore </br></br> eseguirà un&#39;azione per rimuoverlo dal selettore, se necessario. |
+| S2 | Adobe attiva un nuovo MVPD per un programmatore e il programmatore consente il MVPD prima della data di avvio. | Adobe sta attivando un nuovo MVPD per il sito di un programmatore e il sito sta già visualizzando il nuovo MVPD nel selettore, anche se non era previsto. | Adobe informerà il programmatore del nuovo MVPD visualizzato nel selettore prima della data pianificata. </br></br>  Il programmatore eseguirà un&#39;azione per rimuoverlo dal selettore, se necessario. |
 | S3 | Adobe attiva un nuovo MVPD per un programmatore anche se il MVPD non è pronto per la produzione | Adobe sta attivando un nuovo MVPD per un programmatore, ma MVPD non ha ancora implementato il supporto per l’integrazione, pertanto non è possibile eseguire i flussi di autenticazione/autorizzazione | Adobe eseguirà la distribuzione solo se richiesto dal programmatore </br></br> Il programmatore sarà responsabile di garantire l&#39;autorizzazione di MVPD una volta eseguiti tutti i test. |

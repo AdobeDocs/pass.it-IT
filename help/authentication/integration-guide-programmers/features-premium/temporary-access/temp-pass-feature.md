@@ -4,7 +4,7 @@ description: Funzione TempPass
 exl-id: 1df14090-8e71-4e3e-82d8-f441d07c6f64
 source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
-source-wordcount: '2203'
+source-wordcount: '2245'
 ht-degree: 0%
 
 ---
@@ -62,7 +62,7 @@ Ad esempio, per fornire una sessione gratuita iniziale di 4 ore seguita da sessi
 * **TempPass1**: configurato con un valore TTL (Time-To-Live) di 4 ore per coprire il periodo di accesso libero iniziale.
 * **TempPass2**: configurato con un valore TTL (Time-To-Live) di 10 minuti per i successivi intervalli giornalieri di accesso libero.
 
-Per garantire la funzionalità corretta per l&#39;accesso giornaliero, è necessario reimpostare TempPass2 per tutti i dispositivi alle 00:00 ore ogni giorno.
+Per garantire la funzionalità dell&#39;accesso giornaliero, è necessario reimpostare TempPass2 per tutti i dispositivi alle 00:00 ogni giorno.
 
 ### Dettagli delle funzioni {#basic-temp-pass-feature-details}
 
