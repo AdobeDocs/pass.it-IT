@@ -4,7 +4,7 @@ description: Meccanismo di limitazione
 exl-id: 15236570-1a75-42fb-9bba-0e2d7a59c9f6
 source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
 workflow-type: tm+mt
-source-wordcount: '614'
+source-wordcount: '616'
 ht-degree: 1%
 
 ---
@@ -20,7 +20,7 @@ Una volta raggiunto il limite, le richieste verranno contrassegnate con uno stat
 ## Panoramica sul meccanismo {#mechanism-overview}
 
 Il meccanismo determina il numero massimo di chiamate accettate per ogni endpoint di monitoraggio della concorrenza entro un intervallo di tempo specifico.
-Una volta raggiunto il numero massimo di chiamate, il nostro servizio risponderà con &quot;429 Troppe richieste&quot;. L’intestazione &quot;Scade&quot; della risposta 429 include il timestamp del momento in cui la chiamata successiva verrà considerata valida o il momento in cui scade la limitazione. Al momento, la limitazione scade dopo una   minuto dalla prima risposta 429.
+Una volta raggiunto il numero massimo di chiamate, il nostro servizio risponderà con &quot;429 Troppe richieste&quot;. L’intestazione &quot;Scade&quot; della risposta 429 include il timestamp del momento in cui la chiamata successiva verrà considerata valida o il momento in cui scade la limitazione. Al momento, la limitazione scade dopo un minuto dalla prima risposta 429.
 
 Gli endpoint configurati con limitazione sono:
 1. Crea una nuova sessione: POST /session/{idp}/{subject}
