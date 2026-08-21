@@ -23,7 +23,7 @@ L’API di preautorizzazione può essere utilizzata per ottenere una decisione d
 
 >[!IMPORTANT]
 >
->Prima di concedere all&#39;utente l&#39;accesso alle risorse specificate, è necessario utilizzare l&#39;API di autorizzazione **1&rbrace;.**
+>Prima di concedere all&#39;utente l&#39;accesso alle risorse specificate, è necessario utilizzare l&#39;API di autorizzazione **1}.**
 
 Nel caso in cui il risultato della risposta API di preautorizzazione contenga una o più risorse con una decisione di preautorizzazione negata, è possibile includere ulteriori informazioni sull&#39;errore **(vedi la nota seguente)** per ciascuna risorsa interessata.
 
@@ -239,7 +239,7 @@ Una o più risorse hanno una decisione di preautorizzazione negata e la funzione
                    "code" : "authorization_denied_by_mvpd",
                    "message" : "User not authorized",
                    "details" : "Your subscription package does not include the "TestStream3" channel.",
-                   "helpUrl" : "https://experienceleague.adobe.com/docs/primetime/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=it",
+                   "helpUrl" : "https://experienceleague.adobe.com/docs/primetime/authentication/auth-features/error-reportn/enhanced-error-codes.html",
                    "trace" : "0453f8c8-167a-4429-8784-cd32cfeaee58",
                    "action" : "none"
                 }
@@ -267,7 +267,7 @@ I servizi di autenticazione di Adobe Pass hanno riscontrato un errore durante la
             "code" : "bad_request",
             "message": "Missing required parameter : deviceId",
             "details": "",
-            "helpUrl" : "https://experienceleague.adobe.com/docs/primetime/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=it",
+            "helpUrl" : "https://experienceleague.adobe.com/docs/primetime/authentication/auth-features/error-reportn/enhanced-error-codes.html",
             "trace" : "9f115e1c-0158-4a41-8805-9f68923f3646",
             "action" : "none"
         }
