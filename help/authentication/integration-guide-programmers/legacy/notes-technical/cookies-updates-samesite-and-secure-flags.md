@@ -4,7 +4,7 @@ description: Aggiornamenti dei cookie - Flag SameSite e Secure
 exl-id: cc1f60fd-fa64-48cb-a185-dba562a54c33
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '956'
+source-wordcount: '973'
 ht-degree: 0%
 
 ---
@@ -58,13 +58,13 @@ Durante la navigazione in questa sezione, ricorda che per tutti i cookie del ser
 1. È importante notare che i cookie con attributo *Secure* devono essere inviati tramite *HTTPS*, altrimenti il cookie non raggiungerà il servizio di autenticazione di Adobe Pass.
 
    - SDK di AccessEnabler JavaScript:
-      - È obbligatorio che la comunicazione con *sp.auth.adobe.com* utilizzi *HTTPS* per le versioni *2.35* e *3.5.0*, prima di introdurre la registrazione client dinamica.
+     - È obbligatorio che la comunicazione con *sp.auth.adobe.com* utilizzi *HTTPS* per le versioni *2.35* e *3.5.0*, prima di introdurre la registrazione client dinamica.
    - SDK di AccessEnabler iOS/tvOS:
-      - Obbligatorio che la comunicazione con *sp.auth.adobe.com* utilizzi *HTTPS* per le versioni precedenti a *3.0.0*, prima di introdurre la registrazione client dinamica.
+     - Obbligatorio che la comunicazione con *sp.auth.adobe.com* utilizzi *HTTPS* per le versioni precedenti a *3.0.0*, prima di introdurre la registrazione client dinamica.
    - SDK di AccessEnabler Android:
-      - Obbligatorio che la comunicazione con *sp.auth.adobe.com* utilizzi *HTTPS* per le versioni precedenti a *3.0.0*, prima di introdurre la registrazione client dinamica.
+     - Obbligatorio che la comunicazione con *sp.auth.adobe.com* utilizzi *HTTPS* per le versioni precedenti a *3.0.0*, prima di introdurre la registrazione client dinamica.
    - AccessEnabler FireOS SDK:
-      - È obbligatorio che la comunicazione con *sp.auth.adobe.com* utilizzi *HTTPS* per la versione *2.0.4*.
+     - È obbligatorio che la comunicazione con *sp.auth.adobe.com* utilizzi *HTTPS* per la versione *2.0.4*.
 
 </br>
 
