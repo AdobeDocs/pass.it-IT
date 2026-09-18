@@ -1,14 +1,12 @@
 ---
 title: Strategie LIFO e FIFO
 description: Comprendere la differenza tra le strategie LIFO e FIFO e quando utilizzare ciascun approccio
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+exl-id: 2d7c4bc8-0491-429b-8471-3b5629aa76a6
+source-git-commit: 39384d753e7808fa433f30d8dafabd531dbf3acf
 workflow-type: tm+mt
-source-wordcount: '685'
+source-wordcount: '686'
 ht-degree: 0%
-
 ---
-
-
 # Strategie LIFO e FIFO {#lifo-fifo-strategies}
 
 Quando si implementa il monitoraggio della concorrenza, è necessario scegliere tra due strategie fondamentali per la gestione dei conflitti quando vengono raggiunti i limiti di utilizzo: **LIFO (Last In, First Out)** o **FIFO (First In, First Out)**. Comprendere queste strategie è fondamentale per progettare la giusta esperienza utente e implementare la gestione appropriata degli errori.

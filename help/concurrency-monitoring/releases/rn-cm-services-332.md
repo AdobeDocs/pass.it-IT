@@ -1,13 +1,12 @@
 ---
 title: Note sulla versione di Adobe Concurrency Monitoring Services 3.3.2
 description: Note sulla versione di Adobe Concurrency Monitoring Services 3.3.2
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+exl-id: 807ada12-83c6-49cf-b13e-a6a5f19feb22
+source-git-commit: 39384d753e7808fa433f30d8dafabd531dbf3acf
 workflow-type: tm+mt
-source-wordcount: '56'
+source-wordcount: '54'
 ht-degree: 3%
-
 ---
-
 # Note sulla versione di Adobe Concurrency Monitoring Services 3.3.2 {#cm-services-rns}
 
 Questa pagina descrive nuove funzioni, modifiche e problemi noti relativi a questa versione.

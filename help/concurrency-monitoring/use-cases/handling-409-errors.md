@@ -1,14 +1,12 @@
 ---
 title: Gestione degli errori di conflitto 409
 description: Scopri come gestire gli errori di conflitto 409 quando vengono raggiunti i limiti di utilizzo simultanei
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+exl-id: 23a73e48-8ae0-4e0e-85db-dfc09d1386a7
+source-git-commit: 39384d753e7808fa433f30d8dafabd531dbf3acf
 workflow-type: tm+mt
 source-wordcount: '283'
-ht-degree: 0%
-
+ht-degree: 1%
 ---
-
-
 # Gestione degli errori di conflitto 409 {#handling-409-errors}
 
 Quando un utente tenta di avviare un nuovo flusso e raggiunge un limite di utilizzo simultaneo, il monitoraggio della concorrenza restituisce una risposta **409 Conflict**. Comprendere come gestire questo errore è fondamentale per fornire una buona esperienza utente.
@@ -127,5 +125,3 @@ Si verifica un conflitto 409 quando:
 - **Analizzare attentamente la risposta** - Estrarre tutte le informazioni rilevanti
 - **Gestione dei casi edge** - Cosa succede se non vengono restituiti conflitti?
 - **Registra conflitti** - Tieni traccia delle violazioni dei criteri per l&#39;analisi
-
-
