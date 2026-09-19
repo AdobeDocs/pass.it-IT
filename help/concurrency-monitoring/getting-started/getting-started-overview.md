@@ -1,14 +1,12 @@
 ---
 title: Introduzione al monitoraggio della concorrenza
 description: Scopri le nozioni di base sul monitoraggio della concorrenza e come iniziare a utilizzare l’integrazione
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+exl-id: d2b8c7c4-b02d-4bea-9310-162064fd7216
+source-git-commit: 39384d753e7808fa433f30d8dafabd531dbf3acf
 workflow-type: tm+mt
-source-wordcount: '363'
+source-wordcount: '372'
 ht-degree: 0%
-
 ---
-
-
 # Introduzione al monitoraggio della concorrenza {#getting-started-overview}
 
 Monitoraggio della concorrenza Questa guida ti aiuterà a comprendere le nozioni di base e a rendere operativa rapidamente la tua integrazione.
@@ -87,5 +85,5 @@ Per iniziare a utilizzare il monitoraggio della concorrenza, contatta il nostro 
 
 - **API Explorer** - Test interattivo delle API in [Interfaccia Swagger](https://streams-stage.adobeprimetime.com/swagger-ui/index.html)
 - **Termini chiave e definizioni** - [Glossario](../cm-glossary.md)
-- **Come ottenere assistenza?** - [Procedure di supporto](../support/cm-escalation-procedures.md)
+- **Come ottenere la Guida?** - [Procedure di supporto](../support/cm-escalation-procedures.md)
 - **Supporto** - Contattare [tve-support@adobe.com](mailto:tve-support@adobe.com)
