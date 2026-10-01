@@ -6,9 +6,7 @@ source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
 workflow-type: tm+mt
 source-wordcount: '151'
 ht-degree: 0%
-
 ---
-
 # (Legacy) Consenti MVPD nella finestra di dialogo per selezione {#allow-mvpds-selection-dialog}
 
 >[!NOTE]
