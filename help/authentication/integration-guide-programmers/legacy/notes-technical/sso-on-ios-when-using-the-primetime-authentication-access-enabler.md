@@ -4,11 +4,9 @@ description: SSO su iOS quando si utilizza Adobe Pass Authentication Access Enab
 exl-id: 882f0abb-2e6e-461d-a375-3ab410991935
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '1144'
+source-wordcount: '1216'
 ht-degree: 0%
-
 ---
-
 # (Legacy) SSO su iOS quando si utilizza Adobe Pass Authentication Access Enabler {#sso-on-ios-when-using-the-primetime-authentication-access-enabler}
 
 >[!NOTE]
@@ -39,7 +37,7 @@ L’SSO su iOS è determinato dalle seguenti condizioni:
 Il comportamento SSO è il seguente:
 
 - **iOS 6 e versioni precedenti**: SSO funziona automaticamente tra app sviluppate dallo stesso team o da team diversi. L’ID dispositivo viene calcolato in base all’indirizzo MAC (lo stesso valore viene prodotto in tutte le app) e l’area di archiviazione è comune a tutte le app (il tavolo di montaggio personalizzato è condivisibile tra le app in iOS 6 e versioni successive).
-   - **Importante:** tieni presente che la versione di iOS SDK 1.9.4 ha [aumentato la destinazione minima della distribuzione iOS a iOS 7.](https://tve.zendesk.com/hc/en-us/articles/204963209-iOS-Native-AccessEnabler-Library)
+  - **Importante:** tieni presente che la versione di iOS SDK 1.9.4 ha [aumentato la destinazione minima della distribuzione iOS a iOS 7.](https://tve.zendesk.com/hc/en-us/articles/204963209-iOS-Native-AccessEnabler-Library)
 - **iOS 7 e versioni successive**: SSO funzionerà nelle seguenti condizioni:
 
 1. Le app vengono pubblicate utilizzando lo stesso profilo di distribuzione Apple o profili che appartengono allo stesso team. Questo è l&#39;unico modo in cui le app possono condividere bacheche personalizzate su iOS 7 e versioni successive. In tutti gli altri scenari, il tavolo di montaggio è in modalità sandbox per applicazione. Da [*https://developer.apple.com/library/IOs/releasenotes/General/RN-iOSSDK-7.0/index.html*](https://developer.apple.com/library/ios/releasenotes/General/RN-iOSSDK-7.0/index.html): \+\[`UIPasteboard pasteboardWithName:create:\`] e +\[`UIPasteboard pasteboardWithUniqueName`\] ora specifica il nome specificato per consentire solo alle app dello stesso gruppo di applicazioni di accedere alla tavola di montaggio. Se lo sviluppatore tenta di creare un tavolo di montaggio con un nome che esiste già e non fa parte della stessa suite di app, otterrà il proprio tavolo di montaggio univoco e privato. Tieni presente che questo non influisce sul sistema di pastboard fornito, generale e trova.
