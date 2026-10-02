@@ -4,18 +4,16 @@ description: Metadati utente
 exl-id: 9fd68885-7b3a-4af0-a090-6f1f16efd2a1
 source-git-commit: edfde4b463dd8b93dd770bc47353ee8ceb6f39d2
 workflow-type: tm+mt
-source-wordcount: '1902'
+source-wordcount: '1936'
 ht-degree: 0%
-
 ---
-
 # Metadati utente {#user-metadata}
 
 >[!IMPORTANT]
 >
 > Il contenuto di questa pagina viene fornito solo a scopo informativo. L’utilizzo di questa API richiede una licenza corrente da Adobe. Non è consentito alcun uso non autorizzato.
 
-I metadati utente fanno riferimento a [attributi](#attributes) specifici dell&#39;utente (ad esempio, codici postali, valutazioni dei genitori, ID utente ecc.) gestiti da MVPD e forniti ai programmatori tramite l&#39;autenticazione Adobe Pass [REST API V2](#apis).
+I metadati dell&#39;utente fanno riferimento a [attributi](#attributes) specifici dell&#39;utente (ad esempio, codici postali, valutazioni dei genitori, ID utente e così via) gestiti da MVPD e forniti ai programmatori tramite l&#39;autenticazione Adobe Pass [REST API V2](#apis).
 
 I metadati utente diventano disponibili al termine del flusso di autenticazione, ma alcuni attributi di metadati possono essere aggiornati durante il flusso di autorizzazione, a seconda di MVPD e dell’attributo di metadati specifico in questione.
 
