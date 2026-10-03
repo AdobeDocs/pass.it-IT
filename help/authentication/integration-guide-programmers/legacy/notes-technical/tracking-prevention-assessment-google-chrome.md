@@ -4,11 +4,9 @@ description: Valutazione della prevenzione del tracciamento Google Chrome
 exl-id: f3d552da-2fd7-4ac8-9f82-876625af5d47
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '673'
+source-wordcount: '812'
 ht-degree: 0%
-
 ---
-
 # (Legacy) Valutazione della prevenzione del tracciamento - Google Chrome {#tracking-prevention-assessment-google-chrome}
 
 >[!NOTE]
@@ -29,12 +27,12 @@ La valutazione viene eseguita per le applicazioni TV Everywhere (TVE) in esecuzi
 
 Di seguito è riportato un elenco di risorse aggregate dal sito web Google dedicato agli sviluppatori e dal blog ufficiale che consigliamo ai nostri clienti di consultare:
 
-* [Il prossimo passo verso la graduale eliminazione dei cookie di terze parti in Chrome](https://blog.google/products/chrome/privacy-sandbox-tracking-protection/)
-* [Documentazione per gli sviluppatori per Privacy Sandbox](https://developers.google.com/privacy-sandbox)
+* [Passaggio successivo verso la graduale eliminazione dei cookie di terze parti in Chrome](https://blog.google/products/chrome/privacy-sandbox-tracking-protection/)
+* [Documentazione per gli sviluppatori su Privacy Sandbox](https://developers.google.com/privacy-sandbox)
 * [Prepararsi per le restrizioni dei cookie di terze parti](https://developers.google.com/privacy-sandbox/3pcd)
 * [Prepararsi per la chiusura graduale dei cookie di terze parti](https://developers.google.com/privacy-sandbox/3pcd/prepare/prepare-for-phaseout)
 * [Preparazione alla fine dei cookie di terze parti](https://developers.google.com/privacy-sandbox/blog/cookie-countdown-2023oct)
-* [Cookie di terze parti limitati per impostazione predefinita per l&#39;1% degli utenti di Chrome](https://developers.google.com/privacy-sandbox/blog/cookie-countdown-2024jan)
+* [Cookie di terze parti limitati per impostazione predefinita per l’1% degli utenti di Chrome](https://developers.google.com/privacy-sandbox/blog/cookie-countdown-2024jan)
 
 ## Timeline
 
