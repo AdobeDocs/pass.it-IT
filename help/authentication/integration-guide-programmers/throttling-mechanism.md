@@ -4,11 +4,9 @@ description: Scopri il meccanismo di limitazione utilizzato nell’autenticazion
 exl-id: f00f6c8e-2281-45f3-b592-5bbc004897f7
 source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
-source-wordcount: '1141'
+source-wordcount: '1162'
 ht-degree: 0%
-
 ---
-
 # Meccanismo di limitazione {#throttling-mechanism}
 
 Tutti i clienti di Autenticazione di tipo Pass devono essere in grado di accedere all’API di autenticazione di tipo Pass per ciascuno dei loro utenti, in base alle istruzioni e al loro caso aziendale.
