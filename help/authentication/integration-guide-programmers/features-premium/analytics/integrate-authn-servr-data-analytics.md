@@ -2,13 +2,14 @@
 title: Integrazione dei dati lato server di autenticazione di Adobe Pass in Adobe Analytics
 description: Integrazione dei dati lato server di autenticazione di Adobe Pass in Adobe Analytics
 exl-id: c1f1f2a3-c98c-4aed-92ad-1f9bfd80b82b
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '1139'
+source-wordcount: '1140'
 ht-degree: 0%
-
 ---
-
 # Integrazione dei dati lato server di autenticazione di Adobe Pass in Adobe Analytics
 
 >[!NOTE]
@@ -19,7 +20,7 @@ I clienti di Adobe Pass Authentication desiderano visualizzare i dati lato serve
 
 I dati serviranno a tenere traccia di metriche TVE importanti, come i tassi di conversione dell’autenticazione per MVPD, gli utenti univoci in base all’ID utente di MVPD e altro ancora.
 
-Non intende sostituire un’implementazione lato client se ne esiste già una, in quanto l’attività utente non può essere tracciata oltre gli eventi specifici riportati di seguito in assenza di un ID visitatore. Se i clienti forniscono un ID visitatore nelle chiamate Pass, possiamo sbloccare un altro tipo di integrazione Analytics (in tempo reale) che può unire tutti gli eventi Pass ai dati esistenti del cliente. Ulteriori dettagli su questo nuovo tipo di possibile integrazione qui: &quot;[Utilizzo di Experience Cloud ID nell&#39;autenticazione di Adobe Pass](/help/authentication/integration-guide-programmers/features-premium/analytics/exp-cloud-id-authn.md)&quot;
+Non intende sostituire un’implementazione lato client se ne esiste già una, in quanto l’attività utente non può essere tracciata oltre gli eventi specifici riportati di seguito in assenza di un ID visitatore. Se i clienti forniscono un ID visitatore nelle chiamate di accesso, possiamo sbloccare un altro tipo di integrazione di Analytics (in tempo reale) che può unire tutti gli eventi di accesso ai dati esistenti del cliente. Ulteriori dettagli su questo nuovo tipo di possibile integrazione sono disponibili qui: &quot;[Utilizzo di Experience Cloud ID nell&#39;autenticazione di Adobe Pass](/help/authentication/integration-guide-programmers/features-premium/analytics/exp-cloud-id-authn.md)&quot;
 
 ## Metriche incluse {#metrics-included-int-authn-analyt}
 
@@ -49,8 +50,8 @@ Non intende sostituire un’implementazione lato client se ne esiste già una, i
 | Versione SDK | Versione del SDK client di autenticazione di Adobe Pass |
 | ID risorsa | Titolo effettivo della risorsa coinvolto nella richiesta di autorizzazione (estratto dal payload MRSS come articolo/titolo se fornito) |
 | Tipo di errore AuthZ | Motivo degli errori, come segnalato dall&#39;autenticazione Adobe Pass <br/> Di seguito sono riportati i valori più comuni <br/> **noAuthZ** = MVPD ha risposto che l&#39;utente non ha il canale nel pacchetto<br/> **rete** = impossibile raggiungere MVPD (MVPD ha un problema al momento della chiamata e non ha risposto)<br/> **norefreshtoken** = strettamente per le implementazioni OAuth e potrebbe verificarsi se l&#39;utente ha cambiato la password o se MVPD l&#39;ha negata per qualche motivo. Generalmente genera una nuova autenticazione<br/> **mancata corrispondenza** = se la richiesta viene effettuata da un dispositivo diverso da quello che aveva il token di autenticazione. Può verificarsi se gli utenti tentano di ingannare il sistema, ma la maggior parte di queste si è verificata nel contesto del nostro vecchio SDK JavaScript, in cui l’ID dispositivo utilizzava l’indirizzo IP come parte del calcolo. Se un utente guardava TVE a casa e poi al lavoro, questo errore veniva attivato e doveva autenticarsi di nuovo<br/> **non valido** = richiesta non valida, parametri mancanti o non validi<br/>  **authzNone** = I programmatori possono negare le autorizzazioni per una specifica combinazione channelxMVPD. Attivato da un&#39;API di back-end a cui i programmatori hanno accesso<br/> **frode** = è un meccanismo di protezione dalla nostra parte. Se l’utente non riesce a ottenere l’autorizzazione e successivamente la richiede nuovamente un numero di volte in un breve intervallo (secondi), la chiamata viene negata direttamente. In genere si verifica quando un programmatore presenta un bug nell’implementazione che richiede costantemente l’autorizzazione in caso di errore. |
-| Tipo di token | Quando i token vengono creati a causa di AuthZ All e AuthN All, dobbiamo sapere cosa viene fatto a causa di una misura di degradazione.<br/> Sono:<br/> &quot;normal&quot; = Caso normale<br/> &quot;authnall&quot; = Quando AuthN All è abilitato<br/> &quot;authzall&quot; = Quando AuthZ All è abilitato<br/> &quot;hba&quot; = Quando HBA è abilitato |
-| Tipo di dispositivo senza client | La piattaforma del dispositivo (alternativa), attualmente utilizzata per Clientless.<br/> I valori possono essere:<br/> N/D - l&#39;evento non ha avuto origine da un SDK senza client<br/> Sconosciuto - Poiché il parametro deviceType di un&#39;API **senza client** è facoltativo, esistono chiamate che non contengono alcun valore.<br/> Qualsiasi altro valore inviato tramite **API senza client**. Ad esempio, xbox, appletv e roku. |
+| Tipo di token | Quando si creano i token a causa di AuthZ All e AuthN All, è necessario sapere cosa viene fatto a causa di una misura di degradazione.<br/> Sono:<br/> &quot;normal&quot; = Il caso normale<br/> &quot;authnall&quot; = Quando AuthN All è abilitato<br/> &quot;authzall&quot; = Quando AuthZ All è abilitato<br/> &quot;hba&quot; = Quando HBA è abilitato |
+| Tipo di dispositivo senza client | Piattaforma del dispositivo (alternativa), attualmente utilizzata per Clientless.<br/> I valori possono essere:<br/> N/D - l&#39;evento non ha avuto origine da un SDK senza client<br/> Sconosciuto - Poiché il parametro deviceType di una **API senza client** è facoltativo, sono presenti chiamate che non contengono alcun valore.<br/> Qualsiasi altro valore inviato tramite **API senza client**. Ad esempio, xbox, appletv e roku. |
 | ID utente MVPD | Sostituisce l&#39;ID visitatore basato su cookie |
 
 

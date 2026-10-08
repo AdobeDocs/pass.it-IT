@@ -2,13 +2,14 @@
 title: Esempi di utilizzo API
 description: Utilizzo dell’endpoint API di Monitoraggio concorrenza
 exl-id: eb232926-9c68-4874-b76d-4c458d059f0d
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '2052'
+source-wordcount: '2083'
 ht-degree: 0%
-
 ---
-
 # Panoramica API {#api-overview}
 
 Per ulteriori dettagli, consulta la [documentazione API online](https://streams-stage.adobeprimetime.com/swagger-ui/index.html).
@@ -104,7 +105,7 @@ curl -i -X POST -u ${user}:%{pass} http://streams-stage.adobeprimetime.com/v2/se
 ```
 
 Per le chiamate heartbeat è consentito inviare metadati nello stesso modo in cui si esegue la sessione iniziale. È possibile aggiungere nuovi metadati in qualsiasi momento e aggiornare i valori inviati in precedenza con alcune **eccezioni**. I seguenti valori, una volta impostati, non possono essere modificati: **pacchetto**, **canale**, **piattaforma**, **assetId**, **idp**, **mvpd**, **hba_status**, **hba**,
-**dispositivo mobile**
+**dispositivoMobile**
 
 Se la sessione è ancora valida (non è scaduta o è stata eliminata manualmente), riceverai un risultato positivo:
 
@@ -326,7 +327,7 @@ Per tutte le chiamate API del ciclo di vita della sessione, il corpo della rispo
 
 ![](../assets/body_small.png)
 
-**Avviso**
+**Consigli**
 **EvaluationResult** includerà un array di oggetti Advice in **associatedAdvice**. Gli avvisi sono destinati all’applicazione per visualizzare un messaggio di errore completo per l’utente e (potenzialmente) consentire all’utente di intervenire.
 
 Attualmente esistono due tipi di avvisi (specificati dal valore dell&#39;attributo **type**): **rule-law** e **remote-termination**. Il primo fornisce dettagli relativi a una regola interrotta e alle sessioni in conflitto con quella corrente (incluso l&#39;attributo terminate che può essere utilizzato per terminare tale sessione in remoto). La seconda afferma semplicemente che la sessione corrente è stata volutamente terminata da una sessione remota, in modo che gli utenti sapranno chi li ha cacciati quando sono stati raggiunti i limiti. Se **ha sostituito** è incluso nei metadati, la sessione in questione è stata creata utilizzando l&#39;intestazione **X-Terminate**.

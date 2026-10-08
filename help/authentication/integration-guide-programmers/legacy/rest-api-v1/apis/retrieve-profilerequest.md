@@ -2,13 +2,14 @@
 title: Recuperare la richiesta del profilo SSO di Platform
 description: Recuperare la richiesta del profilo SSO di Platform
 exl-id: 44fd4e26-4d9a-4607-ac2c-b85d848f5fc6
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '210'
-ht-degree: 0%
-
+source-wordcount: '222'
+ht-degree: 1%
 ---
-
 # (Legacy) Recuperare la richiesta del profilo SSO di Platform {#retrieve-platform-sso-profile-request}
 
 >[!NOTE]
@@ -42,9 +43,9 @@ ht-degree: 0%
 Questa risorsa genera richieste di profilo per un ID richiedente e una tupla MVPD.
 
 
-| Endpoint | Chiamato </br> da | Input   </br>Parametri | Metodo HTTP </br> | Risposta | HTTP </br>Risposta |
+| Endpoint | Chiamato </br> da | Immetti </br> parametri | Metodo HTTP </br> | Risposta | HTTP </br>Risposta |
 | --- | --- | --- | --- | --- | --- |
-| &lt;SP_FQDN>/api/v1/{requestor}/profile-requests/{mvpd} | Servizio programmatore </br></br>o</br></br>app in streaming | &#x200B;1. richiedente (parametro percorso)</br>2. mvpd (parametro percorso)</br>3. deviceType (obbligatorio) | GET | Il Content-Type di risposta sarà application/octet-stream, poiché il payload effettivo è opaco per l’applicazione client.</br></br>La risposta deve essere inoltrata dall&#39;applicazione al motore SSO di Platform</br></br>per ottenere un SSO profilo. | 200 - Operazione completata   </br>400 - Richiesta non valida |
+| &lt;SP_FQDN>/api/v1/{requestor}/profile-requests/{mvpd} | Servizio programmatore </br></br>o</br></br>app in streaming | &#x200B;1. richiedente (parametro percorso)</br>2. mvpd (parametro percorso)</br>3. deviceType (obbligatorio) | GET | Il Content-Type di risposta sarà application/octet-stream, poiché il payload effettivo è opaco per l’applicazione client.</br></br>La risposta deve essere inoltrata dall&#39;applicazione al motore SSO di Platform</br></br>per ottenere un SSO profilo. | 200 - Operazione riuscita </br>400 - Richiesta non valida |
 
 
 | Parametro di input | Descrizione |

@@ -2,13 +2,14 @@
 title: Codici di errore migliorati
 description: Codici di errore migliorati
 exl-id: 2b0a9095-206b-4dc7-ab9e-e34abf4d359c
-source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '2747'
 ht-degree: 3%
-
 ---
-
 # Codici di errore migliorati {#enhanced-error-codes}
 
 >[!IMPORTANT]
@@ -18,12 +19,12 @@ ht-degree: 3%
 I codici di errore avanzati rappresentano una funzione di autenticazione di Adobe Pass che fornisce informazioni aggiuntive sugli errori alle applicazioni client integrate con:
 
 * API REST di autenticazione Adobe Pass:
-   * [API REST v2](../../rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md)
-   * [(Legacy) API REST v1](../../legacy/rest-api-v1/rest-api-overview.md)
+  * [API REST v2](../../rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md)
+  * [(Legacy) API REST v1](../../legacy/rest-api-v1/rest-api-overview.md)
 * API di preautorizzazione SDK per autenticazione Adobe Pass:
-   * [(Legacy) JavaScript SDK (API di preautorizzazione)](../../legacy/sdks/javascript-sdk/preauthorize-api-javascript-sdk.md)
-   * [(Legacy) iOS/tvOS SDK (API di pre-autorizzazione)](../../legacy/sdks/ios-tvos-sdk/preauthorize-api-ios-tvos-sdk.md)
-   * [(Legacy) Android SDK (API di preautorizzazione)](../../legacy/sdks/android-sdk/preauthorize-api-android-sdk.md)
+  * [(Legacy) JavaScript SDK (API di preautorizzazione)](../../legacy/sdks/javascript-sdk/preauthorize-api-javascript-sdk.md)
+  * [(Legacy) iOS/tvOS SDK (API di pre-autorizzazione)](../../legacy/sdks/ios-tvos-sdk/preauthorize-api-ios-tvos-sdk.md)
+  * [(Legacy) Android SDK (API di preautorizzazione)](../../legacy/sdks/android-sdk/preauthorize-api-android-sdk.md)
 
   _(*) L&#39;API di preautorizzazione è l&#39;unica API SDK di autenticazione di Adobe Pass che fornisce supporto per codici di errore avanzati._
 

@@ -2,13 +2,14 @@
 title: Monitoraggio dell’autenticazione di Adobe Pass
 description: Monitoraggio dell’autenticazione di Adobe Pass
 exl-id: fb000e9d-b5aa-45b1-a914-9e419ec8a4d9
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '211'
+source-wordcount: '213'
 ht-degree: 0%
-
 ---
-
 # (Legacy) Monitoraggio dell’autenticazione di Adobe Pass {#monitoring-adobe-primetime-authentication}
 
 >[!NOTE]
@@ -31,8 +32,8 @@ I clienti possono utilizzare [Nagios](http://www.nagios.org) o altri strumenti p
 
 * I seguenti endpoint fanno parte di Adobe Pass Authentication Web SDK.  Se manca significa che pay-TVpass è inattivo per tutti i programmatori e tutte le proprietà web:
 
-   * `https://entitlement.auth.adobe.com/entitlement/v4/AccessEnabler.js`
-   * `https://entitlement.auth.adobe.com/entitlement/js/AccessEnabler.js`
+  * `https://entitlement.auth.adobe.com/entitlement/v4/AccessEnabler.js`
+  * `https://entitlement.auth.adobe.com/entitlement/js/AccessEnabler.js`
 
 
 ### Endpoint da non monitorare {#endpoints-not-monitor}

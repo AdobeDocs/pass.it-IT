@@ -2,13 +2,14 @@
 title: Preautorizza Android
 description: Preautorizza Android
 exl-id: b5337595-135f-4981-a578-2da432f125d6
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '218'
 ht-degree: 0%
-
 ---
-
 # (Legacy) Preautorizza {#preuthorize-android}
 
 >[!NOTE]
@@ -26,7 +27,7 @@ Il metodo API Preauthorize deve essere utilizzato dalle applicazioni al fine di 
 
 
 
-In caso di errore imprevisto (ad esempio un problema di rete, endpoint di autorizzazione MVPD non disponibile e così via) che si verifica quando una richiesta API di preautorizzazione viene elaborata dai servizi di autenticazione di Adobe Pass, verranno incluse una o più informazioni di errore separate per le risorse interessate come parte del risultato della risposta API di preautorizzazione.
+In caso di errore imprevisto (ad esempio, problema di rete, endpoint di autorizzazione MVPD non disponibile e così via) in corso, quando una richiesta API di preautorizzazione viene elaborata dai servizi di autenticazione di Adobe Pass, verranno incluse una o più informazioni di errore separate per le risorse interessate come parte del risultato della risposta API di preautorizzazione.
 
 
 ## `public void preauthorize(PreauthorizeRequest request, AccessEnablerCallback<PreauthorizeResponse> callback);`
@@ -90,7 +91,7 @@ contenuto di risposta
 
 
 **public Builder disableFeatures(Set\&lt;PreauthorizeRequest.Feature\>
-caratteristiche)**
+funzionalità)**
 
 ```
     ///

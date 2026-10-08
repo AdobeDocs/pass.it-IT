@@ -2,13 +2,14 @@
 title: Intestazione - AP-Device-Identifier
 description: REST API V2 - Intestazione - AP-Device-Identifier
 exl-id: 90a5882b-2e6d-4e67-994a-050465cac6c6
-source-git-commit: 81d3c3835d2e97e28c2ddb9c72d1a048a25ad433
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '561'
 ht-degree: 0%
-
 ---
-
 # Intestazione - AP-Device-Identifier {#header-ap-device-identifier}
 
 >[!NOTE]
@@ -51,8 +52,10 @@ Tipo di identificatore del dispositivo.
    <tr>
       <td>impronta digitale</td>
       <td>
-            L’identificatore del dispositivo è costituito da un identificatore stabile e univoco creato e gestito dall’applicazione client per ciascun dispositivo.<br/>
-            L'applicazione client deve memorizzare nella cache l'identificatore del dispositivo nell'archiviazione persistente, poiché la perdita o la modifica di tale identificatore invaliderà l'autenticazione. L'applicazione client deve impedire le modifiche del valore causate da azioni dell'utente quali la disinstallazione, la reinstallazione o gli aggiornamenti dell'applicazione.</td>
+            L’identificatore del dispositivo è costituito da un identificatore stabile e univoco creato e gestito dall’applicazione client per ciascun dispositivo.
+            <br/>
+            L'applicazione client deve memorizzare nella cache l'identificatore del dispositivo nell'archiviazione persistente, poiché la perdita o la modifica di tale identificatore invaliderà l'autenticazione. L'applicazione client deve impedire le modifiche del valore causate da azioni dell'utente quali la disinstallazione, la reinstallazione o gli aggiornamenti dell'applicazione.
+      </td>
    </tr>
 </table>
 

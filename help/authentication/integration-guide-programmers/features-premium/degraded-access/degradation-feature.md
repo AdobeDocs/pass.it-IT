@@ -2,13 +2,14 @@
 title: Funzione di degradazione
 description: Funzione di degradazione
 exl-id: c7d6685b-a235-42eb-9c9c-0ffa1747f614
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '477'
+source-wordcount: '493'
 ht-degree: 0%
-
 ---
-
 # Funzione di degradazione {#degradation-feature}
 
 >[!IMPORTANT]
@@ -43,7 +44,7 @@ Per istruzioni complete, consulta la documentazione [Panoramica registrazione cl
 
 Degradation API è un’API RESTful che consente ai programmatori di gestire le regole di degradazione per MVPD specifici. L’API consente di attivare, rimuovere e recuperare lo stato delle regole di degradazione attive.
 
-Per ulteriori informazioni sull&#39;API Degradation, fare riferimento al seguente documento di Zendesk [Autenticazione Adobe Pass | API di degradazione v3](https://tve.zendesk.com/hc/en-us/articles/33912526308372-Adobe-Pass-Authentication-Degradation-API-v3) e cercare il file PDF da scaricare.
+Per ulteriori informazioni sull&#39;API Degradation, fare riferimento al seguente documento di Zendesk [Autenticazione Adobe Pass | Degradation API v3](https://tve.zendesk.com/hc/en-us/articles/33912526308372-Adobe-Pass-Authentication-Degradation-API-v3) e cercare il file PDF da scaricare.
 
 ## API REST V2 {#rest-api-v2}
 

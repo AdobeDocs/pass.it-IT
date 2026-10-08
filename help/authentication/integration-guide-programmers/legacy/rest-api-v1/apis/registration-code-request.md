@@ -2,13 +2,14 @@
 title: Pagina di registrazione
 description: Pagina di registrazione
 exl-id: 581b8e2e-7420-4511-88b9-f2cd43a41e10
-source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '528'
+source-wordcount: '529'
 ht-degree: 0%
-
 ---
-
 # Pagina di registrazione (legacy) {#registration-page}
 
 ## Endpoint REST API {#clientless-endpoints}
@@ -41,9 +42,9 @@ ht-degree: 0%
 
 Restituisce l&#39;URI del codice di registrazione e della pagina di accesso generati in modo casuale.
 
-| Endpoint | Chiamato <br> da | Input   <br>Parametro | Metodo HTTP <br> | Risposta | HTTP <br>Risposta |
+| Endpoint | Chiamato <br> da | Parametro <br> di input | Metodo HTTP <br> | Risposta | HTTP <br>Risposta |
 | --- | --- | --- | --- | --- | --- |
-| &lt;REGGIE_FQDN>/reggie/v1/{requestor}/regcode<br>Ad esempio:<br>REGGIE_FQDN/reggie/v1/sampleRequestorId/regcode | Servizio programmatore <br>o<br>app in streaming | &#x200B;1.  richiedente <br>    (componente percorso)<br>2.  deviceId (Hashed)   <br>    (obbligatorio)<br>3.  device_info/X-Device-Info (obbligatorio)<br>4.  mvpd (facoltativo)<br>5.  ttl (facoltativo)<br> | POST | XML o JSON contenente un codice di registrazione e informazioni o dettagli sull’errore in caso di esito negativo. Vedi gli esempi di seguito. | 201 |
+| &lt;REGGIE_FQDN>/reggie/v1/{requestor}/regcode<br>Esempio:<br>REGGIE_FQDN/reggie/v1/sampleRequestorId/regcode | Servizio programmatore <br>o<br>app in streaming | &#x200B;1.  richiedente <br> (componente percorso)<br>2.  deviceId (Hashed) <br> (Obbligatorio)<br>3.  device_info/X-Device-Info (obbligatorio)<br>4.  mvpd (facoltativo)<br>5.  ttl (facoltativo)<br> | POST | XML o JSON contenente un codice di registrazione e informazioni o dettagli sull’errore in caso di esito negativo. Vedi gli esempi di seguito. | 201 |
 
 {style="table-layout:auto"}
 
@@ -65,7 +66,8 @@ Restituisce l&#39;URI del codice di registrazione e della pagina di accesso gene
 >[!CAUTION]
 >
 >**Indirizzo IP dispositivo di streaming**
-><br>>Per le implementazioni client-server, l&#39;indirizzo IP del dispositivo di streaming viene inviato implicitamente con questa chiamata.  Per le implementazioni server-to-server in cui la chiamata **regcode** è impostata sul servizio Programmatore e non sul dispositivo di streaming, per passare l&#39;indirizzo IP del dispositivo di streaming è necessaria la seguente intestazione:
+><br>
+>Per le implementazioni client-server, l&#39;indirizzo IP del dispositivo di streaming viene inviato implicitamente con questa chiamata.  Per le implementazioni server-to-server in cui la chiamata **regcode** è impostata sul servizio Programmatore e non sul dispositivo di streaming, per passare l&#39;indirizzo IP del dispositivo di streaming è necessaria la seguente intestazione:
 >
 >
 >```
@@ -73,7 +75,8 @@ Restituisce l&#39;URI del codice di registrazione e della pagina di accesso gene
 >```
 >
 >dove `<streaming\_device\_ip>` è l&#39;indirizzo IP pubblico del dispositivo di streaming.
-><br><br>>Esempio: <br>
+><br><br>
+>Esempio: <br>
 >
 >```
 >POST /reggie/v1/{req_id}/regcode HTTP/1.1<br>X-Forwarded-For:203.45.101.20

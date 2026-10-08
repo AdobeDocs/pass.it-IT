@@ -2,13 +2,14 @@
 title: Record di registrazione di ritorno
 description: Record di registrazione di ritorno
 exl-id: 7b9e63a2-59b6-4123-a19b-ee1f021219ea
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '275'
+source-wordcount: '285'
 ht-degree: 2%
-
 ---
-
 # Record di registrazione restituzione (legacy) {#return-registration-record}
 
 >[!NOTE]
@@ -47,9 +48,9 @@ Restituisce il record del codice di registrazione contenente il codice di regist
 
 
 
-| Endpoint | Chiamato </br> da | Input   </br>Parametri | Metodo HTTP </br> | Risposta | HTTP </br>Risposta |
+| Endpoint | Chiamato </br> da | Immetti </br> parametri | Metodo HTTP </br> | Risposta | HTTP </br>Risposta |
 | --- | --- | --- | --- | --- | --- |
-| `<REGGIE_FQDN>`;/reggie/v1/`{requestorId}`/regcode/`{registrationCode}`<p>Ad esempio:<p>`<REGGIE_FQDN>`/reggie/v1/sampleRequestorId/regcode/TJCFK?format=xml | Servizio programmatore </br></br>o</br></br>app in streaming | &#x200B;1. richiedente </br>    (componente percorso)</br>2.  codice di registrazione </br>    (componente Percorso) | GET | XML o JSON contenente un codice di registrazione e informazioni. Vedi lo schema e l’esempio di seguito. | 200 |
+| `<REGGIE_FQDN>`;/reggie/v1/`{requestorId}`/regcode/`{registrationCode}`<p>Ad esempio:<p>`<REGGIE_FQDN>`/reggie/v1/sampleRequestorId/regcode/TJCFK?format=xml | Servizio programmatore </br></br>o</br></br>app in streaming | &#x200B;1.  richiedente </br> (componente percorso)</br>2.  codice di registrazione </br> (componente percorso) | GET | XML o JSON contenente un codice di registrazione e informazioni. Vedi lo schema e l’esempio di seguito. | 200 |
 
 {style="table-layout:auto"}
 

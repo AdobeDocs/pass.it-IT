@@ -2,13 +2,14 @@
 title: Glossario
 description: Glossario dei termini nel monitoraggio della concorrenza
 exl-id: 3b3b36fe-9f04-4de9-bd84-9f8d766bbc71
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '762'
+source-wordcount: '766'
 ht-degree: 0%
-
 ---
-
 # Glossario {#glossary}
 
 ## ID account {#accid-defn}
@@ -66,8 +67,8 @@ ht-degree: 0%
 ## Punto informazioni criterio (PIP) {#policy-info-pt-defn}
 
 * Origine dei valori di attributo. Il monitoraggio della concorrenza funge da punto di informazione fornendo:
-   * metadati del flusso pass-through.
-   * metriche delle attività relative ai flussi simultanei.
+  * metadati del flusso pass-through.
+  * metriche delle attività relative ai flussi simultanei.
 
 ## Programmatore {#programmer-defn}
 

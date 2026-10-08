@@ -2,13 +2,14 @@
 title: Informazioni sulle metriche lato server
 description: Informazioni sulle metriche lato server
 exl-id: 516884e9-6b0b-451a-b84a-6514f571aa44
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '2262'
 ht-degree: 0%
-
 ---
-
 # Informazioni sulle metriche lato server {#understanding-server-side-metrics}
 
 >[!NOTE]
@@ -26,18 +27,18 @@ Dal punto di vista del lato server di autenticazione di Adobe Pass vengono gener
 
 * **Eventi generati nel flusso di autenticazione**(un accesso effettivo con MVPD)
 
-   * Notifica del tentativo di autenticazione: viene generato quando l’utente viene inviato al sito di accesso di MVPD.
-   * Notifica di AuthN in sospeso: se l’utente riesce ad accedere con il proprio MVPD, questo viene generato quando l’utente viene reindirizzato all’autenticazione di Adobe Pass.
-   * Notifica di autenticazione concessa: viene generata quando l’utente torna sul sito del programmatore e ha recuperato correttamente il token di autenticazione dall’autenticazione di Adobe Pass.
+  * Notifica del tentativo di autenticazione: viene generato quando l’utente viene inviato al sito di accesso di MVPD.
+  * Notifica di AuthN in sospeso: se l’utente riesce ad accedere con il proprio MVPD, questo viene generato quando l’utente viene reindirizzato all’autenticazione di Adobe Pass.
+  * Notifica di autenticazione concessa: viene generata quando l’utente torna sul sito del programmatore e ha recuperato correttamente il token di autenticazione dall’autenticazione di Adobe Pass.
 * **Flusso di autorizzazione** (solo un controllo per l&#39;autorizzazione con un
 MVPD)\
   *Prerequisito:* un token AuthN valido
-   * Notifica del tentativo di autenticazione
-   * Notifica di concessione AuthZ
+  * Notifica del tentativo di autenticazione
+  * Notifica di concessione AuthZ
 * **Riproduzione della richiesta completata**\
   *Prerequisito:* token AuthN e AuthZ validi
-   * Notifica di un controllo con autenticazione Adobe Pass
-   * Una richiesta Play richiede sia un’autenticazione concessa sia un’autorizzazione concessa
+  * Notifica di un controllo con autenticazione Adobe Pass
+  * Una richiesta Play richiede sia un’autenticazione concessa sia un’autorizzazione concessa
 
 
 Il numero di utenti univoci è descritto in dettaglio nella sezione [Utenti univoci](#unique-users) seguente. In generale, poiché le risposte di autenticazione e autorizzazione concesse sono solitamente memorizzate nella cache, si applicano le seguenti formule:
@@ -238,10 +239,10 @@ Eventi attivati:
 
 * Tentativo AuthN (ancora nessun utente univoco)
 * AuthN concessa
-   * a questo punto, identifichiamo l’utente in modo univoco in base a ciò che MVPD restituisce, pertanto il conteggio univoco giornaliero degli utenti viene aumentato di 1
-   * il token AuthN viene memorizzato nella cache per 30 giorni
+  * a questo punto, identifichiamo l’utente in modo univoco in base a ciò che MVPD restituisce, pertanto il conteggio univoco giornaliero degli utenti viene aumentato di 1
+  * il token AuthN viene memorizzato nella cache per 30 giorni
 * Tentativo AuthZ / evento concesso
-   * Token AuthZ memorizzato nella cache per 1 giorno
+  * Token AuthZ memorizzato nella cache per 1 giorno
 * Evento di richiesta di riproduzione riuscito
 
 #### Giorno 1 (più tardi) {#day1-later-on}
@@ -260,7 +261,7 @@ L&#39;utente XYZ guarda un altro video.
 Eventi attivati:
 
 * Tentativo AuthZ / evento concesso
-   * Dal giorno 1 in cui è scaduto il caching
+  * Dal giorno 1 in cui è scaduto il caching
 * Evento di richiesta di riproduzione riuscito (gli altri sono memorizzati in cache)
 * Utenti univoci giornalieri aumentati di 1 - gli univoci mensili sono ancora 1
 

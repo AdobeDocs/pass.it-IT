@@ -2,13 +2,14 @@
 title: Panoramica di JavaScript SDK
 description: Panoramica di JavaScript SDK
 exl-id: 8756c804-a4c1-4ee3-b2b9-be45f38bdf94
-source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '510'
+source-wordcount: '515'
 ht-degree: 0%
-
 ---
-
 # (Legacy) Panoramica di JavaScript SDK {#javascript-sdk-overview}
 
 >[!NOTE]
@@ -55,7 +56,7 @@ Nell&#39;esempio di codice riportato di seguito viene illustrato come individuar
     </head>
     <body>
         <div id="alternative">
-        <a href="http://www.adobe.com/go/getflashplayer_it"> 
+        <a href="http://www.adobe.com/go/getflashplayer"> 
             <img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" 
                  alt="Get Adobe Flash player"/> </a>
         </div> 
@@ -207,7 +208,7 @@ In alcuni casi, il lettore non è responsabile della gestione dei loghi utente:
 
 
 
-- **Quando la disconnessione viene avviata da un sito non integrato con l&#39;autenticazione di Adobe Pass.** In questo caso MVPD può richiamare il servizio di disconnessione singola dell&#39;autenticazione di Adobe Pass tramite un reindirizzamento del browser. La chiamata SLO tramite una chiamata backchannel non è attualmente supportata.
+- **Quando la disconnessione viene avviata da un sito non integrato con l&#39;autenticazione di Adobe Pass.** In questo caso MVPD può richiamare il servizio di disconnessione singola dell’autenticazione di Adobe Pass tramite un reindirizzamento del browser. La chiamata SLO tramite una chiamata backchannel non è attualmente supportata.
 
 >[!NOTE]
 >

@@ -2,13 +2,14 @@
 title: Vantaggi dell’utilizzo del parametro deviceType senza client nelle metriche di autenticazione di Adobe Pass
 description: Vantaggi dell’utilizzo del parametro deviceType senza client nelle metriche di autenticazione di Adobe Pass
 exl-id: a5004887-d5fa-468e-971b-10806519175b
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '372'
+source-wordcount: '377'
 ht-degree: 0%
-
 ---
-
 # (Legacy) Vantaggi dell’utilizzo del parametro deviceType senza client nelle metriche di autenticazione di Adobe Pass {#benefits-of-using-the-clientless-devicetype-parameter-in-primetime-authentication-metrics}
 
 >[!NOTE]
@@ -52,11 +53,11 @@ Per ulteriori informazioni sull&#39;API di monitoraggio del servizio di adesione
 Per beneficiare appieno delle metriche di autenticazione di Adobe Pass, esistono 2 tipi di [API senza client](#web_srvs_summary) attualmente in uso e che devono avere impostato `deviceType` corretto:
 
 1. API che hanno `regcode` come parametro obbligatorio e utilizzeranno il parametro `deviceType` impostato durante la creazione di `regcode`, con la seguente chiamata API:
-   - [\&lt;REGGIE\_FQDN\>/reggie/v1/](#reg_serv)
+   - [\&lt;REGGIE\_FQDN\>/reggie/v1/{requestorId}/regcode](#reg_serv)
 
 1. API che hanno `deviceType` come parametro opzionale:
    - [\&lt;SP\_FQDN\>/api/v1/checkauthn](#check_authn_token)
-   - [&lt;span class=&quot;s1&quot;>](#retrieve_authn_token)
+   - [<span class="s1">\&lt;SP\_FQDN\>/api/v1/tokens/authn</span>](#retrieve_authn_token)
    - [\&lt;SP\_FQDN\>/api/v1/authorize](#init_authz)
    - [\&lt;SP\_FQDN\>/api/v1/token/authz](#retrieve_authz_token)
    - [\&lt;SP\_FQDN\>/api/v1/token/supporto](#short_media)

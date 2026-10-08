@@ -2,13 +2,14 @@
 title: Punto decisionale del criterio
 description: Punto decisionale del criterio
 exl-id: 94bc638c-bef8-45ea-b20a-9b7038adecdd
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '731'
 ht-degree: 0%
-
 ---
-
 # Punto decisionale del criterio {#policy-desc-pt}
 
 ## Modello di dominio {#domain-model}
@@ -33,7 +34,7 @@ Per ciascuno dei criteri applicabili, è quindi necessario raccogliere tutte le 
 
 La procedura dettagliata seguente mira a convalidare il modello rispetto ad alcuni casi d’uso. Lo faremo gradualmente, iniziando con una configurazione di base e aggiungendo complessità in vari modi.
 
-### &#x200B;1. Un locatario. Un&#39;applicazione. Una regola. Un flusso {#onetenant-oneapp-onepolicy-onestream}
+### &#x200B;1. Un inquilino. Un&#39;applicazione. Una regola. Un flusso {#onetenant-oneapp-onepolicy-onestream}
 
 Inizieremo con un singolo tenant, con una singola applicazione e un singolo criterio associato. Supponiamo che il criterio stabilisca che possa esserci al massimo un flusso attivo per qualsiasi utente (è consentita la riproduzione del flusso più recente).
 
@@ -42,7 +43,7 @@ Una volta avviato un flusso, l’attività sarà costituita solo da tale flusso 
 ![Un tenant. Un&#39;applicazione. Una regola. Un flusso](../assets/onetenant-app-policy-stream.png)
 
 
-### &#x200B;2. Un locatario. Un&#39;applicazione. Una regola. Due ruscelli. {#onetenant-oneapp-onepolicy-twostreams}
+### &#x200B;2. Un inquilino. Un&#39;applicazione. Una regola. Due ruscelli. {#onetenant-oneapp-onepolicy-twostreams}
 
 Una volta avviato un secondo flusso (dallo stesso soggetto utilizzando la stessa applicazione), l&#39;attività utilizzata per la convalida sarà costituita da **s1** e **s2**.
 
@@ -54,7 +55,7 @@ Il limite è stato superato perché il criterio indica che è consentito riprodu
 >
 >I diagrammi rappresentano la vista di sistema sull’attività dell’utente. Per i tentativi di inizializzazione del flusso, la decisione di accesso verrà inclusa nella risposta. Per i flussi attivi, la decisione viene restituita alla risposta heartbeat.
 
-### &#x200B;3. Due locatari. Due applicazioni. Una regola. Due ruscelli. {#twotenant-twoapp-onepolicy-twostreams}
+### &#x200B;3. Due inquilini. Due applicazioni. Una regola. Due ruscelli. {#twotenant-twoapp-onepolicy-twostreams}
 
 Supponiamo ora che un nuovo tenant desideri applicare lo stesso criterio nelle proprie applicazioni:
 
@@ -62,7 +63,7 @@ Supponiamo ora che un nuovo tenant desideri applicare lo stesso criterio nelle p
 
 Poiché i due tenant sono collegati dallo stesso criterio, la situazione descritta nel caso d&#39;uso 2 è applicabile qui e **s3** può essere riprodotto in quanto si tratta del flusso più recente.
 
-### &#x200B;4. Due locatari. Tre domande. Due criteri. Due ruscelli. {#twotenants-threeapps-twopolicies-twostreams}
+### &#x200B;4. Due inquilini. Tre domande. Due criteri. Due ruscelli. {#twotenants-threeapps-twopolicies-twostreams}
 
 Supponiamo ora che il secondo tenant distribuisca una nuova applicazione e desideri definire un nuovo criterio che verrà condiviso tra **app2** e **app3**.
 
@@ -72,7 +73,7 @@ Al momento, i flussi attivi **s3** e **s4** sono entrambi consentiti. Per **s3**
 
 Il criterio **P2** è applicato a entrambi i flussi e includerà **s3** e **s4** come attività rilevante. Poiché questa attività si trova entro i limiti di due flussi, sono consentiti entrambi.
 
-### &#x200B;5. Due affittuari. Tre domande. Due criteri. Tre ruscelli. {#twotenants-threeapps-twopolicies-threestreams}
+### &#x200B;5. Due inquilini. Tre domande. Due criteri. Tre ruscelli. {#twotenants-threeapps-twopolicies-threestreams}
 
 Ora si presuppone che venga eseguito un nuovo tentativo di inizializzazione del flusso utilizzando **app2**:
 

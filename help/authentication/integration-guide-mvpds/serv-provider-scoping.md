@@ -2,13 +2,14 @@
 title: Ambito provider di servizi
 description: Ambito provider di servizi
 exl-id: 730c43e1-46c0-4eec-b562-b1ad93cce6d3
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '314'
 ht-degree: 0%
-
 ---
-
 # Ambito provider di servizi {#service-provoider-scoping}
 
 >[!NOTE]
@@ -25,9 +26,9 @@ Con l’autenticazione di Adobe Pass che assume il ruolo di SP per il programmat
 
 L’autenticazione Adobe Pass supporta i due modi seguenti per abilitare l’ambito SP delle richieste di autenticazione:
 
-* **Approccio emittente SAML.** In questo approccio, &quot;ID richiedente&quot; viene aggiunto alla stringa emittente SAML nella richiesta di autenticazione SAML.
+* **Approccio emittente SAML.**  In questo approccio, l’&quot;ID richiedente&quot; viene aggiunto alla stringa dell’autorità di certificazione SAML nella richiesta di autenticazione SAML.
 
-* **Approccio Proprietà Di Ambito Personalizzato.** In questo approccio, &quot;ID richiedente&quot; viene incluso esplicitamente come proprietà personalizzata &quot;Scoping&quot; nella richiesta di autenticazione SAML.
+* **Approccio Proprietà Di Ambito Personalizzato.**  In questo approccio, l’&quot;ID richiedente&quot; viene incluso esplicitamente come proprietà personalizzata &quot;Scoping&quot; nella richiesta di autenticazione SAML.
 
 >[!NOTE]
 >

@@ -2,13 +2,14 @@
 title: Manuale dell’API REST V2 (server-to-server)
 description: Manuale dell’API REST V2 (server-to-server)
 exl-id: 3160c03c-849d-4d39-95e5-9a9cbb46174d
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '2524'
 ht-degree: 0%
-
 ---
-
 # Manuale dell’API REST V2 (server-to-server) {#rest-api-v2-cookbook-server-to-server}
 
 >[!IMPORTANT]
@@ -75,11 +76,11 @@ L’ambiente di produzione deve essere altamente disponibile e scalato in modo a
 
 * Il servizio Adobe Pass opera su più data center dislocati in diverse aree geografiche in tutti gli Stati Uniti per ottimizzare le prestazioni e ridurre al minimo la latenza.
 
-   * Il servizio Programmatore deve adottare una strategia di infrastruttura simile, garantendo tempi di risposta a bassa latenza da parte di Adobe Pass.
+  * Il servizio Programmatore deve adottare una strategia di infrastruttura simile, garantendo tempi di risposta a bassa latenza da parte di Adobe Pass.
 
 * Il programmatore deve fornire l&#39;intervallo IP pubblico del proprio ambiente di produzione.
 
-   * Questi IP verranno aggiunti a un inserisco nell&#39;elenco Consentiti di infrastruttura Adobe Pass all’interno del sistema di gestione dell’infrastruttura.
+  * Questi IP verranno aggiunti a un inserisco nell&#39;elenco Consentiti di infrastruttura Adobe Pass all’interno del sistema di gestione dell’infrastruttura.
 
 * Il servizio Programmer deve limitare il caching DNS a un massimo di 30 secondi per consentire il reindirizzamento dinamico nel caso in cui Adobe debba reindirizzare il traffico a causa di un centro dati non disponibile.
 
@@ -93,9 +94,9 @@ L’ambiente di staging può essere minimo, ma deve rispecchiare la produzione i
 
 * Idealmente, l’ambiente di staging dovrebbe essere connesso agli ambienti di test di Adobe Pass per:
 
-   * Consente ai programmatori di eseguire il test sull’infrastruttura di Adobe.
+  * Consente ai programmatori di eseguire il test sull’infrastruttura di Adobe.
 
-   * Se necessario, consenti ad Adobe di fornire assistenza per il test e la risoluzione dei problemi.
+  * Se necessario, consenti ad Adobe di fornire assistenza per il test e la risoluzione dei problemi.
 
 ## Flusso di lavoro {#workflow}
 
@@ -134,12 +135,12 @@ Domande frequenti:
 
 * Recupera credenziali client: il servizio Programmer recupera le credenziali client chiamando l&#39;endpoint [**/o/client/register**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-client-credentials.md).
 
-   * Il servizio programmatore o l’app programmatore devono memorizzare le credenziali del client e utilizzarle a tempo indeterminato quando è necessario recuperare un token di accesso.
+  * Il servizio programmatore o l’app programmatore devono memorizzare le credenziali del client e utilizzarle a tempo indeterminato quando è necessario recuperare un token di accesso.
 
 
 * Recupera token di accesso: il servizio Programmer recupera il token di accesso chiamando l&#39;endpoint [**/o/client/token**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md).
 
-   * Il servizio programmatore o l’app programmatore devono memorizzare e utilizzare il token di accesso fino alla scadenza, quindi eliminarlo e ottenerne uno nuovo.
+  * Il servizio programmatore o l’app programmatore devono memorizzare e utilizzare il token di accesso fino alla scadenza, quindi eliminarlo e ottenerne uno nuovo.
 
 ## B. Fase di autenticazione {#authentication-phase}
 
@@ -185,54 +186,54 @@ Domande frequenti
 
 * **Scenario 3:** Non sono presenti profili. Il servizio Programmatore potrebbe continuare a fornire all&#39;utente l&#39;accesso temporaneo tramite la funzionalità [TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md).
 
-   * Questo scenario non rientra nell&#39;ambito di questo documento. Per ulteriori informazioni, fare riferimento alla documentazione [Flussi di accesso temporanei](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/temporary-access-flows/rest-api-v2-access-temporary-flows.md).
+  * Questo scenario non rientra nell&#39;ambito di questo documento. Per ulteriori informazioni, fare riferimento alla documentazione [Flussi di accesso temporanei](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/temporary-access-flows/rest-api-v2-access-temporary-flows.md).
 
 ### Passaggio 3: autenticare l’utente {#step-3-authenticate-the-user}
 
 * **Recupera configurazione:** Il servizio Programmatore recupera l&#39;elenco degli MVPD disponibili chiamando l&#39;endpoint [**/api/v2/{serviceProvider}/configuration**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md).
 
-   * Il servizio programmatore può implementare un meccanismo di filtro personalizzato per perfezionare l’elenco degli MVPD dalla risposta di configurazione, in modo tale che l’app di streaming visualizzi solo i provider previsti nascondendone altri (ad esempio, MVPD in fase di sviluppo, test MVPD, TempPass). In questo modo gli utenti ricevono una selezione accurata al momento di scegliere il proprio provider TV.
+  * Il servizio programmatore può implementare un meccanismo di filtro personalizzato per perfezionare l’elenco degli MVPD dalla risposta di configurazione, in modo tale che l’app di streaming visualizzi solo i provider previsti nascondendone altri (ad esempio, MVPD in fase di sviluppo, test MVPD, TempPass). In questo modo gli utenti ricevono una selezione accurata al momento di scegliere il proprio provider TV.
 
 
 * **Crea sessione di autenticazione:** Il servizio Programmer avvia una sessione di autenticazione chiamando l&#39;endpoint [**/api/v2/{serviceProvider}/essions**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md).
 
-   * Il servizio Programmatore deve restituire `code` e `url` all&#39;app di streaming.
+  * Il servizio Programmatore deve restituire `code` e `url` all&#39;app di streaming.
 
 
 * **Scenario 1:** L&#39;app di streaming può aprire un browser o una visualizzazione Web, pertanto deve caricare l&#39;autenticazione `url`.
 
-   * L’utente invia il proprio nome utente e password all’interno della pagina di accesso di MVPD. Dopo l’autenticazione corretta, il reindirizzamento finale mostra una pagina di successo.
+  * L’utente invia il proprio nome utente e password all’interno della pagina di accesso di MVPD. Dopo l’autenticazione corretta, il reindirizzamento finale mostra una pagina di successo.
 
 
 * **Scenario 2:** L&#39;app di streaming non può aprire un browser, pertanto deve visualizzare l&#39;autenticazione `code`. È necessaria un&#39;applicazione Web separata per richiedere all&#39;utente di immettere `code`, creare l&#39;autenticazione `url` e aprire: [**/api/v2/authenticate/{serviceProvider}/{code}**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-perform-authentication-in-user-agent.md).
 
-   * L’utente invia il proprio nome utente e password all’interno della pagina di accesso di MVPD. Dopo l’autenticazione corretta, il reindirizzamento finale mostra una pagina di successo.
+  * L’utente invia il proprio nome utente e password all’interno della pagina di accesso di MVPD. Dopo l’autenticazione corretta, il reindirizzamento finale mostra una pagina di successo.
 
 ### Passaggio 4: verificare la presenza di profili autenticati {#step-4-check-for-authenticated-profiles}
 
 * **Recupera profilo per codice specifico:** Il servizio Programmatore deve implementare un meccanismo di polling utilizzando `code` per verificare se il profilo è stato generato e salvato correttamente chiamando l&#39;endpoint [**/api/v2/{serviceProvider}/profiles/code/{code}**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md).
 
-   * Il servizio Programmatore deve **avviare il meccanismo di polling** nelle seguenti condizioni:
+  * Il servizio Programmatore deve **avviare il meccanismo di polling** nelle seguenti condizioni:
 
-      * **Autenticazione eseguita all&#39;interno dell&#39;applicazione primaria (schermo):** Il servizio Programmatore deve avviare il polling quando l&#39;utente raggiunge la pagina di destinazione finale, dopo che il componente browser carica l&#39;URL specificato per il parametro `redirectUrl` nella richiesta dell&#39;endpoint [Sessions](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md).
+    * **Autenticazione eseguita all&#39;interno dell&#39;applicazione primaria (schermo):** Il servizio Programmatore deve avviare il polling quando l&#39;utente raggiunge la pagina di destinazione finale, dopo che il componente browser carica l&#39;URL specificato per il parametro `redirectUrl` nella richiesta dell&#39;endpoint [Sessions](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md).
 
-      * **Autenticazione eseguita all&#39;interno di un&#39;applicazione secondaria (a schermo):** L&#39;applicazione del servizio Programmer deve avviare il polling non appena l&#39;utente avvia il processo di autenticazione, subito dopo aver ricevuto la risposta dell&#39;endpoint [Sessions](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md) e aver visualizzato il codice di autenticazione per l&#39;utente.
+    * **Autenticazione eseguita all&#39;interno di un&#39;applicazione secondaria (a schermo):** L&#39;applicazione del servizio Programmer deve avviare il polling non appena l&#39;utente avvia il processo di autenticazione, subito dopo aver ricevuto la risposta dell&#39;endpoint [Sessions](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md) e aver visualizzato il codice di autenticazione per l&#39;utente.
 
-   * Il servizio Programmatore deve **interrompere il meccanismo di polling** nelle seguenti condizioni:
+  * Il servizio Programmatore deve **interrompere il meccanismo di polling** nelle seguenti condizioni:
 
-      * **Autenticazione riuscita:** Le informazioni del profilo dell&#39;utente sono state recuperate correttamente, confermando il relativo stato di autenticazione. A questo punto, il polling non è più necessario.
+    * **Autenticazione riuscita:** Le informazioni del profilo dell&#39;utente sono state recuperate correttamente, confermando il relativo stato di autenticazione. A questo punto, il polling non è più necessario.
 
-      * **Sessione di autenticazione e scadenza codice:** La sessione di autenticazione e il codice scadono, come indicato dalla marca temporale `notAfter` (ad esempio, 30 minuti) nella risposta dell&#39;endpoint [Sessions](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md). In questo caso, l’utente deve riavviare il processo di autenticazione e arrestare immediatamente il polling che utilizza il codice di autenticazione precedente.
+    * **Sessione di autenticazione e scadenza codice:** La sessione di autenticazione e il codice scadono, come indicato dalla marca temporale `notAfter` (ad esempio, 30 minuti) nella risposta dell&#39;endpoint [Sessions](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md). In questo caso, l’utente deve riavviare il processo di autenticazione e arrestare immediatamente il polling che utilizza il codice di autenticazione precedente.
 
-      * **È stato generato un nuovo codice di autenticazione:** Se l&#39;utente richiede un nuovo codice di autenticazione sul dispositivo principale (schermo), la sessione esistente non è più valida e il polling che utilizza il codice di autenticazione precedente deve essere interrotto immediatamente.
+    * **È stato generato un nuovo codice di autenticazione:** Se l&#39;utente richiede un nuovo codice di autenticazione sul dispositivo principale (schermo), la sessione esistente non è più valida e il polling che utilizza il codice di autenticazione precedente deve essere interrotto immediatamente.
 
-   * Il servizio Programmer deve **configurare la frequenza del meccanismo di polling** nelle seguenti condizioni:
+  * Il servizio Programmer deve **configurare la frequenza del meccanismo di polling** nelle seguenti condizioni:
 
-      * **Autenticazione eseguita nell&#39;applicazione primaria (schermo):** Il servizio Programmatore deve eseguire il polling ogni 3-5 secondi o più.
+    * **Autenticazione eseguita nell&#39;applicazione primaria (schermo):** Il servizio Programmatore deve eseguire il polling ogni 3-5 secondi o più.
 
-      * **Autenticazione eseguita all&#39;interno di un&#39;applicazione secondaria (a schermo):** Il servizio Programmatore deve eseguire il polling ogni 3-5 secondi o più.
+    * **Autenticazione eseguita all&#39;interno di un&#39;applicazione secondaria (a schermo):** Il servizio Programmatore deve eseguire il polling ogni 3-5 secondi o più.
 
-   * Il servizio Programmatore deve memorizzare in cache parti delle informazioni del profilo dell’utente in un archivio persistente per evitare richieste inutili e migliorare l’esperienza utente.
+  * Il servizio Programmatore deve memorizzare in cache parti delle informazioni del profilo dell’utente in un archivio persistente per evitare richieste inutili e migliorare l’esperienza utente.
 
 ## C. (Facoltativo) Fase di pre-autorizzazione {#preauthorization-phase}
 
@@ -262,13 +263,13 @@ Domande frequenti
 
 * **Recupera decisioni di preautorizzazione:** Il servizio Programmer recupera le decisioni di preautorizzazione per un elenco di risorse chiamando l&#39;endpoint [**/api/v2/{serviceProvider}/Decisions/preauthorize/{mvpd}**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md).
 
-   * Il servizio programmatore deve trasmettere l’elenco dei permessi e negare le decisioni di preautorizzazione all’app di streaming.
+  * Il servizio programmatore deve trasmettere l’elenco dei permessi e negare le decisioni di preautorizzazione all’app di streaming.
 
-   * Il servizio Programmer non è necessario per memorizzare le decisioni di preautorizzazione nell&#39;archiviazione persistente. Tuttavia, si consiglia di memorizzare nella cache le decisioni sulle autorizzazioni per migliorare l’esperienza utente. Questo consente di evitare inutili chiamate per risorse già preautorizzate, riducendo la latenza e migliorando le prestazioni.
+  * Il servizio Programmer non è necessario per memorizzare le decisioni di preautorizzazione nell&#39;archiviazione persistente. Tuttavia, si consiglia di memorizzare nella cache le decisioni sulle autorizzazioni per migliorare l’esperienza utente. Questo consente di evitare inutili chiamate per risorse già preautorizzate, riducendo la latenza e migliorando le prestazioni.
 
-   * Il servizio Programmer può determinare il motivo di una decisione di preautorizzazione negata esaminando il codice di errore [e il messaggio](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md) inclusi nella risposta dall&#39;endpoint Decisions Preauthorize. Questi dettagli forniscono ad insight il motivo specifico per cui la richiesta di preautorizzazione è stata negata, aiutando a informare l’esperienza utente o a attivare eventuali operazioni necessarie nell’applicazione. Assicurati che eventuali meccanismi di esecuzione di nuovi tentativi implementati per recuperare le decisioni di preautorizzazione non generino un ciclo infinito se la decisione di preautorizzazione viene negata. Valuta la possibilità di limitare i nuovi tentativi a un numero ragionevole e di gestire i rifiuti in modo appropriato fornendo all’utente un feedback chiaro.
+  * Il servizio Programmer può determinare il motivo di una decisione di preautorizzazione negata esaminando il codice di errore [e il messaggio](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md) inclusi nella risposta dall&#39;endpoint Decisions Preauthorize. Questi dettagli forniscono ad insight il motivo specifico per cui la richiesta di preautorizzazione è stata negata, aiutando a informare l’esperienza utente o a attivare eventuali operazioni necessarie nell’applicazione. Assicurati che eventuali meccanismi di esecuzione di nuovi tentativi implementati per recuperare le decisioni di preautorizzazione non generino un ciclo infinito se la decisione di preautorizzazione viene negata. Valuta la possibilità di limitare i nuovi tentativi a un numero ragionevole e di gestire i rifiuti in modo appropriato fornendo all’utente un feedback chiaro.
 
-   * Il servizio programmatore può ottenere una decisione di preautorizzazione per un numero limitato di risorse in una singola richiesta API, di solito fino a 5, a causa delle condizioni imposte dagli MVPD. Questo numero massimo di risorse può essere visualizzato e modificato dopo aver concordato con gli MVPD tramite Adobe Pass [TVE Dashboard](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard) da uno degli amministratori dell&#39;organizzazione o da un rappresentante di autenticazione Adobe Pass che agisce per tuo conto.
+  * Il servizio programmatore può ottenere una decisione di preautorizzazione per un numero limitato di risorse in una singola richiesta API, di solito fino a 5, a causa delle condizioni imposte dagli MVPD. Questo numero massimo di risorse può essere visualizzato e modificato dopo aver concordato con gli MVPD tramite Adobe Pass [TVE Dashboard](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard) da uno degli amministratori dell&#39;organizzazione o da un rappresentante di autenticazione Adobe Pass che agisce per tuo conto.
 
 ## D. Fase di autorizzazione {#authorization-phase}
 
@@ -296,15 +297,15 @@ Domande frequenti
 
 * **Recupera decisione di autorizzazione:** Il servizio programmatore recupera la decisione di autorizzazione per una risorsa specifica passata dall&#39;app di streaming chiamando l&#39;endpoint [**/api/v2/{serviceProvider}/decision/authorize/{mvpd}**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md).
 
-   * Il servizio Programmer non è necessario per memorizzare le decisioni di autorizzazione nell&#39;archiviazione persistente.
+  * Il servizio Programmer non è necessario per memorizzare le decisioni di autorizzazione nell&#39;archiviazione persistente.
 
-   * Il servizio Programmer può determinare il motivo di una decisione di autorizzazione negata esaminando il codice di errore [e il messaggio](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md) inclusi nella risposta dall&#39;endpoint Decisions Authorize. Questi dettagli forniscono ad insight il motivo specifico per cui la richiesta di autorizzazione è stata negata, aiutando a informare l’esperienza utente o a attivare eventuali operazioni necessarie nell’app di streaming. Assicurati che eventuali meccanismi di esecuzione di nuovi tentativi implementati per recuperare le decisioni di autorizzazione non generino un loop infinito se la decisione di autorizzazione viene negata. Valuta la possibilità di limitare i nuovi tentativi a un numero ragionevole e di gestire i rifiuti in modo appropriato fornendo all’utente un feedback chiaro.
+  * Il servizio Programmer può determinare il motivo di una decisione di autorizzazione negata esaminando il codice di errore [e il messaggio](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md) inclusi nella risposta dall&#39;endpoint Decisions Authorize. Questi dettagli forniscono ad insight il motivo specifico per cui la richiesta di autorizzazione è stata negata, aiutando a informare l’esperienza utente o a attivare eventuali operazioni necessarie nell’app di streaming. Assicurati che eventuali meccanismi di esecuzione di nuovi tentativi implementati per recuperare le decisioni di autorizzazione non generino un loop infinito se la decisione di autorizzazione viene negata. Valuta la possibilità di limitare i nuovi tentativi a un numero ragionevole e di gestire i rifiuti in modo appropriato fornendo all’utente un feedback chiaro.
 
-   * Il servizio Programmatore può valutare altre regole di business e restituire una decisione di autorizzazione appropriata all&#39;app Streaming.
+  * Il servizio Programmatore può valutare altre regole di business e restituire una decisione di autorizzazione appropriata all&#39;app Streaming.
 
-   * Il servizio Programmatore non è necessario per aggiornare un token multimediale scaduto durante la riproduzione attiva del flusso. Se il token multimediale scade durante la riproduzione, il flusso deve poter continuare senza interruzioni. Tuttavia, il client deve richiedere una nuova decisione di autorizzazione e ottenere un nuovo token multimediale la volta successiva che l’utente tenta di riprodurre una risorsa.
+  * Il servizio Programmatore non è necessario per aggiornare un token multimediale scaduto durante la riproduzione attiva del flusso. Se il token multimediale scade durante la riproduzione, il flusso deve poter continuare senza interruzioni. Tuttavia, il client deve richiedere una nuova decisione di autorizzazione e ottenere un nuovo token multimediale la volta successiva che l’utente tenta di riprodurre una risorsa.
 
-   * Il servizio programmatore può ottenere una decisione di autorizzazione per un numero limitato di risorse in una singola richiesta API, di solito fino a 1, a causa delle condizioni imposte dagli MVPD.
+  * Il servizio programmatore può ottenere una decisione di autorizzazione per un numero limitato di risorse in una singola richiesta API, di solito fino a 1, a causa delle condizioni imposte dagli MVPD.
 
 ## E. Fase di disconnessione {#logout-phase}
 
@@ -332,12 +333,12 @@ Domande frequenti
 
 * Avvia disconnessione di Adobe Pass: il servizio Programmer avvia il flusso di disconnessione come richiesto dall&#39;app di streaming chiamando l&#39;endpoint [/api/v2/{serviceProvider}/logout/{mvpd}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md).
 
-   * Il servizio Programmatore può eliminare tutte le informazioni memorizzate sull&#39;utente autenticato.
+  * Il servizio Programmatore può eliminare tutte le informazioni memorizzate sull&#39;utente autenticato.
 
-   * Il servizio Programmer deve seguire le istruzioni fornite negli attributi `actionName` e `actionType` della risposta dell&#39;endpoint Logout per garantire il corretto completamento del processo di logout.
+  * Il servizio Programmer deve seguire le istruzioni fornite negli attributi `actionName` e `actionType` della risposta dell&#39;endpoint Logout per garantire il corretto completamento del processo di logout.
 
-      * Se l&#39;attributo `actionType` nella risposta è impostato su &quot;interattivo&quot;, il servizio Programmatore deve restituire il valore dell&#39;attributo `url` all&#39;app di streaming.
+    * Se l&#39;attributo `actionType` nella risposta è impostato su &quot;interattivo&quot;, il servizio Programmatore deve restituire il valore dell&#39;attributo `url` all&#39;app di streaming.
 
-         * **Scenario 1:** L&#39;app di streaming può aprire un browser o una visualizzazione Web, pertanto deve caricare la disconnessione `url`.
+      * **Scenario 1:** L&#39;app di streaming può aprire un browser o una visualizzazione Web, pertanto deve caricare la disconnessione `url`.
 
-         * **Scenario 2:** L&#39;app di streaming non è in grado di aprire un browser, pertanto il processo di disconnessione può essere interrotto in quanto la sessione di MVPD non è persistita in una cache del browser del dispositivo di streaming.
+      * **Scenario 2:** L&#39;app di streaming non è in grado di aprire un browser, pertanto il processo di disconnessione può essere interrotto in quanto la sessione di MVPD non è persistita in una cache del browser del dispositivo di streaming.

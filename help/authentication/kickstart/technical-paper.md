@@ -2,13 +2,14 @@
 title: Informazioni sull’autenticazione di Adobe Pass
 description: Informazioni sull’autenticazione di Adobe Pass
 exl-id: 5edeaccb-f9fa-4395-83b4-706c518d5a03
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '1863'
 ht-degree: 0%
-
 ---
-
 # Informazioni sull’autenticazione pass di Adobe® {#about-adobe-pass-authentication}
 
 >[!IMPORTANT]
@@ -165,15 +166,15 @@ L’autenticazione Adobe Pass funge da proxy e facilita il flusso dei diritti tr
 Per i programmatori, l&#39;autenticazione Adobe Pass fornisce API come parte di un livello **Standard** o **Premium**:
 
 * API di autenticazione standard di Adobe Pass:
-   * [DCR REST API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)
-   * [API REST V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md)
+  * [DCR REST API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)
+  * [API REST V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md)
 
 * API di autenticazione Premium Adobe Pass:
-   * [Ripristina API passaggio temporaneo](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
-      * [Funzione TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)
-   * [API di degradazione](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md#degradation-api-access)
-      * [Funzione di degradazione](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)
-   * [API di monitoraggio del servizio di adesione](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-api.md)
+  * [Ripristina API passaggio temporaneo](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
+    * [Funzione TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)
+  * [API di degradazione](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md#degradation-api-access)
+    * [Funzione di degradazione](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)
+  * [API di monitoraggio del servizio di adesione](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-api.md)
 
 Per ulteriori dettagli sul flusso di adesione, consulta la [Documentazione di Programmer Integration Guide](/help/authentication/integration-guide-programmers/programmer-integration-guide-overview.md#entitlement-flow).
 
@@ -208,18 +209,18 @@ I programmatori sono responsabili della progettazione e dell’implementazione d
 I programmatori devono almeno:
 
 * **Implementare un&#39;interfaccia di selezione del provider**
-   * Consenti ai nuovi utenti di identificare il provider di Pay TV e di accedere per la prima volta.
-   * Alcuni provider di Pay TV reindirizzano gli utenti a una pagina di accesso esterna, mentre altri richiedono l’accesso all’interno di un iframe. I programmatori devono implementare una funzione di callback per generare l’iframe quando necessario.
+  * Consenti ai nuovi utenti di identificare il provider di Pay TV e di accedere per la prima volta.
+  * Alcuni provider di Pay TV reindirizzano gli utenti a una pagina di accesso esterna, mentre altri richiedono l’accesso all’interno di un iframe. I programmatori devono implementare una funzione di callback per generare l’iframe quando necessario.
 
 * **Gestione di un elenco di provider di Pay TV supportati**
-   * Assicurati che gli utenti possano accedere ai contenuti solo tramite provider approvati.
+  * Assicurati che gli utenti possano accedere ai contenuti solo tramite provider approvati.
 
 * **Indicare lo stato di autenticazione**
-   * Mostra quando un utente è autenticato all’interno dell’app o del sito web.
+  * Mostra quando un utente è autenticato all’interno dell’app o del sito web.
 
 * **Identificare le risorse protette**
-   * Indica chiaramente quale contenuto richiede l’autorizzazione prima della visualizzazione.
-   * Aggiorna l’interfaccia utente in modo che rifletta l’autorizzazione di accesso concessa.
+  * Indica chiaramente quale contenuto richiede l’autorizzazione prima della visualizzazione.
+  * Aggiorna l’interfaccia utente in modo che rifletta l’autorizzazione di accesso concessa.
 
 ## Domande frequenti {#faqs}
 

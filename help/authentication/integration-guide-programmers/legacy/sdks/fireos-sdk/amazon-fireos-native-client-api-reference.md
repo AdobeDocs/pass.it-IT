@@ -2,13 +2,14 @@
 title: Riferimento API client nativo Amazon FireOS
 description: Riferimento API client nativo Amazon FireOS
 exl-id: 8ac9f976-fd6b-4b19-a80d-49bfe57134b5
-source-git-commit: b6ba687240799d1889302019613f426259f147ad
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '3519'
 ht-degree: 0%
-
 ---
-
 # Riferimento API client nativo Amazon FireOS (legacy) {#amazon-fireos-native-client-api-reference}
 
 >[!NOTE]
@@ -146,10 +147,10 @@ Se viene fornito un valore per il parametro *urls*, la chiamata di rete risultan
 **Parametri:**
 
 - *status*: può assumere uno dei seguenti valori:
-   - `AccessEnabler.ACCESS_ENABLER_STATUS_SUCCESS` - configurazione
-fase completata correttamente
-   - `AccessEnabler.ACCESS_ENABLER_STATUS_ERROR` - configurazione
-fase non riuscita
+  - `AccessEnabler.ACCESS_ENABLER_STATUS_SUCCESS` - configurazione
+    fase completata correttamente
+  - `AccessEnabler.ACCESS_ENABLER_STATUS_ERROR` - configurazione
+    fase non riuscita
 
 **Attivato da:** `setRequestor()`
 
@@ -173,9 +174,9 @@ I valori vengono passati al server indipendentemente dal flusso corrente (autent
 **Parametri:**
 
 - *options*: una mappa\&lt;String, String\> contenente le opzioni globali di SDK. Attualmente sono disponibili le seguenti opzioni:
-   - **applicationProfile** - Può essere utilizzato per creare configurazioni server basate su questo valore.
-   - **ap\_vi** - Servizio Experience Cloud ID. Questo valore può essere utilizzato in seguito per i rapporti di analisi avanzata.
-   - **dispositivo\_info** - Informazioni sul dispositivo come descritto in **Passaggio del manuale di informazioni sul dispositivo**
+  - **applicationProfile** - Può essere utilizzato per creare configurazioni server basate su questo valore.
+  - **ap\_vi** - Servizio Experience Cloud ID. Questo valore può essere utilizzato in seguito per i rapporti di analisi avanzata.
+  - **dispositivo\_info** - Informazioni sul dispositivo come descritto in **Passaggio del manuale di informazioni sul dispositivo**
 
 </br>
 
@@ -263,8 +264,8 @@ Dopo che l&#39;utente ha selezionato il MVPD desiderato, l&#39;applicazione di l
 
 **Parametri:** Nessuno
 
-**Callback attivati:** 
-
+**Callback attivati:** `setAuthenticationStatus(), sendTrackingData()`
+</br>
 
 ### navigateToUrl {#navigagteToUrl}
 
@@ -317,14 +318,14 @@ Questo callback segnala anche quando il flusso di logout è completo.
 **Parametri:**
 
 - *status*: può assumere uno dei seguenti valori:
-   - `AccessEnabler.ACCESS_ENABLER_STATUS_SUCCESS` - flusso di autenticazione completato
-   - `AccessEnabler.ACCESS_ENABLER_STATUS_ERROR` - flusso di autenticazione non riuscito
-   - `AccessEnabler.ACCESS_ENABLER_STATUS_LOGOUT` - disconnessione
+  - `AccessEnabler.ACCESS_ENABLER_STATUS_SUCCESS` - flusso di autenticazione completato
+  - `AccessEnabler.ACCESS_ENABLER_STATUS_ERROR` - flusso di autenticazione non riuscito
+  - `AccessEnabler.ACCESS_ENABLER_STATUS_LOGOUT` - disconnessione
 - *codice*: motivo dello stato presentato. Se *status* è `AccessEnabler.ACCESS_ENABLER_STATUS_SUCCESS`, *code* è una stringa vuota, ovvero definita dalla costante `AccessEnabler.USER_AUTHENTICATED`. Se non è autenticato, questo parametro può assumere uno dei seguenti valori:
-   - `AccessEnabler.USER_NOT_AUTHENTICATED_ERROR` - Utente non autenticato. In risposta alla chiamata al metodo *checkAuthentication()* quando non è presente alcun token di autenticazione valido nella cache dei token locale.
-   - `AccessEnabler.PROVIDER_NOT_SELECTED_ERROR` - AccessEnabler ha reimpostato il computer dello stato di autenticazione dopo che l&#39;applicazione del livello superiore ha passato *null* a `setSelectedProvider()` per interrompere il flusso di autenticazione.  Presumibilmente l’utente ha annullato il flusso di autenticazione (ovvero ha premuto il pulsante &quot;Indietro&quot;).
-   - `AccessEnabler.GENERIC_AUTHENTICATION_ERROR` - Flusso di autenticazione non riuscito per motivi quali la non disponibilità della rete o l&#39;annullamento esplicito del flusso di autenticazione da parte dell&#39;utente.
-   - `AccessEnabler.LOGOUT` - L&#39;utente non è autenticato a causa di un&#39;azione di disconnessione.
+  - `AccessEnabler.USER_NOT_AUTHENTICATED_ERROR` - Utente non autenticato. In risposta alla chiamata al metodo *checkAuthentication()* quando non è presente alcun token di autenticazione valido nella cache dei token locale.
+  - `AccessEnabler.PROVIDER_NOT_SELECTED_ERROR` - AccessEnabler ha reimpostato il computer dello stato di autenticazione dopo che l&#39;applicazione del livello superiore ha passato *null* a `setSelectedProvider()` per interrompere il flusso di autenticazione.  Presumibilmente l’utente ha annullato il flusso di autenticazione (ovvero ha premuto il pulsante &quot;Indietro&quot;).
+  - `AccessEnabler.GENERIC_AUTHENTICATION_ERROR` - Flusso di autenticazione non riuscito per motivi quali la non disponibilità della rete o l&#39;annullamento esplicito del flusso di autenticazione da parte dell&#39;utente.
+  - `AccessEnabler.LOGOUT` - L&#39;utente non è autenticato a causa di un&#39;azione di disconnessione.
 
 **Attivato da:** `checkAuthentication(), getAuthentication(), checkAuthorization()`
 
@@ -451,7 +452,7 @@ Questo callback segnala anche quando il flusso di logout è completo.
 
 - *resourceId*: la risorsa per la quale è stata ottenuta l&#39;autorizzazione
 - *errorCode*: codice di errore associato allo scenario di errore. Valori possibili:
-   - `AccessEnabler.USER_NOT_AUTHORIZED_ERROR` - L&#39;utente non è stato in grado di autorizzare per la risorsa specificata
+  - `AccessEnabler.USER_NOT_AUTHORIZED_ERROR` - L&#39;utente non è stato in grado di autorizzare per la risorsa specificata
 - *errorDescription*: ulteriori dettagli sullo scenario di errore. Se per qualsiasi motivo questa stringa descrittiva non è disponibile, Adobe Pass Authentication invia una stringa vuota >**(&quot;)**.  Questa stringa può essere utilizzata da un MVPD per trasmettere messaggi di errore personalizzati o messaggi relativi alle vendite. Ad esempio, se a un abbonato viene negata l’autorizzazione per una risorsa, MVPD potrebbe inviare un messaggio del tipo: &quot;Attualmente non hai accesso a questo canale nel tuo pacchetto. Se desideri aggiornare il pacchetto, fai clic qui.&quot; Il messaggio viene passato dall’autenticazione di Adobe Pass tramite questo callback al programmatore, che ha la possibilità di visualizzarlo o ignorarlo. L’autenticazione di Adobe Pass può inoltre utilizzare questo parametro per fornire una notifica della condizione che potrebbe aver causato un errore. Ad esempio, &quot;Si è verificato un errore di rete durante la comunicazione con il servizio di autorizzazione del provider&quot;.
 
 **Attivato da:** `checkAuthorization(), getAuthorization()`
@@ -526,15 +527,15 @@ Esistono due tipi di metadati disponibili per i programmatori:
 **Parametri:**
 
 - *metadataKey*: struttura di dati che incapsula una variabile chiave e args, con il seguente significato:
-   - Se la chiave è `METADATA_KEY_TTL_AUTHN`, viene eseguita la query per ottenere l&#39;ora di scadenza del token di autenticazione.
-   - Se la chiave è `METADATA_KEY_TTL_AUTHZ` e l&#39;argomento contiene un oggetto SerializableNameValuePair con nome = `METADATA_ARG_RESOURCE_ID` e valore = `[resource_id]`, viene eseguita la query per ottenere la scadenza del token di autorizzazione associato alla risorsa specificata.
-   - Se la chiave è `METADATA_KEY_DEVICE_ID`, viene eseguita la query per ottenere l&#39;ID dispositivo corrente. Questa funzione è disabilitata per impostazione predefinita e i programmatori devono contattare Adobe per informazioni sull’abilitazione e le tariffe.
-   - Se la chiave è `METADATA_KEY_USER_META` e l&#39;argomento contiene un oggetto SerializableNameValuePair con nome = `METADATA_KEY_USER_META` e valore = `[metadata_name]`, viene eseguita la query per i metadati utente. L’elenco corrente dei tipi di metadati utente disponibili:
-      - `zip` - Codice postale
-      - `householdID` - Identificatore famiglia. Se un MVPD non supporta gli account secondari, sarà identico a `userID`.
-      - `maxRating` - Valutazione genitori massima per l&#39;utente
-      - `userID` - Identificatore utente. Se un MVPD supporta gli account secondari e l&#39;utente non è l&#39;account principale,
-      - `channelID` - Elenco dei canali che l&#39;utente ha il diritto di visualizzare
+  - Se la chiave è `METADATA_KEY_TTL_AUTHN`, viene eseguita la query per ottenere l&#39;ora di scadenza del token di autenticazione.
+  - Se la chiave è `METADATA_KEY_TTL_AUTHZ` e l&#39;argomento contiene un oggetto SerializableNameValuePair con nome = `METADATA_ARG_RESOURCE_ID` e valore = `[resource_id]`, viene eseguita la query per ottenere la scadenza del token di autorizzazione associato alla risorsa specificata.
+  - Se la chiave è `METADATA_KEY_DEVICE_ID`, viene eseguita la query per ottenere l&#39;ID dispositivo corrente. Questa funzione è disabilitata per impostazione predefinita e i programmatori devono contattare Adobe per informazioni sull’abilitazione e le tariffe.
+  - Se la chiave è `METADATA_KEY_USER_META` e l&#39;argomento contiene un oggetto SerializableNameValuePair con nome = `METADATA_KEY_USER_META` e valore = `[metadata_name]`, viene eseguita la query per i metadati utente. L’elenco corrente dei tipi di metadati utente disponibili:
+    - `zip` - Codice postale
+    - `householdID` - Identificatore famiglia. Se un MVPD non supporta gli account secondari, sarà identico a `userID`.
+    - `maxRating` - Valutazione genitori massima per l&#39;utente
+    - `userID` - Identificatore utente. Se un MVPD supporta gli account secondari e l&#39;utente non è l&#39;account principale,
+    - `channelID` - Elenco dei canali che l&#39;utente ha il diritto di visualizzare
 
 I metadati utente effettivi disponibili per un programmatore dipendono da ciò che viene reso disponibile da MVPD.  Questo elenco verrà ulteriormente esteso man mano che nuovi metadati saranno disponibili e aggiunti al sistema di autenticazione di Adobe Pass.
 
@@ -558,42 +559,42 @@ I metadati utente effettivi disponibili per un programmatore dipendono da ciò c
 
 - *chiave*: l&#39;oggetto MetadataKey contenente la chiave per la quale viene richiesto il valore dei metadati e i parametri associati (vedere l&#39;applicazione demo per un&#39;implementazione di riferimento).
 - *result*: oggetto composito contenente i metadati richiesti. L’oggetto dispone dei seguenti campi:
-   - *simpleResult*: valore String che rappresenta il valore dei metadati quando è stata effettuata la richiesta per Authentication TTL, Authorization TTL o Device ID. Questo valore è nullo se la richiesta è stata effettuata per i metadati utente.
+  - *simpleResult*: valore String che rappresenta il valore dei metadati quando è stata effettuata la richiesta per Authentication TTL, Authorization TTL o Device ID. Questo valore è nullo se la richiesta è stata effettuata per i metadati utente.
 
-   - *userMetadataResult*: oggetto contenente la rappresentazione Java di un payload di metadati utente JSON. Ad esempio:
+  - *userMetadataResult*: oggetto contenente la rappresentazione Java di un payload di metadati utente JSON. Ad esempio:
 
-     ```json
-     {
-     "street": "Main Avenue",
-     "buildings": ["150", "320"]
-     }
-     ```
+    ```json
+    {
+    "street": "Main Avenue",
+    "buildings": ["150", "320"]
+    }
+    ```
 
-     è tradotto in Java come:
+    è tradotto in Java come:
 
-     ```java
-     Map("street" -> "Main Avenue", "buildings" -> List("150", "320")))
-     ```
+    ```java
+    Map("street" -> "Main Avenue", "buildings" -> List("150", "320")))
+    ```
 
-     **La struttura effettiva degli oggetti metadati utente è simile alla seguente:**
+    **La struttura effettiva degli oggetti metadati utente è simile alla seguente:**
 
-     ```json
-     {
-         updated: 1334243471,
-         encrypted: ["encryptedProp"],
-         data: {
-             zip: ["12345", "34567"],
-             maxRating: { 
-                 "MPAA": "PG-13",
-                 "VCHIP": "TV-Y", 
-                 "URL": "http://exam.pl/e/manage/ratings"
-             },
-             householdID: "3456",
-             userID: "BgSdasfsdk23/dsaf3+saASesadgfsShggssd=",
-             channelID: ["channel-1", "channel-2"]
-         }
-     }
-     ```
+    ```json
+    {
+        updated: 1334243471,
+        encrypted: ["encryptedProp"],
+        data: {
+            zip: ["12345", "34567"],
+            maxRating: { 
+                "MPAA": "PG-13",
+                "VCHIP": "TV-Y", 
+                "URL": "http://exam.pl/e/manage/ratings"
+            },
+            householdID: "3456",
+            userID: "BgSdasfsdk23/dsaf3+saASesadgfsShggssd=",
+            channelID: ["channel-1", "channel-2"]
+        }
+    }
+    ```
 
 
 Questo valore è nullo quando la richiesta è stata effettuata per metadati semplici (TTL di autenticazione, TTL di autorizzazione o ID dispositivo).
@@ -627,19 +628,19 @@ L’Access Enabler attiva un callback aggiuntivo che non è necessariamente corr
 > Il tipo di dispositivo e il sistema operativo sono derivati dall’utilizzo di una libreria Java pubblica (http://java.net/projects/user-agent-utils) e della stringa dell’agente utente. Tieni presente che queste informazioni vengono fornite solo come metodo grezzo per suddividere le metriche operative in categorie di dispositivi, ma che Adobe non può assumersi alcuna responsabilità per risultati errati. Utilizza la nuova funzionalità di conseguenza.
 
 - Valori possibili per il tipo di dispositivo:
-   - `computer`
-   - `tablet`
-   - `mobile`
-   - `gameconsole`
-   - `unknown`
+  - `computer`
+  - `tablet`
+  - `mobile`
+  - `gameconsole`
+  - `unknown`
 
 - Valori possibili per il tipo di client Access Enabler:
-   - `flash`
-   - `html5`
-   - `ios`
-   - `tvos`
-   - `android`
-   - `firetv`
+  - `flash`
+  - `html5`
+  - `ios`
+  - `tvos`
+  - `android`
+  - `firetv`
 
 | Callback: eventi di tracciamento |
 | --- |
@@ -650,38 +651,38 @@ L’Access Enabler attiva un callback aggiuntivo che non è necessariamente corr
 **Parametri:**
 
 - *event*: evento di cui viene tenuta traccia. Esistono tre possibili tipi di eventi di tracciamento:
-   - **authorizationDetection:** ogni volta che viene restituita una richiesta del token di autorizzazione (tipo di evento: `EVENT_AUTHZ_DETECTION`)
-   - **authenticationDetection:** ogni volta che si verifica un controllo di autenticazione (tipo di evento: `EVENT_AUTHN_DETECTION`)
-   - **mvpdSelection:** quando l&#39;utente seleziona un MVPD nel modulo di selezione MVPD (tipo evento: `EVENT_MVPD_SELECTION`)
+  - **authorizationDetection:** ogni volta che viene restituita una richiesta del token di autorizzazione (tipo di evento: `EVENT_AUTHZ_DETECTION`)
+  - **authenticationDetection:** ogni volta che si verifica un controllo di autenticazione (tipo di evento: `EVENT_AUTHN_DETECTION`)
+  - **mvpdSelection:** quando l&#39;utente seleziona un MVPD nel modulo di selezione MVPD (tipo evento: `EVENT_MVPD_SELECTION`)
 - *dati*: dati aggiuntivi associati all&#39;evento segnalato. Questi dati vengono presentati sotto forma di elenco di valori.
 
 Di seguito sono riportate le istruzioni per l&#39;interpretazione dei valori nell&#39;array *data*:
 
 - Per il tipo di evento *`EVENT_AUTHN_DETECTION`:*
-   - **0** - Indica se la richiesta del token è riuscita (true/false) e se quanto sopra è vero:
-   - **1** - Stringa MVPD ID
-   - **2** - GUID (hash md5)
-   - **3** - Token già nella cache (true/false)
-   - **4** - Tipo di dispositivo
-   - **5** - Tipo di client Access Enabler
-   - **6** - Tipo di sistema operativo
+  - **0** - Indica se la richiesta del token è riuscita (true/false) e se quanto sopra è vero:
+  - **1** - Stringa MVPD ID
+  - **2** - GUID (hash md5)
+  - **3** - Token già nella cache (true/false)
+  - **4** - Tipo di dispositivo
+  - **5** - Tipo di client Access Enabler
+  - **6** - Tipo di sistema operativo
 
 - Per il tipo di evento `EVENT_AUTHZ_DETECTION`
-   - **0** - Se la richiesta del token è stata completata correttamente (true/false) e in caso di esito positivo:
-   - **1** - ID MVPD
-   - **2** - GUID (hash md5)
-   - **3** - Token già nella cache (true/false)
-   - **4** - Errore
-   - **5** - Dettagli
-   - **6** - Tipo di dispositivo
-   - **7** - Tipo client Access Enabler
-   - **8** - Tipo di sistema operativo
+  - **0** - Se la richiesta del token è stata completata correttamente (true/false) e in caso di esito positivo:
+  - **1** - ID MVPD
+  - **2** - GUID (hash md5)
+  - **3** - Token già nella cache (true/false)
+  - **4** - Errore
+  - **5** - Dettagli
+  - **6** - Tipo di dispositivo
+  - **7** - Tipo client Access Enabler
+  - **8** - Tipo di sistema operativo
 
 - Per il tipo di evento `EVENT_MVPD_SELECTION`
-   - **0** - ID del MVPD attualmente selezionato
-   - **1** - Tipo di dispositivo
-   - **2** - Tipo di client Access Enabler
-   - **3** - Tipo di sistema operativo
+  - **0** - ID del MVPD attualmente selezionato
+  - **1** - Tipo di dispositivo
+  - **2** - Tipo di client Access Enabler
+  - **3** - Tipo di sistema operativo
 
 **Attivato da:** `checkAuthentication(), getAuthentication(), checkAuthorization(), getAuthorization(), setSelectedProvider()`
 

@@ -2,13 +2,14 @@
 title: Fornisci elenco MVPD
 description: Fornisci elenco MVPD
 exl-id: db2d8f19-d0b9-4195-bf0b-f9de0d96062b
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '254'
+source-wordcount: '262'
 ht-degree: 2%
-
 ---
-
 # (Legacy) Fornisci elenco MVPD {#provide-mvpd-list}
 
 >[!NOTE]
@@ -41,9 +42,9 @@ ht-degree: 2%
 
 Restituisce l&#39;elenco di MVPD configurati per il richiedente.
 
-| Endpoint | Chiamato </br> da | Input   </br>Parametri | Metodo HTTP </br> | Risposta | HTTP </br>Risposta |
+| Endpoint | Chiamato </br> da | Immetti </br> parametri | Metodo HTTP </br> | Risposta | HTTP </br>Risposta |
 | --- | --- | --- | --- | --- | --- |
-| &lt;SP_FQDN>/api/v1/config/{requestorId}</br></br>Esempio:</br></br>&lt;SP_FQDN>/api/v1/config/sampleRequestorId | Autenticazione Adobe Pass | &#x200B;1. Richiedente</br>    (componente percorso)</br>_2.  deviceType (obsoleto)_ | GET | XML o JSON contenente l’elenco degli MVPD. | 200 |
+| &lt;SP_FQDN>/api/v1/config/{requestorId}</br></br>Esempio:</br></br>&lt;SP_FQDN>/api/v1/config/sampleRequestorId | Autenticazione Adobe Pass | &#x200B;1.  Richiedente</br> (componente percorso)</br>_2.  deviceType (obsoleto)_ | GET | XML o JSON contenente l’elenco degli MVPD. | 200 |
 
 {style="table-layout:auto"}
 

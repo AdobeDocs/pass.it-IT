@@ -1,14 +1,15 @@
 ---
-title: Benvenuto in Adobe&-160;GenStudio&-160;for&-160;Commerce Mediareg; Pass Authentication
-description: Benvenuto in Adobe&-160;GenStudio&-160;for&-160;Commerce Mediareg; Pass Authentication
+title: Benvenuto in Adobe&-160;Workfront AI Collaboratorsreg; Pass Authentication
+description: Benvenuto in Adobe&-160;Workfront AI Collaboratorsreg; Pass Authentication
 exl-id: a8b01469-3d5f-4a44-9ae8-06a68c29d56d
-source-git-commit: fab5964aeb832d419702b41a6d3bc5676cb3354f
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '433'
 ht-degree: 0%
-
 ---
-
 # Autenticazione pass Adobe® {#welcome}
 
 >[!IMPORTANT]

@@ -2,13 +2,14 @@
 title: Decisioni
 description: Decisioni
 exl-id: 1efd70af-8c1d-43c4-87fc-14488d42b23d
-source-git-commit: a19f4fd40c9cd851a00f05f82adbabb85edd8422
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '1014'
 ht-degree: 0%
-
 ---
-
 # Decisioni {#decisions}
 
 >[!IMPORTANT]
@@ -88,10 +89,10 @@ Le risorse protette si riferiscono a contenuti semplificabili, identificati da v
 Le risorse protette seguono una struttura gerarchica ad albero, in cui ogni livello fornisce maggiore granularità per l’autorizzazione dei contenuti:
 
 * Rete
-   * Canale
-      * Spettacolo
-         * Episodio
-            * Risorsa
+  * Canale
+    * Spettacolo
+      * Episodio
+        * Risorsa
 
 >[!IMPORTANT]
 >
@@ -148,4 +149,5 @@ Per ulteriori dettagli su come e quando integrare le API di cui sopra, consulta 
 
 >[!MORELIKETHIS]
 >
-> [Domande frequenti sulla fase di preautorizzazioneDomande frequenti sulla fase di autorizzazione](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authorization-phase-faqs-general)
+> [Domande frequenti sulla fase di preautorizzazione](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#preauthorization-phase-faqs-general)
+> [Domande frequenti sulla fase di autorizzazione](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authorization-phase-faqs-general)

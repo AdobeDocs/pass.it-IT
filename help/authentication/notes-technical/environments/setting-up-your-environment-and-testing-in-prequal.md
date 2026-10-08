@@ -2,13 +2,14 @@
 title: Configurazione dell’ambiente e test in Pre-Qual
 description: Configurazione dell’ambiente e test in Pre-Qual
 exl-id: f822c0a1-045a-401f-a44f-742ed25bfcdc
-source-git-commit: b6ba687240799d1889302019613f426259f147ad
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '492'
 ht-degree: 0%
-
 ---
-
 # Configurazione dell’ambiente e test in Pre-Qual{#setting-up-your-environment-and-testing-in-prequal}
 
 >[!NOTE]
@@ -89,8 +90,8 @@ Addresses:  52.26.79.43
 * Modificare il file *c:\\windows\\System32\\drivers\\etc\\hosts* (in Windows) o */etc/hosts* (in Macintosh/Linux/Android) e aggiungere quanto segue:
 
 * Profilo di produzione spoof
-   * 52.13.71.11 sp.auth.adobe.com api.auth.adobe.com
-   * 54.190.212.171 entitlement.auth.adobe.com
+  * 52.13.71.11 sp.auth.adobe.com api.auth.adobe.com
+  * 54.190.212.171 entitlement.auth.adobe.com
 
 **Spoofing su Android:** Per eseguire lo spoofing su Android, è necessario utilizzare un emulatore Android.
 

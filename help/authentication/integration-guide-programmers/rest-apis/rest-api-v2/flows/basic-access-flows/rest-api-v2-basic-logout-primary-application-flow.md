@@ -2,13 +2,14 @@
 title: Logout di base - Applicazione principale - Flusso
 description: REST API V2 - Logout di base - Applicazione principale - Flusso
 exl-id: 21dbff4a-0d69-4f81-b04f-e99d743c35b3
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '948'
 ht-degree: 0%
-
 ---
-
 # Flusso di logout di base eseguito nell&#39;applicazione principale {#basic-logout-flow-performed-within-primary-application}
 
 >[!IMPORTANT]
@@ -36,9 +37,9 @@ Flusso di logout di base consente di eseguire query per i seguenti scenari:
 Prima di avviare la disconnessione per un MVPD specifico con un endpoint di disconnessione, verificare che siano soddisfatti i seguenti prerequisiti:
 
 * L’applicazione di streaming deve disporre di un profilo regolare valido creato correttamente per MVPD utilizzando uno dei flussi di autenticazione di base:
-   * [Eseguire l&#39;autenticazione nell&#39;applicazione principale](rest-api-v2-basic-authentication-primary-application-flow.md)
-   * [Eseguire l&#39;autenticazione nell&#39;applicazione secondaria con mvpd preselezionato](rest-api-v2-basic-authentication-secondary-application-flow.md)
-   * [Eseguire l&#39;autenticazione nell&#39;applicazione secondaria senza mvpd preselezionato](rest-api-v2-basic-authentication-secondary-application-flow.md)
+  * [Eseguire l&#39;autenticazione nell&#39;applicazione principale](rest-api-v2-basic-authentication-primary-application-flow.md)
+  * [Eseguire l&#39;autenticazione nell&#39;applicazione secondaria con mvpd preselezionato](rest-api-v2-basic-authentication-secondary-application-flow.md)
+  * [Eseguire l&#39;autenticazione nell&#39;applicazione secondaria senza mvpd preselezionato](rest-api-v2-basic-authentication-secondary-application-flow.md)
 * L&#39;applicazione di streaming deve avviare il flusso di logout quando deve disconnettersi da MVPD.
 
 >[!IMPORTANT]
@@ -102,9 +103,9 @@ Segui i passaggi forniti per implementare il flusso di logout di base per un MVP
 Prima di avviare la disconnessione per un MVPD specifico senza un endpoint di disconnessione, verificare che siano soddisfatti i seguenti prerequisiti:
 
 * L’applicazione di streaming deve disporre di un profilo regolare valido creato correttamente per MVPD utilizzando uno dei flussi di autenticazione di base:
-   * [Eseguire l&#39;autenticazione nell&#39;applicazione principale](rest-api-v2-basic-authentication-primary-application-flow.md)
-   * [Eseguire l&#39;autenticazione nell&#39;applicazione secondaria con mvpd preselezionato](rest-api-v2-basic-authentication-secondary-application-flow.md)
-   * [Eseguire l&#39;autenticazione nell&#39;applicazione secondaria senza mvpd preselezionato](rest-api-v2-basic-authentication-secondary-application-flow.md)
+  * [Eseguire l&#39;autenticazione nell&#39;applicazione principale](rest-api-v2-basic-authentication-primary-application-flow.md)
+  * [Eseguire l&#39;autenticazione nell&#39;applicazione secondaria con mvpd preselezionato](rest-api-v2-basic-authentication-secondary-application-flow.md)
+  * [Eseguire l&#39;autenticazione nell&#39;applicazione secondaria senza mvpd preselezionato](rest-api-v2-basic-authentication-secondary-application-flow.md)
 * L&#39;applicazione di streaming deve avviare il flusso di logout quando deve disconnettersi da MVPD.
 
 >[!IMPORTANT]
