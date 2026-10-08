@@ -2,13 +2,14 @@
 title: Amazon FireOS SDK con registrazione client dinamica
 description: Amazon FireOS SDK con registrazione client dinamica
 exl-id: 27acf3f5-8b7e-4299-b0f0-33dd6782aeda
-source-git-commit: b6ba687240799d1889302019613f426259f147ad
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '1185'
 ht-degree: 1%
-
 ---
-
 
 # (Legacy) Amazon FireOS SDK con registrazione client dinamica {#amazon-fireos-sdk-with-dynamic-client-registration}
 
@@ -123,8 +124,8 @@ Obsoleto:
 
   SDK eseguirà le seguenti operazioni:
 
-   - registra applicazione: utilizzando **software\_statement**, SDK otterrà un **client\_id, client\_secret, client\_id\_issued\_at, redirect\_uris, grant\_types**. Queste informazioni verranno archiviate nell&#39;archivio interno dell&#39;applicazione.
-   - ottieni un **accesso\_token** utilizzando client\_id, client\_secret e grant\_type=&quot;client\_credentials&quot; . Questo accesso\_token verrà utilizzato in ogni chiamata effettuata da SDK ai server Adobe Pass.
+  - registra applicazione: utilizzando **software\_statement**, SDK otterrà un **client\_id, client\_secret, client\_id\_issued\_at, redirect\_uris, grant\_types**. Queste informazioni verranno archiviate nell&#39;archivio interno dell&#39;applicazione.
+  - ottieni un **accesso\_token** utilizzando client\_id, client\_secret e grant\_type=&quot;client\_credentials&quot; . Questo accesso\_token verrà utilizzato in ogni chiamata effettuata da SDK ai server Adobe Pass.
 
 | Risposte di errore token: |  |  |
 |--- | --- | --- |
@@ -136,21 +137,21 @@ Obsoleto:
 
 - b. checkAuthentication()
 
-   - *true*: vai ad autorizzazione
-   - *false* : vai a Seleziona MVPD
+  - *true*: vai ad autorizzazione
+  - *false* : vai a Seleziona MVPD
 
 - c. getAuthentication: il SDK includerà **access_token** nei parametri di chiamata
 
-   - mvpd memorizzato: vai a setSelectedProvider(mvpd\_id)
-   - mvpd non selezionato: displayProviderDialog
-   - mvpd selezionato: vai a setSelectedProvider(mvpd\_id)
+  - mvpd memorizzato: vai a setSelectedProvider(mvpd\_id)
+  - mvpd non selezionato: displayProviderDialog
+  - mvpd selezionato: vai a setSelectedProvider(mvpd\_id)
 
 - d. setSelectedProvider
 
-   - L&#39;URL di autenticazione mvpd\_id è caricato in ChromeCustomTabs
-   - accesso riuscito : delegate.setAuthenticationStatus ( SUCCESS )
-   - accesso annullato: reimpostare la selezione di MVPD
-   - Lo schema URL viene impostato come &quot;adobepass://android.app&quot; da acquisire al termine dell’autenticazione
+  - L&#39;URL di autenticazione mvpd\_id è caricato in ChromeCustomTabs
+  - accesso riuscito : delegate.setAuthenticationStatus ( SUCCESS )
+  - accesso annullato: reimpostare la selezione di MVPD
+  - Lo schema URL viene impostato come &quot;adobepass://android.app&quot; da acquisire al termine dell’autenticazione
 
 - e. get/checkAuthorization : SDK includerà **access\_token** nell&#39;intestazione come Authorization: Bearer **access\_token**
 
@@ -158,10 +159,10 @@ Obsoleto:
 
 - f. logout:
 
-   - SDK eliminerà il token valido per il richiedente corrente (le autenticazioni ottenute da altre applicazioni e non tramite SSO rimarranno valide)
-   - SDK aprirà le schede personalizzate di Chrome per raggiungere l&#39;endpoint mvpd\_id logout. Al termine, le schede personalizzate Chrome verranno chiuse
-   - Lo schema URL viene impostato come &quot;adobepass://logout&quot; per acquisire il momento in cui viene completato il logout
-   - la disconnessione attiva sendTrackingData(new Event(EVENT\_LOGOUT,USER\_NOT\_AUTHENTICATED\_ERROR) e un callback : setAuthenticationStatus(0,&quot;Logout&quot;)
+  - SDK eliminerà il token valido per il richiedente corrente (le autenticazioni ottenute da altre applicazioni e non tramite SSO rimarranno valide)
+  - SDK aprirà le schede personalizzate di Chrome per raggiungere l&#39;endpoint mvpd\_id logout. Al termine, le schede personalizzate Chrome verranno chiuse
+  - Lo schema URL viene impostato come &quot;adobepass://logout&quot; per acquisire il momento in cui viene completato il logout
+  - la disconnessione attiva sendTrackingData(new Event(EVENT\_LOGOUT,USER\_NOT\_AUTHENTICATED\_ERROR) e un callback : setAuthenticationStatus(0,&quot;Logout&quot;)
 
 
 

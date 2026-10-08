@@ -2,13 +2,14 @@
 title: Preautorizzazione di base - Applicazione principale - Flusso
 description: REST API V2 - Preautorizzazione di base - Applicazione principale - Flusso
 exl-id: f557f6c3-d5b2-4ec8-be51-91a90fbd31c0
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '496'
 ht-degree: 0%
-
 ---
-
 # Flusso di pre-autorizzazione di base eseguito nell’applicazione principale {#basic-preauthorization-flow-performed-within-primary-application}
 
 >[!IMPORTANT]
@@ -28,9 +29,9 @@ Il **flusso di preautorizzazione** all&#39;interno del diritto di autenticazione
 Prima di recuperare le decisioni di preautorizzazione utilizzando un MVPD specifico, assicurati che siano soddisfatti i seguenti prerequisiti:
 
 * L’applicazione di streaming deve disporre di un profilo regolare valido creato correttamente per MVPD utilizzando uno dei flussi di autenticazione di base:
-   * [Eseguire l&#39;autenticazione nell&#39;applicazione principale](rest-api-v2-basic-authentication-primary-application-flow.md)
-   * [Eseguire l&#39;autenticazione nell&#39;applicazione secondaria con mvpd preselezionato](rest-api-v2-basic-authentication-secondary-application-flow.md)
-   * [Eseguire l&#39;autenticazione nell&#39;applicazione secondaria senza mvpd preselezionato](rest-api-v2-basic-authentication-secondary-application-flow.md)
+  * [Eseguire l&#39;autenticazione nell&#39;applicazione principale](rest-api-v2-basic-authentication-primary-application-flow.md)
+  * [Eseguire l&#39;autenticazione nell&#39;applicazione secondaria con mvpd preselezionato](rest-api-v2-basic-authentication-secondary-application-flow.md)
+  * [Eseguire l&#39;autenticazione nell&#39;applicazione secondaria senza mvpd preselezionato](rest-api-v2-basic-authentication-secondary-application-flow.md)
 * L’applicazione di streaming desidera recuperare le decisioni di preautorizzazione per visualizzare un elenco di risorse e i relativi stati associati.
 
 ### Flusso di lavoro {#workflow-retrieve-preauthorization-decisions-using-specific-mvpd}

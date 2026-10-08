@@ -2,13 +2,14 @@
 title: Autenticazione tramite il protocollo OAuth 2.0
 description: Autenticazione tramite il protocollo OAuth 2.0
 exl-id: 0c1f04fe-51dc-4b4d-88e7-66e8f4609e02
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '1088'
+source-wordcount: '1111'
 ht-degree: 0%
-
 ---
-
 # Autenticazione tramite il protocollo OAuth 2.0
 
 >[!NOTE]
@@ -44,21 +45,21 @@ Innanzitutto, MVPD deve assicurarsi di supportare il flusso [Concessione codice 
 Dopo aver confermato che supporta il flusso, MVPD deve fornirci le seguenti informazioni:
 
 * end-point di autenticazione
-   * l’endpoint fornirà il codice di autorizzazione che verrà successivamente utilizzato in cambio del token di aggiornamento e accesso
+  * l’endpoint fornirà il codice di autorizzazione che verrà successivamente utilizzato in cambio del token di aggiornamento e accesso
 * end-point /token
-   * questo fornirà il token di aggiornamento e il token di accesso
-   * il token di aggiornamento deve essere stabile (non deve cambiare ogni volta che si richiede un nuovo token di accesso)
-   * MVPD deve consentire diversi token di accesso attivi per ogni token di aggiornamento
-   * questo endpoint scambierà anche un token di aggiornamento con un token di accesso
+  * questo fornirà il token di aggiornamento e il token di accesso
+  * il token di aggiornamento deve essere stabile (non deve cambiare ogni volta che si richiede un nuovo token di accesso)
+  * MVPD deve consentire diversi token di accesso attivi per ogni token di aggiornamento
+  * questo endpoint scambierà anche un token di aggiornamento con un token di accesso
 * è necessario un **endpoint per user-profile**
-   * questo endpoint fornirà l’identificatore userID, che deve essere univoco per un account e non deve contenere alcuna informazione di identificazione personale
+  * questo endpoint fornirà l’identificatore userID, che deve essere univoco per un account e non deve contenere alcuna informazione di identificazione personale
 * l&#39;endpoint **/logout** (facoltativo)
-   * L’autenticazione Adobe Pass reindirizzerà a questo endpoint, fornirà a MVPD un URI di reindirizzamento verso il retro; su questo endpoint, MVPD può cancellare i cookie sul computer client o applicare qualsiasi logica desiderata per la disconnessione
+  * L’autenticazione Adobe Pass reindirizzerà a questo endpoint, fornirà a MVPD un URI di reindirizzamento verso il retro; su questo endpoint, MVPD può cancellare i cookie sul computer client o applicare qualsiasi logica desiderata per la disconnessione
 * si consiglia vivamente di avere supporto per i client autorizzati (app client che non attivano una pagina di autorizzazione utente)
 * avremo anche bisogno di:
-   * **clientID** e **client secret** per le configurazioni di integrazione
-   * **durata** (TTL) valori per token di aggiornamento e token di accesso
-   * Possiamo fornire al MVPD un callback di autorizzazione e un URI di callback di logout. Inoltre, se necessario, possiamo fornire agli MVPD un elenco di IP da inserire nella whitelist delle impostazioni del firewall.
+  * **clientID** e **client secret** per le configurazioni di integrazione
+  * **durata** (TTL) valori per token di aggiornamento e token di accesso
+  * Possiamo fornire al MVPD un callback di autorizzazione e un URI di callback di logout. Inoltre, se necessario, possiamo fornire agli MVPD un elenco di IP da inserire nella whitelist delle impostazioni del firewall.
 
 
 ## Flusso di autenticazione {#authn-flow}

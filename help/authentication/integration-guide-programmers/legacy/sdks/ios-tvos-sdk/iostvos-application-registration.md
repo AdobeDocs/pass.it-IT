@@ -2,13 +2,14 @@
 title: Registrazione applicazione iOS/tvOS
 description: Registrazione applicazione iOS/tvOS
 exl-id: 89ee6b5a-29fa-4396-bfc8-7651aa3d6826
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '632'
+source-wordcount: '634'
 ht-degree: 0%
-
 ---
-
 
 # (Legacy) Registrazione applicazione iOS/tvOS {#iostvos-application-registration}
 
@@ -40,9 +41,9 @@ Un rendiconto software è un token JWT che contiene informazioni sull’applicaz
 - Passa alla sezione `Channels` e seleziona il tuo canale.
 - Passa alla scheda `Registered Applications`.
 - Fai clic su `Add new application`.
-- Specifica un nome e una versione per l’applicazione e seleziona la   piattaforme su cui sarà disponibile. iOS/tvOS nel nostro caso.
+- Specifica un nome e una versione per l’applicazione e seleziona le piattaforme su cui sarà disponibile. iOS/tvOS nel nostro caso.
 - Invia le modifiche al server e quindi torna alla scheda Applicazioni registrate del tuo canale.
-- Dovresti visualizzare un elenco con tutte le applicazioni registrate. Fai clic su   Pulsante `Download` dell&#39;applicazione appena creata. Potrebbe essere necessario attendere alcuni minuti prima che il Software Statement sia pronto per il download.
+- Dovresti visualizzare un elenco con tutte le applicazioni registrate. Fare clic sul pulsante `Download` dell&#39;applicazione appena creata. Potrebbe essere necessario attendere alcuni minuti prima che il Software Statement sia pronto per il download.
 - Verrà scaricato un file di testo. Utilizza il contenuto come informativa sul software.
 
 Per ulteriori informazioni, vedere [Dynamic Client Registration Management](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md#dynamic-client-registration-management).

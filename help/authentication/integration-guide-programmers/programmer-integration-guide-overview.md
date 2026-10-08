@@ -2,13 +2,14 @@
 title: Guida all’integrazione dei programmatori
 description: Guida all’integrazione dei programmatori
 exl-id: 51461caf-08ef-459e-b284-8f317f45e7b1
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '2152'
 ht-degree: 0%
-
 ---
-
 # Guida all’integrazione dei programmatori {#programmer-integration-guide}
 
 >[!IMPORTANT]
@@ -43,15 +44,15 @@ L’autenticazione Adobe Pass funge da proxy e facilita il flusso dei diritti tr
 Per i programmatori, l&#39;autenticazione Adobe Pass fornisce API come parte di un livello **Standard** o **Premium**:
 
 * API di autenticazione standard di Adobe Pass:
-   * [DCR REST API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)
-   * [API REST V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md)
+  * [DCR REST API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)
+  * [API REST V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md)
 
 * API di autenticazione Premium Adobe Pass:
-   * [Ripristina API passaggio temporaneo](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
-      * [Funzione TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)
-   * [API di degradazione](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md#degradation-api-access)
-      * [Funzione di degradazione](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)
-   * [API di monitoraggio del servizio di adesione](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-api.md)
+  * [Ripristina API passaggio temporaneo](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
+    * [Funzione TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)
+  * [API di degradazione](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md#degradation-api-access)
+    * [Funzione di degradazione](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)
+  * [API di monitoraggio del servizio di adesione](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-api.md)
 
 ### Casi d’uso {#use-cases}
 

@@ -2,13 +2,14 @@
 title: Recupera elenco di risorse preautorizzate tramite l’app web Second Screen
 description: Recupera elenco di risorse preautorizzate tramite l’app web Second Screen
 exl-id: 78eeaf24-4cc1-4523-8298-999c9effdb7a
-source-git-commit: 1c357b918fa4f6d4b92a9055de018c55ee5861e0
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '278'
 ht-degree: 1%
-
 ---
-
 # (Legacy) Recuperare l’elenco delle risorse preautorizzate tramite l’app web Second Screen {#retrieve-list-of-preauthorized-resources-by-second-screen-web-app}
 
 >[!NOTE]

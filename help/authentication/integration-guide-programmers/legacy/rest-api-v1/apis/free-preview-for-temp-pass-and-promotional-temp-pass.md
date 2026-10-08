@@ -2,13 +2,14 @@
 title: Anteprima gratuita per Passaggio temporaneo e Passaggio temporaneo promozionale
 description: Anteprima gratuita per Passaggio temporaneo e Passaggio temporaneo promozionale
 exl-id: c584bf0c-15c4-4a4d-b6a2-8d15ee786fe3
-source-git-commit: 689e2f86550d9fa59337c15dd38767975a1d6d30
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '441'
 ht-degree: 2%
-
 ---
-
 # (Legacy) Anteprima gratuita per Passaggio temporaneo e Passaggio temporaneo promozionale {#free-preview-for-temp-pass-and-promotional-temp-pass}
 
 >[!NOTE]
@@ -56,7 +57,7 @@ Consente di creare un token di autenticazione per Passaggio temporaneo e Passagg
 | mso_id | L&#39;ID MVPD per il quale è valida questa operazione. |
 | nome_dominio | Il nome di dominio per il quale verrà concesso un token. Questo viene confrontato con i domini del fornitore di servizi quando viene concesso un token di autorizzazione. |
 | device_info/</br></br>X-Device-Info | Informazioni sul dispositivo di streaming.</br></br>**Nota**: questo parametro POTREBBE essere trasmesso come parametro URL a device_info, ma a causa delle dimensioni potenziali del parametro e delle limitazioni alla lunghezza di un URL GET, DOVREBBE essere trasmesso come X-Device-Info nell&#39;intestazione http. </br></br>Visualizza tutti i dettagli in [Trasmissione delle informazioni sul dispositivo e sulla connessione](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md). |
-| _tipoDispositivo_ | Tipo di dispositivo (ad esempio Roku, PC).</br></br>Se questo parametro è impostato correttamente, ESM offre metriche [suddivise per tipo di dispositivo](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#clientless_device_type) quando si utilizza Clientless, in modo che possano essere eseguiti diversi tipi di analisi, ad esempio Roku, AppleTV, Xbox e così via.</br></br>Consulta [Vantaggi dell&#39;utilizzo di parametri di tipo di dispositivo senza client &#x200B;](/help/authentication/integration-guide-programmers/legacy/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br></br>**Nota**: device_info sostituirà questo parametro. |
+| _tipoDispositivo_ | Tipo di dispositivo (ad esempio Roku, PC).</br></br>Se questo parametro è impostato correttamente, ESM offre metriche [suddivise per tipo di dispositivo](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#clientless_device_type) quando si utilizza Clientless, in modo che possano essere eseguiti diversi tipi di analisi, ad esempio Roku, AppleTV, Xbox e così via.</br></br>Consulta [Vantaggi dell&#39;utilizzo di parametri di tipo di dispositivo senza client ](/help/authentication/integration-guide-programmers/legacy/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br></br>**Nota**: device_info sostituirà questo parametro. |
 | _utenteDispositivo_ | Identificatore utente del dispositivo.</br></br>**Nota**: se utilizzato, deviceUser deve avere gli stessi valori della richiesta [Crea codice di registrazione](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md). |
 | _appId_ | ID/nome dell’applicazione. </br></br>**Nota**: device_info sostituisce questo parametro. Se utilizzato, `appId` deve avere gli stessi valori della richiesta [Crea codice di registrazione](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md). |
 | generic_data | Utilizzato per limitare l’ambito del token per il passaggio temporaneo promozionale. |

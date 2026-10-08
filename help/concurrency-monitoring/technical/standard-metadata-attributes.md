@@ -2,13 +2,14 @@
 title: Attributi metadati standard
 description: Attributi metadati standard
 exl-id: 99ffa98c-213f-47a5-a6e7-fbacb77875d0
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '1053'
+source-wordcount: '1295'
 ht-degree: 0%
-
 ---
-
 # Attributi metadati standard {#std-metadata-attributes}
 
 Questa pagina si propone di fornire un elenco completo degli attributi di metadati che il servizio di monitoraggio della concorrenza può elaborare e che possono essere utilizzati come base per i criteri che possono essere implementati. Gli attributi di metadati standard possono essere classificati come segue:
@@ -54,10 +55,10 @@ Con [API v2.0](https://streams-stage.adobeprimetime.com/swagger-ui/index.html), 
 | Applicazione | applicationName | stringa | Nome dell’applicazione leggibile dal consumatore o di facile utilizzo | N/D | Applicazione_Esempio |                                                                                   |
 |                 | applicationId | stringa | L’ID applicazione che identifica in modo univoco un’applicazione client. | N/D | de305d54-75b4-431b-adb2-eb6b9e546013 |                                                                                   |
 |                 | applicationPlatform | stringa | Piattaforma nativa dell’applicazione | N/D | ios, android |                                                                                   |
-|                 | applicationVersion | stringa | Questo valore può essere utilizzato a scopo di analisi | N/D | 1,0, 2,0 |                                                                                   |
+|                 | applicationVersion | stringa | Questo valore può essere utilizzato a scopo di analisi | N/D | 1.0, 2.0 |                                                                                   |
 | Oggetto | accountId | stringa | ID account dell&#39;oggetto di monitoraggio della concorrenza (nell&#39;ambito di MVPD) | N/D | account test |                                                                                   |
 |                 | contractType | stringa | premium, base. I clienti possono aggiungere questo elemento come metadati personalizzati e utilizzarlo nei propri realm. | N/D | premium, base |                                                                                   |
-| Utente | name | stringa | Alcuni MVPD forniscono informazioni relative all’utente specifico che riproduce il contenuto. | N/D |                                                                                                                                                         |                                                                                   |
+| Utente | nome | stringa | Alcuni MVPD forniscono informazioni relative all’utente specifico che riproduce il contenuto. | N/D |                                                                                                                                                         |                                                                                   |
 |                 | hba | booleano | Identifica se l’utente tenta di avviare il flusso dalla propria posizione principale | N/D | true, false | true o false |
 | Posizione | continente | stringa | Il continente da cui proviene l’ID dispositivo che invia la richiesta di riproduzione | N/D | Nord America | nome continente valido |
 |                 | paese | stringa | Il paese da cui proviene l’ID dispositivo che invia la richiesta di riproduzione | N/D | Stati Uniti | nome paese valido |
@@ -73,15 +74,15 @@ I campi di metadati standard possono essere utilizzati per definire criteri lato
 
 * È possibile configurare un criterio per applicarlo solo a valori di campo specifici (ad esempio, un criterio iOS dedicato: dove `osType` è `iOS`)
 * È possibile limitare il numero di valori distinti per un determinato campo. Alcuni esempi sono i seguenti:
-   * non più di X dispositivi distinti: `HAVING DISTINCT COUNT(deviceId) <= 2`
-   * non più di X codici zip distinti: `HAVING DISTINCT COUNT(zipcode) <= 3`
+  * non più di X dispositivi distinti: `HAVING DISTINCT COUNT(deviceId) <= 2`
+  * non più di X codici zip distinti: `HAVING DISTINCT COUNT(zipcode) <= 3`
 * Puoi limitare il numero di flussi attivi per valore di campo. Alcuni esempi sono i seguenti:
-   * non più di X flussi attivi per un singolo tipo di dispositivo: `GROUP BY deviceType HAVING COUNT(streamId) <= 3`
-   * non più di X flussi attivi per flussi di contenuto live: `SELECT COUNT(streamId) AS streamCount WHERE contentType='live' HAVING streamCount <= 3`
+  * non più di X flussi attivi per un singolo tipo di dispositivo: `GROUP BY deviceType HAVING COUNT(streamId) <= 3`
+  * non più di X flussi attivi per flussi di contenuto live: `SELECT COUNT(streamId) AS streamCount WHERE contentType='live' HAVING streamCount <= 3`
 
 Contatta il team di monitoraggio della concorrenza [creando un ticket in Zendesk](mailto:tve-support@adobe.com) e indica i criteri che desideri implementare.
 
 Di seguito sono riportati ulteriori esempi di criteri e manuali di integrazione:
 
 * [Punto decisionale criterio](/help/concurrency-monitoring/technical/cm-policy-decision-point.md)
-* [Console API - Monitoraggio concorrenza Adobe](https://streams-stage.adobeprimetime.com/swagger-ui/index.html)
+* [Console API - Monitoraggio della concorrenza Adobe](https://streams-stage.adobeprimetime.com/swagger-ui/index.html)

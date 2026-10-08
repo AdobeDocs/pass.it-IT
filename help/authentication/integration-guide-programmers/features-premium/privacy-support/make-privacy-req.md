@@ -2,13 +2,14 @@
 title: Come effettuare una richiesta di accesso a dati personali
 description: Come effettuare una richiesta di accesso a dati personali
 exl-id: abb21306-98d6-4899-914a-bdfa85cbd204
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '603'
 ht-degree: 0%
-
 ---
-
 # Come effettuare una richiesta di accesso a dati personali {#howto-make-privacy-request}
 
 >[!NOTE]
@@ -226,7 +227,7 @@ Ci sono 2 opzioni per i clienti per inviare richieste di privacy ad Adobe:
 
 ### Utilizzando l’interfaccia utente di Privacy Service {#privacy-service-ui}
 
-Un [tutorial completo](https://experienceleague.adobe.com/docs/experience-platform/privacy/home.html?lang=it#!api-specification/markdown/narrative/tutorials/privacy_service_tutorial/privacy_service_ui_tutorial.md) su come accedere e utilizzare l&#39;interfaccia utente di Privacy Service è disponibile online tramite i servizi Adobe I/O. Inoltre, i clienti possono utilizzare questo collegamento per accedere alla libreria di video e articoli sulle normative sulla privacy. Fai clic sul menu Adobe Experience Cloud e RGPD. Verranno aperti diversi video - La guida introduttiva all’interfaccia utente RGPD spiega come utilizzarla.
+Un [tutorial completo](https://experienceleague.adobe.com/docs/experience-platform/privacy/home.html?lang=en#!api-specification/markdown/narrative/tutorials/privacy_service_tutorial/privacy_service_ui_tutorial.md) su come accedere e utilizzare l&#39;interfaccia utente di Privacy Service è disponibile online tramite i servizi Adobe I/O. Inoltre, i clienti possono utilizzare questo collegamento per accedere alla libreria di video e articoli sulle normative sulla privacy. Fai clic sul menu Adobe Experience Cloud e RGPD. Verranno aperti diversi video - La guida introduttiva all’interfaccia utente RGPD spiega come utilizzarla.
 
 Nell’interfaccia utente, i clienti devono caricare il proprio IMSOrgID e un JSON contenente i dettagli delle richieste RGPD per ciascun prodotto.
 
@@ -239,7 +240,7 @@ La **documentazione API di Privacy Service** descrive in modo approfondito come 
 **Visualizza chiamate API con Postman (un software gratuito di terze parti):**
 
 * [Raccolta Postman API di Privacy Service su GitHub](https://github.com/adobe/experience-platform-postman-samples/blob/master/apis/experience-platform/Privacy%20Service%20API.postman_collection.json)
-* [Guida video per la creazione dell’ambiente Postman](https://video.tv.adobe.com/v/36258?captions=ita)
+* [Guida video per la creazione dell’ambiente Postman](https://video.tv.adobe.com/v/28832)
 * [Passaggi per importare ambienti e raccolte in Postman](https://learning.postman.com/docs/running-collections/intro-to-collection-runs/)
 
 
@@ -259,7 +260,7 @@ La **documentazione API di Privacy Service** descrive in modo approfondito come 
 
 >[!RELATEDINFORMATION]
 >
->* [Privacy Services Overview](https://experienceleague.adobe.com/docs/experience-platform/privacy/home.html?lang=it#!api-specification/markdown/narrative/tutorials/privacy_service_tutorial/privacy_service_ui_tutorial.md)
+>* [Privacy Services Overview](https://experienceleague.adobe.com/docs/experience-platform/privacy/home.html?lang=en#!api-specification/markdown/narrative/tutorials/privacy_service_tutorial/privacy_service_ui_tutorial.md)
 >* Privacy Service API documentation
 
 -->

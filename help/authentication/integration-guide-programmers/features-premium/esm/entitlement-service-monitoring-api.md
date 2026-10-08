@@ -2,13 +2,14 @@
 title: API di monitoraggio del servizio di adesione
 description: API di monitoraggio del servizio di adesione
 exl-id: a9572372-14a6-4caa-9ab6-4a6baababaa1
-source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '2098'
 ht-degree: 0%
-
 ---
-
 # API di monitoraggio del servizio di adesione {#entitlement-service-monitoring-api}
 
 >[!IMPORTANT]
@@ -67,9 +68,9 @@ Un GET all&#39;endpoint API `https://mgmt.auth.adobe.com/esm/v3` restituirà una
 
 * Collegamenti ai percorsi di drill-down radice disponibili:
 
-   * `<link rel="drill-down" href="/v3/dimensionA"/>`
+  * `<link rel="drill-down" href="/v3/dimensionA"/>`
 
-   * `<link rel="drill-down" href="/v3/dimensionB"/>`
+  * `<link rel="drill-down" href="/v3/dimensionB"/>`
 
 * Un riepilogo (valori aggregati) per tutte le metriche (nell’impostazione predefinita
 intervallo, poiché non vengono forniti parametri della stringa di query, vedi di seguito).
@@ -139,7 +140,7 @@ Al momento l’unico metodo HTTP disponibile è GET.
 | 401 | Non autorizzato | Causata da una richiesta che non contiene le intestazioni OAuth appropriate per l’autenticazione dell’utente |
 | 403 | Non consentito | Indica che la richiesta non è consentita nel contesto di sicurezza corrente; ciò si verifica quando l’utente è autenticato ma non è autorizzato ad accedere alle informazioni richieste |
 | 404 | Non trovato | Si verifica nel caso in cui con la richiesta venga fornito un percorso URL non valido. Ciò non dovrebbe mai verificarsi se il client segue i collegamenti &quot;drill-down&quot;/&quot;roll-up&quot; forniti con 200 risposte |
-| 405 | Metodo non consentito | Segnala che nella richiesta è stato utilizzato un metodo non supportato. Sebbene attualmente sia supportato solo il metodo GET, le versioni future potrebbero consentire HEAD o OPTIONS |
+| 405 | Metodo non consentito | Segnala che nella richiesta è stato utilizzato un metodo non supportato. Sebbene attualmente sia supportato solo il metodo GET, le versioni future potrebbero consentire l’utilizzo di HEAD o OPTIONS |
 | 406 | Non accettabile | Segnala che il client ha richiesto un tipo di file multimediale non supportato |
 | 500 | Errore interno del server | &quot;Questo non dovrebbe mai accadere&quot; |
 | 503 | Servizio non disponibile | Segnala un errore all’interno dell’applicazione o nelle sue dipendenze |

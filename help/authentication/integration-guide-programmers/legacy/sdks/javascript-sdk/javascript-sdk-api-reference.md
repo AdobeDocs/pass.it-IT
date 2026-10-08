@@ -2,13 +2,14 @@
 title: Riferimento API di JavaScript SDK
 description: Riferimento API di JavaScript SDK
 exl-id: 48d48327-14e6-46f3-9e80-557f161acd8a
-source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '2902'
+source-wordcount: '2904'
 ht-degree: 0%
-
 ---
-
 # Riferimento API di JavaScript SDK (legacy) {#javascript-sdk-api-reference}
 
 >[!NOTE]
@@ -44,14 +45,14 @@ Queste funzioni avviano richieste di interazione con un MVPD. Tutte le chiamate 
 
 - *endpoint* - Questo parametro è facoltativo. Può corrispondere a uno dei seguenti valori:
 
-   - Array che consente di specificare gli endpoint per i servizi di autenticazione e autorizzazione forniti da Adobe (a scopo di debug possono essere utilizzate istanze diverse). Nel caso in cui vengano forniti più URL, l’elenco MVPD è composto dagli endpoint di tutti i provider di servizi. Ogni MVPD è associato al provider di servizi più veloce, ovvero il provider che ha risposto per primo e che supporta tale MVPD. Per impostazione predefinita (se non viene specificato alcun valore), viene utilizzato il provider di servizi Adobe (<http://sp.auth.adobe.com/>).
+  - Array che consente di specificare gli endpoint per i servizi di autenticazione e autorizzazione forniti da Adobe (a scopo di debug possono essere utilizzate istanze diverse). Nel caso in cui vengano forniti più URL, l’elenco MVPD è composto dagli endpoint di tutti i provider di servizi. Ogni MVPD è associato al provider di servizi più veloce, ovvero il provider che ha risposto per primo e che supporta tale MVPD. Per impostazione predefinita (se non viene specificato alcun valore), viene utilizzato il provider di servizi Adobe (<http://sp.auth.adobe.com/>).
 
   Esempio:
-   - `setRequestor("IFC", ["http://sp.auth-dev.adobe.com/adobe-services"])`
+  - `setRequestor("IFC", ["http://sp.auth-dev.adobe.com/adobe-services"])`
 
 - *opzioni* - Oggetto JSON contenente il valore ID applicazione, le impostazioni senza aggiornamento del valore ID visitatore (disconnessione in background) e le impostazioni MVPD (iFrame). Tutti i valori sono facoltativi.
-   1. Se specificato, l’ID visitatore di Experience Cloud viene segnalato su tutte le chiamate di rete eseguite dalla libreria. Il valore può essere successivamente utilizzato per i rapporti di analisi avanzati.
-   2. Se l&#39;identificatore univoco dell&#39;applicazione è specificato -`applicationId` - il valore verrà aggiunto a tutte le chiamate successive effettuate dall&#39;applicazione come parte dell&#39;intestazione HTTP X-Device-Info. Questo valore può essere recuperato in seguito dai report [ESM](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md) utilizzando la query corretta.
+  1. Se specificato, l&#39;ID visitatore di Experience Cloud viene riportato su tutte le chiamate di rete eseguite dalla libreria. Il valore può essere successivamente utilizzato per i rapporti di analisi avanzati.
+  2. Se l&#39;identificatore univoco dell&#39;applicazione è specificato -`applicationId` - il valore verrà aggiunto a tutte le chiamate successive effettuate dall&#39;applicazione come parte dell&#39;intestazione HTTP X-Device-Info. Questo valore può essere recuperato in seguito dai report [ESM](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md) utilizzando la query corretta.
 
   **Nota:** tutte le chiavi JSON fanno distinzione tra maiuscole e minuscole.
 
@@ -237,39 +238,39 @@ Esistono due tipi di metadati:
 **Parametri:**
 
 - *chiave*: un ID che specifica i metadati richiesti:
-   - Se la chiave è `"TTL_AUTHN",`, viene eseguita la query per ottenere l&#39;ora di scadenza del token di autenticazione.
+  - Se la chiave è `"TTL_AUTHN",`, viene eseguita la query per ottenere l&#39;ora di scadenza del token di autenticazione.
 
-   - Se la chiave è `"TTL_AUTHZ"` e i parametri sono una matrice contenente l&#39;ID risorsa come stringa, la query viene eseguita per ottenere la scadenza del token di autorizzazione associato alla risorsa specificata.
+  - Se la chiave è `"TTL_AUTHZ"` e i parametri sono una matrice contenente l&#39;ID risorsa come stringa, la query viene eseguita per ottenere la scadenza del token di autorizzazione associato alla risorsa specificata.
 
-   - Se la chiave è `"DEVICEID"`, viene eseguita la query per ottenere l&#39;ID dispositivo corrente. Questa funzione è disabilitata per impostazione predefinita e i programmatori devono contattare Adobe per informazioni sull’abilitazione e le tariffe.
+  - Se la chiave è `"DEVICEID"`, viene eseguita la query per ottenere l&#39;ID dispositivo corrente. Questa funzione è disabilitata per impostazione predefinita e i programmatori devono contattare Adobe per informazioni sull’abilitazione e le tariffe.
 
-   - Se key è incluso nel seguente elenco di tipi di metadati utente, un oggetto JSON contenente i metadati utente corrispondenti viene inviato alla funzione di callback [`setMetadataStatus()`](#setmetadatastatuskey-encrypted-data-setmetadatastatuskeyencrypteddata):
+  - Se key è incluso nel seguente elenco di tipi di metadati utente, un oggetto JSON contenente i metadati utente corrispondenti viene inviato alla funzione di callback [`setMetadataStatus()`](#setmetadatastatuskey-encrypted-data-setmetadatastatuskeyencrypteddata):
 
-   - `"zip"` - Codice postale
+  - `"zip"` - Codice postale
 
-   - `"encryptedZip"` - Codice postale crittografato
+  - `"encryptedZip"` - Codice postale crittografato
 
-   - `"householdID"` - Identificatore famiglia. Nel caso in cui un MVPD non supporti account secondari, questo sarà identico a userID.
+  - `"householdID"` - Identificatore famiglia. Nel caso in cui un MVPD non supporti account secondari, questo sarà identico a userID.
 
-   - `"maxRating"` - Valutazione genitori massima per l&#39;utente
+  - `"maxRating"` - Valutazione genitori massima per l&#39;utente
 
-   - `"userID"` - Identificatore utente. Nel caso in cui un MVPD supporti account secondari e l’utente non sia l’account principale, userID sarà diverso da familyID.
+  - `"userID"` - Identificatore utente. Nel caso in cui un MVPD supporti account secondari e l’utente non sia l’account principale, userID sarà diverso da familyID.
 
-   - `"channelID"` - Elenco dei canali che l&#39;utente può visualizzare
+  - `"channelID"` - Elenco dei canali che l&#39;utente può visualizzare
 
-   - `"is_hoh"` - Flag che identifica se un utente è a capo del nucleo familiare
+  - `"is_hoh"` - Flag che identifica se un utente è a capo del nucleo familiare
 
-   - `"encryptedZip"` - Codice postale crittografato
+  - `"encryptedZip"` - Codice postale crittografato
 
-   - `"typeID"` - Flag che identifica se l&#39;account utente è primario/secondario
+  - `"typeID"` - Flag che identifica se l&#39;account utente è primario/secondario
 
-   - `"primaryOID"` - Identificatore famiglia
+  - `"primaryOID"` - Identificatore famiglia
 
-   - `"postalCode"` - Simile al CAP
+  - `"postalCode"` - Simile al CAP
 
-   - `"acctID"` - ID account
+  - `"acctID"` - ID account
 
-   - `"acctParentID"` - ID padre account
+  - `"acctParentID"` - ID padre account
 
   **Nota**: i metadati utente effettivi disponibili per un programmatore dipendono da ciò che un MVPD rende disponibile.  Per l&#39;elenco corrente dei metadati utente disponibili, vedere [Metadati utente](#UserMetadata).
 
@@ -309,7 +310,7 @@ Ad esempio:
 **Descrizione:** Chiama questa funzione quando l&#39;utente ha selezionato un MVPD dall&#39;interfaccia utente di selezione del provider per inviare la selezione del provider all&#39;Access Enabler o chiama questa funzione con un parametro null nel caso in cui l&#39;utente abbia rifiutato l&#39;interfaccia utente di selezione del provider senza selezionare un provider.
 
 **Callback
-attivato:**[&#x200B; setAuthenticationStatus()](#setauthenticationstatusisauthenticated-errorcode), [sendTrackingData()](#sendtrackingdatatrackingeventtype-trackingdata-sendtrackingdatatrackingeventtypetrackingdata)
+attivato:**[ setAuthenticationStatus()](#setauthenticationstatusisauthenticated-errorcode), [sendTrackingData()](#sendtrackingdatatrackingeventtype-trackingdata-sendtrackingdatatrackingeventtypetrackingdata)
 
 </br>
 
@@ -415,7 +416,7 @@ Devi implementare questi callback per gestire le risposte alle chiamate di richi
 
 **Descrizione:** implementa questo callback se l&#39;utente ha selezionato un MVPD che richiede un iFrame in cui visualizzare l&#39;interfaccia utente della pagina di accesso per l&#39;autenticazione.
 
-**Attivato da:**&#x200B;[&#x200B; setSelectedProvider()](#setselectedproviderproviderid-setselectedprovider)
+**Attivato da:**[ setSelectedProvider()](#setselectedproviderproviderid-setselectedprovider)
 
 </br> [Torna all&#39;inizio](#top)
 
@@ -453,16 +454,16 @@ Devi implementare questi callback per gestire le risposte alle chiamate di richi
 **Descrizione:** implementa questo callback per ricevere i dati di tracciamento quando si verificano eventi specifici. Puoi utilizzarlo, ad esempio, per tenere traccia del numero di utenti che hanno effettuato l’accesso con le stesse credenziali. Il tracciamento non è attualmente configurabile. Con Adobe Pass Authentication 1.6, `sendTrackingData()` segnala inoltre informazioni sul dispositivo, sul client Access Enabler e sul tipo di sistema operativo. Il callback `sendTrackingData()` rimane compatibile con le versioni precedenti.
 
 - Valori possibili per il tipo di dispositivo:
-   - computer
-   - tablet
-   - mobile
-   - gameconsole
-   - sconosciuto
+  - computer
+  - tablet
+  - mobile
+  - gameconsole
+  - sconosciuto
 
 - Valori possibili per il tipo di client Access Enabler:
-   - html5
-   - ios
-   - androide
+  - html5
+  - ios
+  - androide
 
 
 Passa il tipo di evento e una matrice di informazioni associate. I tipi di evento sono:

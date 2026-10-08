@@ -2,13 +2,14 @@
 title: Avvia autenticazione
 description: Avvia autenticazione
 exl-id: 55dddd29-68d6-4aae-8744-307fea285e29
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '306'
+source-wordcount: '316'
 ht-degree: 0%
-
 ---
-
 # (Legacy) Avvia autenticazione {#initiate-authentication}
 
 >[!NOTE]
@@ -44,9 +45,9 @@ Avvia il processo di autenticazione informando di un evento di selezione MVPD. C
 
 
 
-| Endpoint | Chiamato </br> da | Input   </br>Parametri | Metodo HTTP </br> | Risposta | HTTP </br>Risposta |
+| Endpoint | Chiamato </br> da | Immetti </br> parametri | Metodo HTTP </br> | Risposta | HTTP </br>Risposta |
 | --- | --- | --- | --- | --- | --- |
-| &lt;SP_FQDN>/api/v1/authenticate | Modulo AuthN | &#x200B;1. requestor_id (obbligatorio)</br>2.  mso_id (obbligatorio)</br>3.  reg_code (obbligatorio)</br>4.  nome_dominio (obbligatorio)</br>5.  noflash=true - </br>    (Obbligatorio, parametro residuo)</br>6.  no_iframe=true (obbligatorio, parametro residuo)</br>7.  parametri aggiuntivi (facoltativo)</br>8.  redirect_url (obbligatorio) | GET | L&#39;app Web di accesso viene reindirizzata alla pagina di accesso di MVPD. | 302 per implementazioni di reindirizzamento complete |
+| &lt;SP_FQDN>/api/v1/authenticate | Modulo AuthN | &#x200B;1.  requestor_id (obbligatorio)</br>2.  mso_id (obbligatorio)</br>3.  reg_code (obbligatorio)</br>4.  nome_dominio (obbligatorio)</br>5.  noflash=true - </br> (obbligatorio, parametro residuo)</br>6.  no_iframe=true (obbligatorio, parametro residuo)</br>7.  parametri aggiuntivi (facoltativo)</br>8.  redirect_url (obbligatorio) | GET | L&#39;app Web di accesso viene reindirizzata alla pagina di accesso di MVPD. | 302 per implementazioni di reindirizzamento complete |
 
 {style="table-layout:auto"}
 

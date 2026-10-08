@@ -2,13 +2,14 @@
 title: Manuale dell’integrazione di Amazon FireOS
 description: Manuale dell’integrazione di Amazon FireOS
 exl-id: 1982c485-f0ed-4df3-9a20-9c6a928500c2
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '1430'
 ht-degree: 0%
-
 ---
-
 # Manuale dell’integrazione di Amazon FireOS (legacy) {#amazon-fireos-integration-cookbook}
 
 >[!NOTE]
@@ -30,9 +31,9 @@ La soluzione di autenticazione Adobe Pass per Amazon FireOS è infine suddivisa 
 
 - Dominio dell&#39;interfaccia utente: è il livello superiore dell&#39;applicazione che implementa l&#39;interfaccia utente e utilizza i servizi forniti dalla libreria `AccessEnabler` per fornire l&#39;accesso al contenuto con restrizioni.
 - Dominio `AccessEnabler`: in questo caso i flussi di lavoro per l&#39;adesione vengono implementati sotto forma di:
-   - Chiamate di rete effettuate ai server back-end di Adobe
-   - Regole della logica di business relative ai flussi di lavoro di autenticazione e autorizzazione
-   - Gestione di varie risorse ed elaborazione dello stato del flusso di lavoro (ad esempio la cache dei token)
+  - Chiamate di rete effettuate ai server back-end di Adobe
+  - Regole della logica di business relative ai flussi di lavoro di autenticazione e autorizzazione
+  - Gestione di varie risorse ed elaborazione dello stato del flusso di lavoro (ad esempio la cache dei token)
 
 L&#39;obiettivo del dominio `AccessEnabler` è nascondere tutte le complessità dei flussi di lavoro di adesione e fornire all&#39;applicazione di livello superiore (tramite la libreria `AccessEnabler`) un set di semplici primitive di adesione. Questo processo consente di implementare i flussi di lavoro per l’adesione:
 
@@ -60,51 +61,51 @@ L&#39;attività di rete di `AccessEnabler` viene eseguita in un thread diverso, 
 1. Creare le funzioni di callback:
    - [`setRequestorComplete()`](#$setRequestorComplete)
 
-      - Attivato da `setRequestor()`, restituisce esito positivo o negativo.     Il successo indica che puoi procedere con le chiamate di adesione.
+     - Attivato da `setRequestor()`, restituisce esito positivo o negativo.     Il successo indica che puoi procedere con le chiamate di adesione.
 
    - [displayProviderDialog(mvpds)](#$displayProviderDialog)
 
-      - Attivato da `getAuthentication()` solo se l&#39;utente non ha selezionato un provider (MVPD) e non è ancora autenticato. Il parametro `mvpds` è un array di provider disponibili per l&#39;utente.
+     - Attivato da `getAuthentication()` solo se l&#39;utente non ha selezionato un provider (MVPD) e non è ancora autenticato. Il parametro `mvpds` è un array di provider disponibili per l&#39;utente.
 
    - [`setAuthenticationStatus(status, reason)`](#$setAuthNStatus)
 
-      - Attivato da `checkAuthentication()` ogni volta. Attivato da `getAuthentication()` solo se l&#39;utente è già autenticato e ha selezionato un provider.
+     - Attivato da `checkAuthentication()` ogni volta. Attivato da `getAuthentication()` solo se l&#39;utente è già autenticato e ha selezionato un provider.
 
-      - Lo stato restituito è autenticato o non autenticato. Il motivo descrive un errore di autenticazione o un&#39;azione di disconnessione.
+     - Lo stato restituito è autenticato o non autenticato. Il motivo descrive un errore di autenticazione o un&#39;azione di disconnessione.
 
    - [navigateToUrl(url)](#$navigateToUrl)
 
-      - Ignorato in AmazonFireOS SDK, il metodo viene utilizzato sulle piattaforme Android in cui viene attivato da `getAuthentication()` dopo che l&#39;utente ha selezionato un MVPD.  Il parametro `url` fornisce il percorso della pagina di accesso di MVPD.
+     - Ignorato in AmazonFireOS SDK, il metodo viene utilizzato sulle piattaforme Android in cui viene attivato da `getAuthentication()` dopo che l&#39;utente ha selezionato un MVPD.  Il parametro `url` fornisce il percorso della pagina di accesso di MVPD.
 
    - [`sendTrackingData(event, data)`](#$sendTrackingData)
 
-      - Attivato da `checkAuthentication(), getAuthentication(), checkAuthorization(), getAuthorization(), setSelectedProvider()`.
-Il parametro `event` indica quale evento di adesione si è verificato; il parametro `data` è un elenco di valori relativi all&#39;evento.
+     - Attivato da `checkAuthentication(), getAuthentication(), checkAuthorization(), getAuthorization(), setSelectedProvider()`.
+       Il parametro `event` indica quale evento di adesione si è verificato; il parametro `data` è un elenco di valori relativi all&#39;evento.
 
    - [`setToken(token, resource)`](#$setToken)
 
-      - Attivazione eseguita da `checkAuthorization()` e `getAuthorization()` dopo un&#39;autorizzazione di visualizzazione di una risorsa completata.
-      - Il parametro `token` è il token multimediale di breve durata; il parametro `resource` è il contenuto che l&#39;utente è autorizzato a visualizzare.
+     - Attivazione eseguita da `checkAuthorization()` e `getAuthorization()` dopo un&#39;autorizzazione di visualizzazione di una risorsa completata.
+     - Il parametro `token` è il token multimediale di breve durata; il parametro `resource` è il contenuto che l&#39;utente è autorizzato a visualizzare.
 
    - [`tokenRequestFailed(resource, code, description)`](#$tokenRequestFailed)
 
-      - Attivato da `checkAuthorization()` e `getAuthorization()` dopo un&#39;autorizzazione non riuscita.
-      - Il parametro `resource` è il contenuto che l&#39;utente stava tentando di visualizzare. Il parametro `code` è il codice di errore che indica il tipo di errore che si è verificato. Il parametro `description` descrive l&#39;errore associato al codice di errore.
+     - Attivato da `checkAuthorization()` e `getAuthorization()` dopo un&#39;autorizzazione non riuscita.
+     - Il parametro `resource` è il contenuto che l&#39;utente stava tentando di visualizzare. Il parametro `code` è il codice di errore che indica il tipo di errore che si è verificato. Il parametro `description` descrive l&#39;errore associato al codice di errore.
 
    - [`selectedProvider(mvpd)`](#$selectedProvider)
 
-      - Attivato da `getSelectedProvider()`.
-      - Il parametro `mvpd` fornisce informazioni sul provider selezionato dall&#39;utente.
+     - Attivato da `getSelectedProvider()`.
+     - Il parametro `mvpd` fornisce informazioni sul provider selezionato dall&#39;utente.
 
    - [`setMetadataStatus(metadata, key, arguments)`](#$setMetadataStatus)
 
-      - Attivato da `getMetadata().`
-      - Il parametro `metadata` fornisce i dati specifici richiesti; il parametro `key` è la chiave utilizzata nella richiesta `getMetadata()` e il parametro `arguments` è lo stesso dizionario passato a `getMetadata()`.
+     - Attivato da `getMetadata().`
+     - Il parametro `metadata` fornisce i dati specifici richiesti; il parametro `key` è la chiave utilizzata nella richiesta `getMetadata()` e il parametro `arguments` è lo stesso dizionario passato a `getMetadata()`.
 
    - [`preauthorizedResources(resources)`](#$preauthResources)
 
-      - Attivato da `checkPreauthorizedResources()`.
-      - Il parametro `authorizedResources` presenta le risorse che l&#39;utente è autorizzato a visualizzare.
+     - Attivato da `checkPreauthorizedResources()`.
+     - Il parametro `authorizedResources` presenta le risorse che l&#39;utente è autorizzato a visualizzare.
 
 
 ![](../../../../assets/android-entitlement-flows.png)
@@ -176,9 +177,9 @@ Il parametro `event` indica quale evento di adesione si è verificato; il parame
 
    - Se la chiamata `getAuthorization()` ha esito positivo: l&#39;utente dispone di token AuthN e AuthZ validi (l&#39;utente è autenticato e autorizzato a guardare il contenuto multimediale richiesto).
    - Se `getAuthorization()` ha esito negativo: esaminare l&#39;eccezione generata per determinarne il tipo (AuthN, AuthZ o altro):
-      - In caso di errore di autenticazione (AuthN), riavvia il flusso di autenticazione.
-      - Se si trattava di un errore di autorizzazione (AuthZ), l’utente non è autorizzato a guardare il contenuto multimediale richiesto e deve visualizzare all’utente un qualche tipo di messaggio di errore.
-      - Se si è verificato un altro tipo di errore (errore di connessione, errore di rete, ecc.) quindi visualizza un messaggio di errore appropriato.
+     - In caso di errore di autenticazione (AuthN), riavvia il flusso di autenticazione.
+     - Se si trattava di un errore di autorizzazione (AuthZ), l’utente non è autorizzato a guardare il contenuto multimediale richiesto e deve visualizzare all’utente un qualche tipo di messaggio di errore.
+     - Se si è verificato un altro tipo di errore (errore di connessione, errore di rete, ecc.) quindi visualizza un messaggio di errore appropriato.
 
 1. Convalida il token multimediale breve.
 

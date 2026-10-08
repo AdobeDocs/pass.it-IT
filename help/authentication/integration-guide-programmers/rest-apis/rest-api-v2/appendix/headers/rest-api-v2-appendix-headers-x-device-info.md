@@ -2,13 +2,14 @@
 title: Intestazione - X-Device-Info
 description: REST API V2 - Intestazione - X-Device-Info
 exl-id: 0ef25e06-86de-427a-a938-7ba3817f0d5e
-source-git-commit: 42df16e34783807e1b5eb1a12ca9db92f4e4c161
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '1234'
 ht-degree: 3%
-
 ---
-
 # Intestazione - X-Device-Info {#header-x-device-info}
 
 >[!NOTE]
@@ -53,7 +54,7 @@ Il valore `Base64-encoded` dell&#39;elemento JSON contenente almeno gli attribut
         <td></td>
         <td>primaryHardwareType</td>
         <td>Il tipo di hardware principale del dispositivo.</td>
-        <td>&verifica;</td>
+        <td>&amp;verifica;</td>
         <td>
             I valori sono limitati:
             <ul>
@@ -110,7 +111,7 @@ Il valore `Base64-encoded` dell&#39;elemento JSON contenente almeno gli attribut
         <td><i>obbligatorio</i></td>
         <td>osName</td>
         <td>Il nome del sistema operativo del dispositivo.</td>
-        <td>&verifica;</td>
+        <td>&amp;verifica;</td>
         <td>
             I valori sono limitati:
             <ul>
@@ -132,7 +133,7 @@ Il valore `Base64-encoded` dell&#39;elemento JSON contenente almeno gli attribut
         <td></td>
         <td>osFamily</td>
         <td>Il nome del gruppo del sistema operativo del dispositivo.</td>
-        <td>&verifica;</td>
+        <td>&amp;verifica;</td>
         <td>
             I valori sono limitati:
             <ul>
@@ -155,7 +156,7 @@ Il valore `Base64-encoded` dell&#39;elemento JSON contenente almeno gli attribut
         <td></td>
         <td>osVendor</td>
         <td>Il fornitore del sistema operativo del dispositivo.</td>
-        <td>&verifica;</td>
+        <td>&amp;verifica;</td>
         <td>
             I valori sono limitati:
             <ul>
@@ -185,7 +186,7 @@ Il valore `Base64-encoded` dell&#39;elemento JSON contenente almeno gli attribut
         <td></td>
         <td>browserName</td>
         <td>Nome del browser.</td>
-        <td>&verifica;</td>
+        <td>&amp;verifica;</td>
         <td>
             I valori sono limitati:
             <ul>
@@ -205,7 +206,7 @@ Il valore `Base64-encoded` dell&#39;elemento JSON contenente almeno gli attribut
         <td></td>
         <td>browserVendor</td>
         <td>La società/organizzazione di costruzione del browser.</td>
-        <td>&verifica;</td>
+        <td>&amp;verifica;</td>
         <td>
             I valori sono limitati:
             <ul>
@@ -290,7 +291,7 @@ Il valore `Base64-encoded` dell&#39;elemento JSON contenente almeno gli attribut
         <td></td>
         <td>connectionSecure</td>
         <td>Stato di protezione della connessione di rete.</td>
-        <td>&verifica;</td>
+        <td>&amp;verifica;</td>
         <td>
             I valori sono limitati:
             <ul>

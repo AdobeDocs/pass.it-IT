@@ -2,13 +2,14 @@
 title: Introduzione al monitoraggio della concorrenza
 description: Introduzione al monitoraggio della concorrenza
 exl-id: 725cc64b-6b03-46e3-a038-41e9b1341c6b
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '221'
+source-wordcount: '225'
 ht-degree: 0%
-
 ---
-
 # Introduzione al monitoraggio della concorrenza {#intro}
 
 Concurrency Monitoring è un servizio che consente ai provider di contenuti e ai provider di identità (MVPD e Programmatori) di definire e applicare limiti allo streaming video simultaneo su più applicazioni, dispositivi e piattaforme. Sia che si tratti di un programmatore che cerca di controllare il numero di flussi che un abbonato può guardare simultaneamente, o di un MVPD che desidera applicare criteri di utilizzo tra i partner di contenuti, il monitoraggio della concorrenza fornisce gli strumenti necessari.

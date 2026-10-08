@@ -2,13 +2,14 @@
 title: Supporto di SFSafariViewController in iOS SDK 3.2+
 description: Supporto di SFSafariViewController in iOS SDK 3.2+
 exl-id: 6691550f-c36f-4fae-aa77-082ca7d8a60a
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '432'
+source-wordcount: '431'
 ht-degree: 0%
-
 ---
-
 # (Legacy) Supporto di SFSafariViewController su iOS SDK 3.2+ {#sfsafariviewcontroller-support-on-ios-sdk-3.2}
 
 >[!NOTE]
@@ -39,7 +40,7 @@ In questi casi, la versione 3.2 introduce la possibilità per il programmatore d
 Per gestire manualmente SVC, l&#39;implementatore deve effettuare le seguenti operazioni:
 
 
-1. chiamare **setOptions([&quot;handleSVC&quot;:true])** dopo l&#39;inizializzazione di AccessEnabler (assicurarsi che la chiamata venga eseguita prima dell&#39;inizio dell&#39;autenticazione). In questo modo, si abiliterà la gestione &quot;manuale&quot; della SVC; il SDK non presenterà automaticamente la SVC, ma, quando necessario     chiama **navigate(toUrl:*{url}* useSVC:true)**.
+1. chiamare **setOptions([&quot;handleSVC&quot;:true])** dopo l&#39;inizializzazione di AccessEnabler (assicurarsi che la chiamata venga eseguita prima dell&#39;inizio dell&#39;autenticazione). In questo modo verrà abilitata la gestione &quot;manuale&quot; di SVC. SDK non presenterà automaticamente SVC, ma quando necessario chiamerà **navigate(toUrl:*{url}* useSVC:true)**.
 
 1. implementare il callback facoltativo **`navigateToUrl:useSVC:`** all&#39;interno dell&#39;implementazione è necessario creare un&#39;istanza svc utilizzando l&#39;istanza SFSafariViewController utilizzando l&#39;URL specificato e presentarla sullo schermo:
 

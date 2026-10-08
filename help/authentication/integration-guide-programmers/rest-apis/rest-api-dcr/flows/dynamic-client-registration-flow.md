@@ -2,13 +2,14 @@
 title: Flusso di registrazione client dinamici
 description: Flusso di registrazione client dinamici
 exl-id: d881cf0a-de09-4b1d-a094-d5490f944796
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '564'
+source-wordcount: '567'
 ht-degree: 0%
-
 ---
-
 # Flusso di registrazione client dinamici {#dynamic-client-registration-flow}
 
 >[!IMPORTANT]
@@ -108,9 +109,9 @@ Segui i passaggi forniti per accedere alle API protette da Adobe Pass, come illu
    >
    > Le API protette di Adobe Pass convalidano il token di accesso per garantire che siano soddisfatte le condizioni di base:
    >
-   > * _access_token_ deve essere valido.
-   > * Il _access_token_ deve essere associato a un _client_id_ e a un _client_secret_ validi.
-   > * Il _access_token_ deve essere associato a un _software_statement_ valido.
+   > * _access_ token_ deve essere valido.
+   > * Il _access_ token _deve essere associato a un_ client _id_ e a un _client_secret_ validi.
+   > * Il _access_ token _deve essere associato a un_ software_statement_ valido.
    >
    > <br/>
    >

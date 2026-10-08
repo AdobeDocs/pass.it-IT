@@ -2,13 +2,14 @@
 title: Domande frequenti su Dynamic Client Registration (DCR)
 description: Domande frequenti su Dynamic Client Registration (DCR)
 exl-id: 12268163-632e-4884-b35d-a29cc8ef45bf
-source-git-commit: 747c3d9b6de537be5e7e0a0244b2b301603d9b18
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '1135'
-ht-degree: 0%
-
+source-wordcount: '1147'
+ht-degree: 1%
 ---
-
 # Domande frequenti su Dynamic Client Registration (DCR) {#rest-api-dcr-faqs}
 
 >[!IMPORTANT]
@@ -67,7 +68,7 @@ Quando l&#39;istruzione software viene revocata, è importante considerare una d
 
 * Le applicazioni client che utilizzano l&#39;istruzione software revocata non saranno più in grado di eseguire i flussi [adesione](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#entitlement), il che significa che gli utenti non potranno più riprodurre il contenuto.
 
-#### &#x200B;6. Cosa sono le credenziali del client e per quanto tempo sono valide? {#rest-api-v2-access-faq6}
+#### &#x200B;6. Cosa sono le credenziali client e per quanto tempo sono valide? {#rest-api-v2-access-faq6}
 
 Le credenziali client sono un termine definito nella documentazione di [Glossary](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#client-credentials).
 
@@ -79,7 +80,7 @@ L’applicazione client deve memorizzare le credenziali client e utilizzarle a t
 
 Per ulteriori informazioni, consulta la documentazione di [Recupero credenziali client](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-client-credentials.md).
 
-#### &#x200B;7. Come gestire le credenziali del client? {#rest-api-v2-access-faq7}
+#### &#x200B;7. Come si gestiscono le credenziali del client? {#rest-api-v2-access-faq7}
 
 È consigliabile che l’applicazione client gestisca una coppia univoca di credenziali client per ogni istanza dell’applicazione utente in caso di integrazioni client-server e server-to-server con l’autenticazione di Adobe Pass.
 
@@ -87,7 +88,7 @@ Per ulteriori informazioni, consulta la documentazione di [Recupero credenziali 
 
 L’applicazione client deve memorizzare le credenziali client e utilizzarle a tempo indeterminato quando è necessario recuperare un token di accesso.
 
-#### &#x200B;9. Cosa succede se le credenziali del client memorizzate nella cache vengono perse? {#rest-api-v2-access-faq9}
+#### &#x200B;9. Cosa succede se le credenziali del client memorizzato nella cache vengono perse? {#rest-api-v2-access-faq9}
 
 Quando le credenziali del client memorizzate nella cache vengono perse, è necessario considerare tre conseguenze importanti:
 
@@ -95,7 +96,7 @@ Quando le credenziali del client memorizzate nella cache vengono perse, è neces
 * L&#39;applicazione client deve ottenere un nuovo token di accesso utilizzando la nuova coppia di credenziali client.
 * L’applicazione client dovrà chiedere all’utente di autenticare nuovamente, in quanto perderà l’accesso ai profili autenticati ottenuti in precedenza.
 
-#### &#x200B;10. Che cos’è un token di accesso e per quanto tempo è valido? {#rest-api-v2-access-faq10}
+#### &#x200B;10. Cos’è un token di accesso e per quanto tempo è valido? {#rest-api-v2-access-faq10}
 
 Il token di accesso è un termine definito nella documentazione di [Glossary](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#access-token).
 
@@ -113,7 +114,7 @@ Per ulteriori informazioni, consulta la documentazione [Recuperare il token di a
 
 L’applicazione client deve archiviare e utilizzare il token di accesso fino alla scadenza, quindi eliminarlo e ottenerne uno nuovo.
 
-#### &#x200B;12. In che modo l’applicazione client può aggiornare un token di accesso? {#rest-api-v2-access-faq12}
+#### &#x200B;12. Come può l’applicazione client aggiornare un token di accesso? {#rest-api-v2-access-faq12}
 
 L’applicazione client deve aggiornare un token di accesso nello stesso modo in cui recupera un nuovo token di accesso, ma utilizzando le credenziali client memorizzate nella cache.
 
@@ -135,7 +136,7 @@ Continuare con questa sezione se si sta lavorando su un&#39;applicazione che dev
 
 +++Domande frequenti sulla migrazione REST API V2
 
-#### &#x200B;1. L’applicazione client può riutilizzare le applicazioni registrate esistenti (istruzioni software)? {#rest-api-v2-migration-faq1}
+#### &#x200B;1. L&#39;applicazione client può riutilizzare le applicazioni registrate esistenti (istruzioni software)? {#rest-api-v2-migration-faq1}
 
 L’applicazione client non può riutilizzare le applicazioni registrate esistenti (istruzioni software), pertanto deve generare e scaricare una nuova applicazione registrata (istruzioni software) dedicata all’utilizzo dell’API REST V2.
 
@@ -147,7 +148,7 @@ Per il momento ti verrà richiesto di chiedere a un rappresentante dell&#39;aute
 
 Per distinguere le applicazioni registrate (istruzioni software) utilizzate nelle applicazioni client che utilizzano l’API REST V2, è necessario aggiungere un suffisso specifico al nome dell’applicazione registrata, ad esempio &quot;RESTV2&quot;.
 
-#### &#x200B;2. L’applicazione client può riutilizzare gli schemi personalizzati esistenti? {#rest-api-v2-migration-faq2}
+#### &#x200B;2. L&#39;applicazione client può riutilizzare gli schemi personalizzati esistenti? {#rest-api-v2-migration-faq2}
 
 L&#39;applicazione client può riutilizzare gli schemi personalizzati esistenti generati tramite Adobe Pass [TVE Dashboard](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard).
 

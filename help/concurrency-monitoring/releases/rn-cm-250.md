@@ -2,13 +2,14 @@
 title: Note sulla versione di Adobe Pass Concurrency Monitoring 2.5.0
 description: Note sulla versione di Adobe Pass Concurrency Monitoring 2.5.0
 exl-id: da392b18-a2aa-4f51-a75f-2c5b65b2b073
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '286'
+source-wordcount: '288'
 ht-degree: 0%
-
 ---
-
 # Note sulla versione di Adobe Pass Concurrency Monitoring 2.5.0 {#cm-250}
 
 Questa pagina descrive nuove funzioni, modifiche e problemi noti relativi a questa versione:
@@ -35,9 +36,9 @@ La versione V2 unifica le chiamate heartbeat e query e semplifica notevolmente l
 
 * Quando ha senso, la risposta include:
 
-   * avviso associato — spiegazione dettagliata dell&#39;errore, da richiedere all&#39;utente.
+  * avviso associato — spiegazione dettagliata dell&#39;errore, da richiedere all&#39;utente.
 
-   * obblighi: azioni obbligatorie che l’applicazione deve intraprendere (ad esempio: aggiornamento dei metadati, disconnessione da Adobe Pass).
+  * obblighi: azioni obbligatorie che l’applicazione deve intraprendere (ad esempio: aggiornamento dei metadati, disconnessione da Adobe Pass).
 
 ### Metadati {#metadata}
 

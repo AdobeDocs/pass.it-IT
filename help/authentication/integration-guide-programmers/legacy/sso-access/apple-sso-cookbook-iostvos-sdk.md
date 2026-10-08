@@ -2,13 +2,14 @@
 title: Manuale Apple SSO (iOS/tvOS SDK)
 description: Manuale Apple SSO (iOS/tvOS SDK)
 exl-id: 2d59cd33-ccfd-41a8-9697-1ace3165bc44
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '1854'
 ht-degree: 0%
-
 ---
-
 # (Legacy) Manuale Apple SSO (iOS/tvOS SDK) {#apple-sso-cookbook-iostvos-sdk}
 
 >[!IMPORTANT]
@@ -190,7 +191,7 @@ L&#39;applicazione dispone dell&#39;opzione per determinare se l&#39;autenticazi
 
 ### Disconnetti {#apple-sso-cookbook-iostvos-sdk-logout}
 
-Il framework dell&#39;account del sottoscrittore video [1&rbrace; non fornisce un&#39;API per disconnettere a livello di programmazione gli utenti che hanno effettuato l&#39;accesso al proprio account del provider TV a livello di sistema del dispositivo. &#x200B;](https://developer.apple.com/documentation/videosubscriberaccount)Pertanto, affinché la disconnessione diventi effettiva, l&#39;utente finale dovrà disconnettersi esplicitamente da *`Settings -> TV Provider`* su iOS/iPadOS o da *`Settings -> Accounts -> TV Provider`* su tvOS. L&#39;altra opzione che l&#39;utente avrebbe è quella di revocare l&#39;autorizzazione per accedere alle informazioni sull&#39;abbonamento dell&#39;utente dalla sezione delle impostazioni specifiche dell&#39;applicazione (autorizzazione di accesso del provider TV).
+Il framework dell&#39;account del sottoscrittore video [1} non fornisce un&#39;API per disconnettere a livello di programmazione gli utenti che hanno effettuato l&#39;accesso al proprio account del provider TV a livello di sistema del dispositivo. ](https://developer.apple.com/documentation/videosubscriberaccount)Pertanto, affinché la disconnessione diventi effettiva, l&#39;utente finale dovrà disconnettersi esplicitamente da *`Settings -> TV Provider`* su iOS/iPadOS o da *`Settings -> Accounts -> TV Provider`* su tvOS. L&#39;altra opzione che l&#39;utente avrebbe è quella di revocare l&#39;autorizzazione per accedere alle informazioni sull&#39;abbonamento dell&#39;utente dalla sezione delle impostazioni specifiche dell&#39;applicazione (autorizzazione di accesso del provider TV).
 
 >[!TIP]
 >

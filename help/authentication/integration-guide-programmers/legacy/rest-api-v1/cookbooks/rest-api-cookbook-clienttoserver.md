@@ -2,13 +2,14 @@
 title: Manuale dell’API REST (da client a server)
 description: Client-to-server del manuale API REST.
 exl-id: f54a1eda-47d5-4f02-b343-8cdbc99a73c0
-source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '906'
 ht-degree: 0%
-
 ---
-
 # (Legacy) Manuale REST API (Client-to-Server) {#rest-api-cookbook-client-to-server}
 
 >[!NOTE]
@@ -92,11 +93,11 @@ Adobe Pass utilizza il DCR per proteggere le comunicazioni client tra un’appli
 
 * Se la risposta indica un errore: esamina l’eccezione generata per determinarne il tipo (AuthN, AuthZ o altro):
 
-   * Se si è verificato un errore di autenticazione, riavviare il flusso di registrazione.
+  * Se si è verificato un errore di autenticazione, riavviare il flusso di registrazione.
 
-   * Se si è verificato un errore AuthZ, l’utente non è autorizzato a guardare il contenuto multimediale richiesto e deve visualizzare all’utente un qualche tipo di messaggio di errore.
+  * Se si è verificato un errore AuthZ, l’utente non è autorizzato a guardare il contenuto multimediale richiesto e deve visualizzare all’utente un qualche tipo di messaggio di errore.
 
-   * In caso di altri errori (errore di connessione, errore di rete, ecc.) quindi visualizza un messaggio di errore appropriato.
+  * In caso di altri errori (errore di connessione, errore di rete, ecc.) quindi visualizza un messaggio di errore appropriato.
 
 
 
@@ -109,10 +110,10 @@ Adobe Pass utilizza il DCR per proteggere le comunicazioni client tra un’appli
    a.  L’app controlla se il contenuto multimediale è protetto.
 
    b.  Se il supporto è protetto, l’app avvia l’autorizzazione.
-(AuthZ) Flusso sopra.
+   (AuthZ) Flusso sopra.
 
    c.  Se il supporto non è protetto, riprodurlo per
-utente.
+   utente.
 
 3. Riprodurre il contenuto multimediale.
 

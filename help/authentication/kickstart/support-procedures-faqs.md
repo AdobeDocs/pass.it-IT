@@ -2,13 +2,14 @@
 title: Domande frequenti sulle procedure di supporto
 description: Domande frequenti sulle procedure di supporto
 exl-id: 1d754e5a-d5fa-4411-8932-2a36294da6eb
-source-git-commit: 0ab1fc212752dd4a4d6e12a4ab1287ef74e4a282
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '790'
 ht-degree: 0%
-
 ---
-
 # Domande frequenti sulle procedure di supporto {#support-procedures-faqs}
 
 >[!IMPORTANT]

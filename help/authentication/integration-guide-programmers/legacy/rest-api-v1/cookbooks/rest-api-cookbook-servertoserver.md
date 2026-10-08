@@ -2,13 +2,14 @@
 title: Manuale dell’API REST (server-to-server)
 description: Rest API cookbook server to server.
 exl-id: 36ad4a64-dde8-4a5f-b0fe-64b6c0ddcbee
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '1891'
 ht-degree: 1%
-
 ---
-
 # (Legacy) Manuale REST API (server-to-server) {#rest-api-cookbook-server-to-server}
 
 >[!NOTE]
@@ -119,7 +120,8 @@ Il diagramma seguente illustra il flusso di preautorizzazione:
 
 ### \[Facoltativo\] Metadati
 
-I metadati possono essere utilizzati per recuperare le informazioni utente condivise da MVPD.Alcuni esempi includono ID utente, codice postale, ecc.
+I metadati possono essere utilizzati per recuperare le informazioni utente condivise da MVPD.
+Alcuni esempi includono ID utente, codice postale, ecc.
 
 1. Una volta autenticato l&#39;utente, il servizio Programmer può chiamare l&#39;API Adobe Pass **usermetadata** per richiedere informazioni sull&#39;utente autenticato.
 

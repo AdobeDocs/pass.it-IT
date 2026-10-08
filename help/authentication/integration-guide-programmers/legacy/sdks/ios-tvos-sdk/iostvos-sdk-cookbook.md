@@ -2,13 +2,14 @@
 title: Manuale di iOS/tvOS
 description: Manuale di iOS/tvOS
 exl-id: 4743521e-d323-4d1d-ad24-773127cfbe42
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '2436'
 ht-degree: 0%
-
 ---
-
 # (Legacy) Manuale di iOS/tvOS SDK {#iostvos-sdk-cookbook}
 
 >[!NOTE]
@@ -29,9 +30,9 @@ La soluzione di autenticazione Adobe Pass per iOS/tvOS è infine suddivisa in du
 
 * Dominio AccessEnabler: qui vengono implementati i flussi di lavoro per l’adesione sotto forma di:
 
-   * Chiamate di rete effettuate ai server back-end di Adobe
-   * Regole della logica di business relative ai flussi di lavoro di autenticazione e autorizzazione
-   * Gestione di varie risorse ed elaborazione dello stato del flusso di lavoro (ad esempio la cache dei token)
+  * Chiamate di rete effettuate ai server back-end di Adobe
+  * Regole della logica di business relative ai flussi di lavoro di autenticazione e autorizzazione
+  * Gestione di varie risorse ed elaborazione dello stato del flusso di lavoro (ad esempio la cache dei token)
 
 L&#39;obiettivo del dominio AccessEnabler è nascondere tutte le complessità dei flussi di lavoro di adesione e fornire all&#39;applicazione di livello superiore (tramite la libreria AccessEnabler) un set di semplici primitive di adesione con cui implementare i flussi di lavoro di adesione:
 
@@ -48,7 +49,7 @@ L&#39;attività di rete di AccessEnabler si svolge nel proprio thread, pertanto 
 
 ## Configurazione del servizio Experience Cloud ID (ID visitatore) {#visitorIDSetup}
 
-La configurazione del valore [Experience Cloud ID](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=it) è importante dal punto di vista di [!DNL Analytics]. Una volta impostato il valore `visitorID`, SDK invia queste informazioni insieme a ogni chiamata di rete e il server di autenticazione [!DNL Adobe Pass] le raccoglie. Puoi correlare le analisi del servizio di autenticazione di Adobe Pass con qualsiasi altro rapporto di analisi disponibile in altre applicazioni o siti web. Le informazioni su come configurare visitorID sono disponibili [qui](#setOptions).
+La configurazione del valore [Experience Cloud ID](https://experienceleague.adobe.com/docs/id-service/using/home.html) è importante dal punto di vista di [!DNL Analytics]. Una volta impostato il valore `visitorID`, SDK invia queste informazioni insieme a ogni chiamata di rete e il server di autenticazione [!DNL Adobe Pass] le raccoglie. Puoi correlare le analisi del servizio di autenticazione di Adobe Pass con qualsiasi altro rapporto di analisi disponibile in altre applicazioni o siti web. Le informazioni su come configurare visitorID sono disponibili [qui](#setOptions).
 
 ## Flussi di diritti {#entitlement}
 
@@ -71,54 +72,54 @@ I.  [Flusso di disconnessione con Apple SSO](#logout_flow_with_AppleSSO) </br>
    * Il successo indica che puoi procedere con le chiamate di adesione.
 
    * [`displayProviderDialog(mvpds)`](#$dispProvDialog) </br>
-      * Attivato da [`getAuthentication()`](#$getAuthN) solo se l&#39;utente non ha selezionato un provider (MVPD) e non è ancora autenticato. </br>
-      * Il parametro `mvpds` è un array di provider disponibili per l&#39;utente.
+     * Attivato da [`getAuthentication()`](#$getAuthN) solo se l&#39;utente non ha selezionato un provider (MVPD) e non è ancora autenticato. </br>
+     * Il parametro `mvpds` è un array di provider disponibili per l&#39;utente.
 
    * `setAuthenticationStatus(status, errorcode)` </br>
-      * Attivato da `checkAuthentication()` ogni volta. </br>
-      * Attivato da [`getAuthentication()`](#$getAuthN) solo se l&#39;utente è già autenticato e ha selezionato un provider. </br>
-      * Lo stato restituito è success o failure, il codice di errore descrive il tipo di errore.
+     * Attivato da `checkAuthentication()` ogni volta. </br>
+     * Attivato da [`getAuthentication()`](#$getAuthN) solo se l&#39;utente è già autenticato e ha selezionato un provider. </br>
+     * Lo stato restituito è success o failure, il codice di errore descrive il tipo di errore.
 
    * [`navigateToUrl(url)`](#$nav2url) </br>
-      * Attivazione eseguita da [`getAuthentication()`](#$getAuthN) dopo la selezione di un MVPD da parte dell&#39;utente. Il parametro `url` fornisce il percorso della pagina di accesso di MVPD.
+     * Attivazione eseguita da [`getAuthentication()`](#$getAuthN) dopo la selezione di un MVPD da parte dell&#39;utente. Il parametro `url` fornisce il percorso della pagina di accesso di MVPD.
 
    * `sendTrackingData(event, data)` </br>
-      * Attivato da `checkAuthentication()`, [`getAuthentication()`](#$getAuthN), `checkAuthorization()`, [`getAuthorization()`](#$getAuthZ), `setSelectedProvider()`.
-      * Il parametro `event` indica quale evento di adesione si è verificato; il parametro `data` è un elenco di valori relativi all&#39;evento.
+     * Attivato da `checkAuthentication()`, [`getAuthentication()`](#$getAuthN), `checkAuthorization()`, [`getAuthorization()`](#$getAuthZ), `setSelectedProvider()`.
+     * Il parametro `event` indica quale evento di adesione si è verificato; il parametro `data` è un elenco di valori relativi all&#39;evento.
 
    * `setToken(token, resource)`
 
-      * Attivazione da [checkAuthorization()](#checkAuthZ) e [getAuthorization()](#$getAuthZ) dopo un&#39;autorizzazione riuscita per visualizzare una risorsa.
-      * Il parametro `token` è il token multimediale di breve durata. Il parametro `resource` è il contenuto che l&#39;utente è autorizzato a visualizzare.
+     * Attivazione da [checkAuthorization()](#checkAuthZ) e [getAuthorization()](#$getAuthZ) dopo un&#39;autorizzazione riuscita per visualizzare una risorsa.
+     * Il parametro `token` è il token multimediale di breve durata. Il parametro `resource` è il contenuto che l&#39;utente è autorizzato a visualizzare.
 
    * `tokenRequestFailed(resource, code, description)` </br>
-      * Attivazione da [checkAuthorization()](#checkAuthZ) e [getAuthorization()](#$getAuthZ) dopo un&#39;autorizzazione non riuscita.
-      * Il parametro `resource` è il contenuto che l&#39;utente stava tentando di visualizzare. Il parametro `code` è il codice di errore che indica il tipo di errore che si è verificato. Il parametro `description` descrive l&#39;errore associato al codice di errore.
+     * Attivazione da [checkAuthorization()](#checkAuthZ) e [getAuthorization()](#$getAuthZ) dopo un&#39;autorizzazione non riuscita.
+     * Il parametro `resource` è il contenuto che l&#39;utente stava tentando di visualizzare. Il parametro `code` è il codice di errore che indica il tipo di errore che si è verificato. Il parametro `description` descrive l&#39;errore associato al codice di errore.
 
    * `selectedProvider(mvpd)` </br>
-      * Attivato da [`getSelectedProvider()`](#getSelProv).
-      * Il parametro `mvpd` fornisce informazioni sul provider selezionato dall&#39;utente.
+     * Attivato da [`getSelectedProvider()`](#getSelProv).
+     * Il parametro `mvpd` fornisce informazioni sul provider selezionato dall&#39;utente.
 
    * `setMetadataStatus(metadata, key, arguments)`
-      * Attivato da `getMetadata().`
-      * Il parametro `metadata` fornisce i dati specifici richiesti; il parametro `key` è la chiave utilizzata nella richiesta [getMetadata()](#getMeta) e il parametro `arguments` è lo stesso dizionario passato a [getMetadata()](#getMeta).
+     * Attivato da `getMetadata().`
+     * Il parametro `metadata` fornisce i dati specifici richiesti; il parametro `key` è la chiave utilizzata nella richiesta [getMetadata()](#getMeta) e il parametro `arguments` è lo stesso dizionario passato a [getMetadata()](#getMeta).
 
    * [`preauthorizedResources(authorizedResources)`](#preauthResources)
 
-      * Attivato da [`checkPreauthorizedResources()`](#checkPreauth).
+     * Attivato da [`checkPreauthorizedResources()`](#checkPreauth).
 
-      * Il parametro `authorizedResources` presenta le risorse che l&#39;utente
-è autorizzato a visualizzare.
+     * Il parametro `authorizedResources` presenta le risorse che l&#39;utente
+       è autorizzato a visualizzare.
 
    * [`presentTvProviderDialog(viewController)`](#presentTvDialog)
 
-      * Attivazione eseguita da [getAuthentication()](#getAuthN) quando il richiedente corrente supporta almeno in MVPD con supporto SSO.
-      * Il parametro viewController è la finestra di dialogo SSO di Apple e deve essere presentato sul controller della visualizzazione principale.
+     * Attivazione eseguita da [getAuthentication()](#getAuthN) quando il richiedente corrente supporta almeno in MVPD con supporto SSO.
+     * Il parametro viewController è la finestra di dialogo SSO di Apple e deve essere presentato sul controller della visualizzazione principale.
 
    * [`dismissTvProviderDialog(viewController)`](#dismissTvDialog)
 
-      * Attivato da un’azione dell’utente (selezionando &quot;Annulla&quot; o &quot;Altri provider TV&quot; dalla finestra di dialogo SSO di Apple).
-      * Il parametro viewController è la finestra di dialogo SSO di Apple e deve essere chiuso dal controller della visualizzazione principale.
+     * Attivato da un’azione dell’utente (selezionando &quot;Annulla&quot; o &quot;Altri provider TV&quot; dalla finestra di dialogo SSO di Apple).
+     * Il parametro viewController è la finestra di dialogo SSO di Apple e deve essere chiuso dal controller della visualizzazione principale.
 
 ![](../../../../assets/iOS-flows.png)
 
@@ -133,7 +134,7 @@ I.  [Flusso di disconnessione con Apple SSO](#logout_flow_with_AppleSSO) </br>
    b.  Chiamare `setRequestor()` per stabilire l&#39;identità del programmatore; passare `requestorID` del programmatore e (facoltativamente) un array di endpoint di autenticazione Adobe Pass. Per tvOS dovrai anche fornire la chiave pubblica e il segreto. Per informazioni dettagliate, consulta la [documentazione senza client](#create_dev).
 
    * **Dipendenza:** ID richiedente autenticazione Adobe Pass valido (utilizzare l&#39;account di autenticazione Adobe Pass)
-per il manager).
+     per il manager).
 
    * **Trigger:**
      [setRequestorComplete()](#$setReqComplete) callback.
@@ -236,9 +237,9 @@ autenticato.
    * Se la chiamata [getAuthorization()](#$getAuthZ) ha esito positivo: l&#39;utente dispone di token AuthN e AuthZ validi (l&#39;utente è autenticato e autorizzato a guardare il contenuto multimediale richiesto).
 
    * Se [getAuthorization()](#$getAuthZ) non riesce: esaminare l&#39;eccezione generata per determinarne il tipo (AuthN, AuthZ o altro):
-      * In caso di errore di autenticazione (AuthN), riavvia il flusso di autenticazione.
-      * Se si trattava di un errore di autorizzazione (AuthZ), l’utente non è autorizzato a guardare il contenuto multimediale richiesto e deve visualizzare all’utente un qualche tipo di messaggio di errore.
-      * Se si è verificato un altro tipo di errore (errore di connessione, errore di rete, ecc.) quindi visualizza un messaggio di errore appropriato.
+     * In caso di errore di autenticazione (AuthN), riavvia il flusso di autenticazione.
+     * Se si trattava di un errore di autorizzazione (AuthZ), l’utente non è autorizzato a guardare il contenuto multimediale richiesto e deve visualizzare all’utente un qualche tipo di messaggio di errore.
+     * Se si è verificato un altro tipo di errore (errore di connessione, errore di rete, ecc.) quindi visualizza un messaggio di errore appropriato.
 
 1. Convalida il token multimediale breve.\
    Utilizza la libreria Adobe Pass Authentication Media Token Verifier per verificare il token multimediale di breve durata restituito dalla chiamata [getAuthorization()](#$getAuthZ) precedente:
@@ -257,7 +258,7 @@ autenticato.
    * Se il supporto selezionato è protetto, l&#39;applicazione avvia il [flusso di autorizzazione](#authz_flow).
 
    * Se il supporto selezionato non è protetto, riprodurlo per
-utente.
+     utente.
 
 ### H. Flusso di disconnessione senza Apple SSO {#logout_flow_wo_AppleSSO}
 

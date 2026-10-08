@@ -2,13 +2,14 @@
 title: Canali
 description: Scopri i canali e le loro varie configurazioni all’interno della dashboard TVE.
 exl-id: bbddeccb-6b6f-4a8f-87ab-d4af538eee1d
-source-git-commit: b4276ee12d57bc061d26afc0a192b799fe1681ae
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '1637'
+source-wordcount: '1641'
 ht-degree: 0%
-
 ---
-
 # Canali {#channels}
 
 >[!NOTE]
@@ -98,7 +99,7 @@ In questa scheda viene visualizzato un elenco delle integrazioni disponibili tra
 
 In questa scheda viene visualizzato un elenco di [certificati disponibili](#available-certificates) e [certificati disponibili ereditati](#inherited-avail-certificates) utilizzati nei flussi di crittografia dei metadati utente. Vengono visualizzati i dettagli di ogni certificato, tra cui:
 
-* Lo stato (se abilitato o meno per la crittografia dei metadati dell&#39;utente **&#x200B;**)
+* Lo stato (se abilitato o meno per la crittografia dei metadati dell&#39;utente ****)
 * Numero di serie
 * Nome dell&#39;organizzazione emittente
 * Nome dell&#39;organizzazione soggetto

@@ -2,13 +2,14 @@
 title: Disconnessione singola - Flusso
 description: REST API V2 - Disconnessione singola - Flusso
 exl-id: d7092ca7-ea7b-4e92-b45f-e373a6d673d6
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '599'
 ht-degree: 0%
-
 ---
-
 # Flusso disconnessione singola {#single-logout-flow}
 
 >[!IMPORTANT]
@@ -30,8 +31,8 @@ ht-degree: 0%
 Prima di avviare una disconnessione singola per un MVPD specifico, verificare che siano soddisfatti i seguenti prerequisiti:
 
 * La seconda applicazione di streaming deve disporre di un profilo Single Sign-On valido creato correttamente per MVPD utilizzando uno dei flussi di autenticazione Single Sign-On:
-   * [Eseguire l’autenticazione tramite single sign-on utilizzando l’identità della piattaforma](rest-api-v2-single-sign-on-platform-identity-flows.md)
-   * [Eseguire l&#39;autenticazione tramite Single Sign-On utilizzando il token di servizio](rest-api-v2-single-sign-on-service-token-flows.md)
+  * [Eseguire l’autenticazione tramite single sign-on utilizzando l’identità della piattaforma](rest-api-v2-single-sign-on-platform-identity-flows.md)
+  * [Eseguire l&#39;autenticazione tramite Single Sign-On utilizzando il token di servizio](rest-api-v2-single-sign-on-service-token-flows.md)
 * La seconda applicazione di streaming deve avviare il flusso di logout singolo quando deve uscire da MVPD.
 
 >[!IMPORTANT]

@@ -2,13 +2,14 @@
 title: Meccanismo di controllo dell'integrità dello storage iOS/tvOS
 description: Meccanismo di controllo dell’integrità di iOS/tvOS
 exl-id: 5d7cdc46-3e51-4e14-9e30-d7f48bc87506
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '346'
+source-wordcount: '345'
 ht-degree: 0%
-
 ---
-
 # Meccanismo di controllo dell’integrità di iOS/tvOS (legacy) {#iostvos-sdk-storage-integrity-checks}
 
 >[!NOTE]
@@ -73,5 +74,5 @@ L&#39;enumerazione IntegrityCheckType è esposta all&#39;applicazione client e p
 | Valore | Controlli eseguiti | Archiviazione cancellata | Descrizione | Caso d’uso consigliato |
 |-----------------------|-----------------------------------------------------|-----------------|------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
 | INTEGRITY_CHECK_NONE | Nessuno | Mai | Nessun controllo di integrità eseguito all&#39;inizializzazione dell&#39;archiviazione | Quando i flussi SDK funzionano come previsto |
-| INTEGRITY_CHECK_ALL | Operabilità archiviazione <br/> Validità dei valori archiviati | Errore al momento dell’assegno | Tutti i controlli di integrità disponibili vengono eseguiti all&#39;inizializzazione dell&#39;archiviazione | Quando si sospetta un danneggiamento dello storage SDK. <br/> In caso di errore di uno dei controlli di integrità, l&#39;utente verrà disconnesso |
+| INTEGRITY_CHECK_ALL | Operabilità archiviazione <br/> Validità dei valori archiviati | Errore al momento dell’assegno | Tutti i controlli di integrità disponibili vengono eseguiti all&#39;inizializzazione dell&#39;archiviazione | Quando si sospetta un danneggiamento dello storage SDK. <br/> Se uno dei controlli di integrità non riesce, l&#39;utente verrà disconnesso |
 | INTEGRITY_CHECK_CLEAR | Nessuno | Sempre | L&#39;archiviazione viene cancellata durante l&#39;inizializzazione dell&#39;archiviazione | Quando i flussi SDK non possono essere completati come previsto |

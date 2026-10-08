@@ -2,13 +2,14 @@
 title: Manuale di JavaScript SDK
 description: Manuale di JavaScript SDK
 exl-id: d57f7a4a-ac77-4f3c-8008-0cccf8839f7c
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '972'
 ht-degree: 0%
-
 ---
-
 # Manuale di JavaScript SDK (legacy) {#javascript-sdk-cookbook}
 
 >[!NOTE]
@@ -56,13 +57,13 @@ Creare le funzioni di callback:
 - `displayProviderDialog(mvpds)`
 
   **Trigger:** `getAuthentication(),` solo se l&#39;utente non ha selezionato un provider (un MVPD) e non è ancora autenticato
-Il parametro mvpds è un array di provider disponibili per l&#39;utente.
+  Il parametro mvpds è un array di provider disponibili per l&#39;utente.
 
 - `setAuthenticationStatus(status, errorcode)`
 
   **Attivatore:**
-   - `checkAuthentication()` ogni volta.
-   - `getAuthentication()` solo se l&#39;utente è già autenticato e ha selezionato un provider.
+  - `checkAuthentication()` ogni volta.
+  - `getAuthentication()` solo se l&#39;utente è già autenticato e ha selezionato un provider.
 
   Lo stato restituito è success o failure; il codice di errore descrive il tipo di errore.
 
@@ -87,7 +88,7 @@ Il parametro mvpds è un array di provider disponibili per l&#39;utente.
 - `selectedProvider(mvpd)`
 
   **Trigger:** [`getSelectedProvider()`]&#x200B;(#$getSelProv Il parametro `mvpd` fornisce informazioni sul provider selezionato da
-utente.
+  utente.
 
 - `setMetadataStatus(metadata, key, arguments)`
 
@@ -178,15 +179,15 @@ libreria AccessEnabler)
 ## &#x200B;5. Visualizza flusso multimediale {#logout}
 
 - L’utente seleziona il file multimediale da visualizzare.
-   - Il supporto è protetto?
-      - L’app controlla se il contenuto multimediale è protetto:
-         - Se il supporto è protetto, l’app avvia il flusso di autorizzazione (AuthZ) qui sopra.
-         - Se il supporto non è protetto, procedere con il flusso Visualizza supporto.
-         - Supporti di riproduzione
+  - Il supporto è protetto?
+    - L’app controlla se il contenuto multimediale è protetto:
+      - Se il supporto è protetto, l’app avvia il flusso di autorizzazione (AuthZ) qui sopra.
+      - Se il supporto non è protetto, procedere con il flusso Visualizza supporto.
+      - Supporti di riproduzione
 
 ## Configurazione dell’ID visitatore {#visitorID}
 
-La configurazione di un valore [ID visitatore](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=it) di Experience Cloud è molto importante dal punto di vista analitico. Una volta impostato il valore EC visitorID, SDK invierà queste informazioni insieme a ogni chiamata di rete e il servizio di autenticazione di Adobe Pass le raccoglierà. In questo modo potrai correlare i dati di analisi del servizio di autenticazione di Adobe Pass con qualsiasi altro rapporto di analisi disponibile in altre applicazioni o siti Web. Le informazioni su come impostare EC visitorID sono disponibili [qui](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=it).
+La configurazione di un valore [ID visitatore](https://experienceleague.adobe.com/docs/id-service/using/home.html) di Experience Cloud è molto importante dal punto di vista analitico. Una volta impostato il valore EC visitorID, SDK invierà queste informazioni insieme a ogni chiamata di rete e il servizio di autenticazione di Adobe Pass le raccoglierà. In questo modo potrai correlare i dati di analisi del servizio di autenticazione di Adobe Pass con qualsiasi altro rapporto di analisi disponibile in altre applicazioni o siti Web. Le informazioni su come impostare EC visitorID sono disponibili [qui](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=en).
 
 
 >[!NOTE]

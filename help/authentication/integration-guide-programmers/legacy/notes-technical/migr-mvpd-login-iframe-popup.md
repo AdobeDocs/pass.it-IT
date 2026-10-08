@@ -2,13 +2,14 @@
 title: Migrazione della pagina di accesso a MVPD da iFrame a Popup
 description: Migrazione della pagina di accesso a MVPD da iFrame a Popup
 exl-id: 389ea0ea-4e18-4c2e-a527-c84bffd808b4
-source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '712'
 ht-degree: 0%
-
 ---
-
 # (Legacy) Come migrare la pagina di accesso di MVPD da iFrame a Popup {#migr-mvpd-login-iframe-popup}
 
 >[!NOTE]
