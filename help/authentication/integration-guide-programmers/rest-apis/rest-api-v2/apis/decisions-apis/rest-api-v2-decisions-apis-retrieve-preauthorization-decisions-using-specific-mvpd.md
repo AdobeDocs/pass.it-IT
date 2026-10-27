@@ -5,9 +5,9 @@ exl-id: 8647e4fb-00b6-45cd-b81b-d00618b2e08b
 product_v2:
   - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
     internal-label: Pass
-source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
+source-git-commit: af03be1d866ad60b601f0fbe8799bd1b87e5c9b6
 workflow-type: tm+mt
-source-wordcount: '991'
+source-wordcount: '1037'
 ht-degree: 1%
 ---
 # Recuperare le decisioni di pre-autorizzazione utilizzando mvpd specifico {#retrieve-preauthorization-decisions-using-specific-mvpd}
@@ -272,6 +272,13 @@ ht-degree: 1%
                <td><i>obbligatorio</i></td>
             </tr>
             <tr>
+               <td style="background-color: #DEEBFF;">userMetadata</td>
+               <td>
+                  UserMetadata facoltativi condivisi da MVPD. Le chiavi disponibili dipendono dalla configurazione di MVPD. Ogni chiave di metadati viene restituita come oggetto contenente <b>valore</b> e <b>stato</b>. Ad esempio, Spectrum potrebbe restituire <code>packageType</code>. I metadati vengono restituiti solo quando MVPD li fornisce nella risposta di preautorizzazione.
+               </td>
+               <td>facoltativo</td>
+            </tr>
+            <tr>
                <td style="background-color: #DEEBFF;">errore</td>
                <td>L'errore fornisce informazioni aggiuntive sulla decisione 'Nega' che è conforme alla documentazione di <a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">Codici di errore avanzati</a>.</td>
                <td>facoltativo</td>
@@ -363,14 +370,26 @@ Content-Type: application/json;charset=UTF-8
          "serviceProvider": "REF30",
          "mvpd": "Cablevision",
          "source": "mvpd",
-         "authorized": true
+         "authorized": true,
+         "userMetadata": {
+            "packageType": {
+               "value": "INCLUSION",
+               "state": "plain"
+            }
+         }
       },
       {
          "resource": "resource2",
          "serviceProvider": "REF30",
          "mvpd": "Cablevision",
          "source": "mvpd",
-         "authorized": true
+         "authorized": true,
+         "userMetadata": {
+            "packageType": {
+               "value": "INCLUSION",
+               "state": "plain"
+            }
+         }
       },
       {
          "resource": "resource3",
@@ -382,7 +401,7 @@ Content-Type: application/json;charset=UTF-8
             "status": 403,
             "code": "preauthorization_denied_by_mvpd",
             "message": "The MVPD has returned a \"Deny\" decision when requesting pre-authorization for the specified resource.",
-            "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=it",
+            "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
             "action": "none"
          }
       }
@@ -488,7 +507,7 @@ Content-Type: application/json;charset=UTF-8
                 "status": 403,
                 "code": "authorization_denied_by_degradation_rule",
                 "message": "The integration has an AuthZNone rule applied for the requested resources",
-                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=it",
+                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
                 "action": "none"
             }
         }
@@ -502,7 +521,7 @@ Content-Type: application/json;charset=UTF-8
                 "status": 403,
                 "code": "authorization_denied_by_degradation_rule",
                 "message": "The integration has an AuthZNone rule applied for the requested resources",
-                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=it",
+                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
                 "action": "none"
             }
         }
