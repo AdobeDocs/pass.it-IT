@@ -5,9 +5,9 @@ exl-id: 62b48bf0-d200-4949-b268-8f8ea2daabfa
 product_v2:
   - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
     internal-label: Pass
-source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
+source-git-commit: 297578d3b311fbc2a5702f1bcc947e94463fb884
 workflow-type: tm+mt
-source-wordcount: '152'
+source-wordcount: '266'
 ht-degree: 0%
 ---
 # Panoramica delle API REST API V2 {#rest-api-v2-apis-overview}
@@ -17,6 +17,19 @@ ht-degree: 0%
 > Assicurati di essere sempre informato sugli ultimi annunci di prodotto per l&#39;autenticazione di Adobe Pass e sulle timeline di disattivazione aggregate nella pagina [Annunci di prodotto](/help/authentication/product-announcements.md).
 
 Per iniziare, visita la documentazione pubblica delle API che ti interessano nell’elenco seguente.
+
+## URL di base {#rest-api-v2-apis-base-urls}
+
+Utilizza l’URL di base specifico per l’ambiente riportato di seguito per le richieste API REST V2. Aggiungi a questo URL di base il relativo `path` documentato per ogni API.
+
+Alcune risposte API restituiscono URL interattivi che il dispositivo di streaming deve aprire in un browser o in un agente utente. Alcuni esempi includono l&#39;attributo `url` restituito da [Avvia disconnessione per mvpd](logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md) specifico e il reindirizzamento `Location` restituito da [Esegui autenticazione nell&#39;agente utente](sessions-apis/rest-api-v2-sessions-apis-perform-authentication-in-user-agent.md).
+
+Questi URL interattivi utilizzano lo stesso host Adobe Pass Service Provider (SP). Apri un URL interattivo assoluto esattamente come restituito. Se Adobe Pass restituisce un URL interattivo relativo che inizia con `/adobe-services/`, risolverlo rispetto all&#39;host SP per l&#39;ambiente di destinazione:
+
+| Ambiente | API REST V2 e URL di base interattivo |
+| --- |--------------------------------------|
+| Produzione | `https://sp.auth.adobe.com` |
+| Staging | `https://sp.auth-staging.adobe.com` |
 
 ## Configurazione {#rest-api-v2-apis-configuration}
 
